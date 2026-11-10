@@ -45,6 +45,8 @@ Quando a ferramenta permitir persistência, usar `schemas/estado-producao-v1.sch
 - Em produção técnica, revisar **render e áudio reais** quando houver executor; sem isso, registrar `NÃO TESTADO`.
 - Se a revisão falhar, corrigir a microtarefa em curso antes de avançar. Se o passo exigir autorização ou ferramenta ausente, guardar o estado como **BLOQUEADO** e não inventar sucesso.
 
+Em caso de ambiguidade entre tarefas de ideias, títulos, roteiro, revisão, thumbnail, Nox, motion, música, Shorts e publicação, consultar `references/intencoes.md` **sob demanda**; não carregar a tabela em toda conversa.
+
 ## Informações adicionais sob demanda
 
 - `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md` — contrato de planilha e pastas.
