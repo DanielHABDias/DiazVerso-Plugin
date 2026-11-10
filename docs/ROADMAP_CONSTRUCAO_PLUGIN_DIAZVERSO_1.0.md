@@ -67,7 +67,7 @@
 ### Fase B — Plugin instalável mínimo
 
 - [x] **B01** — **CONCLUÍDO EM 2026-11-10:** `plugin.json` raiz criado (`diazverso`, `0.1.0`, schema **Agent Plugins 1.0**). JSON parseado, campos essenciais, shortDescription ≤30 caracteres, ausência de MCP inventado e leitura de volta no GitHub validados. **Ainda não instalável/operacional sozinho: precisa de pelo menos uma skill B02.**
-- [ ] **B02** — Criar skill mínima `skills/diazverso-setup/SKILL.md` de onboarding (descobrir permissões, dependências e pastas, sem prometer render).
+- [x] **B02** — **CONCLUÍDA EM 2026-11-10:** `skills/diazverso-setup/SKILL.md` criado e relido via GitHub; frontmatter `name`/`description`, localização portátil e tamanho validados. A skill diagnostica conexões/permissões e indica uma próxima tarefa, sem prometer render ou exigir Content Lab. **Teste real de instalação/invocação permanece em B04/B06.**
 - [ ] **B03** — Criar `skills/diazverso-core/SKILL.md` com posicionamento, vocabulário, Nox e links para referências — sem duplicar briefing.
 - [ ] **B04** — Validar `SKILL.md`/frontmatter/path de todas as skills criadas até aqui com spec Agent Skills.
 - [ ] **B05** — Criar compatibilidade Codex/Plugin Creator **apenas no formato exigido pelo host verificado**; evitar manifests divergentes.
@@ -209,7 +209,7 @@
 
 **Marco 4 — Shorts e finalização:** I → J completo → K → L. Resultado: edição vertical/horizontal, legenda, áudio, QA e publicação assistida quando possível.
 
-**Microtarefas A01 e B01 concluídas:** criador oficial escolhido e manifesto raiz `plugin.json` criado/validado. **PRÓXIMA: B02 — skill de setup curta**, depois B03 (core). **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
+**Microtarefas A01 e B01 concluídas:** criador oficial escolhido e manifesto raiz `plugin.json` criado/validado. **PRÓXIMA: B03 — skill central enxuta**, depois B04 (validação do conjunto). **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
 
 ## 4. Fontes externas — status de uso
 
