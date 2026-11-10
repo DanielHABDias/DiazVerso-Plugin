@@ -16,10 +16,11 @@
 | ID | Situação | Bloqueio ou risco | Critério de desbloqueio |
 | --- | --- | --- | --- |
 | P-B06-HOST | **PARCIAL — HOST BLOQUEADO** | Os ZIPs mínimo e completo foram gerados e validados no GitHub Actions, mas **não há instalação/invocação comprovada no ChatGPT ou Codex**. | Testar instalação/descoberta de setup e core em hosts disponíveis; manter B06 `[ ]` até comprovação. |
-| P-PYTHON | **RESOLVIDO PELO CI** | O runner GitHub executou o empacotamento mínimo (run `42895021889`) e completo (run `42895286304`), ambos com sucesso; no ZIP completo constam 66 arquivos, tamanho 581.317 bytes, SHA-256 registrado. Python local nesta sessão continua indisponível, mas deixou de impedir validação do pacote. | Revalidar CI após alterações de código/skills; não substituir teste de host. |
+| P-PYTHON | **RESOLVIDO PELO CI** | O runner GitHub executou o empacotamento mínimo (runs `42895021889`, mais recente `42898444365`) e completo (runs `42895286304`, mais recente `42898444272`), com sucesso; o último ZIP completo verificado antes da auditoria continha **71 arquivos, 592.367 bytes**, SHA-256 `7c8af2fd919f2dd67902b6c215165b8c7bdd7dd265b67c66948071036fdd08fb`. As contagens mudam quando novas skills entram. Python local nesta sessão continua indisponível, mas deixou de impedir validação do pacote. | Revalidar CI após alterações de código/skills; não substituir teste de host. |
 | P-EXTERNAL-LICENSE | **EM AUDITORIA** | `remotion-dev/skills` não apresentou arquivo LICENSE na raiz ao consultar GitHub em 2026-11-10; sem licença clara, **não copiar o código original ao pacote**. Outras skills devem ser auditadas individualmente. | Licença explícita ou autorização de redistribuição; caso contrário usar skill autoral, não cópia. |
 | P-NOX | **INCORPORAÇÃO E ZIP APROVADOS; REVISÃO DE POSES PENDENTE** | `Nox.png` original em `assets/brand/nox/Nox.png`, Git blob `776d1b26983e6f9095178881c83b44f114a40336`, 415.179 bytes, 1408×768 RGBA, CRC válido. O pacote completo foi validado no CI contra hash e PNG. | Revisar visualmente novas poses/aplicações (G01), confirmar Nox presente no plugin instalado (L06). |
 | P-RENDER | **PENDENTE** | Sem runtime Remotion/TSX comprovado nesta sessão; Content Lab legado não deve ser pré-requisito. | Teste de composição/render independente e revisão de quadros/áudio. |
+| P-F06-SHEETS | **PARCIAL; NÃO APROVADO** | `diazverso-roteiro`, gerador UTF-16 e 7 testes unitários passaram no [CI 42898526361](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42898526361), mas nenhuma criação nativa + vínculo da célula ROTEIRO na linha de Produções foi testada como fluxo integrado. | Em produção de teste isolada, criar/mover/formatar Doc, gravar URL na linha exata, ler de volta, repetir sem duplicata e recuperar falhas. F06 permanece `[ ]`. |
 | P-DRIVE | **PENDENTE** | Skills de Drive não criam permissões nem conectores; reparo e promoção de ideia têm risco de duplicata/perda. | Testar fluxos idempotentes com Drive/Sheets reais e permissões, com rollback lógico. |
 | P-LIMPEZA | **ADIADA ATÉ 1.0 CONCLUÍDA** | Rascunhos e roadmaps ainda são necessários; exclusão prematura perde conhecimento e vínculos. | Release final validada, migração de regras canônicas, verificação de referências e checklist de exclusão. |
 
@@ -38,6 +39,17 @@
 - **Causa:** o Python `Path.suffix` retorna string vazia para `.gitkeep`; a extensão estava na allowlist, mas a função não aceitava o nome do dotfile.
 - **Correção em GitHub:** commit `1baff562d8f72c7c4f2aa76292de80f161c59dee` alterou `is_allowed` para aceitar explicitamente `LICENSE` e `.gitkeep`, sem aceitar dotfiles arbitrários.
 - **Evidência:** [run 42895286304](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42895286304) passou: `PACKAGE_VALIDATED`, 66 arquivos, **581.317 bytes** e SHA-256 `96fb43a1a31c1ab4e0cdb12b936f6c1054b13b4660f18cab59bbb98091210499`; artifact privado `diazverso-plugin-full-test`, ID `13800421739`. **Não equivale a instalar o pacote no host**.
+
+## Auditoria de passagem para Codex — 10/11/2026
+
+**Estado verificado:** 87 microtarefas no [roadmap](ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md), **24 [x]**, **63 [ ]**. As 24 marcadas correspondem a escopo de documentação, skills, assets, modelos ou verificações concluídos; **não significam que o plugin está funcional de ponta a ponta**. Foram verificadas a existência dos artefatos texto relacionados, modelos nativos Google Docs, CI do empacotamento e testes da geração de requests. A consulta textual ao `Nox.png` falhou por tentar tratar PNG binário como UTF-8, **não por ausência do arquivo**; o empacotador validou o blob, hash e CRC no CI.
+
+- **B06 [ ]:** ZIP mínimo/completo no GitHub Actions passou; instalação e invocação do plugin em ChatGPT/Codex **não demonstradas**.
+- **F06 [ ]:** habilidade, gerador de requests UTF-16 e testes já criados; **7/7 testes e amostras LONGO/SHORT passaram** no [run 42898526361](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42898526361); **escrita Google Docs + link em Sheets não realizados como teste de integração**.
+- **F04/F05 [x]:** os Docs nativos de modelo longo e Short seguem existentes, com estilos estruturados; blueprints portáteis em `templates/`.
+- **Pendências críticas adicionais:** descoberta de skills, idempotência Drive/Sheets, promoção TF→VD/SH com rollback, revisão visual de Nox, render Remotion independente, thumbnails, Shorts, QA, publicação e instalação final.
+- **Passagem ao Codex:** `docs/HANDOFF_CODEX_2026-11-11.md` descreve ordem de trabalho, gates e lista de todos os rascunhos/roadmaps/documentos transitórios que devem ser removidos **APENAS quando a V1.0 estiver completa, validada e sem dependências desses arquivos**. O `AGENTS.md` e o README inicial apontam para a passagem.
+- **Próxima ação do Codex:** validar working tree e CI, completar B06 quando host permitir e F06 numa produção de teste, seguir às microtarefas independentes. Atualizar checkbox apenas com evidência.
 
 ## Revisão por tarefa
 
