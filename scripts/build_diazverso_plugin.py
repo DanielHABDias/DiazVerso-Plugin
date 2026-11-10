@@ -54,7 +54,7 @@ def collect() -> tuple[list[str], dict]:
             "Versão deve ser SemVer simples")
 
     paths: list[Path] = [manifest_path]
-    for folder_name in ("skills", "assets", "schemas"):
+    for folder_name in ("skills", "assets", "schemas", "templates"):
         folder = ROOT / folder_name
         require(folder.is_dir(), f"Pasta essencial ausente: {folder_name}")
         paths.extend(p for p in folder.rglob("*") if p.is_file())
@@ -102,6 +102,24 @@ def collect() -> tuple[list[str], dict]:
         require(f"skills/{name}/SKILL.md" in unique and
                 f"skills/{name}/LICENSE" in unique,
                 f"Skill externa incompleta ou sem licença: {name}")
+
+    # Templates nativos de Google Docs devem fazer parte da distribuição.
+    templates = sorted((ROOT / "templates").glob("*.json"))
+    require(bool(templates), "Pelo menos um template de roteiro é necessário")
+    for file in templates:
+        spec = json.loads(file.read_text(encoding="utf-8"))
+        require(spec.get("schema") == "diazverso-google-doc-template-v1",
+                f"Schema de template inválido: {file.name}")
+        require(spec.get("tipo") in ("LONGO", "SHORT"),
+                f"Tipo de template inválido: {file.name}")
+        paragraphs = spec.get("paragraphs")
+        allowed_styles = set(spec.get("styles", {}))
+        require(isinstance(paragraphs, list) and len(paragraphs) >= 10,
+                f"Template sem parágrafos suficientes: {file.name}")
+        require(all(isinstance(p, dict) and
+                    isinstance(p.get("text"), str) and p["text"].strip() and
+                    p.get("style") in allowed_styles for p in paragraphs),
+                f"Parágrafos inválidos no template: {file.name}")
 
     asset_manifest = json.loads((ROOT / "assets/manifest.json").read_text(encoding="utf-8"))
     for item in asset_manifest["assets"]:
