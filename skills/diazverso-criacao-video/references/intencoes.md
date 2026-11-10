@@ -1,0 +1,28 @@
+# Intenções e despacho por etapa — Diazverso
+
+**Consultar somente quando houver dúvida de roteamento.** A skill orquestradora `diazverso-criacao-video` controla o fluxo; as demais executam uma saída específica. Para ação externa, confirmar ferramenta e autorização.
+
+| Pedido principal | Responsável atual | Tarefa/resultado esperado | Quando não existir a skill especializada |
+| --- | --- | --- | --- |
+| "me dê ideias" / pauta futura | `diazverso-criacao-video` + `diazverso-core` | Ideia distinta, pesquisa, tese e fontes | Planejar editorialmente; aba Ideias só com conector |
+| "defina o título" / teste A/B | `diazverso-criacao-video` + `diazverso-core` | Títulos A/B e promessa | Não alegar teste real de CTR |
+| "escreva roteiro" | `diazverso-criacao-video` + `diazverso-core` | Roteiro audiovisual | Google Doc formatado depende de skill/ferramentas futuras |
+| "revise roteiro" / fatos | `diazverso-core` | Revisão editorial e de evidências | Não declarar fatos verificados sem fontes |
+| "crie thumbnail" / capa | `diazverso-core` + ferramenta de imagem quando houver | Briefing ou imagem efetiva | Salvar no Drive somente com conexão |
+| "Nox" / "pose do Nox" | `diazverso-core` | Personagem consistente com referência canônica | Não simular Nox.png físico; D01 pendente |
+| "anime", "TSX", "edite" | `diazverso-criacao-video` | Plano de cena, código e render quando runtime real | Não depender de Content Lab antigo |
+| "efeitos sonoros" / "música" | `diazverso-criacao-video` | Seleção contextual e direitos | Sem áudio real, apenas proposta, não QA |
+| "Short", "vídeo vertical" | `diazverso-criacao-video` + `diazverso-core` | 9:16, legendas e CTA | Preferência ≥60s, não regra YouTube |
+| "descreva para publicar" | `diazverso-criacao-video` | Descrição, tags, fontes, afiliados pertinentes | Link/estado publicado somente se verificado |
+| "configurar Drive", "planilha" | `diazverso-setup` | Diagnóstico e estrutura existente | Sem ferramentas não criar |
+| "economizar tokens", "contexto" | `diazverso-contexto-eficiente` | Contexto enxuto e decisão sobre refs | Usar `context-optimization` externa só no caso avançado |
+
+**Limite atual:** essa tabela mapeia habilidades **disponíveis** para orientação; skills específicas de edição, thumbnail, publicação e Drive ainda não existem. Não substituir funcionalidades ausentes por comandos falsos.
+
+## Seleção determinística
+
+1. Priorizar verbo e resultado do pedido (escrever, revisar, editar, publicar, configurar); formato longo/Short é contexto secundário.
+2. Uma skill principal por microtarefa. `diazverso-core` fornece referência editorial; não deve tentar executar permissões de Drive ou render.
+3. Se o pedido combina ações, partir em fases pequenas na ordem do pipeline e revisar cada uma.
+4. Carregar metadados antes do corpo da skill. Carregar refs, TSX e arquivos de mídia somente quando necessários.
+5. Quando tool/host estiver ausente, registrar como **não executado** e fornecer entrega parcial correta.
