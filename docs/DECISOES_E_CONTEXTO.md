@@ -73,3 +73,10 @@ Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organizaç
 - Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
 - Atualizar este registro apenas quando houver nova evidência ou decisão explícita, anotando data e sem apagar histórico relevante.
 - Não tratar a memória de conversas ou skills de terceiros como fonte canônica quando diferir deste registro validado pelo criador.
+
+
+## B06 — Smoke test do plugin mínimo (em andamento, 2026-11-10)
+
+- [Script de empacotamento](../scripts/b06_package_smoke.py) e [workflow GitHub Actions](../.github/workflows/b06-plugin-smoke.yml) criados, com validações do ZIP, esquema, skills e onboarding. [Relatório detalhado](TESTE_B06_PLUGIN.md).
+- **Revisão estática independente 21/21 critérios aprovada**. Arquivos foram relidos no GitHub. **Nenhum ZIP foi executado/verificado em runtime aqui e nenhuma instalação/invocação no ChatGPT/Codex pôde ser feita**: runtime local falhou e ferramenta de instalar plugin privado não está disponível nesta sessão.
+- **B06 permanece [ ] e o Gate B não foi aprovado** até haver um pacote realmente testado e skills invocadas no(s) host(s) autorizado(s). Não declarar o plugin instalável apenas por ter criado o workflow.
