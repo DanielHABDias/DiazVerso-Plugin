@@ -38,7 +38,9 @@ def require(condition: bool, message: str) -> None:
 
 
 def is_allowed(path: Path) -> bool:
-    return path.name == "LICENSE" or path.suffix.lower() in ALLOWED_SUFFIXES
+    # Path.suffix devolve "" para dotfiles como ".gitkeep".
+    # Aceitar somente o marcador conhecido, não qualquer dotfile.
+    return path.name in {"LICENSE", ".gitkeep"} or path.suffix.lower() in ALLOWED_SUFFIXES
 
 
 def collect() -> tuple[list[str], dict]:
