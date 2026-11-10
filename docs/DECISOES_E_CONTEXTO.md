@@ -1,6 +1,6 @@
 # Diazverso 1.0 — Registro de decisões e hipóteses
 
-Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
+Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organização do Drive e planilha V1.0 já aplicada nesta conta.
 
 ## Decisões confirmadas pelo criador
 - Reiniciar a arquitetura do plugin Diazverso na versão 1.0, construída do zero. Versões 1.4, 1.5 e 1.6 são histórico, não regras herdadas automaticamente.
@@ -30,12 +30,15 @@ Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
 - **Não converter em regra final por antecipação.** Consultar apenas quando a tarefa envolver o briefing ou o projeto editorial/audiovisual V1.0; na conclusão, extrair decisões aprovadas e retirar o rascunho do fluxo ativo.
 - Limitação relevante: a auditoria quadro a quadro dos três MP4s não foi concluída; material de referência apoiado nas transcrições e thumbnails já inspecionadas.
 
-## Auditoria e proposta de organização Drive/Sheets V1.0 (provisória)
+## Organização do Drive/Sheets V1.0 — aprovada e aplicada
 
 - **Em 2026-11-10 foi auditado o Google Drive conectado** e a planilha nativa `Canal do YT`; foi salvo o estudo [PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md](PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md).
 - O estudo contém fatos verificados, abas atuais, inventário resumido de roteiros/thumbnails, nova estrutura proposta, modelo de planilha e templates, provisionamento idempotente e plano de migração sem perda.
 - **Status operacional em 2026-11-10:** nova estrutura e planilha V1.0 criadas no Drive, com 33 produções, 15 ideias e 8 links de afiliados; 35 arquivos de roteiro e 30 thumbnails realocados, links de roteiros verificados. Ver seção 10 do estudo acima. A planilha histórica foi preservada; detalhes do formato ainda sujeitos à análise visual do criador. Nenhuma skill de inicialização de novas contas foi implementada ainda.
-- Cuidado importante: a planilha atual é compartilhada; recomenda-se construir cópia nova V1.0 após revisão, preservando original e links. Evitar assumir acesso de proprietário global ou registrar emails/segredos no plugin.
+- **Base operacional aprovada:** [CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md](CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md). Uma pasta `Diazverso`, subpastas `Roteiros/{Longos,Shorts}` e `Thumbnails/{Longos,Shorts}` e planilha `Canal do YT — V1.0` (abas `Produções`, `Ideias`, `Afiliados`, `Config` oculta). O fluxo passo a passo vai de tema até render/revisão e pacote de publicação; o plugin que o automatiza ainda precisa ser construído.
+- **Decisão de promoção:** ao aprovar uma ideia para produção, criar e verificar registro `VD_####`/`SH_####` em `Produções` e **remover a ideia da aba Ideias somente depois do sucesso**; preservar tese/origem nos dados da produção. Não duplicar ideias ativas.
+- **Limpeza concluída:** pastas antigas de Roteiros/Thumbnail excluídas após mover produção, com arquivos auxiliares antigos guardados em acervo temporário fora da raiz ativa; 33 publicações marcadas `PUBLICADO`, observações artificiais eliminadas, links de thumbnail de 4 Shorts corrigidos.
+- **Limite de permissão:** tentativa de excluir a planilha original compartilhada foi rejeitada pelo Google Drive como `FORBIDDEN`; ela permanece acessível. **Não afirmar que foi apagada.** A nova V1.0 está operacional e independente. Nenhuma skill de inicialização de outras contas foi implementada ainda.
 
 ## Política de memória
 - Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
