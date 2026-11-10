@@ -34,7 +34,7 @@ Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
 
 - **Em 2026-11-10 foi auditado o Google Drive conectado** e a planilha nativa `Canal do YT`; foi salvo o estudo [PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md](PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md).
 - O estudo contém fatos verificados, abas atuais, inventário resumido de roteiros/thumbnails, nova estrutura proposta, modelo de planilha e templates, provisionamento idempotente e plano de migração sem perda.
-- **Status: PROPOSTA PARA DISCUSSÃO; ainda não aprovada nem implementada.** Nenhuma alteração no Google Drive ou na planilha foi efetuada nesta auditoria. Não aplicar migração, arquivar ou apagar conteúdo sem aprovação.
+- **Status operacional em 2026-11-10:** nova estrutura e planilha V1.0 criadas no Drive, com 33 produções, 15 ideias e 8 links de afiliados; 35 arquivos de roteiro e 30 thumbnails realocados, links de roteiros verificados. Ver seção 10 do estudo acima. A planilha histórica foi preservada; detalhes do formato ainda sujeitos à análise visual do criador. Nenhuma skill de inicialização de novas contas foi implementada ainda.
 - Cuidado importante: a planilha atual é compartilhada; recomenda-se construir cópia nova V1.0 após revisão, preservando original e links. Evitar assumir acesso de proprietário global ou registrar emails/segredos no plugin.
 
 ## Política de memória
