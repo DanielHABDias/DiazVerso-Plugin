@@ -98,7 +98,7 @@
 - [ ] **D03** — Selecionar 2–5 fundos HQ realmente aprovados no Drive e registrar origem/uso; **não importar todos os backgrounds**.
 - [ ] **D04** — Adicionar os backgrounds aprovados em `assets/brand/backgrounds/` com nomenclatura e leitura testadas, se os direitos permitirem empacotamento.
 - [ ] **D05** — Escolher SFX essenciais (whoosh curto/longo, ding, boom, riser), ouvir, medir duração, verificar licença e decidir quais podem ser embutidos em `assets/sfx/`.
-- [ ] **D06** — Criar manifesto mínimo de mídia própria/aprovada: nome, função, origem, status de licença, formato, caminho local e Drive quando aplicável.
+- [x] **D06 — CONCLUÍDA E REVISADA (2026-11-10):** `assets/manifest.json` com Nox canônico (PNG RGBA, dimensões, tamanho, Git blob SHA, origem, direitos limitados e caminho local). Não inclui mídia externa sem licença confirmada. **8/8 verificações de consistência, limites e readback aprovadas.** Novos assets entrarão apenas após revisão individual; ID do Drive da conta atual não aparece no manifesto do plugin.
 - [ ] **D07** — Testar acesso à mídia **sem Google Drive** para garantir que Nox e recursos essenciais funcionem offline no editor capaz.
 
 **Gate D:** `Nox.png` real e pequeno conjunto de recursos aprovados empacotados e recuperáveis, sem redistribuição não autorizada.
