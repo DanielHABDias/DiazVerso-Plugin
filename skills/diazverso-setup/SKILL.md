@@ -25,6 +25,7 @@ description: "Use quando o usuário instalar, configurar ou verificar o plugin D
 - Carregar **apenas** a skill necessária à etapa; abrir documentação complementar sob demanda.
 - Em desenvolvimento, usar `docs/ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md` e `docs/DECISOES_E_CONTEXTO.md` quando esses documentos estiverem acessíveis.
 - Em operações no Drive, consultar `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md` somente quando necessário.
+- Para diferenciar capacidades de ChatGPT, Work/Codex e conectores em diagnósticos complexos, consultar `docs/MATRIZ_CAPACIDADES_E_PERMISSOES_V1.md` sob demanda; nunca pressupor instalação ou credenciais.
 - Não recitar o histórico inteiro e não carregar as antigas 44 skills.
 
 ## Limites e segurança
