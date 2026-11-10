@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "diazverso",
+  "version": "0.1.0",
+  "description": "Fluxos modulares para planejar, roteirizar, organizar e revisar vídeos do Diazverso, uma tarefa de cada vez.",
+  "repository": "https://github.com/DanielHABDias/DiazVerso-Plugin",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Diazverso",
+        "shortDescription": "Criação de vídeos por etapas",
+        "longDescription": "Ajuda a pesquisar pautas, criar roteiros, organizar arquivos e preparar vídeos longos e Shorts com processos de revisão. A edição executável depende de ferramentas compatíveis.",
+        "developerName": "Diazverso",
+        "capabilities": [],
+        "defaultPrompt": "Vamos criar um vídeo para o Diazverso, uma tarefa por vez."
+      }
+    }
+  }
+}
