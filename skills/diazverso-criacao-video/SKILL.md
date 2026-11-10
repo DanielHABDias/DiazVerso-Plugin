@@ -33,6 +33,10 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 
 **Shorts:** 9:16, legendas sincronizadas com exceções de tipografia integral, gancho rápido e CTA contextual. A duração de pelo menos 60 s é preferência editorial atual, não limite de plataforma.
 
+## Retomada entre sessões
+
+Quando a ferramenta permitir persistência, usar `schemas/estado-producao-v1.schema.json` como **formato mínimo de intercâmbio**, não como banco paralelo: `id`, `tipo`, `fase`, `proxima_tarefa`, `revisao`, `links` e bloqueio opcional. **Fonte de verdade**: linha do vídeo no Google Sheets, roteiro Google Docs e evidências dos artefatos; atualizar/relêr após cada ação importante. Sem conector, não alegar estado salvo ou continuidade automática. Evitar credenciais no registro.
+
 ## Revisão antes de cada próximo passo
 
 - Revisar **integridade da saída** (arquivo, coluna, link, prévia, testes e dados reais).
