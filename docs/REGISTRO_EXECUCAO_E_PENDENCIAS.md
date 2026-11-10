@@ -8,7 +8,7 @@
 2. **Skills externas selecionadas devem estar dentro do pacote distribuído**, com sua documentação, dependências, origem, versão e condições de licença. **Não copiar e redistribuir** skills sem licença de redistribuição inequívoca; nesse caso criar alternativa autoral independente e registrar o bloqueio para a skill original.
 3. Plugin antigo e Content Lab antigo são **fontes obsoletas de exemplos**; decisões aprovadas no novo Diazverso prevalecem. O Content Lab será refatorado **após** o plugin 1.0.
 4. O **Nox.png canônico precisa estar fisicamente no pacote** final. Não declarar o plugin pronto até o asset ter sido recuperado, validado visualmente/por integridade e incluído na distribuição.
-5. **Documentos temporários usados para guiar a implementação serão deletados somente ao final da versão 1.0 completa, instalada e revisada**, após migrar decisões estáveis para fontes canônicas, garantir que não há referências dependentes e obter checklist de limpeza. Nunca eliminar cronograma, evidências e regras enquanto forem necessárias; preservar git histórico.
+5. **Documentos temporários usados para guiar a implementação serão deletados somente após a versão 1.0 desenvolvida, testada e revisada no GitHub, **antes da instalação manual pelo criador****, após migrar decisões estáveis para fontes canônicas, garantir que não há referências dependentes e obter checklist de limpeza. Nunca eliminar cronograma, evidências e regras enquanto forem necessárias; preservar git histórico.
 6. **B06 foi redefinida pelo criador como teste de empacotamento e está concluída no CI. NÃO instalar agora no ChatGPT nem no Codex.** O criador instalará manualmente o ZIP após concluir a V1.0. Avançar nas microtarefas restantes com revisão, sem usar instalação como pré-requisito.
 
 ## Pendências e riscos (atualizar conforme trabalho efetivo)
@@ -26,11 +26,11 @@
 
 ## Retomada efetiva após interrupção — 2026-11-10
 
-- **Primeiro snapshot restaurado:** roadmap com 87 microtarefas; **18 marcadas como concluídas** (A01, B01–B05, C01–C05, D01/D02/D06, E01, F01–F03). Não confundir aprovação documental de skills com testes de host.
+- **Primeiro snapshot restaurado:** roadmap com 87 microtarefas; **18 estavam marcadas no primeiro snapshot histórico; auditoria atual: 25 [x]** (A01, B01–B05, C01–C05, D01/D02/D06, E01, F01–F03). Não confundir aprovação documental de skills com testes de host.
 - **Último item editorial criado:** F03, skill `skills/diazverso-revisao-embalagem/SKILL.md`, concluída e marcada após revisão.
 - **Outros arquivos já adicionados e verificados em GitHub:** `Nox.png` binário e `assets/manifest.json`; skill externa MIT `context-optimization`; pacote MIT `video-editing`, `analyze-video-editing`, `find-broll` com licenças, refs, scripts/templates; proteção `--allow-external-upload` na análise de áudio; `docs/TERCEIROS_E_LICENCAS.md`; empacotador `scripts/build_diazverso_plugin.py` e workflow `.github/workflows/full-plugin-package.yml`. **Existência e inspeção estática não equivalem a ZIP/execução funcional aprovados.**
 - **Ainda não iniciados quando a execução foi interrompida:** A02 (briefing canônico), A04 (decisão Content Lab), A06 (capacidades por host), F04 (modelo nativo de Doc longo) e os demais pendentes. Ordem: escolher a próxima tarefa **independente**, executar, fazer revisão separada e somente depois marcar a checklist.
-- **B06 permanece não concluída:** instalação/invocação real em ChatGPT/Codex sem evidência; não a contornar ou marcar.
+- **B06 corrigida e concluída [x]:** build/ZIP validados no CI. **Não instalar** durante desenvolvimento; instalação será feita manualmente pelo criador após V1.0 finalizada.
 - **Progresso adicional após retomada:** A02 (especificação canônica), A04 (Content Lab pós-V1), A06 (matriz de capacidades) concluídas/revisadas. ZIP completo corrigido após falha `.gitkeep` e aprovado no [GitHub Actions run 42895286304](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42895286304); mínimo B06 aprovado no [run 42895021889](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42895021889). **B06 concluída como build/CI**, sem instalação; o criador fará a instalação manual depois do release. Próxima microtarefa elegível: A07 (teste real de retomada com GitHub) ou outra independente revisável.
 
 ## Falha diagnosticada e corrigida — empacotamento completo
