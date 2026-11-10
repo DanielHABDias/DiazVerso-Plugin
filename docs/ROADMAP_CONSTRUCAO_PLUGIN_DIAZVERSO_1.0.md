@@ -94,7 +94,7 @@
 ### Fase D — Assets essenciais embutidos no plugin
 
 - [x] **D01 — CONCLUÍDA E REVISADA (2026-11-10):** `assets/brand/nox/Nox.png` copiado **em bytes originais** do Google Drive (ID da instância existente), via blob Git SHA `776d1b26983e6f9095178881c83b44f114a40336` e commit `15438eea2f76a0f72bc56ae13df2aa2a96b5630c`. Origem e destino: **415.179 bytes**. Auditoria estrutural do PNG: assinatura válida, IHDR **1408×768 RGBA (alfa suportado)**, blocos IHDR/pHYs/IDAT/IEND presentes, **0 erros de CRC**, fim consistente. Commit inspecionado: único arquivo novo `assets/brand/nox/Nox.png`. **Visualização do personagem e poses ficará para A05/G01; ainda não foi feito teste gráfico de novas poses.**
-- [ ] **D02** — Criar `assets/brand/nox/README.md` curto com Character Lock, variantes permitidas e uso da referência visual; não reestilizar automaticamente.
+- [x] **D02 — CONCLUÍDA E REVISADA (2026-11-10):** `assets/brand/nox/README.md` criado com caminho e Git blob verificáveis, Character Lock **mínimo baseado nas decisões atuais**, variantes de expressão contextuais, proibição de redesenhar/alterar o canônico e gate de comparação visual sem alegar revisão de poses já executada. **7/7 verificações documentais aprovadas**, arquivo relido no GitHub.
 - [ ] **D03** — Selecionar 2–5 fundos HQ realmente aprovados no Drive e registrar origem/uso; **não importar todos os backgrounds**.
 - [ ] **D04** — Adicionar os backgrounds aprovados em `assets/brand/backgrounds/` com nomenclatura e leitura testadas, se os direitos permitirem empacotamento.
 - [ ] **D05** — Escolher SFX essenciais (whoosh curto/longo, ding, boom, riser), ouvir, medir duração, verificar licença e decidir quais podem ser embutidos em `assets/sfx/`.
