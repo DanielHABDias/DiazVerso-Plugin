@@ -1,0 +1,207 @@
+{
+  "schema": "diazverso-google-doc-template-v1",
+  "tipo": "SHORT",
+  "nome": "Roteiro Short",
+  "id_prefix": "SH_",
+  "styles": {
+    "TITLE": {
+      "size_pt": 22
+    },
+    "SUBTITLE": {
+      "size_pt": 13
+    },
+    "HEADING_1": {
+      "size_pt": 18
+    },
+    "HEADING_2": {
+      "size_pt": 16
+    },
+    "NORMAL_TEXT": {
+      "space_below_pt": 6
+    }
+  },
+  "notes": "Modelo de Google Docs vertical 9:16; duração >=60s é preferência editorial, não limite da plataforma. ID de Drive não deve entrar no plugin.",
+  "bold_labels": [
+    "NARRAÇÃO",
+    "DIREÇÃO VISUAL — NÃO NARRAR",
+    "SOM DA CENA — SEM NARRADOR"
+  ],
+  "paragraphs": [
+    {
+      "style": "TITLE",
+      "text": "[SH_####] — [TEMA] — ROTEIRO SHORT"
+    },
+    {
+      "style": "SUBTITLE",
+      "text": "MODELO REUTILIZÁVEL | 9:16 | preferir pelo menos 60 s | não narrar instruções"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "BRIEFING EDITORIAL — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "ID da produção: SH_#### | Tema: [assunto] | Tese: [argumento central]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Origem no canal: [VD_#### vinculado, ou ideia independente]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Promessa: [fato, tensão ou pergunta que será respondida]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Título: [curto e coerente] | Thumbnail/primeiro quadro: [conceito legível]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Duração-alvo: [estimativa editorial, preferencialmente >=60 s; confirmar no render]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "ROTEIRO AUDIOVISUAL — SOMENTE NARRAÇÃO É FALA"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "ABERTURA — HOOK IMEDIATO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Frase inicial com informação, curiosidade ou contradição clara, sem enrolação.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Primeiro quadro 9:16, contraste, câmera/motion, texto na tela e sua função narrativa.]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "PROVA / CONTEXTO — DESENVOLVIMENTO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Argumento principal, fonte verificável e contexto suficiente para não distorcer o fato.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Painéis, imagens em movimento, Nox quando útil, sem esconder o assunto.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "SOM DA CENA — SEM NARRADOR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Som original de clipe autorizado, se necessário; indicar fonte e entrada/saída. Apagar se não houver.]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "VIRADA / RECOMPENSA — PAYOFF"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Entregar a revelação, contraste ou conclusão prometida na abertura.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Visual que prova ou reforça o payoff; tempo e safe area para legendas.]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "ENCERRAMENTO — CTA CONTEXTUAL"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Conclusão breve + convite natural para acompanhar outros vídeos do Diazverso.]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "LEGENDAS E ÁUDIO — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Legenda sincronizada: [por padrão; omitir duplicação quando a cena é só tipografia na tela]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Som/SFX: [recurso e objetivo; volume/ducking verificados apenas após render]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Segurança de tela: [verificar elementos de interface e áreas de legenda no vertical]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "FONTES E DIREITOS — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[URL da fonte primária, fato sustentado, ressalvas e licenças de mídia/áudio]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "REVISÃO OBRIGATÓRIA — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Fatos/ritmo/gancho/CTA: PENDENTE (anotar correções e evidência)"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "QA de render 9:16/legendas/áudio: NÃO TESTADO (até inspeção real)"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Aprovação do criador: PENDENTE (confirmar antes de avançar)"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "KIT DE PUBLICAÇÃO — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Título escolhido: [após aprovação] | Descrição YouTube: [texto final + fontes]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Texto TikTok/Instagram: [adaptar ao formato e canal]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Tags/afiliados: [somente termos e produtos adequados; divulgar quando aplicável]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "URL publicado: [somente depois de confirmar postagem real]"
+    }
+  ]
+}
