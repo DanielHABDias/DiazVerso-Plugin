@@ -61,10 +61,12 @@ Diazverso/
 - **Plugin antigo e Content Lab antigo são obsoletos.** O novo plugin não depende da refatoração do Content Lab; **refatorar Content Lab somente após concluir e validar a V1.0**. Exemplo TSX antigo só após auditoria individual. Se uma futura integração exigir adaptador Content Lab, ele será **opcional, com contrato novo e testes próprios**, e não reintroduzirá dependências do projeto anterior na instalação do plugin.
 - Ferramentas diferentes oferecem capacidades diferentes; **sem acesso a Drive, editor, render ou YouTube não alegar execução**. Registro de bloqueios: [REGISTRO_EXECUCAO_E_PENDENCIAS.md](REGISTRO_EXECUCAO_E_PENDENCIAS.md).
 
+**Skills prioritárias e Iris:** avaliar especialistas externos (Remotion, GSAP, HyperFrames, Humanizer, Last30Days, Baoyu, QA e contexto) pelo seu valor comprovável. **Iris deve fornecer visão/inspeção de vídeos**; a identificação do aplicativo/interface exatos ainda precisa ser feita, não inventar API. Skills selecionadas vão dentro do plugin quando licenciadas; se não houver autorização, criar **skill Diazverso original** sem copiar material protegido. Ver [catálogo](CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md).
+
 ## 6. Estados e descarte controlado
 
-**Produto ainda em construção.** B06 (instalação/invocação em hosts) e outras tarefas de integração continuam pendentes; não confundir validação estática com teste real.
+**Produto ainda em construção.** B06 (ZIP validado no CI) foi concluída sem instalação, conforme decisão corretiva do criador; F06 e outras integrações seguem pendentes. **NÃO instalar no ChatGPT/Codex agora**; o criador instalará o ZIP manualmente após V1.0 completa, revisada e limpa.
 
-O criador determinou que os **arquivos temporários de orientação** serão excluídos **somente após** V1.0 completa, instalada, testada, revisada e com suas regras transferidas para documentos/skills canônicos. Não eliminar referências ainda ativas e preservar histórico Git.
+O criador determinou que os **arquivos temporários de orientação** serão excluídos **somente após** V1.0 implementada, testada no desenvolvimento e revisada, **antes de o criador instalar manualmente** e com suas regras transferidas para documentos/skills canônicos. Não eliminar referências ainda ativas e preservar histórico Git.
 
 **Princípio de mudança:** decisão posterior do criador atualiza este documento e as skills afetadas; histórico antigo não prevalece por padrão.
