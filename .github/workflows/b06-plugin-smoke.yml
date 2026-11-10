@@ -1,0 +1,37 @@
+name: B06 - Diazverso plugin package smoke test
+
+on:
+  push:
+    paths:
+      - "plugin.json"
+      - "skills/**"
+      - "scripts/b06_package_smoke.py"
+      - ".github/workflows/b06-plugin-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  packaging:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate and package
+        run: python scripts/b06_package_smoke.py --output "$RUNNER_TEMP/diazverso-plugin-0.1.0-b06-test.zip"
+
+      - name: Publish test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: diazverso-b06-test
+          path: ${{ runner.temp }}/diazverso-plugin-0.1.0-b06-test.zip
+          if-no-files-found: error
+          retention-days: 7
