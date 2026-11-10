@@ -1,6 +1,6 @@
 # Diazverso 1.0 — Auditoria do Drive e da planilha + proposta de organização
 
-> **ESTADO: ESTRUTURA V1.0 CRIADA E MIGRADA PARA VISUALIZAÇÃO (2026-11-10); DESIGN AINDA SUJEITO A AJUSTES**
+> **ESTADO: AUDITORIA HISTÓRICA; ESTRUTURA V1.0 APROVADA E APLICADA NO DRIVE (2026-11-10). O documento operacional atual é [CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md](CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md).**
 >
 > Auditoria realizada em **2026-11-10**, com leitura da conta Google Drive conectada, da planilha nativa **Canal do YT**, da árvore de pastas e de roteiros representativos. O usuário pediu avaliar/refatorar essa organização e depois convertê-la em procedimentos operacionais do plugin.
 >
@@ -209,3 +209,17 @@ Este é um **rascunho arquitetural de operação**, não a versão aprovada. Qua
 6. **Visual QA**: valores, contagens, formatação e ligações conferidos pelo conector Google Sheets/Drive; não foi feita revisão via captura de tela do navegador na conta do usuário.
 
 **Governança:** o usuário ainda vai analisar visualmente a planilha e pastas. Não tratar este esquema como irrevogavelmente aprovado para distribuição no plugin. Ao consolidar skills, diferenciar configuração por conta de regras universais.
+
+## 11. Conclusão da limpeza autorizada em 10/11/2026
+
+**Esta seção substitui as descrições históricas acima do tipo "não movido", "nenhuma exclusão" ou "ainda vai avaliar", que registravam estados anteriores da mesma sessão.** A implementação **atual** e os procedimentos para o plugin estão em [CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md](CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md).
+
+- Criador aprovou a estrutura e pediu **apagar pastas antigas**, manter **33 vídeos em PUBLICADO**, remover textos sobre "LEGADO" da coluna `OBSERVAÇÕES`, preservar `Ideias` apenas para pautas ainda não promovidas e documentar o pipeline.
+- Google Sheets V1.0 verificado: **33/33 status PUBLICADO**, **0/33 observações artificiais**; coluna Observações continua para uso legítimo.
+- Quatro links `SH_0001`–`SH_0004` que antes apontavam para **pastas de thumbnails antigas** foram corrigidos para **URLs de arquivos reais**.
+- Diretórios antigos por vídeo (`VD_####`/`SH_####`) esvaziados após a migração foram **excluídos**, e depois excluídos os diretórios antigos `Roteiros` e `Thumbnail`, com subpastas antigas.
+- Materiais auxiliares que não foram integrados ao plugin — antigos exemplos de roteiro, backgrounds/moldura, três imagens auxiliares de VD_0006 — foram preservados em [Diazverso — Acervo legado (temporário)](https://drive.google.com/drive/folders/1SZIKGdq7wrZs4eo859WA6M-fJxiijmO_), fora da estrutura ativa; **não foram excluídos**.
+- **Tentativa de apagar a planilha original compartilhada `Canal do YT`: negada pelo Google Drive (`FORBIDDEN`).** Ela permanece existente, pois há limite de permissão/posse; a planilha V1.0 é independente. A cópia V1.0 contém abas históricas ocultas como backup e memória de descrições e tags.
+- O **contrato operacional** detalha colunas, pastas, formato de roteiros, promoção transacional de Ideias → Produções com remoção de linha de ideia depois da gravação validada, e o fluxo passo a passo de vídeo completo até publicação.
+- Ainda precisa implementar/testar o plugin de fato e a automação de inicialização para contas novas. A organização aprovada do Drive é realidade na instância corrente; não afirmar que isso funciona automaticamente em qualquer ChatGPT.
+
