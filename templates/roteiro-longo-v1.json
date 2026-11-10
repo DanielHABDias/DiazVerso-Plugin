@@ -20,138 +20,204 @@
       "space_below_pt": 6
     }
   },
+  "notes": "Modelo portátil de Google Docs nativo. Não armazenar Doc ID de nenhuma conta no plugin; copiar/criar com permissões e verificar estilos. Conteúdo atualizado após revisão do modelo real de 10/11/2026.",
+  "bold_labels": [
+    "NARRAÇÃO",
+    "DIREÇÃO VISUAL — NÃO NARRAR",
+    "SOM DA CENA — SEM NARRADOR"
+  ],
   "paragraphs": [
     {
       "style": "TITLE",
-      "text": "[VD_####] — [TÍTULO DE TRABALHO]"
+      "text": "[VD_####] — [TEMA] — ROTEIRO LONGO"
     },
     {
       "style": "SUBTITLE",
-      "text": "Diazverso | LONGO | Status: ROTEIRO | Versão: 1"
+      "text": "MODELO REUTILIZÁVEL — preencha os campos; não narrar instruções entre colchetes"
     },
     {
       "style": "HEADING_1",
-      "text": "01. Briefing e promessa editorial"
+      "text": "BRIEFING EDITORIAL — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "TEMA: [assunto]"
+      "text": "ID da produção: VD_#### | Tema: [assunto] | Tese: [argumento central]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "TESE CENTRAL: [posição fundamentada em uma ou duas frases]"
+      "text": "Promessa: [o que o público entenderá ou descobrirá até o final]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "PROMESSA AO ESPECTADOR: [o que ele entenderá ou descobrirá]"
-    },
-    {
-      "style": "NORMAL_TEXT",
-      "text": "TÍTULO A / B: [versões com hipóteses diferentes]"
-    },
-    {
-      "style": "NORMAL_TEXT",
-      "text": "THUMB A / B: [conceitos que complementam os títulos]"
+      "text": "Público e formato: [público] | Duração-alvo: [estimativa editorial, não meta rígida]"
     },
     {
       "style": "HEADING_1",
-      "text": "02. Roteiro audiovisual"
+      "text": "TÍTULOS E THUMBNAILS — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Título A: [opção clara e fiel à tese]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Título B: [opção alternativa de contraste/curiosidade sem exagero]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Thumbnail A: [imagem-foco, composição, texto curto se necessário]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Thumbnail B: [variação efetiva, não apenas recoloração]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "ROTEIRO NARRADO — SOMENTE OS BLOCOS NARRAÇÃO SÃO FALADOS"
     },
     {
       "style": "HEADING_2",
-      "text": "Abertura — gancho e valor"
+      "text": "ABERTURA — GANCHO E ENTREGA INICIAL"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "NARRAÇÃO: [fala natural, clara e específica]"
+      "text": "NARRAÇÃO"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "VISUAL / MOTION: [função narrativa, imagem, enquadramento, movimento e duração aproximada]"
+      "text": "[Texto falado em português brasileiro natural, promessa cumprida e conflito claro logo no início.]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "SOM DA CENA / SFX: [áudio essencial, transição e direitos]"
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "NOX: [reação contextual, ou não utilizar]"
+      "text": "[Qual imagem/vídeo, plano, movimento de câmera, Nox, tipografia, SFX e por quê; indicar fontes/tempo quando souber.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "SOM DA CENA — SEM NARRADOR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Quando houver trecho autorizado de filme/série/jogo: reproduzir áudio original relevante, com início/fim e fonte. Caso contrário, apagar este bloco.]"
     },
     {
       "style": "HEADING_2",
-      "text": "Desenvolvimento — blocos de argumento"
+      "text": "CAPÍTULO 1 — [PRIMEIRO ARGUMENTO]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "BLOCO 1 / NARRAÇÃO: [argumento, evidência e contraponto]"
+      "text": "NARRAÇÃO"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "MOTION / TSX: [painéis, parallax, texto Anton, mídia e timing somente se úteis]"
+      "text": "[Desenvolver a ideia usando fatos verificáveis e opinião identificável; incluir contraponto.]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "BLOCO 2 / NARRAÇÃO: [aprofundamento, contraste, humor natural]"
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "SOM DA CENA / NOX / SFX: [intervenção justificada pela narrativa]"
+      "text": "[Decupagem audiovisual deste argumento.]"
     },
     {
       "style": "HEADING_2",
-      "text": "Conclusão e CTA integrado"
+      "text": "CAPÍTULO 2 — [DESDOBRAMENTO/CONTRASTE]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "NARRAÇÃO: [síntese honesta da tese e convite natural]"
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Continuação com progressão argumentativa, sem repetir a introdução.]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "DIREÇÃO VISUAL — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Alternar cenas conforme a história, sem exigir efeito a cada segundo.]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "ENCERRAMENTO — SÍNTESE E CTA"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "[Conclusão sustentada pelo que o vídeo mostrou; CTA contextual, não genérico.]"
     },
     {
       "style": "HEADING_1",
-      "text": "03. Fontes e checagem factual"
+      "text": "FONTES E CHECAGEM — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "FATO / FONTE / URL: [informação verificada e localização na obra]"
+      "text": "[Fonte primária/URL] — [fato que sustenta] — [data se relevante] — [eventual ressalva]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "INTERPRETAÇÕES E RESSALVAS: [o que é opinião ou está pendente]"
+      "text": "[Fatos a verificar / interpretações / direitos de imagem, clipe e trilha]"
     },
     {
       "style": "HEADING_1",
-      "text": "04. Revisão e gates"
+      "text": "REVISÕES E APROVAÇÕES — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "REVISÃO EDITORIAL: PENDENTE | REVISÃO FACTUAL: PENDENTE"
+      "text": "Pesquisa/fatos: [PENDENTE/APROVADO + evidência]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "QA VISUAL / ÁUDIO: NÃO TESTADO (até haver render real)"
+      "text": "Ritmo/humanização: [PENDENTE/APROVADO + evidência]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "APROVAÇÃO DO CRIADOR: PENDENTE"
+      "text": "Narrado x som da cena: [PENDENTE/APROVADO] | Visual/áudio/direitos: [PENDENTE/APROVADO]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "QA audiovisual após render: NÃO TESTADO (até render e inspeção reais)"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Aprovação do criador: PENDENTE (registrar evidência antes de avançar)"
     },
     {
       "style": "HEADING_1",
-      "text": "05. Kit de publicação — NÃO NARRAR"
+      "text": "KIT DE PUBLICAÇÃO — NÃO NARRAR"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "TÍTULO FINAL: [após aprovação]"
+      "text": "Título escolhido: [após aprovação]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "DESCRIÇÃO YOUTUBE / FONTES: [texto completo, sem timestamps fictícios]"
+      "text": "Descrição YouTube: [resumo, fontes e avisos pertinentes]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "AFILIADOS PERTINENTES E AVISO: [somente links verificados]"
+      "text": "Capítulos/timestamps: [preencher após duração/render reais]"
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "TAGS / COMENTÁRIO FIXADO / CAPÍTULOS REAIS: [após render]"
+      "text": "Comentário fixado: [pergunta ou complemento pertinente]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Tags: [apenas termos relevantes] | Texto social: [adaptar ao canal]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "Afiliados: [apenas links adequados e verificados; divulgar se aplicável]"
     }
   ]
 }
