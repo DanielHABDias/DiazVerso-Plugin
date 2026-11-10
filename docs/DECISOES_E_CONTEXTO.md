@@ -23,6 +23,13 @@ Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
 - Recomendação provisória: NÃO apagar o canal. O YouTube documenta que desempenho depende principalmente de reação a cada vídeo/público, e pivot pode levar meses; reinício não garante redefinição útil de recomendações.
 - Antes de decisão final, examinar impressões, CTR, público novo/recorrente, fontes de tráfego e curvas de retenção; avaliar estratégia de conteúdo atual. Nenhuma operação destrutiva sem solicitação explícita.
 
+## Caderno temporário de briefing (não canônico)
+
+- **Em desenvolvimento desde 2026-11-10:** [RASCUNHO_IDENTIDADE_DIAZVERSO_1.0.md](RASCUNHO_IDENTIDADE_DIAZVERSO_1.0.md).
+- Reúne as análises dos três vídeos de referência (FALL, Um Nerd, RunnyIA), briefing do criador sobre voz, teses, aprendizado, Nox, edição Remotion/TSX, thumbnails, cenas e sourcing, além de hipóteses e pendências.
+- **Não converter em regra final por antecipação.** Consultar apenas quando a tarefa envolver o briefing ou o projeto editorial/audiovisual V1.0; na conclusão, extrair decisões aprovadas e retirar o rascunho do fluxo ativo.
+- Limitação relevante: a auditoria quadro a quadro dos três MP4s não foi concluída; material de referência apoiado nas transcrições e thumbnails já inspecionadas.
+
 ## Política de memória
 - Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
 - Atualizar este registro apenas quando houver nova evidência ou decisão explícita, anotando data e sem apagar histórico relevante.
