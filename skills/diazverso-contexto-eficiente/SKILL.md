@@ -17,6 +17,8 @@ description: "Use quando uma tarefa Diazverso exigir várias fontes, skills ou e
 6. **Executar e revisar:** reler arquivos modificados, executar testes disponíveis, separar estático de runtime e conferir links/formatos; **não marcar `[x]` antes da revisão final**. Registrar a evidência e seguir para próxima microtarefa elegível.
 7. **Medir antes de afirmar economia:** comparar tarefas equivalentes quanto a contexto carregado, qualidade e falhas. Não prometer uma porcentagem de redução sem métricas.
 
+Para decidir entre skills semelhantes sem carregar todas, consultar `references/roteamento.md` **sob demanda**; o resultado deve ter uma única skill responsável e auxiliares somente se exigidas.
+
 ## Skill externa incorporada e atribuição
 
 Para técnicas avançadas, **carregar somente quando necessário** a skill incluída em `skills/context-optimization/SKILL.md` e, se a tarefa justificar, `skills/context-optimization/references/optimization_techniques.md`. É um recurso externo distribuído **dentro deste plugin** sob licença MIT, preservada em `skills/context-optimization/LICENSE`.
