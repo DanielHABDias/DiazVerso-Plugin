@@ -35,7 +35,7 @@
 | Drive — TSX antigo | [Custom Cenas Diazverso](https://drive.google.com/drive/folders/1yWogLK6bRWXunvdJxTHBMIqB4ibSN44f) | Biblioteca com cenários TSX, README, JSON, previews 16:9/9:16 |
 | Drive — mascote | [Nox/Nox.png](https://drive.google.com/file/d/1X6pabe9ZhBTmOycrtURwg7nDzmJf_M61/view) | Arquivo real PNG (415.179 bytes) a conferir visualmente e **incluir fisicamente** no plugin |
 | Drive — mídia atual | [Diazverso](https://drive.google.com/drive/folders/1SbOI-GtWAaWzxFh1ysG5DOjf0DZ8XSYh) | Bibliotecas Assets, Backgrounds, Memes, Músicas, Sounds; organizar por status/licença |
-| Código atual de edição | [DanielHABDias/ContentLab](https://github.com/DanielHABDias/ContentLab), `main`; [layout do projeto](https://github.com/DanielHABDias/ContentLab/blob/main/docs/PROJECT_LAYOUT.md) | Contrato técnico vigente de TSX, edição, saída e render — auditar antes de integração |
+| Content Lab antigo | [DanielHABDias/ContentLab](https://github.com/DanielHABDias/ContentLab), `main`; [layout histórico](https://github.com/DanielHABDias/ContentLab/blob/main/docs/PROJECT_LAYOUT.md) | **Obsoleto para o novo plugin; apenas referência histórica. Refatoração somente depois do novo plugin concluído.** |
 | Organização do Drive | [Contrato operacional](CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md) e [Bibliotecas](ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md) | Estrutura aprovada, IDs apenas desta instalação |
 | Identidade editorial | [Rascunho em evolução](RASCUNHO_IDENTIDADE_DIAZVERSO_1.0.md) | Briefing a consolidar, **não inteiro em prompt global** |
 
@@ -66,7 +66,7 @@
 
 ### Fase B — Plugin instalável mínimo
 
-- [ ] **B01** — Criar e validar `plugin.json` raiz com identidade `diazverso`, versão inicial de desenvolvimento `0.1.0` e schema portátil **Agent Plugins 1.0**; validar sintaxe e campos com as regras do Plugin Creator oficial.
+- [x] **B01** — **CONCLUÍDO EM 2026-11-10:** `plugin.json` raiz criado (`diazverso`, `0.1.0`, schema **Agent Plugins 1.0**). JSON parseado, campos essenciais, shortDescription ≤30 caracteres, ausência de MCP inventado e leitura de volta no GitHub validados. **Ainda não instalável/operacional sozinho: precisa de pelo menos uma skill B02.**
 - [ ] **B02** — Criar skill mínima `skills/diazverso-setup/SKILL.md` de onboarding (descobrir permissões, dependências e pastas, sem prometer render).
 - [ ] **B03** — Criar `skills/diazverso-core/SKILL.md` com posicionamento, vocabulário, Nox e links para referências — sem duplicar briefing.
 - [ ] **B04** — Validar `SKILL.md`/frontmatter/path de todas as skills criadas até aqui com spec Agent Skills.
@@ -209,7 +209,7 @@
 
 **Marco 4 — Shorts e finalização:** I → J completo → K → L. Resultado: edição vertical/horizontal, legenda, áudio, QA e publicação assistida quando possível.
 
-**Microtarefa A01 concluída:** seleção técnica oficial do criador de plugins/skills, com validação documental. **Próxima microtarefa de implementação: B01 — manifesto raiz portátil `plugin.json`**. Depois: B02 (skill de setup curta), B03 (core). **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
+**Microtarefas A01 e B01 concluídas:** criador oficial escolhido e manifesto raiz `plugin.json` criado/validado. **PRÓXIMA: B02 — skill de setup curta**, depois B03 (core). **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
 
 ## 4. Fontes externas — status de uso
 
