@@ -288,6 +288,9 @@ def listen(args: argparse.Namespace) -> None:
         print(json.dumps(metadata, indent=2))
         return
 
+    if not args.allow_external_upload:
+        fail("External audio upload blocked. Use --prepare-only, or obtain explicit user consent and pass --allow-external-upload.")
+
     if excerpt.stat().st_size > MAX_INLINE_AUDIO_BYTES:
         fail(
             "Extracted audio is too large for an inline request. "
@@ -353,6 +356,7 @@ def parser() -> argparse.ArgumentParser:
     value.add_argument("--model", default="gemini-3.6-flash")
     value.add_argument("--question")
     value.add_argument("--prepare-only", action="store_true")
+    value.add_argument("--allow-external-upload", action="store_true")
     return value
 
 
