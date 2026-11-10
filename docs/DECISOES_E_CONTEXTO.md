@@ -2,6 +2,8 @@
 
 Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organização do Drive e planilha V1.0 já aplicada nesta conta.
 
+> **AVISO DE TRANSIÇÃO PARA CODEX (11/11/2026):** este arquivo preserva histórico, incluindo afirmações antigas de "próxima tarefa" e importações que foram posteriormente concluídas. **A fonte de verdade para continuar é [HANDOFF_CODEX_2026-11-11.md](HANDOFF_CODEX_2026-11-11.md) + [roadmap](ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md)**. Auditoria atual: **24 concluídas / 63 pendentes**. **B06 e F06 permanecem parciais**. Não apagar estes registros antes da release final e migração de conteúdo útil.
+
 ## Diretriz prioritária e validação de criadores oficiais — 2026-11-10
 **Atualização do criador, 2026-11-10:** deseja execução contínua de tarefas independentes após revisão, sem precisar dizer 'próximo'; skills externas selecionadas devem constar **dentro** do plugin, preservando licenças e dependências; documentos temporários serão **excluídos só após o plugin 1.0 completo e validado**. O status real de falhas e tarefas bloqueadas está em [REGISTRO_EXECUCAO_E_PENDENCIAS.md](REGISTRO_EXECUCAO_E_PENDENCIAS.md). **B06 permanece bloqueada**, mas microtarefas sem dependência de host podem avançar mediante essa autorização nova.
 
