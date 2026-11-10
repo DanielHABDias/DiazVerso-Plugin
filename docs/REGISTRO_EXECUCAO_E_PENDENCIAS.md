@@ -16,12 +16,21 @@
 | ID | Situação | Bloqueio ou risco | Critério de desbloqueio |
 | --- | --- | --- | --- |
 | P-B06-HOST | **BLOQUEADO** | Ferramentas desta sessão não oferecem instalação/invocação de plugin privado em ChatGPT/Codex. Smoke test de Python e GitHub Actions não mostrou execução verificada. | Obter ZIP realmente gerado/inspecionado e evidência de descoberta e execução das duas skills em host compatível; manter B06 `[ ]`. |
-| P-PYTHON | **BLOQUEADO NESTA SESSÃO** | Tentativas de Python/container para gerar ZIP retornaram erro de infraestrutura. | Execução reproduzível local/Actions com logs, sha256 e inspeção do ZIP. |
+| P-PYTHON | **EXECUÇÃO NÃO CONFIRMADA** | Existem `scripts/b06_package_smoke.py` (mínimo) e `scripts/build_diazverso_plugin.py` (completo, inclui Nox/skills externas) e workflows, mas uma execução do ZIP completo não foi confirmada. | Executar script/CI, capturar logs, SHA-256 e inspecionar conteúdo/CRC; separar este teste da instalação de host. |
 | P-EXTERNAL-LICENSE | **EM AUDITORIA** | `remotion-dev/skills` não apresentou arquivo LICENSE na raiz ao consultar GitHub em 2026-11-10; sem licença clara, **não copiar o código original ao pacote**. Outras skills devem ser auditadas individualmente. | Licença explícita ou autorização de redistribuição; caso contrário usar skill autoral, não cópia. |
-| P-NOX | **PENDENTE** | O Nox no Drive foi localizado, mas ainda não há `assets/brand/nox/Nox.png` verificado no repositório. | Copiar bytes reais, validar PNG/hash/transparência, leitura de retorno e presença no pacote. |
+| P-NOX | **PARCIALMENTE RESOLVIDO** | O `assets/brand/nox/Nox.png` original foi adicionado via blob binário Git (`776d1b26983e6f9095178881c83b44f114a40336`), com 415.179 bytes, 1408×768, RGBA e validação de CRC de todos os chunks. A API de texto não decodifica binários e a aparência de novas poses ainda não foi avaliada. | Confirmar presença/integridade no ZIP completo e inspecionar visualmente aplicações/poses no gate G01/L06. |
 | P-RENDER | **PENDENTE** | Sem runtime Remotion/TSX comprovado nesta sessão; Content Lab legado não deve ser pré-requisito. | Teste de composição/render independente e revisão de quadros/áudio. |
 | P-DRIVE | **PENDENTE** | Skills de Drive não criam permissões nem conectores; reparo e promoção de ideia têm risco de duplicata/perda. | Testar fluxos idempotentes com Drive/Sheets reais e permissões, com rollback lógico. |
 | P-LIMPEZA | **ADIADA ATÉ 1.0 CONCLUÍDA** | Rascunhos e roadmaps ainda são necessários; exclusão prematura perde conhecimento e vínculos. | Release final validada, migração de regras canônicas, verificação de referências e checklist de exclusão. |
+
+## Retomada efetiva após interrupção — 2026-11-10
+
+- **Primeiro snapshot restaurado:** roadmap com 87 microtarefas; **18 marcadas como concluídas** (A01, B01–B05, C01–C05, D01/D02/D06, E01, F01–F03). Não confundir aprovação documental de skills com testes de host.
+- **Último item editorial criado:** F03, skill `skills/diazverso-revisao-embalagem/SKILL.md`, concluída e marcada após revisão.
+- **Outros arquivos já adicionados e verificados em GitHub:** `Nox.png` binário e `assets/manifest.json`; skill externa MIT `context-optimization`; pacote MIT `video-editing`, `analyze-video-editing`, `find-broll` com licenças, refs, scripts/templates; proteção `--allow-external-upload` na análise de áudio; `docs/TERCEIROS_E_LICENCAS.md`; empacotador `scripts/build_diazverso_plugin.py` e workflow `.github/workflows/full-plugin-package.yml`. **Existência e inspeção estática não equivalem a ZIP/execução funcional aprovados.**
+- **Ainda não iniciados quando a execução foi interrompida:** A02 (briefing canônico), A04 (decisão Content Lab), A06 (capacidades por host), F04 (modelo nativo de Doc longo) e os demais pendentes. Ordem: escolher a próxima tarefa **independente**, executar, fazer revisão separada e somente depois marcar a checklist.
+- **B06 permanece não concluída:** instalação/invocação real em ChatGPT/Codex sem evidência; não a contornar ou marcar.
+- **Próxima ação após esta retomada:** consolidar a identidade operacional do novo plugin em uma fonte curta canônica (A02), harmonizar AGENTS/risco e avançar pelas tarefas aptas sem depender do host.
 
 ## Revisão por tarefa
 
