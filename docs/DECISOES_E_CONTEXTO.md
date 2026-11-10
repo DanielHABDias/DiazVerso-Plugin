@@ -1,0 +1,29 @@
+# Diazverso 1.0 — Registro de decisões e hipóteses
+
+Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
+
+## Decisões confirmadas pelo criador
+- Reiniciar a arquitetura do plugin Diazverso na versão 1.0, construída do zero. Versões 1.4, 1.5 e 1.6 são histórico, não regras herdadas automaticamente.
+- O criador ainda detalhará o posicionamento atual, a voz, o estilo e o processo de produção; NÃO congelar essas definições antecipadamente.
+- O plugin deve incluir uma competência especializada para **economia de tokens/contexto**: núcleo mínimo, roteamento por intenção, leitura progressiva de referências e deduplicação.
+- Pesquisar e avaliar skills reconhecidas para pesquisa de pautas, roteiro, revisão, thumbnail, motion design, TypeScript/React/Remotion, engenharia de software/testes e memória persistente para Codex.
+- Referências a examinar: Remotion Agent Skills (oficial), Superpowers (obra), princípios de Context Engineering, vidIQ e estratégias de memória estruturada. Incorporar métodos compatíveis, não copiar regras indiscriminadamente nem presumir ferramentas acessíveis.
+- Content Lab é frente separada: auditar o projeto antes de refatorar. Investigar servidor MCP para conectar ao ChatGPT, autorizações, segurança e custos. Não presumir arquitetura integralmente TypeScript.
+- Preservar decisões e estado do trabalho em arquivos versionados no GitHub, de modo que novos agentes possam recuperar contexto entre sessões.
+
+## Pesquisa do canal em 2026-11-10 — estado PROVISÓRIO
+- Canal vidIQ identificado: `@diazverso`; aproximadamente 2.720 inscritos, 28 vídeos públicos, 48.962 visualizações públicas no momento da consulta.
+- Relatório histórico entre 2026-01-01 e 2026-09-14: 1.034.315 views de Shorts; não confundir com acervo público atual.
+- Nova fase 2026-09-15 a 2026-11-07: 44.026 views de Shorts e 4.673 views de vídeos longos; foram identificados oito vídeos longos no acervo recente.
+- Relatório de espectadores dos longos: Batman/Coringa 8 de 591 views vieram de inscritos; Venom 10 de 105; Spider-Man 2 10 de 1.953. Grande maioria das visualizações NÃO veio de inscritos: não há evidência de que o catálogo antigo esteja impedindo distribuição a novos públicos.
+- Retenção em três longos merece análise de abertura e expectativa: Batman/Coringa 58,6% de audienceWatchRatio no marco de 5% de duração; Venom 46,3%; Spider-Man 2 42,9% (5% representa tempos absolutos diferentes). São amostras e não provas de causa.
+- Discrepância entre métricas históricas e números públicos atuais; não atribuir causa a vídeos removidos/privados sem confirmação.
+- Métrica de views mudou em 2026-08-24: YouTube passou a contar visualização desde o primeiro frame para todos os formatos; usar também engagedViews para comparações.
+- Fontes oficiais: https://support.google.com/youtube/answer/141805 ; https://support.google.com/youtube/answer/16541080 ; https://support.google.com/youtube/answer/16559650 ; https://support.google.com/youtube/answer/2991785 .
+- Recomendação provisória: NÃO apagar o canal. O YouTube documenta que desempenho depende principalmente de reação a cada vídeo/público, e pivot pode levar meses; reinício não garante redefinição útil de recomendações.
+- Antes de decisão final, examinar impressões, CTR, público novo/recorrente, fontes de tráfego e curvas de retenção; avaliar estratégia de conteúdo atual. Nenhuma operação destrutiva sem solicitação explícita.
+
+## Política de memória
+- Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
+- Atualizar este registro apenas quando houver nova evidência ou decisão explícita, anotando data e sem apagar histórico relevante.
+- Não tratar a memória de conversas ou skills de terceiros como fonte canônica quando diferir deste registro validado pelo criador.
