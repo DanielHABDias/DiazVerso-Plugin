@@ -58,7 +58,7 @@ Diazverso/
 - **Carregamento progressivo de contexto:** metadados → skill principal → referências/arquivos estritamente necessários. Resumir resultados, não perder decisões, medições de tokens só se houver dados.
 - **Skills externas selecionadas** serão incluídas fisicamente no plugin com dependências, atribuição e **licença válida de redistribuição**. Não redistribuir terceiros sem permissão. Registro: [TERCEIROS_E_LICENCAS.md](TERCEIROS_E_LICENCAS.md).
 - **Nox.png físico** é necessário no pacote; conferir hash/ZIP e identidade visual. Música, SFX, memes, vídeos e backgrounds de terceiros requerem avaliação individual de direitos.
-- **Plugin antigo e Content Lab antigo são obsoletos.** O novo plugin não depende da refatoração do Content Lab; **refatorar Content Lab somente após concluir e validar a V1.0**. Exemplo TSX antigo só após auditoria individual.
+- **Plugin antigo e Content Lab antigo são obsoletos.** O novo plugin não depende da refatoração do Content Lab; **refatorar Content Lab somente após concluir e validar a V1.0**. Exemplo TSX antigo só após auditoria individual. Se uma futura integração exigir adaptador Content Lab, ele será **opcional, com contrato novo e testes próprios**, e não reintroduzirá dependências do projeto anterior na instalação do plugin.
 - Ferramentas diferentes oferecem capacidades diferentes; **sem acesso a Drive, editor, render ou YouTube não alegar execução**. Registro de bloqueios: [REGISTRO_EXECUCAO_E_PENDENCIAS.md](REGISTRO_EXECUCAO_E_PENDENCIAS.md).
 
 ## 6. Estados e descarte controlado
