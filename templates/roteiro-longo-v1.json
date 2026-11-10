@@ -1,0 +1,157 @@
+{
+  "schema": "diazverso-google-doc-template-v1",
+  "tipo": "LONGO",
+  "nome": "Roteiro Longo",
+  "id_prefix": "VD_",
+  "styles": {
+    "TITLE": {
+      "size_pt": 22
+    },
+    "SUBTITLE": {
+      "size_pt": 13
+    },
+    "HEADING_1": {
+      "size_pt": 18
+    },
+    "HEADING_2": {
+      "size_pt": 16
+    },
+    "NORMAL_TEXT": {
+      "space_below_pt": 6
+    }
+  },
+  "paragraphs": [
+    {
+      "style": "TITLE",
+      "text": "[VD_####] — [TÍTULO DE TRABALHO]"
+    },
+    {
+      "style": "SUBTITLE",
+      "text": "Diazverso | LONGO | Status: ROTEIRO | Versão: 1"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "01. Briefing e promessa editorial"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "TEMA: [assunto]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "TESE CENTRAL: [posição fundamentada em uma ou duas frases]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "PROMESSA AO ESPECTADOR: [o que ele entenderá ou descobrirá]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "TÍTULO A / B: [versões com hipóteses diferentes]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "THUMB A / B: [conceitos que complementam os títulos]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "02. Roteiro audiovisual"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "Abertura — gancho e valor"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO: [fala natural, clara e específica]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "VISUAL / MOTION: [função narrativa, imagem, enquadramento, movimento e duração aproximada]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "SOM DA CENA / SFX: [áudio essencial, transição e direitos]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NOX: [reação contextual, ou não utilizar]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "Desenvolvimento — blocos de argumento"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "BLOCO 1 / NARRAÇÃO: [argumento, evidência e contraponto]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "MOTION / TSX: [painéis, parallax, texto Anton, mídia e timing somente se úteis]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "BLOCO 2 / NARRAÇÃO: [aprofundamento, contraste, humor natural]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "SOM DA CENA / NOX / SFX: [intervenção justificada pela narrativa]"
+    },
+    {
+      "style": "HEADING_2",
+      "text": "Conclusão e CTA integrado"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "NARRAÇÃO: [síntese honesta da tese e convite natural]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "03. Fontes e checagem factual"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "FATO / FONTE / URL: [informação verificada e localização na obra]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "INTERPRETAÇÕES E RESSALVAS: [o que é opinião ou está pendente]"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "04. Revisão e gates"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "REVISÃO EDITORIAL: PENDENTE | REVISÃO FACTUAL: PENDENTE"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "QA VISUAL / ÁUDIO: NÃO TESTADO (até haver render real)"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "APROVAÇÃO DO CRIADOR: PENDENTE"
+    },
+    {
+      "style": "HEADING_1",
+      "text": "05. Kit de publicação — NÃO NARRAR"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "TÍTULO FINAL: [após aprovação]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "DESCRIÇÃO YOUTUBE / FONTES: [texto completo, sem timestamps fictícios]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "AFILIADOS PERTINENTES E AVISO: [somente links verificados]"
+    },
+    {
+      "style": "NORMAL_TEXT",
+      "text": "TAGS / COMENTÁRIO FIXADO / CAPÍTULOS REAIS: [após render]"
+    }
+  ]
+}
