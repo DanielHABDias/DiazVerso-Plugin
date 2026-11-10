@@ -218,3 +218,34 @@ A narrativa apresenta exemplos em função da tese, em vez de apenas empilhar cu
 3. Marcar o que é “o criador quer” versus “o assistente sugere” e conservar nuances.
 4. Não copiar o conteúdo deste rascunho para skills automaticamente. Ao final da etapa, pedir/receber aprovação editorial da síntese final.
 5. Quando o briefing for aprovado, extrair a especificação canônica e arquivar/substituir o rascunho, mantendo rastreabilidade.
+
+
+## 13. Continuação do briefing — imagem em movimento, tipografia, contraste, SFX e CTAs
+
+**Status: [CRIADOR — VISÃO EM CONSTRUÇÃO], acrescentado em 2026-11-10; não congelar como regra definitiva enquanto o criador ainda descreve o canal.**
+
+### 13.1 Imagens em movimento e câmera virtual
+- O criador **não quer imagens grandes completamente estáticas** durante a exibição: preferir zoom-in, zoom-out, pan/deslocamento de câmera pelo conteúdo, reenquadramento e, quando adequado, movimentos suaves ou abruptos que acompanhem o ritmo narrativo.
+- A animação pode ser sutil (efeito tipo Ken Burns) ou mais expressiva, conforme a intenção; não é exigência de movimento caótico constante.
+- Ao fazer zoom de um elemento/imagem, prever **fundo visual por trás**, inclusive opção de duplicata ampliada e desfocada do próprio asset, halftone, composição temática ou cor intencional, evitando que surja uma área preta acidental. Fundo preto deliberado não está proibido.
+- Prioridade futura para a skill Remotion: composições que suportem escala, deslocamento, zoom por ponto focal, easing fluido, camadas de fundo e testes de enquadramento/safe area.
+
+### 13.2 Tipografia cinética, Anton e dinâmica cromática
+- **Anton** é uma fonte de referência recorrente para **frases e palavras importantes em tamanho grande**; tipografia cinética pode alterar tamanho, cor, entrada, foco, ritmo e cor do fundo ao longo da fala.
+- A composição pode alternar fundos e palavras grandes, desde que texto e background apresentem **contraste legível** durante toda a animação — não apenas no frame final.
+- O criador citou contrastes como amarelo/preto e exemplos de combinações que considera desconfortáveis, mas deixou explícito que foram exemplos improvisados. **Não registrar uma lista definitiva de pares de cores proibidos/autorizados com base nessas frases.**
+- **[HIPÓTESE TÉCNICA]** A futura skill de design deve separar: (a) contraste mensurável / legibilidade (ex.: métodos WCAG quando aplicáveis), (b) harmonia e composição usando teoria das cores/círculo cromático, (c) consistência da paleta Diazverso e (d) conforto visual em movimento. Testar cores reais, não assumir que uma família de cor “combina sempre” ou “nunca combina”.
+- Solicitação: integrar uma **referência de contrastes e combinações seguras** ao plugin (padrões e validação), com liberdade para variação intencional e aprovação estética.
+
+### 13.3 Transições e efeitos sonoros
+- O criador quer transições na montagem, incluindo **cortes secos** quando forem a melhor opção; não impor wipe/zoom/transição gráfica em todo encontro de cenas.
+- Quando houver transições perceptíveis e estilizadas, trabalhar **sound design sincronizado**: whooshes, passagens, impactos leves ou outros SFX de acordo com movimento e intenção.
+- **[HIPÓTESE / SUGESTÃO]** Nem todo corte seco precisa de whoosh; excesso pode reduzir o impacto e tornar a edição repetitiva. Decidir posteriormente a regra exata para SFX, volume e frequência.
+
+### 13.4 Chamadas para ação (CTAs)
+- **CTA(s) devem ser previstos no roteiro**, com pelo menos uma ocorrência **durante o desenvolvimento do vídeo**, não apenas na tela final.
+- A edição pode reforçar visualmente a chamada, em composição coerente com o canal (inclusive Nox e elementos cinéticos, se fizer sentido).
+- **[HIPÓTESE / SUGESTÃO]** Integrar CTAs ao assunto e à personalidade, evitar interromper a tese de modo brusco ou repetir pedidos mecanicamente; escolher timing de acordo com a experiência do espectador.
+
+### 13.5 Próximo tópico em aberto
+- O criador avisou que **vai apresentar um ponto ainda mais importante em seguida**. Não tratar este registro como conclusão do briefing.
