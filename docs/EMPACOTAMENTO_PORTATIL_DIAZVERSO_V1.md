@@ -1,6 +1,6 @@
 # Empacotamento portátil do Diazverso 1.0 — decisão B05
 
-> **2026-11-10 — B05 concluída e revisada documentalmente.** A instalação/execução de fato nos hosts permanece **B06, não testada**. A estrutura abaixo é o formato-portátil do código-fonte atual, não o pacote completo final do canal.
+> **Atualização 2026-11-10:** B05 e **B06 concluídas como validação de manifesto/ZIP no CI**. **Não instalar durante desenvolvimento**; criador instalará manualmente após V1.0 finalizada, limpa e revisada. A estrutura abaixo é o formato-portátil do código-fonte atual, não o pacote completo final do canal.
 
 ## Decisão de compatibilidade
 
@@ -33,12 +33,11 @@ diazverso/
 - **Nenhum arquivo extra de compatibilidade foi criado:** `.codex-plugin/plugin.json`, `.mcp.json`, `mcp.json`, `.app.json`, `agents/openai.yaml` e marketplace local não existiam; não são pré-requisitos do pacote portátil atual.
 - **Limites:** a revisão foi feita por inspeção das fontes oficiais e dos arquivos via GitHub. Não foi gerado/instalado ZIP, não foram invocados comandos Codex, nem houve teste real das skills no ChatGPT. Esses testes estão reservados à **B06**.
 
-## Próxima microtarefa — B06 (não iniciada)
+## Fluxo de validação do pacote (B06 concluída, sem instalação)
 
-1. Preparar um pacote de **teste**, sem confundi-lo com release final.
-2. Inspecionar arquivos, layout e referências no arquivo compactado.
-3. Tentar instalação em host disponível com permissão explícita; verificar que as **duas skills** são descobertas e que o onboarding invoca `diazverso-setup`.
-4. Testar um pedido de setup e um pedido editorial, confirmando roteamento e limitações.
-5. Registrar resultado por host: `PASSOU`, `FALHOU` ou `NÃO TESTÁVEL`. Se o host exigir formato de compatibilidade adicional, adicionar **somente a estrutura estritamente necessária**, em tarefa separada e revisada.
+1. Gerar ZIP e verificar manifesto, skills, assets, licenças, hashes, CRC e ausência de arquivos indevidos no GitHub Actions.
+2. Inspecionar o artifact e corrigir falhas de build.
+3. Repetir CI após mudanças e no fechamento da release V1.
+4. **Não instalar no ChatGPT/Codex durante o desenvolvimento.** O criador fará a instalação manual após a V1.0 validada.
 
 **Estado B05:** contrato portátil aprovado; execução ainda não comprovada por teste de host.
