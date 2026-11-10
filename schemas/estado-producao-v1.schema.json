@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Diazverso - estado minimo de retomada V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "tipo",
+    "fase",
+    "proxima_tarefa",
+    "revisao",
+    "atualizado_em"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(TF|VD|SH)_[0-9]{4,}$"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "IDEIA",
+        "LONGO",
+        "SHORT"
+      ]
+    },
+    "fase": {
+      "type": "string",
+      "enum": [
+        "IDEIA",
+        "PLANEJADO",
+        "PESQUISA",
+        "ROTEIRO",
+        "REVISÃO DE ROTEIRO",
+        "ASSETS",
+        "EDIÇÃO",
+        "REVISÃO FINAL",
+        "PRONTO",
+        "AGENDADO",
+        "PUBLICADO",
+        "PAUSADO",
+        "CANCELADO"
+      ]
+    },
+    "ideia_origem_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^TF_[0-9]{4,}$"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "roteiro": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "thumbnail_a": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "thumbnail_b": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "youtube": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "proxima_tarefa": {
+      "type": "string",
+      "minLength": 3
+    },
+    "revisao": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "estado"
+      ],
+      "properties": {
+        "estado": {
+          "type": "string",
+          "enum": [
+            "PENDENTE",
+            "APROVADO",
+            "REPROVADO",
+            "NÃO TESTADO"
+          ]
+        },
+        "evidencia": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "bloqueio": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "atualizado_em": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
