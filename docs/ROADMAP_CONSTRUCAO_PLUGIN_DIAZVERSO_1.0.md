@@ -8,6 +8,8 @@
 > **CORREÇÃO DE PRIORIDADE 2026-11-10:** o trabalho editorial/operacional definido **hoje** prevalece. Plugin antigo e Content Lab antigo são obsoletos; consultar só ideias e exemplos TSX relevantes. **Refatoração do Content Lab é posterior à conclusão do novo plugin**, não pré-requisito. Criador de plugin selecionado: **OpenAI Plugin Creator oficial**; criação de skills orientada pelo **Skill Creator oficial** e padrão Agent Skills. Microtarefas e gates preservados.
 
 ## 0. Regras de execução (obrigatórias)
+**Atualização de governança (2026-11-10):** criador autorizou seguir automaticamente para microtarefas elegíveis após revisão, sem pedir 'próximo'. **B06 permanece `[ ]` enquanto não houver instalação/invocação real**; por instrução nova, é permitido trabalhar em tarefas **independentes**, marcando-as individualmente somente após revisão. Skills externas selecionadas serão **vendorizadas dentro do plugin quando a licença autorizar**, com referências e licenças; sem licença, adaptar de forma autoral sem copiar arquivos. Documentos temporários serão removidos **somente após release 1.0 completa, validada e com o conhecimento migrado**, não durante as fases de implementação. Registrar impedimentos em [REGISTRO_EXECUCAO_E_PENDENCIAS.md](REGISTRO_EXECUCAO_E_PENDENCIAS.md).
+
 
 1. **Uma microtarefa por vez:** selecionar o primeiro checkbox pendente cujos pré-requisitos estejam concluídos. Executar, conferir e registrar resultado **antes** de iniciar outra. Não combinar “implementar toda a fase” em uma única solicitação/commit.
 2. Cada tarefa deve ter: **entrada, entrega concreta, validação/teste, arquivo(s) impactado(s), estado e próxima tarefa**. Uma tarefa que requer muitas alterações deve ser fracionada antes de começar.
