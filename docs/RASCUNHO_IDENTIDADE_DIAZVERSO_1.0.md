@@ -249,3 +249,53 @@ A narrativa apresenta exemplos em função da tese, em vez de apenas empilhar cu
 
 ### 13.5 Próximo tópico em aberto
 - O criador avisou que **vai apresentar um ponto ainda mais importante em seguida**. Não tratar este registro como conclusão do briefing.
+
+
+## 14. Continuação — profundidade/parallax, sistema de revisão, tarefas granulares e vídeos verticais
+
+> **Registro em 2026-11-10. Estado: [CRIADOR — VISÃO EM CONSTRUÇÃO].** Continua sendo briefing provisório, não instrução final implementada. Revisores e práticas de Shorts precisam de pesquisa e validação antes de se tornarem políticas.
+
+### 14.1 Profundidade, parallax e recursos modernos de motion [CRIADOR]
+- A linguagem visual pode aproveitar **parallax**, câmera com profundidade, foreground/background em velocidades diferentes, camadas, desfoque de fundo, movimento contextual e soluções visuais presentes em interfaces e sites modernos, adaptadas a vídeo e Remotion.
+- Quando usar **PNG de personagem/objeto recortado, sem fundo**, criar composição com fundo apropriado (textura, imagem, elementos geométricos, cor/gradiente, duplicata desfocada se fizer sentido), distinguindo planos e explorando profundidade. Não deixar o PNG simplesmente solto em uma tela vazia como padrão.
+- Os recursos devem ser variados, fluidos e contextualizados; não aplicar blur excessivo por obrigação.
+- **[HIPÓTESE TÉCNICA]** Criar componentes/recipes para parallax multicamada, câmera 2.5D, zoom por ponto focal, máscaras, blur de fundo, shadow/edge treatment, rig de personagens, tracking/safe areas e integração com cenas emolduradas. Conferir performance, antialiasing, suavidade e legibilidade no Remotion; não adotar “efeitos de site” dependentes de CSS interativo em vez de animação determinística por frames sem adaptação.
+
+### 14.2 Revisão obrigatória e especializada depois da edição [CRIADOR]
+- **Revisão é etapa estrutural e obrigatória** após criar a edição; não considerar a produção pronta apenas por gerar código/MP4.
+- O criador descreveu **“pegar os quadros, explodir os quadros”**: inspecionar frame(s) e sequência visual para detectar problemas de composição, animação, cortes, continuidade, textos, alinhamentos, elementos fora da tela, baixa qualidade, contraste, defeitos de exportação etc.
+- Procurar/avaliar **melhores skills e agentes/revisores** para *motion design*, animação, edição, **áudio**, ritmo/dinamicidade, roteiro, título e embalagem. Pesquisar referências e métodos de avaliação, sem tratar candidatos ainda não testados como instalados.
+- A revisão deve ter **feedback acionável e correção**, seguida de nova validação. Idealmente critérios verificáveis para cada etapa, em vez de “ficou bom” genérico.
+- **[HIPÓTESE / PROPOSTA DE CHECKPOINTS]**
+  1. Roteiro/editorial: tese, fatos/fonte, promessa, retenção inicial, ritmo narrativo, humor, CTAs, adaptação para voz.
+  2. Pré-produção visual: correspondência com a fala, adequação e licença/origem dos assets, Nox consistente, identidade HQ, abertura.
+  3. Remotion/código: tipagem, lint, dependências/versão, efeitos determinísticos e sincronizados, safe areas, render/teste.
+  4. Auditoria visual: amostra por cena + inspeção em torno de cortes/transições, poses/textos + análise de quadros de destaque; aumentar amostragem onde houver mudanças rápidas. **Não prometer inspeção literal de cada frame sem execução real.**
+  5. Auditoria de movimento: easing, parallax, camera timing, zoom, cortes, blur, transições, ritmo, sobras/black frames, repetição de efeitos.
+  6. Auditoria sonora: voz inteligível, balanceamento voz/música/SFX/áudio de obras, clipping, ruídos, silêncio acidental, sincronismo e pico/loudness conforme destino.
+  7. Auditoria de linguagem, legendas e embalagem: ortografia, timing das legendas, contraste, hook, CTA, título/thumbnail sem promessas falsas.
+  8. Correção → re-render → nova verificação → aprovação humana para publicar.
+- Revisões *podem ser realizadas por subagentes especializados* **quando a plataforma em uso oferecer suporte real**, sem alegar que foram executadas quando não houver capacidade.
+
+### 14.3 Execução granular e operacional [CRIADOR]
+- O criador deseja tarefas **muito subdivididas**, executadas **uma por vez**, para melhorar foco, verificabilidade e qualidade. Cada subtarefa tem escopo claro, insumos, saída e verificação antes da próxima.
+- Exemplo **[HIPÓTESE DE ORQUESTRAÇÃO]**: pauta/tese → pesquisa/fatos → outline → roteiro → revisão roteiro → lista de cenas → sourcing assets → composição TSX por bloco → teste e render por bloco → revisão visual/áudio do bloco → montagem final → revisões de conjunto → ajustes → aprovação.
+- Se **ChatGPT Work/Codex** no futuro tiver capacidades de orquestração/subagentes, permitir delegar tarefas pequenas e independentes; a coordenação e aprovação devem continuar com um agente responsável. **Não pressupor que subagentes estão habilitados ou que o plugin os cria.**
+- Economizar tokens mediante checkpoints curtos, logs de decisões/artefatos, leitura sob demanda, e critérios de “concluído” de cada subtarefa. Não despejar todas as skills simultaneamente; não interromper artificialmente a produção com burocracia excessiva.
+- **[ATENÇÃO]** Uma coisa por vez é o padrão operacional pedido; paralelismo só se efetivamente suportado e útil para tarefas realmente independentes, sem comprometer ordem, revisão ou consistência.
+
+### 14.4 Vídeos verticais/Shorts [CRIADOR]
+- Os vídeos verticais também precisam de **dinamismo e acabamento comparáveis aos vídeos longos**, mas adaptados a proporção, ritmo, enquadramento e retenção do formato curto.
+- O criador quer **legendas como padrão constante nos vídeos verticais**, com sincronização e legibilidade. **Exceção:** quando a cena exibir apenas textos grandes/tipografia cinética, ocultar temporariamente a legenda convencional para evitar duplicação/confusão e restaurá-la depois.
+- **Revisão obrigatória** de todos os Shorts: visual, áudio, timing, hook, legendas/safe areas, revisão do texto/fatos, enquadramento de Nox/assets e entrega.
+- Deve existir **chamada para o canal no final** do vídeo vertical. Pode ser verbal ou integrada visualmente, a definir; não impedir um encerramento natural ou legibilidade.
+- **Duração desejada pelo criador: pelo menos 1 minuto.** Isso é preferência editorial expressa, **não regra técnica universal do YouTube**. Confirmar posteriormente duração ideal, limites atuais da plataforma e eventuais exceções.
+- Pesquisar métodos/skills para roteiro de Shorts: abertura forte, promessa rápida, progressão sem enrolação, visual 9:16, legendagem/safe areas, viradas/revelações, encerramento/CTA e métricas adequadas ao formato. Não importar automaticamente fórmulas de vídeos longos.
+- O criador observou que os verticais vêm sendo prejudicados na produção atual; **[PENDENTE]** esclarecer quais problemas específicos (alcance, edição, enquadramento, retenção ou fluxo), sem inventar diagnóstico.
+
+### 14.5 Pesquisa futura e validação externa [PENDENTE]
+- Investigar fontes atuais e confiáveis de QA de vídeo/áudio e motion design, documentação oficial do Remotion e formatos do YouTube, boas práticas de acessibilidade/legendas, análise de ritmo e avaliações independentes de thumbnails/roteiros.
+- Avaliar skills e ferramentas por **escopo, compatibilidade, custos, segurança e resultados reproduzíveis**. Distinguir checagens automatizáveis (ex.: quadros pretos, dimensões, picos, colisões de texto) de avaliação editorial humana (humor, nuance, ritmo, autenticidade).
+- Não criar revisores apenas nominalmente: cada um precisa de *checklist*, evidências, método, artefatos de saída e decisão de aprovação ou correção.
+
+**Continuação:** o briefing do criador permanece aberto; este caderno é memória temporária, não a configuração final.
