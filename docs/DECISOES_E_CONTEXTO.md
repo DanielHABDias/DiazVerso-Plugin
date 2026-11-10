@@ -2,6 +2,14 @@
 
 Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organização do Drive e planilha V1.0 já aplicada nesta conta.
 
+## Diretriz prioritária e validação de criadores oficiais — 2026-11-10
+
+- **Prioridade absoluta:** decisões de criação, edição, Drive e organização levantadas hoje para Diazverso 1.0. O plugin antigo (44 skills) é **obsoleto** e serve só como catálogo de exemplos selecionados, não como baseline a migrar.
+- **Content Lab antigo também é obsoleto** para esta fase: a refatoração ocorrerá **após** concluirmos o novo plugin. Não bloquear a V1.0 por integração/migração do Content Lab; especificar motion/TSX por contrato Remotion independente.
+- **Escolha técnica validada documentalmente:** Plugin Creator oficial OpenAI, **presente e lido neste ambiente** (`skills://plugins/plugin-creator/create-plugin`), mais Skill Creator oficial para cada skill quando disponível e padrão Agent Skills. Ver docs: https://developers.openai.com/plugins/build/plugins , https://developers.openai.com/plugins/build/skills e https://agentskills.io/specification .
+- **Primeira implementação [B01] executada:** [`plugin.json`](../plugin.json) portátil na raiz, `name=diazverso`, `version=0.1.0`, parse/semver/schema/campos e leitura de retorno verificados. **Não implica plugin instalável ainda**, pois faltam as skills reais.
+- Próxima microtarefa é **B02**, criar a skill mínima de setup sob formato Agent Skills, teste sintático e integração ao manifesto. Ver [roadmap](ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md).
+
 ## Decisões confirmadas pelo criador
 - Reiniciar a arquitetura do plugin Diazverso na versão 1.0, construída do zero. Versões 1.4, 1.5 e 1.6 são histórico, não regras herdadas automaticamente.
 - O criador ainda detalhará o posicionamento atual, a voz, o estilo e o processo de produção; NÃO congelar essas definições antecipadamente.
