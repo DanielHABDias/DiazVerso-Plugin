@@ -2,7 +2,7 @@
 
 Plugin modular do canal **Diazverso** para pesquisa, tese, títulos, roteiro nativo no Google Docs, thumbnails, identidade do Nox, edição/QA audiovisual e preparação de publicação, sempre **uma microtarefa e uma revisão por vez**.
 
-> **Não é ainda uma versão 1.0 pronta para instalação/uso completo. O plugin NÃO deve ser instalado durante o desenvolvimento; o criador fará a instalação manual do ZIP apenas depois de finalização, revisão e limpeza.** O manifesto atual é `0.1.0`. O pacote já passa em testes de empacotamento no GitHub Actions, mas faltam instalação real em ChatGPT/Codex, integração completa Drive/Sheets, render/QA e testes de ponta a ponta.
+> **Não é ainda uma versão 1.0 pronta para instalação/uso completo. O plugin NÃO deve ser instalado durante o desenvolvimento; o criador fará a instalação manual do ZIP apenas depois de finalização, revisão e limpeza.** O manifesto atual é `0.1.0`. O pacote já passa em testes de empacotamento no GitHub Actions, mas faltam integração completa Drive/Sheets, render/QA e testes de ponta a ponta. **A instalação não é pendência de desenvolvimento; será feita pelo criador somente depois da entrega.**
 
 ## Para continuar no Codex (11/11/2026)
 
