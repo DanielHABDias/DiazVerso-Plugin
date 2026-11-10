@@ -480,3 +480,53 @@ Cada componente deve futuramente ter parâmetros claros (duração, cor, ponto f
 - **Proposto pelo assistente:** storyboards, componentes, parallax aplicado às passagens, câmera virtual, conceitos de TSX e receitas de humor.
 - **Pendente:** análise visual/sonora com acesso funcional aos arquivos MP4, anotação de efeitos por timestamp e testes de implementação Remotion.
 - **Governança:** não elevar este bloco a instrução canônica nem afirmar que os exemplos TSX foram construídos. A futura V1.0 deve extrair apenas decisões editoriais aprovadas e implementações verificadas.
+
+
+## 17. Pesquisa inicial de skills para Remotion, vídeos verticais e QA
+
+> **2026-11-10 — TRIAGEM DE CANDIDATOS, não decisão de instalar/incorporar.** Registro de pesquisa pública e skills disponíveis no contexto do ChatGPT. **Nenhum código externo foi importado ao plugin, instalado, auditado ou testado nesta etapa.** A próxima etapa conversada com o criador é determinar a organização do sistema.
+
+### 17.1 Prioridade alta: oficiais Remotion — DISPONÍVEIS no ChatGPT atual
+- Fonte: https://github.com/remotion-dev/skills — lista oficial de Agent Skills; documentação https://www.remotion.dev .
+- Skills encontradas no ambiente: `remotion-best-practices`, `remotion-create`, `remotion-markup`, `remotion-studio`, `remotion-render`, `remotion-captions`, `remotion-docs`, `remotion-interactivity`, `remotion-multimedia`, além de `remotion-saas` e outros.
+- Valor para Diazverso: TSX/React por composição, `useCurrentFrame`, `useVideoConfig`, `interpolate`, easing, `Sequence`, timeline editável, mídia, sincronização, captions, previews, renders e verificação. `remotion-render` documenta renderizar **frames específicos** em PNG, útil para QA visual. `remotion-captions` usa tipo `Caption` com `startMs/endMs`.
+- Atenção: ler skill da **versão instalada no momento da execução** e conferir documentação atual, pois interfaces e recomendações mudam; CSS animations/transitions não substituem tempo baseado em frames para render determinístico.
+- Status: **núcleo técnico candidato forte**; preservar ou referenciar de forma compatível, evitando reembalar indiscriminadamente textos de terceiros.
+
+### 17.2 Candidato específico para inspeção e QA de vídeo — AVALIAR ANTES DE ADOTAR
+- https://github.com/gitethanwoo/video-editing — skills `analyze-video-editing`, `find-broll`, `video-editing`.
+- Descreve análise de shots, câmera, tipografia, ritmo, som, B-roll e produção com FFmpeg/FFprobe/Remotion; contém contact sheets, quadros de cortes, checagem de black frames/silêncio/loudness, validação de codecs, resolução, duração e integridade.
+- **Ponto forte para a demanda do criador:** transformar “explodir quadros” em auditoria com evidências, laudos e correções, e planejar assets vinculados à fala.
+- **Ressalva:** projeto externo pequeno/recente; não assumir confiabilidade/qualidade apenas pela descrição. Auditar scripts, permissões, licenças, dependências, testes, compatibilidade antes de reutilizar.
+
+### 17.3 Candidato especializado em Shorts — APROVEITAMENTO PARCIAL
+- https://github.com/social-media-skills/remotion-shorts-skill — projeto que promete Shorts com Remotion 1080x1920, ~30 fps, tipografia cinética, tempo de leitura, folhas de revisão das cenas e dos frames próximos a cortes, safe areas e SFX.
+- **Limite incompatível:** seu validador interrompe vídeos acima de **59 segundos**, enquanto o criador quer **pelo menos 1 minuto**. Não integrar como está nem adotar suas restrições de duração.
+- Avaliar apenas princípios aproveitáveis: contact sheets, safe area por plataforma, legendagem, cenas curtas, hook, revisão antes do render, sem depender de seu projeto/template ou da integração de postagem.
+- Para YouTube, documento oficial: https://support.google.com/youtube/answer/15424877 — Shorts verticais/quadrados podem chegar a 3 minutos conforme regras atuais; duração de no mínimo 1 minuto é uma **preferência editorial do criador**, não limite da plataforma.
+
+### 17.4 GSAP Skills — INSPIRAÇÃO DE MOTION WEB, COM CUIDADO
+- https://github.com/greensock/gsap-skills — skills oficiais para GSAP core, timelines, easing, performance, SplitText/MorphSVG, React e animações de sites.
+- Úteis como **referência conceitual** para coreografia, ritmo, easing, tipografia e performance de transformações.
+- **Não** transplantar cegamente `gsap.timeline`, `ScrollTrigger` ou animações dependentes de runtime de browser para um render Remotion: a animação do vídeo precisa ser determinística por **frame**. Adaptar o conceito usando os recursos próprios de Remotion; só integrar GSAP após prova de compatibilidade e necessidade real.
+
+### 17.5 Superpowers — REVISÃO E EXECUÇÃO EM SUBTAREFAS
+- https://github.com/obra/superpowers — `writing-plans`, `executing-plans`, `systematic-debugging`, `requesting-code-review`, `verification-before-completion` e fluxos de subagentes.
+- Valor: uma subtarefa por vez, critérios de aceitação, revisão independente quando possível, evidências antes de declarar sucesso, diagnósticos de falhas.
+- Não assumir que mecanismos de subagentes estão presentes no ChatGPT comum; usar estratégia compatível com o ambiente e não incorporar o framework inteiro sem revisar sobrecarga de contexto.
+
+### 17.6 vidIQ já conectado e skills de Shorts e embalagem — DISPONÍVEIS EM CHAT
+- `vidiq-shorts-inspiration`: pesquisa mecanismos de hook/ritmo/payoff em Reels/TikTok e busca validação em Shorts do YouTube; não confundir previsão com sucesso garantido.
+- `vidiq-retention-analysis`: analisar onde espectadores abandonam vídeos próprios com métricas.
+- `vidiq-packaging-studio`: títulos e thumbnails.
+- `vidiq-next-video-planner`, `vidiq-trend-radar`, `vidiq-video-ideas`, `vidiq-video-breakdown`: ideação, tendências, referências e estratégia. Uso de créditos e restrições deve ser verificado caso a caso.
+- Para vídeo, complementar com skills `remotion-captions`, `remotion-markup` e `remotion-render`, e processo de QA.
+
+### 17.7 Arquitetura de skills proposta [HIPÓTESE]
+- Núcleo de roteamento **muito leve** (economia de tokens / progressive disclosure) que escolhe a skill por fase: pesquisa → roteiro → direção de cena/asset → Remotion → revisão → publicação/planilha.
+- **Remotion oficial como motor técnico; biblioteca Diazverso autoral** para estética HQ, Nox, Anton, efeitos de câmera, parallax, inserções cômicas, CRT e Shorts 9:16.
+- **QA especializado** com checagens técnicas automatizadas (frames de cena e cortes, dimensões, legendas, áudio, bitrate e integridade) + revisão editorial subjetiva de humor, ritmo, tese e retenção.
+- Skills externas não são automaticamente ferramentas executáveis: a automação real depende de execução de código, acesso aos arquivos, permissões, runtime local/Work/Codex ou integração MCP. A mesma base editorial pode ser usada no ChatGPT comum para planejar/orquestrar, mas não prometer render local sem ferramenta executora.
+- Próximo passo: **organização**, como o criador disse que irá definir; escutar sua estrutura antes de propor hierarquia definitiva de plugin, Drive, Content Lab, planilhas e assets.
+
+**Fontes pesquisadas nesta rodada:** repositórios oficiais Remotion e GSAP; documentação de YouTube Shorts; repositórios video-editing, remotion-shorts-skill e Superpowers; skills Remotion/vidIQ listadas e lidas do ambiente. Classificações não substituem teste real.
