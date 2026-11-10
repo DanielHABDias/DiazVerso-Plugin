@@ -9,7 +9,7 @@
 - Nome canônico da marca e pasta: **Diazverso** (não "Diasverso" transcrito por voz). Display opcional: **Diazverso**.
 - O usuário deve poder solicitar apenas **"Chat, vamos criar um vídeo"** e ser conduzido de **tema, pesquisa e argumento** até **roteiro, thumbnails, edição e pacote de publicação**, sem reexplicar nomes, pastas, formato dos Docs ou colunas da planilha.
 - Uma tarefa pequena por vez, com entrada, saída, revisão, evidência e atualização de status. Subagentes paralelos são opcionais **somente se suportados e úteis**; coordenação central e integração sequencial.
-- **Google Drive:** armazenar somente os documentos de **roteiro**, as **thumbnails** e a **planilha mestre** necessários à operação. Não acumular guia de edição, prompts, referências e TSX duplicados por vídeo.
+- **Google Drive:** armazenar **roteiros, thumbnails, planilha mestre** e, conforme solicitação posterior do criador, **bibliotecas auxiliares Backgrounds, Assets, Memes, Músicas e Sounds** na raiz Diazverso. Não acumular guia de edição, prompts e TSX duplicados por vídeo. O inventário e a reorganização efetiva das bibliotecas estão em [ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md](ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md).
 - **GitHub/plugin:** futura fonte versionada de conhecimentos e componentes reutilizáveis — Nox canônico, backgrounds aprovados, recursos TSX Remotion, regras de edição, templates e SFX licenciados.
 - **Dados pessoais e permissões:** nunca colocar IDs da conta real, tokens ou emails pessoais como valores universais. Cada instalação deve descobrir e vincular seus próprios Drive IDs.
 - **Preservação:** edição deve ser idempotente; pesquisar antes de criar; conservar ID/link de arquivos movidos; não excluir dados ou vídeos de terceiros sem autorização e permissão. **Uma limpeza autorizada dos arquivos antigos foi realizada na instalação atual; ver status no final.**
@@ -26,12 +26,17 @@ Diazverso/
 │   └── Shorts/
 │       ├── SH_0025 — RT_0025 — Roteiro     [Google Doc]
 │       └── SH_XXXX — ...                   [Google Doc]
-└── Thumbnails/
-    ├── Longos/
-    │   ├── VD_0008_A.png
-    │   └── VD_0008_B.png
-    └── Shorts/
-        └── SH_0025.png
+├── Thumbnails/
+│   ├── Longos/
+│   │   ├── VD_0008_A.png
+│   │   └── VD_0008_B.png
+│   └── Shorts/
+│       └── SH_0025.png
+├── Backgrounds/                   [imagens HQ/cores + vídeos animados]
+├── Assets/                        [identidade Nox/HQ, motion, apoio, triagem]
+├── Memes/                         [imagens e vídeos]
+├── Músicas/                       [favoritas, clima, obras, bibliotecas, triagem]
+└── Sounds/                        [whoosh, impactos, interface, memes, foley...]
 ```
 
 **Nota:** o desenho acima ilustra a organização lógica; alguns arquivos históricos têm nomes e extensões legadas (.md, .txt, .docx, .jpg). Não renomear/reescrever automaticamente o conteúdo antigo. Para arquivos **novos**, padronizar nome e tipo.
@@ -178,6 +183,14 @@ Em ChatGPT comum, Work, Codex ou outro ambiente, obedecer às ferramentas realme
 - **Pastas antigas de Roteiros e Thumbnail foram excluídas, inclusive subpastas por vídeo já esvaziadas.** Conteúdo auxiliar não migrado foi movido para [Diazverso — Acervo legado (temporário)](https://drive.google.com/drive/folders/1SZIKGdq7wrZs4eo859WA6M-fJxiijmO_), fora da estrutura ativa, para revisão antes da incorporação ao plugin.
 - **Planilha original antiga não pôde ser excluída:** [Canal do YT histórico](https://docs.google.com/spreadsheets/d/1s_7ybuYet0La5_cem01p_UwTNzN2uIq5vfLAgWEF_s8/edit) é compartilhada e a tentativa de exclusão retornou **FORBIDDEN**. A cópia V1.0 funciona de modo independente e tem as abas `LEGADO` ocultas como backup.
 - **Ainda não implementados:** provisionamento automático de contas novas, templates Google Docs definitivos, conversão dos Docs históricos, renderização/QA integral pelo plugin, importação dos assets canônicos ao GitHub, checagem comercial de links de afiliados e transações de promoção de Ideias no Google Sheets.
+
+## 7A. Bibliotecas auxiliares reorganizadas em 10/11/2026
+
+O usuário ampliou explicitamente o escopo do Drive: além do acervo de roteiros/thumbnails, as cinco bibliotecas `Assets`, `Backgrounds`, `Memes`, `Músicas` e `Sounds` foram realocadas para dentro da raiz `Diazverso`, com categorias internas reorganizadas.
+
+**Fonte de verdade para este conjunto:** [ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md](ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md), contendo links reais, árvore detalhada, contagens verificadas e pendências de licença e triagem. Referência sob demanda, não carregar em toda solicitação de roteiro.
+
+Essa mudança **não** significa copiar todos os assets ao pacote instalável. O plugin deve futuramente oferecer descoberta idempotente das bibliotecas e seleção contextual por função de edição, com direitos verificados. Mídias antigas ou genéricas preservadas em `99 - Para avaliar` não são assets aprovados para uso automático. O sistema de busca/catalogação ainda não foi implementado. A estrutura mínima de produção continua válida mesmo sem bibliotecas, para instalações que não as tenham.
 
 ## 8. Critérios de aceitação para o plugin futuro
 
