@@ -13,7 +13,8 @@
         "developerName": "Diazverso",
         "capabilities": [],
         "defaultPrompt": "Vamos criar um vídeo para o Diazverso, uma tarefa por vez."
-      }
+      },
+      "onboardingSkill": "./skills/diazverso-setup/SKILL.md"
     }
   }
 }
