@@ -31,6 +31,13 @@ Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organizaç
 - Limitação relevante: a auditoria quadro a quadro dos três MP4s não foi concluída; material de referência apoiado nas transcrições e thumbnails já inspecionadas.
 
 ## Organização do Drive/Sheets V1.0 — aprovada e aplicada
+## Roadmap do novo plugin V1.0 — criado em 2026-11-10
+
+- Plano executável salvo em [ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md](ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md), com **87 microtarefas** distribuídas por auditoria, pacote mínimo, economia de tokens, Nox/assets, Drive/Sheets, pesquisa/roteiro, thumbnails, TSX, Remotion/Content Lab, Shorts, QA, publicação e testes.
+- Drive legado conferido: antigo plugin tem **44 pastas de skills**; `Custom Cenas Diazverso` oferece TSX reais e previews; `Nox.png` está em `Assets/01 - Identidade Diazverso/Nox/`. **Nada disso foi copiado para o repositório novo neste planejamento.**
+- O roadmap obriga **uma tarefa pequena por vez**, gate/evidência e retomada no próximo ID. Primeira tarefa futura: `A01` inventariar as skills; cópia física do Nox em `D01`, antes dos fluxos visuais.
+- Estratégia de skills candidatas: `context-optimization`/compressão, Superpowers, Remotion oficial, Agent Skills e ferramentas de QA conforme compatibilidade; seleção e instalação ainda exigem testes. Antigo Content Lab preservado como motor vivo, sem reconstrução automática.
+
 
 - **Em 2026-11-10 foi auditado o Google Drive conectado** e a planilha nativa `Canal do YT`; foi salvo o estudo [PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md](PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md).
 - O estudo contém fatos verificados, abas atuais, inventário resumido de roteiros/thumbnails, nova estrutura proposta, modelo de planilha e templates, provisionamento idempotente e plano de migração sem perda.
