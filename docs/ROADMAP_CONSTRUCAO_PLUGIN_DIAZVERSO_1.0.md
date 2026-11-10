@@ -81,7 +81,7 @@
 
 ### Fase C — Economia de tokens e orquestração
 
-- [ ] **C01** — Criar `skills/diazverso-contexto-eficiente/SKILL.md` com roteamento e disclosure progressivo inspirados em `context-optimization`.
+- [x] **C01 — CONCLUÍDA E REVISADA (2026-11-10):** criada `skills/diazverso-contexto-eficiente/SKILL.md` (9/9 verificações de leitura, frontmatter, links de recursos, economia de contexto e gate). **Skill externa `context-optimization` incorporada integralmente no pacote-fonte**, com `SKILL.md`, referência e licença MIT original preservadas; conteúdos relidos e comparados byte a byte em texto com os arquivos GitHub de origem (3/3). Medição real de tokens continua pendente em C07. Licença/segurança de outras skills ainda em avaliação.
 - [ ] **C02** — Implementar a regra **uma skill principal por microtarefa**, carregando referências somente quando indispensáveis.
 - [ ] **C03** — Criar skill orquestradora `diazverso-criacao-video`: entrada `vamos criar um vídeo`, status e próximo passo, sem colar conteúdo das demais skills.
 - [ ] **C04** — Definir estrutura mínima de estado da produção e retomada entre sessões (ID, fase, links e pendência); fonte de verdade em Sheets/Docs/GitHub conforme etapa.
