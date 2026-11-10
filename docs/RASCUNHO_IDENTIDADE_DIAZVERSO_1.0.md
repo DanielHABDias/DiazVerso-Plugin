@@ -299,3 +299,62 @@ A narrativa apresenta exemplos em função da tese, em vez de apenas empilhar cu
 - Não criar revisores apenas nominalmente: cada um precisa de *checklist*, evidências, método, artefatos de saída e decisão de aprovação ou correção.
 
 **Continuação:** o briefing do criador permanece aberto; este caderno é memória temporária, não a configuração final.
+
+
+## 15. Continuação — organização operacional, assets locais, planilha e Google Drive
+
+> **Registro de 2026-11-10 — [CRIADOR — VISÃO EM CONSTRUÇÃO].** Esta seção é briefing provisório, não uma migração efetuada, nem a especificação técnica aprovada. O criador pediu explicitamente para preservar estas decisões no GitHub durante a conversa.
+
+### 15.1 Objetivo organizacional e separação de responsabilidades [CRIADOR]
+- Reduzir dependência do Google Drive para **assets e componentes comuns de produção**. O plugin deve ser mais **autossuficiente e operacional**; o usuário não quer repetir manualmente a cada vídeo onde procurar arquivos, como montar a planilha, onde salvar roteiros ou como formatar documentos.
+- O Google Drive **continua útil e desejado** para guardar **roteiros e planilha de acompanhamento do canal**, usando o Drive conectado quando possível.
+- Uma proposta de divisão a confirmar: **repositório/plugin = biblioteca versionada de assets estáveis, referências visuais, componentes TSX, templates e procedimentos; Drive = arquivos de produção por vídeo, roteiros e planilha operacional**. Os serviços e ferramentas concretos devem ser verificados antes da automação.
+
+### 15.2 Assets canônicos e reutilizáveis no repositório [CRIADOR]
+- Localizar e incorporar à estrutura do plugin/repositório **imagem oficial/base do Nox**, para que toda geração de novas poses/expressões/animações tenha a mesma referência canônica.
+- Localizar e incorporar **backgrounds padrões** já usados pelo criador (por exemplo, fundo de estrelas e demais fundos aprovados).
+- Localizar e incorporar **exemplos TSX/Remotion** existentes que representam o aspecto visual desejado, como referências e componentes aprimoráveis, não como código imutável.
+- Preferência por consultar esses recursos no próprio plugin em vez de depender de buscas recorrentes no Drive.
+- **[PENDENTE]** Inspecionar os arquivos reais no Content Lab/Drive, definir qual versão é a oficial, revisar licenças/redistribuição, estrutura/nomeação, formatos, qualidade, dimensões e se algum arquivo muito grande deve ficar fora do pacote. **Nenhum asset foi localizado, copiado ou adicionado nesta etapa: apenas a diretriz foi documentada.**
+- **[HIPÓTESE DE ESTRUTURA]** `assets/nox/`, `assets/backgrounds/`, `assets/sfx/`, `remotion/examples/`, `remotion/components/`, `references/` e manifesto/índice com nomes estáveis, versão, finalidade, arquivo e licença. A organização exata será decidida após inventário. Evitar duplicatas e assets não usados no pacote.
+
+### 15.3 Planilha mestre de operação do canal no Google Drive [CRIADOR]
+- Existe uma **planilha do canal no YouTube** que o criador utiliza com frequência. Ele considera **importante auditá-la e provavelmente refatorá-la**, antes de torná-la modelo oficial. **Não presumir conteúdo, abas ou colunas sem lê-la.**
+- O plugin deve conhecer a planilha de referência / seu **schema aprovado**, saber **onde registrar cada informação** e como manter **formatação funcional**, sem exigir pedidos separados como “registre” e depois “formate”.
+- Fluxo desejado na utilização de uma conta conectada:
+  1. **Descobrir** se existe uma planilha compatível no Google Drive da pessoa, preferencialmente via identificador estável quando já configurado; senão procurar por nome/metadados/estrutura.
+  2. Se encontrar uma planilha, **abrir e verificar esquema, permissões e versão** antes de usá-la; se tiver múltiplas candidatas, não escolher aleatoriamente.
+  3. Se não houver uma planilha utilizável, **oferecer a criação** de uma nova, já com estrutura e formatação operacionais, após a autorização pertinente.
+  4. Se existir mas estiver desatualizada, **propor migração/refatoração com backup e sem sobrescrever dados ou fórmulas silenciosamente**.
+  5. Registrar campos, links e resultados nas abas e colunas certas, preservando validações, fórmulas, estilos e uma forma de evitar atualizações duplicadas.
+- O criador menciona **títulos A/B** como exemplo de informação que deveria ter local e fluxo predefinidos; outros campos deverão ser inventariados a partir da planilha real.
+- **[HIPÓTESE DE IMPLEMENTAÇÃO]** Template versionado da planilha, dicionário de campos/abas, validações, estados de produção, convenções de IDs/URLs, formatação consistente, automações de registro e rotina de inicialização que saiba criar/ligar à instância do usuário. Nem toda função será possível apenas por texto de skill: executar ações no Drive/Sheets requer as permissões e ferramentas conectadas disponíveis.
+- **[PENDENTE]** Encontrar planilha atual, avaliar histórico, fórmulas, abas, colunas, dados existentes, processo de produção e personalizações. Decidir campos e comportamento sem inflar a complexidade.
+
+### 15.4 Estrutura de pastas e documentos dos roteiros [CRIADOR]
+- O criador **prefere armazenar os roteiros no Google Drive**.
+- O plugin deve conhecer a **hierarquia oficial de pastas/subpastas**, convenção de nomes, template e formatação de roteiros; o objetivo é não ter de repetir manualmente “crie nesta pasta/subpasta e depois formate”.
+- **[HIPÓTESE OPERACIONAL]** Na preparação de um roteiro: detectar pasta raiz configurada → localizar/criar subpasta de projeto/vídeo quando necessário e autorizado → criar documento pelo template aprovado → aplicar estilos e estrutura → inserir links para a planilha/briefing/assets → atualizar registro operacional. **Buscar antes de criar para evitar duplicações.**
+- Usar IDs de pasta/documento e configuração verificável quando possível; não embutir caminhos/IDs inventados. Se a conexão, acesso ou permissão estiver ausente, informar claramente e oferecer alternativa.
+- **[PENDENTE]** Inspecionar a hierarquia atual do Drive e alguns roteiros reais antes de fixar padrões. Criar/aplicar modelos só após combinar quais estilos, seções, formatação e subpastas o usuário quer conservar.
+
+### 15.5 Biblioteca de efeitos sonoros e busca de SFX [CRIADOR]
+- O criador já guarda sons no Drive, mas quer **diminuir a busca manual** e ter uma **biblioteca consultável de SFX**, incluindo alguns arquivos-base diretamente no plugin quando viável.
+- Exemplos expressos: **whoosh** curto, longo, cinematográfico e outras variações; **ding**; **explosão/impacto**; efeitos de transição e feedback. Mais variantes podem ser pesquisadas por necessidade de cada cena.
+- Ao produzir Remotion, o agente deve poder **localizar, pré-escutar/avaliar quando houver suporte, selecionar e inserir** o SFX correto em timing coerente com o movimento e sem deixar o áudio excessivamente repetitivo ou alto.
+- **[HIPÓTESE DE BIBLIOTECA]** Catálogo em arquivo com ID, tipo, duração, intenção, intensidade, fonte, licença/atribuição, formato, loudness e exemplos de uso; índice de busca por finalidade (não só nome do arquivo), assets-base compactos e fonte externa autorizada para variações.
+- **[ALERTA]** Verificar licenças de redistribuição e uso em vídeo para cada áudio; não presumir que arquivos baixados da internet podem ser reempacotados no plugin. Se estiverem no Drive pessoal, sua disponibilidade no Drive não implica direito de redistribuí-los.
+- **[PENDENTE]** Identificar SFX existentes, direitos, formatos, amostras preferidas e disponibilidade da futura biblioteca externa.
+
+### 15.6 Ordem sugerida para a futura operacionalização [HIPÓTESE]
+1. **Inventário, não migração automática:** encontrar planilha, roteiros/pastas, Nox canônico, backgrounds, TSX e SFX reais, com permissões.
+2. **Auditoria:** identificar duplicatas, materiais autorizados, problemas de formatação/arquitetura e melhorias; obter aprovação do criador.
+3. **Fonte de verdade:** aprovar schema da planilha, padrões de documentos/pastas, nomenclatura, manifestos de assets e governança de versões.
+4. **Empacotamento:** incluir no repositório apenas os arquivos aprovados, reutilizáveis e redistribuíveis; respeitar limites do plugin e do transporte dos dois ambientes.
+5. **Automação conectada:** implementar fluxos Drive/Docs/Sheets, com verificação de acesso, busca antes de criação, gravação idempotente, formatação e revisões.
+6. **Validação em cenário real:** testar criar um vídeo, registrar título A/B, produzir/salvar roteiro, localizar SFX e usar TSX/Nox sem comandos manuais extras; documentar falhas e exceções.
+7. **Manutenção:** versionar schemas e templates, registrar alterações e orientar migrações, evitando divergência entre plugin, Drive e Content Lab.
+
+**Tensão a resolver:** plugin instalável e autossuficiente para regras/assets estáveis, mas com conexões externas necessárias para ler/escrever dados de produção e pesquisar assets novos. Uma skill orienta o fluxo; **não concede permissões nem garante operações ausentes no ambiente**.
+
+**Continuação do briefing:** o usuário segue descrevendo as necessidades; não converter esta seção automaticamente em regras finais.
