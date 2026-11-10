@@ -40,6 +40,16 @@ Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organizaç
 - **Limpeza concluída:** pastas antigas de Roteiros/Thumbnail excluídas após mover produção, com arquivos auxiliares antigos guardados em acervo temporário fora da raiz ativa; 33 publicações marcadas `PUBLICADO`, observações artificiais eliminadas, links de thumbnail de 4 Shorts corrigidos.
 - **Limite de permissão:** tentativa de excluir a planilha original compartilhada foi rejeitada pelo Google Drive como `FORBIDDEN`; ela permanece acessível. **Não afirmar que foi apagada.** A nova V1.0 está operacional e independente. Nenhuma skill de inicialização de outras contas foi implementada ainda.
 
+## Bibliotecas de mídia no Google Drive — reorganização efetiva em 2026-11-10
+
+- Por pedido do criador, **Backgrounds, Assets, Memes, Músicas e Sounds** foram integrados à **raiz Diazverso** no Drive, complementando roteiros, thumbnails e a planilha.
+- O inventário e os links reais estão em [ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md](ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md). Esse documento passa a ser o guia de referência sob demanda para escolha e gestão de mídia.
+- `Assets`: priorizar Nox/HQ e Motion; recursos genéricos/indeterminados foram preservados em `99 - Para avaliar`, não apagados. `Backgrounds`: loops e imagens estáticas separados por HQ/textura, cores e outras.
+- `Músicas`: 239 arquivos organizados entre favoritas, clima, obras/referências, bibliotecas e não classificadas; 3 **possíveis duplicatas** separadas sem excluir. Nenhum nome de pasta ou arquivo prova licença.
+- `Memes`: imagens/vídeos separados; 24 MP3 antes misturados com vídeos foram para `Sounds/Memes`; sons `Outros efeitos sonoros` realocados para revisão de reações. IDs/link dos arquivos preservados.
+- **A mudança aplica-se já ao Drive conectado**, mas ainda **não** existe catálogo automático/manifesto, cópia de Nox/SFX para o plugin, auditoria completa de licença ou instalação automática dessas bibliotecas em outras contas. Para o futuro plugin, aproveitar apenas assets aprovados, licenciados e adequados a cada cena.
+- **Atualização de escopo:** a regra anterior de Drive "somente roteiros e thumbnails" foi substituída; o Drive também abriga bibliotecas de mídia de produção, sem obrigar a empacotar tudo no plugin.
+
 ## Política de memória
 - Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
 - Atualizar este registro apenas quando houver nova evidência ou decisão explícita, anotando data e sem apagar histórico relevante.
