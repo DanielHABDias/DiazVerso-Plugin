@@ -1,6 +1,6 @@
 # B06 — Teste de pacote, instalação e reconhecimento das skills
 
-> **Data: 2026-11-10. Estado: EMPACOTAMENTO REAL APROVADO NO CI; INSTALAÇÃO NO HOST PENDENTE.**
+> **Data: 2026-11-10. Estado: B06 CONCLUÍDA COMO TESTE DE BUILD/CI, SEM INSTALAR.**
 >
 > Esta microtarefa **NÃO está aprovada como concluída**. O usuário exigiu revisão obrigatória ao final de cada tarefa antes de avançar. A revisão estática do empacotador e do workflow foi concluída, mas **a instalação/invocação real das duas skills ainda não aconteceu**.
 
@@ -52,28 +52,24 @@ Saída produzida no GitHub Actions: `diazverso-plugin-0.1.0-b06-test.zip`, com r
 - **Reteste aprovado:** [run #42895286304](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42895286304), job `package` com todos os steps verdes e artifact `diazverso-plugin-full-test` (ID `13800421739`).
 - Script devolveu `PACKAGE_VALIDATED`, **66 arquivos**, ZIP **581.317 bytes** e SHA-256 **`96fb43a1a31c1ab4e0cdb12b936f6c1054b13b4660f18cab59bbb98091210499`**. O validador incluiu PNG do Nox, manifesto, skills e licenças, conferindo bytes e CRC. `host_installation=NOT_TESTED` permanece explícito.
 
-## Gate de instalação real — PENDENTE
+## Gate B06 REDEFINIDO pelo criador — CONCLUÍDO NO CI
 
-Para completar B06 sem antecipar nenhuma outra fase:
+**Não instalar o plugin no ChatGPT ou Codex agora.** O criador determinou que a V1 deve ser construída, testada e empacotada **no GitHub**. Após todos os recursos/gates e a limpeza dos documentos temporários, **ele mesmo instalará manualmente** o ZIP final.
 
-1. **CONCLUÍDO:** execução verde do workflow B06 e ZIP mínimo validado, com artifact e SHA-256 registrados nesta página.
-2. Instalar/conectar o **pacote mínimo como plugin privado de teste** no host disponível, com ação/autorização do proprietário; não confundir com lançamento 1.0.
-3. No **ChatGPT**, executar uma pergunta de setup, por exemplo: *“Verifique como configurar o Diazverso com o Google Drive, sem criar pastas ainda.”* Verificar que `diazverso-setup` é reconhecida e não inventa conexões.
-4. Executar uma pergunta editorial: *“Qual tese sobre Marvel ou DC combina com o Diazverso?”* Verificar que `diazverso-core` é encontrada e usa a voz/estética corretas.
-5. No **Codex**, quando houver host disponível, repetir teste de descoberta e aplicação das duas skills, sem exigir Content Lab antigo.
-6. Registrar os resultados separados por host e evidência de invocação: `PASSOU`, `FALHOU` ou `NÃO TESTÁVEL`. Corrigir falhas, repetir revisão, **só então marcar B06 [x]**.
+- O script mínimo e o empacotador completo foram executados/validados em CI. Ver [Actions do pacote completo](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/workflows/full-plugin-package.yml).
+- A tarefa **B06 [x]** cobre apenas arquivo/estrutura/ZIP/hash/CRC/CI, não instalação.
+- Não usar ausência de invocação de host como bloqueio da implementação. Testar recursos no ambiente de desenvolvimento, mocks/conectores e renders reais conforme exigências das outras microtarefas.
+- Reexecutar CI após alterações importantes e antes de liberar ZIP final.
 
-## Situação atual
+## Situação atual — critérios corrigidos
 
 | Critério | Estado |
 | --- | --- |
-| Arquivos do manifesto + duas skills existentes | PASSOU |
-| Script e workflow criados no GitHub | PASSOU |
-| Revisão estática independente (21 verificações) | PASSOU |
-| Script executado e ZIP mínimo validado no runner do GitHub Actions | **PASSOU — CI** |
-| Workflow executado com sucesso | **PASSOU — run 42895021889** |
-| Instalação e invocação das skills no ChatGPT | NÃO TESTÁVEL NESTA SESSÃO |
-| Instalação e invocação das skills no Codex | NÃO TESTÁVEL NESTA SESSÃO |
-| **Conclusão integral da B06** | **PENDENTE** |
+| Manifesto e skills básicas presentes | PASSOU |
+| ZIP mínimo validado em GitHub Actions | PASSOU |
+| ZIP completo com Nox/skills e integridade validado em GitHub Actions | PASSOU |
+| **B06 como build/teste de pacote** | **CONCLUÍDA [x]** |
+| Instalação no ChatGPT/Codex durante desenvolvimento | **NÃO REALIZAR — fora do escopo, por decisão do criador** |
+| Instalação depois da V1.0 pronta | **AÇÃO MANUAL FUTURA DO CRIADOR** |
 
-**O Gate B continua NÃO APROVADO**, mesmo com o pacote aprovado no CI. O criador autorizou executar microtarefas independentes (C01–C05 já realizadas) sem aguardar a instalação. O roadmap permanece com B06 desmarcada.
+**O Gate B foi satisfeito para a finalidade de desenvolvimento/empacotamento.** Os testes de integração real, render, qualidade e release continuam nas demais tarefas e **não dependem de instalar o plugin agora**.
