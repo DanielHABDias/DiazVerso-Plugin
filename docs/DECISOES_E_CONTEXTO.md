@@ -3,6 +3,8 @@
 Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organização do Drive e planilha V1.0 já aplicada nesta conta.
 
 ## Diretriz prioritária e validação de criadores oficiais — 2026-11-10
+**Atualização do criador, 2026-11-10:** deseja execução contínua de tarefas independentes após revisão, sem precisar dizer 'próximo'; skills externas selecionadas devem constar **dentro** do plugin, preservando licenças e dependências; documentos temporários serão **excluídos só após o plugin 1.0 completo e validado**. O status real de falhas e tarefas bloqueadas está em [REGISTRO_EXECUCAO_E_PENDENCIAS.md](REGISTRO_EXECUCAO_E_PENDENCIAS.md). **B06 permanece bloqueada**, mas microtarefas sem dependência de host podem avançar mediante essa autorização nova.
+
 
 - **Prioridade absoluta:** decisões de criação, edição, Drive e organização levantadas hoje para Diazverso 1.0. O plugin antigo (44 skills) é **obsoleto** e serve só como catálogo de exemplos selecionados, não como baseline a migrar.
 - **Content Lab antigo também é obsoleto** para esta fase: a refatoração ocorrerá **após** concluirmos o novo plugin. Não bloquear a V1.0 por integração/migração do Content Lab; especificar motion/TSX por contrato Remotion independente.
