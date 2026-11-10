@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "format_version": "1.0",
+  "assets": [
+    {
+      "id": "brand.nox.canonical",
+      "name": "Nox.png",
+      "kind": "mascot-reference",
+      "path": "assets/brand/nox/Nox.png",
+      "mime_type": "image/png",
+      "size_bytes": 415179,
+      "dimensions": {
+        "width": 1408,
+        "height": 768
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "776d1b26983e6f9095178881c83b44f114a40336",
+      "source": "creator-provided Google Drive asset",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "APPROVED_CANONICAL_REFERENCE",
+      "notes": "Use unchanged as the baseline; review variants visually. Do not infer redistribution permission for third-party media."
+    }
+  ]
+}
