@@ -3,13 +3,15 @@
 **Data:** 2026-11-10  
 **Estado:** ROADMAP PARA EXECUÇÃO. Nenhum item deste roadmap equivale, sozinho, à funcionalidade implementada.  
 **Destino:** [repositório novo](https://github.com/DanielHABDias/DiazVerso-Plugin).  
-**Objetivo:** um plugin instalável para ChatGPT e Codex que coordene, em etapas pequenas, conteúdo de vídeo longo/Short: pesquisa → tese/packaging → roteiro formatado → thumbnails → narração/assets → Remotion/Content Lab → revisão audiovisual → kit de publicação. O fluxo completo depende das ferramentas e autorizações reais do host.
+**Objetivo:** um plugin instalável para ChatGPT e Codex baseado **nas decisões de 2026-11-10**, que coordene em microtarefas pesquisa → tese/packaging → roteiro formatado → thumbnails → narração/assets → instruções e exemplos Remotion/TSX independentes → revisão audiovisual → kit de publicação. **Content Lab antigo é obsoleto e sua refatoração será um projeto separado, após o novo plugin estar concluído.** O fluxo completo depende das ferramentas e autorizações reais do host.
+
+> **CORREÇÃO DE PRIORIDADE 2026-11-10:** o trabalho editorial/operacional definido **hoje** prevalece. Plugin antigo e Content Lab antigo são obsoletos; consultar só ideias e exemplos TSX relevantes. **Refatoração do Content Lab é posterior à conclusão do novo plugin**, não pré-requisito. Criador de plugin selecionado: **OpenAI Plugin Creator oficial**; criação de skills orientada pelo **Skill Creator oficial** e padrão Agent Skills. Microtarefas e gates preservados.
 
 ## 0. Regras de execução (obrigatórias)
 
 1. **Uma microtarefa por vez:** selecionar o primeiro checkbox pendente cujos pré-requisitos estejam concluídos. Executar, conferir e registrar resultado **antes** de iniciar outra. Não combinar “implementar toda a fase” em uma única solicitação/commit.
 2. Cada tarefa deve ter: **entrada, entrega concreta, validação/teste, arquivo(s) impactado(s), estado e próxima tarefa**. Uma tarefa que requer muitas alterações deve ser fracionada antes de começar.
-3. **Trabalhar no repositório novo**; o plugin antigo no Drive é referência histórica, **não fonte que sobrescreve decisões 1.0**. Usar o código atual do Content Lab como contrato técnico quando acessível.
+3. **Trabalhar no repositório novo e usar as decisões de hoje como prioridade**; plugin antigo e Content Lab antigo são **obsoletos**, apenas repositórios de ideias/exemplos a consultar seletivamente. **Não incorporar regras velhas nem depender do Content Lab para lançar o plugin V1.0.** Refatorar Content Lab somente depois do plugin novo estar concluído.
 4. Tratar cada decisão com origem: **aprovada no novo contexto**, **referência do plugin antigo**, **hipótese a verificar**. Não transferir regras velhas de pastas por vídeo, planilha em duas abas, balões HQ ou espiral obrigatória.
 5. **Contexto enxuto:** ler `AGENTS.md`, resumo de decisões e **somente a skill/referência da tarefa atual**; retornar link/resumo do resultado, não despejar árvores/código enormes na conversa. Salvar estado no GitHub.
 6. Subagentes são **opcionais** e somente quando runtime suportar, para trabalho independente com escopo estreito (inventário, pesquisa, testes). O agente principal decide, integra e valida sequencialmente; não delegar edições concorrentes no mesmo arquivo.
@@ -43,33 +45,33 @@
 
 - **Eficiência de tokens:** [context-optimization](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering), `context-compression`, `filesystem-context`, `memory-systems`, `multi-agent-patterns`. Aplicar **progressive disclosure** (metadata → SKILL.md → references/assets/scripts) e medir custo em testes comparáveis. Não prometer percentuais sem medição.
 - **Execução em tarefas pequenas e qualidade de software:** [obra/superpowers](https://github.com/obra/superpowers) — `writing-plans`, `executing-plans`, testes/revisão; adaptar ao ChatGPT/Codex, sem assumir subagentes disponíveis.
-- **Remotion (oficial):** [remotion-dev/skills](https://github.com/remotion-dev/skills) — `remotion-best-practices`, `remotion-markup`, `remotion-create`, `remotion-render`, `remotion-studio`, `remotion-captions`, `remotion-multimedia`, `remotion-docs`. Versões e API verificadas contra o Content Lab atual; não instalar o conjunto todo sem necessidade.
-- **Formato de skills/plugins:** [Agent Skills](https://agentskills.io), [OpenAI Plugin Docs](https://developers.openai.com/plugins/build/plugins). `plugin.json` raiz + `skills/<nome>/SKILL.md`; `assets/` opcional; `mcp.json` **apenas quando necessário**. Validar com Plugin Creator e host.
+- **Remotion (oficial):** [remotion-dev/skills](https://github.com/remotion-dev/skills) — `remotion-best-practices`, `remotion-markup`, `remotion-create`, `remotion-render`, `remotion-studio`, `remotion-captions`, `remotion-multimedia`, `remotion-docs`. Usar como referência independente para cenas/QA, validando a versão do Remotion no ambiente de testes; **não usar o Content Lab antigo como dependência obrigatória**.
+- **Criadores oficiais escolhidos [A01]:** **Plugin Creator** (`skills://plugins/plugin-creator/create-plugin` **presente nesta sessão**) como orientação/validação de pacote; **Skill Creator** oficial para autoria de skills quando disponível no host; especificação aberta [Agent Skills](https://agentskills.io/specification) e [OpenAI Plugin Docs](https://developers.openai.com/plugins/build/plugins). `plugin.json` portátil na raiz + `skills/<nome>/SKILL.md`; `assets/` com Nox essencial; `mcp.json` só se houver endpoint/necessidade real. **Não exigir ferramenta/skill de terceiro de criação.**
 - **Outros candidatos não homologados:** HyperFrames, GSAP, Humanizer, Baoyu Cover Image, Last30Days, WATCH, EarShot, Iris, Browser Use, Openverse/Real SFX. Investigar licença, compatibilidade e valor real individualmente; não pré-instalar ou assumir equivalência.
 - **Pesquisa de YouTube:** vidIQ quando conectado, fontes oficiais e pesquisa complementar; resultados podem ser usados para perguntas/hipóteses, não promessas do algoritmo.
 
 ## 2. Roadmap detalhado — executar na ordem de dependência
 
-### Fase A — Auditoria e fronteiras
+### Fase A — Seleção da tecnologia, consolidação das decisões novas e fronteiras
 
-- [ ] **A01** — Listar as 44 skills do plugin antigo em uma tabela de nome/função/arquivos, sem copiar nenhum arquivo.
-- [ ] **A02** — Classificar cada skill antiga: `REUTILIZAR CONCEITO`, `REESCREVER`, `NÃO HERDAR`; justificar conflitos com a V1.
-- [ ] **A03** — Inventariar as pastas de TSX antigos, os arquivos TSX, JSON de exemplo, previews e dependências. Um registro por componente; apontar redundâncias.
-- [ ] **A04** — Comparar contratos de TSX antigos com o código atual de `ContentLab/main` (manifests, versões, props, hooks, local de cenas e formato de projeto).
-- [ ] **A05** — Verificar visualmente `Nox.png` e confrontar com o Character Lock histórico; definir **uma** referência canônica do Nox para V1.
-- [ ] **A06** — Definir o mínimo viável do plugin em ChatGPT normal versus recursos que exigem Work/Codex/Content Lab, identificando conectores e limites.
-- [ ] **A07** — Consolidar **somente as decisões editoriais já aprovadas** do rascunho em um resumo curto, mantendo dúvidas fora do núcleo.
+- [x] **A01** — **VALIDADO EM 2026-11-10 (avaliação documental):** selecionar **Plugin Creator oficial OpenAI, disponível neste ambiente**, para pacotes do plugin; usar **Skill Creator oficial** em host que o disponibilizar para skills individuais; padronizar `Agent Skills` com disclosure progressivo. Fontes: `skills://plugins/plugin-creator/create-plugin`, https://developers.openai.com/plugins/build/plugins , https://developers.openai.com/plugins/build/skills e https://agentskills.io/specification . **Ainda não significa teste de instalação do pacote Diazverso.**
+- [ ] **A02** — Escrever a **fonte canônica resumida da V1.0** a partir das decisões de **hoje** (identidade editorial e audiovisual ainda ajustável, Drive/planilha aprovados, Nox, Shorts, QA, economia de contexto). Não usar plugin anterior como baseline.
+- [ ] **A03** — Montar **catálogo seletivo** de poucos TSX antigos relevantes (texto, fundos, Nox, legenda, CRT, CTA) apenas quando for desenvolver a biblioteca de motion; **não inventariar 44 skills** como pré-requisito do plugin.
+- [ ] **A04** — Registrar o Content Lab como **projeto de refatoração posterior à conclusão do plugin novo**, sem auditar/copiar seu contrato técnico agora; a V1 pode prever uma interface/adaptador **opcional**, sem implementação.
+- [ ] **A05** — Validar visualmente `Nox.png` atual e confirmar consistência com a marca V1, sem herdar restrições do Character Lock antigo automaticamente.
+- [ ] **A06** — Definir funcionalidades disponíveis no ChatGPT normal por conexão com Drive/Sheets e as que exigem runtime de execução (Codex/Work/Remotion); não assumir que o antigo Content Lab está ativo.
+- [ ] **A07** — Testar um fluxo mínimo de uma microtarefa com carregamento progressivo e fonte de verdade no GitHub.
 
-**Gate A:** inventários verificáveis, decisões antigas conflitantes identificadas, sem importação indiscriminada.
+**Gate A:** a escolha oficial de criadores de plugin/skills está documentada; a validação de funcionamento do **pacote** virá em B04/B06. A02/A05/A06/A07 podem ser executadas em pequenas tarefas próprias, e A03/A04 NÃO bloqueiam o início da consolidação do plugin.
 
 ### Fase B — Plugin instalável mínimo
 
-- [ ] **B01** — Criar e validar `plugin.json` raiz com identidade `diazverso`, descrição, versão e schema portátil correto.
+- [ ] **B01** — Criar e validar `plugin.json` raiz com identidade `diazverso`, versão inicial de desenvolvimento `0.1.0` e schema portátil **Agent Plugins 1.0**; validar sintaxe e campos com as regras do Plugin Creator oficial.
 - [ ] **B02** — Criar skill mínima `skills/diazverso-setup/SKILL.md` de onboarding (descobrir permissões, dependências e pastas, sem prometer render).
 - [ ] **B03** — Criar `skills/diazverso-core/SKILL.md` com posicionamento, vocabulário, Nox e links para referências — sem duplicar briefing.
 - [ ] **B04** — Validar `SKILL.md`/frontmatter/path de todas as skills criadas até aqui com spec Agent Skills.
 - [ ] **B05** — Criar compatibilidade Codex/Plugin Creator **apenas no formato exigido pelo host verificado**; evitar manifests divergentes.
-- [ ] **B06** — Instalar localmente o plugin mínimo e confirmar que ChatGPT/Codex conseguem invocar a skill de setup (testes separados por host).
+- [ ] **B06** — Instalar/testar o plugin mínimo no(s) host(s) disponíveis e confirmar que ChatGPT/Codex invocam a skill de setup (testes separados por host). Nenhum host disponível → registrar pendência, sem simular instalação.
 
 **Gate B:** plugin mínimo instalado **e testado**, ainda sem afirmar que edita vídeos.
 
@@ -131,7 +133,7 @@
 - [ ] **G02** — Criar skill de thumbnail baseada na tese, em legibilidade/contraste, composição simples e variantes A/B.
 - [ ] **G03** — Criar revisor de thumbnail e validar arquivo final, dimensões, texto, identidade e link do Drive.
 - [ ] **G04** — Escolher **um** TSX antigo pequeno (p.ex. `TextoHQ.tsx`), copiar **como exemplo de referência**, documentando dependências e diferenças da API atual.
-- [ ] **G05** — Compilar e renderizar uma cena baseada no exemplo escolhido no Content Lab/Remotion atual; revisar quadros 16:9 e 9:16.
+- [ ] **G05** — Compilar e renderizar uma cena baseada no exemplo escolhido em projeto de teste **Remotion independente**, sem depender do Content Lab antigo; revisar quadros 16:9 e 9:16.
 - [ ] **G06** — Migrar seletivamente `BackgroundHQ.tsx` e `QuadroHQSobreCena.tsx`, cada um em tarefa/PR separado, após validação.
 - [ ] **G07** — Auditar `PersonagemEspiralLegenda.tsx` e `ComicPageCTA.tsx` (legendas/CTA) **sem tornar espiral e balões padrão obrigatório**.
 - [ ] **G08** — Consolidar `HQMotion.tsx`/`HQComicPage.tsx` e dependências em biblioteca única quando necessário; **não copiar as inúmeras cópias de 885 KB** indiscriminadamente.
@@ -140,7 +142,7 @@
 
 ### Fase H — Produção audiovisual por microcena
 
-- [ ] **H01** — Auditar `ContentLab/main`, suas dependências e formatos reais `edit_plan.json`/`scene-library`/`custom-scenes`.
+- [ ] **H01** — Definir **contrato independente de composição Remotion** para o plugin (props TSX, assets, timeline e outputs) sem exigir integração com o Content Lab antigo; refatoração do Content Lab pertence à etapa pós-plugin.
 - [ ] **H02** — Criar skill de decupagem audiovisual: blocos curtos, quadro-alvo, narração, mídia, SFX, música e objetivo de cada cena.
 - [ ] **H03** — Criar componentes/testes de câmera em imagens estáticas: zoom/pan/reframe/blur, evitando imagem parada e vazios involuntários.
 - [ ] **H04** — Criar componente/teste de parallax em camadas, com fundo e PNG recortado; verificar escala/safe area.
@@ -148,7 +150,7 @@
 - [ ] **H06** — Criar tratamento de painéis de filme/TV com CRT perceptível, áudio de trecho quando autorizado e moldura contextual; respeitar uso de conteúdo de terceiros.
 - [ ] **H07** — Criar seleção contextual de música/SFX a partir da biblioteca aprovada; volume/ducking/sincronização verificados.
 - [ ] **H08** — Implementar render **por trecho** e preview automatizado antes do render final.
-- [ ] **H09** — Integrar geração/edição técnica ao Content Lab local/Work/Codex; avaliar MCP **se for necessário**, com autenticação, escopo e teste de ponta a ponta.
+- [ ] **H09** — Validar saída TSX/Remotion em **runtime independente** (Work/Codex quando disponível), definindo interface de integração futura; **não refatorar nem acoplar ao Content Lab antigo antes de fechar a V1.0**.
 
 **Gate H:** cena/trecho renderizado, com saída verificável; não afirmar que ChatGPT comum renderiza sozinho.
 
@@ -188,10 +190,10 @@
 ### Fase L — Integração, validação e entrega
 
 - [ ] **L01** — Teste completo **ChatGPT comum**: conectores/skills → ideia → produção → Doc formatado → links de thumbnail, com relatório de limites.
-- [ ] **L02** — Teste completo **Work/Codex + Content Lab**: roteiro → decupagem → TSX → render 16:9 → QA.
+- [ ] **L02** — Teste de execução **Work/Codex + Remotion independente, quando disponível**: roteiro → decupagem → TSX → render 16:9 → QA; sem Content Lab antigo.
 - [ ] **L03** — Teste completo **Short** 9:16 com legendas/CTA e QA independente.
 - [ ] **L04** — Teste de retomada: interromper e reabrir em nova sessão; recuperar a próxima microtarefa sem recomeçar nem duplicar.
-- [ ] **L05** — Teste de host sem Drive / sem Content Lab / sem EarShot: degradação transparente e somente funcionalidades possíveis.
+- [ ] **L05** — Teste de host sem Drive / sem runtime de render / sem EarShot: degradação transparente e somente funcionalidades possíveis.
 - [ ] **L06** — Testar versão final do pacote com Plugin Creator/Codex, incluindo manifesto, skills e Nox; verificar que assets não faltam.
 - [ ] **L07** — Consolidar README de instalação, recursos, limites e requisitos/autorizações; só então marcar V1.0 apta a uso.
 
@@ -199,19 +201,19 @@
 
 ## 3. Ordem recomendada de entregas demonstráveis
 
-**Marco 1 — Plugin mínimo:** A → B → C. Resultado: instalável, roteador, contexto eficiente e uma tarefa por vez.
+**Marco 1 — Plugin mínimo:** **A01 validada → B → C**, com A02/A05/A06/A07 executadas conforme surgirem dependências. Resultado: pacote instalável, roteador, contexto eficiente e uma tarefa por vez. Não aguardar auditoria das 44 skills antigas.
 
 **Marco 2 — Produto editorial:** D → E → F → G01–G03. Resultado: Nox embutido, Google Drive/Sheets e roteiro/thumb com revisores, mesmo sem render autônomo.
 
-**Marco 3 — Motion:** G04–G08 → H → J (QA parcial). Resultado: TSX selecionado e testado contra Remotion/Content Lab.
+**Marco 3 — Motion:** G04–G08 → H → J (QA parcial). Resultado: TSX selecionado e testado **contra Remotion independente**, sem requisito de Content Lab.
 
 **Marco 4 — Shorts e finalização:** I → J completo → K → L. Resultado: edição vertical/horizontal, legenda, áudio, QA e publicação assistida quando possível.
 
-**Primeira microtarefa a executar depois de aprovar este plano:** **A01 — catalogar as 44 skills do plugin antigo**; saída em tabela de inventário, sem importar código. **Segunda:** A02 (triagem). **Importação real de Nox.png:** D01, logo após ter o esqueleto validado, sem esperar pela implementação do editor.
+**Microtarefa A01 concluída:** seleção técnica oficial do criador de plugins/skills, com validação documental. **Próxima microtarefa de implementação: B01 — manifesto raiz portátil `plugin.json`**. Depois: B02 (skill de setup curta), B03 (core). **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
 
 ## 4. Fontes externas — status de uso
 
-As fontes técnicas de Remotion, Agent Skills, Context Engineering, Superpowers e OpenAI Plugins foram verificadas publicamente em 2026-11-10, mas **suas skills não foram instaladas ou testadas no novo plugin nesta etapa**. Verificação de compatibilidade e licença acontece por tarefa. Não presumir que dependências de modelos/Work/Codex/Plugin Creator/Iris/EarShot estejam presentes.
+O **Plugin Creator oficial** foi encontrado **instalado e lido no ambiente**, e suas regras de pacote portátil foram comparadas com as páginas oficiais OpenAI Plugins e Agent Skills em 2026-11-10. Isso valida a **escolha da metodologia**, não um pacote instalado/testado. **Skill Creator** está documentado como mecanismo oficial em ChatGPT/Codex, mas sua disponibilidade deve ser conferida em cada host. Superpowers/Context Engineering/Remotion serão aplicados seletivamente. Não presumir instalação de Iris/EarShot ou runtime de render.
 
 ### Critério de sucesso central
 
