@@ -120,7 +120,7 @@
 
 - [x] **F01 — CONCLUÍDA E REVISADA (2026-11-10):** criada `skills/diazverso-pesquisa/SKILL.md` com pesquisa baseada em fontes, distinção fato/interpretação/pendência, contraponto, briefing, gate editorial e inserção condicional na aba Ideias. **9/9 verificações documentais aprovadas**, leitura de retorno confirmada. Pesquisa em fontes reais será testada ao executar uma pauta.
 - [x] **F02 — CONCLUÍDA E REVISADA (2026-11-10):** criada `skills/diazverso-titulos/SKILL.md` com título A/B substancialmente diferente, conceitos de thumbnail correspondentes, promessa de gancho, avaliação factual e vidIQ opcional. **9/9 verificações documentais aprovadas** com leitura de retorno; testes com público/CTR reais não alegados.
-- [ ] **F03** — Criar skill de revisão de título + expectativa da thumbnail e promessa dos primeiros segundos.
+- [x] **F03 — CONCLUÍDA E REVISADA (2026-11-10):** `skills/diazverso-revisao-embalagem/SKILL.md` criada, compara título A/B, conceito de thumbnail e gancho contra a tese e evidências, com gate APROVAR/REVISAR/REPROVAR. **9/9 checagens documentais aprovadas**, relida no GitHub. Ainda não é medição real de CTR/retenção.
 - [ ] **F04** — Criar template **Google Docs nativo formatado** de roteiro longo e validar hierarquia visual/estilos.
 - [ ] **F05** — Criar template **Google Docs nativo formatado** de Short, com blocos específicos e legendas.
 - [ ] **F06** — Criar skill `diazverso-roteiro` que gera um Doc pelo template **na pasta certa** e sincroniza o link na planilha.
