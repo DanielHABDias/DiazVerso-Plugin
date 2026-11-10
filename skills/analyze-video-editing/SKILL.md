@@ -55,10 +55,10 @@ When sound design, music continuity, or effects matter, pair semantic listening 
 python3 "$SKILL_DIR/scripts/audio_listener.py" \
   source.mp4 \
   --work-dir analysis/audio-movement \
-  --start 60 --end 172 --mode movement
+  --start 60 --end 172 --mode movement --prepare-only
 ```
 
-This optional command extracts direct audio, renders a spectrogram, measures half-second loudness windows, and—unless `--prepare-only` is supplied—asks Gemini for an editorial sound breakdown. It reads `GEMINI_API_KEY` from the environment and never accepts credentials as command-line arguments. Use `--mode transition` for a focused high-sensitivity pass around a cut, dropout, black interval, or suspected fade.
+**Diazverso security override (modified MIT upstream):** the default is local preparation only. This command extracts audio, spectrogram and loudness evidence without uploading media. Sending audio to the external Gemini API is **blocked** unless the user explicitly approves that specific upload and the command is invoked with `--allow-external-upload` plus an authorized `GEMINI_API_KEY`. Never send unpublished or confidential material to a third-party model on the basis of a generic request to edit a video. For focused transitions, use `--mode transition` with the same consent rule.
 
 Read [references/audio-and-timing.md](references/audio-and-timing.md) before accepting a model's classification of quiet material.
 
