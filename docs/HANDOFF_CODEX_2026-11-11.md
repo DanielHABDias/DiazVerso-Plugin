@@ -148,6 +148,7 @@ Não basta `SKILL.md` existir ou CI estar verde. Precisamos de:
 - `docs/ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md`.
 - `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md`.
 - `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`.
+- `docs/CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md` — migrar seleção final, integração Iris e alternativas autorais para skills/references.
 - `docs/TERCEIROS_E_LICENCAS.md` **só quando** os avisos de copyright/licença e vínculos necessários estiverem preservados no pacote final, p.ex. um `THIRD_PARTY_NOTICES.md` pequeno, além dos `LICENSE` em cada skill.
 
 **Também fazer triagem da infraestrutura de desenvolvimento**: `scripts/b06_package_smoke.py`, `scripts/build_diazverso_plugin.py`, `.github/workflows/`, testes de unidade dos scripts, exemplos de teste, códigos e documentos não consumidos pelo plugin. Só manter o que é necessário à **operação, instalação, manutenção autorizada ou obrigação de licença**; evitar deixar dentro do ZIP artefatos de QA/development sem necessidade. O script funcional `skills/diazverso-roteiro/scripts/build_requests.py` é parte potencial do plugin e **não deve ser apagado por estar em pasta `scripts`**.
@@ -166,6 +167,6 @@ Não basta `SKILL.md` existir ou CI estar verde. Precisamos de:
 ## 9. Registro final da passagem
 
 - Auditoria: 10/11/2026, antes de a implementação ser retomada no Codex.
-- **25 concluídas e 62 pendentes**, com F06/B06 parciais entre as pendentes.
+- **25 concluídas e 62 pendentes**; **F06 continua parcial** e **B06 está concluída como validação de ZIP (não instalação)**.
 - Código de geração de requests validado com 7 testes; **integração Google Docs/Sheets ainda não comprovada; instalação não é tarefa de desenvolvimento**.
 - Ao continuar, **não pedir ao criador para dizer “próximo” entre tarefas; revisar cada uma e registrar resultados no roadmap**.
