@@ -12,6 +12,8 @@ Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organizaç
 
 - **[B04] concluída e revisada:** auditoria conjunta de `plugin.json`, `diazverso-setup` e `diazverso-core` contra a documentação instalada do Plugin Creator e o padrão Agent Skills. Primeira rodada: **18/18** checks; segunda revisão independente: **17/17** após eliminar dois falsos positivos de nomes de documentação confundidos com IDs. Sem conflitos de responsabilidade, URLs de Docs referenciadas existentes, sem IDs específicos de conta incorporados às skills. **Nenhum código precisou ser corrigido.** Restam teste de pacote/instalação e invocação (B05/B06), e importação física do Nox (D01). **Próxima: B05.**
 
+- **[B05] concluída e revisada (2026-11-10):** root `plugin.json` é a fonte portátil para **ChatGPT e Codex**, sem overlay `.codex-plugin/plugin.json` redundante. `extensions.com.openai.onboardingSkill` aponta para `./skills/diazverso-setup/SKILL.md` e o caminho foi conferido no GitHub. Revisão independente: **12/12** critérios aprovados. Documento técnico: [EMPACOTAMENTO_PORTATIL_DIAZVERSO_V1.md](EMPACOTAMENTO_PORTATIL_DIAZVERSO_V1.md). **Ainda não foi criado ou instalado um ZIP; teste real de descoberta/invocação é B06.**
+
 ## Decisões confirmadas pelo criador
 - Reiniciar a arquitetura do plugin Diazverso na versão 1.0, construída do zero. Versões 1.4, 1.5 e 1.6 são histórico, não regras herdadas automaticamente.
 - O criador ainda detalhará o posicionamento atual, a voz, o estilo e o processo de produção; NÃO congelar essas definições antecipadamente.
