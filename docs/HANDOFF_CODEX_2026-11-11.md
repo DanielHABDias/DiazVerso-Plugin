@@ -1,5 +1,7 @@
 # Diazverso 1.0 — Passagem oficial para o Codex (11/11/2026)
 
+> **DECISÃO MAIS RECENTE DO CRIADOR — PREVALECE SOBRE TODO TEXTO HISTÓRICO:** **NÃO instalar o plugin no ChatGPT nem no Codex durante o desenvolvimento.** Construir e testar tudo no GitHub/ambiente de desenvolvimento; finalizar a V1.0, migrar regras úteis e apagar documentação temporária, gerar e validar o ZIP final; **só então o criador instala manualmente**. **B06 [x]** cobre build e CI de ZIP, não instalação. **F06 [ ]** continua parcial. **Catálogo prioritário de especialistas:** [CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md](CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md); pesquisar Iris para visão/QA de vídeo e escolher melhores skills externas ou criar versões Diazverso originais se não houver autorização de redistribuição. GitHub público não é licença de cópia.
+
 > **DOCUMENTO TEMPORÁRIO DE EXECUÇÃO.** Começar por aqui e por `AGENTS.md`. Não é uma skill distribuível nem um documento para manter após a versão 1.0. Não apagar antes da liberação final. **A versão 1.0 ainda NÃO está pronta.**
 
 ## 1. Ordem de leitura e regra de continuidade
@@ -9,7 +11,7 @@
 3. Executar **uma microtarefa pequena** por vez. Criar/editar → testar → reler → revisar **independentemente** → corrigir falhas → **só marcar `[x]` no roadmap após critérios completos comprovados** → seguir à próxima elegível sem exigir que o criador diga “próximo”.
 4. Uma tarefa bloqueada por ferramenta/licença/host fica `[ ]` com evidência em `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`. Pode seguir outras independentes; **nunca simular instalação, escrita no Drive, render, publicação ou redução de tokens**.
 5. Preservar as decisões de 10/11/2026: **plugin antigo e Content Lab antigo são obsoletos**. A refatoração do Content Lab será feita **depois** do plugin novo; usar TSX antigos apenas como referências individuais após análise.
-6. **Não executar limpeza documental agora.** As regras temporárias só serão removidas **após V1.0 completamente implementada, instalada, validada, com dados e decisões necessários migrados**. Ver seção 8.
+6. **Não executar limpeza documental agora.** As regras temporárias serão removidas **após V1.0 implementada e validada pelos testes de desenvolvimento, antes de entregar o ZIP final para instalação manual pelo criador**, com decisões importantes migradas. Ver seção 8.
 
 ## 2. Visão do produto (a ideia central que não pode ser perdida)
 
@@ -41,11 +43,11 @@ Abas: **Produções, Ideias, Afiliados, Config** (oculta). IDs **VD_####** (long
 
 ## 3. Auditoria do que realmente estava concluído em 10/11/2026
 
-**Roadmap total: 87 microtarefas. [x]: 24. [ ]: 63.** Checados os arquivos e histórico de revisão; os `[x]` representam **escopo próprio concluído**, frequentemente documentação/skill, **não um fluxo de ponta a ponta operacional**.
+**Roadmap total: 87 microtarefas. [x]: 25. [ ]: 62.** Checados os arquivos e histórico de revisão; os `[x]` representam **escopo próprio concluído**, frequentemente documentação/skill, **não um fluxo de ponta a ponta operacional**.
 
 **IDs `[x]`:**
 - **A:** A01, A02, A04, A06, A07
-- **B:** B01, B02, B03, B04, B05
+- **B:** B01, B02, B03, B04, B05, B06
 - **C:** C01, C02, C03, C04, C05
 - **D:** D01, D02, D06
 - **E:** E01
@@ -65,14 +67,14 @@ Abas: **Produções, Ideias, Afiliados, Config** (oculta). IDs **VD_####** (long
 
 **Escopo parcial importantíssimo — `[ ] F06`:** a skill `skills/diazverso-roteiro/SKILL.md`, o gerador `skills/diazverso-roteiro/scripts/build_requests.py` e testes **já existem e passaram no CI**, mas **NÃO foi verificado** o ciclo: localizar um vídeo de teste → criar/mover Doc nativo na pasta correta → aplicar/reler estilos → atualizar somente a célula `ROTEIRO` da produção exata na planilha → reler → repetir sem duplicar. **Não marcar F06 `[x]` antes disso.**
 
-**Outro parcial — `[ ] B06`:** ZIP(s) válidos comprovados, mas **instalação, reconhecimento e invocação das skills em ChatGPT e Codex não comprovados**. Nunca confundir ZIP com plugin instalado.
+**B06 concluída — `[x] B06`:** o escopo correto é **construir e validar ZIP no GitHub Actions sem instalar**. O ZIP passou no CI; **a instalação manual será feita pelo criador somente depois da V1.0 pronta**. Não criar tarefa bloqueante de instalação nesta fase.
 
 ## 4. Como o Codex deve continuar, em ordem prática
 
 **Não repetir as 24 tarefas marcadas `[x]`; checar somente se mudanças novas quebraram algo.** Sugerimos esta sequência, respeitando pré-requisitos reais:
 
 1. **Checagem inicial:** executar `git status`, conferir `main`, rodar os três workflows/testes ou seus equivalentes. Ler últimas falhas em `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`. Se os testes falharem, corrigir primeiro. O pacote de 71 arquivos é uma **referência histórica**, não a contagem final após novas skills.
-2. **B06:** testar **instalação e reconhecimento** do pacote em Codex, se possível, e registrar evidência por host. Teste ChatGPT precisa de host ChatGPT habilitado; se indisponível, continuar `[ ]` e registrar bloqueio específico. Não duplicar manifesto portátil desnecessariamente.
+2. **B06 já concluída:** verificar se os testes de ZIP/CI continuam verdes após alterações; **NÃO instalar o plugin em nenhum host**. Codex constrói e testa offline; o criador instalará manualmente após a V1 entregue.
 3. **F06:** completar integração real com Drive/Sheets usando uma **produção de teste isolada**, com permissões e proteção contra duplicidade. Não alterar vídeos publicados como cobaias.
 4. **E02–E08:** provisionamento idempotente, validação de planilha, criação de ideia, promoção segura TF→VD/SH e upserts. **E06 precisa de teste de falha/repetição E07**; não excluir ideias antes de confirmar o novo vídeo.
 5. **F07–F10:** revisores de fatos, estrutura/ritmo, humanização e gate de aprovação antes da edição.
@@ -103,14 +105,14 @@ docs/                                # TEMPORARIAMENTE embutidos por builder atu
 
 | Referência | Problema real | Estado |
 | --- | --- | --- |
-| B06 | Instalação e invocação real não comprovadas nos hosts | **BLOQUEADO PARCIAL** |
+| B06 | ZIP mínimo/completo validado no CI; instalação reservada ao criador pós-V1 | **CONCLUÍDO NO ESCOPO DE BUILD [x]** |
 | F06 | Escrita idempotente no Docs e sincronização de link na linha Sheets | **PARCIAL** |
 | E02–E08 | Conectores/permissões, duplicação, promoção de ideias e rollback | **NÃO IMPLEMENTADO/TESTADO** |
 | A05/G01 | Poses Nox ainda sem revisão visual comparada | **PENDENTE** |
 | H/G/I/J | Remotion/TSX, render, movimento, SFX, captions e QA reais | **PENDENTE** |
 | Externas/Remotion | Licenças/redistribuição e envio opcional de áudio a serviços externos | **RESTRIÇÕES ATIVAS** |
 | Histórico | Bug `.gitkeep` no build completo foi **corrigido** e CI verde | **RESOLVIDO** |
-| Limpeza | Arquivos temporários continuam necessários para completar e revisar a release | **ADIA-SE ATÉ O FINAL** |
+| Limpeza | Arquivos temporários necessários durante o desenvolvimento; limpar **antes de entregar o ZIP final**, depois dos testes de desenvolvimento | **ADIADA PARA O FECHAMENTO DA V1** |
 
 Relatório operacional contínuo em `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`. Diferenciar **falha**, **falta de ferramenta** e **não testado**.
 
@@ -118,13 +120,13 @@ Relatório operacional contínuo em `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`. Di
 
 Não basta `SKILL.md` existir ou CI estar verde. Precisamos de:
 
-- [ ] Manifesto/skills descobertos e instalados nos hosts relevantes; setup e roteamento funcionando.
+- [ ] Manifesto, skills e assets validados no pacote e **testados em ambiente de desenvolvimento com casos reproduzíveis**, sem instalar no ChatGPT/Codex.
 - [ ] Drive provisionado/reparado idempotentemente; Google Docs nativos e Sheets integrados, sem duplicatas/perdas.
 - [ ] Fontes, revisão de roteiro, thumbnails e Nox testados; mídia só com direitos verificados.
 - [ ] Remotion independente com render **longo e Short**, voz/áudio/legendas e QA de quadros/áudio reais.
 - [ ] Publicação preparada e, quando autorizada, confirmação real de status/link (sem publicação fictícia).
 - [ ] Testes de falha/repetição, retomada de sessão, segurança, licenças e degradação sem conectores.
-- [ ] Arquivo do release validado, documentação de **instalação e limitações reais** em README curto, referência de versão/tag no GitHub.
+- [ ] ZIP de release e CI validados, documentação curta de **instalação manual futura pelo criador** e limitações reais, versão/tag no GitHub.
 - [ ] **Somente depois:** limpeza da documentação temporária sem quebrar o pacote.
 
 ## 8. LIMPEZA OBRIGATÓRIA APÓS V1.0 VALIDADA — não executar antes
@@ -156,14 +158,14 @@ Não basta `SKILL.md` existir ou CI estar verde. Precisamos de:
 2. Ajustar `scripts/build_diazverso_plugin.py` para **não embutir rascunhos/roadmap/docs de projeto** em `DOCS`; validar distribuição mínima e licenças. Reavaliar se manter build/CI no repositório é útil ao plugin (no ZIP final, normalmente não).
 3. Garantir que **qualquer documentação temporária no Google Drive** não pertença à pasta de produção; tratar exclusão de Docs do Drive somente com autorização específica. **Não excluir roteiros, thumbnails, planilha operacional, Nox ou bibliotecas do canal.**
 4. Tirar snapshot/tag do release, registrar resultados e SHA do ZIP, então **excluir do branch de produção** os arquivos transitórios listados, preservando o histórico Git. Remover somente após confirmar que o plugin final já consegue operar **sem depender desses arquivos**.
-5. Rodar testes/CI e instalação **depois da limpeza**; só assim considerar o repositório enxuto. Revisar `README.md`, `plugin.json` e `LICENSE`/attribution.
+5. Rodar testes e CI **depois da limpeza**, verificar que o ZIP é autossuficiente **sem instalar em ChatGPT/Codex**. Revisar `README.md`, `plugin.json`, licenças e atribuições. O criador instalará depois que receber o pacote validado.
 6. Se qualquer referência/teste falhar, **não apagar a origem pendente** até migrar/corrigir e rever. Não remover histórico do Git.
 
-**Não executar nenhum dos passos destrutivos desta seção agora.**
+**Não executar nenhum dos passos destrutivos desta seção agora.** A limpeza será feita **antes** de o criador instalar o plugin: após finalizar os recursos/testes, migrar as regras úteis e garantir que o ZIP final não contém rascunhos.
 
 ## 9. Registro final da passagem
 
 - Auditoria: 10/11/2026, antes de a implementação ser retomada no Codex.
-- **24 concluídas e 63 pendentes**, com F06/B06 parciais entre as pendentes.
-- Código de geração de requests validado com 7 testes; **integração Google Docs/Sheets e plugin instalado ainda não comprovados**.
+- **25 concluídas e 62 pendentes**, com F06/B06 parciais entre as pendentes.
+- Código de geração de requests validado com 7 testes; **integração Google Docs/Sheets ainda não comprovada; instalação não é tarefa de desenvolvimento**.
 - Ao continuar, **não pedir ao criador para dizer “próximo” entre tarefas; revisar cada uma e registrar resultados no roadmap**.
