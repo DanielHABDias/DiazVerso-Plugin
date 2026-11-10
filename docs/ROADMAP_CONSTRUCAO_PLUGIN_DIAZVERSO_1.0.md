@@ -118,7 +118,7 @@
 
 ### Fase F — Pesquisa, títulos, roteiros e revisões editoriais
 
-- [ ] **F01** — Criar skill de pesquisa/ideação com evidências, tese e diferenciação (Marvel/DC/Ben 10/cultura pop etc.).
+- [x] **F01 — CONCLUÍDA E REVISADA (2026-11-10):** criada `skills/diazverso-pesquisa/SKILL.md` com pesquisa baseada em fontes, distinção fato/interpretação/pendência, contraponto, briefing, gate editorial e inserção condicional na aba Ideias. **9/9 verificações documentais aprovadas**, leitura de retorno confirmada. Pesquisa em fontes reais será testada ao executar uma pauta.
 - [ ] **F02** — Criar skill de títulos e packaging A/B, com hipóteses e critérios explícitos de escolha.
 - [ ] **F03** — Criar skill de revisão de título + expectativa da thumbnail e promessa dos primeiros segundos.
 - [ ] **F04** — Criar template **Google Docs nativo formatado** de roteiro longo e validar hierarquia visual/estilos.
