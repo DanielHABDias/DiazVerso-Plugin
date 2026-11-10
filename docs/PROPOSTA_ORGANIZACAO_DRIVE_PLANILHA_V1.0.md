@@ -1,10 +1,10 @@
 # Diazverso 1.0 — Auditoria do Drive e da planilha + proposta de organização
 
-> **ESTADO: PROPOSTA PARA DISCUSSÃO (NÃO APROVADA, NÃO IMPLEMENTADA)**
+> **ESTADO: ESTRUTURA V1.0 CRIADA E MIGRADA PARA VISUALIZAÇÃO (2026-11-10); DESIGN AINDA SUJEITO A AJUSTES**
 >
 > Auditoria realizada em **2026-11-10**, com leitura da conta Google Drive conectada, da planilha nativa **Canal do YT**, da árvore de pastas e de roteiros representativos. O usuário pediu avaliar/refatorar essa organização e depois convertê-la em procedimentos operacionais do plugin.
 >
-> **Nenhuma pasta, planilha ou documento do Google Drive foi criado, movido, excluído ou alterado durante a auditoria.** Este documento preserva fatos lidos e sugestões em níveis separados. O conteúdo da planilha e os arquivos originais devem ser preservados com backup/cópia antes de qualquer migração. Não incluir credenciais, emails privados nem informações de compartilhamento identificáveis em specs distribuídas.
+> **Nota histórica:** durante a auditoria inicial nenhum item foi alterado. **Posteriormente, mediante autorização explícita do criador, a estrutura proposta foi criada, uma cópia de planilha foi preenchida e arquivos foram realocados**. Veja a seção final de implementação. Nenhum documento ou thumbnail foi excluído. Este documento preserva fatos lidos e sugestões em níveis separados. O conteúdo da planilha e os arquivos originais devem ser preservados com backup/cópia antes de qualquer migração. Não incluir credenciais, emails privados nem informações de compartilhamento identificáveis em specs distribuídas.
 
 ## 1. Fontes auditadas (estado real no Drive)
 
@@ -170,3 +170,42 @@ Este é um **rascunho arquitetural de operação**, não a versão aprovada. Qua
 - Testes que simulam Drive sem estrutura, Drive com estrutura parcial, cópia compartilhada, duplicatas, permissões insuficientes, importação e migração.
 
 **Proposta sujeita a ajuste:** continuar a discussão antes de tocar no acervo antigo ou congelar schema.
+
+## 10. Execução real no Drive — 2026-11-10
+
+**Estado: IMPLEMENTADO PARA AVALIAÇÃO VISUAL; esquema e templates ainda podem mudar.** Após aprovação do diagnóstico, o criador solicitou explicitamente a organização efetiva no Google Drive e a modificação prática da planilha.
+
+### Links verificados desta instância
+
+- [Raiz Diazverso](https://drive.google.com/drive/folders/1SbOI-GtWAaWzxFh1ysG5DOjf0DZ8XSYh)
+- [Canal do YT — V1.0 (Diazverso)](https://docs.google.com/spreadsheets/d/12_bYL2N9mwRj4lel_fNVOOPBruth-Ca2FsAjrgU1VQk/edit)
+- [Roteiros — Longos](https://drive.google.com/drive/folders/1Q0C9buTyO7QLS1P7L3ZwAApLj8Iz0HDs)
+- [Roteiros — Shorts](https://drive.google.com/drive/folders/1s1MHzcO32rC3G577-QmiI08PLAg-at5C)
+- [Thumbnails — Longos](https://drive.google.com/drive/folders/1sRrsRT_qERy92p1VkTtCh1DwQ9ZLZBZi)
+- [Thumbnails — Shorts](https://drive.google.com/drive/folders/10ur3-daj2mWqUsgWTpblmb_XnYOFKOco)
+- [Planilha histórica preservada](https://docs.google.com/spreadsheets/d/1s_7ybuYet0La5_cem01p_UwTNzN2uIq5vfLAgWEF_s8/edit)
+
+**Os IDs acima são exclusivos da instalação/conta auditada; NÃO devem ser usados como valores universais no plugin distribuído.** O plugin futuro deve localizar/registrar IDs próprios na instalação.
+
+### Mudanças confirmadas via Google Drive / Sheets
+
+- Pasta `Diazverso` criada, com `Roteiros/{Longos,Shorts}`, `Thumbnails/{Longos,Shorts}` e planilha V1.0 na raiz.
+- Planilha original nativa **copiada**, não sobrescrita; cópia distinta preenchida com **33 produções reais (8 longos + 25 Shorts)**, **15 ideias** e **8 links de afiliados** extraídos de descrições históricas. Não foram importadas as 45 linhas-placeholder.
+- Abas ativas/visíveis: **Produções, Ideias, Afiliados**; **Config** oculta com IDs e versão de esquema; 5 abas originais renomeadas para `LEGADO — ...` e ocultadas **apenas na cópia** para preservar textos grandes de descrição, tags e material de procedimentos/referências. Planilha original compartilhada permanece intacta.
+- Planilha formatada com cabeçalhos legíveis, congelamento de cabeçalho e colunas de identidade, filtros, larguras, linhas compactas, faixas sutis, listas suspensas de formato/status/prioridade/revisão e cores de status. Afiliados com nomes sintéticos concisos revisados a partir do contexto das descrições, sem atestar validade dos links (todos com status **A CONFERIR**).
+- **35 arquivos de roteiro movimentados (10 em Longos; 25 em Shorts)**, mantendo Drive IDs e links originais. Alguns roteiros históricos são Markdown, TXT ou DOCX, preservados em formato original; **não foram convertidos automaticamente para Docs**, nem reformatados/revisados.
+- **30 thumbnails movimentadas (16 de Longos; 14 de Shorts)**, mantendo Drive IDs. Arquivos auxiliares de recorte de personagens e fundos permaneceram no acervo antigo; estes não são as thumbnails finais.
+- **Verificação de links:** todos os **8/8** links de roteiro dos longos e **25/25** links de roteiro dos Shorts existentes na planilha histórica apontam para documentos agora presentes nas respectivas pastas novas.
+- Os diretórios antigos por ID de vídeo permaneceram (em geral vazios após os movimentos), **sem exclusão**. `Roteiros/Exemplos`, fundos, assets e demais materiais legados não foram apagados nem movidos para a nova raiz.
+- Toda a alteração aconteceu com autorização de organizar; **não houve publicação no YouTube, criação de roteiros novos ou mudança dos conteúdos narrativos**.
+
+### Limites e próximos ajustes — ainda não implementados
+
+1. **Template formal de Google Doc**: proposta editorial já existe; ainda falta criar o template aprovado e implementar cópia + formatação automática para novos roteiros. Roteiros históricos não foram reformatados.
+2. **Plugin operacional real**: a nova planilha tem `Config` da instância atual e os campos, mas a skill de provisionamento idempotente para outras contas ainda precisa ser implementada/testada.
+3. **Auditoria dos links de afiliados**: URLs de 8 produtos/serviços migrados como dados históricos, não conferidos comercialmente; revisar duplicidades, produtos e links antes de inserção automática em descrições.
+4. **Status de produção**: 33 registros antigos marcados `PUBLICADO` quando `FINALIZADO=true` e link do YouTube presente; campos QA e datas de publicação não inferidos.
+5. **Legado**: decidir depois de avaliar a planilha se a nova estrutura será canônica e se as pastas antigas vazias podem ser arquivadas, sem excluir material de terceiros ou conteúdo ainda referenciado.
+6. **Visual QA**: valores, contagens, formatação e ligações conferidos pelo conector Google Sheets/Drive; não foi feita revisão via captura de tela do navegador na conta do usuário.
+
+**Governança:** o usuário ainda vai analisar visualmente a planilha e pastas. Não tratar este esquema como irrevogavelmente aprovado para distribuição no plugin. Ao consolidar skills, diferenciar configuração por conta de regras universais.
