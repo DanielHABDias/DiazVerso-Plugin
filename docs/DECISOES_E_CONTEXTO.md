@@ -30,6 +30,13 @@ Atualizado em: 2026-11-10. Estado: planejamento, NÃO implementado.
 - **Não converter em regra final por antecipação.** Consultar apenas quando a tarefa envolver o briefing ou o projeto editorial/audiovisual V1.0; na conclusão, extrair decisões aprovadas e retirar o rascunho do fluxo ativo.
 - Limitação relevante: a auditoria quadro a quadro dos três MP4s não foi concluída; material de referência apoiado nas transcrições e thumbnails já inspecionadas.
 
+## Auditoria e proposta de organização Drive/Sheets V1.0 (provisória)
+
+- **Em 2026-11-10 foi auditado o Google Drive conectado** e a planilha nativa `Canal do YT`; foi salvo o estudo [PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md](PROPOSTA_ORGANIZACAO_DRIVE_PLANILHA_V1.0.md).
+- O estudo contém fatos verificados, abas atuais, inventário resumido de roteiros/thumbnails, nova estrutura proposta, modelo de planilha e templates, provisionamento idempotente e plano de migração sem perda.
+- **Status: PROPOSTA PARA DISCUSSÃO; ainda não aprovada nem implementada.** Nenhuma alteração no Google Drive ou na planilha foi efetuada nesta auditoria. Não aplicar migração, arquivar ou apagar conteúdo sem aprovação.
+- Cuidado importante: a planilha atual é compartilhada; recomenda-se construir cópia nova V1.0 após revisão, preservando original e links. Evitar assumir acesso de proprietário global ou registrar emails/segredos no plugin.
+
 ## Política de memória
 - Separar SEMPRE **decisão confirmada**, **hipótese de trabalho** e **dado medido** (com período/fonte).
 - Atualizar este registro apenas quando houver nova evidência ou decisão explícita, anotando data e sem apagar histórico relevante.
