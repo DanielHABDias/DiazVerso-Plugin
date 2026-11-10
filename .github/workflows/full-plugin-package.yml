@@ -1,0 +1,35 @@
+name: Diazverso - Full plugin package validation
+
+on:
+  push:
+    paths:
+      - "plugin.json"
+      - "skills/**"
+      - "assets/**"
+      - "schemas/**"
+      - "docs/**"
+      - "scripts/build_diazverso_plugin.py"
+      - ".github/workflows/full-plugin-package.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate complete plugin and build ZIP
+        run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
+      - name: Publish private test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: diazverso-plugin-full-test
+          path: ${{ runner.temp }}/diazverso-plugin-full.zip
+          if-no-files-found: error
+          retention-days: 7
