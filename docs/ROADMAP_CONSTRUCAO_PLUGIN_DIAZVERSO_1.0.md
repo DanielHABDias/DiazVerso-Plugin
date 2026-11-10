@@ -105,7 +105,7 @@
 
 ### Fase E — Google Drive e planilha sem intervenção repetitiva
 
-- [ ] **E01** — Criar skill `diazverso-drive-setup` para localizar conta, raiz, quatro pastas de roteiros/thumbs, cinco bibliotecas opcionais e planilha.
+- [x] **E01 — CONCLUÍDA E REVISADA (2026-11-10):** `skills/diazverso-drive-setup/SKILL.md` criada, com descoberta de Drive por conta, quatro subpastas essenciais, bibliotecas opcionais, validação de Produções/Ideias/Afiliados/Config, autorização prévia, verificação de IDs, leitura de volta e reporte honesto. **9/9 critérios de revisão documental aprovados** e arquivo relido no GitHub. Operações idempotentes reais E02/E03 ainda não implementadas/testadas.
 - [ ] **E02** — Criar detecção idempotente de `Diazverso` e subpastas (não duplicar quando já existem).
 - [ ] **E03** — Implementar reparo/criação autorizada de estruturas **faltantes**, mantendo IDs específicos da conta, sem hardcode universal.
 - [ ] **E04** — Criar validador das abas e colunas `Produções`, `Ideias`, `Afiliados`, `Config`; reparar formatação/validações sem destruir conteúdo.
