@@ -358,3 +358,125 @@ A narrativa apresenta exemplos em função da tese, em vez de apenas empilhar cu
 **Tensão a resolver:** plugin instalável e autossuficiente para regras/assets estáveis, mas com conexões externas necessárias para ler/escrever dados de produção e pesquisar assets novos. Uma skill orienta o fluxo; **não concede permissões nem garante operações ausentes no ambiente**.
 
 **Continuação do briefing:** o usuário segue descrevendo as necessidades; não converter esta seção automaticamente em regras finais.
+
+
+## 16. Extração RunnyIA + FALL para edição Remotion/TSX — propostas concretas
+
+> **Adicionado em 2026-11-10 a pedido do criador. STATUS: REGISTRO TEMPORÁRIO / PROPOSTAS A VALIDAR.**
+>
+> Objetivo: preservar as conclusões da comparação detalhada das referências e convertê-las em hipóteses de composição Remotion/TSX para desenvolvimento posterior, **sem apresentar propostas do assistente como técnicas visuais comprovadamente vistas nos vídeos**.
+>
+> **Limitação de evidência permanece:** transcrições completas com timestamps e thumbnails consultadas; inspeção visual quadro a quadro dos MP4s não foi concluída devido a falha de processamento; vidIQ não pôde executar análise de cenas por saldo insuficiente. O próprio criador apontou dinamismo visual do RunnyIA e humor/memes do FALL. Portanto: **falar em funções narrativas observadas, não em efeitos de vídeo comprovados**.
+
+### 16.1 RunnyIA: extração de estrutura e aplicação proposta em microcenas
+
+**Referência:** https://www.youtube.com/watch?v=qfuCXMMeddc — *Ninguém Assistia os Meus Vídeos, Até que fiz Isso...* (~6min35s).
+
+**[ANÁLISE DE TRANSCRIÇÃO]**
+- **0:00–0:16:** estabelece frustração com a falta de views, identificando um problema do público.
+- **0:16–0:31:** contraste narrado entre antes/depois e promessa dos erros descobertos.
+- **0:31–0:48:** formula promessa de cinco pontos; orienta percurso do vídeo.
+- **0:48–1:12:** contextualização da trajetória pessoal.
+- **1:12–2:24:** verificação; **2:24–3:23:** consistência; **3:23–4:50:** valor de conteúdo; **4:50–6:04:** escolha de ideias; **6:04–6:35:** atração/CTA.
+- A lógica aproveitável é **problema → promessa → estrutura reconhecível → evidências e exemplos → fechamento/encaminhamento**. Isso não valida automaticamente os conselhos sobre o algoritmo do YouTube, alguns simplificados.
+
+**[CRIADOR — VISÃO EM CONSTRUÇÃO]** Usar o RunnyIA como principal referência para **fluidez, variedade visual, transições, dinamismo e encaixe do motion com o roteiro**. O Diazverso terá estética HQ/Nox própria, não réplica do canal.
+
+**[HIPÓTESES VISUAIS / DIREÇÃO DE CENA — NÃO OBSERVADAS DIRETAMENTE]**
+| Passagem narrada | Exemplo de representação TSX que poderíamos desenvolver |
+| --- | --- |
+| Frustração inicial | Calendário animado; elementos de trabalho se acumulando; contador pequeno de views |
+| Antes/depois | Composição dividida; cartões comparativos; gráfico crescente; câmera aproximando resultado |
+| Promessa de cinco erros | Cinco cartões entrando em sequência; palavras-chave em tipografia cinética |
+| Experiência pessoal | Timeline visual com marcos, imagens e transições entre anos |
+| Verificação | Elementos de UI demonstrativos e cartões explicativos |
+| Consistência | Temas diferentes se reordenando em agrupamentos coerentes |
+| Valor do conteúdo | Dois métodos de criação comparados em uma mesma composição |
+| Escolha de ideias | Busca visual, destaques e painéis com ideias |
+| Encerramento | Composição que encaminha para próximo vídeo/CTA |
+
+**Proposta central:** dividir a montagem em **microcenas** (pequenos trechos com função visual explícita), ligadas à fala e montadas em sequência. Em cada microcena:
+1. Um conceito/elemento entra em destaque.
+2. A câmera virtual reenquadra, desloca ou amplia para revelar relação com outro elemento.
+3. Fundo e primeiro plano podem mover-se em velocidades diferentes (*parallax*).
+4. Uma palavra, dado, painel ou personagem revela a conclusão.
+5. Saída pode ser corte seco ou transição curta, com SFX quando contribuir.
+
+**Mini storyboard conceitual a 30 fps (180 frames, ~6s):** 0–2s: ícone de IA entra; 2–4s: conexão visual IA → ideia; 4–6s: palavra de destaque em Anton (“EVOLUIR”). Exemplo aplicado a uma hipotética pauta Homem de Ferro + IA. **Isto é uma demonstração original de como construir cena TSX, não uma cena do RunnyIA.**
+
+**Princípio proposto:** a animação ilustra o **desenvolvimento do raciocínio**, não faz uma imagem trocar simplesmente a cada dois segundos.
+
+### 16.2 FALL: extração de humor e tradução para direção de corte
+
+**Referência:** https://www.youtube.com/watch?v=Km8uHqIjNzA — *Isso tá saindo do controle...* (~10min02s).
+
+**[ANÁLISE DE TRANSCRIÇÃO]**
+- Conversa informal e reações durante gameplay com amigos; o humor nasce principalmente da situação.
+- ~1:21: surpresa e reação ao absurdo.
+- ~1:53: contraste cômico entre cobrar seriedade e a natureza ridícula do jogo.
+- ~3:12–5:57: suspeitas, acusações e interações imprevisíveis desenvolvem comédia de situação.
+- ~9:12–9:45: escalada absurda e desfecho espontâneo.
+- Mecanismos observáveis na fala: **contraste/ironia, autodepreciação, escalada e reação imediata**.
+
+**[CRIADOR — VISÃO EM CONSTRUÇÃO]** Trazer para Diazverso espontaneidade, naturalidade, ironia, opiniões, reclamações e memes contextuais; o criador considera o FALL capaz de manter a atenção mesmo em assunto sem interesse inicial.
+
+**[HIPÓTESE DE EDIÇÃO CÔMICA — NÃO OBSERVADA DIRETAMENTE NO VÍDEO]**
+- Mostrar momento absurdo da obra → pausa/corte seco → frase curta irônica em Anton → reação visual do Nox ou retorno imediato à cena.
+- Usar ferramentas possíveis: aproximação súbita em personagem (**punch zoom**); congelamento intencional (**comedic freeze**); corte para reação (**reaction cut**); pausa e breve silêncio (**dramatic pause**); aparição de Nox (**NoxReaction**); meme visual/sonoro quando relevante (**MemeInsert**); corte abrupto (**AbruptCut**).
+- São sugestões de **biblioteca TSX**; **não afirmar** que FALL usa necessariamente cada um desses componentes/efeitos.
+- Não aplicar todos simultaneamente; contraste, silêncio e timing podem ser mais eficazes que excesso de SFX.
+- Primeiro buscar **uma reação genuína no roteiro**; só então decidir se o vídeo precisa de reforço cômico.
+- Não copiar bordões, gritos, palavrões ou piadas específicas.
+
+### 16.3 Receita TSX conceitual para identidade Diazverso
+
+**[PROPOSTA DE IMPLEMENTAÇÃO; EXEMPLO NÃO EXECUTADO]**
+- Composição `ComicScene` recebe `background`, `character`, `title` e duração.
+- Usar frame atual `useCurrentFrame()` e configuração `useVideoConfig().fps`; calcular propriedades de movimento por frame usando `interpolate()` e entradas com `spring()` (Remotion). Sincronizar atrasos por `Sequence`.
+- Fundo: imagem cobrindo viewport com leve `scale` progressiva, `translateX`, `blur` e redução de brilho para favorecer separação de planos.
+- Personagem: PNG recortado em primeiro plano, movimento horizontal próprio e entrada por `spring`; profundidade percebida pela diferença de movimento em relação ao fundo.
+- Texto: fonte **Anton**, grande e de alto contraste; entrada com `translateY`, opacidade e timing independente; mudança de cores/escala pode acompanhar palavras-chave.
+- Câmera e camadas devem respeitar limite de frame, safe areas e composição final; prever ajustes específicos para vídeo 9:16.
+- **Pontos de implementação pendentes:** asset real do personagem/fundo, carregamento/empacotamento da Anton, duração e easing concretos, sincronização de SFX/voz, testes de render/preview, performance do blur e compatibilidade da versão real do Remotion.
+- O código ilustrativo apresentado na conversa **não foi compilado, renderizado ou testado**; tratá-lo como exemplo arquitetural e não como componente pronto.
+
+### 16.4 Biblioteca de componentes a estudar [HIPÓTESE, ainda não implementada]
+
+Estrutura conceitual do pacote Remotion:
+- `motion/ComicParallax.tsx` — câmera virtual, camadas e profundidade
+- `motion/KineticAnton.tsx` — tipografia cinética e contraste
+- `motion/MediaPanel.tsx` — trecho em moldura, fundo e tratamento de imagem
+- `motion/ComicTransition.tsx` — transições com estética HQ
+- `motion/NoxReaction.tsx` — reações/poses do Nox
+- `motion/MemeHit.tsx` — pausas, memes e cortes cômicos
+- `motion/SoundTransition.tsx` — efeitos sonoros sincronizados
+- `motion/ImageCamera.tsx` — pan, zoom e enquadramento de imagem
+- Alternativas citadas: `PunchZoom`, `ComedicFreeze`, `ReactionCut`, `DramaticPause`, `MemeInsert` e `AbruptCut`; normalizar nomenclatura durante implementação para não criar funcionalidades duplicadas.
+
+Cada componente deve futuramente ter parâmetros claros (duração, cor, ponto focal, intensidade, posição, easing, asset, timing de entrada/saída e SFX), preview de exemplo e critérios de validação. Evitar um TSX monolítico e evitar usar todos os efeitos num vídeo apenas porque estão disponíveis.
+
+### 16.5 Quadro de síntese para orientar futuras decisões
+
+| Dimensão | RunnyIA | FALL | Adaptação pretendida para Diazverso |
+| --- | --- | --- | --- |
+| Conteúdo falado | Promessa e capítulos organizados | Informal, reativo e espontâneo | Tese bem construída com conversa natural e ironia |
+| Humor | Secundário ao tema | Personalidade e interação | Contextual, com Nox/memes sem artificialidade |
+| Edição | **Referência de dinamismo indicada pelo criador** (efeitos específicos não auditados) | **Referência de timing humorístico indicada pelo criador** (efeitos específicos não auditados) | Motion HQ moderno, câmera, parallax, tipografia Anton, memes pontuais |
+| Elementos visuais | Didatismo narrativo e variedade almejada | Gameplay como contexto das reações | Cenas de obras, HQs, PNGs, Nox e composições TSX |
+| Ritmo narrativo | Progressão por etapas | Reações conforme acontecem | Alternância de explicação, movimento, humor e pausas |
+
+**Princípio de direção, sujeito à aprovação:** organizar a edição por **intenção da cena**:
+- Explicar relação/ideia → motion explicativo ou composição de elementos.
+- Contar história → cenas da obra, imagem com zoom/pan e câmera virtual.
+- Opinar/reclamar do absurdo → reação, humor, meme ou Nox quando fizer sentido.
+- Quando a cena original diz mais do que a voz → deixar trecho respirar, respeitando licenças e uso responsável.
+- Evitar corte mecânico a cada N segundos e evitar que o plugin escolha efeitos apenas por quantidade.
+
+### 16.6 Controle de evidência e continuidade
+
+- **Confirmado por transcrição:** estrutura/timestamps narrativos e mecanismos de humor na fala.
+- **Confirmado por thumbnails:** composição visual das miniaturas previamente examinadas; não atesta o estilo interno da montagem.
+- **Relatado pelo criador:** RunnyIA oferece edição fluida e rica; FALL usa memes e linguagem autêntica.
+- **Proposto pelo assistente:** storyboards, componentes, parallax aplicado às passagens, câmera virtual, conceitos de TSX e receitas de humor.
+- **Pendente:** análise visual/sonora com acesso funcional aos arquivos MP4, anotação de efeitos por timestamp e testes de implementação Remotion.
+- **Governança:** não elevar este bloco a instrução canônica nem afirmar que os exemplos TSX foram construídos. A futura V1.0 deve extrair apenas decisões editoriais aprovadas e implementações verificadas.
