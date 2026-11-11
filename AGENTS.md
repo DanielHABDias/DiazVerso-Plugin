@@ -8,7 +8,7 @@ Este repositório contém a consolidação inicial do novo plugin Diazverso 1.0.
 
 1. Ler primeiro `docs/HANDOFF_CODEX_2026-11-11.md` e `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`, em seguida o **item atual** do roadmap; consultar `docs/DECISOES_E_CONTEXTO.md` somente para histórico/evidência.
 2. Verificar o estado atual do repositório (branch, arquivos e alterações não commitadas) antes de editar.
-3. Carregar apenas as skills e referências pertinentes ao pedido atual; economizar tokens, evitar recitar documentos inteiros e reutilizar contexto já válido.
+3. Carregar apenas as skills e referências pertinentes ao pedido atual; economizar tokens, evitar recitar documentos inteiros e reutilizar contexto já válido. Para sessões longas ou tarefas com muitas fontes, carregar **sob demanda** `skills/diazverso-contexto-eficiente/references/m01-operacao.md`, priorizar checkpoint verificável e recuperação seletiva. O mapa local é opcional, não substitui evidência nem compacta a janela interna do Work.
 4. Se faltar uma definição editorial que o criador ainda não forneceu, não inferir que versões antigas continuam válidas.
 5. Manter a grafia **Diazverso**. O resumo canônico já existe; a direção editorial ainda pode ser ajustada pelo criador, sem retomar automaticamente regras antigas.
 
