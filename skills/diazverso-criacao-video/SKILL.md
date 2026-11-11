@@ -49,6 +49,10 @@ CLI para diagnóstico sem escritas: `python skills/diazverso-criacao-video/scrip
 
 **Shorts:** ativar `../diazverso-shorts/SKILL.md` para roteiro/plano vertical, com preset testável `../diazverso-shorts/references/preset-vertical-v1.json` (1080×1920, 30 fps e zonas seguras conservadoras). Legendas sincronizadas são o padrão, com exceção para cenas **exclusivamente de texto na tela**. Gancho rápido, payoff e CTA ao canal contextual. Preferência por pelo menos 60 s, sem tratar como limite da plataforma. **O criador posta manualmente**.
 
+## Thumbnail A/B — G02
+
+Para transformar a tese e promessa aprovadas em conceitos de thumbnail, acionar `../diazverso-thumbnail/SKILL.md`. A skill gera dois briefings visualmente distintos (A/B) a partir do **mesmo roteiro**, com contraste, foco, texto curto, direitos dos assets e Nox apenas quando fizer sentido. Validar o JSON com `../diazverso-thumbnail/scripts/validate_thumbnail_brief.py` e manter as artes como **conceitos** até uma ferramenta de imagem efetivamente gerar os arquivos e G03 conferir legibilidade/dimensões/identidade e links reais do Drive. Não inferir CTR nem criar thumbnail final por preencher o contrato.
+
 ## Kit final de publicação manual — K01
 
 A produção termina com um **pacote pronto para o criador publicar pessoalmente**, não com upload/postagem feita ou orientada pelo ChatGPT.
