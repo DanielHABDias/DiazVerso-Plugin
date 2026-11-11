@@ -33,6 +33,16 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 
 **Shorts:** 9:16, legendas sincronizadas com exceções de tipografia integral, gancho rápido e CTA contextual. A duração de pelo menos 60 s é preferência editorial atual, não limite de plataforma.
 
+## Kit final de publicação manual — K01
+
+A produção termina com um **pacote pronto para o criador publicar pessoalmente**, não com upload/postagem feita ou orientada pelo ChatGPT.
+
+**Entradas:** roteiro aprovado (mesma versão do vídeo final), título escolhido, arquivos finais de vídeo e thumbnail efetivamente verificados, fontes, decisões de QA, links afiliados pertinentes já conferidos e informações editoriais. Sem vídeo renderizado/QA, entregar **rascunho de kit** marcado como pendente, não kit final aprovado.
+
+**Saída utilizável:** título final, descrição PT-BR pronta para copiar, fontes/atribuições, links pertinentes e divulgação de afiliação quando aplicável, tags relevantes sem exageros, comentário fixado opcional e capítulos **somente com timestamps conferidos no render final**. Para Shorts, adaptar linguagem e CTA ao formato sem fingir dados. Informar quais arquivos aprovados compõem o kit, com referência verificável e pendências. Não inventar links, datas, estatísticas, capítulos ou patrocínios.
+
+**Finalização:** registrar `KIT PRONTO PARA POSTAGEM MANUAL` apenas quando roteiro, arte, render, QA e conteúdo textual realmente aprovados. Caso contrário, `KIT PARCIAL — PENDÊNCIAS`, listando somente o que falta. **Não executar nem ensinar upload, agendamento ou postagem**, nem importar a skill de postagem antiga. `PUBLICADO` é apenas registro posterior, após o criador postar manualmente e fornecer evidência de URL/data reais.
+
 ## Retomada entre sessões
 
 Quando a ferramenta permitir persistência, usar `schemas/estado-producao-v1.schema.json` como **formato mínimo de intercâmbio**, não como banco paralelo: `id`, `tipo`, `fase`, `proxima_tarefa`, `revisao`, `links` e bloqueio opcional. **Fonte de verdade**: linha do vídeo no Google Sheets, roteiro Google Docs e evidências dos artefatos; atualizar/relêr após cada ação importante. Sem conector, não alegar estado salvo ou continuidade automática. Evitar credenciais no registro.
