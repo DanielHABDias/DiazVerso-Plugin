@@ -97,6 +97,14 @@ O script `scripts/extract_review_frames.py` lê props H01 e planeja amostras **d
 
 A conclusão `FRAMES_EXTRACTED_AWAITING_HUMAN_REVIEW` significa **quadros reais extraídos**, não revisão visual feita. A inspeção de enquadramento, Nox, blur, parallax, cortes e legibilidade é J03/H09/L02/L03. Não inventar frames ou afirmar que o vídeo foi assistido quando há apenas um plano ou teste de CLI simulado. Testes de planejamento, ffprobe e ffmpeg simulados ficam em `tests/test_extract_review_frames.py`, cobertos pelo CI Python da skill. Não há publicação de vídeos.
 
+## Revisão de áudio com medição de sinal — J04
+
+O script `scripts/review_audio.py` analisa **amostras reais** de um WAV PCM **16-bit mono ou estéreo** fornecido pelo editor. Ele lê o arquivo local em janelas de aproximadamente 50 ms, mede pico e RMS em dBFS, detecta amostras perto do limite digital (clipping) e intervalos de baixa energia que possam indicar silêncios ou pausas. **Uma janela de baixa energia não é prova de ausência de fala**; o diagnóstico serve para apontar locais a escutar e corrigir.
+
+Uso: `python skills/diazverso-decupagem/scripts/review_audio.py <mix.wav> --cues <intervalos.json>`. O JSON opcional pode conter `voice`, `music` e `sfx`, cada uma uma lista de intervalos `{"start_s": 0.5, "end_s": 2.0}` em segundos medidos/confirmados. Intervalos fora da duração ou sobrepostos são rejeitados. Ao cruzar silêncios medidos com intervalos **de voz planejada**, o revisor aponta possíveis falhas na mixagem. Sem linha do tempo de voz, não declara que ducking ou sincronização estejam corretos. MP3, vídeo e WAV float devem ser convertidos para PCM16 em ferramenta de edição/FFmpeg autorizada, preservando a versão do render a ser auditada; o revisor não baixa nem converte mídia por conta própria.
+
+A saída **nunca certifica a qualidade da voz, intenção musical, qualidade criativa dos SFX nem sincronia labial/legendas**. `audio_listened=false`, `voice_sync_verified=false` e `creative_mix_approved=false` permanecem falsos até uma escuta/revisão separada e registrada pela pessoa responsável; o gate `qa_audio` de J08 só pode ser marcado aprovado **com evidência humana real**. O script não instala, publica ou envia vídeos. Testes com ondas PCM geradas localmente: `tests/test_review_audio.py`, descobertos pelo CI Python da pasta.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
