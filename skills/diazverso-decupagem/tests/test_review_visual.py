@@ -18,23 +18,15 @@ def chunk(tag, payload):
     return struct.pack(">I",len(payload))+tag+payload+struct.pack(">I",zlib.crc32(tag+payload))
 
 
-def png(width=32,height=32,pixel=None,channels=3,filter_type=0):
+def png(width=32,height=32,pixel=None,channels=3):
     if pixel is None:
         pixel=lambda x,y:(30+x*5,30+y*5,70)
     raw=bytearray()
     for y in range(height):
-        raw.append(filter_type)
+        raw.append(0)
         line=bytearray()
         for x in range(width):
             line.extend(pixel(x,y))
-        if filter_type==1:
-            previous=0
-            for i in range(len(line)):
-                value=line[i]
-                left=(pixel(x,y)[0] if False else 0) # not used; filtered below
-                predictor=line[i-channels] if i>=channels else 0
-                line[i]=(value-predictor)&255
-                previous=value
         raw.extend(line)
     color=6 if channels==4 else 2
     ihdr=struct.pack(">IIBBBBB",width,height,8,color,0,0,0)
@@ -126,6 +118,16 @@ class VisualReviewTests(unittest.TestCase):
         self.assertEqual(result["manual_pending"],[])
         self.assertFalse(result["visual_qa_approved_by_code"])
         self.assertFalse(result["motion_continuity_verified"])
+
+    def test_wrong_dimensions_rejected(self):
+        rows=[self.receipt(0,png(width=32,height=32)),self.receipt(30,png(width=40,height=32))]
+        with self.assertRaises(ValueError):
+            mod.review({"frames":rows},fps=30)
+
+    def test_too_many_manifest_entries_rejected(self):
+        data={"frames":[self.receipt(0,png())]*121}
+        with self.assertRaises(ValueError):
+            mod.review(data,fps=30)
 
     def test_missing_extraction_is_not_accepted(self):
         with self.assertRaises(ValueError):
