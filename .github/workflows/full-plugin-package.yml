@@ -43,6 +43,10 @@ jobs:
         run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs skills/diazverso-decupagem/tests/test_kinetic_text.mjs skills/diazverso-decupagem/tests/test_crt_panel.mjs skills/diazverso-decupagem/tests/test_audio_plan.mjs
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
+      - name: Unit tests - offline package structure D07 and L06
+        run: python -m unittest discover -s tests -p "test_verify_offline_package.py"
+      - name: Verify ZIP contents without any Drive connection
+        run: python scripts/verify_offline_package.py "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Publish private test artifact
         uses: actions/upload-artifact@v4
         with:
