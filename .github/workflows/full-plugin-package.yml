@@ -44,6 +44,8 @@ jobs:
         run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs skills/diazverso-decupagem/tests/test_kinetic_text.mjs skills/diazverso-decupagem/tests/test_crt_panel.mjs skills/diazverso-decupagem/tests/test_audio_plan.mjs
       - name: Unit tests - selected HQMotion port G05
         run: node --test skills/diazverso-decupagem/tests/test_hq_legacy_port.mjs
+      - name: Unit tests - independent HQ components G06
+        run: node --test skills/diazverso-decupagem/tests/test_hq_components.mjs
       - name: Install independent Remotion smoke runner
         working-directory: skills/diazverso-decupagem/runtime
         run: npm install --no-audit --no-fund
@@ -59,6 +61,8 @@ jobs:
           npx --no-install remotion still src/index.ts DiazversoSmoke out/smoke-9x16.png --frame=15
           npx --no-install remotion render src/index.ts DiazversoSmokeWide out/smoke-16x9.mp4 --frames=0-29 --codec=h264
           npx --no-install remotion render src/index.ts DiazversoSmoke out/smoke-9x16.mp4 --frames=0-29 --codec=h264
+          npx --no-install remotion still src/index.ts DiazversoHQMigrationWide out/hq-migration-16x9.png --frame=30
+          npx --no-install remotion still src/index.ts DiazversoHQMigrationVertical out/hq-migration-9x16.png --frame=30
           python - <<'PY'
           from pathlib import Path
           import struct,subprocess
@@ -74,11 +78,26 @@ jobs:
               assert dims==f"{w},{h}",(mp4,dims)
               print("RENDER_VERIFIED",suffix,w,h,mp4.stat().st_size)
           PY
+      - name: Verify HQ migrated component images
+        working-directory: skills/diazverso-decupagem/runtime
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import struct
+          for suffix,(w,h) in {"16x9":(1920,1080),"9x16":(1080,1920)}.items():
+              p=Path(f"out/hq-migration-{suffix}.png")
+              data=p.read_bytes()
+              assert data[:8]==bytes.fromhex("89504e470d0a1a0a")
+              assert struct.unpack(">II",data[16:24])==(w,h)
+              print("HQ_MIGRATION_IMAGE_VERIFIED",suffix,len(data))
+          PY
       - name: Archive synthetic Remotion frames and short clips for visual review
         uses: actions/upload-artifact@v4
         with:
           name: diazverso-remotion-smoke-16x9-9x16
           path: |
+            skills/diazverso-decupagem/runtime/out/hq-migration-16x9.png
+            skills/diazverso-decupagem/runtime/out/hq-migration-9x16.png
             skills/diazverso-decupagem/runtime/out/smoke-16x9.png
             skills/diazverso-decupagem/runtime/out/smoke-9x16.png
             skills/diazverso-decupagem/runtime/out/smoke-16x9.mp4
