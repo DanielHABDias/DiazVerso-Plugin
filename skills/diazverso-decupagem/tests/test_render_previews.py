@@ -106,6 +106,18 @@ class RenderPreviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             mod.execute_plan(self.plan(), timeout_s=0)
 
+    def test_execution_uses_independent_project_cwd(self):
+        p = self.plan()
+        expected_cwd = str(self.entry.parent.resolve())
+        def fake_run(cmd, **kwargs):
+            self.assertEqual(kwargs["cwd"], expected_cwd)
+            Path(cmd[6]).write_bytes(b"synthetic-render-output")
+            return SimpleNamespace(returncode=0, stderr="")
+        with patch.object(mod.shutil, "which", return_value="/usr/bin/npx"), patch.object(
+                mod.subprocess, "run", side_effect=fake_run):
+            result = mod.execute_plan(p)
+        self.assertEqual(len(result["outputs"]), 8)
+
     def test_no_shell_execution(self):
         p = self.plan()
         self.assertTrue(all(isinstance(x["command"], list)
