@@ -84,3 +84,10 @@ Atualizado em: 2026-11-10. Estado: plugin V1.0 ainda em planejamento; organizaç
 - [Script de empacotamento](../scripts/b06_package_smoke.py) e [workflow GitHub Actions](../.github/workflows/b06-plugin-smoke.yml) criados, com validações do ZIP, esquema, skills e onboarding. [Relatório detalhado](TESTE_B06_PLUGIN.md).
 - **Revisão estática independente 21/21 critérios aprovada**. Arquivos foram relidos no GitHub. **Nenhum ZIP foi executado/verificado em runtime aqui e nenhuma instalação/invocação no ChatGPT/Codex pôde ser feita**: runtime local falhou e ferramenta de instalar plugin privado não está disponível nesta sessão.
 - **B06 permanece [ ] e o Gate B não foi aprovado** até haver um pacote realmente testado e skills invocadas no(s) host(s) autorizado(s). Não declarar o plugin instalável apenas por ter criado o workflow.
+
+
+## I04 — teste vertical com Nox e áudio original (11/11/2026)
+
+- **Comprovado:** Remotion 4.0.542 independente renderizou 8 s em 1080×1920/30 fps (H.264 + AAC) com Nox canônico, parallax, texto cinético, legenda de apoio e whoosh PCM original; teste de integridade, frames 15/105/200 e CI [43054774403](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/43054774403) aprovados. Artefato real baixado e inspeção visual por amostras registrada em [VALIDACAO_I04_2026-11-11.md](VALIDACAO_I04_2026-11-11.md).
+- **Limites:** nenhum áudio de fala, escuta crítica ou sync de legenda com narração foi comprovado; I04 é uma cena demonstrativa, não o Short completo (L03) nem o fluxo longo (L02). Sem instalação de plugin ou publicação.
+- **Estado após essa entrega:** roadmap recalculado em **72/88** [x]. A tarefa **M01/88 permanece [ ]** porque a integração opt-in do mapa local não comprova benchmark de tokens real; não refazer a pesquisa nem alegar economia. Próximos trabalhos elegíveis: L02/L03 com roteiro, áudio alinhado e QA; D04/D05 dependem dos direitos das mídias.
