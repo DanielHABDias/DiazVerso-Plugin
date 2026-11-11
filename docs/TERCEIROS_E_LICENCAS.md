@@ -27,6 +27,12 @@ A licença MIT permite cópia e modificação com a manutenção do aviso; prese
 | **OpenAI Skill Creator** | Instruções oficiais disponíveis no host; a skill de referência possui licença Apache-2.0 por arquivo. | Usar para desenvolvimento; só incorporar fisicamente se realmente necessária aos usuários finais, com LICENSE e dependências correspondentes. |
 | **Superpowers** | MIT na raiz de `obra/superpowers`, mas contém muitas skills e fluxos próprios. | Selecionar apenas skills com ganho comprovado após revisão de compatibilidade e custos; não importar em massa. |
 
+
+## Ferramenta de voz usada apenas nos testes L02/L03 (não redistribuída)
+
+- **`mespeak@2.0.2`**, projeto [mikolalysenko/mespeak](https://github.com/mikolalysenko/mespeak), **GPL**: dependência de desenvolvimento opcional em `skills/diazverso-decupagem/runtime/package.json`. O workflow de integração instala o pacote via npm **somente no executor isolado**; `node_modules/` e vozes do fornecedor **não entram no ZIP do plugin**. Os WAVs/MP4s resultantes são **ensaios técnicos com texto original de teste**, não voz oficial licenciada/aprovada para publicação. A qualidade e a situação jurídica do áudio sintetizado devem ser reavaliadas antes de qualquer uso público; em produções reais, usar narração e mídia com direitos verificados.
+- A geração escolhe executáveis eSpeak já disponíveis quando encontrados, senão usa a alternativa JavaScript meSpeak. **Não há instalação automática de ferramenta de voz no ChatGPT/Codex nem envio de texto para serviço externo.** O teste não comprova naturalidade, inteligibilidade subjetiva nem direitos de distribuição da saída.
+
 ## Política de seleção e distribuição (decisão do criador em 11/11/2026)
 
 - **Qualidade técnica primeiro:** não rejeitar uma skill/script na pesquisa, comparação ou avaliação apenas pela falta de `LICENSE` ou de declaração explícita de uso livre. Ausência de licença não é proibição; priorizar testes reais de qualidade, custo de tokens/contexto, integração, segurança, manutenção e dependências.
