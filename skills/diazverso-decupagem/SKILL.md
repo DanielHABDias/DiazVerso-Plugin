@@ -63,6 +63,18 @@ O componente autoral `references/motion/crt-panel.tsx` (`DiazCrtPanel`) enquadra
 
 Para música compatível com a duração da cena, o planejador separa intervalos de trilha e reduz o volume automaticamente nos trechos em que a narração está marcada (ducking); SFX podem ter início configurado dentro da cena. Todos os tempos são **relativos à cena e estimados a partir de entradas verificadas**. Se faltar música ou SFX válido, retorna `NEEDS_APPROVED_AUDIO` com as pendências e **não inventa mídia**. Testes de filtro, limites, ganho e cues estão em `tests/test_audio_plan.mjs`, incluídos no CI. O arquivo não escuta nem normaliza áudio e **não confirma mixagem ou sincronização real**; esses aspectos precisam de preview/render independente em H09/L02/L03.
 
+## Trechos de render e previews — H08
+
+O executor `scripts/render_previews.py` recebe um **JSON validado do contrato H01**, o caminho do entrypoint TSX de um **projeto Remotion independente**, o ID registrado da composição e um diretório de saída fora dos assets originais. Sem `--execute`, produz somente um **plano JSON e não grava arquivos**. Com `--execute`, exige `npx` e o Remotion **já instalado localmente no projeto do editor**, e executa, em ordem, um MP4 por cena pelo intervalo inclusivo `--frames=início-fim` e **até três PNGs de conferência** (primeiro, meio e último frame da cena) com `remotion still --frame`. Os comandos usam argumentos diretos, sem shell. Arquivos existentes não são sobrescritos e a primeira falha interrompe o lote.
+
+Exemplo de uso a partir da raiz do plugin, **substituindo pelo projeto Remotion independente realmente existente**:
+
+```bash
+python skills/diazverso-decupagem/scripts/render_previews.py --props skills/diazverso-decupagem/examples/short-remotion-props.example.json --entrypoint /caminho/projeto-remotion/src/index.tsx --composition-id DiazversoShort --out /caminho/outputs
+```
+
+Acrescentar `--execute` **somente depois** de validar entrada, composição, licença dos arquivos e diretório, e ter o editor instalado. Os exemplos de assets/voz são ilustrativos e **não são garantia de arquivos presentes**. Um trecho de vídeo criado pelo CLI recebe estado `PREVIEWS_RENDERED_AWAITING_HUMAN_REVIEW`, não `APROVADO`; inspecionar quadros, legendas, câmera/Nox, música, SFX e cortes, corrigir e refazer quando necessário. Nenhum render final é iniciado pelo executor H08, e **nenhuma postagem é realizada**. `tests/test_render_previews.py` cobre fluxo de comandos usando um **CLI simulado**; sem executor Remotion real, não declarar que frames verdadeiros foram renderizados. H09/L02/L03 cobrem a validação audiovisual ponta a ponta.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
