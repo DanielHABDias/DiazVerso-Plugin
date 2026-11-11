@@ -29,6 +29,8 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-drive-setup/tests -p "test_*.py"
       - name: Unit tests - video metrics K05
         run: python -m unittest discover -s skills/diazverso-criacao-video/tests -p "test_*.py"
+      - name: Unit tests - skill routing C06 and context cost C07
+        run: python -m unittest discover -s skills/diazverso-contexto-eficiente/tests -p "test_*.py"
       - name: Unit tests - thumbnail briefs and actual-file inspector G02/G03
         run: python -m unittest discover -s skills/diazverso-thumbnail/tests -p "test_*.py"
       - name: Unit tests - Nox Character Lock G01 synthetic fixtures
