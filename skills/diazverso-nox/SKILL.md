@@ -1,0 +1,22 @@
+---
+name: diazverso-nox
+description: "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original."
+---
+
+# Diazverso — Nox e Character Lock (G01)
+
+**Fonte única:** `assets/brand/nox/Nox.png` (imagem original fornecida pelo criador). A versão canônica consta no `assets/manifest.json`; não inferir que outro arquivo nomeado Nox é equivalente. A referência canônica não deve ser editada ou substituída. A criação de poses **não é automática**.
+
+## Procedimento
+
+1. Localizar a imagem física no pacote e comparar **bytes, dimensões e digest do blob Git** com `assets/manifest.json`, usando `scripts/character_lock.py`. O manifesto atual declara PNG de **1408×768** e **415.179 bytes** com `git_blob_sha1`. Se a imagem não estiver disponível para leitura real, **bloquear** a criação/revisão; não inventar o rosto ou a roupa.
+2. Observar o Nox original diretamente: preservar silhueta, proporções, cores, traços faciais/olhos, roupa/acessórios existentes e linguagem visual do personagem. **Não descrever detalhes concretos que não tenham sido inspecionados.**
+3. Para uma nova pose, elaborar uma ação pequena e contextual para o roteiro (ex.: apontar, reagir, olhar), sem redesign de proporções, roupa, paleta ou estilo. Passar o PNG original como referência à ferramenta de imagem autorizada, quando realmente possível.
+4. Salvar o candidato com **novo nome e versão**, nunca sobrescrevendo `Nox.png`. Separar arte original e derivados. Registrar origem, prompt/instrução, relação com a cena e evidência de direitos.
+5. **Character Lock:** comparar visualmente candidata e canônica lado a lado; documentar seis aspectos: silhueta/proporções, traços faciais, paleta, roupa/acessórios, estilo e ausência de redesign. Se algum divergir, reprovar e corrigir uma mudança por vez.
+6. Com prova de leitura do arquivo original, imagem derivada efetivamente existente e notas de inspeção humana, executar `python skills/diazverso-nox/scripts/character_lock.py <avaliacao.json> --root <raiz-do-plugin>`. O script mede identidade de arquivo e integridade documental; **não reconhece personagens por visão computacional**, não autentica que a comparação humana aconteceu e não declara geração de imagem sem arquivo.
+7. Empregar Nox somente quando contribuir para a narrativa ou a thumbnail. **Não obrigar o mascote a aparecer em toda cena.**
+
+O teste real exigido para encerrar a **G01** consiste em criar **uma pose derivada de verdade**, compará-la visualmente à imagem original, corrigir eventuais diferenças e guardar a evidência. **Testes com arquivos PNG sintéticos só exercitam o código; não comprovam a identidade do Nox.** Enquanto esse teste não for feito, manter G01 pendente no roadmap.
+
+Sem upload, postagem ou automação de publicação. O criador publica os vídeos manualmente.
