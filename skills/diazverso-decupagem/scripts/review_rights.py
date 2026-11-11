@@ -22,6 +22,8 @@ KEYS = {"id", "kind", "source", "rights_status", "basis", "evidence",
 
 
 def _https_url(value: str) -> bool:
+    if not isinstance(value, str):
+        return False
     try:
         parsed = urlsplit(value)
         return (parsed.scheme == "https" and bool(parsed.hostname)
@@ -86,11 +88,13 @@ def review(record: dict) -> dict:
     affiliates = record.get("affiliates", [])
     if not isinstance(affiliates, list):
         raise ValueError("affiliates must be a list")
+    affiliate_ids = set()
     for item in affiliates:
         if not isinstance(item, dict) or set(item) != {"id", "url", "verified_for_video"}:
             raise ValueError("Affiliate entries require ID, URL, per-video validation")
-        if not isinstance(item["id"], str) or not item["id"].strip():
-            raise ValueError("Affiliate ID missing")
+        if not isinstance(item["id"], str) or not item["id"].strip() or item["id"] in affiliate_ids:
+            raise ValueError("Affiliate ID missing/duplicate")
+        affiliate_ids.add(item["id"])
         if not _https_url(item["url"]) or item["verified_for_video"] is not True:
             findings.append({"asset_id": item["id"], "severity": "BLOCKER",
                              "code": "AFFILIATE_NOT_VERIFIED",
