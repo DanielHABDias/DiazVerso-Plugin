@@ -35,6 +35,16 @@ Campos do contrato: `production_id`, `script_version`, formato `LONGO` (1920×10
 
 Executar `python scripts/validate_composition.py examples/short-remotion-props.example.json` a partir da pasta desta skill (ou indicar caminho absoluto ao script). O retorno `VALID_CONTRACT` significa apenas props estruturados, nunca render confirmado. O executor independente traduz props em `<Composition>`, `<Sequence>`, `<Audio>` e componentes de motion, localiza os assets em seu próprio projeto, inspeciona visual e áudio, e só então produz vídeo. **Não existe dependência nem integração com o Content Lab antigo.** H03–H09 e L02/L03 abrangem componentes e render/QA reais.
 
+## Componentes de motion — H03 e H04
+
+Os componentes autorais estão em `references/motion/`, independentes do Content Lab antigo:
+
+- `camera.tsx` — `DiazCamera` (Remotion): imagem estática com crop **cover**, zoom, pan/reframe e blur interpolado ao longo da cena. Informar dimensões **reais** do arquivo e duração da cena em frames. O deslocamento é limitado matematicamente ao crop disponível para **não expor bordas vazias**. Não substitui a inspeção do rosto/objeto importante no recorte.
+- `parallax.tsx` — `DiazParallax`: fundo cobrindo o canvas e camadas PNG recortadas em posição e escala conservadoras, com movimento de profundidade. A primeira camada deve ser um **fundo opaco**, e os recortes precisam de transparência realmente verificada. Usar profundidade 0–1, sem garantir segurança se uma UI de plataforma encobrir elementos.
+- `motion-math.mjs` — funções puras `coverGeometry`, `cropAndPan`, `parallaxGeometry`, sem React, testáveis com Node integrado. Cenários de borda em `tests/test_motion_math.mjs`; executar `node --test skills/diazverso-decupagem/tests/test_motion_math.mjs` a partir da raiz do plugin. O workflow executa o mesmo comando.
+
+**Fronteira de validação:** os cálculos de cobertura podem ser testados offline, mas o componente TSX só será considerado visualmente revisado após executor Remotion independente (H09/L02) renderizar frames e confirmar crop, segurança, nitidez e Nox. Não afirmar que um componente foi renderizado quando houve apenas validação estática/numérica.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
