@@ -5,7 +5,6 @@ by stable ID; this module neither connects to Google nor changes stored data.
 """
 from __future__ import annotations
 import re
-from urllib.parse import urlparse
 
 HEADERS = ["ID","TIPO","TEMA / CONTEXTO","STATUS","PRIORIDADE","TÍTULO A","TÍTULO B","THUMBNAIL A","THUMBNAIL B","ROTEIRO","VÍDEO RELACIONADO","PLANEJADO PARA","PUBLICADO EM","LINK YOUTUBE","REVISÃO","OBSERVAÇÕES","KIT PUBLICAÇÃO"]
 EDITABLE = {"TÍTULO A", "TÍTULO B", "THUMBNAIL A", "THUMBNAIL B",
@@ -66,12 +65,15 @@ def plan_upsert(rows: list[list], production_id: str, patch: dict[str, str],
         if field == "REVISÃO" and value.strip().upper() in ("APROVADO", "APROVADA") and not review_approved:
             raise ValueError("Revisão aprovada requer decisão realmente verificada")
     future = {**current, **patch}
-    if future["STATUS"] == "PUBLICADO" or patch.get("PUBLICADO EM") or patch.get("LINK YOUTUBE"):
-        if (future["STATUS"] == "PUBLICADO" or patch.get("STATUS") == "PUBLICADO"):
-            if not publication_verified or not future["PUBLICADO EM"] or not YOUTUBE.fullmatch(future["LINK YOUTUBE"]):
-                raise ValueError("PUBLICADO requer confirmação real, data e link do vídeo")
-        elif "LINK YOUTUBE" in patch and patch["LINK YOUTUBE"] and not publication_verified:
-            raise ValueError("Novo link YouTube exige verificação da publicação")
+    publication_fields = {"STATUS", "PUBLICADO EM", "LINK YOUTUBE"} & patch.keys()
+    if patch.get("PUBLICADO EM") and not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", patch["PUBLICADO EM"]):
+        raise ValueError("PUBLICADO EM deve ser data YYYY-MM-DD")
+    if publication_fields and future["STATUS"] == "PUBLICADO":
+        if not publication_verified or not future["PUBLICADO EM"] or not YOUTUBE.fullmatch(future["LINK YOUTUBE"]):
+            raise ValueError("PUBLICADO requer confirmação real, data e link do vídeo")
+    elif ("LINK YOUTUBE" in patch and patch["LINK YOUTUBE"]) or ("PUBLICADO EM" in patch and patch["PUBLICADO EM"]):
+        if not publication_verified:
+            raise ValueError("Link/data de publicação requer confirmação real")
     updates = []
     for field, value in patch.items():
         old = current[field]
