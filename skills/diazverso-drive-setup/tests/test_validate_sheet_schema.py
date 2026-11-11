@@ -57,33 +57,42 @@ class SchemaTests(unittest.TestCase):
     def test_plan_new_idea_unique_sequential(self):
         rows = [list(mod.HEADERS["Ideias"]),
                 ["TF_0002", "Outra ideia"], ["TF_0004", "Tema anterior"]]
-        idea = mod.plan_new_idea(rows, {"TEMA": "Novo herói", "TESE / CONTEXTO": "Uma tese concreta"})
+        idea = mod.plan_new_idea(rows, {"TEMA": "Novo herói", "TESE / CONTEXTO": "Uma tese concreta"}, previously_issued_ids=["TF_0003"])
         self.assertEqual(idea["id"], "TF_0005")
         self.assertEqual(idea["values"][1:3], ["Novo herói", "Uma tese concreta"])
         self.assertFalse(idea["writes_performed"])
 
     def test_existing_theme_not_inserted(self):
         rows = [list(mod.HEADERS["Ideias"]), ["TF_0001", "A origem do herói"]]
-        result = mod.plan_new_idea(rows, {"TEMA": "  a ORIGEM do HEROI  ", "TESE / CONTEXTO": "Nova análise"})
+        result = mod.plan_new_idea(rows, {"TEMA": "  a ORIGEM do HEROI  ", "TESE / CONTEXTO": "Nova análise"}, previously_issued_ids=[])
         self.assertEqual(result["status"], "EXISTS")
 
     def test_bad_header_rejected(self):
         with self.assertRaises(ValueError):
-            mod.plan_new_idea([["ID", "WRONG"]], {"TEMA": "Nova", "TESE / CONTEXTO": "Tese"})
+            mod.plan_new_idea([["ID", "WRONG"]], {"TEMA": "Nova", "TESE / CONTEXTO": "Tese"}, previously_issued_ids=[])
 
     def test_formula_is_rejected(self):
         with self.assertRaises(ValueError):
             mod.plan_new_idea([list(mod.HEADERS["Ideias"])],
-                              {"TEMA": "=IMPORTXML(...)", "TESE / CONTEXTO": "Tese"})
+                              {"TEMA": "=IMPORTXML(...)", "TESE / CONTEXTO": "Tese"}, previously_issued_ids=[])
 
     def test_existing_duplicate_id_rejected(self):
         rows = [list(mod.HEADERS["Ideias"]), ["TF_0001", "A"], ["TF_0001", "B"]]
         with self.assertRaises(ValueError):
             mod.plan_new_idea(rows, {"TEMA": "Nova", "TESE / CONTEXTO": "Tese"})
 
+    def test_historical_id_is_not_reused(self):
+        rows = [list(mod.HEADERS["Ideias"]), ["TF_0002", "Existing"]]
+        planned = mod.plan_new_idea(rows, {"TEMA": "Other", "TESE / CONTEXTO": "Tese"}, previously_issued_ids=["TF_0098"])
+        self.assertEqual(planned["id"], "TF_0099")
+
+    def test_historical_ledger_is_required(self):
+        with self.assertRaises(TypeError):
+            mod.plan_new_idea([list(mod.HEADERS["Ideias"])], {"TEMA": "Other", "TESE / CONTEXTO": "Tese"})
+
     def test_missing_tese_rejected(self):
         with self.assertRaises(ValueError):
-            mod.plan_new_idea([list(mod.HEADERS["Ideias"])], {"TEMA": "Nova"})
+            mod.plan_new_idea([list(mod.HEADERS["Ideias"])], {"TEMA": "Nova"}, previously_issued_ids=[])
 
 
 
