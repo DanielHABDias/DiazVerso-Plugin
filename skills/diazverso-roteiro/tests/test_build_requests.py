@@ -18,6 +18,8 @@ class TestRoteiroRequests(unittest.TestCase):
         body = result["requests"][0]["insertText"]["text"]
         self.assertIn("VD_0031", body)
         self.assertNotIn("[VD_####]", body)
+        self.assertNotIn("VD_####", body)
+        self.assertIn("ID da produção: VD_0031", body)
         self.assertIn("SOM DA CENA — SEM NARRADOR", body)
         self.assertIn("Aprovação do criador: PENDENTE", body)
         self.assertEqual(result["expected"]["last_utf16_index"], 1 + utf16_length(body))
@@ -31,6 +33,7 @@ class TestRoteiroRequests(unittest.TestCase):
         self.assertIn("60 s", body)
         self.assertIn("Legenda sincronizada", body)
         self.assertIn("KIT DE PUBLICAÇÃO — NÃO NARRAR", body)
+        self.assertNotIn("SH_####", body)
 
     def test_ranges_match_utf16_including_emoji(self):
         result = requests_for("SHORT", "SH_0100", "Batman 😁 e legado")

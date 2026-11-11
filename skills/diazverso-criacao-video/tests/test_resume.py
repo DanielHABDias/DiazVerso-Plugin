@@ -19,6 +19,11 @@ def latest(s=None):
     return {**(s or state()),'fresh_read':True}
 
 class ResumeTests(unittest.TestCase):
+    def test_same_revision_cannot_add_completed_history(self):
+        now=state();now['completed'].append('H02')
+        out=mod.recover(mod.checkpoint(state()),latest(now))
+        self.assertEqual(out['status'],'BLOCKED_REVISION_CONFLICT')
+
     def test_same_revision(self):
         out=mod.recover(mod.checkpoint(state()),latest())
         self.assertEqual(out['next_task'],'J03')

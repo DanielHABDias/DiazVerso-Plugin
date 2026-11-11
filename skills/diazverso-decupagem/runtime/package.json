@@ -4,7 +4,8 @@
   "private": true,
   "description": "Independent Remotion validation harness; no Content Lab and no posting",
   "scripts": {
-    "test": "node --test tests/*.mjs",
+    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "test:motion": "node --test ../tests/*.mjs",
     "render:still": "remotion still src/index.ts DiazversoSmoke out/smoke.png --frame=15 --overwrite=false",
     "render:clip": "remotion render src/index.ts DiazversoSmoke out/smoke.mp4 --frames=0-29 --codec=h264 --overwrite=false"
   },

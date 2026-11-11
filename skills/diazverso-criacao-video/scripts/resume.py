@@ -63,7 +63,9 @@ def recover(saved: dict, latest: dict) -> dict:
     if latest['completed'][:len(prior['completed'])] != prior['completed']:
         return {'status': 'BLOCKED_HISTORY_CONFLICT', 'next_task': None,
                 'reason': 'Completed task history diverged', 'write_performed': False}
-    if latest['revision'] == prior['revision'] and latest['next_task'] != prior['next_task']:
+    if latest['revision'] == prior['revision'] and any(
+        latest[key] != prior[key] for key in ('next_task', 'completed')
+    ):
         return {'status': 'BLOCKED_REVISION_CONFLICT', 'next_task': None,
                 'reason': 'Same revision has conflicting next task', 'write_performed': False}
     # Latest readback is authoritative. Never replay tasks present in completed.

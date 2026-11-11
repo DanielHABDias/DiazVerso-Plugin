@@ -3,6 +3,15 @@ name: diazverso-decupagem
 description: "Use para dividir roteiro aprovado de vídeo longo ou Short Diazverso em cenas executáveis, com narração, visual, música/SFX, duração, fontes e objetivo de cada bloco."
 ---
 
+## SFX originais locais
+
+`assets/sfx/catalog.json` descreve cinco WAVs PCM autorais (whoosh curto/longo,
+ding, boom e riser), sem samples ou serviços externos. O gerador reproduzível é
+`scripts/build_original_sfx.py <pasta-nova>`. Os arquivos têm duração, nível e
+hash medidos; **escuta e aprovação editorial ainda estão pendentes**. Não
+converter seu status em `APPROVED` nem incluí-los automaticamente no catálogo
+do planejador H07 antes da escuta. O gerador recusa sobrescrita.
+
 # Diazverso — Decupagem audiovisual
 
 **Entrega:** tabela de cenas sequenciais derivada de **uma versão identificada do roteiro**, pronta para guiar edição TSX/Remotion independente. Não criar fatos novos nem presumir direitos de mídia. Se o roteiro ainda estiver pendente de aprovação, gerar apenas uma **decupagem preliminar** e indicar o gate.

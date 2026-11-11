@@ -164,7 +164,12 @@ def plan_new_idea(rows: list[list], fields: dict, *, previously_issued_ids: list
         raise AssertionError("Colisão de ID")
 
     new_fields = {**fields, "ID": new_id}
-    new_fields.setdefault("STATUS", "A AVALIAR")
+    statuses = {"IDEIA", "PESQUISAR", "VALIDADA", "CONVERTIDA", "DESCARTADA"}
+    if fields.get("STATUS", "IDEIA") not in statuses:
+        raise ValueError("STATUS de ideia incompatível com o contrato da planilha")
+    if fields.get("PRIORIDADE", "") not in {"", "ALTA", "MÉDIA", "BAIXA"}:
+        raise ValueError("PRIORIDADE inválida")
+    new_fields.setdefault("STATUS", "IDEIA")
     values = [new_fields.get(k, "") for k in expected]
     return {"status": "READY_TO_INSERT", "id": new_id, "values": values,
             "header": expected, "writes_performed": False,

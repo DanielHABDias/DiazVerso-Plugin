@@ -72,6 +72,9 @@ def plan_upsert(rows: list[list], production_id: str, patch: dict[str, str],
     publication_fields = {"STATUS", "PUBLICADO EM", "LINK YOUTUBE"} & patch.keys()
     if patch.get("PUBLICADO EM") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", patch["PUBLICADO EM"]):
         raise ValueError("PUBLICADO EM deve ser data YYYY-MM-DD")
+    if patch.get("PUBLICADO EM"):
+        from datetime import date
+        date.fromisoformat(patch["PUBLICADO EM"])
     if publication_fields and future["STATUS"] == "PUBLICADO":
         if not publication_verified or not future["PUBLICADO EM"] or not YOUTUBE.fullmatch(future["LINK YOUTUBE"]):
             raise ValueError("PUBLICADO requer confirmação real, data e link do vídeo")

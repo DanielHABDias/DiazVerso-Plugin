@@ -19,6 +19,11 @@ def data():
 
 
 class UpsertTests(unittest.TestCase):
+    def test_impossible_publication_date_rejected(self):
+        with self.assertRaises(ValueError):
+            mod.plan_upsert(data(), "VD_0008", {"PUBLICADO EM": "2026-02-30"},
+                            publication_verified=True)
+
     def test_one_cell_only_and_no_write(self):
         result = mod.plan_upsert(data(), "VD_0008", {"TÍTULO B": "Alternativa"})
         self.assertEqual(result["status"], "READY_TO_WRITE")

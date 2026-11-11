@@ -39,7 +39,41 @@ Pastas de vídeos individuais não devem ser criadas por padrão. O ID `VD_####`
 
 ## Fluxo operacional
 
-- **Criação de ideia (E05):** validar cabeçalhos de `Ideias` e ler IDs/temas atuais antes de escrever; `scripts/validate_sheet_schema.py` expõe `plan_new_idea(rows, fields)` para preparar a linha e detectar colisões **no conjunto recebido**, mas **não reserva IDs**. Antes de criar, consultar também o histórico de IDs TF já promovidos e/ou contador persistente da instalação (ainda não implementado), para evitar reutilização de TF antigos; garantir exclusividade de escrita, reler dados imediatamente antes da inserção, usar escrita nativa de texto com formatação preservada, localizar a nova linha pelo ID e confirmar os campos. Na ausência dessas garantias, ficar em **PARCIAL**, sem inserir. Nunca criar ideias de teste na planilha real sem autorização.
+### Reserva persistente e execução nativa
+
+Para novas ideias e promoções, usar `scripts/sheets_batch.py` (`reserve_insert`),
+além dos planejadores abaixo. O host deve serializar **todos** os escritores da
+mesma instalação; sem essa garantia, bloquear a escrita. Google Sheets não
+oferece compare-and-swap e este módulo não cria um lock distribuído.
+
+Fornecer snapshot completo e recém-lido com `spreadsheet_id`,
+`complete_fresh_read=true` e `sheets.{Ideias,Produções,Config}` contendo
+`sheet_id`, `grid_rows` e `rows` (cabeçalho na primeira linha). Conferir
+`Config.CURRENT_SPREADSHEET_ID` contra o ID real; uma cópia de planilha pode
+conter referências à instalação original. Reparar os vínculos da cópia antes
+de usá-la; nunca seguir automaticamente os IDs herdados para escrever.
+
+Na primeira reserva de cada prefixo, fornecer histórico completo verificado
+de IDs emitidos (`historical_ids` e `history_verified_complete=true`), incluindo
+itens removidos/promovidos. Depois, conservar `LAST_ID_TF/VD/SH` e as chaves
+`OP_<operation_id>` em Config. Não decrementar contadores nem limpar o ledger.
+Usar um `operation_id` estável por intenção, preservado no checkpoint.
+
+O resultado agrupa linha formatada, contador e ledger em **um**
+`spreadsheets.batchUpdate` atômico. Enviar `requests` pelo conector autorizado,
+conferir ID/campos/Config por leitura de retorno e só então avançar. Em timeout
+ou resposta perdida, reler e recalcular com o mesmo operation_id; não reenviar
+um batch antigo. `ALREADY_COMMITTED` não requer escrita. Se o TF já saiu de
+Ideias, `REQUIRES_RECONCILIATION` exige localizar sua produção pela origem e
+conferir o Doc com `plan_promotion`, sem emitir novo ID. Um ID de operação com
+conteúdo diferente é conflito. Escritores em outros hosts exigem coordenação
+externa; não alegar exclusividade global por ter passado `single_writer=true`.
+
+Os testes nativos de desenvolvimento cobriram inserção, promoção, readback,
+repetição, erro HTTP 400 com rollback integral do batch, recuperação e remoção
+somente do TF de teste após vínculo/Doc conferidos. O canal real não foi editado.
+
+- **Criação de ideia (E05):** validar cabeçalhos de `Ideias` e ler IDs/temas atuais antes de escrever; `scripts/validate_sheet_schema.py` expõe `plan_new_idea(rows, fields)` para preparar a linha e detectar colisões **no conjunto recebido**, mas **não reserva IDs**. Antes de criar, consultar também o histórico de IDs TF já promovidos e/ou contador persistente da instalação (implementado em `sheets_batch.py`), para evitar reutilização de TF antigos; garantir exclusividade de escrita, reler dados imediatamente antes da inserção, usar escrita nativa de texto com formatação preservada, localizar a nova linha pelo ID e confirmar os campos. Na ausência dessas garantias, ficar em **PARCIAL**, sem inserir. Nunca criar ideias de teste na planilha real sem autorização.
 - Ideias ainda exploratórias ficam em **Ideias**.
 - **Promoção E06/E07:** usar `scripts/promotion.py` (função `plan_promotion`) com snapshot completo e atual de `Ideias` e `Produções` e histórico de IDs `VD/SH` já emitidos. **Uma transição por chamada:** planejar a produção com `IDEIA_ORIGEM_ID=TF_####` em `OBSERVAÇÕES` → confirmar criação e reler ID/origem → vincular `PRODUÇÃO VINCULADA` na ideia e reler → concluir/vincular Doc nativo formatado (F06) e conferir URL → somente com consentimento explícito para remoção, reler as duas abas imediatamente e excluir a ideia pelo ID atual, nunca por índice antigo. Em erro, repetir a detecção e retomar a fase encontrada, sem gerar outro vídeo ou apagar a ideia. `READY_FOR_AUTHORIZED_REMOVAL` é **proposta**, não permissão nem exclusão executada. Sem serialização de escritores, histórico confiável, readback ou ferramenta real, bloquear a escrita; não usar produções publicadas como teste.
 - **Upsert E08:** usar `scripts/upsert_production.py` (`plan_upsert`) com cabeçalhos e linhas atuais de `Produções`; atualizar **somente** as células indicadas pelo planejador. Aceitar alteração de título A/B e links diretos de Doc/thumbnail apenas com origem verificada, detectar valor anterior incompatível antes de substituir, preservar ID/TIPO/observações, e nunca assumir índices de linha após edições concorrentes. Antes da escrita, reconsultar ID/linha e comparar valores antigos; escrever via conector Sheets com formato RAW, reler a linha exata e confirmar as mudanças. `STATUS=PUBLICADO` é somente **registro posterior da postagem manual feita pelo criador**, mediante confirmação real, data e link YouTube; a skill **não publica, agenda, envia nem ensina a postar**. `REVISÃO=APROVADO` requer decisão editorial registrada. Sem ferramenta ou confirmação, registrar pendência e **não inventar gravação**.

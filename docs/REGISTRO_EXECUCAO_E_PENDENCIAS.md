@@ -1,3 +1,29 @@
+# Estado verificado — continuação Work, 11/11/2026
+
+**V1 ainda não liberada.** A contagem e os critérios atuais estão no topo do roadmap; registros antigos abaixo são históricos. Sem instalação do plugin e sem postagem. Toda escrita Google desta rodada ocorreu em estrutura QA nova, separada do canal.
+
+## Entrega funcional desta rodada
+
+- `sheets_batch.py`: lote nativo único com linha, contador persistente e operation_id; recuperação de resposta perdida, fingerprint do pedido, proteção de Config copiada, formatação/validação sem copiar dados ou chips de outra linha. Escritor único precisa ser coordenado pelo host; não existe lock distribuído ou CAS do Sheets.
+- Corrigidos: status inicial de ideia incompatível com dropdown real (`IDEIA`); datas impossíveis; histórico de checkpoint alterado na mesma revisão; ID `VD_####/SH_####` sem colchetes no briefing; `npm test` que retornava sucesso com zero testes agora executa sete testes reais de runtime.
+- **Google real:** [planilha QA](https://docs.google.com/spreadsheets/d/1MFqO161i7Kzg0FAGaFbaFjz_znSEA5oEfRpRzLYC2hs/edit), [pasta QA](https://drive.google.com/drive/folders/1LOu2nd2HbzlypT09SBAoPwW0niq-daH2). TF_0018 → VD_0009 (linha 35), origem preservada, [Doc nativo](https://docs.google.com/document/d/1ZeW9ezuerqyiDzhhb3aLaY38mj2A0c4hEJOSYqk-ULs/edit) formatado e preenchido com texto autoral de teste, [PNG real do render](https://drive.google.com/file/d/1_nrb862HtV0m1jPa5OmdvTazDj72_nPp/view) em Thumbnails/Longos QA. ID, tipo, título, vínculos, pais, estilos e validações relidos.
+- Falha deliberada HTTP 400 (`No grid with id: 2147483600`) inserida no batch de TF_0019: readback comprovou que linha/contador/ledger não mudaram. Repetição corrigida criou um único TF_0019. TF_0018 removida somente depois de reler ID/origem/vínculo e conferir o Doc; a produção foi preservada. Retry do roteiro retorna `NO_CHANGE`; reserva repetida não emite novo ID. Config da cópia foi religada aos próprios IDs, sem usar os caminhos do canal.
+- **Registro posterior, sem postagem:** VD_0001 na cópia QA corresponde ao vídeo real `ptRToN0ATEE`, publicado em `2026-09-15T22:00:01Z` (metadados vidIQ lidos). Gravada apenas a data 2026-09-15; readback e repetição NO_CHANGE. Nenhuma produção de teste marcada PUBLICADO.
+- **Revisão independente com contexto separado:** releu Sheets e Doc reais; confirmou origem, pais, ledger, inexistência de duplicação e correspondência literal entre as quatro narrações do Doc e o fixture LONGO. Encontrou o placeholder de ID, corrigido no gerador/Doc e coberto por regressão. Aprovação humana continua PENDENTE; kit de QA diz NÃO PUBLICAR.
+- **L02/L03 já tinham renders reais:** [CI 43062224578](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/43062224578), artefato 13873913208 baixado nesta sessão. MP4 H.264/AAC 16:9 de 20 s e 9:16 de 13,5 s; seis quadros PNG reais inspecionados; cenas, Nox canônico, legendas e CTA conferidos. FFmpeg decodificou áudio, sem clipping (picos -5,7/-5,5 dBFS). Narração sintética offline e cues dos WAVs; **não** foi feita escuta humana, reconhecimento fonético ou aprovação editorial. São testes técnicos, não vídeos de produção aprovados.
+- **D05 parcial:** cinco WAVs originais sintetizados sem samples de terceiros, em `assets/sfx/`, com fonte reproduzível, durações/PCM/envelope/pico/RMS/hashes testados. Status LISTENING_PENDING; não entram automaticamente como APPROVED no catálogo H07. Falta escuta.
+- **Verificações locais:** 368 testes Python aprovados, seis arquivos de testes Node aprovados, build e auditoria offline do ZIP aprovados com Nox canônico e licenças preservadas. `npm test` confirma sete testes de runtime; os testes Python já incluem esses sete. CI do novo commit deve ser conferido antes de encerrar; não confundir ZIP candidato 0.1.0 com release V1.
+
+## Pendências que não podem ser inventadas
+
+- **C07/M01:** não há telemetria real de tokens por tarefa antes/depois neste host. Comparador e mapa existentes foram usados/testados; nenhuma redução percentual foi alegada. Benchmark de três pares continua pendente.
+- **D04:** não há autorização verificável de redistribuição dos dois backgrounds selecionados no Drive. Não foram copiados ao pacote. Fundo HQ procedural original permanece funcional.
+- **D05:** escuta e aprovação dos cinco candidatos originais.
+- **L04 concluída no desenvolvimento:** sessão inicial salvou STATE/CHECKPOINT em Config A17:C18; sessão de agente nova, sem histórico anterior, releu fontes nativas e executou `recover`: RESUMABLE/J03, revisão 1, completed_count=4, fresh_readback_used=true, write_performed=false. Hash `76e617807d96f489edca56c6dcad8201b99e3a762441bc688d4f9afd97f82e26`. Não recriou entidades. É teste real entre contextos de agente, não reinício do aplicativo Work nem aprovação do conteúdo.
+- **L06/L07:** release final, migração de regras, limpeza de temporários e validação pós-limpeza dependem dos gates abertos. Não apagar roadmap/handoff/rascunhos nem anunciar V1 concluída. Histórico Git preservado.
+
+---
+
 # Diazverso 1.0 — Registro de execução, riscos e pendências
 
 > Atualizado em 2026-11-10. Evidências e status devem ser conferidos no GitHub. **Não é relatório de plugin concluído.**

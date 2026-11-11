@@ -58,6 +58,8 @@ def requests_for(tipo: str, video_id: str, tema: str) -> dict:
         # Evita repetir instruções ou copiar ID de outra produção.
         text = (text.replace("[VD_####]", video_id)
                     .replace("[SH_####]", video_id)
+                    .replace("VD_####", video_id)
+                    .replace("SH_####", video_id)
                     .replace("[TEMA]", assunto)
                     .replace("[assunto]", assunto))
         styled.append((text, obj["style"]))

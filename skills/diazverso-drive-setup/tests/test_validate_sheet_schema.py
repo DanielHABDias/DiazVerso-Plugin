@@ -61,6 +61,14 @@ class SchemaTests(unittest.TestCase):
         self.assertEqual(idea["id"], "TF_0005")
         self.assertEqual(idea["values"][1:3], ["Novo herói", "Uma tese concreta"])
         self.assertFalse(idea["writes_performed"])
+        self.assertEqual(idea["values"][9], "IDEIA")
+
+    def test_invalid_dropdown_values_block_before_write(self):
+        for patch in ({"STATUS": "A AVALIAR"}, {"PRIORIDADE": "URGENTE"}):
+            with self.assertRaises(ValueError):
+                mod.plan_new_idea([list(mod.HEADERS["Ideias"])],
+                    {"TEMA": "Nova", "TESE / CONTEXTO": "Tese", **patch},
+                    previously_issued_ids=[])
 
     def test_existing_theme_not_inserted(self):
         rows = [list(mod.HEADERS["Ideias"]), ["TF_0001", "A origem do herói"]]

@@ -1,37 +1,44 @@
-# AGENTS.md — Diazverso 1.0
+# Diazverso — desenvolvimento do plugin
 
-Este repositório contém a consolidação inicial do novo plugin Diazverso 1.0. **As decisões de 2026-11-10 prevalecem. Plugin antigo e Content Lab antigo são obsoletos; usá-los somente como referência seletiva. A refatoração do Content Lab é posterior à conclusão deste plugin.**
+Este arquivo orienta a construção e será removido somente no fechamento da V1.
+O estado atual e as evidências estão em `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`;
+os critérios e pendências estão em `docs/ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md`.
+Contagens e bloqueios dos handoffs antigos são históricos, não o estado atual.
 
-## Início obrigatório de cada sessão do agente
+## Antes de agir
 
-**Passagem para o Codex em 11/11/2026:** ler `docs/HANDOFF_CODEX_2026-11-11.md` antes de escolher uma tarefa. **Contagem atual em 11/11: 72/88 itens marcados [x], incluindo K04 fora do escopo; 16 pendentes. G05 e H09 CONCLUÍDAS com evidência de render real: GitHub Actions run 43050305634 (success), Remotion independente 4.0.542 gerou 2 vídeos MP4 H.264 30 fps/30 quadros, 4 PNG reais nos formatos 1920×1080 e 1080×1920, todos conferidos por scripts/verify_remotion_outputs.py, artefato 13869207661 baixado e quadros inspecionados visualmente. Detalhes/hashes: docs/VALIDACAO_REMOTION_G05_H09_2026-11-11.md. Corrigida falha de teste E08 preservando proteção contra sobrescrita, substituído ffprobe ausente por validador Python testado em vídeos reais. **Não confundir smoke técnico com vídeo completo narrado**: I04 [x] passou com Nox, parallax, texto, whoosh original e legenda de apoio (run 43054774403 e docs/VALIDACAO_I04_2026-11-11.md); L02/L03/L06/L07 seguem pendentes. M01/tarefa 88 já tem código e política incorporados à main, porém continua [ ] até o benchmark real de tokens; preservar o trabalho, sem refazer pesquisa. Nunca mostrar imagens genéricas como assets oficiais; Nox exclusivamente assets/brand/nox/Nox.png. Postagem manual exclusiva do criador.** Os critérios detalhados e a limpeza de documentos somente pós-release estão nesse handoff, que é TEMPORÁRIO.
+- Conferir branch, HEAD, alterações locais e CI; preservar trabalho mais novo.
+- Ler o estado consolidado e somente o item/skill necessário. Aplicar
+  `skills/diazverso-contexto-eficiente/SKILL.md`; técnicas avançadas e M01 sob demanda.
+- Priorizar uma entrega funcional vertical; reutilizar implementações e testar
+  conforme risco. Não criar relatórios por subpasso nem repetir verificações sem motivo.
+- Prosseguir autonomamente nas tarefas elegíveis; registrar bloqueios reais sem
+  falsificar integração, telemetria, render, permissões ou aprovação humana.
 
-1. Ler primeiro `docs/HANDOFF_CODEX_2026-11-11.md` e `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`, em seguida o **item atual** do roadmap; consultar `docs/DECISOES_E_CONTEXTO.md` somente para histórico/evidência.
-2. Verificar o estado atual do repositório (branch, arquivos e alterações não commitadas) antes de editar.
-3. Carregar apenas as skills e referências pertinentes ao pedido atual; economizar tokens, evitar recitar documentos inteiros e reutilizar contexto já válido. Para sessões longas ou tarefas com muitas fontes, carregar **sob demanda** `skills/diazverso-contexto-eficiente/references/m01-operacao.md`, priorizar checkpoint verificável e recuperação seletiva. O mapa local é opcional, não substitui evidência nem compacta a janela interna do Work.
-4. Se faltar uma definição editorial que o criador ainda não forneceu, não inferir que versões antigas continuam válidas.
-5. Manter a grafia **Diazverso**. O resumo canônico já existe; a direção editorial ainda pode ser ajustada pelo criador, sem retomar automaticamente regras antigas.
+## Decisões que prevalecem
 
-## Desenvolvimento
-- **Decisão mais recente — postagem exclusivamente manual (11/11/2026):** o criador publicará pessoalmente todos os vídeos no YouTube. **Não implementar, importar, manter nem instruir uma skill de envio, upload, agendamento, postagem ou publicação automática**, mesmo com autorização, Work, browser, API ou Content Lab. O plugin termina no **kit de publicação pronto e revisado**, sem explicar o procedimento de postagem. Após o criador informar e comprovar a publicação, pode registrar URL/data/status reais na planilha sem postar por ele. Esta regra substitui qualquer menção histórica a publicação assistida/automatizada.
-
-- **Continuidade autorizada pelo criador:** após implementar cuidadosamente uma entrega funcional e executar apenas as verificações necessárias, seguir **automaticamente para a próxima elegível**, sem pedir 'próximo' a cada vez. Não trabalhar em segundo plano. Se uma tarefa estiver bloqueada por host/permissão, **mantê-la `[ ]` e registrada**, mas avançar com microtarefas independentes, sem falsificar Gate B. Fonte: `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md`.
-- **Prioridade das melhores skills e da Iris:** ler `docs/CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md` antes de implementar motion, QA ou thumbnail. Avaliar Remotion oficial, HyperFrames, GSAP, Humanizer, Last30Days, Baoyu Cover Image, Superpowers, Context Engineering, EarShot, WATCH, Browser Use e **Iris (visão/análise de vídeo; produto exato a identificar)**. Incorporar fisicamente skills com licença adequada; caso contrário criar habilidades Diazverso **originais, do zero**, a partir de requisitos e documentação pública, sem copiar código/texto protegido. GitHub público não é licença.
-- **Seleção de skills/scripts externos — qualidade primeiro (decisão 11/11/2026):** não descartar nem rebaixar uma candidata apenas porque falta um arquivo `LICENSE` ou uma declaração explícita de uso livre. Pesquisar e comparar mérito técnico, desempenho reproduzível, integração, custo de contexto/tokens, segurança e manutenção; ausência de licença não é proibição explícita. Diferenciar **avaliar/estudar** de **copiar/modificar/redistribuir**: para incorporar arquivos de terceiros ao pacote, confirmar autorização aplicável (que pode estar fora de `LICENSE`), preservar avisos e atribuição. Proibição expressa deve ser respeitada; sem autorização verificável para redistribuição, manter a candidata na comparação, buscar permissão, uso permitido sem cópia ou implementação original equivalente, e registrar o estado. Não presumir que silêncio autoriza redistribuição nem selecionar uma skill inferior só por ter licença mais fácil de identificar. Consultar `docs/CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md` e `docs/TERCEIROS_E_LICENCAS.md`.
-- **Limpeza de documentação temporária:** somente **após desenvolver e revisar toda a V1.0 e antes de entregar o ZIP final para instalação manual do criador**, migrar conhecimento e excluir arquivos marcados temporários com verificação de links. Não apagar o roadmap ou notas enquanto o desenvolvimento estiver em andamento.
-- **B06 CONCLUÍDA NO ESCOPO CORRETO:** os ZIPs mínimo/completo passaram no GitHub Actions. **Não instalar plugin no ChatGPT/Codex durante o desenvolvimento.** O criador vai gerar/baixar o ZIP final e instalá-lo pessoalmente após a V1.0 completa, revisada e enxuta. Reexecutar CI após mudanças. **F06 continua parcial**, sem sincronização Docs/Sheets validada.
-- **Critério de conclusão enxuto (decisão mais recente de 11/11):** implementar com cuidado e testar o necessário à natureza e ao risco da entrega; **não exigir revisão formal separada nem relatório/checklist de revisão para cada microtarefa**. Erros conhecidos devem ser corrigidos, e integração/render/escrita externa só são declarados quando realmente testados. Registrar evidência concisa por entrega funcional (não por subpasso) e seguir à próxima. Segurança, permissões e aprovação humana continuam obrigatórias.
-- **Criador oficial:** estruturar o plugin com Plugin Creator oficial OpenAI (skill `create-plugin`, quando disponível), escrever skills conforme Skill Creator oficial e padrão Agent Skills. Pacote portátil com `plugin.json` na raiz; nunca inventar MCP/instalações. B01 (`plugin.json`), B02 (`diazverso-setup`) e B03 (`diazverso-core`) concluídas; **B03 teve revisão separada com 14/14 verificações positivas**. **Instalação é intencionalmente adiada para depois da entrega da V1.0 pelo próprio criador.** **B04 e B05 concluídas e revisadas**: B05 adotou unicamente o root `plugin.json` portátil ChatGPT/Codex, acrescentou o onboarding para `./skills/diazverso-setup/SKILL.md` e passou em 12/12 verificações independentes. **Não criar `.codex-plugin/plugin.json` por padrão**, nem servidores MCP fictícios; consultar `docs/EMPACOTAMENTO_PORTATIL_DIAZVERSO_V1.md`. **B06 foi concluída como validação de ZIP no CI, sem instalar; F06 continua parcial apesar de 7/7 testes de requests. Priorizar integração real de Drive/Sheets e QA de código/render no desenvolvimento, sem instalação antecipada**, sem pressupor acesso a qualquer ambiente.
-- **F06 parcial / 7 testes verdes:** `skills/diazverso-roteiro` + `build_requests.py` + templates LONGO/SHORT existem; [CI 42898526361](https://github.com/DanielHABDias/DiazVerso-Plugin/actions/runs/42898526361) aprovou 7 testes e requisições de exemplo, **não** criação/movimentação de Doc nem sincronização Sheets. Manter `F06 [ ]` até um vídeo de teste ter Doc nativo formatado na pasta correta, link associado à linha exata em `Produções`, leitura de retorno e reteste de duplicidade.
-- **Execução enxuta (decisão 11/11, reforçada posteriormente):** usar a seção `Auditoria de simplificação` do roadmap e `skills/diazverso-contexto-eficiente/SKILL.md`. Os **87 checkboxes são critérios históricos, não obrigação de 87 entregas, skills, commits ou conversas**. Selecionar a menor **entrega funcional vertical** elegível, agrupar implementação + testes + atualização mínima de evidência, reutilizar código/skills e evitar scaffolding, múltiplos relatórios e validações estáticas cerimoniais. Concluir vários IDs no mesmo trabalho somente quando cada critério realmente passar; não simular integração nem excluir documentação prematuramente. Parar ao satisfazer os critérios, seguir à próxima entrega independente sem pedir 'próximo'. **Nox.png já foi importado como binário e verificado por CRC**; exemplos TSX antigos ainda dependem de importação/testes seletivos. O manifesto e a licença das quatro skills externas atualmente incorporadas estão em `docs/TERCEIROS_E_LICENCAS.md`.
-- **Bibliotecas de mídia no Drive:** para seleção/reorganização de Assets, Backgrounds, Memes, Músicas e Sounds, consultar sob demanda `docs/ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md`. Essas pastas já existem na raiz Diazverso. Priorizar assets aprovados; os diretórios `99` são acervo em revisão, **não lixeira nem licença de uso**. Não presumir que músicas “no copyright” são livres; verificar direitos antes de uso/empacotamento.
-- **Contrato de organização do Drive aprovado:** em tarefas de planilha/Docs/Drive, ler sob demanda `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md`. A organização da conta existe, mas **automação do plugin ainda precisa de implementação e teste**. Não usar IDs da conta atual como universais; nunca perder uma ideia na promoção para Produções. Produzir Docs formatados e ler de volta.
-- Escolher as skills especializadas por tarefa e evitar regras globais contraditórias; uma fonte canônica por decisão.
-- Para TypeScript/React/Remotion, priorizar documentação oficial da versão realmente instalada; checar tipos, lint, testes, composição/preview e renderização quando aplicável. Não afirmar que um teste passou sem executá-lo.
-- **Content Lab antigo não é dependência do plugin 1.0.** Sua refatoração ocorrerá depois que a V1.0 estiver concluída e validada; qualquer integração futura exigirá auditoria, segurança, permissões e infraestrutura.
-- Tratar métricas de YouTube e recomendações estratégicas como hipóteses verificáveis, nunca certezas sobre o algoritmo.
-- Nenhuma exclusão de vídeos, canal, branches, arquivos ou outras ações destrutivas sem autorização explícita e específica.
-
-## Memória entre sessões
-- Atualizar `docs/DECISOES_E_CONTEXTO.md` ao final de uma etapa com decisões aprovadas, evidências datadas, alterações verificadas, próximos passos e pendências.
-- Não inflar AGENTS.md com roteiro, cores, política social, prompts ou documentação técnica extensa: essas regras vão para skills/referências específicas consultadas sob demanda.
+- Publicação exclusivamente manual pelo criador. O plugin termina no kit revisado;
+  não implementar/importar envio, postagem, agendamento ou instruções de como postar.
+  Registro posterior em Sheets somente com URL/data/publicação reais verificadas.
+- Não instalar o plugin no ChatGPT/Codex durante desenvolvimento. Gerar/testar o
+  pacote; o criador instalará pessoalmente após conclusão e limpeza da V1.
+- Plugin antigo e Content Lab antigo são obsoletos. Content Lab não é dependência;
+  sua refatoração é posterior. TSX antigos somente como referências seletivas.
+- Nox canônico: `assets/brand/nox/Nox.png`. Preservar bytes/identidade; nunca
+  apresentar imagem genérica como asset oficial. Poses novas exigem comparação visual.
+- Preservar fatos versus opinião, voz PT-BR natural e identidade HQ madura.
+  Especificação: `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`.
+- Integrações Google usam IDs descobertos da instalação e ferramentas autorizadas,
+  sem credenciais embutidas. Testes só em estrutura isolada; readback e idempotência
+  obrigatórios. Escritas com reserva de IDs exigem escritor único coordenado;
+  `sheets_batch.py` não oferece lock distribuído. Não seguir Config herdada de cópia.
+- Avaliar especialistas pelo mérito; consultar
+  `docs/CATALOGO_SKILLS_PRIORITARIAS_E_IRIS.md` ao selecionar motion/QA/thumbnail.
+  Copiar/modificar/redistribuir terceiros só com autorização verificável e avisos
+  preservados. Ausência de licença não impede avaliação, nem autoriza redistribuição.
+- Não enviar áudio a serviços externos sem consentimento específico.
+- Exclusões de dados reais ou outras ações destrutivas precisam de autorização
+  pertinente. Não excluir documentos temporários até toda V1 passar nos critérios;
+  migrar regras úteis e testar referências/pacote antes da limpeza final.
+- Atualizar a fonte de estado e o roadmap por entrega; não propagar o mesmo texto
+  em vários handoffs. Não anunciar V1.0 enquanto restarem gates sem comprovação.
