@@ -5,19 +5,25 @@ description: "Use quando uma tarefa Diazverso exigir várias fontes, skills ou e
 
 # Diazverso — Contexto enxuto sem perder qualidade
 
-**Objetivo:** realizar uma microtarefa por vez, usando contexto mínimo suficiente e acesso sob demanda. Esta skill não substitui competências editoriais nem concede ferramentas.
+**Objetivo:** obter o resultado correto com o menor trabalho total viável (leituras, chamadas, arquivos, retrabalho e tokens). Uma entrega funcional pode satisfazer diversos itens históricos do roadmap. Esta skill não concede ferramentas nem controla cache/tokens internos do host.
 
-## Ciclo de uma microtarefa
+## Estratégia de execução enxuta (decisão 11/11/2026)
 
-1. **Localizar o estado atual:** ler apenas o item correspondente do roadmap e o resultado da última revisão; recuperar arquivos e decisões pertinentes. Não reler toda a história do projeto a cada etapa.
-2. **Definir escopo:** declarar entrada, arquivo/resultado esperado e gate de aceite; executar **uma microtarefa** por vez. Se a tarefa estiver bloqueada, registrar o motivo e escolher a próxima **independente**.
-3. **Carregamento progressivo:** usar metadados das skills para selecionar no máximo a habilidade principal e as realmente necessárias; ler `SKILL.md` somente quando ativada; abrir referências, scripts e assets apenas se a ação exigir. Não carregar as 44 skills antigas.
-4. **Observações compactas:** relatar caminhos, IDs e resultados de testes em vez de transcrever arquivos grandes. Manter saída completa **salva e recuperável** no GitHub ou documento aprovado; nunca compactar credenciais para dentro de logs.
-5. **Preservar fatos críticos:** decisões recentes, restrições, origem de fonte, status real, IDs, revisão, falhas e a próxima tarefa não podem desaparecer na compactação. Dados antigos e não confirmados são referência, não requisito.
-6. **Executar e revisar:** reler arquivos modificados, executar testes disponíveis, separar estático de runtime e conferir links/formatos; **não marcar `[x]` antes da revisão final**. Registrar a evidência e seguir para próxima microtarefa elegível.
-7. **Medir antes de afirmar economia:** comparar tarefas equivalentes quanto a contexto carregado, qualidade e falhas. Não prometer uma porcentagem de redução sem métricas.
+1. **Decidir antes de abrir arquivos:** qual resultado observável resolve a necessidade? Verificar se já existe algo funcional; não criar uma skill, script ou documento se uma alteração simples ou reutilização for suficiente.
+2. **Agrupar trabalho pelo resultado, não pelo número de checkboxes:** reunir itens que pertencem à mesma funcionalidade (implementação + teste + documentação). Os 87 IDs são rastreabilidade histórica, não obrigação de 87 rodadas, commits ou conversas. Manter critérios críticos de segurança, aprovação e integrações, mesmo agrupados.
+3. **Escolher o menor caminho suficiente:** inspecionar apenas trechos/arquivos afetados; usar uma skill principal, auxiliares só quando necessárias; reutilizar funções/testes; evitar comparações, agentes e planejamento extenso para tarefas simples. Scripts e arquivos novos precisam ter uso concreto.
+4. **Fazer uma entrega vertical:** implementar uma parte utilizável de ponta a ponta, com interface/entrada/saída reais. Não criar apenas scaffolding ou documentação se a integração executável puder ser feita agora. Identificar ferramentas disponíveis antes de planejar um teste que o ambiente não consegue executar.
+5. **Validar proporcionalmente ao risco:** mudança textual simples → releitura e conferência de referência; código → teste focado + teste de integração quando possível; escrita em Drive/Sheets → readback/idempotência; render/áudio → inspeção real; exclusão/publicação → aprovação explícita. Uma revisão suficiente por entrega, sem inventar 7/7 ou 12/12 critérios apenas para gerar números.
+6. **Atualizar estado uma vez por entrega:** marcar somente IDs realmente atendidos, referenciar commit/testes e registrar bloqueios que mudam o próximo passo. Evitar atualizar simultaneamente README, AGENTS, roadmap, handoff e registros com o mesmo parágrafo; atualizar a fonte canônica e um ponteiro curto quando indispensável.
+7. **Medir eficiência pelo trabalho total:** quando o host disponibilizar métricas, comparar tokens de entrada/saída, chamadas, tempo, taxa de falhas e retrabalho para a **mesma entrega correta**. Menos tokens em uma chamada não é ganho se duplicar tarefas ou reduzir qualidade. Sem telemetria, tratar eficiência como hipótese e não alegar percentuais.
 
-Para decidir entre skills semelhantes sem carregar todas, consultar `references/roteamento.md` **sob demanda**; o resultado deve ter uma única skill responsável e auxiliares somente se exigidas.
+### Regra de parada
+
+Se a saída já satisfaz os critérios, **parar**. Não acrescentar abstrações, novas skills, pastas, testes redundantes ou futuras funcionalidades sem necessidade demonstrada. Se um item depende de conexão/execução ausente, registrar a pendência e avançar ao próximo trabalho independente; não criar documentação repetitiva como substituto da integração.
+
+### Carregamento de contexto
+
+Metadados → skill relevante → referências somente sob demanda. Nunca ler o roadmap inteiro ou todos os logs em cada rodada; usar a seção consolidada do roadmap e os IDs afetados. Resumir saídas volumosas preservando erros úteis, provas, decisões e caminho de retomada. Não assumir controle sobre KV-cache, masking interno, contagem de tokens ou subagentes se o host não oferecer esses recursos.
 
 ## Skill externa incorporada e atribuição
 
@@ -28,4 +34,4 @@ Não presumir acesso a contadores exatos de tokens, hooks de cache, edição da 
 ## Limites
 
 - Não condensar de modo a ocultar erro, não descartar decisão recente e não inferir que skills independentes já foram instaladas ou testadas no host.
-- Não executar limpeza dos documentos temporários antes do **release 1.0 completo, revisado e comprovadamente instalado**; seguir o registro de pendências.
+- Não executar limpeza dos documentos temporários antes da **V1.0 completa, revisada e empacotada**; a instalação manual pelo criador ocorre somente depois; seguir o registro de pendências.
