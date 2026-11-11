@@ -60,6 +60,7 @@ def make_tts(text: str, output: Path) -> None:
         # CI fallback: dev-only meSpeak package (GPL); neither the library nor
         # its voice data is included in the Diazverso ZIP. Output is a TEST.
         js = ("const m=require('mespeak');"
+              "m.loadConfig(require('mespeak/mespeak_config.json'));"
               "m.loadVoice(require('mespeak/voices/pt.json'));"
               "const wav=m.speak(process.argv[2],{rawdata:'buffer',speed:205,pitch:52});"
               "if(!Buffer.isBuffer(wav)||wav.length<512)throw Error('no speech output');"
