@@ -1,0 +1,39 @@
+{
+  "schema": "diazverso-short-preset-v1",
+  "name": "Diazverso Shorts 9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "aspect_ratio": "9:16",
+  "coordinate_system": "pixel top-left; x rightwards; y downwards",
+  "design_safe_area": {
+    "left": 96,
+    "right": 160,
+    "top": 240,
+    "bottom": 360
+  },
+  "content_bounds": {
+    "x_min": 96,
+    "x_max": 920,
+    "y_min": 240,
+    "y_max": 1560
+  },
+  "caption_region": {
+    "x_min": 130,
+    "x_max": 900,
+    "y_min": 1210,
+    "y_max": 1490
+  },
+  "headline_region": {
+    "x_min": 130,
+    "x_max": 900,
+    "y_min": 350,
+    "y_max": 900
+  },
+  "notes": [
+    "Margens conservadoras de design: interfaces de cada plataforma podem variar; validar preview real antes de publicar manualmente.",
+    "Texto essencial, rosto de Nox e CTA não devem depender de áreas próximas às bordas.",
+    "Legendas são padrão quando há fala; cena exclusivamente tipográfica pode dispensar legendas redundantes.",
+    "Renderizar somente depois de verificar posições/contraste e temporização no runtime real."
+  ]
+}
