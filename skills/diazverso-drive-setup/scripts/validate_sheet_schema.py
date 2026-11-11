@@ -54,6 +54,52 @@ def validate(snapshot: dict) -> dict:
 
 
 
+
+def plan_safe_metadata_repairs(snapshot: dict) -> dict:
+    """E04: propose only non-destructive frozen-header / Config-hidden updates.
+
+    No API writes. Header mismatch and missing tabs are blockers rather than
+    candidates for automatic repair. Dropdown/filter/style audits require
+    separate verified metadata and are NEVER assumed correct.
+    """
+    checked = validate(snapshot)
+    blocked = [x for x in checked["issues"]
+               if x["issue"] in ("MISSING_TAB", "HEADER_NOT_READ", "HEADER_MISMATCH")]
+    props = {}
+    for sheet in snapshot["sheets"]:
+        item = sheet.get("properties", {})
+        if item.get("title") in HEADERS:
+            sid = item.get("sheetId")
+            if type(sid) is not int or sid < 0:
+                raise ValueError("ID numérico de aba não verificado")
+            props[item["title"]] = sid
+    if blocked:
+        return {"status": "BLOCKED_UNSAFE_SCHEMA", "issues": blocked,
+                "requests": [], "writes_performed": False}
+    requests = []
+    for issue in checked["issues"]:
+        name = issue["sheet"]
+        sid = props[name]
+        if issue["issue"] == "HEADER_NOT_FROZEN":
+            requests.append({
+                "updateSheetProperties": {
+                    "properties": {"sheetId": sid, "gridProperties": {"frozenRowCount": 1}},
+                    "fields": "gridProperties.frozenRowCount"
+                }})
+        elif issue["issue"] == "CONFIG_VISIBLE":
+            requests.append({
+                "updateSheetProperties": {
+                    "properties": {"sheetId": sid, "hidden": True},
+                    "fields": "hidden"
+                }})
+    return {"status": "READY_FOR_AUTHORIZED_METADATA_REPAIR" if requests else "NO_SAFE_REPAIR_NEEDED",
+            "requests": requests, "requires_explicit_authorization": True,
+            "must_reread_before_and_after": True,
+            "validation_not_performed": ["dropdowns", "filters", "cell_formatting"],
+            "writes_performed": False}
+
+
+
 def plan_new_idea(rows: list[list], fields: dict, *, previously_issued_ids: list[str]) -> dict:
     """E05: prepare exactly one row; caller owns write and live readback.
 
