@@ -70,6 +70,7 @@ def prepare(repo: Path, public: Path) -> dict:
     shutil.copyfile(source, destination)
     whoosh = public / "i04-whoosh-original.wav"
     build_original_whoosh(whoosh)
+    (public / "i04-background.svg").write_text("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 1920\" width=\"1080\" height=\"1920\">\n  <defs>\n    <linearGradient id=\"night\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1423\"/>\n      <stop offset=\".55\" stop-color=\"#223857\"/>\n      <stop offset=\"1\" stop-color=\"#0d1728\"/>\n    </linearGradient>\n    <pattern id=\"halftone\" patternUnits=\"userSpaceOnUse\" width=\"36\" height=\"36\">\n      <circle cx=\"18\" cy=\"18\" r=\"2.2\" fill=\"#a3c4fa\" opacity=\".12\"/>\n    </pattern>\n  </defs>\n  <rect width=\"1080\" height=\"1920\" fill=\"url(#night)\"/>\n  <rect width=\"1080\" height=\"1920\" fill=\"url(#halftone)\"/>\n  <path d=\"M-150 1190 L1200 420\" stroke=\"#a3c4fa\" stroke-opacity=\".15\" stroke-width=\"8\"/>\n  <path d=\"M-150 1250 L1200 480\" stroke=\"#a3c4fa\" stroke-opacity=\".08\" stroke-width=\"4\"/>\n</svg>\n", encoding="utf-8")
     return {
         "canonical_nox": source.as_posix(),
         "copied_nox": destination.as_posix(),
