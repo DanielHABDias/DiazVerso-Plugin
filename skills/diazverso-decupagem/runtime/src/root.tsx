@@ -2,11 +2,14 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {SmokeScene} from './smoke-scene';
 import {HQMigrationScene} from './hq-migration-scene';
+import {I04NoxScene} from './i04-nox-scene';
 
 /** G05/H09 independent TSX sandbox, no external Content Lab dependencies.
  * Both output aspect ratios use one real Remotion composition implementation.
  */
 export const Root:React.FC = () => <>
+  <Composition id="DiazversoI04NoxVertical" component={I04NoxScene}
+    durationInFrames={240} fps={30} width={1080} height={1920}/>
   <Composition
     id="DiazversoSmoke"
     component={SmokeScene}
