@@ -31,9 +31,9 @@ export const DiazCrtPanel: React.FC<CrtPanelProps> = ({
       border:'9px solid #292E36',borderRadius:22,
       boxShadow:'0 18px 65px rgba(0,0,0,0.65), 0 0 0 3px #565C66',
       backgroundColor:'#08090B'}}>
-      <OffthreadVideo src={staticFile(src)} startFrom={clipStartFrame}
-        endAt={clipStartFrame+sceneDurationFrames}
-        volume={audioAuthorized ? audioVolume : 0}
+      <OffthreadVideo src={staticFile(src)} trimBefore={clipStartFrame}
+        durationInFrames={sceneDurationFrames}
+        muted={!audioAuthorized} volume={audioAuthorized ? audioVolume : 0}
         style={{width:'100%',height:'100%',objectFit:'contain'}} />
       <div aria-hidden style={{position:'absolute',inset:0,pointerEvents:'none',
         backgroundImage:`repeating-linear-gradient(to bottom, rgba(0,0,0,${scanlineOpacity}) 0px, rgba(0,0,0,${scanlineOpacity}) 2px, transparent 2px, transparent 5px)`,
