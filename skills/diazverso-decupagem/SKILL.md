@@ -51,6 +51,12 @@ Para testar: `node --test skills/diazverso-decupagem/tests/test_kinetic_text.mjs
 
 **Fronteira de validação:** os cálculos de cobertura podem ser testados offline, mas o componente TSX só será considerado visualmente revisado após executor Remotion independente (H09/L02) renderizar frames e confirmar crop, segurança, nitidez e Nox. Não afirmar que um componente foi renderizado quando houve apenas validação estática/numérica.
 
+## Painéis de filme/TV com CRT — H06
+
+O componente autoral `references/motion/crt-panel.tsx` (`DiazCrtPanel`) enquadra **um trecho já disponibilizado legalmente ao editor** numa moldura contextual de monitor, com scanlines perceptíveis, vinheta e reflexo discretos. Os parâmetros são conferidos por `references/motion/crt-panel-math.mjs`: arquivo relativo ao projeto, início/duração dentro do vídeo de origem aferido, dimensão de quadro, intensidade de scanlines, evidência textual da revisão de direitos e autorização **separada** para o áudio original, com volume controlado. Sem autorização para áudio, o trecho fica mudo; a narração/trilha principal são tratadas em outra camada.
+
+**Obrigatório:** os campos `rightsStatus='APPROVED'` e `rightsEvidence` são informações inseridas **após decisão humana real**; o código não comprova licença nem garante enquadramento jurídico. Um clipe de terceiros marcado sem evidência ou com direitos pendentes não pode ser usado. Não importar filmes/séries de plataformas nem presumir permissão por serem referências editoriais. Ao executar Remotion, conferir se o vídeo realmente decodificou, se há áudio permitido, ausência de distorção e CRT perceptível nos frames finais. `tests/test_crt_panel.mjs` contém testes de parâmetros (não testes de render); CI os executará.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
