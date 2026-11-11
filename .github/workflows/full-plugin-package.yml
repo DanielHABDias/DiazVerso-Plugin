@@ -86,6 +86,13 @@ jobs:
       - name: Test independent Remotion runtime helpers
         working-directory: skills/diazverso-decupagem/runtime
         run: npm test
+      - name: Ensure ffprobe is available for MP4 dimension QA
+        run: |
+          if ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          ffprobe -version | head -n 1
       - name: Render synthetic reference scene 16:9 and 9:16
         working-directory: skills/diazverso-decupagem/runtime
         run: |
