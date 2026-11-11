@@ -8,7 +8,7 @@ description: "Use para transformar roteiro aprovado em cenas, componentes TSX/Re
 # Edição por cenas
 
 1. Receber ID, formato e revisão aprovada do roteiro. Confirmar narração, intenção visual, mídia e direitos.
-2. Dividir por mudanças de informação: objetivo, fala, visual, duração, camadas, música/SFX, legenda e fonte. Evitar cortes ou efeitos sem função.
+2. Dividir por mudanças de informação: objetivo, fala, visual, duração, camadas, música/SFX, legenda e fonte. Definir a função do visual: evidência, explicação, orientação/progresso ou humor/reação. Em encenação didática, identificar papel e ação do personagem, dúvida, demonstração e informação aprendida. Escolher imagem sustentada, reação pontual ou composição em movimento conforme o beat; consultar [referências audiovisuais](../diazverso-core/references/referencias-audiovisuais.md) somente para a técnica necessária. Evitar cortes ou efeitos sem função.
 3. Selecionar apenas os recursos necessários da [biblioteca motion](references/motion.md). Para áudio, usar catálogo revisado e duração aferida.
 4. Exportar o contrato `../../schemas/remotion-composition-v1.schema.json` e validar com `scripts/validate_composition.py <props.json>`. A validação estrutural não comprova mídia nem render.
 5. Gerar a composição no projeto Remotion disponível. Cenas usam `Sequence`, áudio e componentes com tempos relativos coerentes e dimensões do formato.

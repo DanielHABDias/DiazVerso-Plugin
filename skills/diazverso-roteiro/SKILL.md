@@ -16,6 +16,10 @@ description: "Use para criar ou atualizar o Google Doc nativo formatado de rotei
 3. Descobrir se a linha já tem roteiro ou há Doc com o ID na pasta. Se houver, **reutilizar/editar de forma controlada** após ler sua estrutura. Não duplicar por repetição.
 4. Carregar `templates/roteiro-longo-v1.json` ou `templates/roteiro-short-v1.json` a partir do pacote. Não depender da conta Google do autor para obter o template.
 
+## Direção editorial
+
+Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editoriais](../diazverso-core/references/formatos-editoriais.md). Desenvolver a tese com exemplos e contrapontos ou contar a história conforme a promessa. Em ensino através de personagens, conectar situação da obra → escolha/consequência → princípio → aplicação ou reflexão específica, distinguindo fato, interpretação e analogia. Não obrigar uma moral em histórias nem prometer mudança garantida ao espectador. Para o uso das referências de linguagem, consultar [vídeos e princípios](../diazverso-core/references/referencias-audiovisuais.md) apenas quando necessário.
+
 ## Criação e preenchimento
 
 - Para um Doc novo, usar ferramenta Google Drive para **criar um arquivo nativo** `application/vnd.google-apps.document`, com nome `VD_#### — [tema] — Roteiro` ou `SH_#### — [tema] — Roteiro`; mover ao destino correspondente.

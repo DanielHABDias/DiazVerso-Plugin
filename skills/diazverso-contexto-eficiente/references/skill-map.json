@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.0.0",
+  "plugin_version": "1.1.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -63,8 +63,8 @@
     {
       "name": "diazverso-core",
       "path": "skills/diazverso-core/SKILL.md",
-      "description": "Use para aplicar a identidade editorial, voz PT-BR, tese, estética HQ e uso do Nox no conteúdo Diazverso.",
-      "sha256": "923cb403126739ce61356d6efb644dd46859f78ee8ec2f707154ce58ca3f971a",
+      "description": "Use para escolher formatos editoriais, ensinar ideias práticas ou filosóficas através de personagens e aplicar identidade, voz PT-BR, tese, estética HQ e Nox no conteúdo Diazverso.",
+      "sha256": "eb0cede4f2995d63f6c641319cfa66498ea56ffbe937a05b47cbc7ca39abbddc",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-drive-setup"
@@ -72,6 +72,8 @@
       "references": [
         "assets/brand/nox/Nox.png",
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-core/references/referencias-audiovisuais.md",
         "skills/diazverso-drive-setup/references/estrutura.md"
       ]
     },
@@ -105,15 +107,17 @@
       "name": "diazverso-decupagem",
       "path": "skills/diazverso-decupagem/SKILL.md",
       "description": "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso.",
-      "sha256": "1369569c0b64ffa345e08430b68bfde60dff51eae628637f543af46f1037b8d3",
+      "sha256": "a102fc387eb82e1fcfdcb9fa8249b41a2e1d06f2f57013fd400983a629227d2d",
       "dependencies": [
         "diazverso-contexto-eficiente",
+        "diazverso-core",
         "diazverso-shorts"
       ],
       "references": [
         "assets/sfx/catalog.json",
         "schemas/remotion-composition-v1.schema.json",
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/referencias-audiovisuais.md",
         "skills/diazverso-decupagem/references/motion.md",
         "skills/diazverso-decupagem/references/qa.md",
         "skills/diazverso-decupagem/references/scenes.md",
@@ -175,12 +179,14 @@
       "name": "diazverso-pesquisa",
       "path": "skills/diazverso-pesquisa/SKILL.md",
       "description": "Use para investigar pautas, gerar ideias de vídeos sobre quadrinhos, filmes, séries, jogos, Marvel, DC ou Ben 10 e construir uma tese argumentativa com fontes confiáveis para o Diazverso.",
-      "sha256": "a90a5528f189f98d80786232f739921fca1a67ff46c636a0e69116faf9676963",
+      "sha256": "a3fd46dc55fd34c7d570c750377d4bbaf4e97c311387fdc9f56490a6e9dfcee7",
       "dependencies": [
-        "diazverso-contexto-eficiente"
+        "diazverso-contexto-eficiente",
+        "diazverso-core"
       ],
       "references": [
-        "skills/diazverso-contexto-eficiente/SKILL.md"
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/formatos-editoriais.md"
       ]
     },
     {
@@ -199,12 +205,14 @@
       "name": "diazverso-revisao-estrutura",
       "path": "skills/diazverso-revisao-estrutura/SKILL.md",
       "description": "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção.",
-      "sha256": "38741a2ba9b97e909be7961f6d3222baeef6ce294ff1a4578c5a1f5018493e94",
+      "sha256": "5550ce97b9bd5e73d4d75fe4bbd0ec8b355630d19ce50dd23a0f52b038896af6",
       "dependencies": [
-        "diazverso-contexto-eficiente"
+        "diazverso-contexto-eficiente",
+        "diazverso-core"
       ],
       "references": [
-        "skills/diazverso-contexto-eficiente/SKILL.md"
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/formatos-editoriais.md"
       ]
     },
     {
@@ -235,12 +243,15 @@
       "name": "diazverso-roteiro",
       "path": "skills/diazverso-roteiro/SKILL.md",
       "description": "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado.",
-      "sha256": "011c4810bc154e14eca36df768262a64afdb2207fcc7ddb0d8f4f682f58a1bd1",
+      "sha256": "d1c40618d7b048ca3785afb2771663461e4e3c2305c2e7e9751a1379fd967f40",
       "dependencies": [
-        "diazverso-contexto-eficiente"
+        "diazverso-contexto-eficiente",
+        "diazverso-core"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-core/references/referencias-audiovisuais.md",
         "skills/diazverso-roteiro/scripts/build_requests.py",
         "templates/roteiro-longo-v1.json",
         "templates/roteiro-short-v1.json"

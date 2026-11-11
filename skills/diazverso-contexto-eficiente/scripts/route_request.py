@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""routing — deterministic, narrow selection for 12 isolated Diazverso requests.
+"""routing — deterministic, narrow selection of Diazverso skills.
 
 This selects a skill; it NEVER calls or loads skills, invokes connectors,
 renders, approves, or posts videos. Unknown requests fail closed.
@@ -24,6 +24,7 @@ RULES = (
  ("decupagem","diazverso-decupagem",r"\b(?:decupagem|dividir.*cenas|planejar cenas)\b"),
  ("shorts","diazverso-shorts",r"\b(?:shorts?|vídeo vertical)\b"),
  ("roteiro","diazverso-roteiro",r"\b(?:escrever roteiro|criar roteiro|roteirizar)\b"),
+ ("formato editorial","diazverso-core",r"\b(?:formatos? editoriais?|estilos? de v[ií]deos?)\b|\bensinar\b.*\b(?:ideias?|conceitos?|personagens?|fic[cç][aã]o)\b|\baprendizado\b.*\b(?:fic[cç][aã]o|personagens?)\b"),
 )
 META = {"diazverso-core", "diazverso-criacao-video", "diazverso-contexto-eficiente"}
 
