@@ -15,9 +15,14 @@ description: "Use para criar ou adaptar roteiro e plano audiovisual de Shorts Di
 4. Construir progressão curta: gancho → contexto mínimo → evidência/confronto → payoff → **CTA ao canal contextual e breve**. Não abrir com logo/longo preâmbulo nem interromper resolução da tese para CTA.
 5. Planejar quadros com mudanças motivadas por informação: Nox (se relevante e fiel ao asset canônico), HQ moderna, recorte, parallax, câmera e tipografia de impacto, **sem colocar efeito em todo segundo**. Nunca inventar direito de uso de clipe/áudio.
 6. Aplicar o preset `references/preset-vertical-v1.json`: **1080×1920, 30 fps, 9:16**. Manter textos e elementos essenciais dentro dos limites conservadores. Reservar a região de legendas e evitar sobreposição com título/CTA. Essas margens não são garantia sobre UI do YouTube; conferir em preview real.
-7. **Legenda sincronizada com a fala por padrão**, com blocos naturais, contraste, leitura e duração suficientes. Trechos **exclusivamente de texto na tela** podem dispensar legenda redundante; não remover legenda só porque também existe elemento gráfico. Se sincronização não puder ser aferida em vídeo/áudio real, marcar `NÃO TESTADA`.
+7. **Legenda sincronizada com a fala por padrão:** quando existirem timestamps de palavras verificados, executar `scripts/captions.py <entrada.json> --srt-output <saida.srt>` para gerar SRT e cues por frame (I03). Cada entrada em `words` informa `start_ms`, `end_ms`, `text`; `visual_text_only` só pode indicar intervalos **sem fala**. O programa rejeita palavras sobrepostas e tentativas de ocultar fala em cenas tipográficas. **Gerar SRT não equivale a aferir sync real**: no render, comparar imagem, áudio e legendas; até lá, `audio_sync_verified=false`.
+
 8. Preparar decupagem de cenas (skill `diazverso-decupagem` quando disponível), narrador × efeito × mídia × duração, e pontos de preview. Confirmar a mesma versão do roteiro aprovada pelo criador antes de produzir.
 9. Encerrar com kit textual/roteiro/arte de referência conforme recursos disponíveis. **Não declarar render/legendagem sincronizada, retenção prevista ou publicação se não houve teste/ação real.**
+
+## Revisão de Short — I05
+
+Quando existir render e evidências, executar `scripts/review_short.py <entrada.json>` com gancho, duração, payoff, CTA, legenda, áudio, links, margens, direitos e inspeção do render. O revisor devolve `REVIEW_REQUIRED`, `EDITORIAL_REVIEW` ou `READY_FOR_CREATOR_APPROVAL` — **nunca aprovação automática**. Gancho tardio e duração abaixo de 60 s são observações editoriais, não previsão de retenção nem impedimentos da plataforma. Sem render real, marcar `render_checked=false`; sem sincronização ou escuta real, `captions=NOT_VERIFIED`/`audio_checked=false`. O criador decide a aprovação e posta manualmente.
 
 ## Critérios de aceitação do roteiro/plano de Short
 
