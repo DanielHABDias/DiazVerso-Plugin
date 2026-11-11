@@ -49,6 +49,12 @@ CLI para diagnóstico sem escritas: `python skills/diazverso-criacao-video/scrip
 
 **Shorts:** ativar `../diazverso-shorts/SKILL.md` para roteiro/plano vertical, com preset testável `../diazverso-shorts/references/preset-vertical-v1.json` (1080×1920, 30 fps e zonas seguras conservadoras). Legendas sincronizadas são o padrão, com exceção para cenas **exclusivamente de texto na tela**. Gancho rápido, payoff e CTA ao canal contextual. Preferência por pelo menos 60 s, sem tratar como limite da plataforma. **O criador posta manualmente**.
 
+## Nox e validação de thumbnail — G01/G03
+
+Quando uma produção usar Nox, carregar `../diazverso-nox/SKILL.md` e conferir a referência canônica com `../diazverso-nox/scripts/character_lock.py`; poses derivadas exigem **comparação visual verdadeira** antes do uso. Sem imagem derivada ou inspeção disponível, registrar pendência, não presumir fidelidade à identidade. G01 continua incompleta até teste de uma pose real.
+
+Após preparar os conceitos A/B, a G03 usa `../diazverso-thumbnail/scripts/review_thumbnail.py` para conferir o arquivo real, dimensões, hashes, revisão humana e formato do link do Drive. Validar também **a existência e identidade do arquivo no Drive por leitura conectada** antes de atribuir o gate `titulo_thumbnail=APROVADO`. O script local não consulta Drive nem produz imagens; sem essa evidência, manter a aprovação pendente.
+
 ## Thumbnail A/B — G02
 
 Para transformar a tese e promessa aprovadas em conceitos de thumbnail, acionar `../diazverso-thumbnail/SKILL.md`. A skill gera dois briefings visualmente distintos (A/B) a partir do **mesmo roteiro**, com contraste, foco, texto curto, direitos dos assets e Nox apenas quando fizer sentido. Validar o JSON com `../diazverso-thumbnail/scripts/validate_thumbnail_brief.py` e manter as artes como **conceitos** até uma ferramenta de imagem efetivamente gerar os arquivos e G03 conferir legibilidade/dimensões/identidade e links reais do Drive. Não inferir CTR nem criar thumbnail final por preencher o contrato.
