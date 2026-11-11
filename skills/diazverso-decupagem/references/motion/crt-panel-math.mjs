@@ -1,4 +1,4 @@
-/** H06 - safety/geometry for contextual CRT film/TV panels.
+/** crt - safety/geometry for contextual CRT film/TV panels.
  * Pure module, no video fetching or media analysis.
  */
 export function planCrtPanel(config) {

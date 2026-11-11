@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H08: render scene excerpts and 3 still previews with an independent Remotion CLI.
+"""previews: render scene excerpts and 3 still previews with an independent Remotion CLI.
 
 Explicit --execute is required. The script does NOT render the final film,
 publish to YouTube, download assets or claim visual QA. It records outputs and
@@ -129,7 +129,7 @@ def execute_plan(plan: dict, *, timeout_s: int = 180) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--props", required=True, type=Path, help="H01 composition JSON")
+    parser.add_argument("--props", required=True, type=Path, help="composition composition JSON")
     parser.add_argument("--entrypoint", required=True, type=Path, help="Independent Remotion entry .tsx")
     parser.add_argument("--composition-id", required=True)
     parser.add_argument("--out", required=True, type=Path)

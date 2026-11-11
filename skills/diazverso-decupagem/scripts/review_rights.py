@@ -1,4 +1,4 @@
-"""J06: pre-publication rights, attribution and affiliate disclosure gate.
+"""rights: pre-publication rights, attribution and affiliate disclosure gate.
 
 This evaluates supplied records; neither a license oracle nor Content ID scan.
 Transformations (mirror, crop, CRT, borders) NEVER waive copyright.

@@ -1,6 +1,4 @@
-/** Original Diazverso procedural HQ background math (G06).
- * Historical reference: BackgroundHQ.tsx; no binary assets or Content Lab imports.
- */
+/** Deterministic procedural HQ background geometry and texture parameters. */
 const styles = new Set(['solid','halftone','grid','stars','film','paper']);
 export function validateHQBackground(options = {}) {
   const {mode='halftone',baseColor='#162034',opacity=100,

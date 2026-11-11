@@ -3,9 +3,11 @@ name: diazverso-revisao-estrutura
 description: "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção."
 ---
 
-# Diazverso — Revisão de estrutura, gancho e ritmo (F08)
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
-**Escopo:** revisar um roteiro identificável (ID `VD_####` ou `SH_####`, versão e tipo) antes da aprovação editorial e da decupagem. Não substitui revisão factual F07, revisão de voz F09, aprovação humana F10 ou análise de retenção real pós-publicação.
+# Diazverso — Revisão de estrutura, gancho e ritmo (structure)
+
+**Escopo:** revisar um roteiro identificável (ID `VD_####` ou `SH_####`, versão e tipo) antes da aprovação editorial e da decupagem. Não substitui revisão factual facts, revisão de voz voice, aprovação humana script-approval ou análise de retenção real pós-publicação.
 
 ## Entrada mínima
 
@@ -31,7 +33,7 @@ Produzir relatório conciso, com evidência apontando para trechos do roteiro:
 | --- | --- | --- | --- | --- |
 | Abertura / desenvolvimento / fechamento | Problema específico ou ponto forte | Por que afeta clareza, curiosidade ou payoff | Reescrita ou corte mínimo | ALTA / MÉDIA / BAIXA |
 
-Registrar (a) promessa e ponto de payoff, (b) mapa breve das batidas, (c) redundâncias e (d) status `APROVAR ESTRUTURA`, `REVISAR` ou `BLOQUEADO`. Quando houver proposta de alteração, reler o texto atualizado e conferir que não contradiz fatos ou quebra a promessa; se afetar afirmações, encaminhar para F07.
+Registrar (a) promessa e ponto de payoff, (b) mapa breve das batidas, (c) redundâncias e (d) status `APROVAR ESTRUTURA`, `REVISAR` ou `BLOQUEADO`. Quando houver proposta de alteração, reler o texto atualizado e conferir que não contradiz fatos ou quebra a promessa; se afetar afirmações, encaminhar para facts.
 
 ### Limites
 
@@ -39,4 +41,4 @@ Registrar (a) promessa e ponto de payoff, (b) mapa breve das batidas, (c) redund
 - Nunca afirmar ter escutado áudio, assistido vídeo, testado fala em tempo real ou analisado o público se isso não aconteceu.
 - Respeitar a voz autoral: explicar o tema, sem “YouTuber genérico”, ganchos falsos ou cliffhangers em cada parágrafo.
 - Não alterar Docs/Sheets sem conexão/permissões e leitura de retorno. **Aprovação estrutural não aprova o roteiro inteiro** nem altera status em Produções automaticamente.
-- Usar `diazverso-core` para preferências editoriais sob demanda; F09 para humanização e F10 para gate de aprovação.
+- Usar `diazverso-core` para preferências editoriais sob demanda; voice para humanização e script-approval para gate de aprovação.

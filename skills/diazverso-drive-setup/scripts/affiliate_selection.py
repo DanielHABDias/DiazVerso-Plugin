@@ -1,4 +1,4 @@
-"""K02: deterministic affiliate candidate filtering for a manually posted video.
+"""affiliates: deterministic affiliate candidate filtering for a manually posted video.
 
 No Google writes, no purchase, no link opening and no publishing capability.
 Input is an already inspected snapshot of the Afiliados sheet. Verifying a

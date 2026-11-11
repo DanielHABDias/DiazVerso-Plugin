@@ -1,4 +1,4 @@
-/** G06 part 2: pure geometry/contrast for an optional HQ text overlay.
+/** hq-components part 2: pure geometry/contrast for an optional HQ text overlay.
  * Inspired by the editorial behavior of QuadroHQSobreCena, not copied from it.
  */
 const clamp=(v)=>Math.max(0,Math.min(1,v));

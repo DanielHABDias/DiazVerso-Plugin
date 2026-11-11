@@ -3,6 +3,8 @@ name: analyze-video-editing
 description: Reverse-engineer an existing video into a timecoded account of its shots, cuts, fades, camera motion, dialogue, subtitles, titles, music, sound transitions, pacing, and editorial structure. Use when the user shares a reference video or local media and asks how it works, why it feels effective, what can be learned from it, how B-roll and interviews are interwoven, or how to translate its grammar into an original edit. Produces machine evidence, visual review artifacts, and an editorial breakdown without confusing estimates with observed facts.
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Analyze Video Editing
 
 Study how a finished video creates attention, emotion, and momentum. Treat the film as synchronized picture, sound, speech, typography, and structure—not merely a list of cuts.

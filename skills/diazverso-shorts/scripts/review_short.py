@@ -1,4 +1,4 @@
-"""I05: objective gate for Short pre-render plans and post-render evidence.
+"""shorts: objective gate for Short pre-render plans and post-render evidence.
 
 No prediction of retention or automatic publishing. REVIEW_REQUIRED is not
 a rejection of creativity; it points to missing or contradictory evidence.

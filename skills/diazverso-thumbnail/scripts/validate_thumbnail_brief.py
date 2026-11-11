@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""G02: conservative contract check for two distinct editorial thumbnails.
+"""thumbnail-brief: conservative contract check for two distinct editorial thumbnails.
 
 A plan is not an image. No generation, API use, rights certification, CTR
 prediction or YouTube posting is performed.
@@ -30,7 +30,7 @@ def validate(data: dict) -> dict:
     if not isinstance(data, dict) or set(data) != {
             "production_id", "format", "thesis", "promise", "title",
             "subject", "script_approved", "assets", "variants"}:
-        raise ValueError("Invalid G02 brief fields")
+        raise ValueError("Invalid thumbnail-brief brief fields")
     prod = data["production_id"]
     if not isinstance(prod, str) or not ROOT.fullmatch(prod):
         raise ValueError("Invalid production ID")
@@ -86,7 +86,7 @@ def validate(data: dict) -> dict:
             raise ValueError("Unknown Nox use")
         if variant["nox"] == "POSE_REQUIRES_REVIEW":
             issues.append({"code": "NOX_POSE_REQUIRES_CHARACTER_LOCK", "variant": name,
-                           "detail": "G01 identity review before producing new pose"})
+                           "detail": "character-lock identity review before producing new pose"})
         refs = variant["assets_used"]
         if not isinstance(refs, list) or len(set(refs)) != len(refs):
             raise ValueError("Assets used must be unique IDs")

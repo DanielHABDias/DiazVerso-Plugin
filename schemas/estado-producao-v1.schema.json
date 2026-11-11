@@ -8,8 +8,7 @@
     "tipo",
     "fase",
     "proxima_tarefa",
-    "revisao",
-    "atualizado_em"
+    "revisao"
   ],
   "properties": {
     "id": {
@@ -113,9 +112,9 @@
         "null"
       ]
     },
-    "atualizado_em": {
+    "source_revision": {
       "type": "string",
-      "format": "date-time"
+      "minLength": 1
     }
   }
 }

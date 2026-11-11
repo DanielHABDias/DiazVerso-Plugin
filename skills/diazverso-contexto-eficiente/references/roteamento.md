@@ -1,32 +1,24 @@
-# Roteamento de skills por microtarefa — Diazverso 1.0
+# Escolha de skills
 
-**Uso:** consultar somente se o agente precisar escolher entre skills semelhantes. Não carregar em toda interação.
+Escolher a responsável pelo resultado, não pelo maior número de palavras coincidentes. O protocolo de contexto eficiente se aplica a todas.
 
-## Regra de despacho
+| Resultado | Skill principal |
+| --- | --- |
+| Configuração e capacidades | diazverso-setup |
+| Identidade editorial | diazverso-core |
+| Fluxo de vídeo ou retomada | diazverso-criacao-video |
+| Pesquisa e tese | diazverso-pesquisa |
+| Títulos | diazverso-titulos |
+| Coerência da embalagem | diazverso-revisao-embalagem |
+| Roteiro em Doc nativo | diazverso-roteiro |
+| Fatos, estrutura ou voz | diazverso-revisao-fatos, diazverso-revisao-estrutura ou diazverso-revisao-voz |
+| Aprovação editorial | diazverso-aprovacao-roteiro |
+| Organização Drive/Sheets | diazverso-drive-setup |
+| Nox ou thumbnails | diazverso-nox ou diazverso-thumbnail |
+| Cenas, motion, áudio e QA | diazverso-decupagem |
+| Conteúdo vertical e legendas | diazverso-shorts |
+| Plugin e criação de skills | diazverso-manutencao |
 
-1. Classificar o pedido por **resultado esperado**, não só pelas palavras usadas.
-2. Selecionar **uma skill principal** (responsável pelo resultado) e no máximo as auxiliares realmente indispensáveis.
-3. Carregar metadados `name/description` primeiro. Ler o corpo da skill selecionada, depois referências somente quando a etapa exigir.
-4. Se não existir skill específica ou ferramenta necessária, **não alegar execução**: realizar a parte informativa possível ou registrar um bloqueio.
-5. Antes de trocar de etapa, revisar a entrega e salvar estado; não acionar outras skills sem objetivo.
+Pedidos compostos usam a orquestradora e só abrem a skill da próxima etapa. Auxiliares entram por uma dependência concreta, sem carregar o pipeline inteiro.
 
-## Responsabilidade primária atual
-
-| Intenção concreta | Principal | Auxiliar somente se necessária |
-| --- | --- | --- |
-| Instalação, conexão ou diagnóstico | `diazverso-setup` | `diazverso-contexto-eficiente` se houver contexto excessivo |
-| Identidade editorial, voz, posicionamento, tese | `diazverso-core` | Pesquisa externa com ferramenta disponível, se necessário |
-| Orquestrar várias etapas de vídeo | `diazverso-criacao-video` **quando implementada e reconhecida** | A skill da etapa seguinte |
-| Economia de contexto/planejamento de tarefas | `diazverso-contexto-eficiente` | `context-optimization` vendorizada para técnicas avançadas |
-| Criação técnica, render, captions e som | Skill especializada **quando criada e validada** | Runtime Remotion real; não depender do Content Lab antigo |
-| Google Drive/Sheets | Skill especializada **quando criada e validada** | Conector autorizado; não presumir acesso |
-| Thumbnail e Nox | Skill especializada **quando criada** | Asset `Nox.png` físico verificado no pacote |
-
-**Importante:** exemplos de skills ainda não implementadas são caminhos previstos, **não funções existentes**. Nunca listar skill ausente como disponível.
-
-## Critério de revisão
-
-- O pedido foi atendido pela habilidade mais específica disponível?
-- Arquivos/referências realmente carregados foram estritamente necessários?
-- Houve confirmação de capacidade, persistência e teste, quando aplicável?
-- O resultado foi revisado antes da próxima microtarefa?
+As skills externas são auxiliares especializadas: context-optimization para contexto avançado; find-broll para busca de mídia; analyze-video-editing para análise; video-editing para execução técnica. Conferir ferramentas, direitos e consentimento antes de executá-las.

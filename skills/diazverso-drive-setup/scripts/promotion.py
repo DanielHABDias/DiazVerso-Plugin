@@ -1,4 +1,4 @@
-"""E06/E07: plan promotion from TF idea to VD/SH production, without Google writes.
+"""promotion/recovery: plan promotion from TF idea to VD/SH production, without Google writes.
 
 Only use a complete, freshly read, header-checked snapshot from the SAME
 spreadsheet. The connector executes any authorized operations, re-reads data
@@ -87,7 +87,7 @@ def plan_promotion(ideas_rows: list[list], production_rows: list[list],
         if not doc_verified or not target["ROTEIRO"].startswith("https://docs.google.com/document/d/"):
             return {"status": "WAIT_FOR_VERIFIED_DOC", "id": target["ID"],
                     "writes_performed": False,
-                    "next": "Concluir F06: Doc nativo formatado e link relido na produção"}
+                    "next": "Concluir script-document: Doc nativo formatado e link relido na produção"}
         return {"status": "READY_FOR_AUTHORIZED_REMOVAL", "id": target["ID"],
                 "idea_id": idea_id, "writes_performed": False,
                 "next": "Somente após consentimento específico: reler as DUAS abas, confirmar ID/origem/Doc e excluir a linha TF identificada pelo ID atual, nunca índice em cache"}

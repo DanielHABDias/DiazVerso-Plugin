@@ -1,4 +1,4 @@
-"""K05: summarize actual post-publication YouTube metrics without API access.
+"""metrics: summarize actual post-publication YouTube metrics without API access.
 
 Accept already verified measurements from a source supplied by the creator.
 No scheduled fetching, automated posting, or edits to the Ideas spreadsheet.

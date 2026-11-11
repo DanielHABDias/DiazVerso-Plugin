@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D07/L06: read-only offline integrity/safety audit of a Diazverso ZIP.
+"""offline-assets/package: read-only offline integrity/safety audit of a Diazverso ZIP.
 
 Tests availability of critical packaged media and skills WITHOUT Google Drive,
 GitHub or editor integrations. ZIP validity is not proof of actual Remotion
@@ -28,6 +28,10 @@ REQUIRED = (
     "skills/diazverso-nox/SKILL.md",
     "skills/diazverso-decupagem/SKILL.md",
     "skills/diazverso-thumbnail/SKILL.md",
+    "skills/diazverso-contexto-eficiente/SKILL.md",
+    "skills/diazverso-contexto-eficiente/references/skill-map.json",
+    "skills/diazverso-manutencao/SKILL.md",
+    "THIRD_PARTY_NOTICES.md",
 )
 EXTERNAL = ("context-optimization", "video-editing", "analyze-video-editing", "find-broll")
 PNG_SIG = b"\x89PNG\r\n\x1a\n"
@@ -99,6 +103,26 @@ def verify(path: Path) -> dict:
         w,h=_png_geometry(png)
         if {"width":w,"height":h}!=item.get("dimensions"):
             raise ValueError("Nox geometry mismatch")
+        graph=json.loads(z.read("skills/diazverso-contexto-eficiente/references/skill-map.json"))
+        listed={s["path"] for s in graph["skills"]}
+        present={n for n in names if re.fullmatch(r"skills/[^/]+/SKILL\.md",n)}
+        if listed!=present:
+            raise ValueError("Skill map and packaged skills disagree")
+        if graph.get("plugin_version")!=plugin.get("version"):
+            raise ValueError("Skill map version mismatch")
+        for skill in graph["skills"]:
+            raw=z.read(skill["path"])
+            if hashlib.sha256(raw).hexdigest()!=skill["sha256"]:
+                raise ValueError("Skill map source digest mismatch")
+            if skill["name"]!="diazverso-contexto-eficiente" and b"../diazverso-contexto-eficiente/SKILL.md" not in raw:
+                raise ValueError("Missing mandatory context policy")
+            if any(ref not in names for ref in skill["references"]):
+                raise ValueError("Skill map contains a missing resource")
+        for asset in catalog["assets"]:
+            raw=z.read(asset["path"])
+            digest=hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()
+            if len(raw)!=asset["size_bytes"] or digest!=asset["git_blob_sha1"]:
+                raise ValueError("Asset catalog digest mismatch")
         # No runtime or account accesses. ZIP contents are proof of local bytes only.
         return {"status":"OFFLINE_MEDIA_AND_PACKAGE_STRUCTURE_VALID",
                 "package_sha256":hashlib.sha256(path.read_bytes()).hexdigest(),

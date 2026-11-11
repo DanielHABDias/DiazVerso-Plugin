@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""E04: non-destructive validation of existing Diazverso Google Sheets metadata.
+"""sheet-schema: non-destructive validation of existing Diazverso Google Sheets metadata.
 
 Input is a JSON snapshot made by an authorized connector:
 {"sheets":[{"properties":{"title":"Produções","hidden":false,
@@ -56,7 +56,7 @@ def validate(snapshot: dict) -> dict:
 
 
 def plan_safe_metadata_repairs(snapshot: dict) -> dict:
-    """E04: propose only non-destructive frozen-header / Config-hidden updates.
+    """sheet-schema: propose only non-destructive frozen-header / Config-hidden updates.
 
     No API writes. Header mismatch and missing tabs are blockers rather than
     candidates for automatic repair. Dropdown/filter/style audits require
@@ -101,7 +101,7 @@ def plan_safe_metadata_repairs(snapshot: dict) -> dict:
 
 
 def plan_new_idea(rows: list[list], fields: dict, *, previously_issued_ids: list[str]) -> dict:
-    """E05: prepare exactly one row; caller owns write and live readback.
+    """idea: prepare exactly one row; caller owns write and live readback.
 
     Full current Ideias rows AND previously issued historical TF IDs are required. No network/write
     is performed. Concurrent writers need a shared lock or retry after a fresh

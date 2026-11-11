@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""J07: one-issue-at-a-time correction workflow with render and review gates.
+"""correction: one-issue-at-a-time correction workflow with render and review gates.
 
 Pure JSON state transitions, no asset edits, no rendering, no Drive writes,
 no posting. Evidence IDs/hashes are caller supplied; their authenticity still
@@ -15,7 +15,7 @@ import re
 import sys
 from pathlib import Path
 
-VALID_SOURCES = {"J01", "J03", "J04", "J05", "J06", "I05"}
+VALID_SOURCES = {"technical", "visual", "audio", "pacing", "rights", "shorts"}
 PRIORITIES = {"BLOCKER": 0, "REVIEW": 1, "EDITORIAL": 2, "NOTICE": 3}
 STAGES = ("OPEN", "FIX_APPLIED", "RERENDERED", "REVIEWED", "CLOSED")
 SHA256 = re.compile(r"[a-f0-9]{64}\Z")

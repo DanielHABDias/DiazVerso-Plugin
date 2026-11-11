@@ -1,4 +1,4 @@
-"""K01: assemble a copy-ready kit for MANUAL publication by the creator.
+"""publication-kit: assemble a copy-ready kit for MANUAL publication by the creator.
 
 Uses only creator-approved input; never uploads, schedules, publishes, or
 pretends files were rendered or inspected. No Google API calls.

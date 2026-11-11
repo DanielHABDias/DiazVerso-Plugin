@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""G01: verify canonical Nox bytes and document manual pose identity comparison.
+"""character-lock: verify canonical Nox bytes and document manual pose identity comparison.
 
 Does NOT compare characters visually, create images, assert rights or post.
 """

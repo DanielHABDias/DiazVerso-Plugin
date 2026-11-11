@@ -1,4 +1,4 @@
-"""J08 — evidence-based human approval checklist for a manual-publication kit.
+"""approval — evidence-based human approval checklist for a manual-publication kit.
 
 This file ONLY evaluates a supplied review record. It never invents approval,
 renders media, posts a video or writes a connected Sheet.

@@ -3,7 +3,9 @@ name: diazverso-nox
 description: "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original."
 ---
 
-# Diazverso — Nox e Character Lock (G01)
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
+# Diazverso — Nox e Character Lock (character-lock)
 
 **Fonte única:** `assets/brand/nox/Nox.png` (imagem original fornecida pelo criador). A versão canônica consta no `assets/manifest.json`; não inferir que outro arquivo nomeado Nox é equivalente. A referência canônica não deve ser editada ou substituída. A criação de poses **não é automática**.
 
@@ -17,6 +19,5 @@ description: "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, c
 6. Com prova de leitura do arquivo original, imagem derivada efetivamente existente e notas de inspeção humana, executar `python skills/diazverso-nox/scripts/character_lock.py <avaliacao.json> --root <raiz-do-plugin>`. O script mede identidade de arquivo e integridade documental; **não reconhece personagens por visão computacional**, não autentica que a comparação humana aconteceu e não declara geração de imagem sem arquivo.
 7. Empregar Nox somente quando contribuir para a narrativa ou a thumbnail. **Não obrigar o mascote a aparecer em toda cena.**
 
-**G01 testada com uma pose real já existente:** a inspeção de `Nox_Acenando.png` comparada com o `Nox.png` canônico foi registrada em `docs/REVISAO_VISUAL_NOX_2026-11-11.md`. Essa inspeção confirma consistência da pose de aceno analisada **sem exigir gerar outra imagem só para repetir o teste**, mas não valida automaticamente novas poses ou direitos de empacotamento. **Testes com PNG sintético só exercitam o código.** Cada pose nova continua sujeita a comparação visual e evidência próprias.
 
 Sem upload, postagem ou automação de publicação. O criador publica os vídeos manualmente.

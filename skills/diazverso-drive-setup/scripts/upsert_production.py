@@ -1,4 +1,4 @@
-"""E08: pure, side-effect-free planner for one existing Produções row.
+"""upsert: pure, side-effect-free planner for one existing Produções row.
 
 Publication is exclusively manual by the channel creator. Any PUBLICADO data
 is post-publication recordkeeping, never a request or instruction to upload,

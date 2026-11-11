@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""J02: extract representative real PNG frames with ffprobe+ffmpeg.
+"""frames: extract representative real PNG frames with ffprobe+ffmpeg.
 
-Sampling is deterministic and based on verified H01 scene frames and optional
+Sampling is deterministic and based on verified composition scene frames and optional
 event frames. Dry run is default. No synthetic pictures, network or posting.
 """
 from __future__ import annotations

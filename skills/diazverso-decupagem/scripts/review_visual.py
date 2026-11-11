@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""J03: inspect real extracted PNG pixels and prepare evidence-based human QA.
+"""visual: inspect real extracted PNG pixels and prepare evidence-based human QA.
 
 Uses only Python stdlib. Supports PNG RGB/RGBA/grayscale 8-bit, noninterlaced.
 Detects suspicious blank borders, low tonal range, almost unchanged samples,
@@ -160,16 +160,16 @@ def compare(a: dict, b: dict) -> float:
 
 
 def review(manifest: dict, *, fps: int, manual: dict | None = None) -> dict:
-    """Manifest uses J02 {frames:[{frame,path,sha256,reasons}]}.
+    """Manifest uses frames {frames:[{frame,path,sha256,reasons}]}.
 
     Manual checklist is recorded as notes for traceability, not converted into
-    a machine-verified result; approval belongs to J08 with separate evidence.
+    a machine-verified result; approval belongs to approval with separate evidence.
     """
     if type(fps) is not int or not 1<=fps<=120:
         raise ValueError("Invalid FPS")
     rows = manifest.get("frames") if isinstance(manifest, dict) else None
     if not isinstance(rows,list) or not rows or len(rows)>120:
-        raise ValueError("J02 extraction manifest must contain 1..120 frames")
+        raise ValueError("frames extraction manifest must contain 1..120 frames")
     if manual is not None:
         if not isinstance(manual,dict) or set(manual) != set(CHECKS):
             raise ValueError("Manual review must cover every visual category")
@@ -198,7 +198,7 @@ def review(manifest: dict, *, fps: int, manual: dict | None = None) -> dict:
         ids.add(frame)
         image=decode_png(path)
         if image["pixel_hash"] != row["sha256"]:
-            raise ValueError("Frame bytes differ from J02 SHA-256 evidence")
+            raise ValueError("Frame bytes differ from frames SHA-256 evidence")
         if previous is not None and frame<=previous["frame"]:
             raise ValueError("Frame manifest must be sorted")
         if previous is not None and (image["width"],image["height"]) != (previous["image"]["width"],previous["image"]["height"]):

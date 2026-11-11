@@ -1,4 +1,4 @@
-/** H07 - deterministic and rights-aware audiovisual cue planner.
+/** soundtrack - deterministic and rights-aware audiovisual cue planner.
  * Runs only on creator-reviewed catalog metadata; no downloads, synthesis,
  * licensing judgments, audio listening, rendering or publishing.
  */

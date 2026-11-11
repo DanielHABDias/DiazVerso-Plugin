@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C06 — deterministic, narrow selection for 12 isolated Diazverso requests.
+"""routing — deterministic, narrow selection for 12 isolated Diazverso requests.
 
 This selects a skill; it NEVER calls or loads skills, invokes connectors,
 renders, approves, or posts videos. Unknown requests fail closed.
@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 RULES = (
+ ("manutenção do plugin","diazverso-manutencao",r"\b(?:criar|atualizar|alterar|organizar|limpar)\b.*\b(?:plugin|skills?)\b|\bmanuten[cç][aã]o\b"),
  ("retomada","diazverso-criacao-video",r"\b(?:retomar|continuar|continue|retomada)\b"),
  ("configuração","diazverso-setup",r"\b(?:configurar|instalar|conectar|setup)\b"),
  ("economia de contexto","diazverso-contexto-eficiente",r"\b(?:tokens?|contexto|economizar)\b"),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""J04 - real PCM WAV technical inspection, plus cue-plan consistency checks.
+"""audio - real PCM WAV technical inspection, plus cue-plan consistency checks.
 
 Input: locally supplied 16-bit PCM WAV, with optional verified voice/music/SFX
 timelines. Computes sample peak, RMS, clipping and low-energy intervals;

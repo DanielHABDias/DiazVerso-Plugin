@@ -4,7 +4,7 @@ import {entranceProgress, verifyPalette, wordAtFrame} from './kinetic-text-math.
 
 export type TimedWord = {text:string;startFrame:number;durationFrames:number};
 
-/** H05: word-by-word kinetic typography with an opaque, verified-color panel.
+/** kinetic-text: word-by-word kinetic typography with an opaque, verified-color panel.
  * Provide real measured/aligned timings in scene-relative frames. This
  * component does not align speech, load fonts, render or publish on its own.
  * Anton is a preference; pass a host-installed/licensed font separately.

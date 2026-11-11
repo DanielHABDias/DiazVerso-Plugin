@@ -3,6 +3,8 @@ name: diazverso-titulos
 description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, promessa do gancho ou conceitos de thumbnail para vídeos longos e Shorts do Diazverso."
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Diazverso — Títulos e embalagem inicial
 
 **Objetivo:** criar opções de títulos e conceitos visuais que entreguem a tese real do vídeo, sem promessas falsas. Uma microtarefa por vez.

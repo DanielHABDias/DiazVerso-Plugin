@@ -1,4 +1,4 @@
-"""L04: portable resume checkpoint with freshness, digest and duplicate guards.
+"""resume: portable resume checkpoint with freshness, digest and duplicate guards.
 
 Read-only decisions: persistence and connected source readback remain host duties.
 Never makes remote writes, renders or publishes videos.
@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 PROD = re.compile(r'(?:TF|VD|SH)_\d{4,}\Z')
-TASK = re.compile(r'[A-L]\d{2}(?:[-_][a-zA-Z0-9_-]+)?\Z')
+TASK = re.compile(r'[a-z][a-z0-9_-]{1,63}\Z')
 
 
 def _validate(state: dict, *, latest: bool = False) -> None:

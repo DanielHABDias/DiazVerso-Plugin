@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C07 — compare actual telemetry for three identical tasks, no model calls.
+"""context-metrics — compare actual telemetry for three identical tasks, no model calls.
 
 All values must come from measured host/API usage. Character counts and
 estimated token counts are not accepted. Quality must not regress.

@@ -3,6 +3,8 @@ name: diazverso-revisao-embalagem
 description: "Use para revisar a promessa entre título A/B, thumbnail e abertura de um vídeo Diazverso antes de aprovar o roteiro ou produzir artes finais."
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Diazverso — Revisão de embalagem
 
 1. Ler a **tese validada** e os dois títulos. Se uma alternativa fizer uma afirmação factual, localizar a fonte que a sustenta; se a fonte não confirmar, reprovar ou reescrever.

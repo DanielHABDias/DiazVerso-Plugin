@@ -20,7 +20,7 @@
       "space_below_pt": 6
     }
   },
-  "notes": "Modelo portátil de Google Docs nativo. Não armazenar Doc ID de nenhuma conta no plugin; copiar/criar com permissões e verificar estilos. Conteúdo atualizado após revisão do modelo real de 10/11/2026.",
+  "notes": "Modelo portátil de Google Docs nativo. IDs de conta não integram o plugin; criar com permissões e conferir conteúdo, estilos e vínculos.",
   "bold_labels": [
     "NARRAÇÃO",
     "DIREÇÃO VISUAL — NÃO NARRAR",

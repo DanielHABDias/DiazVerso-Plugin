@@ -3,6 +3,8 @@ name: video-editing
 description: Edit arbitrary supplied video, audio, images, screen recordings, and graphics into a polished deliverable. Use for cutting and restructuring footage, multi-track compositing, picture-in-picture, transitions, captions, sound work, color and framing changes, screen demos, presenter edits, social clips, and motion graphics made with FFmpeg, HTML, React, SVG, or Remotion. Includes source inspection, timeline design, reusable media tooling, transparent overlay generation, fast review artifacts, deterministic rendering, and technical validation.
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Video Editing
 
 Edit whatever footage the user supplies. This is a general workbench, not a preset for one visual style. Treat each edit as an editorial system with observed source facts, explicit timing, an appropriate rendering engine, rapid review artifacts, and a validated master.

@@ -1,4 +1,4 @@
-/** H05 — pure word timing and contrast checks for kinetic typography.
+/** kinetic-text — pure word timing and contrast checks for kinetic typography.
  * This is a pre-render mathematical gate, not a visual or audio QA result.
  */
 const RGB = /^#[0-9a-fA-F]{6}$/;

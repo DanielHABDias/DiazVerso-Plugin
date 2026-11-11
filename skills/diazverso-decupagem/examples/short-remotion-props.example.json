@@ -1,7 +1,7 @@
 {
   "contract_version": "1.0",
   "production_id": "SH_0001",
-  "script_version": "EXEMPLO-NÃO-APROVADO",
+  "script_version": "MODELO_DE_ESTRUTURA",
   "format": "SHORT",
   "fps": 30,
   "width": 1080,
@@ -12,12 +12,6 @@
       "id": "nox",
       "path": "assets/brand/nox/Nox.png",
       "kind": "image",
-      "rights": "APPROVED"
-    },
-    {
-      "id": "voice",
-      "path": "assets/local/voice-example.wav",
-      "kind": "audio",
       "rights": "APPROVED"
     }
   ],
@@ -42,14 +36,7 @@
           "duration_frames": 75
         }
       ],
-      "audio": [
-        {
-          "asset_id": "voice",
-          "start_frame": 0,
-          "duration_frames": 90,
-          "volume": 0.9
-        }
-      ]
+      "audio": []
     },
     {
       "id": "S02",
@@ -71,14 +58,7 @@
           "duration_frames": 75
         }
       ],
-      "audio": [
-        {
-          "asset_id": "voice",
-          "start_frame": 0,
-          "duration_frames": 90,
-          "volume": 0.9
-        }
-      ]
+      "audio": []
     }
   ],
   "output": {

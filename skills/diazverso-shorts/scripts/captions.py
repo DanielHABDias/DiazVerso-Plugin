@@ -1,4 +1,4 @@
-"""I03: validated timed captions from verified word-level speech timestamps.
+"""short-audio: validated timed captions from verified word-level speech timestamps.
 
 Produces SRT and frame cues for an independent Remotion renderer. It does NOT
 transcribe, align audio, render video or certify audiovisual synchronization.

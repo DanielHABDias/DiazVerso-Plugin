@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {cropAndPan} from './motion-math.mjs';
 
-/** H03 camera for a still image, pixel-cover invariant even under pan/zoom.
+/** camera camera for a still image, pixel-cover invariant even under pan/zoom.
  * imageWidth/Height must be the ACTUAL media dimensions, not guessed.
  * Runtime preview is still required for content-specific crop/visual QA.
  */

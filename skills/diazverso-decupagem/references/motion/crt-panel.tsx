@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, OffthreadVideo, staticFile, useVideoConfig} from 'remotion';
 import {planCrtPanel} from './crt-panel-math.mjs';
 
-/** H06: contextual film/TV excerpt with perceptible CRT overlay.
+/** crt: contextual film/TV excerpt with perceptible CRT overlay.
  * No clip acquisition or license determination is performed. Asset rights
  * must be reviewed by a human, and preview/render inspected independently.
  */

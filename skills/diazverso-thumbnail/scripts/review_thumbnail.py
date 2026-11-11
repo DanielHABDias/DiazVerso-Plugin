@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""G03: verify local thumbnail files, dimensions, review evidence and Drive refs.
+"""thumbnail-review: verify local thumbnail files, dimensions, review evidence and Drive refs.
 
 Uses only stdlib. Header checks do not prove full visual decodability,
 text OCR, Nox identity, link reachability or image quality.

@@ -1,0 +1,29 @@
+name: Validate Diazverso
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate source and build portable package
+        run: python scripts/build_plugin.py --output "$RUNNER_TEMP/diazverso.zip"
+      - name: Audit actual archive offline
+        run: python scripts/verify_offline_package.py "$RUNNER_TEMP/diazverso.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: diazverso-plugin
+          path: ${{ runner.temp }}/diazverso.zip
+          if-no-files-found: error
+          retention-days: 7

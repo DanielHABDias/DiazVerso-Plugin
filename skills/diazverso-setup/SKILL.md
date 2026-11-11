@@ -1,41 +1,19 @@
 ---
 name: diazverso-setup
-description: "Use quando o usuário instalar, configurar ou verificar o plugin Diazverso, conectar Google Drive/Sheets ou perguntar quais etapas de produção já são possíveis."
+description: "Use para instalar manualmente, configurar ou diagnosticar capacidades do plugin Diazverso, conexões Google e ambiente de edição."
 ---
 
-# Diazverso — Configuração inicial
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
-**Função:** verificar o ambiente e orientar a primeira tarefa. Não produzir vídeo, criar pastas ou instalar dependências sem solicitação e capacidade real.
+# Configuração
 
-## Procedimento mínimo
+1. Aplicar o protocolo de `../diazverso-contexto-eficiente/SKILL.md`; reutilizar o diagnóstico válido da sessão.
+2. Identificar o pedido: configuração, diagnóstico ou retomada. Não iniciar produção inteira por mera menção ao plugin.
+3. Conferir skills reconhecidas e somente as ferramentas necessárias: Google Drive/Docs/Sheets, executor Python, projeto Node/React/Remotion e FFmpeg. Não presumir conexão ou instalação.
+4. Para Google, usar `../diazverso-drive-setup/SKILL.md`: descobrir a estrutura da instalação, conferir identidade e permissões e reler alterações. IDs são específicos da conta.
+5. Para edição, localizar o projeto/executor real. As skills fornecem componentes e procedimentos; a presença de um arquivo não comprova render.
+6. Retornar diagnóstico curto: capacidade verificada, limitação relevante e próxima ação. Não pedir dados já presentes em fontes válidas.
 
-1. **Identificar a intenção.** Configuração inicial, diagnóstico ou retomada? Não iniciar um fluxo completo só porque o plugin foi mencionado.
-2. **Verificar o que está disponível nesta sessão**, sem supor acesso:
-   - skills Diazverso realmente reconhecidas pelo host;
-   - Google Drive, Docs e Sheets conectados e suas permissões, se a tarefa precisar deles;
-   - repositório GitHub, se o pedido envolver desenvolvimento ou estado versionado;
-   - ambiente capaz de executar Remotion/TSX e renderizar vídeo, se houver pedido de edição.
-3. **Localizar antes de criar.** Havendo Drive autorizado, procurar a raiz `Diazverso`, a planilha do canal e as pastas necessárias ao trabalho. Não copiar IDs de outra conta, não duplicar estrutura nem criar itens faltantes sem autorização. Consultar o contrato operacional vigente somente se a operação exigir detalhes.
-4. **Separar capacidades:** planejamento, pesquisa, roteiros e atualização de arquivos podem funcionar com ferramentas conectadas; renderização/automação de interface exigem executor compatível. Não tratar a existência da skill como prova de execução.
-5. **Aplicar as decisões da versão atual.** O plugin antigo e o Content Lab antigo são apenas referências históricas; a refatoração do Content Lab ocorrerá **depois** da conclusão do novo plugin. Não importar regras ou TSX legados automaticamente.
-6. **Retornar um diagnóstico curto:** o que foi verificado, o que está disponível, o que falta para o pedido e **uma próxima microtarefa**. Não pedir novamente dados já obtidos; não declarar sucesso de operações não realizadas.
+Nox está em `assets/brand/nox/Nox.png`, com integridade em `assets/manifest.json`. Não redesenhar ou substituir a referência por imagem genérica.
 
-## Diagnóstico offline de pacote — D07/L06
-
-Para um ZIP Diazverso efetivamente construído, em máquina sem Google Drive conectado, o mantenedor pode executar `python scripts/verify_offline_package.py <arquivo.zip>` no **repositório de desenvolvimento**. O verificador é somente leitura e confere Nox físico, manifesto, ZIP, skills essenciais e licenças. Não requer conta Google, não abre o editor, não produz vídeo e não instala o plugin. **Só informar que a mídia está disponível offline se o ZIP real tiver passado nessa auditoria; o teste de carregamento visual no editor permanece separado.**
-
-A auditoria é uma etapa adicional do CI do pacote e **não equivale ao gate L06 final**: repetir build, testes de schemas e ZIP da versão final após a limpeza de documentos e confirmar o resultado no GitHub Actions antes de liberar instalação manual pelo criador. Não instalar automaticamente durante o diagnóstico.
-
-## Economia de contexto
-
-- Carregar **apenas** a skill necessária à etapa; abrir documentação complementar sob demanda.
-- Em desenvolvimento, usar `docs/ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md` e `docs/DECISOES_E_CONTEXTO.md` quando esses documentos estiverem acessíveis.
-- Em operações no Drive, consultar `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md` somente quando necessário.
-- Para diferenciar capacidades de ChatGPT, Work/Codex e conectores em diagnósticos complexos, consultar `docs/MATRIZ_CAPACIDADES_E_PERMISSOES_V1.md` sob demanda; nunca pressupor instalação ou credenciais.
-- Não recitar o histórico inteiro e não carregar as antigas 44 skills.
-
-## Limites e segurança
-
-- Não instalar programas, executar códigos, mover/apagar arquivos ou publicar conteúdos sem ferramenta disponível e autorização correspondente.
-- Não inventar conexão, permissão, render, revisão aprovada ou disponibilidade do Nox/TSX no pacote. `Nox.png` é um asset obrigatório **a importar e verificar em tarefa própria**.
-- Esta skill é somente o **onboarding**; a identidade editorial e a orquestração completa terão skills específicas.
+A instalação do plugin e de dependências é manual e depende da solicitação do criador. O plugin não publica vídeos, conecta contas ou instala programas por iniciativa própria.

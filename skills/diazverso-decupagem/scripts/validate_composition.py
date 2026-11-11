@@ -1,4 +1,4 @@
-"""H01: validate portable Remotion composition props; stdlib only.
+"""composition: validate portable Remotion composition props; stdlib only.
 
 This is a pre-render contract check, NOT a Remotion runtime test. Never
 download remote assets, access accounts, publish, or render video.
@@ -16,7 +16,7 @@ def validate(data: dict) -> dict:
     required = {"contract_version", "production_id", "script_version", "format",
                 "fps", "width", "height", "duration_frames", "assets", "scenes", "output"}
     if set(data) != required or data["contract_version"] != "1.0":
-        raise ValueError("Version or keys do not match H01 contract")
+        raise ValueError("Version or keys do not match composition contract")
     kind = data["format"]
     if kind not in ("SHORT", "LONGO"):
         raise ValueError("Unknown format")

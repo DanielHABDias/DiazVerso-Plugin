@@ -3,7 +3,9 @@ name: diazverso-revisao-fatos
 description: "Use para verificar afirmações factuais, fontes, hipóteses e promessas em roteiros, títulos, thumbnails e descrições do Diazverso antes da aprovação editorial."
 ---
 
-# Diazverso — Revisão de fatos, fontes e promessas (F07)
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
+# Diazverso — Revisão de fatos, fontes e promessas (facts)
 
 **Finalidade:** auditar afirmações verificáveis de uma produção `VD_####` ou `SH_####` e a coerência das promessas de título, thumbnail e gancho. Esta skill **não** pesquisa por conta própria, não garante acesso à web e não aprova automaticamente um roteiro.
 
@@ -35,9 +37,9 @@ Apresentar um relatório breve por produção/versão:
 
 | ID | Local/alegação | Tipo | Fonte e evidência | Estado | Ação |
 | --- | --- | --- | --- | --- | --- |
-| F01 | Trecho identificado | FATO / INTERPRETAÇÃO / OPINIÃO / HIPÓTESE | Fonte verificável ou "não consultada" | CONFIRMADO / CONTESTADO / NÃO VERIFICADO / NÃO APLICÁVEL | Manter / reescrever / pesquisar / remover |
+| claim | Trecho identificado | FATO / INTERPRETAÇÃO / OPINIÃO / HIPÓTESE | Fonte verificável ou "não consultada" | CONFIRMADO / CONTESTADO / NÃO VERIFICADO / NÃO APLICÁVEL | Manter / reescrever / pesquisar / remover |
 
-Depois registrar **promessa título–thumbnail–gancho–payoff**: `COERENTE`, `AJUSTAR` ou `NÃO SUSTENTADA`, com justificativa específica. Fechar com `APROVAR REVISÃO FACTUAL`, `REVISAR` ou `BLOQUEADO POR EVIDÊNCIA`, enumerando impedimentos. `APROVAR REVISÃO FACTUAL` significa apenas revisão factual concluída, **não** aprovação editorial definitiva (F10), aprovação humana, publicação ou verificação de render.
+Depois registrar **promessa título–thumbnail–gancho–payoff**: `COERENTE`, `AJUSTAR` ou `NÃO SUSTENTADA`, com justificativa específica. Fechar com `APROVAR REVISÃO FACTUAL`, `REVISAR` ou `BLOQUEADO POR EVIDÊNCIA`, enumerando impedimentos. `APROVAR REVISÃO FACTUAL` significa apenas revisão factual concluída, **não** aprovação editorial definitiva (script-approval), aprovação humana, publicação ou verificação de render.
 
 ## Gate e segurança
 

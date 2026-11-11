@@ -9,7 +9,7 @@ export type ParallaxLayer = {
   anchorX?: number; anchorY?: number; maxFrameWidth?: number; maxFrameHeight?: number;
 };
 
-/** H04 reusable layers. First layer must be opaque background.
+/** parallax reusable layers. First layer must be opaque background.
  * Background layers cover; cutout images CONTAIN within the requested safe area.
  * No assumption that PNG assets are licensed or actually transparent.
  */

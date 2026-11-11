@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""J01: review H01 composition, local assets, TSX sources and render evidence.
+"""technical: review composition composition, local assets, TSX sources and render evidence.
 
 No install, no network, no posting and no content modifications. JSON contract
 validation is real; a TSX source scan is NOT TypeScript compilation. Optionally
@@ -49,7 +49,7 @@ def review(
     if not root.is_dir():
         raise ValueError("Project root must be a directory")
 
-    # Existence and containment are separate from the H01 logical asset catalog.
+    # Existence and containment are separate from the composition logical asset catalog.
     assets_checked = 0
     for asset in props["assets"]:
         candidate = (root / asset["path"]).resolve()

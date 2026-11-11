@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L05 - conservative offline capability gate for a Diazverso host.
+"""capabilities - conservative offline capability gate for a Diazverso host.
 
 Capabilities are supplied as verified facts about the CURRENT session, never
 inferred from installed skill files. No connector, renderer or audio-analysis

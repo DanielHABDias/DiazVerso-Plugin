@@ -3,6 +3,8 @@ name: diazverso-roteiro
 description: "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado."
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Diazverso — Roteiro nativo, formatado e vinculado
 
 **Objetivo:** produzir **um Google Doc nativo por vídeo**, no local certo, e atualizar **somente** a linha correspondente da aba `Produções`, com verificação após cada escrita. Esta skill não concede conexão ao Drive ou Sheets.

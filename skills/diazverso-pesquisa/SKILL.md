@@ -3,6 +3,8 @@ name: diazverso-pesquisa
 description: "Use para investigar pautas, gerar ideias de vídeos sobre quadrinhos, filmes, séries, jogos, Marvel, DC ou Ben 10 e construir uma tese argumentativa com fontes confiáveis para o Diazverso."
 ---
 
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
 # Diazverso — Pesquisa editorial e construção da pauta
 
 **Uma microtarefa por vez.** Pesquisar ou formular a ideia primeiro; não abrir automaticamente roteiro, thumbnail ou render sem chegar ao respectivo gate.

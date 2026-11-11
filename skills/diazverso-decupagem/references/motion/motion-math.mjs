@@ -1,4 +1,4 @@
-/** Diazverso H03/H04: portable image cover & camera/parallax geometry.
+/** Diazverso camera/parallax: portable image cover & camera/parallax geometry.
  * Pure ESM; can be unit-tested without React/Remotion or assets.
  * Coordinates refer to output frame pixels; never distort image aspect ratio.
  */

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""E02: pure, read-only resolver for paginated Google Drive folder listings.
+"""discovery: pure, read-only resolver for paginated Google Drive folder listings.
 
 Consumes JSON metadata returned by an authorized Drive adapter. It NEVER calls
 Google APIs or creates folders. See ../references/deteccao-idempotente.md.
@@ -143,7 +143,7 @@ def discover(snapshot: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def plan_repairs(result: Mapping[str, Any], *, include_optional: bool = False) -> dict[str, Any]:
-    """E03: produce a no-write creation plan for verified MISSING folders only.
+    """provisioning: produce a no-write creation plan for verified MISSING folders only.
 
     Actions are proposals, NOT authorizations. Caller must re-read the exact
     parent folder immediately before any authorized create, then read back the
@@ -174,7 +174,7 @@ def plan_repairs(result: Mapping[str, Any], *, include_optional: bool = False) -
             continue
         if key == "Canal do YT — V1.0 (Diazverso)":
             # Creating a native spreadsheet needs the proper Sheets/Drive
-            # workflow, including schema E04; do not create a blank file.
+            # workflow, including schema sheet-schema; do not create a blank file.
             deferred.append(key)
             continue
         actions.append({"operation": "CREATE_FOLDER_IF_STILL_MISSING",
@@ -187,7 +187,7 @@ def plan_repairs(result: Mapping[str, Any], *, include_optional: bool = False) -
 
 def preflight_folder_create(action: Mapping[str, Any], *, fresh_parent: Mapping[str, Any],
                             authorized: bool = False) -> dict[str, Any]:
-    """E03: fail-closed just-in-time readback before a folder create.
+    """provisioning: fail-closed just-in-time readback before a folder create.
 
     This function never writes. Its caller must independently authenticate that
     fresh_parent metadata came from a new complete Drive listing.
@@ -195,7 +195,7 @@ def preflight_folder_create(action: Mapping[str, Any], *, fresh_parent: Mapping[
     if not isinstance(action, dict) or set(action) != {
             "operation", "path", "name", "parent_id", "requires_authorization",
             "requires_readback"}:
-        raise ValueError("Formato de ação E03 inválido")
+        raise ValueError("Formato de ação provisioning inválido")
     if (action["operation"] != "CREATE_FOLDER_IF_STILL_MISSING" or
         action["requires_authorization"] is not True or
         action["requires_readback"] is not True):
@@ -235,7 +235,7 @@ def preflight_folder_create(action: Mapping[str, Any], *, fresh_parent: Mapping[
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("snapshot", type=Path, help="JSON da listagem de Drive já paginada")
-    parser.add_argument("--plan", action="store_true", help="Exibir plano E03 sem executar escrita")
+    parser.add_argument("--plan", action="store_true", help="Exibir plano provisioning sem executar escrita")
     parser.add_argument("--include-optional", action="store_true", help="Planejar também bibliotecas opcionais")
     args = parser.parse_args()
     value = json.loads(args.snapshot.read_text(encoding="utf-8"))

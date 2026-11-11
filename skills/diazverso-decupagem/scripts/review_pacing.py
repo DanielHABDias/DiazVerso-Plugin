@@ -1,4 +1,4 @@
-"""J05: review verifiable narrative pacing from a scene breakdown.
+"""pacing: review verifiable narrative pacing from a scene breakdown.
 
 Heuristic findings are editorial questions, never a prediction of retention,
 engagement, YouTube ranking or algorithm behavior. No writes/publication.
