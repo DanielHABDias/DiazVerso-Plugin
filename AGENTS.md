@@ -4,7 +4,7 @@ Este repositório contém a consolidação inicial do novo plugin Diazverso 1.0.
 
 ## Início obrigatório de cada sessão do agente
 
-**Passagem para o Codex em 11/11/2026:** ler `docs/HANDOFF_CODEX_2026-11-11.md` antes de escolher uma tarefa. **Contagem atual em 11/11: 42/87 itens marcados [x], dos quais K04 foi retirado de escopo. H03 e H04 agora têm componentes Remotion TSX autorais (câmera e parallax), helpers matemáticos e testes Node configurados; **não alegar CI verde ou inspeção de frames sem execução comprovada**. H05/H09/L02 permanecem para texto cinético e render/QA independente; F06 ainda parcial.** Os critérios detalhados e a limpeza de documentos somente pós-release estão nesse handoff, que é TEMPORÁRIO.
+**Passagem para o Codex em 11/11/2026:** ler `docs/HANDOFF_CODEX_2026-11-11.md` antes de escolher uma tarefa. **Contagem atual em 11/11: 43/87 itens marcados [x], dos quais K04 foi retirado de escopo. H03–H05 agora têm componentes TSX autorais (câmera, parallax e texto cinético), helpers matemáticos e testes; os 7 testes H05 foram executados localmente e passaram contra código com mesmo Git blob. Ainda não declarar render, compilação TSX ou CI verde sem confirmação. H09/L02 seguem pendentes de QA em executor Remotion independente; F06 parcial.** Os critérios detalhados e a limpeza de documentos somente pós-release estão nesse handoff, que é TEMPORÁRIO.
 
 1. Ler primeiro `docs/HANDOFF_CODEX_2026-11-11.md` e `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`, em seguida o **item atual** do roadmap; consultar `docs/DECISOES_E_CONTEXTO.md` somente para histórico/evidência.
 2. Verificar o estado atual do repositório (branch, arquivos e alterações não commitadas) antes de editar.
