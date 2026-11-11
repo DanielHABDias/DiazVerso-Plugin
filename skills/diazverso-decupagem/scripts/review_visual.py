@@ -38,7 +38,6 @@ def decode_png(path: Path) -> dict:
         raise ValueError("Invalid PNG signature")
     offset = 8
     width = height = channels = None
-    palette = None
     compressed = []
     saw_iend = False
     saw_idat = False
@@ -169,8 +168,8 @@ def review(manifest: dict, *, fps: int, manual: dict | None = None) -> dict:
     if type(fps) is not int or not 1<=fps<=120:
         raise ValueError("Invalid FPS")
     rows = manifest.get("frames") if isinstance(manifest, dict) else None
-    if not isinstance(rows,list) or not rows:
-        raise ValueError("J02 frame manifest required, not an extraction plan")
+    if not isinstance(rows,list) or not rows or len(rows)>120:
+        raise ValueError("J02 extraction manifest must contain 1..120 frames")
     if manual is not None:
         if not isinstance(manual,dict) or set(manual) != set(CHECKS):
             raise ValueError("Manual review must cover every visual category")
@@ -202,6 +201,8 @@ def review(manifest: dict, *, fps: int, manual: dict | None = None) -> dict:
             raise ValueError("Frame bytes differ from J02 SHA-256 evidence")
         if previous is not None and frame<=previous["frame"]:
             raise ValueError("Frame manifest must be sorted")
+        if previous is not None and (image["width"],image["height"]) != (previous["image"]["width"],previous["image"]["height"]):
+            raise ValueError("Extracted frame dimensions disagree")
         if image["tonal_range_p5_p95"] < 16:
             findings.append({"frame":frame,"code":"LOW_TONAL_VARIATION",
                              "severity":"REVIEW","evidence":{"tonal_range":image["tonal_range_p5_p95"]},
