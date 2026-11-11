@@ -45,6 +45,10 @@ A produção termina com um **pacote pronto para o criador publicar pessoalmente
 
 **Finalização:** registrar `KIT PRONTO PARA POSTAGEM MANUAL` apenas quando roteiro, arte, render, QA e conteúdo textual realmente aprovados. Caso contrário, `KIT PARCIAL — PENDÊNCIAS`, listando somente o que falta. **Não executar nem ensinar upload, agendamento ou postagem**, nem importar a skill de postagem antiga. `PUBLICADO` é apenas registro posterior, após o criador postar manualmente e fornecer evidência de URL/data reais.
 
+## Aprovação humana antes de entregar o kit — J08
+
+Executar `scripts/approval_gate.py <revisao.json>` antes de declarar `KIT APROVADO PARA ENTREGA MANUAL`. O objeto da revisão contém `production_id`, os nove gates `roteiro`, `fatos_fontes`, `titulo_thumbnail`, `direitos_midias`, `video_render`, `qa_visual`, `qa_audio`, `legendas` e `kit_textual`, cada um com `status` (`APROVADO`, `PENDENTE`, `REPROVADO`) e `evidence`. Acrescentar `creator_decision: {approved: true/false, evidence: "..."}` com a decisão **real** do criador. Não marcar um gate aprovado por inferência, arquivo presente ou resposta automática; cada aprovação exige evidência. Qualquer pendência/reprovação bloqueia entrega como final. O validador não confere a autenticidade externa da evidência e não publica nem ensina a postar.
+
 ## Análise depois da postagem manual — K05
 
 Somente **após o criador ter postado o vídeo**, e se ele fornecer métricas reais (com data de coleta, fonte e ID da produção), usar `scripts/analyze_metrics.py` com os dados recebidos para registrar observações, CTR calculável e duração média proporcional quando as medidas necessárias existirem. Sem acesso ou dados reais, responder `MÉTRICAS NÃO DISPONÍVEIS`, sem inferir visualizações, receita ou retenção. Comparações com outros vídeos exigem dados comparáveis, período e contexto.
