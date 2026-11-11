@@ -7,6 +7,14 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 
 **Objetivo:** coordenar a produção de um vídeo longo ou Short até entregar o **kit final revisado para postagem exclusivamente manual pelo criador**. Não há skill, integração, instruções ou automação de envio/agendamento/publicação de vídeos. Ferramentas especializadas de produção são usadas somente quando disponíveis.
 
+## Degradação transparente de capacidades — L05
+
+Antes de usar Drive/Docs/Sheets, render independente, FFmpeg ou EarShot, verificar as **permissões e ferramentas desta sessão**. Se um recurso estiver ausente, consultar `scripts/capability_fallback.py` com snapshot explícito `session_id`, `verified_at` e `capabilities` (booleanos `drive_read`, `drive_write`, `docs_write`, `sheets_read`, `sheets_write`, `render_runtime`, `ffmpeg`, `earshot`). Exemplo: `python skills/diazverso-criacao-video/scripts/capability_fallback.py <capacidades.json> --action draft_script_local --action create_native_doc --action render_preview`.
+
+**Sem Drive:** produzir somente material editorial local (pauta, pesquisa preliminar, rascunho, briefing de thumbnail e decupagem), sem alegar Google Doc, links ou linha de planilha criados. **Sem Remotion:** entregar plano/contrato e comandos de render, nunca MP4/QA aprovado. **Sem FFmpeg:** não alegar extração de quadros; outros planos independentes seguem disponíveis. **Sem EarShot:** o revisor local PCM16 pode ser usado quando houver WAV real, mas não afirmar escuta, transcrição/sincronia ou qualquer uso de serviço externo. A disponibilidade não é prova de execução: o retorno `AVAILABLE_FOR_ATTEMPT` exige ainda a ação real, readback/arquivo e evidência para concluir.
+
+O avaliador não chama ferramentas, não altera arquivos conectados nem publica vídeo. Se a ação for bloqueada, registrar qual recurso faltou e escolher a próxima microtarefa **independente** disponível, respeitando a autorização do criador. Não instalar recursos nem conectar serviços apenas por causa da ausência.
+
 ## Início ou retomada
 
 1. Identificar se o pedido é **novo vídeo** ou **continuação**. Se houver Drive/Sheets conectados, localizar o vídeo e status existentes antes de criar outro; se não houver, realizar apenas o que for possível e relatar a limitação.
