@@ -194,8 +194,8 @@
 
 ### Fase I — Shorts / vertical e legendas
 
-- [ ] **I01** — Definir preset 9:16, resolução, margens e área segura para texto/legenda.
-- [ ] **I02** — Criar skill `diazverso-shorts` com gancho forte, alta dinamicidade, CTA final ao canal e preferência atual por vídeo **de pelo menos 60 segundos**.
+- [x] **I01 — CONCLUÍDA (2026-11-11, definição de preset):** criado `skills/diazverso-shorts/references/preset-vertical-v1.json` com 1080×1920/30 fps/9:16, margens conservadoras, limites de conteúdo, regiões de gancho e legenda e alerta de UI variável por plataforma; criado `scripts/check_preset.py` para conferir boxes contra a área segura e sete testes unitários versionados. JSON relido e parseado; resolução e limites conferidos. **Execução Python dos testes e preview renderizado não alegados; isso pertence ao teste de edição I04/L03, não à definição do preset.**
+- [x] **I02 — CONCLUÍDA (2026-11-11, skill e roteamento):** criada `skills/diazverso-shorts/SKILL.md`, com gancho imediato, progressão/payoff, CTA contextual ao canal, preferência editorial ≥60 s sem inventar limite de plataforma, ritmo audiovisual com propósito, legendas como padrão (exceção para cena exclusivamente tipográfica), preset I01, segurança de Nox e mídia, limites claros sem render e **postagem exclusivamente manual**. A skill foi conectada à orquestradora e ao roteamento de intenções; arquivos relidos no GitHub. O desempenho de um Short real é teste separado I04/L03.
 - [ ] **I03** — Implementar legendas sincronizadas por padrão, exceto nos trechos **exclusivamente de texto na tela** (não duplicar mensagens).
 - [ ] **I04** — Testar um exemplo 9:16 com Nox, texto cinético, parallax, whoosh e legenda, revisando amostras de frames.
 - [ ] **I05** — Criar revisor de Short: gancho, retenção provável, ritmo, legenda, áudio, CTA, segurança de enquadramento e links.
