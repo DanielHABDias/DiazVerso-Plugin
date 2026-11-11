@@ -83,6 +83,14 @@ O revisor `scripts/review_rights.py <direitos.json>` exige por asset ID, tipo, o
 
 Estes scripts são **pré-revisores de metadados**. A saída de J06 pode embasar o gate `direitos_midias` da J08, mas esse gate só pode ser marcado `APROVADO` após **conferência humana da procedência, direitos e evidências**. O retorno do programa nunca substitui essa decisão. Testes estão em `tests/test_review_pacing.py` e `tests/test_review_rights.py`; o workflow de pacote já descobre todos os testes Python desta pasta. Nenhum vídeo é postado ou ensinado a postar.
 
+## Revisão técnica de código/contrato — J01
+
+O script `scripts/review_technical.py` faz revisão **não destrutiva** da composição: chama o validador H01 para contrato JSON/props, checa se cada asset referenciado existe **dentro da raiz do projeto Remotion independente** (bloqueando caminhos que saem dessa raiz), inspeciona arquivos `.ts`/`.tsx` declarados para indícios básicos de execução dinâmica/rede e relata fontes ausentes. **A leitura textual não prova sintaxe/tipos**.
+
+Exemplo de revisão: `python skills/diazverso-decupagem/scripts/review_technical.py <props.json> --project-root <pasta-remotion> --source <componente.tsx>`. Com `--run-tsc`, tenta executar **somente o TypeScript já instalado no host** via `npx --no-install tsc --noEmit --project tsconfig.json`, sem instalar dependências ou executar código do plugin. Com `--render <arquivo.mp4>`, usa o `ffprobe` **já instalado** para conferir assinatura de formato via metadados, codec H.264, dimensões e duração contra o contrato. Se não houver executor, binários, fonte ou render, sinalizar bloqueio/pendência, nunca inventar aprovação.
+
+`CONTRACT_ASSETS_CHECKED` confirma somente o contrato/arquivos/fonte escaneada; campos `typescript_compiled` e `render_inspected` são booleanos independentes. **Mesmo compilação/ffprobe aprovados não constituem QA visual ou de áudio**: J02–J04/H09/L02/L03 precisam examinar frames, Nox, movimento, cortes e mixagem reais. Testes de unidade e probes simulados em `tests/test_review_technical.py` entram na descoberta Python existente do CI. Nenhum vídeo é postado, agendado ou enviado.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
