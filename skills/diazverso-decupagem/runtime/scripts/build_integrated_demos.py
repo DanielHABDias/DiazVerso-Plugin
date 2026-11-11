@@ -2,7 +2,7 @@
 """L02/L03: original test script -> timed offline TTS -> H01 decoupage -> Remotion props.
 
 No service credentials, browser, publication, Content Lab, private user speech,
-or third-party music. Requires eSpeak NG only in the independent DEV runner.
+or third-party music. Uses available eSpeak CLI or dev-only meSpeak (GPL) in the independent runner.
 The speech/captions are generated from the SAME source and measured WAV length;
 this is an integration proof, not verified natural narration or human approval.
 """
@@ -52,12 +52,20 @@ def wav_frames(path: Path, fps: int) -> tuple[int, dict]:
 def make_tts(text: str, output: Path) -> None:
     if not text.strip() or len(text) > MAX_TEXT_CHARS or any(ch in text for ch in "\r\n"):
         raise ValueError("Invalid test narration")
-    if shutil.which("espeak-ng") is None:
-        raise RuntimeError("Development integration test requires espeak-ng on the runner")
-    subprocess.run(
-        ["espeak-ng", "-v", "pt-br", "-s", "205", "-p", "52", "-w", str(output), text],
-        check=True, timeout=35, capture_output=True,
-    )
+    if shutil.which("espeak-ng"):
+        cmd = ["espeak-ng", "-v", "pt-br", "-s", "205", "-p", "52", "-w", str(output), text]
+    elif shutil.which("espeak"):
+        cmd = ["espeak", "-v", "pt-br", "-s", "205", "-p", "52", "-w", str(output), text]
+    else:
+        # CI fallback: dev-only meSpeak package (GPL); neither the library nor
+        # its voice data is included in the Diazverso ZIP. Output is a TEST.
+        js = ("const m=require('mespeak');"
+              "m.loadVoice(require('mespeak/voices/pt.json'));"
+              "const wav=m.speak(process.argv[2],{rawdata:'buffer',speed:205,pitch:52});"
+              "if(!Buffer.isBuffer(wav)||wav.length<512)throw Error('no speech output');"
+              "require('fs').writeFileSync(process.argv[1],wav);")
+        cmd = ["node", "-e", js, str(output), text]
+    subprocess.run(cmd, check=True, timeout=35, capture_output=True, cwd=RUNTIME)
     if not output.is_file() or output.stat().st_size < 512:
         raise RuntimeError("TTS did not produce a WAV")
 
@@ -167,7 +175,7 @@ def build_one(kind: str, entry: dict, *, public: Path, out: Path,
     (out / f"{prefix}-h01.json").write_text(json.dumps(contract, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / f"{prefix}-captions.srt").write_text("\n".join(srt_lines), encoding="utf-8")
     (out / f"{prefix}-timing-evidence.json").write_text(
-        json.dumps({"format": kind, "test_only": True, "voice_model": "eSpeak NG pt-br (local development only)",
+        json.dumps({"format": kind, "test_only": True, "voice_model": "local eSpeak/mespeak pt-BR (dev-only, no licensed audio reused)",
                     "audio_evidence": audio_evidence, "speech_caption_alignment": "WAV sample duration -> 30 fps",
                     "human_listening_completed": False},
                    ensure_ascii=False, indent=2), encoding="utf-8")
