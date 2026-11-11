@@ -108,7 +108,7 @@ def discover(snapshot: Mapping[str, Any]) -> dict[str, Any]:
     # Name and MIME plus a trusted installation ID, if supplied; never accept
     # a stale ID just because it appears in the search response.
     root = _choose(roots, "Diazverso", FOLDER, snapshot.get("preferred_root_id"))
-    output: dict[str, Any] = {"root": root, "folders": {}, "missing": [],
+    output: dict[str, Any] = {"root": root, "folders": {}, "missing": [], "optional_missing": [],
                               "ambiguous": [], "writes_performed": False}
     if root["status"] != "EXISTS":
         output["status"] = "BLOCKED" if root["status"] != "MISSING" else "ROOT_MISSING"
@@ -129,7 +129,7 @@ def discover(snapshot: Mapping[str, Any]) -> dict[str, Any]:
             selected = _choose(entries, name, mime, preferred.get(key))
             output["folders"][key] = selected
             if selected["status"] == "MISSING":
-                output["missing"].append(key)
+                (output["optional_missing"] if key in OPTIONAL else output["missing"]).append(key)
             elif selected["status"] != "EXISTS":
                 output["ambiguous"].append(key)
             if name in ("Roteiros", "Thumbnails") and selected["status"] == "EXISTS":
