@@ -204,7 +204,7 @@
 
 ### Fase J — Revisão obrigatória e QA independente
 
-- [ ] **J01** — Criar revisor de código/JSON/TSX: tipos, contrato Remotion, props, assets, duração e render.
+- [x] **J01 — REVISOR TÉCNICO IMPLEMENTADO (2026-11-11; execução real tsc/ffprobe e QA visual permanecem gates de produção):** `skills/diazverso-decupagem/scripts/review_technical.py` valida props H01, referências e existência de assets no projeto Remotion independente, detecta fontes TSX/TS ausentes/caminhos externos e padrões potencialmente inseguros, permite compilação TypeScript real opcional com `npx --no-install tsc --noEmit` e inspeção opcional do MP4 com `ffprobe` para verificar codec H.264/dimensões/duração. Retorna estados independentes para contrato, compilação, metadados de render e QA humano; não confunde leitura estática com compilação ou render. **10 testes versionados, cobrindo fixtures locais e probes simulados**, incluídos na descoberta Python existente do CI; arquivos e integração relidos via GitHub. **Execução dos testes, compilação e ffprobe reais não confirmadas nesta rodada**, portanto não alegar vídeo/remotion validado. A revisão visual/sonora real segue J02–J04/H09/L02/L03. Nenhuma postagem ou mudança em dados reais.
 - [ ] **J02** — Criar extrator de quadros em tempos/frames representativos, incluindo entradas, transições, poses e final da cena.
 - [ ] **J03** — Criar revisor visual: cortes, parallax, fluidez, legibilidade, erros de fundo, composição, Nox e consistência gráfica.
 - [ ] **J04** — Criar revisor de áudio: voz, música, clipping, pausas, SFX e sincronização; considerar EarShot **após instalar e testar**.
