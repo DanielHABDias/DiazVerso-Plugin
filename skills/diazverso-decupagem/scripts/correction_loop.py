@@ -74,6 +74,7 @@ def collect(production_id: str, source_reports: list[dict], base_render_sha256: 
         issue["fix"] = None
         issue["rerender"] = None
         issue["recheck"] = None
+        issue["render_history"] = []
     return {"schema": "diazverso-correction-loop-v1",
             "production_id": production_id, "base_render_sha256": base_render_sha256,
             "tasks": issues, "event_index": 0, "writes_performed": False,
@@ -98,11 +99,14 @@ def _assert_state(data: dict) -> None:
     for task in data["tasks"]:
         if not isinstance(task, dict) or set(task) != {
                 "source", "code", "scene", "severity", "evidence_ref", "task_id",
-                "stage", "fix", "rerender", "recheck"}:
+                "stage", "fix", "rerender", "recheck", "render_history"}:
             raise ValueError("Invalid task shape")
         if task["stage"] not in STAGES or task["task_id"] in seen_ids:
             raise ValueError("Invalid task stage/identity")
         seen_ids.add(task["task_id"])
+        if not isinstance(task["render_history"], list) or any(
+                not isinstance(h, str) or not SHA256.fullmatch(h) for h in task["render_history"]):
+            raise ValueError("Invalid previous render receipts")
         if task["stage"] in ("FIX_APPLIED", "RERENDERED", "REVIEWED"):
             active += 1
     if active > 1:
@@ -145,8 +149,8 @@ def advance(state: dict, task_id: str, action: str, evidence: dict) -> dict:
             t["stage"] == "CLOSED" for t in new_state["tasks"]) else next(
                 t["rerender"]["render_sha256"] for t in reversed(new_state["tasks"])
                 if t["stage"] == "CLOSED")
-        if evidence["render_sha256"] == old:
-            raise ValueError("Rerender receipt matches prior render")
+        if evidence["render_sha256"] == old or evidence["render_sha256"] in task["render_history"]:
+            raise ValueError("Rerender receipt matches a prior render")
         if evidence["scope"] not in ("SCENE", "FULL") or evidence["verified_file"] is not True:
             raise ValueError("File must be checked and scope declared")
         task["rerender"] = evidence
@@ -176,6 +180,7 @@ def advance(state: dict, task_id: str, action: str, evidence: dict) -> dict:
     elif stage == "REVIEWED" and action == "retry":
         if evidence != {} or task["recheck"]["result"] != "FAILED":
             raise ValueError("Retry only follows a failed recheck")
+        task["render_history"].append(task["rerender"]["render_sha256"])
         task["stage"] = "OPEN"
         task["fix"] = task["rerender"] = task["recheck"] = None
     else:
