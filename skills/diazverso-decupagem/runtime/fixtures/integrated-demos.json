@@ -1,0 +1,73 @@
+{
+  "schema": "diazverso-integrated-demo-v1",
+  "note": "Exemplos técnicos inéditos, SEM aprovação editorial, NÃO são produções reais, não publicar.",
+  "LONGO": {
+    "production_id": "VD_9901",
+    "script_version": "TESTE_ORIGINAL_NAO_APROVADO",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "frames_per_scene": 150,
+    "scenes": [
+      {
+        "id": "S01",
+        "objective": "Pergunta inicial",
+        "title": "A PERGUNTA",
+        "narration": "Por que uma boa história de herói funciona?",
+        "cta": false
+      },
+      {
+        "id": "S02",
+        "objective": "Conflito",
+        "title": "O CONFLITO",
+        "narration": "Porque o conflito sempre exige uma escolha difícil.",
+        "cta": false
+      },
+      {
+        "id": "S03",
+        "objective": "Consequência",
+        "title": "A ESCOLHA",
+        "narration": "O personagem muda quando essa escolha tem consequências.",
+        "cta": false
+      },
+      {
+        "id": "S04",
+        "objective": "Síntese",
+        "title": "A HISTÓRIA",
+        "narration": "O segredo é contar uma história com propósito.",
+        "cta": false
+      }
+    ]
+  },
+  "SHORT": {
+    "production_id": "SH_9901",
+    "script_version": "TESTE_ORIGINAL_NAO_APROVADO",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames_per_scene": 135,
+    "scenes": [
+      {
+        "id": "S01",
+        "objective": "Gancho imediato",
+        "title": "UMA ESCOLHA",
+        "narration": "Você já notou como uma escolha muda tudo?",
+        "cta": false
+      },
+      {
+        "id": "S02",
+        "objective": "Argumento e progressão",
+        "title": "O CONFLITO",
+        "narration": "Quando o herói hesita, o conflito ganha força.",
+        "cta": false
+      },
+      {
+        "id": "S03",
+        "objective": "Payoff e CTA contextual",
+        "title": "DIAZVERSO",
+        "narration": "Quer mais histórias assim? Acompanhe o Diazverso.",
+        "cta": true
+      }
+    ]
+  }
+}
