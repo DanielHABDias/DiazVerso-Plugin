@@ -5,6 +5,10 @@ No scheduled fetching, automated posting, or edits to the Ideas spreadsheet.
 """
 from __future__ import annotations
 from datetime import datetime, timezone
+import argparse
+import json
+import math
+from pathlib import Path
 
 
 FIELDS = {"views", "impressions", "clicks", "likes", "comments",
@@ -35,7 +39,7 @@ def analyze(data: dict) -> dict:
         raise ValueError("Métricas de data futura não são válidas")
     for k in FIELDS & data.keys():
         n = data[k]
-        if isinstance(n, bool) or not isinstance(n, (int, float)) or n < 0 or n != n:
+        if isinstance(n, bool) or not isinstance(n, (int, float)) or not math.isfinite(n) or n < 0:
             raise ValueError(f"Métrica inválida: {k}")
     if "views" not in data:
         raise ValueError("Visualizações são obrigatórias")
@@ -59,3 +63,14 @@ def analyze(data: dict) -> dict:
         "must_be_approved_before_adding_to_ideas": True
     })
     return result
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Analisar métricas reais fornecidas pelo criador; sem postar ou gravar dados")
+    parser.add_argument("snapshot", type=Path, help="Arquivo JSON contendo medições verificadas pelo criador")
+    args = parser.parse_args()
+    print(json.dumps(analyze(json.loads(args.snapshot.read_text(encoding="utf-8"))), ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()
