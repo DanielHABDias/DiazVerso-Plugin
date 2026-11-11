@@ -105,6 +105,14 @@ Uso: `python skills/diazverso-decupagem/scripts/review_audio.py <mix.wav> --cues
 
 A saída **nunca certifica a qualidade da voz, intenção musical, qualidade criativa dos SFX nem sincronia labial/legendas**. `audio_listened=false`, `voice_sync_verified=false` e `creative_mix_approved=false` permanecem falsos até uma escuta/revisão separada e registrada pela pessoa responsável; o gate `qa_audio` de J08 só pode ser marcado aprovado **com evidência humana real**. O script não instala, publica ou envia vídeos. Testes com ondas PCM geradas localmente: `tests/test_review_audio.py`, descobertos pelo CI Python da pasta.
 
+## J03 — Revisor visual dos quadros extraídos
+
+Depois de J02 produzir um manifesto real `FRAMES_EXTRACTED_AWAITING_HUMAN_REVIEW`, executar `python skills/diazverso-decupagem/scripts/review_visual.py <manifesto_j02.json> --fps 30`. O script lê **os PNGs realmente presentes**, exige checksum SHA-256 compatível com o manifesto, verifica CRC PNG, usa amostras de pixels em grade para medir variação tonal, bordas quase pretas, transparência no quadro final e diferenças entre frames. Alertas `DARK_FRAME_BORDER`, `LOW_TONAL_VARIATION`, `NEAR_IDENTICAL_SAMPLED_FRAMES` e `ABRUPT_VISUAL_CHANGE` são **hipóteses a conferir, não falhas automaticamente confirmadas**. A J02 passa a exportar PNG RGB24 para compatibilidade com o leitor original em Python stdlib; imagens PNG 8-bit não entrelaçadas RGB/RGBA/cinza são aceitas (até 12 milhões de pixels). Não executa render, OCR, identificação de rostos/personagens, nem chama serviços externos.
+
+Para concluir **QA visual de fato**, analisar os quadros e, quando necessário, uma sequência de vídeo real, registrando avaliação e evidência das sete categorias: `cortes`, `parallax_fluidez`, `legibilidade`, `fundo_bordas`, `enquadramento`, `nox_identidade` e `consistencia_grafica`. Pode fornecer `--manual <rubrica.json>` com cada categoria `{"status":"APROVADO|REVISAR|PENDENTE","evidence":"..."}`, sempre decorrente de inspeção verdadeira. Mesmo que as notas estejam preenchidas, o revisor não atesta automaticamente a visão humana nem a identidade do Nox: `visual_qa_approved_by_code=false`. O gate `qa_visual` da J08 só recebe `APROVADO` quando o criador ou revisor responsável tiver evidência real; Iris/WATCH só serão integrados após identificação e testes corretos, sem criar conector fictício.
+
+Testes sintéticos de PNG com CRC, frames idênticos e flashes estão em `tests/test_review_visual.py`, abrangidos pelo CI Python da pasta. **A análise de três frames por cena não demonstra fluidez integral**: para movimentos, revisar trechos consecutivos reais via editor ou ferramenta de vídeo quando disponível. Não declarar captura/revisão de frames reais sem executar J02/J03 em mídia verdadeira.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
