@@ -13,7 +13,6 @@ HEADERS = ["ID", "PRODUTO / SERVIÇO", "CATEGORIA", "PLATAFORMA",
            "LINK AFILIADO", "APLICÁVEL A", "STATUS", "ÚLTIMA VERIFICAÇÃO",
            "FONTE", "OBSERVAÇÕES"]
 ACTIVE = "ATIVO"
-CODE = re.compile(r"^[A-Za-z0-9_-]+$")
 
 
 def _safe_url(value: str) -> bool:
