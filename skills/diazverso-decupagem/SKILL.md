@@ -57,6 +57,12 @@ O componente autoral `references/motion/crt-panel.tsx` (`DiazCrtPanel`) enquadra
 
 **Obrigatório:** os campos `rightsStatus='APPROVED'` e `rightsEvidence` são informações inseridas **após decisão humana real**; o código não comprova licença nem garante enquadramento jurídico. Um clipe de terceiros marcado sem evidência ou com direitos pendentes não pode ser usado. Não importar filmes/séries de plataformas nem presumir permissão por serem referências editoriais. Ao executar Remotion, conferir se o vídeo realmente decodificou, se há áudio permitido, ausência de distorção e CRT perceptível nos frames finais. `tests/test_crt_panel.mjs` contém testes de parâmetros (não testes de render); CI os executará.
 
+## Trilha e SFX por contexto — H07
+
+`references/audio/audio-plan.mjs` contém `planAudio(catalog,scene,options)` para montar cues de trilha e efeitos sonoros por intenção da cena (ex.: tensão, descoberta, impacto), **a partir de um catálogo local previamente revisado**. Cada item precisa de ID, caminho seguro e relativo, tipo `music`/`sfx`, duração conhecida em frames, tags, `rights='APPROVED'` e evidência real de aprovação. Um campo preenchido não constitui verificação de licença; consultar a origem e autorização de uso antes de alimentar o catálogo. Itens pendentes não entram na composição.
+
+Para música compatível com a duração da cena, o planejador separa intervalos de trilha e reduz o volume automaticamente nos trechos em que a narração está marcada (ducking); SFX podem ter início configurado dentro da cena. Todos os tempos são **relativos à cena e estimados a partir de entradas verificadas**. Se faltar música ou SFX válido, retorna `NEEDS_APPROVED_AUDIO` com as pendências e **não inventa mídia**. Testes de filtro, limites, ganho e cues estão em `tests/test_audio_plan.mjs`, incluídos no CI. O arquivo não escuta nem normaliza áudio e **não confirma mixagem ou sincronização real**; esses aspectos precisam de preview/render independente em H09/L02/L03.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
