@@ -71,9 +71,19 @@ class UpsertTests(unittest.TestCase):
         result = mod.plan_upsert(data(), "VD_0008",
                   {"STATUS": "PUBLICADO", "PUBLICADO EM": "2026-11-11",
                    "LINK YOUTUBE": "https://www.youtube.com/watch?v=abc123DEF45"},
-                   publication_verified=True)
+                   publication_verified=True, allow_replace=True)
         self.assertEqual(result["status"], "READY_TO_WRITE")
         self.assertEqual(len(result["updates"]), 3)
+
+    def test_publication_replacing_status_requires_explicit_replace(self):
+        # Verified publication alone is NOT authorization to overwrite a nonempty status.
+        result = mod.plan_upsert(data(), "VD_0008",
+                 {"STATUS": "PUBLICADO", "PUBLICADO EM": "2026-11-11",
+                  "LINK YOUTUBE": "https://www.youtube.com/watch?v=abc123DEF45"},
+                 publication_verified=True)
+        self.assertEqual(result["status"], "CONFLICT")
+        self.assertEqual(result["field"], "STATUS")
+        self.assertFalse(result["writes_performed"])
 
     def test_review_approval_not_inferred(self):
         with self.assertRaises(ValueError):
