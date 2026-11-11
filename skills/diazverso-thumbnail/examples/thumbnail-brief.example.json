@@ -1,0 +1,46 @@
+{
+  "production_id": "VD_0001",
+  "format": "LONGO",
+  "thesis": "Dois heróis podem representar ideias opostas de legado",
+  "promise": "Comparar as consequências narrativas das duas abordagens",
+  "title": "Dois jeitos de construir um legado",
+  "subject": "Duas silhuetas fictícias usadas como representação editorial",
+  "script_approved": true,
+  "assets": [
+    {
+      "id": "background",
+      "source": "assets/editorial/background-original.png",
+      "rights_status": "APPROVED",
+      "rights_evidence": "Exemplo sintético: substitua por aprovação verificável na produção real",
+      "available": true
+    }
+  ],
+  "variants": {
+    "A": {
+      "angle": "COMPARISON",
+      "visual_metaphor": "Duas silhuetas separadas por uma linha vertical",
+      "layout": "SPLIT",
+      "on_image_text": "DOIS LEGADOS",
+      "focus": "Contraste central entre as silhuetas",
+      "contrast_plan": "Fundo escuro com detalhes iluminados e texto claro",
+      "nox": "NONE",
+      "assets_used": [
+        "background"
+      ],
+      "rationale": "Mostrar a comparação como tensão principal"
+    },
+    "B": {
+      "angle": "CONSEQUENCE",
+      "visual_metaphor": "Uma única sombra atravessa duas portas opostas",
+      "layout": "FOCAL_RIGHT",
+      "on_image_text": "QUAL O PREÇO?",
+      "focus": "Sombra e portas no lado direito; texto no espaço negativo",
+      "contrast_plan": "Foco luminoso na porta, texto claro sobre área escura",
+      "nox": "NONE",
+      "assets_used": [
+        "background"
+      ],
+      "rationale": "Explorar a consequência da escolha em vez da comparação direta"
+    }
+  }
+}
