@@ -1,0 +1,89 @@
+{
+  "contract_version": "1.0",
+  "production_id": "SH_0001",
+  "script_version": "EXEMPLO-NÃO-APROVADO",
+  "format": "SHORT",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "duration_frames": 180,
+  "assets": [
+    {
+      "id": "nox",
+      "path": "assets/brand/nox/Nox.png",
+      "kind": "image",
+      "rights": "APPROVED"
+    },
+    {
+      "id": "voice",
+      "path": "assets/local/voice-example.wav",
+      "kind": "audio",
+      "rights": "APPROVED"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S01",
+      "start_frame": 0,
+      "duration_frames": 90,
+      "objective": "Apresentar pergunta",
+      "visual": "Plano aproximando Nox com movimento leve",
+      "layers": [
+        {
+          "asset_id": "nox",
+          "motion": "zoom",
+          "z_index": 1
+        }
+      ],
+      "captions": [
+        {
+          "text": "Um herói mudou?",
+          "start_frame": 10,
+          "duration_frames": 75
+        }
+      ],
+      "audio": [
+        {
+          "asset_id": "voice",
+          "start_frame": 0,
+          "duration_frames": 90,
+          "volume": 0.9
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start_frame": 90,
+      "duration_frames": 90,
+      "objective": "Entregar o contraste",
+      "visual": "Reenquadrar o mesmo asset como ilustração técnica",
+      "layers": [
+        {
+          "asset_id": "nox",
+          "motion": "reframe",
+          "z_index": 1
+        }
+      ],
+      "captions": [
+        {
+          "text": "Veja o contraste.",
+          "start_frame": 5,
+          "duration_frames": 75
+        }
+      ],
+      "audio": [
+        {
+          "asset_id": "voice",
+          "start_frame": 0,
+          "duration_frames": 90,
+          "volume": 0.9
+        }
+      ]
+    }
+  ],
+  "output": {
+    "basename": "SH_0001_example",
+    "container": "mp4",
+    "video_codec": "h264"
+  }
+}
