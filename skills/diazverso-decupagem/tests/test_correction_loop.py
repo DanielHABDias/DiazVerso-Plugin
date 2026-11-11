@@ -129,6 +129,17 @@ class CorrectionLoopTests(unittest.TestCase):
         self.assertEqual(mod.next_task(s)["stage"],"OPEN")
         self.assertIsNone(s["tasks"][0]["rerender"])
 
+    def test_retry_refuses_previous_failed_render_hash(self):
+        first=mod.next_task(state())
+        s=mod.advance(state(),"FIX_0001","record_fix",fix())
+        s=mod.advance(s,"FIX_0001","record_rerender",render())
+        s=mod.advance(s,"FIX_0001","record_recheck",recheck(first,False))
+        s=mod.advance(s,"FIX_0001","retry",{})
+        self.assertEqual(s["tasks"][0]["render_history"],[NEW_RENDER])
+        s=mod.advance(s,"FIX_0001","record_fix",fix())
+        with self.assertRaises(ValueError):
+            mod.advance(s,"FIX_0001","record_rerender",render())
+
     def test_pure_transition_does_not_mutate_input(self):
         s=state()
         original=json.dumps(s,sort_keys=True)
