@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {DiazParallax} from '../../references/motion/parallax';
 import {DiazKineticText} from '../../references/motion/kinetic-text';
 import {HQBackground} from './hq-background';
@@ -25,6 +25,7 @@ export type IntegratedSceneProps = {plan:IntegratedPlan|null};
 const SceneContent:React.FC<{scene:TimedDemoScene;kind:'LONGO'|'SHORT'}> =
 ({scene,kind}) => {
   const {width,height} = useVideoConfig();
+  const frame=useCurrentFrame();
   const vertical=kind==='SHORT';
   const imageWidth=vertical?width*.72:width*.45;
   const imageHeight=vertical?height*.32:height*.46;
@@ -57,7 +58,7 @@ const SceneContent:React.FC<{scene:TimedDemoScene;kind:'LONGO'|'SHORT'}> =
       display:'flex',alignItems:'center',justifyContent:'center',
       fontFamily:'Arial, sans-serif',fontWeight:750,
       fontSize:vertical?40:42,lineHeight:1.24,textAlign:'center'}}>
-      {scene.narration}
+      {frame>=scene.caption.start_frame && frame<scene.caption.start_frame+scene.caption.duration_frames ? scene.caption.text : ''}
     </div>
     {scene.cta&&<div style={{
       position:'absolute',left:vertical?175:width*.24,
