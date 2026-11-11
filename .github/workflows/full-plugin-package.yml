@@ -29,6 +29,8 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-drive-setup/tests -p "test_*.py"
       - name: Unit tests - video metrics K05
         run: python -m unittest discover -s skills/diazverso-criacao-video/tests -p "test_*.py"
+      - name: Unit tests - thumbnail A/B brief G02
+        run: python -m unittest discover -s skills/diazverso-thumbnail/tests -p "test_*.py"
       - name: Unit tests - Shorts preset, captions, QA
         run: python -m unittest discover -s skills/diazverso-shorts/tests -p "test_*.py"
       - name: Unit tests - Remotion contract H01 and H08 preview runner
