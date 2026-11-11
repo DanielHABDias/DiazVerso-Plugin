@@ -59,9 +59,9 @@ def review(wav_path: Path, *, voice: list | None = None,
         if rate < 8000 or rate > 192000 or count == 0:
             raise ValueError("Unsupported sample rate or empty recording")
         duration = count / rate
-        voice_events = _intervals(voice or [], duration, "voice")
-        music_events = _intervals(music or [], duration, "music")
-        sfx_events = _intervals(sfx or [], duration, "sfx")
+        voice_events = _intervals(voice if voice is not None else [], duration, "voice")
+        music_events = _intervals(music if music is not None else [], duration, "music")
+        sfx_events = _intervals(sfx if sfx is not None else [], duration, "sfx")
         # Analyze in small deterministic windows; do not load entire large media.
         frames_per_window = max(1, round(rate * 0.05))
         total_squares = 0.0
