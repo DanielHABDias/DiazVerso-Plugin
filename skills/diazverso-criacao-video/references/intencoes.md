@@ -17,11 +17,11 @@
 | "anime", "TSX", "edite" | `diazverso-criacao-video` | Plano de cena, código e render quando runtime real | Não depender de Content Lab antigo |
 | "efeitos sonoros" / "música" | `diazverso-criacao-video` | Seleção contextual e direitos | Sem áudio real, apenas proposta, não QA |
 | "Short", "vídeo vertical" | `diazverso-criacao-video` + `diazverso-core` | 9:16, legendas e CTA | Preferência ≥60s, não regra YouTube |
-| "descreva para publicar" | `diazverso-criacao-video` | Descrição, tags, fontes, afiliados pertinentes | Link/estado publicado somente se verificado |
+| "prepare o kit para postar manualmente" / "faça a descrição" | `diazverso-criacao-video` | Entregar título, descrição, tags, fontes, afiliados pertinentes e materiais finais | **O criador publica manualmente; não oferecer envio, agendamento ou tutorial de postagem** |
 | "configurar Drive", "planilha" | `diazverso-setup` | Diagnóstico e estrutura existente | Sem ferramentas não criar |
 | "economizar tokens", "contexto" | `diazverso-contexto-eficiente` | Contexto enxuto e decisão sobre refs | Usar `context-optimization` externa só no caso avançado |
 
-**Limite atual:** essa tabela mapeia habilidades **disponíveis** para orientação; skills específicas de edição, thumbnail, publicação e Drive ainda não existem. Não substituir funcionalidades ausentes por comandos falsos.
+**Limite atual:** skills técnicas ainda podem estar pendentes. **Publicação de vídeos não é função planejada nem ausente: foi explicitamente excluída.** O plugin produz o kit e encerra; só registra posteriormente URL/data informadas e verificadas. Não criar ou importar skill de postagem.
 
 ## Seleção determinística
 
