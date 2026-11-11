@@ -16,7 +16,7 @@
 | "Nox" / "pose do Nox" | `diazverso-core` | Personagem consistente com referência canônica | Nox.png já incluído; revisão visual de poses A05/G01 pendente |
 | "anime", "TSX", "edite" | `diazverso-criacao-video` | Plano de cena, código e render quando runtime real | Não depender de Content Lab antigo |
 | "efeitos sonoros" / "música" | `diazverso-criacao-video` | Seleção contextual e direitos | Sem áudio real, apenas proposta, não QA |
-| "Short", "vídeo vertical" | `diazverso-criacao-video` + `diazverso-core` | 9:16, legendas e CTA | Preferência ≥60s, não regra YouTube |
+| "Short", "vídeo vertical" | `diazverso-shorts` | Gancho, progressão, legenda contextual, CTA e preset 9:16 (1080×1920) | Preferência editorial ≥60s, não regra YouTube; sem runtime, roteiro/plano apenas |
 | "prepare o kit para postar manualmente" / "faça a descrição" | `diazverso-criacao-video` | Entregar título, descrição, tags, fontes, afiliados pertinentes e materiais finais | **O criador publica manualmente; não oferecer envio, agendamento ou tutorial de postagem** |
 | "configurar Drive", "planilha" | `diazverso-setup` | Diagnóstico e estrutura existente | Sem ferramentas não criar |
 | "economizar tokens", "contexto" | `diazverso-contexto-eficiente` | Contexto enxuto e decisão sobre refs | Usar `context-optimization` externa só no caso avançado |
