@@ -1,18 +1,18 @@
 ---
 name: diazverso-criacao-video
-description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer um Short', 'continue o vídeo' ou pedir para coordenar as etapas de produção Diazverso, da pauta ao pacote de publicação."
+description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer um Short', 'continue o vídeo' ou pedir para coordenar as etapas de produção Diazverso, da pauta ao kit de publicação para postagem manual pelo criador."
 ---
 
 # Diazverso — Orquestração de um vídeo por microtarefa
 
-**Objetivo:** coordenar a produção de um vídeo longo ou Short, mantendo registro, revisão e estado. Esta skill **não implementa** Google APIs, geração de imagem, síntese de áudio, TSX, render nem publicação; utilizar ferramentas e skills especializadas somente quando estiverem disponíveis.
+**Objetivo:** coordenar a produção de um vídeo longo ou Short até entregar o **kit final revisado para postagem exclusivamente manual pelo criador**. Não há skill, integração, instruções ou automação de envio/agendamento/publicação de vídeos. Ferramentas especializadas de produção são usadas somente quando disponíveis.
 
 ## Início ou retomada
 
 1. Identificar se o pedido é **novo vídeo** ou **continuação**. Se houver Drive/Sheets conectados, localizar o vídeo e status existentes antes de criar outro; se não houver, realizar apenas o que for possível e relatar a limitação.
 2. Confirmar apenas a decisão editorial que ainda faltar (tema, formato ou tese) **quando isso impedir a próxima ação**. Não repetir perguntas respondidas na planilha, nos documentos ou nesta conversa.
 3. Escolher **uma próxima microtarefa**. Carregar a skill específica e as referências necessárias **sob demanda**; aplicar `diazverso-core` para decisões criativas quando necessário. Não carregar todas as skills de vídeo nem as 44 antigas.
-4. Registrar uma saída verificável, revisar e somente após aprovação avançar automaticamente para a próxima tarefa **independente e autorizada**. Em ações críticas (escolha da tese/arte, exclusão, publicação), respeitar a aprovação do criador e as permissões reais.
+4. Registrar uma saída verificável, revisar e somente após aprovação avançar automaticamente para a próxima tarefa **independente e autorizada**. Em ações críticas (escolha da tese/arte e exclusão), respeitar a aprovação do criador e as permissões reais. **A postagem não é uma ação do plugin.**
 
 ## Pipeline e rastreabilidade
 
@@ -25,7 +25,7 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 | EDIÇÃO | Composição TSX/Remotion em executor independente | Runtime de edição real | Preview e amostras de quadros |
 | REVISÃO FINAL | QA narrativo, audiovisual, legendas/áudio e correções | Evidências do editor/roteiro | Aprovado após novo render |
 | PRONTO/AGENDADO | Kit com título, descrição, tags, comentários, fontes e afiliados verificados | Seção não narrada do Google Doc/planilha | Pacote conferido |
-| PUBLICADO | URL e data reais, resultado publicado | Aba `Produções` | Publicação confirmada no serviço |
+| PUBLICADO (registro posterior opcional) | URL e data informadas e verificadas após a postagem manual pelo criador | Aba `Produções`, se conectada | Nunca publicar pelo plugin nem inferir postagem pelo kit pronto |
 
 **Regra da aba Ideias:** ao aprovar transformação em vídeo, criar registro de Produção e confirmar que gravou; **somente depois remover a ideia original**. Se falhar, preservar a ideia para recuperação. Essa operação exige integração real ainda prevista nas tarefas E05–E07; não alegar que está implementada agora.
 
@@ -45,7 +45,7 @@ Quando a ferramenta permitir persistência, usar `schemas/estado-producao-v1.sch
 - Em produção técnica, revisar **render e áudio reais** quando houver executor; sem isso, registrar `NÃO TESTADO`.
 - Se a revisão falhar, corrigir a microtarefa em curso antes de avançar. Se o passo exigir autorização ou ferramenta ausente, guardar o estado como **BLOQUEADO** e não inventar sucesso.
 
-Em caso de ambiguidade entre tarefas de ideias, títulos, roteiro, revisão, thumbnail, Nox, motion, música, Shorts e publicação, consultar `references/intencoes.md` **sob demanda**; não carregar a tabela em toda conversa.
+Em caso de ambiguidade entre tarefas de ideias, títulos, roteiro, revisão, thumbnail, Nox, motion, música, Shorts e kit de publicação manual, consultar `references/intencoes.md` **sob demanda**; não carregar a tabela em toda conversa.
 
 ## Informações adicionais sob demanda
 
@@ -54,4 +54,6 @@ Em caso de ambiguidade entre tarefas de ideias, títulos, roteiro, revisão, thu
 - `docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md` — problemas e gates ainda não aprovados.
 - `skills/diazverso-contexto-eficiente/references/roteamento.md` — quando houver disputa entre skills.
 
-**Estado atual do projeto:** a orquestradora descreve procedimentos; **não** significa que a cadeia Drive → editor → YouTube esteja conectada ou testada.
+**Fronteira final:** após o kit revisado, a produção é entregue ao criador para **postagem manual**. Não descrever etapas de upload, envio, agendamento ou postagem. A atualização posterior de status/link é somente registro factual após confirmação externa do criador.
+
+**Estado atual do projeto:** a orquestradora descreve procedimentos; **não** significa que Drive/editor estejam integrados ou testados.
