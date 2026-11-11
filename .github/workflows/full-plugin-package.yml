@@ -20,7 +20,7 @@ permissions:
 jobs:
   package:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,6 +42,35 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-decupagem/tests -p "test_*.py"
       - name: Unit tests - motion/audio H03-H07 geometry, words, CRT and SFX
         run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs skills/diazverso-decupagem/tests/test_kinetic_text.mjs skills/diazverso-decupagem/tests/test_crt_panel.mjs skills/diazverso-decupagem/tests/test_audio_plan.mjs
+      - name: Unit tests - selected HQMotion port G05
+        run: node --test skills/diazverso-decupagem/tests/test_hq_legacy_port.mjs
+      - name: Install independent Remotion smoke runner
+        working-directory: skills/diazverso-decupagem/runtime
+        run: npm install --no-audit --no-fund
+      - name: Render synthetic reference scene 16:9 and 9:16
+        working-directory: skills/diazverso-decupagem/runtime
+        run: |
+          mkdir -p out
+          npx --no-install remotion browser ensure
+          npx --no-install remotion still src/index.ts DiazversoSmokeWide out/smoke-16x9.png --frame=15
+          npx --no-install remotion still src/index.ts DiazversoSmoke out/smoke-9x16.png --frame=15
+          npx --no-install remotion render src/index.ts DiazversoSmokeWide out/smoke-16x9.mp4 --frames=0-29 --codec=h264
+          npx --no-install remotion render src/index.ts DiazversoSmoke out/smoke-9x16.mp4 --frames=0-29 --codec=h264
+          python - <<'PY'
+          from pathlib import Path
+          import struct,subprocess
+          for suffix,(w,h) in {"16x9":(1920,1080),"9x16":(1080,1920)}.items():
+              png=Path(f"out/smoke-{suffix}.png")
+              assert png.read_bytes()[:8]==b"\\x89PNG\\r\\n\\x1a\\n",png
+              assert struct.unpack(">II",png.read_bytes()[16:24])==(w,h),png
+              mp4=Path(f"out/smoke-{suffix}.mp4")
+              assert mp4.stat().st_size>1024,mp4
+              cmd=["ffprobe","-v","error","-select_streams","v:0","-show_entries",
+                   "stream=width,height","-of","csv=p=0",str(mp4)]
+              dims=subprocess.check_output(cmd,text=True).strip()
+              assert dims==f"{w},{h}",(mp4,dims)
+              print("RENDER_VERIFIED",suffix,w,h,mp4.stat().st_size)
+          PY
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Unit tests - offline package structure D07 and L06
