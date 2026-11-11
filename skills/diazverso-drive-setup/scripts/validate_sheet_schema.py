@@ -54,7 +54,7 @@ def validate(snapshot: dict) -> dict:
 
 
 
-def plan_new_idea(rows: list[list], fields: dict, *, known_production_ids: list[str] | None = None) -> dict:
+def plan_new_idea(rows: list[list], fields: dict) -> dict:
     """E05: prepare exactly one row; caller owns write and live readback.
 
     Full current Ideias rows (header included) are required. No network/write
@@ -98,7 +98,7 @@ def plan_new_idea(rows: list[list], fields: dict, *, known_production_ids: list[
             if rid in existing_ids:
                 raise ValueError(f"ID duplicado já existente: {rid}")
             existing_ids.add(rid)
-            if not re.fullmatch(r"TF_\\d{4,}", rid):
+            if not re.fullmatch(r"TF_\d{4,}", rid):
                 raise ValueError(f"ID inválido em Ideias: {rid}")
         if len(row) > 1 and str(row[1]).strip():
             titles.add(norm(str(row[1])))
