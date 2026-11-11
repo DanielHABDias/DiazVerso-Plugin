@@ -27,6 +27,14 @@ description: "Use para dividir roteiro aprovado de vídeo longo ou Short Diazver
 
 Os tempos acima **são exemplos**, não um roteiro pronto nem um preset universal. Em uso real, montar cenas somente a partir da narração existente.
 
+## Contrato de composição independente — H01
+
+A decupagem aprovada pode ser exportada como **props JSON** portáteis para um executor Remotion/TSX separado. O contrato versionado está em `../../schemas/remotion-composition-v1.schema.json`; o validador stdlib está em `scripts/validate_composition.py`; há um **exemplo sintético, sem arquivos de narração reais**, em `examples/short-remotion-props.example.json`.
+
+Campos do contrato: `production_id`, `script_version`, formato `LONGO` (1920×1080) ou `SHORT` (1080×1920), FPS, duração total em frames; catálogo de assets com caminhos **relativos ao projeto do editor**, tipos e direitos; cenas com início/duração em frames, objetivo, descrição visual, camadas/motion, cues de legenda e áudio (cues têm início **relativo à cena**); configuração de saída MP4/H.264. Cenas precisam ser contíguas e usar assets declarados e com direitos `APPROVED` — **não basta registrar o nome do arquivo para comprovar existência ou licença**.
+
+Executar `python scripts/validate_composition.py examples/short-remotion-props.example.json` a partir da pasta desta skill (ou indicar caminho absoluto ao script). O retorno `VALID_CONTRACT` significa apenas props estruturados, nunca render confirmado. O executor independente traduz props em `<Composition>`, `<Sequence>`, `<Audio>` e componentes de motion, localiza os assets em seu próprio projeto, inspeciona visual e áudio, e só então produz vídeo. **Não existe dependência nem integração com o Content Lab antigo.** H03–H09 e L02/L03 abrangem componentes e render/QA reais.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
