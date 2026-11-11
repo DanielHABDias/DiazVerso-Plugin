@@ -1,0 +1,56 @@
+{
+  "component": "DialogoHQ",
+  "duration_seconds": 10,
+  "fps": 30,
+  "props": {
+    "fontFamily": "Anton",
+    "backgroundStyle": "halftone",
+    "backgroundColor": "#10131E",
+    "backgroundOpacity": 100,
+    "highlightOpacity": 85,
+    "motionDuration": 0.45,
+    "left": {
+      "asset": "esquerda",
+      "name": "A REGRA",
+      "color": "#2676E8"
+    },
+    "right": {
+      "asset": "direita",
+      "name": "A CONSEQUÊNCIA",
+      "color": "#EF3F49"
+    },
+    "turns": [
+      {
+        "speaker": "left",
+        "text": "SE EU CRUZAR ESSA LINHA, TALVEZ NÃO VOLTE.",
+        "at": 0,
+        "duration": 3.2,
+        "animation": "escrita",
+        "writeDuration": 1
+      },
+      {
+        "speaker": "right",
+        "text": "E QUEM JÁ NÃO CONSEGUIU VOLTAR?",
+        "at": 3.2,
+        "duration": 3.2,
+        "animation": "none"
+      },
+      {
+        "speaker": "left",
+        "text": "É POR ISSO QUE ESSA ESCOLHA IMPORTA.",
+        "at": 6.4,
+        "duration": 3.2,
+        "animation": "escrita",
+        "writeDuration": 0.9
+      }
+    ],
+    "assets": {
+      "esquerda": "assets/graphics/escudo.svg",
+      "direita": "assets/graphics/mascara.svg",
+      "anton": "fonts/Anton-Regular.ttf"
+    }
+  },
+  "required_files": [
+    "fonts/Anton-Regular.ttf"
+  ]
+}

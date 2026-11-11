@@ -33,3 +33,5 @@ Integridade e sinal são medidos; escuta/aprovação editorial continuam obrigat
 ## Limites
 
 Confirmar executor, mídia, fontes e permissões. Não simular análise visual, escuta, transcrição, render ou aprovação. Não publicar conteúdo. O kit final depende de revisão real dos arquivos e decisão do criador.
+
+Biblioteca de cenas e props: [cenas TSX](references/scenes.md). Abrir somente a cena selecionada.

@@ -21,3 +21,5 @@ description: "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, c
 
 
 Sem upload, postagem ou automação de publicação. O criador publica os vídeos manualmente.
+
+Para elaborar uma variação, consultar [orientação de pose](references/pose.md) somente quando necessário.

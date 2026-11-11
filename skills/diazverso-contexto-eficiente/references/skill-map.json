@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "0.2.0",
+  "plugin_version": "0.3.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -105,7 +105,7 @@
       "name": "diazverso-decupagem",
       "path": "skills/diazverso-decupagem/SKILL.md",
       "description": "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso.",
-      "sha256": "85a7f537ed3e022eceb016fae3e7cde4dbb08da3209939664da5ab6417baf87c",
+      "sha256": "1369569c0b64ffa345e08430b68bfde60dff51eae628637f543af46f1037b8d3",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-shorts"
@@ -116,6 +116,7 @@
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-decupagem/references/motion.md",
         "skills/diazverso-decupagem/references/qa.md",
+        "skills/diazverso-decupagem/references/scenes.md",
         "skills/diazverso-decupagem/scripts/build_original_sfx.py",
         "skills/diazverso-decupagem/scripts/render_previews.py",
         "skills/diazverso-decupagem/scripts/validate_composition.py",
@@ -158,7 +159,7 @@
       "name": "diazverso-nox",
       "path": "skills/diazverso-nox/SKILL.md",
       "description": "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original.",
-      "sha256": "b5e307feb8d7c3489b069e26f7302c8fefb096e69d429f149b3649ae4f9d6575",
+      "sha256": "4b1e6422192f20dacd6d06fe3e41b73a41980c619d9317587319f948620d540d",
       "dependencies": [
         "diazverso-contexto-eficiente"
       ],
@@ -166,6 +167,7 @@
         "assets/brand/nox/Nox.png",
         "assets/manifest.json",
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-nox/references/pose.md",
         "skills/diazverso-nox/scripts/character_lock.py"
       ]
     },
@@ -297,12 +299,13 @@
       "name": "diazverso-titulos",
       "path": "skills/diazverso-titulos/SKILL.md",
       "description": "Use quando o criador pedir títulos A/B, embalagem de vídeo, promessa do gancho ou conceitos de thumbnail para vídeos longos e Shorts do Diazverso.",
-      "sha256": "53ab349da4382d1ce6bbd0e4ee9a15e4d3848c140fd596a6a8aba5dad5edba4c",
+      "sha256": "957df15c2d14b8edb5670ee66c661f0c1b669e56393f5bda62cb0c0dfc449dd0",
       "dependencies": [
         "diazverso-contexto-eficiente"
       ],
       "references": [
-        "skills/diazverso-contexto-eficiente/SKILL.md"
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-titulos/references/modelos.md"
       ]
     },
     {

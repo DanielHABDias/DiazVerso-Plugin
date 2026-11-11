@@ -1,0 +1,76 @@
+{
+  "component": "GaleriaCartasHQ",
+  "duration_seconds": 10,
+  "fps": 30,
+  "props": {
+    "title": "AS PEÇAS DESSA HISTÓRIA",
+    "subtitle": "UMA GALERIA EM MOVIMENTO",
+    "backgroundColor": "#1B2943",
+    "cardColor": "#F6EDD8",
+    "textColor": "#FFFFFF",
+    "cardTextColor": "#111723",
+    "accentColor": "#F4C542",
+    "entryDuration": 0.65,
+    "textDuration": 0.2,
+    "stackOffset": 16,
+    "items": [
+      {
+        "asset": "escudo",
+        "title": "A REGRA",
+        "caption": "Preservar o princípio",
+        "at": 0.25
+      },
+      {
+        "asset": "lampada",
+        "title": "A ESCOLHA",
+        "caption": "Buscar outra saída",
+        "at": 1.35
+      },
+      {
+        "asset": "balanca",
+        "title": "O LIMITE",
+        "caption": "Pesar as consequências",
+        "at": 2.45
+      },
+      {
+        "asset": "caminho",
+        "title": "A EXCEÇÃO",
+        "caption": "Um novo caminho",
+        "at": 3.55,
+        "accentColor": "#79AFE9"
+      },
+      {
+        "asset": "escudo",
+        "title": "O PREÇO",
+        "caption": "Quem paga a conta?",
+        "at": 4.65,
+        "accentColor": "#E88882"
+      },
+      {
+        "asset": "lampada",
+        "title": "O RETORNO",
+        "caption": "De volta ao começo",
+        "at": 5.75,
+        "accentColor": "#B79AE4"
+      },
+      {
+        "asset": "balanca",
+        "title": "A CONSEQUÊNCIA",
+        "caption": "Tudo deixa uma marca",
+        "at": 6.85,
+        "accentColor": "#8ACCB1"
+      }
+    ],
+    "fontFamily": "Anton",
+    "assets": {
+      "escudo": "assets/graphics/escudo.svg",
+      "lampada": "assets/graphics/lampada.svg",
+      "balanca": "assets/graphics/balanca.svg",
+      "caminho": "assets/graphics/caminho.svg",
+      "anton": "fonts/Anton-Regular.ttf"
+    }
+  },
+  "required_files": [
+    "fonts/Anton-Regular.ttf"
+  ]
+}

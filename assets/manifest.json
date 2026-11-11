@@ -109,6 +109,95 @@
       "rights": "ORIGINAL_PROCEDURAL_NO_THIRD_PARTY_SAMPLES",
       "source": "skills/diazverso-decupagem/scripts/build_original_sfx.py",
       "status": "TECHNICAL_CANDIDATE_LISTENING_PENDING"
+    },
+    {
+      "id": "brand.background.comic-page",
+      "name": "comic-page.png",
+      "kind": "background",
+      "path": "assets/brand/backgrounds/comic-page.png",
+      "mime_type": "image/png",
+      "size_bytes": 663813,
+      "git_blob_sha1": "0fef8f876abb603068432d4bdec7818c990a61ba",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "alpha_supported": true
+    },
+    {
+      "id": "graphics.caminho",
+      "name": "caminho.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/caminho.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 487,
+      "git_blob_sha1": "b94013c4407669896760e067073164b2ea016234",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "graphics.raio",
+      "name": "raio.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/raio.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 408,
+      "git_blob_sha1": "f66f00c61de06c71875b35f868a956a5c8cfa21d",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "graphics.escudo",
+      "name": "escudo.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/escudo.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 601,
+      "git_blob_sha1": "b24d0bb84bdcbb8fcf15825a2b03002042f73cf3",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "graphics.balanca",
+      "name": "balanca.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/balanca.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 629,
+      "git_blob_sha1": "19bfb89287ef838cece7f49011b6703862e1f0f3",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "graphics.lampada",
+      "name": "lampada.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/lampada.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 907,
+      "git_blob_sha1": "53c0cd5fdb5005a8bb28306a8f9e823591cb0bd4",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "graphics.mascara",
+      "name": "mascara.svg",
+      "kind": "graphic",
+      "path": "assets/graphics/mascara.svg",
+      "mime_type": "image/svg+xml",
+      "size_bytes": 648,
+      "git_blob_sha1": "478c9745ff87d8672ee6db3bfe577b6656554d1e",
+      "source": "creator-provided Diazverso design resource",
+      "rights": "creator-provided-for-Diazverso-plugin",
+      "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
     }
   ]
 }

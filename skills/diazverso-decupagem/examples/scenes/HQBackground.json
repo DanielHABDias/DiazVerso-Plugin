@@ -1,0 +1,12 @@
+{
+  "component": "HQBackground",
+  "duration_seconds": 8,
+  "fps": 30,
+  "props": {
+    "mode": "grid",
+    "opacity": 50,
+    "gridBaseColor": "#10101A",
+    "gridColor": "#858595"
+  },
+  "required_files": []
+}

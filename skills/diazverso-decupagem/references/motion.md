@@ -5,6 +5,7 @@ Consultar apenas o componente exigido pela cena. Os TSX usam React/Remotion do p
 | Função | Arquivo | Uso |
 | --- | --- | --- |
 | Câmera e enquadramento | motion/camera.tsx | Movimento contextual em duração definida |
+| Câmera narrativa por keyframes | motion/narrative-camera.tsx | Percurso espacial, paradas e profundidade 2.5D |
 | Profundidade | motion/parallax.tsx | Camadas, profundidade e limites seguros |
 | Texto cinético | motion/kinetic-text.tsx | Palavras com startFrame/durationFrames relativos à cena; contraste mínimo 4,5:1 |
 | Trecho de vídeo em monitor | motion/crt-panel.tsx | Mídia, duração e direitos verificados; áudio original exige autorização separada |

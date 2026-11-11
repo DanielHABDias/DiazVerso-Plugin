@@ -1,0 +1,28 @@
+{
+  "component": "ComparativoIdeiasHQ",
+  "duration_seconds": 8,
+  "fps": 30,
+  "props": {
+    "title": "UMA ESCOLHA, DUAS CONSEQUÊNCIAS",
+    "fontFamily": "Anton",
+    "backgroundStyle": "halftone",
+    "items": [
+      {
+        "text": "O QUE ELE PROTEGE",
+        "asset": "escudo"
+      },
+      {
+        "text": "O QUE ELE ARRISCA",
+        "asset": "mascara"
+      }
+    ],
+    "assets": {
+      "escudo": "assets/graphics/escudo.svg",
+      "mascara": "assets/graphics/mascara.svg",
+      "anton": "fonts/Anton-Regular.ttf"
+    }
+  },
+  "required_files": [
+    "fonts/Anton-Regular.ttf"
+  ]
+}

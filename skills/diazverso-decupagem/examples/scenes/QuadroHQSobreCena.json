@@ -1,0 +1,17 @@
+{
+  "component": "QuadroHQSobreCena",
+  "duration_seconds": 4,
+  "fps": 30,
+  "props": {
+    "upperText": "A TESE",
+    "lowerText": "UM DIA RUIM?",
+    "tagColor": "#5CA5AD",
+    "fontFamily": "Anton",
+    "assets": {
+      "anton": "fonts/Anton-Regular.ttf"
+    }
+  },
+  "required_files": [
+    "fonts/Anton-Regular.ttf"
+  ]
+}

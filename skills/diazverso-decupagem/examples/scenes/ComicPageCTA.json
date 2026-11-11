@@ -1,0 +1,19 @@
+{
+  "component": "ComicPageCTA",
+  "duration_seconds": 5.359999999999999,
+  "fps": 30,
+  "props": {
+    "headline": "A REGRA DO BATMAN E O CORINGA",
+    "stripeColor": "#EF3F49",
+    "fontFamily": "Anton",
+    "assets": {
+      "thumbnail": "media/TH_0005.png",
+      "character": "assets/brand/nox/Nox.png",
+      "anton": "fonts/Anton-Regular.ttf"
+    }
+  },
+  "required_files": [
+    "media/TH_0005.png",
+    "fonts/Anton-Regular.ttf"
+  ]
+}

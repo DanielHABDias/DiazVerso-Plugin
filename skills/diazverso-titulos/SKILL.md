@@ -22,3 +22,5 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
 Entregar duas alternativas realmente diferentes e seus conceitos visuais, mais a relação com a abertura. O criador decide qual caminho vira roteiro e arte; **não iniciar criação de thumbnail final, render nem publicação só por ter gerado títulos**.
 
 Carregar `diazverso-core` para identidade quando necessário; detalhes de composição técnica pertencem à skill de thumbnail, não a esta.
+
+Se faltar um ângulo de entrada, consultar [modelos de título](references/modelos.md) sob demanda.
