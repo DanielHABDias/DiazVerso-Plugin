@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections import Counter
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -142,12 +141,60 @@ def discover(snapshot: Mapping[str, Any]) -> dict[str, Any]:
     return output
 
 
+
+def plan_repairs(result: Mapping[str, Any], *, include_optional: bool = False) -> dict[str, Any]:
+    """E03: produce a no-write creation plan for verified MISSING folders only.
+
+    Actions are proposals, NOT authorizations. Caller must re-read the exact
+    parent folder immediately before any authorized create, then read back the
+    created ID and resume discovery. Existing sheets are never overwritten.
+    """
+    status = result.get("status")
+    root = result.get("root", {})
+    if root.get("status") != "EXISTS":
+        return {"status": "BLOCKED", "reason": "Selecionar/validar raiz e pai antes de criar", "actions": []}
+    if status == "BLOCKED" or result.get("ambiguous"):
+        return {"status": "BLOCKED", "reason": "Resolver caminhos ambíguos e IDs inválidos", "actions": []}
+    if status not in ("COMPLETE", "INCOMPLETE"):
+        return {"status": "BLOCKED", "reason": "Descoberta não validada", "actions": []}
+    folders = result.get("folders", {})
+    proposed = list(result.get("missing", []))
+    if include_optional:
+        proposed.extend(result.get("optional_missing", []))
+    actions = []
+    deferred = []
+    for key in proposed:
+        item = folders.get(key)
+        if not item or item.get("status") != "MISSING":
+            raise ValueError(f"Estado inconsistente no caminho {key}")
+        parent_path, _, name = key.rpartition("/")
+        parent = folders.get(parent_path) if parent_path else root
+        if not parent or parent.get("status") != "EXISTS":
+            deferred.append(key)
+            continue
+        if key == "Canal do YT — V1.0 (Diazverso)":
+            # Creating a native spreadsheet needs the proper Sheets/Drive
+            # workflow, including schema E04; do not create a blank file.
+            deferred.append(key)
+            continue
+        actions.append({"operation": "CREATE_FOLDER_IF_STILL_MISSING",
+                        "path": key, "name": name, "parent_id": parent["id"],
+                        "requires_authorization": True, "requires_readback": True})
+    return {"status": "READY_FOR_AUTHORIZATION" if actions else "NO_FOLDER_ACTIONS",
+            "actions": actions, "deferred": deferred, "writes_performed": False}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("snapshot", type=Path, help="JSON da listagem de Drive já paginada")
+    parser.add_argument("--plan", action="store_true", help="Exibir plano E03 sem executar escrita")
+    parser.add_argument("--include-optional", action="store_true", help="Planejar também bibliotecas opcionais")
     args = parser.parse_args()
     value = json.loads(args.snapshot.read_text(encoding="utf-8"))
-    print(json.dumps(discover(value), ensure_ascii=False, indent=2))
+    result = discover(value)
+    if args.plan:
+        result = plan_repairs(result, include_optional=args.include_optional)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
