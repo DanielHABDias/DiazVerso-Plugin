@@ -31,7 +31,7 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-criacao-video/tests -p "test_*.py"
       - name: Unit tests - Shorts preset, captions, QA
         run: python -m unittest discover -s skills/diazverso-shorts/tests -p "test_*.py"
-      - name: Unit tests - Remotion composition contract H01
+      - name: Unit tests - Remotion contract H01 and H08 preview runner
         run: python -m unittest discover -s skills/diazverso-decupagem/tests -p "test_*.py"
       - name: Unit tests - motion/audio H03-H07 geometry, words, CRT and SFX
         run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs skills/diazverso-decupagem/tests/test_kinetic_text.mjs skills/diazverso-decupagem/tests/test_crt_panel.mjs skills/diazverso-decupagem/tests/test_audio_plan.mjs
