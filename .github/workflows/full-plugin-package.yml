@@ -86,13 +86,6 @@ jobs:
       - name: Test independent Remotion runtime helpers
         working-directory: skills/diazverso-decupagem/runtime
         run: npm test
-      - name: Ensure ffprobe is available for MP4 dimension QA
-        run: |
-          if ! command -v ffprobe >/dev/null 2>&1; then
-            sudo apt-get update -qq
-            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
-          fi
-          ffprobe -version | head -n 1
       - name: Render synthetic reference scene 16:9 and 9:16
         working-directory: skills/diazverso-decupagem/runtime
         run: |
@@ -104,34 +97,7 @@ jobs:
           npx --no-install remotion render src/index.ts DiazversoSmoke out/smoke-9x16.mp4 --frames=0-29 --codec=h264
           npx --no-install remotion still src/index.ts DiazversoHQMigrationWide out/hq-migration-16x9.png --frame=30
           npx --no-install remotion still src/index.ts DiazversoHQMigrationVertical out/hq-migration-9x16.png --frame=30
-          python - <<'PY'
-          from pathlib import Path
-          import struct,subprocess
-          for suffix,(w,h) in {"16x9":(1920,1080),"9x16":(1080,1920)}.items():
-              png=Path(f"out/smoke-{suffix}.png")
-              assert png.read_bytes()[:8]==bytes.fromhex("89504e470d0a1a0a"),png
-              assert struct.unpack(">II",png.read_bytes()[16:24])==(w,h),png
-              mp4=Path(f"out/smoke-{suffix}.mp4")
-              assert mp4.stat().st_size>1024,mp4
-              cmd=["ffprobe","-v","error","-select_streams","v:0","-show_entries",
-                   "stream=width,height","-of","csv=p=0",str(mp4)]
-              dims=subprocess.check_output(cmd,text=True).strip()
-              assert dims==f"{w},{h}",(mp4,dims)
-              print("RENDER_VERIFIED",suffix,w,h,mp4.stat().st_size)
-          PY
-      - name: Verify HQ migrated component images
-        working-directory: skills/diazverso-decupagem/runtime
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import struct
-          for suffix,(w,h) in {"16x9":(1920,1080),"9x16":(1080,1920)}.items():
-              p=Path(f"out/hq-migration-{suffix}.png")
-              data=p.read_bytes()
-              assert data[:8]==bytes.fromhex("89504e470d0a1a0a")
-              assert struct.unpack(">II",data[16:24])==(w,h)
-              print("HQ_MIGRATION_IMAGE_VERIFIED",suffix,len(data))
-          PY
+          python "$GITHUB_WORKSPACE/scripts/verify_remotion_outputs.py" out
       - name: Archive synthetic Remotion frames and short clips for visual review
         uses: actions/upload-artifact@v4
         with:
