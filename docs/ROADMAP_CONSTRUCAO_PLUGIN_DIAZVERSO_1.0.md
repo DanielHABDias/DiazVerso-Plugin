@@ -181,7 +181,7 @@
 ### Fase H — Produção audiovisual por microcena
 
 - [ ] **H01** — Definir **contrato independente de composição Remotion** para o plugin (props TSX, assets, timeline e outputs) sem exigir integração com o Content Lab antigo; refatoração do Content Lab pertence à etapa pós-plugin.
-- [ ] **H02** — Criar skill de decupagem audiovisual: blocos curtos, quadro-alvo, narração, mídia, SFX, música e objetivo de cada cena.
+- [x] **H02 — CONCLUÍDA (2026-11-11, skill de decupagem):** criada `skills/diazverso-decupagem/SKILL.md` com roteiro aprovado e versão, blocos por função narrativa, quadro-alvo/motion, duração estimada, narração, texto/legendas, fontes, música/SFX, direitos e pendências de QA; contém modelo de saída e limite explícito sobre ausência de render, sincronização ou autorização de terceiros. Integrada à fase ASSETS da orquestradora e ao roteamento por intenções; revisão de presença dos itens e leitura via GitHub confirmadas. Execução de um vídeo/render real é etapa separada H08/H09/L02.
 - [ ] **H03** — Criar componentes/testes de câmera em imagens estáticas: zoom/pan/reframe/blur, evitando imagem parada e vazios involuntários.
 - [ ] **H04** — Criar componente/teste de parallax em camadas, com fundo e PNG recortado; verificar escala/safe area.
 - [ ] **H05** — Criar componente/teste de texto cinético Anton, com contraste real e timing de palavras.
