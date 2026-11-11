@@ -54,10 +54,10 @@ def validate(snapshot: dict) -> dict:
 
 
 
-def plan_new_idea(rows: list[list], fields: dict) -> dict:
+def plan_new_idea(rows: list[list], fields: dict, *, previously_issued_ids: list[str]) -> dict:
     """E05: prepare exactly one row; caller owns write and live readback.
 
-    Full current Ideias rows (header included) are required. No network/write
+    Full current Ideias rows AND previously issued historical TF IDs are required. No network/write
     is performed. Concurrent writers need a shared lock or retry after a fresh
     duplicate/ID check; this function alone cannot reserve an ID.
     """
@@ -106,7 +106,11 @@ def plan_new_idea(rows: list[list], fields: dict) -> dict:
         return {"status": "EXISTS", "reason": "Tema idêntico já existe; revisar antes de inserir",
                 "writes_performed": False}
 
-    next_number = max([int(x[3:]) for x in existing_ids] or [0]) + 1
+    if not isinstance(previously_issued_ids, list) or any(not isinstance(x, str) or not re.fullmatch(r"TF_\d{4,}", x) for x in previously_issued_ids):
+        raise ValueError("Histórico completo de IDs TF emitidos é obrigatório e precisa ser validado")
+    # Previously promoted ideas are absent from Ideias; never reuse their IDs.
+    all_ids = existing_ids | set(previously_issued_ids)
+    next_number = max([int(x[3:]) for x in all_ids] or [0]) + 1
     if next_number > 9999:
         raise ValueError("Limite de IDs TF_#### atingido; definir estratégia antes de prosseguir")
     new_id = f"TF_{next_number:04d}"
