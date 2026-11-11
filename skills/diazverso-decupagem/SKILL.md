@@ -113,6 +113,21 @@ Para concluir **QA visual de fato**, analisar os quadros e, quando necessário, 
 
 Testes sintéticos de PNG com CRC, frames idênticos e flashes estão em `tests/test_review_visual.py`, abrangidos pelo CI Python da pasta. **A análise de três frames por cena não demonstra fluidez integral**: para movimentos, revisar trechos consecutivos reais via editor ou ferramenta de vídeo quando disponível. Não declarar captura/revisão de frames reais sem executar J02/J03 em mídia verdadeira.
 
+## J07 — Loop de correção, um achado de cada vez
+
+`scripts/correction_loop.py` fornece um estado JSON portável para corrigir **uma** falha por microtarefa, sem iniciar automaticamente novos renders. Para abrir um lote, chamar sua função `collect(production_id, source_reports, base_render_sha256)` em ambiente Python. Os relatórios preparados precisam incluir `source` (`J01`, `J03`, `J04`, `J05`, `J06` ou `I05`), `evidence_ref` (arquivo/link de revisão comprovável) e `findings` com `code`, `severity` e `scene` (opcional). Adaptar os campos `issues` de alguns revisores para `findings` **sem perder sua origem, severidade e evidência**; o script não presume que uma saída de outro revisor constitui inspeção humana.
+
+O processamento é determinístico: bloqueios primeiro, depois revisão, observação editorial e avisos. `next_task` seleciona sempre a **primeira pendência**. A transição `advance` exige, sucessivamente:
+
+1. `record_fix` — referência da alteração, explicação e SHA-256 do código/asset atualizado.
+2. `record_rerender` — referência do MP4/trecho realmente renderizado, SHA-256 diferente da renderização anterior e confirmação da inspeção do arquivo. O hash da revisão do código precisa corresponder ao da correção.
+3. `record_recheck` — referência de **nova execução do revisor afetado** sobre esse render, identificação do achado original, resultado `PASSED` ou `FAILED` e evidência.
+4. `close` somente após `PASSED`; se falhar, `retry` retorna a mesma microtarefa a `OPEN` e preserva o digest do render rejeitado para impedir reutilizá-lo.
+
+Nenhuma segunda tarefa avança antes do fechamento da primeira. A função devolve **novo JSON**, sem escrever o estado anterior; a CLI aceita arquivo de estado, `--task-id`, `--action`, `--evidence` e `--out` para **um novo arquivo**, recusando sobrescrita. O comando sem ação apenas resume a próxima pendência. **Os campos de evidência e hashes são declarações fornecidas pelo executor; o script verifica formato e coerência, não confere automaticamente os arquivos originais ou a autenticidade da inspeção.** Uma tarefa fechada não aprova automaticamente o vídeo: o gate J08 ainda exige revisão/decisão humana e o render real segue H09/L02/L03. Não alterar Google Sheets nem publicar vídeos por esse fluxo.
+
+Os testes estão em `tests/test_correction_loop.py`, incluídos na descoberta Python do CI, cobrindo prioridade, exclusividade, fases, falhas, retries e digest de render.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
