@@ -91,6 +91,12 @@ Exemplo de revisão: `python skills/diazverso-decupagem/scripts/review_technical
 
 `CONTRACT_ASSETS_CHECKED` confirma somente o contrato/arquivos/fonte escaneada; campos `typescript_compiled` e `render_inspected` são booleanos independentes. **Mesmo compilação/ffprobe aprovados não constituem QA visual ou de áudio**: J02–J04/H09/L02/L03 precisam examinar frames, Nox, movimento, cortes e mixagem reais. Testes de unidade e probes simulados em `tests/test_review_technical.py` entram na descoberta Python existente do CI. Nenhum vídeo é postado, agendado ou enviado.
 
+## Extração real de quadros para QA — J02
+
+O script `scripts/extract_review_frames.py` lê props H01 e planeja amostras **determinísticas** do primeiro, meio e último frame de cada cena, incluindo os limites de transição. Eventos opcionais `[{ "frame": 55, "kind": "pose" }]` permitem ampliar a coleta de poses, legendas, transições e efeitos. `--props <props.json> --video <render.mp4> --out <pasta>` gera **somente plano JSON**; acrescentar `--execute` exige **MP4 real**, `ffprobe` e `ffmpeg` locais para verificar dimensão/FPS e extrair PNG de cada frame com `select=eq(n,frame)`. Imagens existentes não são sobrescritas. Cada saída inclui hash SHA-256 para rastreabilidade.
+
+A conclusão `FRAMES_EXTRACTED_AWAITING_HUMAN_REVIEW` significa **quadros reais extraídos**, não revisão visual feita. A inspeção de enquadramento, Nox, blur, parallax, cortes e legibilidade é J03/H09/L02/L03. Não inventar frames ou afirmar que o vídeo foi assistido quando há apenas um plano ou teste de CLI simulado. Testes de planejamento, ffprobe e ffmpeg simulados ficam em `tests/test_extract_review_frames.py`, cobertos pelo CI Python da skill. Não há publicação de vídeos.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
