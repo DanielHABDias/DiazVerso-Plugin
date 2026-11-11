@@ -6,7 +6,7 @@ Plugin modular do canal **Diazverso** para pesquisa, tese, títulos, roteiro nat
 
 ## Para continuar no Codex (11/11/2026)
 
-**Comece em [AGENTS.md](AGENTS.md) e [Passagem oficial para Codex](docs/HANDOFF_CODEX_2026-11-11.md).** Lá estão a visão aprovada do canal, o estado dos **87 itens (25 concluídos, 62 pendentes)**, os testes, a sequência sugerida, o B06 concluído como teste de ZIP e o F06 ainda parcial e **a lista de documentação TEMPORÁRIA a apagar somente após a V1.0 completa/validada**.
+**Comece em [AGENTS.md](AGENTS.md) e [Passagem oficial para Codex](docs/HANDOFF_CODEX_2026-11-11.md).** Lá estão a visão aprovada do canal, a passagem histórica com **25/87 itens em 10/11**; no roadmap atualizado em **11/11 são 29 concluídos e 58 pendentes**, após F07–F10 (skills verificadas estaticamente, sem execução no host), os testes, a sequência sugerida, o B06 concluído como teste de ZIP e o F06 ainda parcial e **a lista de documentação TEMPORÁRIA a apagar somente após a V1.0 completa/validada**.
 
 O [roadmap detalhado](docs/ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md) e a [especificação canônica](docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md) são **instrumentos de desenvolvimento**, não necessariamente arquivos da distribuição final.
 
