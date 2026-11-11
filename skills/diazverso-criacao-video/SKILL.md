@@ -20,7 +20,7 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 | --- | --- | --- | --- |
 | IDEIA | Pauta, tese inicial, fontes e timing | Aba `Ideias` (TF_####) | Ideia distinta e investigável |
 | PLANEJADO/PESQUISA | Tese aprovada, referências, título A/B e conceito de thumb | Aba `Produções` (VD_#### ou SH_####) | Pesquisa/fatos verificados |
-| ROTEIRO | Documento audiovisual completo, já formatado | `Roteiros/Longos` ou `Roteiros/Shorts` | Roteiro aprovado |
+| ROTEIRO | Documento audiovisual completo, já formatado | `Roteiros/Longos` ou `Roteiros/Shorts` | Aplicar F07 (`diazverso-revisao-fatos`), F08 (`diazverso-revisao-estrutura`), F09 (`diazverso-revisao-voz`) e F10 (`diazverso-aprovacao-roteiro`) sobre a mesma versão; **aprovação explícita do criador** antes da produção técnica |
 | ASSETS | Plano de cenas, Nox, fundos, mídia e direitos | Referência no roteiro; biblioteca aprovada | Direitos e assets verificados |
 | EDIÇÃO | Composição TSX/Remotion em executor independente | Runtime de edição real | Preview e amostras de quadros |
 | REVISÃO FINAL | QA narrativo, audiovisual, legendas/áudio e correções | Evidências do editor/roteiro | Aprovado após novo render |
