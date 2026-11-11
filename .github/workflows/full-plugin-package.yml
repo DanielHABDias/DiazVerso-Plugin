@@ -47,6 +47,9 @@ jobs:
       - name: Install independent Remotion smoke runner
         working-directory: skills/diazverso-decupagem/runtime
         run: npm install --no-audit --no-fund
+      - name: Test independent Remotion runtime helpers
+        working-directory: skills/diazverso-decupagem/runtime
+        run: npm test
       - name: Render synthetic reference scene 16:9 and 9:16
         working-directory: skills/diazverso-decupagem/runtime
         run: |
@@ -71,6 +74,17 @@ jobs:
               assert dims==f"{w},{h}",(mp4,dims)
               print("RENDER_VERIFIED",suffix,w,h,mp4.stat().st_size)
           PY
+      - name: Archive synthetic Remotion frames and short clips for visual review
+        uses: actions/upload-artifact@v4
+        with:
+          name: diazverso-remotion-smoke-16x9-9x16
+          path: |
+            skills/diazverso-decupagem/runtime/out/smoke-16x9.png
+            skills/diazverso-decupagem/runtime/out/smoke-9x16.png
+            skills/diazverso-decupagem/runtime/out/smoke-16x9.mp4
+            skills/diazverso-decupagem/runtime/out/smoke-9x16.mp4
+          if-no-files-found: error
+          retention-days: 7
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Unit tests - offline package structure D07 and L06
