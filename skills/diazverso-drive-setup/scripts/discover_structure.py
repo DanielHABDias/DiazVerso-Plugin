@@ -53,9 +53,12 @@ def _records(pages: list[Mapping[str, Any]], parent: str | None,
     if not complete:
         raise ValueError("Listagem incompleta: resolver next_page_token antes de decidir")
     result: dict[str, dict[str, Any]] = {}
+    if not pages:
+        raise ValueError("Nenhuma página fornecida: ausência de resultados não comprovada")
+    last = pages[-1]
+    if last.get("next_page_token") or last.get("nextPageToken"):
+        raise ValueError("Listagem paginada ainda tem próxima página")
     for page in pages:
-        if page.get("next_page_token") or page.get("nextPageToken"):
-            raise ValueError("Listagem paginada ainda tem próxima página")
         for item in _items(page):
             if not isinstance(item, dict):
                 raise ValueError("Metadado de arquivo inválido")
