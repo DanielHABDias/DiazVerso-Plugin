@@ -20,6 +20,12 @@ description: "Use quando o usuário instalar, configurar ou verificar o plugin D
 5. **Aplicar as decisões da versão atual.** O plugin antigo e o Content Lab antigo são apenas referências históricas; a refatoração do Content Lab ocorrerá **depois** da conclusão do novo plugin. Não importar regras ou TSX legados automaticamente.
 6. **Retornar um diagnóstico curto:** o que foi verificado, o que está disponível, o que falta para o pedido e **uma próxima microtarefa**. Não pedir novamente dados já obtidos; não declarar sucesso de operações não realizadas.
 
+## Diagnóstico offline de pacote — D07/L06
+
+Para um ZIP Diazverso efetivamente construído, em máquina sem Google Drive conectado, o mantenedor pode executar `python scripts/verify_offline_package.py <arquivo.zip>` no **repositório de desenvolvimento**. O verificador é somente leitura e confere Nox físico, manifesto, ZIP, skills essenciais e licenças. Não requer conta Google, não abre o editor, não produz vídeo e não instala o plugin. **Só informar que a mídia está disponível offline se o ZIP real tiver passado nessa auditoria; o teste de carregamento visual no editor permanece separado.**
+
+A auditoria é uma etapa adicional do CI do pacote e **não equivale ao gate L06 final**: repetir build, testes de schemas e ZIP da versão final após a limpeza de documentos e confirmar o resultado no GitHub Actions antes de liberar instalação manual pelo criador. Não instalar automaticamente durante o diagnóstico.
+
 ## Economia de contexto
 
 - Carregar **apenas** a skill necessária à etapa; abrir documentação complementar sob demanda.
