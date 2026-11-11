@@ -100,7 +100,8 @@ def extract(planned: dict, timeout_s: int = 45) -> dict:
         filter_expression = f"select=eq(n\\,{step['frame']})"
         try:
             p=subprocess.run(["ffmpeg","-nostdin","-v","error","-i",str(src),
-                "-vf",filter_expression,"-frames:v","1","-vsync","0","-n",str(output)],
+                "-vf",filter_expression,"-frames:v","1","-pix_fmt","rgb24",
+                "-vsync","0","-n",str(output)],
                 capture_output=True,text=True,check=False,timeout=timeout_s)
         except subprocess.TimeoutExpired as exc:
             raise RuntimeError("ffmpeg timed out on "+str(step["frame"])) from exc
