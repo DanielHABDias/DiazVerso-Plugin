@@ -24,6 +24,12 @@ description: "Use para criar ou adaptar roteiro e plano audiovisual de Shorts Di
 
 Quando existir render e evidências, executar `scripts/review_short.py <entrada.json>` com gancho, duração, payoff, CTA, legenda, áudio, links, margens, direitos e inspeção do render. O revisor devolve `REVIEW_REQUIRED`, `EDITORIAL_REVIEW` ou `READY_FOR_CREATOR_APPROVAL` — **nunca aprovação automática**. Gancho tardio e duração abaixo de 60 s são observações editoriais, não previsão de retenção nem impedimentos da plataforma. Sem render real, marcar `render_checked=false`; sem sincronização ou escuta real, `captions=NOT_VERIFIED`/`audio_checked=false`. O criador decide a aprovação e posta manualmente.
 
+## L03 — ensaio com Short narrado, legenda e CTA em render real
+
+Para verificar a parte técnica sem esperar uma produção editorial, a composição `DiazversoIntegratedShort` em `../diazverso-decupagem/runtime/` recebe **roteiro de ensaio original** e props gerados por `scripts/build_integrated_demos.py`, cria fala sintética PT-BR local, cues SRT calculados pela duração real do WAV, Nox canônico, parallax, legenda visível somente durante a fala e CTA contextual. O CI `.github/workflows/integrated-video-e2e.yml` renderiza MP4 1080×1920/30 fps e preserva frames para revisão independente; o teste completo registrado está em `docs/VALIDACAO_L02_L03_2026-11-11.md`.
+
+**Não extrapolar:** o clip de ensaio tem 13,5 s para agilizar a verificação e **não satisfaz a preferência editorial de 60 s**; voz sintética, segmentação por frase, direitos dos eventuais assets de produção, qualidade de locução, escuta e aprovação humana continuam por validar em cada vídeo real. O render de teste não posta, não faz upload e não prova que Work consegue renderizar sem executor.
+
 ## Critérios de aceitação do roteiro/plano de Short
 
 - Gancho antes de explicação longa e tese cumprida; conclusão e CTA proporcionais.
