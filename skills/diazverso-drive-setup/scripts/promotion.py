@@ -74,7 +74,10 @@ def plan_promotion(ideas_rows: list[list], production_rows: list[list],
         if source and source[0]["PRODUÇÃO VINCULADA"] not in ("", target["ID"]):
             return {"status": "BLOCKED_CONFLICTING_LINK", "writes_performed": False}
         if not source:
-            return {"status": "ALREADY_PROMOTED", "id": target["ID"], "writes_performed": False}
+            complete = doc_verified and target["ROTEIRO"].startswith("https://docs.google.com/document/d/")
+            return {"status": "ALREADY_PROMOTED" if complete else "SOURCE_MISSING_REQUIRES_RECOVERY",
+                    "id": target["ID"], "writes_performed": False,
+                    "next": "Se falta Doc validado, investigar remoção prematura; não criar outra produção"}
         if not target["TEMA / CONTEXTO"] or not source[0]["TEMA"] or source[0]["TEMA"] not in target["TEMA / CONTEXTO"]:
             return {"status": "BLOCKED_CONTENT_MISMATCH", "writes_performed": False}
         if source[0]["PRODUÇÃO VINCULADA"] != target["ID"]:
