@@ -86,7 +86,7 @@ def review(prefix:str,out:Path,public:Path)->dict:
         "three_real_frames_checked":[p.name for p in frames],
         "visual_frames_differ":True,"audio_caption_sample_timeline_matches":True,
         "narration_segments":checked,
-        "voice_engine":"eSpeak NG pt-br developer fixture; no real narrator",
+        "voice_engine":"Offline PT-BR synthetic test voice (eSpeak CLI or meSpeak npm); not a human narrator",
         "no_external_media_and_no_content_lab":True,
         "human_video_and_audio_review_completed":False,
         "speech_recognition_or_phoneme_accuracy_verified":False,
