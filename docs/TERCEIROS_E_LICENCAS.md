@@ -27,9 +27,13 @@ A licença MIT permite cópia e modificação com a manutenção do aviso; prese
 | **OpenAI Skill Creator** | Instruções oficiais disponíveis no host; a skill de referência possui licença Apache-2.0 por arquivo. | Usar para desenvolvimento; só incorporar fisicamente se realmente necessária aos usuários finais, com LICENSE e dependências correspondentes. |
 | **Superpowers** | MIT na raiz de `obra/superpowers`, mas contém muitas skills e fluxos próprios. | Selecionar apenas skills com ganho comprovado após revisão de compatibilidade e custos; não importar em massa. |
 
-## Política de distribuição
+## Política de seleção e distribuição (decisão do criador em 11/11/2026)
 
-1. **As skills externas selecionadas devem estar de fato no pacote**, não apenas como URLs — conforme decisão do criador. Cada uma deve incluir referências, scripts e arquivos de licença necessários.
+- **Qualidade técnica primeiro:** não rejeitar uma skill/script na pesquisa, comparação ou avaliação apenas pela falta de `LICENSE` ou de declaração explícita de uso livre. Ausência de licença não é proibição; priorizar testes reais de qualidade, custo de tokens/contexto, integração, segurança, manutenção e dependências.
+- **Não confundir pesquisa com cópia:** a falta de proibição também não é autorização automática de redistribuição. Procurar permissões aplicáveis em licença, documentação, termos ou autorização do titular. Respeitar proibições expressas. Quando a redistribuição não estiver autorizada ou confirmada, manter a candidata no registro e avaliar permissão, integração sem copiar arquivos ou implementação original equivalente. Não rebaixar sua avaliação técnica exclusivamente por documentação de licença incompleta.
+- **Registrar separadamente:** `QUALIDADE/TESTES`, `PERMISSÃO PARA REDISTRIBUIÇÃO` e `ESTADO DE INTEGRAÇÃO`, evitando chamar de inferior uma candidata apenas por restrição documental.
+
+1. **As skills externas selecionadas e autorizadas para redistribuição devem estar de fato no pacote**, não apenas como URLs — conforme decisão do criador. Cada uma deve incluir referências, scripts e avisos de licença/autoria necessários.
 2. A skill nunca deve acionar comandos ou serviços de terceiros sem ferramentas e autorizações reais. Tratar comandos mostrados em SKILL.md como instruções de execução condicionais, não execução automática.
 3. Antes da release, gerar pacote completo e **validar que todos os arquivos declarados existem, estão íntegros e são descobertos**; o smoke test mínimo B06 não valida todas essas skills.
 4. Não incluir fontes proprietárias, filmes, trilhas, memes, assets de terceiros ou binários sem direitos de redistribuição.
