@@ -39,6 +39,7 @@ Pastas de vídeos individuais não devem ser criadas por padrão. O ID `VD_####`
 
 ## Fluxo operacional
 
+- **Criação de ideia (E05):** validar cabeçalhos de `Ideias` e ler IDs/temas atuais antes de escrever; `scripts/validate_sheet_schema.py` expõe `plan_new_idea(rows, fields)` para preparar a linha e detectar colisões **no conjunto recebido**, mas **não reserva IDs**. Antes de criar, consultar também o histórico de IDs TF já promovidos e/ou contador persistente da instalação (ainda não implementado), para evitar reutilização de TF antigos; garantir exclusividade de escrita, reler dados imediatamente antes da inserção, usar escrita nativa de texto com formatação preservada, localizar a nova linha pelo ID e confirmar os campos. Na ausência dessas garantias, ficar em **PARCIAL**, sem inserir. Nunca criar ideias de teste na planilha real sem autorização.
 - Ideias ainda exploratórias ficam em **Ideias**.
 - Ao promover, criar registro **Produções** primeiro e conferir a gravação; remover a ideia de **Ideias** somente depois do sucesso (ver regra editorial, implementação/rollback previstos nas tarefas E05–E07).
 - Novos Docs de roteiro já devem nascer **formatados** em `Roteiros/Longos` ou `Roteiros/Shorts`; thumbnails ficam nos caminhos equivalentes.
