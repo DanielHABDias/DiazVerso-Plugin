@@ -33,8 +33,8 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-shorts/tests -p "test_*.py"
       - name: Unit tests - Remotion composition contract H01
         run: python -m unittest discover -s skills/diazverso-decupagem/tests -p "test_*.py"
-      - name: Unit tests - camera and parallax geometry H03/H04
-        run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs
+      - name: Unit tests - motion H03-H05 geometry, word timing and contrast
+        run: node --test skills/diazverso-decupagem/tests/test_motion_math.mjs skills/diazverso-decupagem/tests/test_kinetic_text.mjs
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Publish private test artifact
