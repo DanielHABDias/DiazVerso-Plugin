@@ -221,10 +221,10 @@
 
 
 - [ ] **K01** — Gerar kit de publicação após aprovação do vídeo: título, descrição, fontes, tags, comentário, capítulos reais e texto social.
-- [ ] **K02** — Selecionar produtos da aba `Afiliados` apenas se adequados e verificados; acrescentar divulgação quando necessária.
+- [ ] **K02 — CÓDIGO IMPLEMENTADO (11/11/2026; TESTE DE EXECUÇÃO PENDENTE):** `skills/diazverso-drive-setup/scripts/affiliate_selection.py` filtra registros existentes por `STATUS=ATIVO`, correspondência ao tema, URL HTTPS válida e **IDs cujos destinos/condições foram verificados para aquela produção**; fornece aviso de afiliação e não inclui links sem validação. Integrado ao kit da orquestradora, com 7 testes unitários escritos. Não abre links, grava dados nem posta vídeos. Executar testes no CI e realizar seleção com links reais verificados antes de marcar concluído.
 - [ ] **K03 — REGISTRO POSTERIOR À POSTAGEM MANUAL:** atualizar, quando solicitado, título/link/data/status na planilha somente após o **criador** publicar e fornecer confirmação real, sem executar ou orientar postagem. Testar idempotência e leitura de retorno; nunca marcar `PUBLICADO` a partir de kit pronto.
 - [x] **K04 — RETIRADA DE ESCOPO POR DECISÃO DO CRIADOR (2026-11-11):** não importar nem desenvolver skill de postagem; não realizar upload, agendamento, envio ou publicação automática via API, browser, Work, Codex ou Content Lab; não produzir tutorial de postagem. A responsabilidade termina no kit final para **postagem manual pelo criador**. O `[x]` registra **item cancelado**, e não funcionalidade de publicação implementada.
-- [ ] **K05** — Criar rotina de análise de métricas reais pós-publicação e envio de novas hipóteses para Ideias.
+- [ ] **K05 — CÓDIGO IMPLEMENTADO (11/11/2026; TESTE DE EXECUÇÃO PENDENTE):** `skills/diazverso-criacao-video/scripts/analyze_metrics.py` recebe métricas **fornecidas após postagem manual pelo criador**, com URL, data/fuso e fonte, valida valores e calcula CTR/duração média apenas com entradas existentes; gera hipótese editorial (sem causalidade ou escrita automática em `Ideias`). Instruções adicionadas à orquestradora, 6 testes escritos e workflow de pacote configurado para executá-los. Não existe leitura de analytics via API, publicação ou gravação em planilha. Confirmar CI e aplicação com dados reais antes de encerrar.
 
 **Gate K:** kit pronto e status fiel às ações realmente executadas.
 
