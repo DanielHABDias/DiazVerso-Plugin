@@ -38,6 +38,7 @@ const SceneContent:React.FC<{scene:TimedDemoScene;kind:'LONGO'|'SHORT'}> =
       anchorX:width*.5,anchorY:height*(vertical?.49:.53),
       maxFrameWidth:imageWidth,maxFrameHeight:imageHeight}
   ];
+  const captionVisible=frame>=scene.caption.start_frame && frame<scene.caption.start_frame+scene.caption.duration_frames;
   return <AbsoluteFill style={{overflow:'hidden',backgroundColor:'#0B1423'}}>
     <DiazParallax layers={layers} sceneDurationFrames={scene.duration_frames}/>
     <HQBackground mode="halftone" baseColor="#152741" opacity={11}/>
@@ -50,7 +51,7 @@ const SceneContent:React.FC<{scene:TimedDemoScene;kind:'LONGO'|'SHORT'}> =
         fontFamily="Impact, Arial, sans-serif" fontSize={titleSize}
         foreground="#FFFFFF" background="#122038" safeWidthPercent={80}/>
     </div>
-    <div style={{position:'absolute',left:vertical?130:width*.16,
+    {captionVisible&&<div style={{position:'absolute',left:vertical?130:width*.16,
       top:vertical?1220:height*.76,width:vertical?770:width*.68,
       minHeight:vertical?140:124,padding:vertical?'24px':'20px 32px',
       boxSizing:'border-box',border:'3px solid #B6D1F5',
@@ -58,8 +59,8 @@ const SceneContent:React.FC<{scene:TimedDemoScene;kind:'LONGO'|'SHORT'}> =
       display:'flex',alignItems:'center',justifyContent:'center',
       fontFamily:'Arial, sans-serif',fontWeight:750,
       fontSize:vertical?40:42,lineHeight:1.24,textAlign:'center'}}>
-      {frame>=scene.caption.start_frame && frame<scene.caption.start_frame+scene.caption.duration_frames ? scene.caption.text : ''}
-    </div>
+      {scene.caption.text}
+    </div>}
     {scene.cta&&<div style={{
       position:'absolute',left:vertical?175:width*.24,
       top:vertical?1055:height*.60,width:vertical?730:width*.52,
