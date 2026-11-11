@@ -8,8 +8,8 @@ import {progressHQ, edgeTravelHQ} from '../../references/motion/hq-legacy-port.m
  * Does not simulate or claim the real Nox/CRT/audio components passed render.
  */
 export const SmokeScene:React.FC<{title:string}> = ({title}) => {
- const frame=useCurrentFrame(), {width,height}=useVideoConfig();
- const t=progressHQ(frame/30,0,60/30,30);
+ const frame=useCurrentFrame(), {width,height,fps,durationInFrames}=useVideoConfig();
+ const t=progressHQ(frame/fps,0,durationInFrames/fps,fps);
  const camera=cropAndPan(1408,768,width,height,t,{zoomFrom:1.05,zoomTo:1.15,
    panFrom:[-25,0],panTo:[25,0]});
  const opacity=entranceProgress({startFrame:5,durationFrames:20,endFrame:25,index:0,text:title},frame,12);
