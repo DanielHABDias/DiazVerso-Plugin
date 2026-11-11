@@ -29,7 +29,7 @@ def _image(path: Path) -> dict:
         raise ValueError("Invalid PNG header/CRC")
     w,h,depth,color,comp,flt,inter=struct.unpack(">IIBBBBB",header[16:29])
     if (not w or not h or w*h>20_000_000 or depth!=8 or
-        color not in (2,6) or comp or flt or inter):
+        color not in (2,3,6) or comp or flt or inter):
         raise ValueError("Unsupported PNG encoding")
     payload=path.read_bytes()
     git_blob=hashlib.sha1(f"blob {len(payload)}\0".encode()+payload).hexdigest()
