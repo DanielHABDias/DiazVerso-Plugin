@@ -11,6 +11,18 @@
 5. **Documentos temporários usados para guiar a implementação serão deletados somente após a versão 1.0 desenvolvida, testada e revisada no GitHub, **antes da instalação manual pelo criador****, após migrar decisões estáveis para fontes canônicas, garantir que não há referências dependentes e obter checklist de limpeza. Nunca eliminar cronograma, evidências e regras enquanto forem necessárias; preservar git histórico.
 6. **B06 foi redefinida pelo criador como teste de empacotamento e está concluída no CI. NÃO instalar agora no ChatGPT nem no Codex.** O criador instalará manualmente o ZIP após concluir a V1.0. Avançar nas microtarefas restantes com revisão, sem usar instalação como pré-requisito.
 
+
+## Atualização de execução — 2026-11-11 (conector GitHub)
+
+- **Estado verificado pela checklist:** 29/87 microtarefas [x], 58 [ ]; F06 permanece **PARCIAL** sem teste real de Docs/Sheets. A passagem histórica de 10/11 registrava 25/87.
+- **F07 [x] — revisor factual:** `skills/diazverso-revisao-fatos/SKILL.md`, commit `906de8930ba657033311bcff4e943271c045ac5a`. Leitura de retorno; 9/9 critérios estáticos verificados. Sem revisão de roteiro real, nem acesso à web/host testado.
+- **F08 [x] — estrutura e ritmo:** `skills/diazverso-revisao-estrutura/SKILL.md`, commit `752dc4e1047b44ca09167583f6f6c0b1aafcafe3`. Leitura de retorno; 10/10 critérios estáticos. Não são previsões reais de retenção.
+- **F09 [x] — naturalidade de voz:** `skills/diazverso-revisao-voz/SKILL.md`, commit `59afcd5836cba62a7b3a6cb7bee46dd8ed20a91a`. Leitura de retorno; 10/10 critérios estáticos. Não houve análise de áudio nem gravação.
+- **F10 [x] — gate de aprovação:** `skills/diazverso-aprovacao-roteiro/SKILL.md`, commit `bac3eb88559877a372c66019f422b77d0cbe81af`. Leitura de retorno; 11/11 critérios estáticos. Nenhuma aprovação humana, escrita de status na planilha ou liberação de edição foi simulada.
+- **Integração de roteamento:** atualizados `skills/diazverso-criacao-video/references/intencoes.md` e gate da etapa ROTEIRO da orquestradora, sem afirmar execução do plugin. **Os testes de invocação e integração (C06/L) e o CI de empacotamento após estas mudanças ainda devem ser executados.**
+- **Política de skills 11/11:** avaliar por qualidade sem eliminar candidatos apenas por ausência de arquivo LICENSE; redistribuição de código de terceiros continua exigindo autorização verificável, conforme `AGENTS.md` e catálogo atualizados.
+- **Próximo trabalho:** concluir F06/E02–E08 quando possível verificar Drive/Sheets reais, ou selecionar outra microtarefa independente (A03/A05/D07) sem inventar execução. Não instalar o plugin antes da V1 completa.
+
 ## Pendências e riscos (atualizar conforme trabalho efetivo)
 
 | ID | Situação | Bloqueio ou risco | Critério de desbloqueio |
