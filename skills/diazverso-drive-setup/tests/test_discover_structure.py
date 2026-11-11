@@ -93,6 +93,24 @@ class DiscoveryTests(unittest.TestCase):
         result = module.discover(snap)
         self.assertEqual(result["folders"]["Roteiros"]["status"], "MISSING")
 
+    def test_optional_library_absent_does_not_block_basic_structure(self):
+        snap = sample()
+        snap["children"]["root"][0]["results"] = [
+            x for x in snap["children"]["root"][0]["results"] if x["title"] != "Memes"
+        ]
+        result = module.discover(snap)
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertEqual(result["optional_missing"], ["Memes"])
+
+    def test_multiple_pages_are_merged(self):
+        snap = sample()
+        entries = snap["children"]["root"][0]["results"]
+        snap["children"]["root"] = [
+            {"results": entries[:3], "next_page_token": "next"},
+            {"results": entries[3:]},
+        ]
+        self.assertEqual(module.discover(snap)["status"], "COMPLETE")
+
     def test_preferred_unique_root(self):
         snap = sample()
         snap["root_pages"][0]["results"].append(entry("other", "Diazverso"))
