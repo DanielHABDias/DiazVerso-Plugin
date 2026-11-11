@@ -43,6 +43,12 @@ Os componentes autorais estão em `references/motion/`, independentes do Content
 - `parallax.tsx` — `DiazParallax`: fundo cobrindo o canvas e camadas PNG recortadas em posição e escala conservadoras, com movimento de profundidade. A primeira camada deve ser um **fundo opaco**, e os recortes precisam de transparência realmente verificada. Usar profundidade 0–1, sem garantir segurança se uma UI de plataforma encobrir elementos.
 - `motion-math.mjs` — funções puras `coverGeometry`, `cropAndPan`, `parallaxGeometry`, sem React, testáveis com Node integrado. Cenários de borda em `tests/test_motion_math.mjs`; executar `node --test skills/diazverso-decupagem/tests/test_motion_math.mjs` a partir da raiz do plugin. O workflow executa o mesmo comando.
 
+## Texto cinético — H05
+
+Em `references/motion/kinetic-text.tsx`, `DiazKineticText` recebe palavras com `text`, `startFrame` e `durationFrames` **relativos ao início da cena**; faz entrada curta com posição/escala/opacidade, sem precisar de medições online. O módulo `kinetic-text-math.mjs` valida ordem, duração e não sobreposição; seleciona a palavra do frame atual e calcula contraste de cores sólidas `#RRGGBB` pelo método de luminância relativa WCAG. O componente exige no mínimo **4,5:1**, usa fundo **opaco** na caixa do texto e largura conservadora; a referência tipográfica é `Anton` **somente se fornecida legalmente pelo host**, com fallback sem redistribuir fontes.
+
+Para testar: `node --test skills/diazverso-decupagem/tests/test_kinetic_text.mjs` na raiz do repositório. **7 testes Node passaram localmente em 11/11/2026 contra os bytes idênticos ao helper versionado** (Git blob `5937c5d50151ad517469200c8c703b8a42393c3d`); CI e compilação/render TSX ainda dependem do executor. A cor calculada não garante contraste de cada pixel de um frame renderizado; a inspeção real, legibilidade e sincronização ao áudio continuam em H09/L02/L03. Não inventar timestamps de palavras quando não houver áudio/timing conferido.
+
 **Fronteira de validação:** os cálculos de cobertura podem ser testados offline, mas o componente TSX só será considerado visualmente revisado após executor Remotion independente (H09/L02) renderizar frames e confirmar crop, segurança, nitidez e Nox. Não afirmar que um componente foi renderizado quando houve apenas validação estática/numérica.
 
 ## Limites
