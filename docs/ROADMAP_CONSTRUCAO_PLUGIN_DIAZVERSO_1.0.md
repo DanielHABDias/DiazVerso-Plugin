@@ -8,6 +8,35 @@
 
 > **CORREÇÃO DE PRIORIDADE 2026-11-10:** o trabalho editorial/operacional definido **hoje** prevalece. Plugin antigo e Content Lab antigo são obsoletos; consultar só ideias e exemplos TSX relevantes. **Refatoração do Content Lab é posterior à conclusão do novo plugin**, não pré-requisito. Criador de plugin selecionado: **OpenAI Plugin Creator oficial**; criação de skills orientada pelo **Skill Creator oficial** e padrão Agent Skills. Microtarefas e gates preservados.
 
+## Auditoria de simplificação — 11/11/2026 (nova estratégia de execução)
+
+**Conclusão:** os 87 IDs incluem implementação, pesquisa, validação, documentação e passos altamente dependentes entre si. Eles **não são 87 entregas independentes necessárias**. A divisão anterior gerou trabalho administrativo redundante (uma skill por revisor, um registro por subpasso, muitas contagens de checks estáticos), sem provar funcionamento integrado. Esta auditoria **não exclui** os 87 itens nem transforma itens pendentes em concluídos: preserva o quadro como trilha de critérios e propõe agrupamento por **entrega funcional testável**.
+
+**Política operacional:** seguir `skills/diazverso-contexto-eficiente/SKILL.md`. Planejar por resultado, minimizar leituras/commits/documentos, implementar uma fatia ponta a ponta, testar de acordo com o risco, atualizar evidências uma vez por entrega e parar quando os critérios forem atendidos. **Não criar nova skill só para cumprir um checkbox**, nem testar uma ferramenta que não está disponível. Um commit pode atender diversos IDs; IDs só passam a `[x]` com evidência específica. Manter aprovação humana, proteção contra perda/duplicação e verificação de direitos.
+
+### Grupos de entrega recomendados (itens do roadmap original mantidos)
+
+| Entrega funcional | IDs de referência | Critério real para considerar pronta |
+| --- | --- | --- |
+| Governança/empacotamento essenciais | A01,A02,A04,A06,A07,B01–B06,L06,L07 | Pacote íntegro e independente, instruções mínimas, sem instalação antecipada |
+| Orquestração e contexto eficiente | C01–C07,L04,L05 | Roteamento correto e retomada verificáveis; consumo de tokens comparado quando mensurável |
+| Marca e assets Nox | A05,D01,D02,D06,D07,G01 | Referência íntegra e aplicação testada sem descaracterizar Nox |
+| Bibliotecas de mídia opcionais | D03–D05,H07,J06 | Usar apenas mídia selecionada com direitos e necessidade reais; não bloquear núcleo pela ausência de assets opcionais |
+| Drive — descoberta, reparo e esquema | E01–E04 | Descoberta sem duplicar; criação/reparo autorizados e validados por leitura de retorno |
+| Dados e transições de produção | E05–E08 | Ideia→produção e links/status idempotentes; teste de falha sem perda |
+| Pesquisa e embalagem | F01–F03,G02,G03 | Tese, fontes, título/thumbnail e gancho coerentes; peça final revisada |
+| Roteiro, Docs e revisão editorial | F04–F10 | Roteiro nativo vinculado; fatos, estrutura, voz e aprovação humana na **mesma versão**, evitando quatro cerimônias independentes |
+| Biblioteca mínima de motion | A03,G04–G08,H01,H03–H06,H09 | Primeiro render independente funcionando; extrair componentes TSX somente quando reutilizados |
+| Decupagem e render | H02,H08,L02 | Cena com assets/áudio autorizados, preview e render real revisado |
+| Shorts e legendas | I01–I05,L03 | Exemplo vertical 9:16 renderizado e revisado, sem exigir todos os efeitos num único Short |
+| QA audiovisual e correção | J01–J05,J07,J08 | Relatório de problemas reais e rerender dos pontos afetados, com aprovação explícita |
+| Kit, publicação e aprendizado | K01–K05 | Kit pronto; postagem somente autorizada; métricas reais se houver publicação |
+| Ensaios finais integrados | L01 (e critérios transversais acima) | Fluxos completos testados com ferramentas disponíveis; limites documentados honestamente |
+
+**Interpretação:** estes são **14 grupos de planejamento**, não 14 tarefas prontas nem garantia de esforço equivalente. Os grupos se sobrepõem propositalmente às fases de teste; a ordem real segue pré-requisitos. Priorizar E02/F06 e a primeira execução real de ponta a ponta, em vez de criar várias skills documentais sem integração. Após amadurecer um fluxo, **fundir/redirecionar skills redundantes** sem apagar conteúdos ainda úteis; não apagar arquivos agora.
+
+**Status histórico em 11/11:** 29/87 marcadas após F07–F10; E02 parcialmente implementada, ainda não validada em CI nesta auditoria. A porcentagem da checklist não mede a porcentagem do produto operacional. A numeração original permanece estável até migração/revisão final.
+
 ## 0. Regras de execução (obrigatórias)
 **DECISÃO CORRETIVA DO CRIADOR (2026-11-10):** **não instalar nada agora** no ChatGPT ou Codex. Construir, verificar, empacotar e documentar o plugin **exclusivamente no GitHub**; ao final da V1.0 o criador gerará/baixará o ZIP e o instalará por conta própria. Assim, B06 é um teste de pacote/CI, **não de instalação**. Alterações nesta decisão prevalecem sobre menções antigas neste roadmap e nos relatórios.
 
