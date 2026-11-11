@@ -31,6 +31,14 @@ Para técnicas avançadas, **carregar somente quando necessário** a skill inclu
 
 Não presumir acesso a contadores exatos de tokens, hooks de cache, edição da janela de contexto, subagentes ou armazenamento local. Estratégias que dependem desses recursos são opcionais e exigem ambiente capaz.
 
+## Roteamento focado e medição comparativa — C06/C07
+
+Para diagnósticos de **um único pedido isolado**, `scripts/route_request.py "<pedido>"` seleciona a skill principal por intenção de resultado. São doze intenções cobertas em `tests/test_route_request.py` (setup, contexto, fatos, estrutura, voz, aprovação, thumbnail, Nox, decupagem, Short, roteiro e retomada). O script **não carrega** arquivos ou skills, não executa ferramentas e não usa IA para classificar: quando um pedido combina etapas, devolve `MULTISTEP_PLAN_ONLY` com orquestradora principal. Regras lexicais podem não interpretar sinônimos e não substituem o julgamento do agente; pedido ambíguo devolve `NEEDS_INTENT`.
+
+Para **C07**, o comparador `scripts/compare_context_cost.py <telemetria.json>` recebe pelo menos três pares de **tarefas idênticas** com tokens de entrada/saída, chamadas de ferramentas, sucesso verificado e referência à telemetria. Calcula diferença de consumo antes/depois; não aceita números de tokens estimados, nem conta caracteres como tokens. A implementação e testes aritméticos não provam nenhuma redução. Recolher métricas reais do host ou API, incluindo custo de indexação se houver, e qualidade do resultado. Se os registros não forem verificáveis, manter C07 `[ ]`.
+
+**Tarefa 88 (CodeGraph) foi agendada ao final do roadmap**, não é dependência de C06/C07 nem justifica instalação agora. Há projetos homônimos; escolher produto exato, verificar permissão/licença, atualizar índice local em sandbox e medir pelo menos três pares antes/depois antes de recomendar. Código indexado em MCP não significa automaticamente menos tokens em todas as tarefas.
+
 ## Limites
 
 - Não condensar de modo a ocultar erro, não descartar decisão recente e não inferir que skills independentes já foram instaladas ou testadas no host.
