@@ -26,7 +26,20 @@ Nox canônico está em `assets/brand/nox/Nox.png`. Os WAVs originais em `assets/
 
 ## Instalação e manutenção
 
-O manifesto portátil é `plugin.json`; a instalação é feita manualmente pelo criador no cliente compatível. O onboarding confere as capacidades presentes. As instruções são obrigatórias quando o Diazverso é acionado; a instalação não cria uma política global para conversas que não utilizem o plugin.
+O manifesto portátil é `plugin.json`; o catálogo `.agents/plugins/marketplace.json` permite instalar pelo repositório em clientes compatíveis.
+
+No Codex, adicione o catálogo e instale o plugin:
+
+```bash
+codex plugin marketplace add DanielHABDias/DiazVerso-Plugin
+codex plugin add diazverso@diazverso
+```
+
+No cliente com interface de plugins, adicione o marketplace pelo link https://github.com/DanielHABDias/DiazVerso-Plugin e selecione Diazverso. Inicie uma nova conversa após a instalação. Repositórios privados exigem acesso GitHub autenticado.
+
+No ChatGPT com importação de workspace, um administrador usa Plugins → Adicionar → Importar marketplace, informa o mesmo repositório e deixa o caminho vazio. A disponibilidade desse fluxo depende da conta/cliente; colar um link na conversa não instala automaticamente.
+
+Referências oficiais: [empacotamento e marketplaces](https://developers.openai.com/plugins/build/plugins) · [importação GitHub](https://help.openai.com/en/articles/20001504-importing-and-syncing-plugin-marketplaces-from-github). O onboarding confere as capacidades presentes. As instruções são obrigatórias quando o Diazverso é acionado; a instalação não cria uma política global para conversas que não utilizem o plugin.
 
 Para uso obrigatório no repositório aberto no Codex, `AGENTS.md` contém o ponto de entrada. Em outro workspace, a política desse workspace precisa acionar o Diazverso. O plugin não controla cache interno, raciocínio oculto ou métricas que o host não exponha.
 

@@ -64,6 +64,12 @@ def validate(refresh_map:bool=False)->dict:
     settings=manifest['extensions']['com.openai']
     require(settings['onboardingSkill']=='./skills/diazverso-setup/SKILL.md','Invalid onboarding')
     require(len(settings['interface']['shortDescription'])<=30,'Listing subtitle too long')
+    market=json.loads((ROOT/'.agents/plugins/marketplace.json').read_text())
+    require(market['name']=='diazverso' and len(market['plugins'])==1,'Invalid marketplace')
+    entry=market['plugins'][0]
+    require(entry['name']==manifest['name'] and entry['source']=={'source':'local','path':'./'},'Marketplace source mismatch')
+    require(entry['category']==settings['interface']['category']=='Productivity','Marketplace category mismatch')
+    require(entry['policy']=={'installation':'AVAILABLE','authentication':'ON_INSTALL'},'Invalid marketplace policy')
     actual=skill_catalog();map_path=ROOT/MAP_PATH
     if refresh_map:map_path.write_text(json.dumps(actual,ensure_ascii=False,indent=2)+'\n')
     files=resource_files()+[ROOT/'README.md',ROOT/'AGENTS.md'];skill_count=0;python_count=0;js_count=0

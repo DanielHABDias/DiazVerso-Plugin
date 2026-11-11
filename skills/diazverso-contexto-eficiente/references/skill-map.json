@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "0.3.0",
+  "plugin_version": "1.0.0",
   "skills": [
     {
       "name": "analyze-video-editing",
