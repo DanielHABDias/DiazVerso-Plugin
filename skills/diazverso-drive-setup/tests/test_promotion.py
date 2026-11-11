@@ -69,6 +69,11 @@ class PromotionTests(unittest.TestCase):
         self.ideas.pop()
         self.assertEqual(self.run_plan(doc_verified=True)["status"], "ALREADY_PROMOTED")
 
+    def test_premature_removal_detected_and_not_called_complete(self):
+        self.productions.append(prod())
+        self.ideas.pop()
+        self.assertEqual(self.run_plan()["status"], "SOURCE_MISSING_REQUIRES_RECOVERY")
+
     def test_duplicate_productions_block(self):
         self.productions.extend([prod(), prod("VD_0009")])
         self.assertEqual(self.run_plan()["status"], "BLOCKED_DUPLICATE_PRODUCTION")
