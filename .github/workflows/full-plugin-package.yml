@@ -9,7 +9,8 @@ on:
       - "schemas/**"
       - "templates/**"
       - "docs/**"
-      - "scripts/build_diazverso_plugin.py"
+      - "scripts/**"
+      - "tests/**"
       - ".github/workflows/full-plugin-package.yml"
   workflow_dispatch:
 
