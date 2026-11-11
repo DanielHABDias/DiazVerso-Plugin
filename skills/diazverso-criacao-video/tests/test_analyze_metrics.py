@@ -58,5 +58,26 @@ class MetricsTests(unittest.TestCase):
         self.assertNotIn("derived_ctr_percent", r)
 
 
+    def test_infinite_metric_rejected(self):
+        d = sample()
+        d["views"] = float("inf")
+        with self.assertRaises(ValueError):
+            mod.analyze(d)
+
+    def test_zero_duration_rejected(self):
+        d = sample()
+        d["video_duration_seconds"] = 0
+        with self.assertRaises(ValueError):
+            mod.analyze(d)
+
+    def test_no_impressions_no_ctr(self):
+        d = sample()
+        d["impressions"] = 0
+        d["clicks"] = 0
+        r = mod.analyze(d)
+        self.assertNotIn("derived_ctr_percent", r)
+
+
+
 if __name__ == "__main__":
     unittest.main()
