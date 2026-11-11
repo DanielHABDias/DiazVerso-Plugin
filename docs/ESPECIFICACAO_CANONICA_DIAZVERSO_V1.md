@@ -51,6 +51,8 @@ Diazverso/
 - Não incluir IDs pessoais de Drive/Sheets em skills distribuídas. Cada instalação deve **descobrir, verificar e reparar idempotentemente**, com conexão e autorização; bibliotecas auxiliares opcionais.
 - Contrato detalhado e estado real: [CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md](CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md). Bibliotecas: [ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md](ORGANIZACAO_BIBLIOTECAS_DRIVE_2026-11-10.md).
 
+**Decisão posterior do criador — 11/11/2026: publicação estritamente manual.** A execução do plugin encerra com o **kit de publicação revisado**, entregue para o criador postar pessoalmente. Excluir skill antiga de postagem e **não desenvolver skill/API/browser/automação nem instruções de como postar**. O registro posterior de `PUBLICADO`, data e URL é apenas documentação factual após confirmação real da postagem manual; não faz parte de enviar o vídeo.
+
 ## 5. Plugin, revisão e execução — decisões aprovadas
 
 - **Uma microtarefa por vez.** Definir entrada, entrega, testes/revisão e evidência; corrigir antes de marcar `[x]` no [roadmap](ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md).
