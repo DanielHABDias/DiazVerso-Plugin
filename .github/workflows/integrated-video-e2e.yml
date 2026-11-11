@@ -25,8 +25,12 @@ jobs:
           node-version: "20"
       - name: Install offline development TTS and visual QA dependencies
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq espeak-ng
+          if ! command -v espeak-ng >/dev/null 2>&1; then
+            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq espeak-ng || {
+              sudo apt-get update -o Acquire::Retries=1 -o Acquire::http::Timeout=20
+              sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq espeak-ng
+            }
+          fi
           python -m pip install --disable-pip-version-check Pillow==12.3.0
       - name: Test script-to-render timeline generator
         run: python -m unittest discover -s skills/diazverso-decupagem/runtime/scripts -p "test_*.py"
