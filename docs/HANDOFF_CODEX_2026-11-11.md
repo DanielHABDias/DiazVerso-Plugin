@@ -4,6 +4,8 @@
 
 > **DOCUMENTO TEMPORÁRIO DE EXECUÇÃO.** Começar por aqui e por `AGENTS.md`. Não é uma skill distribuível nem um documento para manter após a versão 1.0. Não apagar antes da liberação final. **A versão 1.0 ainda NÃO está pronta.**
 
+**ATUALIZAÇÃO DO CRIADOR EM 11/11/2026 (PREVALECE):** vídeos serão **postados manualmente pelo próprio criador**. O plugin termina no kit final revisado. **Não importar skill de postagem do plugin antigo e não criar upload/agendamento/publicação automática nem explicações de como postar.** Após postagem manual comprovada, apenas registrar URL/data/status reais na planilha, se apropriado. K04 removida do escopo.
+
 ## 1. Ordem de leitura e regra de continuidade
 
 1. **Ler `AGENTS.md` e este arquivo**, depois `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md` e o **item atual** de `docs/ROADMAP_CONSTRUCAO_PLUGIN_DIAZVERSO_1.0.md`. Consultar `docs/CONTRATO_OPERACIONAL_GOOGLE_DRIVE_E_PRODUCAO_V1.md` se trabalhar com Drive/Sheets e `docs/TERCEIROS_E_LICENCAS.md` se trabalhar com skills de terceiros. Rascunhos, vídeo de referência, inventários e plugin antigo **somente sob demanda**.
@@ -17,7 +19,7 @@
 
 O **Diazverso** é um canal brasileiro sobre super-heróis, quadrinhos, filmes, séries, animações e jogos (Marvel, DC, Ben 10 etc.). O plugin deve permitir ao criador pedir **“Chat, vamos criar um vídeo”** e receber **coordenação por pequenas etapas**, até ter material revisado para publicar:
 
-`Ideia/pesquisa/tese → títulos A/B + promessa/thumbnail → roteiro Google Docs formatado → revisão humana/editorial/factual → assets e Nox → decupagem → TSX/Remotion + áudio/captions → render por trecho → revisão visual/sonora → correção e rerender → kit de publicação → publicação confirmada e atualização Sheets.`
+`Ideia/pesquisa/tese → títulos A/B + promessa/thumbnail → roteiro Google Docs formatado → revisão humana/editorial/factual → assets e Nox → decupagem → TSX/Remotion + áudio/captions → render por trecho → revisão visual/sonora → correção e rerender → kit final entregue ao criador para postagem manual → registro posterior opcional de URL/data reais no Sheets (sem postar pelo plugin).`
 
 - **Voz:** PT-BR natural, conversa e opinião com ironia contextual, sem formalismo robótico; referências de função: **FALL** (personalidade/humor), **Um Nerd** (tese/argumento), **RunnyIA** (fluidez e motion), sem copiar.
 - **Visual:** HQ madura/moderna, profundidade, câmera/zoom/pan, parallax, tipografia de impacto **Anton** quando licenciada, CTA pertinente; não balões infantis nem montagens paradas.
@@ -124,7 +126,7 @@ Não basta `SKILL.md` existir ou CI estar verde. Precisamos de:
 - [ ] Drive provisionado/reparado idempotentemente; Google Docs nativos e Sheets integrados, sem duplicatas/perdas.
 - [ ] Fontes, revisão de roteiro, thumbnails e Nox testados; mídia só com direitos verificados.
 - [ ] Remotion independente com render **longo e Short**, voz/áudio/legendas e QA de quadros/áudio reais.
-- [ ] Publicação preparada e, quando autorizada, confirmação real de status/link (sem publicação fictícia).
+- [ ] Kit de publicação pronto para postagem **manual pelo criador**; atualização factual de status/link apenas depois que o criador confirmar sua publicação, sem envio pelo plugin.
 - [ ] Testes de falha/repetição, retomada de sessão, segurança, licenças e degradação sem conectores.
 - [ ] ZIP de release e CI validados, documentação curta de **instalação manual futura pelo criador** e limitações reais, versão/tag no GitHub.
 - [ ] **Somente depois:** limpeza da documentação temporária sem quebrar o pacote.
