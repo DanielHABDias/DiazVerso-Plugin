@@ -65,7 +65,11 @@ def make_tts(text: str, output: Path) -> None:
               "if(!Buffer.isBuffer(wav)||wav.length<512)throw Error('no speech output');"
               "require('fs').writeFileSync(process.argv[1],wav);")
         cmd = ["node", "-e", js, str(output), text]
-    subprocess.run(cmd, check=True, timeout=35, capture_output=True, cwd=RUNTIME)
+    try:
+        subprocess.run(cmd, check=True, timeout=35, capture_output=True, cwd=RUNTIME)
+    except subprocess.CalledProcessError as exc:
+        message = (exc.stderr or b"").decode("utf-8", errors="replace")[-1200:]
+        raise RuntimeError(f"Offline test TTS failed ({cmd[0]}): {message}") from exc
     if not output.is_file() or output.stat().st_size < 512:
         raise RuntimeError("TTS did not produce a WAV")
 
