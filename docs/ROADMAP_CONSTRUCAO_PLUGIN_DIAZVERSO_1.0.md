@@ -30,7 +30,7 @@
 | Decupagem e render | H02,H08,L02 | Cena com assets/áudio autorizados, preview e render real revisado |
 | Shorts e legendas | I01–I05,L03 | Exemplo vertical 9:16 renderizado e revisado, sem exigir todos os efeitos num único Short |
 | QA audiovisual e correção | J01–J05,J07,J08 | Relatório de problemas reais e rerender dos pontos afetados, com aprovação explícita |
-| Kit, publicação e aprendizado | K01–K05 | Kit pronto; postagem somente autorizada; métricas reais se houver publicação |
+| Kit para postagem manual e análise posterior | K01–K03, K05; K04 excluída | Kit revisado entregue ao criador, postagem feita somente por ele; registro posterior e métricas reais quando disponíveis |
 | Ensaios finais integrados | L01 (e critérios transversais acima) | Fluxos completos testados com ferramentas disponíveis; limites documentados honestamente |
 
 **Interpretação:** estes são **14 grupos de planejamento**, não 14 tarefas prontas nem garantia de esforço equivalente. Os grupos se sobrepõem propositalmente às fases de teste; a ordem real segue pré-requisitos. Priorizar E02/F06 e a primeira execução real de ponta a ponta, em vez de criar várias skills documentais sem integração. Após amadurecer um fluxo, **fundir/redirecionar skills redundantes** sem apagar conteúdos ainda úteis; não apagar arquivos agora.
@@ -215,12 +215,15 @@
 
 **Gate J:** revisões visuais e auditivas reais com provas; `NÃO_VERIFICADO` impede falso encerramento.
 
-### Fase K — Publicação e aprendizado
+### Fase K — Kit para postagem manual e análise posterior
+
+**Decisão vigente do criador (11/11/2026):** não haverá habilidade, API, integração, automação ou instruções de postagem. O plugin só prepara o material e pode atualizar posteriormente a planilha após a publicação manual confirmada.
+
 
 - [ ] **K01** — Gerar kit de publicação após aprovação do vídeo: título, descrição, fontes, tags, comentário, capítulos reais e texto social.
 - [ ] **K02** — Selecionar produtos da aba `Afiliados` apenas se adequados e verificados; acrescentar divulgação quando necessária.
-- [ ] **K03** — Testar atualização da planilha por status, título/link e data; não marcar `PUBLICADO` sem confirmação da publicação real.
-- [ ] **K04** — Integrar envio/publicação **apenas mediante permissão** (Work/browser/Content Lab quando disponível) ou instruir postagem manual.
+- [ ] **K03 — REGISTRO POSTERIOR À POSTAGEM MANUAL:** atualizar, quando solicitado, título/link/data/status na planilha somente após o **criador** publicar e fornecer confirmação real, sem executar ou orientar postagem. Testar idempotência e leitura de retorno; nunca marcar `PUBLICADO` a partir de kit pronto.
+- [x] **K04 — RETIRADA DE ESCOPO POR DECISÃO DO CRIADOR (2026-11-11):** não importar nem desenvolver skill de postagem; não realizar upload, agendamento, envio ou publicação automática via API, browser, Work, Codex ou Content Lab; não produzir tutorial de postagem. A responsabilidade termina no kit final para **postagem manual pelo criador**. O `[x]` registra **item cancelado**, e não funcionalidade de publicação implementada.
 - [ ] **K05** — Criar rotina de análise de métricas reais pós-publicação e envio de novas hipóteses para Ideias.
 
 **Gate K:** kit pronto e status fiel às ações realmente executadas.
@@ -245,7 +248,7 @@
 
 **Marco 3 — Motion:** G04–G08 → H → J (QA parcial). Resultado: TSX selecionado e testado **contra Remotion independente**, sem requisito de Content Lab.
 
-**Marco 4 — Shorts e finalização:** I → J completo → K → L. Resultado: edição vertical/horizontal, legenda, áudio, QA e publicação assistida quando possível.
+**Marco 4 — Shorts e finalização:** I → J completo → K → L. Resultado: edição vertical/horizontal, legenda, áudio, QA e kit completo entregue para **publicação manual exclusiva do criador**.
 
 **Microtarefas A01 e B01 concluídas:** criador oficial escolhido e manifesto raiz `plugin.json` criado/validado. **B03 criada e aprovada na revisão de arquivo (14/14 verificações). PRÓXIMA: B04 — validação do conjunto e da especificação Agent Skills.** Não executada nesta etapa. **Nox.png** permanece obrigatório em D01, assim que o esqueleto básico estiver validado. **A03 inventário seletivo do TSX antigo** somente quando começar motion; não catalogar as 44 skills como bloqueio.
 
@@ -255,4 +258,4 @@ O **Plugin Creator oficial** foi encontrado **instalado e lido no ambiente**, e 
 
 ### Critério de sucesso central
 
-Quando o criador disser **“Chat, vamos criar um vídeo sobre [tema]”**, o plugin deverá: identificar o projeto e as autorizações, localizar/registrar produção, dar **uma próxima subtarefa clara**, executar quando houver ferramenta, atualizar estado e avançar somente após o gate correspondente — até o roteiro, thumbnail, vídeo renderizado/revisado e publicação assistida. **O plugin não pode fingir que realizou qualquer etapa não executada.**
+Quando o criador disser **“Chat, vamos criar um vídeo sobre [tema]”**, o plugin deverá: identificar o projeto e as autorizações, localizar/registrar produção, dar **uma próxima subtarefa clara**, executar quando houver ferramenta, atualizar estado e avançar somente após o gate correspondente — até o roteiro, thumbnail, vídeo renderizado/revisado e **kit final para postagem manual feita pelo criador**, sem automação ou instruções de postagem. **O plugin não pode fingir que realizou qualquer etapa não executada.**
