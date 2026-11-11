@@ -26,7 +26,7 @@ DOCS = (
     "docs/REGISTRO_EXECUCAO_E_PENDENCIAS.md",
     "docs/TERCEIROS_E_LICENCAS.md",
 )
-ALLOWED_SUFFIXES = {".md", ".json", ".py", ".ts", ".tsx", ".yaml",
+ALLOWED_SUFFIXES = {".md", ".json", ".py", ".ts", ".tsx", ".mjs", ".mts", ".yaml",
                     ".yml", ".png", ".jpg", ".jpeg", ".webp", ".mp3",
                     ".wav", ".txt", ".gitkeep"}
 FORBIDDEN_NAMES = {".env", ".env.local", "id_rsa", "credentials.json", "secret.json"}
