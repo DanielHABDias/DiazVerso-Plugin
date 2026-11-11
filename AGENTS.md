@@ -4,7 +4,7 @@ Este repositório contém a consolidação inicial do novo plugin Diazverso 1.0.
 
 ## Início obrigatório de cada sessão do agente
 
-**Passagem para o Codex em 11/11/2026:** ler `docs/HANDOFF_CODEX_2026-11-11.md` antes de escolher uma tarefa. **Contagem atual em 11/11: 37/87 itens marcados [x], dos quais K04 foi retirado de escopo; I01 (preset 9:16), I02 (skill Shorts) e H02 (skill decupagem) foram concluídas no escopo de definição/roteamento, sem alegar render ou execução dos testes Python do preset. E02, K01, K02 e K05 têm verificações locais registradas no roadmap; F06 segue parcial.** Os critérios detalhados e a limpeza de documentos somente pós-release estão nesse handoff, que é TEMPORÁRIO.
+**Passagem para o Codex em 11/11/2026:** ler `docs/HANDOFF_CODEX_2026-11-11.md` antes de escolher uma tarefa. **Contagem atual em 11/11: 39/87 itens marcados [x], dos quais K04 foi retirado de escopo. I01/I02/H02 e agora I03 (gerador SRT/frame cues) e I05 (revisor Shorts) foram implementadas; testes unitários versionados e CI configurado, mas sem afirmar execução do CI ou render. E02, K01, K02 e K05 têm verificações locais registradas no roadmap; F06 segue parcial.** Os critérios detalhados e a limpeza de documentos somente pós-release estão nesse handoff, que é TEMPORÁRIO.
 
 1. Ler primeiro `docs/HANDOFF_CODEX_2026-11-11.md` e `docs/ESPECIFICACAO_CANONICA_DIAZVERSO_V1.md`, em seguida o **item atual** do roadmap; consultar `docs/DECISOES_E_CONTEXTO.md` somente para histórico/evidência.
 2. Verificar o estado atual do repositório (branch, arquivos e alterações não commitadas) antes de editar.
