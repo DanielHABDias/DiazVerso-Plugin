@@ -1,5 +1,9 @@
 """E08: pure, side-effect-free planner for one existing Produções row.
 
+Publication is exclusively manual by the channel creator. Any PUBLICADO data
+is post-publication recordkeeping, never a request or instruction to upload,
+schedule or post a video. No publishing integration is permitted.
+
 A Sheets-capable caller performs the authorized write, then re-reads the target
 by stable ID; this module neither connects to Google nor changes stored data.
 """
