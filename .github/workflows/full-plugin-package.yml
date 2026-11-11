@@ -61,7 +61,7 @@ jobs:
           import struct,subprocess
           for suffix,(w,h) in {"16x9":(1920,1080),"9x16":(1080,1920)}.items():
               png=Path(f"out/smoke-{suffix}.png")
-              assert png.read_bytes()[:8]==b"\\x89PNG\\r\\n\\x1a\\n",png
+              assert png.read_bytes()[:8]==bytes.fromhex("89504e470d0a1a0a"),png
               assert struct.unpack(">II",png.read_bytes()[16:24])==(w,h),png
               mp4=Path(f"out/smoke-{suffix}.mp4")
               assert mp4.stat().st_size>1024,mp4
