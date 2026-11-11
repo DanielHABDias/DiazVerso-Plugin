@@ -98,6 +98,33 @@ jobs:
           npx --no-install remotion still src/index.ts DiazversoHQMigrationWide out/hq-migration-16x9.png --frame=30
           npx --no-install remotion still src/index.ts DiazversoHQMigrationVertical out/hq-migration-9x16.png --frame=30
           python "$GITHUB_WORKSPACE/scripts/verify_remotion_outputs.py" out
+      - name: Unit tests - canonical Nox and original I04 whoosh
+        run: python -m unittest discover -s skills/diazverso-decupagem/runtime/scripts -p "test_*.py"
+      - name: Render actual I04 9:16 Nox + kinetic text + parallax + whoosh + timed captions
+        working-directory: skills/diazverso-decupagem/runtime
+        run: |
+          python scripts/prepare_i04_assets.py --repo "$GITHUB_WORKSPACE" --public public
+          npx --no-install remotion still src/index.ts DiazversoI04NoxVertical out/i04-frame-15.png --frame=15
+          npx --no-install remotion still src/index.ts DiazversoI04NoxVertical out/i04-frame-105.png --frame=105
+          npx --no-install remotion still src/index.ts DiazversoI04NoxVertical out/i04-frame-200.png --frame=200
+          npx --no-install remotion render src/index.ts DiazversoI04NoxVertical out/i04-9x16.mp4 --frames=0-239 --codec=h264
+          python scripts/review_i04_outputs.py out > out/i04-review.json
+          cat out/i04-review.json
+      - name: Preserve real I04 test video and frame samples for human visual QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: diazverso-i04-nox-vertical-real-render
+          path: |
+            skills/diazverso-decupagem/runtime/out/i04-frame-15.png
+            skills/diazverso-decupagem/runtime/out/i04-frame-105.png
+            skills/diazverso-decupagem/runtime/out/i04-frame-200.png
+            skills/diazverso-decupagem/runtime/out/i04-9x16.mp4
+            skills/diazverso-decupagem/runtime/out/i04-review.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Clean only generated I04 runtime asset copies before package build
+        working-directory: skills/diazverso-decupagem/runtime
+        run: rm -f public/i04-nox-canonical.png public/i04-whoosh-original.wav public/i04-background.svg
       - name: Archive synthetic Remotion frames and short clips for visual review
         uses: actions/upload-artifact@v4
         with:
