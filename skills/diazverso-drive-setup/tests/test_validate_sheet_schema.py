@@ -79,7 +79,7 @@ class SchemaTests(unittest.TestCase):
     def test_existing_duplicate_id_rejected(self):
         rows = [list(mod.HEADERS["Ideias"]), ["TF_0001", "A"], ["TF_0001", "B"]]
         with self.assertRaises(ValueError):
-            mod.plan_new_idea(rows, {"TEMA": "Nova", "TESE / CONTEXTO": "Tese"})
+            mod.plan_new_idea(rows, {"TEMA": "Nova", "TESE / CONTEXTO": "Tese"}, previously_issued_ids=[])
 
     def test_historical_id_is_not_reused(self):
         rows = [list(mod.HEADERS["Ideias"]), ["TF_0002", "Existing"]]
