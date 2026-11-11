@@ -128,6 +128,12 @@ Nenhuma segunda tarefa avança antes do fechamento da primeira. A função devol
 
 Os testes estão em `tests/test_correction_loop.py`, incluídos na descoberta Python do CI, cobrindo prioridade, exclusividade, fases, falhas, retries e digest de render.
 
+## L02/L03 — teste de integração com render comprovado
+
+O runtime **independente** em `runtime/` executa um exemplo reproduzível de `roteiro de teste → decupagem H01 → TSX → MP4 horizontal/Short → QA`. Partir de `runtime/fixtures/integrated-demos.json` (roteiros **fictícios, não aprovados**), executar `python runtime/scripts/prepare_i04_assets.py`, depois `python runtime/scripts/build_integrated_demos.py` e os comandos Remotion/QA descritos em `runtime/README.md`. `integrated-scene.tsx` utiliza exclusivamente Nox canônico, parallax autoral, títulos, voz PT-BR sintética **de teste**, legendas por período medido do WAV e CTA contextual do Short. Contratos H01, SRT, props, PNG, MP4 e evidências são gerados separadamente, e o GitHub Actions `.github/workflows/integrated-video-e2e.yml` testa ambos os formatos.
+
+**Condição real de uso:** ferramentas Node/Remotion, arquivos e síntese de voz precisam estar disponíveis no executor autorizado. A automação de eSpeak/meSpeak é **somente para ensaio técnico**; não é voz de produção nem substitui roteiro aprovado, revisão de fontes, direitos, escuta, inspeção do vídeo, aprovação humana ou sincronização fonética aferida. Na ausência de runtime, parar no contrato de decupagem e registrar o bloqueio, não alegar render ou áudio. Evidências técnicas e os limites estão em `docs/VALIDACAO_L02_L03_2026-11-11.md` enquanto durar o desenvolvimento; não usar esse documento temporário como dependência de instalação. Publicação permanece **exclusivamente manual pelo criador**.
+
 ## Limites
 
 - Não afirmar escuta de voz, renderização, sincronização medida, QA visual ou disponibilidade/licença de mídia sem execução/consulta efetiva.
