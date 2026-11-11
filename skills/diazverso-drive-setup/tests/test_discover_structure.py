@@ -118,5 +118,57 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(module.discover(snap)["status"], "COMPLETE")
 
 
+    def test_repair_plan_existing_structure_does_nothing(self):
+        result = module.plan_repairs(module.discover(sample()))
+        self.assertEqual(result["status"], "NO_FOLDER_ACTIONS")
+        self.assertEqual(result["actions"], [])
+        self.assertFalse(result["writes_performed"])
+
+    def test_repair_plan_missing_leaf_requires_permission(self):
+        snap = sample()
+        snap["children"]["thumbs"][0]["results"].pop()
+        plan = module.plan_repairs(module.discover(snap))
+        self.assertEqual(len(plan["actions"]), 1)
+        action = plan["actions"][0]
+        self.assertEqual(action["path"], "Thumbnails/Shorts")
+        self.assertEqual(action["parent_id"], "thumbs")
+        self.assertTrue(action["requires_authorization"])
+
+    def test_repair_plan_ambiguous_refuses_any_action(self):
+        snap = sample()
+        snap["children"]["root"][0]["results"].append(
+            entry("dup", "Roteiros", parent="root"))
+        plan = module.plan_repairs(module.discover(snap))
+        self.assertEqual(plan["status"], "BLOCKED")
+        self.assertFalse(plan["actions"])
+
+    def test_repair_plan_missing_sheet_is_deferred(self):
+        snap = sample()
+        snap["children"]["root"][0]["results"] = [
+            i for i in snap["children"]["root"][0]["results"]
+            if i["title"] != "Canal do YT — V1.0 (Diazverso)"
+        ]
+        plan = module.plan_repairs(module.discover(snap))
+        self.assertEqual(plan["actions"], [])
+        self.assertEqual(plan["deferred"], ["Canal do YT — V1.0 (Diazverso)"])
+
+    def test_repair_plan_does_not_create_optional_by_default(self):
+        snap = sample()
+        snap["children"]["root"][0]["results"] = [
+            i for i in snap["children"]["root"][0]["results"] if i["title"] != "Memes"
+        ]
+        found = module.discover(snap)
+        self.assertEqual(module.plan_repairs(found)["actions"], [])
+        self.assertEqual(module.plan_repairs(found, include_optional=True)["actions"][0]["path"], "Memes")
+
+    def test_repair_plan_missing_root_requires_parent_choice(self):
+        snap = sample()
+        snap["root_pages"] = [{"results": []}]
+        plan = module.plan_repairs(module.discover(snap))
+        self.assertEqual(plan["status"], "BLOCKED")
+        self.assertEqual(plan["actions"], [])
+
+
+
 if __name__ == "__main__":
     unittest.main()
