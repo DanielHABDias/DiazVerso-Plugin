@@ -99,6 +99,23 @@ class AudioReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             mod.review(self.wav,silence_dbfs=0)
 
+    def test_silent_expected_sfx_is_flagged(self):
+        self.make_wav([0]*8000)
+        result=mod.review(self.wav,sfx=[{"start_s":0.2,"end_s":0.4}])
+        self.assertIn("LOW_ENERGY_DURING_PLANNED_SFX",
+                      [x["code"] for x in result["issues"]])
+
+    def test_silent_expected_music_is_flagged(self):
+        self.make_wav([0]*8000)
+        result=mod.review(self.wav,music=[{"start_s":0.1,"end_s":0.9}])
+        self.assertIn("LOW_ENERGY_DURING_PLANNED_MUSIC",
+                      [x["code"] for x in result["issues"]])
+
+    def test_wrong_timeline_container_rejected(self):
+        self.make_wav([0]*8000)
+        with self.assertRaises(ValueError):
+            mod.review(self.wav,voice={})
+
     def test_still_no_write_to_original(self):
         self.make_wav([250]*8000)
         before=self.wav.read_bytes()
