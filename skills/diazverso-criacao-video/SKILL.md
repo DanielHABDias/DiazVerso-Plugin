@@ -31,7 +31,7 @@ description: "Use quando o criador disser 'vamos criar um vídeo', 'vamos fazer 
 
 **Arquivos:** usar a raiz `Diazverso`, planilha do canal, `Roteiros/{Longos,Shorts}`, `Thumbnails/{Longos,Shorts}` e bibliotecas Assets/Backgrounds/Memes/Músicas/Sounds quando a conexão permitir. Nomes e IDs da conta do criador não são universais.
 
-**Shorts:** 9:16, legendas sincronizadas com exceções de tipografia integral, gancho rápido e CTA contextual. A duração de pelo menos 60 s é preferência editorial atual, não limite de plataforma.
+**Shorts:** ativar `../diazverso-shorts/SKILL.md` para roteiro/plano vertical, com preset testável `../diazverso-shorts/references/preset-vertical-v1.json` (1080×1920, 30 fps e zonas seguras conservadoras). Legendas sincronizadas são o padrão, com exceção para cenas **exclusivamente de texto na tela**. Gancho rápido, payoff e CTA ao canal contextual. Preferência por pelo menos 60 s, sem tratar como limite da plataforma. **O criador posta manualmente**.
 
 ## Kit final de publicação manual — K01
 
