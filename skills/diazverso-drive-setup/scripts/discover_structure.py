@@ -184,6 +184,54 @@ def plan_repairs(result: Mapping[str, Any], *, include_optional: bool = False) -
             "actions": actions, "deferred": deferred, "writes_performed": False}
 
 
+
+def preflight_folder_create(action: Mapping[str, Any], *, fresh_parent: Mapping[str, Any],
+                            authorized: bool = False) -> dict[str, Any]:
+    """E03: fail-closed just-in-time readback before a folder create.
+
+    This function never writes. Its caller must independently authenticate that
+    fresh_parent metadata came from a new complete Drive listing.
+    """
+    if not isinstance(action, dict) or set(action) != {
+            "operation", "path", "name", "parent_id", "requires_authorization",
+            "requires_readback"}:
+        raise ValueError("Formato de ação E03 inválido")
+    if (action["operation"] != "CREATE_FOLDER_IF_STILL_MISSING" or
+        action["requires_authorization"] is not True or
+        action["requires_readback"] is not True):
+        raise ValueError("Ação não autorizável")
+    if not isinstance(action["name"], str) or not action["name"].strip():
+        raise ValueError("Nome de pasta inválido")
+    if not isinstance(action["parent_id"], str) or not action["parent_id"]:
+        raise ValueError("Pai ausente")
+    if not isinstance(action["path"], str) or action["path"].split("/")[-1] != action["name"]:
+        raise ValueError("Caminho de pasta incoerente")
+    if not isinstance(fresh_parent, dict) or set(fresh_parent) != {
+            "parent_id", "parent_mime", "complete", "new_read", "pages"}:
+        raise ValueError("Metadados de releitura do pai incompletos")
+    if (fresh_parent["parent_id"] != action["parent_id"] or
+        fresh_parent["parent_mime"] != FOLDER or
+        fresh_parent["new_read"] is not True):
+        return {"status": "BLOCKED_PARENT_NOT_VERIFIED",
+                "reason": "Conferir pai exato em nova leitura", "writes_performed": False}
+    entries = _records(fresh_parent["pages"], parent=action["parent_id"],
+                       complete=fresh_parent["complete"])
+    # Any same-name object blocks: creating another with the same name could
+    # shadow a file, wrong-MIME item or folder from a concurrent writer.
+    collisions = [item for item in entries if _name(item) == action["name"]]
+    if collisions:
+        return {"status": "BLOCKED_ALREADY_EXISTS_OR_CONFLICT",
+                "existing_ids": [item["id"] for item in collisions],
+                "writes_performed": False}
+    if authorized is not True:
+        return {"status": "AWAITING_EXPLICIT_AUTHORIZATION",
+                "writes_performed": False}
+    return {"status": "SAFE_TO_ATTEMPT_CREATE_NOW", "parent_id": action["parent_id"],
+            "name": action["name"], "expected_mime": FOLDER,
+            "writes_performed": False,
+            "mandatory_after_action": "Verificar ID/nome/MIME/pai por readback e redescobrir antes da próxima criação"}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("snapshot", type=Path, help="JSON da listagem de Drive já paginada")
