@@ -27,6 +27,8 @@ jobs:
           python-version: "3.11"
       - name: Unit tests - Drive E02 read-only discovery
         run: python -m unittest discover -s skills/diazverso-drive-setup/tests -p "test_*.py"
+      - name: Unit tests - video metrics K05
+        run: python -m unittest discover -s skills/diazverso-criacao-video/tests -p "test_*.py"
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Publish private test artifact
