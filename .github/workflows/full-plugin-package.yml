@@ -31,6 +31,8 @@ jobs:
         run: python -m unittest discover -s skills/diazverso-criacao-video/tests -p "test_*.py"
       - name: Unit tests - Shorts preset, captions, QA
         run: python -m unittest discover -s skills/diazverso-shorts/tests -p "test_*.py"
+      - name: Unit tests - Remotion composition contract H01
+        run: python -m unittest discover -s skills/diazverso-decupagem/tests -p "test_*.py"
       - name: Validate complete plugin and build ZIP
         run: python scripts/build_diazverso_plugin.py --output "$RUNNER_TEMP/diazverso-plugin-full.zip"
       - name: Publish private test artifact
