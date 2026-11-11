@@ -23,6 +23,14 @@
 - **Política de skills 11/11:** avaliar por qualidade sem eliminar candidatos apenas por ausência de arquivo LICENSE; redistribuição de código de terceiros continua exigindo autorização verificável, conforme `AGENTS.md` e catálogo atualizados.
 - **Próximo trabalho:** concluir F06/E02–E08 quando possível verificar Drive/Sheets reais, ou selecionar outra microtarefa independente (A03/A05/D07) sem inventar execução. Não instalar o plugin antes da V1 completa.
 
+## E02 — retomada em 11/11/2026 via GitHub + Drive conectado
+
+- Criado `skills/diazverso-drive-setup/scripts/discover_structure.py` para resolver metadados já paginados, nome/tipo/pai exatos, configuração validada, ambiguidade, pastas opcionais e resultado determinístico sem escrita. Criados `skills/diazverso-drive-setup/references/deteccao-idempotente.md` e **12 testes unitários** com situações de duplicidade, paginação, IDs inválidos e ausência.
+- Atualizado `skills/diazverso-drive-setup/SKILL.md` para acionar a detecção read-only. O workflow `.github/workflows/full-plugin-package.yml` agora inclui o comando de teste `python -m unittest discover -s skills/diazverso-drive-setup/tests -p "test_*.py"`.
+- **Leitura efetiva no Drive conectado:** raiz exata `Diazverso`, planilha, `Roteiros/Longos`, `Roteiros/Shorts`, `Thumbnails/Longos`, `Thumbnails/Shorts`, e bibliotecas auxiliares presentes. Não houve criação, movimentação, exclusão, nem alterações na conta. IDs específicos dessa conta **não** foram gravados no plugin distribuível.
+- **Limite:** a consulta manual do Drive é evidência dos dados reais, mas não um teste executando o script. O novo CI foi configurado, **sem confirmação de conclusão verde obtida nesta sessão**. **E02 permanece [ ] até validar execução dos testes**, registrar saída e revisar eventuais falhas. E03 não começou.
+- Contagem formal mantém-se em **29/87 concluídas**, 58 pendentes, com E02 parcialmente implementada.
+
 ## Pendências e riscos (atualizar conforme trabalho efetivo)
 
 | ID | Situação | Bloqueio ou risco | Critério de desbloqueio |
