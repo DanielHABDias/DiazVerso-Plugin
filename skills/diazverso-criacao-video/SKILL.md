@@ -45,6 +45,10 @@ A produção termina com um **pacote pronto para o criador publicar pessoalmente
 
 **Finalização:** registrar `KIT PRONTO PARA POSTAGEM MANUAL` apenas quando roteiro, arte, render, QA e conteúdo textual realmente aprovados. Caso contrário, `KIT PARCIAL — PENDÊNCIAS`, listando somente o que falta. **Não executar nem ensinar upload, agendamento ou postagem**, nem importar a skill de postagem antiga. `PUBLICADO` é apenas registro posterior, após o criador postar manualmente e fornecer evidência de URL/data reais.
 
+## Correção técnica antes da aprovação — J07
+
+Quando os revisores J01–J06/I05 retornarem problemas, usar `../diazverso-decupagem/scripts/correction_loop.py` e a regra **um achado por vez**: registrar alteração concreta → rerender do trecho afetado com arquivo comprovável → executar novamente o revisor afetado sobre o novo render → fechar apenas se passar. Uma falha mantém a produção **EM REVISÃO**, não permite criar aprovação fictícia no gate J08. Sem runtime de render, registrar estado `BLOQUEADO`, sem fingir que a tarefa foi corrigida. Não atualizar a linha da produção nem postar vídeos por efeito do checklist; qualquer persistência conectada depende de autorização e validação real.
+
 ## Aprovação humana antes de entregar o kit — J08
 
 Executar `scripts/approval_gate.py <revisao.json>` antes de declarar `KIT APROVADO PARA ENTREGA MANUAL`. O objeto da revisão contém `production_id`, os nove gates `roteiro`, `fatos_fontes`, `titulo_thumbnail`, `direitos_midias`, `video_render`, `qa_visual`, `qa_audio`, `legendas` e `kit_textual`, cada um com `status` (`APROVADO`, `PENDENTE`, `REPROVADO`) e `evidence`. Acrescentar `creator_decision: {approved: true/false, evidence: "..."}` com a decisão **real** do criador. Não marcar um gate aprovado por inferência, arquivo presente ou resposta automática; cada aprovação exige evidência. Qualquer pendência/reprovação bloqueia entrega como final. O validador não confere a autenticidade externa da evidência e não publica nem ensina a postar.
