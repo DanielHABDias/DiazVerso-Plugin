@@ -14,6 +14,7 @@
 | "revise roteiro" (pedido geral) | `diazverso-criacao-video` | Despachar F07 → F08 → F09 → F10 conforme pendências, uma por vez | Não tratar skill instalada como revisão realizada |
 | "crie thumbnail" / capa | `diazverso-core` + ferramenta de imagem quando houver | Briefing ou imagem efetiva | Salvar no Drive somente com conexão |
 | "Nox" / "pose do Nox" | `diazverso-core` | Personagem consistente com referência canônica | Nox.png já incluído; revisão visual de poses A05/G01 pendente |
+| "decupagem", "planeje as cenas", "divida o roteiro em cenas" | `diazverso-decupagem` | Cenas sequenciais com objetivo, narração, visual, música/SFX, fontes e direitos | Sem runtime, tempos são estimados e não se alega render |
 | "anime", "TSX", "edite" | `diazverso-criacao-video` | Plano de cena, código e render quando runtime real | Não depender de Content Lab antigo |
 | "efeitos sonoros" / "música" | `diazverso-criacao-video` | Seleção contextual e direitos | Sem áudio real, apenas proposta, não QA |
 | "Short", "vídeo vertical" | `diazverso-shorts` | Gancho, progressão, legenda contextual, CTA e preset 9:16 (1080×1920) | Preferência editorial ≥60s, não regra YouTube; sem runtime, roteiro/plano apenas |
