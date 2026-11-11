@@ -53,6 +53,74 @@ def validate(snapshot: dict) -> dict:
             "writes_performed": False, "checked_tabs": list(HEADERS)}
 
 
+
+def plan_new_idea(rows: list[list], fields: dict, *, known_production_ids: list[str] | None = None) -> dict:
+    """E05: prepare exactly one row; caller owns write and live readback.
+
+    Full current Ideias rows (header included) are required. No network/write
+    is performed. Concurrent writers need a shared lock or retry after a fresh
+    duplicate/ID check; this function alone cannot reserve an ID.
+    """
+    import re
+    import unicodedata
+
+    expected = HEADERS["Ideias"]
+    if not rows or rows[0][:len(expected)] != expected:
+        raise ValueError("Cabeçalhos de Ideias incompatíveis ou não verificados")
+    if not isinstance(fields, dict):
+        raise ValueError("Idea fields precisam ser um objeto")
+    if any(k not in expected[1:] for k in fields):
+        raise ValueError("Campo desconhecido na ideia")
+    title = fields.get("TEMA", "")
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("TEMA obrigatório")
+    if not isinstance(fields.get("TESE / CONTEXTO", ""), str) or not fields.get("TESE / CONTEXTO", "").strip():
+        raise ValueError("TESE / CONTEXTO obrigatória")
+    for key, value in fields.items():
+        if not isinstance(value, str):
+            raise ValueError("Campos devem ser textos")
+        if value.startswith(("=", "+", "-", "@")):
+            raise ValueError(f"Fórmula não permitida no campo {key}; usar RAW na escrita")
+    if fields.get("PRODUÇÃO VINCULADA"):
+        raise ValueError("Ideia nova não pode nascer vinculada a uma produção")
+
+    def norm(value: str) -> str:
+        value = unicodedata.normalize("NFKD", value.strip().casefold())
+        return " ".join("".join(ch for ch in value if not unicodedata.combining(ch)).split())
+
+    existing_ids = set()
+    titles = set()
+    for row in rows[1:]:
+        if not row or all(not str(v).strip() for v in row):
+            continue
+        rid = str(row[0]).strip()
+        if rid:
+            if rid in existing_ids:
+                raise ValueError(f"ID duplicado já existente: {rid}")
+            existing_ids.add(rid)
+            if not re.fullmatch(r"TF_\\d{4,}", rid):
+                raise ValueError(f"ID inválido em Ideias: {rid}")
+        if len(row) > 1 and str(row[1]).strip():
+            titles.add(norm(str(row[1])))
+    if norm(title) in titles:
+        return {"status": "EXISTS", "reason": "Tema idêntico já existe; revisar antes de inserir",
+                "writes_performed": False}
+
+    next_number = max([int(x[3:]) for x in existing_ids] or [0]) + 1
+    if next_number > 9999:
+        raise ValueError("Limite de IDs TF_#### atingido; definir estratégia antes de prosseguir")
+    new_id = f"TF_{next_number:04d}"
+    if new_id in existing_ids:
+        raise AssertionError("Colisão de ID")
+
+    new_fields = {**fields, "ID": new_id}
+    new_fields.setdefault("STATUS", "A AVALIAR")
+    values = [new_fields.get(k, "") for k in expected]
+    return {"status": "READY_TO_INSERT", "id": new_id, "values": values,
+            "header": expected, "writes_performed": False,
+            "precondition": "Reconsultar Ideias inteira e garantir exclusividade de escrita; se qualquer linha/ID mudou, recalcular. Inserir somente uma linha sem reordenar ou sobrescrever dados; reler pelo ID."}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("snapshot", type=Path)
