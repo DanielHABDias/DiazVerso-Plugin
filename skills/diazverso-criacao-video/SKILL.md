@@ -15,6 +15,14 @@ Antes de usar Drive/Docs/Sheets, render independente, FFmpeg ou EarShot, verific
 
 O avaliador não chama ferramentas, não altera arquivos conectados nem publica vídeo. Se a ação for bloqueada, registrar qual recurso faltou e escolher a próxima microtarefa **independente** disponível, respeitando a autorização do criador. Não instalar recursos nem conectar serviços apenas por causa da ausência.
 
+## Retomada entre processos e sessões — L04
+
+O módulo `scripts/resume.py` implementa um **checkpoint local de referência**, sem ser um novo banco de verdade. Antes da pausa, obter da fonte de verdade atual (`Produções` no Sheets + evidências do Doc, quando conectados) `production_id`, `revision` monotônica, `next_task`, `completed` (ordem de tarefas confirmadas) e `source_ref`; `checkpoint(source)` adiciona hash SHA-256 canônico do registro. Guardar esse snapshot de forma segura no sistema disponível, sem credenciais.
+
+Na sessão seguinte, **reler de fato** a fonte de verdade e montar `latest` com os mesmos campos e `fresh_read=True` somente após readback confirmado. `recover(checkpoint, latest)` verifica integridade, produção, referência, revisão, histórico de tarefas e impede retomar uma tarefa que já conste como concluída. Se os registros divergirem ou a leitura for antiga, retornar bloqueio e reconciliar antes de criar/editar algo. **A fonte mais recente prevalece quando avança de revisão**, evitando reexecutar tarefas concluídas após o último checkpoint.
+
+CLI para diagnóstico sem escritas: `python skills/diazverso-criacao-video/scripts/resume.py <checkpoint.json> <latest.json>`. O arquivo `latest.json` deve corresponder a **leitura real verificada** — não marcar `fresh_read=True` só para fazer o teste passar. Foram executados localmente 13 testes Python, incluindo um **segundo processo** que lê arquivos persistidos, mas isso **não substitui um teste com duas sessões reais e Sheets conectado**. Não criar IDs, documentos, renders nem publicação automaticamente com esse script. L04 só será concluída integralmente quando houver readback de retomada em host real e confirmação de que nenhum item duplicou.
+
 ## Início ou retomada
 
 1. Identificar se o pedido é **novo vídeo** ou **continuação**. Se houver Drive/Sheets conectados, localizar o vídeo e status existentes antes de criar outro; se não houver, realizar apenas o que for possível e relatar a limitação.
