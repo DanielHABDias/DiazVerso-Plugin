@@ -123,6 +123,17 @@ def review(wav_path: Path, *, voice: list | None = None,
             issues.append({"severity":"REVIEW","code":"LOW_ENERGY_DURING_PLANNED_VOICE",
                            "evidence":gap,
                            "message":"Low-energy interval overlaps scheduled voice; inspect audio and timing"})
+    # A fully low-energy expected music/SFX interval is a reproducible
+    # discrepancy, but energy alone cannot identify which source played.
+    for label, events in (("music", music_events), ("sfx", sfx_events)):
+        for event in events:
+            matching = [w for w in windows if w["start_s"] < event["end_s"]
+                        and w["end_s"] > event["start_s"]]
+            if matching and all(w["rms_dbfs"] <= silence_dbfs for w in matching):
+                issues.append({"severity": "REVIEW",
+                               "code": "LOW_ENERGY_DURING_PLANNED_" + label.upper(),
+                               "evidence": event,
+                               "message": "Expected audio segment has low measured energy; verify timeline and mix"})
     # Plan gaps are not proof that music or SFX can be heard after the mix.
     for label, events in (("music",music_events),("sfx",sfx_events)):
         if events and not voice_events:
