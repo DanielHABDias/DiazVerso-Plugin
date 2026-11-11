@@ -43,6 +43,12 @@ A produção termina com um **pacote pronto para o criador publicar pessoalmente
 
 **Finalização:** registrar `KIT PRONTO PARA POSTAGEM MANUAL` apenas quando roteiro, arte, render, QA e conteúdo textual realmente aprovados. Caso contrário, `KIT PARCIAL — PENDÊNCIAS`, listando somente o que falta. **Não executar nem ensinar upload, agendamento ou postagem**, nem importar a skill de postagem antiga. `PUBLICADO` é apenas registro posterior, após o criador postar manualmente e fornecer evidência de URL/data reais.
 
+## Análise depois da postagem manual — K05
+
+Somente **após o criador ter postado o vídeo**, e se ele fornecer métricas reais (com data de coleta, fonte e ID da produção), usar `scripts/analyze_metrics.py` com os dados recebidos para registrar observações, CTR calculável e duração média proporcional quando as medidas necessárias existirem. Sem acesso ou dados reais, responder `MÉTRICAS NÃO DISPONÍVEIS`, sem inferir visualizações, receita ou retenção. Comparações com outros vídeos exigem dados comparáveis, período e contexto.
+
+Transformar achados em **hipóteses de pauta a pesquisar**, não conclusões sobre o algoritmo. Registrar novas ideias em `Ideias` somente após seleção editorial e gravação autorizada pelo fluxo E05; não criar linhas automaticamente. **Não acessar, agendar, enviar ou postar vídeos** por causa desta análise.
+
 ## Retomada entre sessões
 
 Quando a ferramenta permitir persistência, usar `schemas/estado-producao-v1.schema.json` como **formato mínimo de intercâmbio**, não como banco paralelo: `id`, `tipo`, `fase`, `proxima_tarefa`, `revisao`, `links` e bloqueio opcional. **Fonte de verdade**: linha do vídeo no Google Sheets, roteiro Google Docs e evidências dos artefatos; atualizar/relêr após cada ação importante. Sem conector, não alegar estado salvo ou continuidade automática. Evitar credenciais no registro.
