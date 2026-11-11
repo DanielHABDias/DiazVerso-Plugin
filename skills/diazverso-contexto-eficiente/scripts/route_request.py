@@ -14,7 +14,7 @@ RULES = (
  ("manutenção do plugin","diazverso-manutencao",r"\b(?:criar|atualizar|alterar|organizar|limpar)\b.*\b(?:plugin|skills?)\b|\bmanuten[cç][aã]o\b"),
  ("retomada","diazverso-criacao-video",r"\b(?:retomar|continuar|continue|retomada)\b"),
  ("configuração","diazverso-setup",r"\b(?:configurar|instalar|conectar|setup)\b"),
- ("economia de contexto","diazverso-contexto-eficiente",r"\b(?:tokens?|contexto|economizar)\b"),
+ ("economia de contexto","diazverso-contexto-eficiente",r"\b(?:tokens?|contexto|economizar|compactar|compacta[cç][aã]o|grafos?)\b"),
  ("análise factual","diazverso-revisao-fatos",r"\b(?:fontes|checagem factual|revisar fatos|verificar fatos)\b"),
  ("revisão estrutural","diazverso-revisao-estrutura",r"\b(?:estrutura|gancho|payoff|redundância)\b"),
  ("voz narrativa","diazverso-revisao-voz",r"\b(?:humanizar|naturalizar|voz do roteiro)\b"),

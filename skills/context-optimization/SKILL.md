@@ -14,7 +14,7 @@ Optimize the total work required for a correct result, including retrieval, tool
 1. **Stable prefixes:** when implementing an API application, keep instructions and reusable examples stable; append dynamic metadata afterward. Prompt-cache configuration belongs to that application, not to a skill running in an opaque host.
 2. **Bounded retrieval:** select the responsible skill from metadata or the local graph, then read only the next action's sources. Reuse valid observations; refresh a source when its revision changes or before a consequential write.
 3. **Observation summaries:** replace repeated narrative with a short result, evidence reference and unresolved error. Keep complete outputs recoverable. Never hide an error during debugging.
-4. **Checkpoints:** preserve objective, current source/revision, decisions, verified result, blockers and next action. A written checkpoint does not compact the host's internal context.
+4. **Checkpoints:** preserve objective, current source/revision, decisions, verified result, blockers and next action. For the mandatory semantic-compaction procedure, consult [working-context compaction](../diazverso-contexto-eficiente/references/compactacao.md) only when needed. A written checkpoint does not compact the host's internal context.
 5. **Partitioning:** use an independent agent only when available, authorized and expected to reduce total work. Account for coordination overhead; do not delegate small tasks merely because delegation exists.
 
 Consult [technique details](references/optimization_techniques.md) only when implementing a specific optimization or measurement system. Its examples and targets are conditional engineering patterns, not promises about the current host.

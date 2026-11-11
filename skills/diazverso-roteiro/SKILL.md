@@ -18,7 +18,7 @@ description: "Use para criar ou atualizar o Google Doc nativo formatado de rotei
 
 ## Direção editorial
 
-Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editoriais](../diazverso-core/references/formatos-editoriais.md). Desenvolver a tese com exemplos e contrapontos ou contar a história conforme a promessa. Em ensino através de personagens, conectar situação da obra → escolha/consequência → princípio → aplicação ou reflexão específica, distinguindo fato, interpretação e analogia. Não obrigar uma moral em histórias nem prometer mudança garantida ao espectador. Para o uso das referências de linguagem, consultar [vídeos e princípios](../diazverso-core/references/referencias-audiovisuais.md) apenas quando necessário.
+Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editoriais](../diazverso-core/references/formatos-editoriais.md). Desenvolver a história/trajetória revelando complexidade e aprendizado, ou ensinar uma ideia prática/filosófica através dela. Usar tese, exemplos, comparação, crítica e conceitos para sustentar essa entrega, sem transformá-los em formatos principais isolados. Em ensino através de personagens, conectar situação da obra → escolha/consequência → princípio → aplicação ou reflexão específica, distinguindo fato, interpretação e analogia. Não obrigar uma moral em histórias nem prometer mudança garantida ao espectador. Para o uso das referências de linguagem, consultar [vídeos e princípios](../diazverso-core/references/referencias-audiovisuais.md) apenas quando necessário.
 
 ## Criação e preenchimento
 

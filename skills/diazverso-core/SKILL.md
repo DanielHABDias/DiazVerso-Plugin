@@ -19,7 +19,7 @@ description: "Use para escolher formatos editoriais, ensinar ideias práticas ou
 
 ## Formatos e aprendizado
 
-Escolher entre história/trajetória, ensaio de tese, comparação/crítica, explicação de universo e aprendizado prático ou filosófico através da ficção. Personagens podem demonstrar ideias, escolhas e consequências; Nox pode participar da explicação. Não exigir lição de vida em toda história. Para definir promessa, exemplos, aplicação e limites, consultar [formatos editoriais](references/formatos-editoriais.md).
+Priorizar histórias e trajetórias que ensinem algo ou revelem a complexidade de personagens, acontecimentos e ideias; também criar ensino prático ou filosófico diretamente através dessas histórias. Esses dois eixos se conectam. Comparação, crítica, tese e explicação de conceitos são recursos internos de desenvolvimento, não formatos principais isolados do canal. Personagens podem demonstrar ideias, escolhas e consequências; Nox pode participar da explicação. O aprendizado pode ser uma compreensão mais profunda, sem moral de vida forçada. Para definir promessa, exemplos, aplicação e limites, consultar [formatos editoriais](references/formatos-editoriais.md).
 
 ## Aplicação
 

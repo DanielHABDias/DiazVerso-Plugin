@@ -1,14 +1,17 @@
 # Formatos editoriais
 
-Escolher pelo que o público vai compreender, acompanhar ou conseguir aplicar. Combinar formatos quando a progressão justificar; não obrigar todo vídeo a ensinar uma lição de vida.
+Priorizar o que o público aprenderá ou compreenderá através de uma história, trajetória ou personagem. O aprendizado pode ser prático, filosófico ou uma compreensão mais profunda da complexidade da obra; não exige lição de vida em todo vídeo.
 
-| Formato | Entrega | Progressão possível |
+| Eixo principal | Entrega | Progressão possível |
 | --- | --- | --- |
-| História ou trajetória | Contar acontecimentos e suas consequências para um personagem ou universo | Situação → conflito → escolhas → virada → consequência |
-| Ensaio e análise de tese | Defender uma interpretação com exemplos, fontes e contrapontos | Pergunta → tese → evidências → objeção → síntese |
-| Comparação ou crítica | Explicar uma diferença relevante entre personagens, obras ou decisões | Critério comum → casos → diferenças → conclusão sustentada |
-| Explicação de conceito ou universo | Tornar compreensível um mecanismo, relação, tema ou continuidade | Dúvida → definição → demonstração com personagens → limites → entendimento |
-| Aprendizado através da ficção | Ensinar uma ideia prática ou filosófica usando algo que o público conhece e gosta | Problema humano → situação da obra → escolha e consequência → princípio → aplicação proporcional |
+| História ou trajetória com aprendizado e profundidade | Contar a história revelando motivações, conflitos, escolhas, consequências e ideias por trás do personagem ou acontecimento | Situação → conflito → escolhas → consequência → compreensão |
+| Ensino prático ou filosófico através da história | Ensinar uma ideia usando um personagem ou situação que o público conhece e gosta | Problema humano → situação da obra → escolha e consequência → princípio → aplicação ou reflexão |
+
+Os eixos podem coexistir no mesmo vídeo. Comparação, crítica, análise de tese e explicação de conceitos são ferramentas dentro deles; não propor vídeos cujo objetivo principal seja apenas comparar, criticar, listar curiosidades ou explicar um conceito isolado. Uma tese organiza a história e o ensino, sem virar um terceiro eixo independente. Selecionar os exemplos que ajudam a compreender o que está em jogo.
+
+## Escolher e revisar a pauta
+
+Antes de propor um tema, responder: qual história/personagem conduz o vídeo, o que o público compreenderá melhor e por que essa compreensão importa? No eixo de ensino, definir também o princípio e a aplicação/reflexão. Se a pauta for só uma comparação ou definição, reconstruir em torno de uma trajetória, conflito ou aprendizado sustentado pela obra. Não acrescentar uma moral artificial para disfarçar a falta de propósito.
 
 ## Ensinar através de personagens
 
@@ -28,4 +31,4 @@ Usar diálogo ou encenação curta quando tornar uma relação mais clara: dúvi
 
 ## Briefing mínimo
 
-Registrar formato principal, tema, tese/pergunta, promessa, exemplos com fontes, contraponto/limite e payoff. Acrescentar aprendizado/aplicação somente quando o formato exigir. Nos beats visuais, escolher a função: evidência, explicação, orientação/progresso ou humor/reação. Valor para o público orienta o formato; não afirmar que o YouTube exige ensino ou garante distribuição por esse motivo.
+Registrar formato principal, tema, tese/pergunta, promessa, exemplos com fontes, contraponto/limite e payoff. Sempre registrar o ganho de compreensão; acrescentar aplicação prática ou reflexão filosófica quando pertinente ao eixo escolhido. Nos beats visuais, escolher a função: evidência, explicação, orientação/progresso ou humor/reação. Valor para o público orienta o formato; não afirmar que o YouTube exige ensino ou garante distribuição por esse motivo.

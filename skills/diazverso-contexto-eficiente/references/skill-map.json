@@ -20,13 +20,14 @@
       "name": "context-optimization",
       "path": "skills/context-optimization/SKILL.md",
       "description": "Use for advanced context budgeting, bounded retrieval, observation summarization and prompt-cache design when the runtime exposes the necessary controls.",
-      "sha256": "903958a9555e63668f0c392b67ad0fd57ff4fd44c5db3c31bc6b5ee51effa6dd",
+      "sha256": "4c5ee69b1aea150a6a4db0be732e3e10bfd6e9e616ebfb0b93e8f30c0f98021c",
       "dependencies": [
         "diazverso-contexto-eficiente"
       ],
       "references": [
         "skills/context-optimization/references/optimization_techniques.md",
-        "skills/diazverso-contexto-eficiente/SKILL.md"
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-contexto-eficiente/references/compactacao.md"
       ]
     },
     {
@@ -44,14 +45,15 @@
     {
       "name": "diazverso-contexto-eficiente",
       "path": "skills/diazverso-contexto-eficiente/SKILL.md",
-      "description": "Aplicar obrigatoriamente em toda tarefa do plugin Diazverso: economia de tokens, selecionar skills e navegar pelo grafo, reutilizar contexto válido e retomar trabalho sem releituras ou perda de decisões.",
-      "sha256": "c3d9f01df90bbf6b14a5252a4f9b3c19032f302f4f7e1fd0d65d77deaa91c938",
+      "description": "Aplicar obrigatoriamente em toda tarefa do plugin Diazverso: economia de tokens, selecionar skills e navegar pelo grafo, reutilizar contexto válido, compactar o contexto de trabalho com preservação de decisões e retomar sem releituras.",
+      "sha256": "68c99f5f8046dd8b208dbb07eea1722e2d160e48f659437fe10eb4049dcd9977",
       "dependencies": [
         "context-optimization",
         "diazverso-criacao-video"
       ],
       "references": [
         "skills/context-optimization/SKILL.md",
+        "skills/diazverso-contexto-eficiente/references/compactacao.md",
         "skills/diazverso-contexto-eficiente/references/roteamento.md",
         "skills/diazverso-contexto-eficiente/references/skill-map.json",
         "skills/diazverso-contexto-eficiente/scripts/compare_context_cost.py",
@@ -64,7 +66,7 @@
       "name": "diazverso-core",
       "path": "skills/diazverso-core/SKILL.md",
       "description": "Use para escolher formatos editoriais, ensinar ideias práticas ou filosóficas através de personagens e aplicar identidade, voz PT-BR, tese, estética HQ e Nox no conteúdo Diazverso.",
-      "sha256": "eb0cede4f2995d63f6c641319cfa66498ea56ffbe937a05b47cbc7ca39abbddc",
+      "sha256": "02f54dd07d634cf77eeba9f9eb51a24818b18daed00d6bc827c956b547217a33",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-drive-setup"
@@ -179,7 +181,7 @@
       "name": "diazverso-pesquisa",
       "path": "skills/diazverso-pesquisa/SKILL.md",
       "description": "Use para investigar pautas, gerar ideias de vídeos sobre quadrinhos, filmes, séries, jogos, Marvel, DC ou Ben 10 e construir uma tese argumentativa com fontes confiáveis para o Diazverso.",
-      "sha256": "a3fd46dc55fd34c7d570c750377d4bbaf4e97c311387fdc9f56490a6e9dfcee7",
+      "sha256": "a23d359e802586e1683c5ce8bea29c29ba5d907a7ec91fb4addbc1d31912c4bd",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -205,7 +207,7 @@
       "name": "diazverso-revisao-estrutura",
       "path": "skills/diazverso-revisao-estrutura/SKILL.md",
       "description": "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção.",
-      "sha256": "5550ce97b9bd5e73d4d75fe4bbd0ec8b355630d19ce50dd23a0f52b038896af6",
+      "sha256": "611498395def77771d5e4b1f515c5611fa402de1589861768729dffd6b13028e",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -243,7 +245,7 @@
       "name": "diazverso-roteiro",
       "path": "skills/diazverso-roteiro/SKILL.md",
       "description": "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado.",
-      "sha256": "d1c40618d7b048ca3785afb2771663461e4e3c2305c2e7e9751a1379fd967f40",
+      "sha256": "9178611f1f278c901fe19ab8032381b7a957d789837948e0a24433dad09ea206",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
