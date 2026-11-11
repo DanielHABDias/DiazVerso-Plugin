@@ -57,7 +57,12 @@ def collect() -> tuple[list[str], dict]:
     for folder_name in ("skills", "assets", "schemas", "templates"):
         folder = ROOT / folder_name
         require(folder.is_dir(), f"Pasta essencial ausente: {folder_name}")
-        paths.extend(p for p in folder.rglob("*") if p.is_file())
+        # Do not ship editor installations, rendering output or caches with the plugin.
+        excluded_dirs = {"node_modules", "out", ".cache", "__pycache__", ".pytest_cache"}
+        excluded_files = {"package-lock.json", "npm-shrinkwrap.json"}
+        paths.extend(p for p in folder.rglob("*") if p.is_file()
+                     and not any(part in excluded_dirs for part in p.relative_to(folder).parts)
+                     and p.name not in excluded_files)
     for name in DOCS:
         file = ROOT / name
         if file.is_file():
