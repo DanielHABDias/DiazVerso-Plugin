@@ -38,6 +38,8 @@ Chamar `contentlab_status`. Se a ferramenta não existir, o MCP não está conec
 
 - **App instalado:** comando `~/.local/share/contentlab/app/current/runtime/node ~/.local/share/contentlab/app/current/app/src/adapters/mcp-server.js` com `CONTENTLAB_INSTALLED=1`.
 
+O Nox não vem com o Content Lab: o app lê o `Nox.png`, a versão sem olhos e as poses direto deste plugin no computador. Se o plugin não estiver ao lado do Content Lab nem em `~/Documentos/Projects/DiazVerso-Plugin`, definir `DIAZVERSO_PLUGIN_DIR` com a pasta do plugin no comando do MCP.
+
 Depois de conectar, o cliente precisa ser reiniciado ou recarregado. Então `contentlab_start` abre o app em segundo plano. `contentlab_status` mostra:
 
 - as vozes prontas;
