@@ -7,6 +7,8 @@ description: "Use para transformar roteiro aprovado em cenas, componentes TSX/Re
 
 # Edição por cenas
 
+Para o vídeo do canal, a montagem padrão é a composição única de motion: `../diazverso-motion/SKILL.md`. Esta skill continua valendo para dividir o roteiro, escolher evidências, revisar QA e para componentes avulsos.
+
 1. Receber ID, formato e revisão aprovada do roteiro. Confirmar narração, intenção visual, mídia e direitos.
 2. Dividir por mudanças de informação: objetivo, fala, visual, duração, camadas, música/SFX, legenda e fonte. Definir a função do visual: evidência, explicação, orientação/progresso ou humor/reação. Em encenação didática, identificar papel e ação do personagem, dúvida, demonstração e informação aprendida. Escolher imagem sustentada, reação pontual ou composição em movimento conforme o beat; consultar [referências audiovisuais](../diazverso-core/references/referencias-audiovisuais.md) somente para a técnica necessária. Evitar cortes ou efeitos sem função.
 3. Partir da [receita do formato](references/receitas.md) e do [padrão visual](../diazverso-core/references/padrao-visual.md). Cada cena tem mídia com assunto aprovada ([imagens e direitos](../diazverso-core/references/imagens-e-direitos.md)); sem ela, buscar com `../find-broll/SKILL.md` ou mudar a abordagem antes de seguir.

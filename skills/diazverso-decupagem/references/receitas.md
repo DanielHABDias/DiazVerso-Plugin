@@ -1,5 +1,7 @@
 # Receitas de vídeo completo
 
+O vídeo é montado como composição única de motion (`../../diazverso-motion/SKILL.md`): as cenas do kit são `titulo`, `frase`, `nox`, `evidencia`, `pagina`, `numero`, `ficha`, `formula`, `lista`, `comparacao` e `cta`. As tabelas abaixo usam os componentes de cena desta skill e valem como mapa de funções; na composição, troque pelo equivalente do kit e quebre cada linha em beats de 1,5–3 s.
+
 Mapas de beat → cena para começar a decupagem. Ajustar ao roteiro aprovado; nenhuma linha substitui a função do beat. Componentes em [cenas TSX](scenes.md); padrão em [padrão visual](../../diazverso-core/references/padrao-visual.md).
 
 ## Vídeo longo (8–14 min, 1920×1080)

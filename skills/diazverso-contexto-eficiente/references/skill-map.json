@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.2.0",
+  "plugin_version": "1.3.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -86,7 +86,7 @@
       "name": "diazverso-criacao-video",
       "path": "skills/diazverso-criacao-video/SKILL.md",
       "description": "Use para iniciar, coordenar ou retomar uma produção Diazverso entre ideia, roteiro, artes, edição, QA e kit de publicação manual.",
-      "sha256": "7741c204dd0ff4970b57638fa4761a231594239a03324d2e7b9d96b60d90e632",
+      "sha256": "6829c1fdd3c79402e6b976df92ad2a68581ea7456a417ecda7bc1be83d7efb07",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
@@ -112,10 +112,11 @@
       "name": "diazverso-decupagem",
       "path": "skills/diazverso-decupagem/SKILL.md",
       "description": "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso.",
-      "sha256": "001c8b59e8566e0ace0884d741d601ae1996a47cd66121d34564990f126a4114",
+      "sha256": "1e0bc05df3fc912de38619c75c74ee4e87d751c109ca8a933f635e87f07165e1",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
+        "diazverso-motion",
         "diazverso-shorts",
         "find-broll"
       ],
@@ -134,6 +135,7 @@
         "skills/diazverso-decupagem/scripts/build_original_sfx.py",
         "skills/diazverso-decupagem/scripts/render_previews.py",
         "skills/diazverso-decupagem/scripts/validate_composition.py",
+        "skills/diazverso-motion/SKILL.md",
         "skills/diazverso-shorts/SKILL.md",
         "skills/find-broll/SKILL.md"
       ]
@@ -168,6 +170,32 @@
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md"
+      ]
+    },
+    {
+      "name": "diazverso-motion",
+      "path": "skills/diazverso-motion/SKILL.md",
+      "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
+      "sha256": "2843e6ef4a804e4d2f7c3ae68e87d84b6070365d0a43734e74ec68fc366cc369",
+      "dependencies": [
+        "diazverso-contexto-eficiente",
+        "diazverso-core",
+        "diazverso-criacao-video",
+        "diazverso-decupagem",
+        "diazverso-nox"
+      ],
+      "references": [
+        "assets/brand/nox/nox-sem-olhos.png",
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/imagens-e-direitos.md",
+        "skills/diazverso-core/references/padrao-visual.md",
+        "skills/diazverso-criacao-video/SKILL.md",
+        "skills/diazverso-decupagem/references/musica.md",
+        "skills/diazverso-motion/kit/catalog.json",
+        "skills/diazverso-motion/kit/index.ts",
+        "skills/diazverso-motion/references/linguagem.md",
+        "skills/diazverso-motion/scripts/build_motion_sfx.mjs",
+        "skills/diazverso-nox/SKILL.md"
       ]
     },
     {

@@ -25,6 +25,7 @@ description: "Use para iniciar, coordenar ou retomar uma produção Diazverso en
 | Fatos, estrutura e naturalidade | diazverso-revisao-fatos, diazverso-revisao-estrutura, diazverso-revisao-voz |
 | Aprovação do roteiro | diazverso-aprovacao-roteiro |
 | Arte e mascote | diazverso-thumbnail e diazverso-nox |
+| Montagem do vídeo em motion (beats, kit, Nox, som) | diazverso-motion |
 | Cenas, TSX, áudio, previews e QA | diazverso-decupagem |
 | Vertical e legendas | diazverso-shorts |
 | Arquivos e registros Google | diazverso-drive-setup |

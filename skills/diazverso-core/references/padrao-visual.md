@@ -1,12 +1,12 @@
 # Padrão visual mínimo
 
-Critérios objetivos para a decupagem e a revisão de frames. Um vídeo que falha em qualquer item **bloqueante** volta para correção antes do render final. Conferir em frames reais extraídos do render, não no plano.
+Critérios objetivos para a montagem em motion (`../../diazverso-motion/SKILL.md`) e a revisão de frames. Um vídeo que falha em qualquer item **bloqueante** volta para correção antes do render final. Conferir em frames reais extraídos do render, não no plano.
 
 ## Bloqueantes
 
 1. **Imagem com assunto em toda cena.** Cada cena mostra o personagem, a obra, o acontecimento ou o Nox de que a fala trata: painel de HQ, frame oficial, pôster, capa, recorte ou pose do Nox. Texto sobre fundo liso ou procedural só é aceito em ênfase curta (até 3 s) e no máximo em 1 de cada 5 cenas.
 2. **Evidência visual do que é afirmado.** Quando a narração cita um personagem, uma edição, uma cena ou um número, a imagem correspondente aparece enquanto a frase é dita. Consultar [imagens e direitos](imagens-e-direitos.md).
-3. **Ritmo de informação visual.** Algo relevante muda na tela a cada **2–5 s** em Shorts e a cada **4–8 s** em vídeos longos: nova imagem, zoom/câmera motivados, palavra-chave revelada ou troca de painel. Imagem sustentada além disso exige movimento lento de câmera e motivo editorial (argumento que pede tempo).
+3. **Ritmo de informação visual.** Algo relevante muda na tela a cada **1,5–3 s**, no ritmo do RunnyIA: nova imagem, palavra-chave, troca de painel, reação do Nox, número mudando. Imagem da obra sustentada por até 3–5 s só quando o argumento pede, sempre com câmera lenta. Nenhum beat parado acima de 6 s. A câmera nunca fica parada (ver `../../diazverso-motion/SKILL.md`).
 4. **Tipografia Anton** (`assets/brand/fonts/anton/Anton-Regular.ttf`, OFL) para títulos, palavras de impacto e legendas. Fonte de fallback do sistema reprova o frame.
 5. **Legibilidade.** Texto principal com no mínimo **64 px** em 1080p horizontal e **72 px** em 1080×1920; legenda com no mínimo **56 px** (16:9) e **64 px** (9:16); contraste mínimo 4,5:1, com contorno ou caixa quando o fundo variar. No máximo **6 palavras** por bloco de texto de ênfase.
 6. **Legenda palavra a palavra** a partir de timestamps reais da fala (`../../diazverso-shorts/scripts/captions.py`). Legenda por cena ou frase inteira estática reprova o Short.
