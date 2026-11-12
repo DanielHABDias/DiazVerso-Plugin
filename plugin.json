@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "diazverso",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Fluxos modulares para planejar, roteirizar, organizar e revisar vídeos do Diazverso, uma tarefa de cada vez.",
   "repository": "https://github.com/DanielHABDias/DiazVerso-Plugin",
   "extensions": {

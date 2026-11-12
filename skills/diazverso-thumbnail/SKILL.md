@@ -19,7 +19,7 @@ description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um 
 
 1. Reduzir a tese a **uma pergunta/tensão visual** diretamente respondida no roteiro. Não acrescentar conflito, fato, resultado ou personagem inexistente apenas para gerar curiosidade.
 2. **A** usa um ângulo dominante, por exemplo contradição/comparação; **B** usa outro enquadramento narrativo, por exemplo consequência/revelação. Não chamar de teste A/B apenas duas cores ou dois recortes da mesma imagem. O revisor `scripts/validate_thumbnail_brief.py` exige `angle`, `visual_metaphor` e `layout` distintos em A e B.
-3. Composição preferencial: **um assunto dominante**, um ponto focal imediato, poucas camadas, espaço negativo para texto, hierarquia visual clara. O conceito deve funcionar reduzido no celular. Não transformar referências FALL, Um Nerd, RunnyIA ou Baoyu em visual copiado.
+3. Composição preferencial: **limpa**. Fundo preto ou branco, **o personagem grande** como assunto dominante (de preferência em PNG com fundo transparente), um ponto focal imediato, poucas camadas, espaço negativo para texto, hierarquia visual clara. O conceito deve funcionar reduzido no celular. Não transformar referências FALL, Um Nerd, RunnyIA ou Baoyu em visual copiado.
 4. Texto opcional e **curto** (preferência editorial: até 4 palavras). Texto não deve apenas repetir o título; pode criar contraste ou completar a promessa. Usar Anton de `assets/brand/fonts/anton/` (SIL OFL) ou outra fonte licenciada.
 5. **Nox é opcional**, só quando ajudar a leitura da tese; se aparecer, usar o arquivo canônico `assets/brand/nox/Nox.png` e sua identidade original. Novas poses dependem do Character Lock da character-lock e revisão da imagem gerada. Não afirmar que Nox está visualmente correto apenas porque o nome foi citado.
 6. Arte HQ madura com contraste e profundidade a serviço da ideia, não painéis/balões infantis automáticos. Diretrizes de cor são hipóteses para o designer, **não validação de contraste de pixels**.
@@ -36,7 +36,7 @@ A arte final não depende de ferramenta de imagem externa. O kit de motion rende
 | Contraste ou comparação | `midiaB` (layout VS) |
 | Texto na imagem, até 4 palavras | `texto`, com a palavra-chave entre `*asteriscos*` |
 | Emoção (Nox) | `humor`, ou omitir |
-| Composição | `lado` do texto, `tom` de destaque e `selo` curto |
+| Composição | `fundo` (`preto` padrão, `branco` ou `cena`), `lado` do texto, `tom` de destaque e `selo` curto |
 
 Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B: `text`, `mediaId`, `mediaIdB`, `humor`, `side`, `tone` e `badge`. Ele grava as duas na embalagem e devolve as versões de 320 px em `output/previas/`. **Abrir as versões de celular** e responder: o assunto se reconhece em 1 segundo? O texto se lê? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
 

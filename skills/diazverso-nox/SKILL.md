@@ -24,16 +24,14 @@ Sem upload, postagem ou automação de publicação. O criador publica os vídeo
 
 Para elaborar uma variação, consultar [orientação de pose](references/pose.md) somente quando necessário.
 
-## Expressões e 3D
+## Na edição
 
-- **No motion:** o Nox entra pelo kit (`../diazverso-motion/SKILL.md`). Os 8 humores redesenham só os olhos sobre o Nox canônico sem olhos (`assets/brand/nox/nox-sem-olhos.png`).
-- **Nox 3D** (`../diazverso-motion/kit/three.tsx`, cena `nox3d`): é uma releitura procedural para cenas de destaque. Ela preserva:
-  - silhueta compacta;
-  - capuz preto com ponta;
-  - rosto vazio;
-  - olhos amarelos luminosos;
-  - punhos dourados e emblema;
-  - luz de recorte vermelha e azul no lugar do deslocamento cromático.
+O Nox entra pelo kit (`../diazverso-motion/SKILL.md`). Os 8 humores redesenham só os olhos sobre o Nox canônico sem olhos (`assets/brand/nox/nox-sem-olhos.png`).
 
-  Mudanças no modelo 3D passam pela mesma comparação lado a lado com `Nox.png`, sem boca, nariz, armas ou acessórios novos. Um modelo esculpido (GLB) só entra com origem e licença registradas.
+O Nox comenta a obra, não a substitui. A forma principal é o aparte:
 
+- a cena desfoca;
+- o Nox sobe da cintura para cima e muda de posição e de expressão a cada fala;
+- um balão de ícone ou de texto mostra o que ele diz.
+
+De corpo inteiro, aparece só em poucos momentos. Novas poses em PNG, com Character Lock, podem entrar no aparte quando existirem.

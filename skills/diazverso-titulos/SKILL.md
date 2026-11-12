@@ -12,7 +12,7 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
 ## Processo
 
 1. Ler tese, público, formato (longo ou Short) e o que o vídeo realmente entrega. Se faltar uma decisão essencial, pedir só essa.
-2. Escrever a **promessa em uma frase**: o que o público vai saber ou sentir depois de assistir. Título e thumbnail apontam para essa frase, sem respondê-la.
+2. Conferir o **tema**: polêmico (opinião defensável), que ensina algo ou que desperta curiosidade (`../diazverso-pesquisa/SKILL.md`). O título carrega esse ângulo. Depois, escrever a **promessa em uma frase**: o que o público vai saber ou sentir depois de assistir. Título e thumbnail apontam para essa frase, sem respondê-la.
 3. Gerar **pelo menos 10 títulos** variando o ângulo de entrada ([ângulos](references/modelos.md)): contradição, potencial perdido, resposta inesperada, micro-história, reavaliação e veredito.
 4. Filtrar pela forma:
    - **Tamanho:** até ~60 caracteres; o essencial nos primeiros 40, que aparecem no celular.

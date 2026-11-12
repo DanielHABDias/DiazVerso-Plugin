@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.6.0",
+  "plugin_version": "1.7.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -34,12 +34,13 @@
       "name": "diazverso",
       "path": "skills/diazverso/SKILL.md",
       "description": "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir.",
-      "sha256": "3ebad4fa3ca6cad3f141834d2e098450d5d4000879acee6865be4de53b43c29e",
+      "sha256": "d70d7e0b0322e49c67d154bce48b0c9f759b83babf4d8d9521718d58e23eb7a0",
       "dependencies": [
         "diazverso-contentlab",
         "diazverso-contexto-eficiente",
         "diazverso-core",
-        "diazverso-motion"
+        "diazverso-motion",
+        "diazverso-roteiro"
       ],
       "references": [
         "assets/brand/nox/Nox.png",
@@ -48,7 +49,8 @@
         "skills/diazverso-contexto-eficiente/references/roteamento.md",
         "skills/diazverso-contexto-eficiente/references/skill-map.json",
         "skills/diazverso-core/references/formatos-editoriais.md",
-        "skills/diazverso-motion/SKILL.md"
+        "skills/diazverso-motion/SKILL.md",
+        "skills/diazverso-roteiro/references/escrita.md"
       ]
     },
     {
@@ -109,7 +111,7 @@
       "name": "diazverso-core",
       "path": "skills/diazverso-core/SKILL.md",
       "description": "Use para escolher formatos editoriais, ensinar ideias práticas ou filosóficas através de personagens e aplicar identidade, voz PT-BR, tese, estética HQ e Nox no conteúdo Diazverso.",
-      "sha256": "18de3b5874f5c9933f6f11c0d262c236ea41b99f831a02f9a761a1fe02555477",
+      "sha256": "daa4802937c231cba3104edfb65b93e533f0ad439014ea7c78730e0b69293d49",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-drive-setup"
@@ -216,7 +218,7 @@
       "name": "diazverso-motion",
       "path": "skills/diazverso-motion/SKILL.md",
       "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
-      "sha256": "78db0914ad74d3401b7dadeaf43b9c9e725ed3df1a633fba9c540c74b3feb49a",
+      "sha256": "1f2843c7215271edcd6dd1eb4fdc2a5ba3a5b979a409286583f3491ec6c35a84",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
@@ -244,7 +246,7 @@
       "name": "diazverso-nox",
       "path": "skills/diazverso-nox/SKILL.md",
       "description": "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original.",
-      "sha256": "9c9cb24dbf91a8105d950534eec72bd71eca4d71318f827019a918e6ab10a6c0",
+      "sha256": "b66a8d8ab1810db60208d07b3e1c2eb5916b9a613612c4c3472d4022a7ff23f2",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-motion"
@@ -263,7 +265,7 @@
       "name": "diazverso-pesquisa",
       "path": "skills/diazverso-pesquisa/SKILL.md",
       "description": "Use para investigar pautas, gerar ideias de vídeos sobre quadrinhos, filmes, séries, jogos, Marvel, DC ou Ben 10 e construir uma tese argumentativa com fontes confiáveis para o Diazverso.",
-      "sha256": "a23d359e802586e1683c5ce8bea29c29ba5d907a7ec91fb4addbc1d31912c4bd",
+      "sha256": "ee5cda28a4279654fdab8606a40f58dbe7739eafcc0f9c6934118b9169253b17",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -385,7 +387,7 @@
       "name": "diazverso-thumbnail",
       "path": "skills/diazverso-thumbnail/SKILL.md",
       "description": "Use para criar, gerar com o kit e revisar as thumbnails A/B de um vídeo Diazverso: conceitos com ângulos diferentes, arte renderizada pelo kit de motion (obra, texto curto em Anton, Nox) e conferência no tamanho do celular.",
-      "sha256": "61aa67e0b41bb3826d8d046a2b6e695f32f629d14f698520222f2c4dd3df1475",
+      "sha256": "279b64a1ef45ee70daae8e598e675f192563a1bf9aaea8adf188c39dc8325ed8",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -403,13 +405,15 @@
       "name": "diazverso-titulos",
       "path": "skills/diazverso-titulos/SKILL.md",
       "description": "Use quando o criador pedir títulos A/B, embalagem de vídeo, promessa do gancho ou conceitos de thumbnail para vídeos longos e Shorts do Diazverso.",
-      "sha256": "7be1c8175554348700733734ed73a10c3ed0af9d4d00728043161a20abea7b9f",
+      "sha256": "cb2ac250a087f8b9f461a3ee8ab3b3f5e6ae4cd27ce049afe08dac7b487520ce",
       "dependencies": [
         "diazverso-contexto-eficiente",
+        "diazverso-pesquisa",
         "diazverso-thumbnail"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-pesquisa/SKILL.md",
         "skills/diazverso-thumbnail/SKILL.md",
         "skills/diazverso-titulos/references/modelos.md"
       ]

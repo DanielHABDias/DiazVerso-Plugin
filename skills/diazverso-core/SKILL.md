@@ -14,7 +14,7 @@ description: "Use para escolher formatos editoriais, ensinar ideias práticas ou
 - HQ contemporânea e madura: painéis, halftone, textura, câmera, profundidade e tipografia de impacto a serviço da informação. Evitar aparência infantil e efeitos sem propósito.
 - Anton é a fonte do canal e acompanha o plugin em `assets/brand/fonts/anton/` (SIL OFL). Títulos, ênfases e legendas usam Anton.
 - Nox é recorrente quando ajuda a narrativa. Preservar `assets/brand/nox/Nox.png`; novas poses exigem comparação visual. Não precisa aparecer em todo quadro.
-- Thumbnails precisam de assunto reconhecível, foco, legibilidade e complementaridade com o título. Não prometer CTR ou retenção sem dados.
+- Thumbnails limpas: fundo preto ou branco, o personagem grande e até 4 palavras. Precisam de assunto reconhecível, foco, legibilidade e complementaridade com o título. Não prometer CTR ou retenção sem dados.
 - Shorts: 9:16, gancho imediato, progressão, payoff, legendas sincronizadas e CTA contextual. Preferência editorial por pelo menos 60 s quando o conteúdo sustentar, sem alongar artificialmente ou apresentar isso como limite da plataforma.
 
 ## Padrão de produção
