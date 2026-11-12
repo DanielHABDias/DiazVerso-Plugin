@@ -36,43 +36,60 @@ assets/brand/nox/poses/
   - cenário, texto e sombra no chão.
 - **Nome:** minúsculas e hífen, exatamente como na tabela (`bracos-cruzados.png`).
 
-## Poses que o plano usa
+## Catálogo: todas as poses disponíveis
 
-| Arquivo | Gesto | Olhos | Quando o plano usa |
-| --- | --- | --- | --- |
-| `pensando` | Mão no queixo, na frente da parte de baixo do rosto; a outra segura o cotovelo | Um mais fechado, desconfiado | Pergunta, dúvida |
-| `ombros` | Os dois braços abertos, palmas para cima, ombros erguidos | Tédio, meio fechados | Pergunta, "fazer o quê?" |
-| `apontando` | Braço esticado apontando para o lado ou para a câmera | Determinados | Opinião, "olha isso" |
-| `arminha` | Mão em "arminha" apontada para a câmera, a outra na cintura | Piscando | Opinião com piada, "te peguei" |
-| `maos-na-cintura` | As duas mãos na cintura, peito para frente | Determinados | Opinião confiante, "é óbvio" |
-| `facepalm` | Mão cobrindo a frente do rosto, cabeça baixa, um olho entre os dedos | Tédio ou triste | Erro, vergonha alheia |
-| `rindo` | Mãos na barriga, corpo inclinado para trás | Apertados em `> <` | Erro engraçado, humor |
-| `assustado` | Mãos para cima perto do rosto, corpo recuando | Grandes e redondos | Surpresa |
-| `explicando` | Uma ou as duas mãos abertas à frente, como quem mostra algo | Neutros (forma do original) | Explicação |
-| `joinha` | Polegar para cima na frente do corpo | Piscada feliz | Aprovação |
-| `cochichando` | Mão do lado do rosto, como quem conta segredo, corpo inclinado | Piscando | Bastidor, curiosidade |
-| `bracos-cruzados` | Braços cruzados no peito | Estreitos e assimétricos, céticos | Discordância |
-| `acenando` | Uma mão erguida acenando | Felizes | Abertura, "oi" |
-| `comemorando` | Os dois punhos para cima | Felizes | Vitória, acerto |
-| `parado` | Em pé, braços relaxados | Neutros e arredondados | Base |
+A fonte é o [`catalogo.json`](../../../assets/brand/nox/poses/catalogo.json): cada pose com os arquivos, o gesto, os olhos e os tons em que entra. O plano automático do Content Lab lê o catálogo, e o agente consulta o mesmo arquivo ao ajustar o plano.
 
-Uma pose fora da tabela pode ficar na pasta para uso manual no `motion_plan_set` (`pose: "<nome>"`), mas o plano automático só pede as da tabela.
+| Pose | Arquivos | Gesto | Olhos | Tons |
+| --- | --- | --- | --- | --- |
+| `acenando` | `acenando` | Uma mão erguida acenando | Arcos felizes | abertura |
+| `apontando` | `apontando-b`, `apontando` | Braço esticado apontando para o lado; variante -b aponta para quem assiste | Determinados; na -b, cúmplices | opiniao, enfase |
+| `arminha` | `arminha` | Mão em arminha para a câmera, a outra na cintura | Piscando | piada, opiniao |
+| `assustado` | `assustado` | Mãos para cima perto do rosto, corpo recuando | Grandes e redondos | surpresa |
+| `bracos-cruzados` | `bracos-cruzados` | Braços cruzados no peito | Estreitos, céticos | discordancia |
+| `calma` | `calma` | Palma à frente do peito, cotovelo baixo | Curvas serenas, fechadas | ressalva |
+| `cochichando` | `cochichando` | Mão do lado do rosto, como quem conta segredo | Um aberto, outro piscando | bastidor |
+| `comemorando` | `comemorando` | Os dois punhos para cima | Arcos felizes | vitoria |
+| `explicando` | `explicando-b`, `explicando` | Mão aberta à frente, mostrando algo; variante -b delimita uma caixa invisível | Determinados; na -b, ovais atentos | explicacao |
+| `explicando-centro` | `explicando-centro` | Mãos abertas ao centro, em alturas diferentes | Ovais amigáveis | explicacao |
+| `facepalm` | `facepalm` | Mão cobrindo o rosto, cabeça baixa | Um olho entre os dedos | erro |
+| `high-five` | `high-five` | Palma aberta para o público, a outra mão na cintura | Arcos felizes | vitoria, aprovacao |
+| `ideia` | `ideia` | Indicador erguido junto à cabeça | Abertos, de descoberta | descoberta |
+| `joinha` | `joinha` | Polegar para cima na frente do corpo | Piscada feliz | aprovacao |
+| `mao-na-cabeca` | `mao-na-cabeca` | Uma mão apoiada no capuz | Fendas baixas, sem graça | erro, ressalva |
+| `maos-na-cintura` | `maos-na-cintura` | As duas mãos na cintura, peito para frente | Determinados | opiniao, enfase |
+| `ombros` | `ombros` | Braços abertos, palmas para cima, ombros erguidos | Meio fechados, de tédio | pergunta, discordancia |
+| `parado` | `parado` | Em pé, braços relaxados | Neutros e arredondados | base, explicacao |
+| `pensando` | `pensando-b`, `pensando` | Mão no queixo; variante -b com a mão fechada junto ao rosto | Um mais fechado, desconfiado | pergunta |
+| `rindo` | `rindo` | Mãos na barriga, corpo inclinado para trás | Apertados em > < | piada |
+| `triste` | `triste` | Mãos unidas baixas, ombros caídos | Meias-luas descendentes | tristeza |
 
-## Variantes e poses adicionais disponíveis
+Tons:
 
-Todos estes PNGs incluem a expressão dos olhos amarelos neon. Variantes com `-b` pertencem à pose base e podem ser sorteadas pelo kit. As outras opções servem à escolha manual pelo nome no `motion_plan_set`.
+- `abertura`: primeira aparição, "oi"
+- `base`: neutro, transição
+- `explicacao`: explica um fato ou mostra algo
+- `enfase`: "olha isso", destaque
+- `opiniao`: opinião do canal
+- `piada`: ironia, piada, "te peguei"
+- `pergunta`: pergunta, dúvida
+- `surpresa`: revelação, "sério?"
+- `discordancia`: discorda, critica
+- `ressalva`: "mas calma", contraponto
+- `bastidor`: curiosidade, bastidor, segredo
+- `erro`: erro, decisão ruim, vergonha alheia
+- `tristeza`: perda, morte, decepção
+- `descoberta`: conclusão, "aí que está"
+- `aprovacao`: acerto, elogio
+- `vitoria`: vitória, sucesso
 
-| Arquivo | Gesto | Olhos | Uso |
-| --- | --- | --- | --- |
-| `pensando-b` | Mão fechada junto ao rosto, cabeça inclinada | Semicerrados, contemplativos | Variante de dúvida mais desconfiada |
-| `apontando-b` | Indicador em direção ao público | Arco e meia-lua cúmplices | Variante para falar diretamente com quem assiste |
-| `explicando-b` | Duas mãos delimitando uma caixa invisível | Ovais atentos | Variante para tamanho e comparação |
-| `explicando-centro` | Mãos abertas ao centro, em alturas diferentes | Ovais amigáveis | Explicação paciente, gesto contido |
-| `mao-na-cabeca` | Uma mão apoiada no capuz | Fendas baixas, constrangidas | Esquecimento, situação sem graça |
-| `high-five` | Palma aberta para o público, outra mão na cintura | Arcos felizes | Convite à comemoração |
-| `calma` | Palma à frente do peito, cotovelo baixo | Curvas serenas, fechadas | Pedir calma ou introduzir ressalva |
-| `triste` | Mãos unidas baixas, ombros caídos | Meias-luas descendentes | Decepção, consequência emocional |
-| `ideia` | Indicador erguido junto à cabeça | Abertos e assimétricos | Descoberta, conclusão |
+## Como usar no vídeo (obrigatório)
+
+1. **O Nox troca de pose enquanto fala.** Num aparte ou na cena `nox`, a pose muda de uma vez a cada 0,7–1 s de fala: um aparte de 3 s tem 3 ou 4 poses. Cada troca é seca, sem quadros intermediários.
+2. **A pose segue o tom da frase.** A primeira pose do aparte é a do tom (pergunta → `pensando` ou `ombros`; piada → `rindo` ou `arminha`). As seguintes continuam no mesmo tom ou passam por `explicando`, `explicando-centro` e `parado`.
+3. **Todas as poses aparecem no vídeo.** O plano prefere, dentro do tom, a pose que ainda não apareceu. No fim, toda pose do catálogo precisa ter aparecido pelo menos uma vez num vídeo longo; o Content Lab avisa quais faltaram, e o agente as encaixa em apartes de tom compatível pelo `motion_plan_set`.
+4. **Sem repetir em seguida.** A mesma pose não aparece duas vezes seguidas, e as variantes `-b` são sorteadas.
+5. **Nova pose:** o PNG entra na pasta, no `assets/manifest.json` e no `catalogo.json` com gesto, olhos e tons. O validador recusa PNG fora do catálogo.
 
 ## Gerar com uma ferramenta de imagem
 

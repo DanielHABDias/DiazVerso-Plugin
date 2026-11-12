@@ -43,7 +43,7 @@ Cada beat segue o contrato `diazverso-motion-v1`:
 
 - Os beats ficam **em ordem e contíguos**.
 - As mídias aparecem como `media:<id>`. O editor resolve esse id e copia para a pasta pública só os arquivos citados.
-- A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz.
+- A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz. A legenda fica o tempo todo nos Shorts; no vídeo longo, só no gancho e nos apartes do Nox (`legenda: false` nos outros beats).
 - `kit/Composition.tsx` documenta as props de entrada. `kit/index.ts` é o ponto de entrada do Remotion.
 
 ## Como o vídeo se monta

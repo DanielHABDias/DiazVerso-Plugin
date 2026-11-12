@@ -9,7 +9,7 @@ Critérios objetivos para a montagem em motion (`../../diazverso-motion/SKILL.md
 3. **Ritmo de informação visual.** Algo relevante muda na tela a cada **1,5–3 s**, no ritmo do RunnyIA: nova imagem, palavra-chave, troca de painel, reação do Nox, número mudando. Imagem da obra sustentada por até 3–5 s só quando o argumento pede, sempre com câmera lenta. Nenhum beat parado acima de 6 s. A câmera nunca fica parada (ver `../../diazverso-motion/SKILL.md`).
 4. **Tipografia Anton** (`assets/brand/fonts/anton/Anton-Regular.ttf`, OFL) para títulos, palavras de impacto e legendas. Fonte de fallback do sistema reprova o frame.
 5. **Legibilidade.** Texto principal com no mínimo **64 px** em 1080p horizontal e **72 px** em 1080×1920; legenda com no mínimo **56 px** (16:9) e **64 px** (9:16); contraste mínimo 4,5:1, com contorno ou caixa quando o fundo variar. No máximo **6 palavras** por bloco de texto de ênfase.
-6. **Legenda palavra a palavra** a partir de timestamps reais da fala (`../../diazverso-shorts/scripts/captions.py`). Legenda por cena ou frase inteira estática reprova o Short.
+6. **Legenda palavra a palavra** a partir de timestamps reais da fala, o tempo todo nos Shorts. No vídeo longo, a legenda entra só em trechos: o gancho dos primeiros segundos e os apartes do Nox (`../../diazverso-shorts/scripts/captions.py`). Legenda por cena ou frase inteira estática reprova o Short.
 7. **Sem tela vazia.** Nenhum frame preto, branco ou só fundo entre cenas; transições cortam ou cobrem, nunca apagam para preto, exceto fim do vídeo.
 8. **Nox fiel ao asset canônico** sempre que aparecer, nunca desenhado de memória nem substituído por texto com o nome dele.
 

@@ -38,14 +38,14 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
      - estética HQ madura;
      - Anton em títulos e legendas;
      - a cena da obra é a base, muitas vezes sozinha em tela cheia;
-     - o Nox em opinião e humor: aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion, uma pose nova por fala ([poses](../diazverso-nox/references/poses.md));
+     - o Nox em opinião e humor: aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion: a pose troca enquanto ele fala, a cada 0,7–1 s, e todas as poses do [catálogo](../diazverso-nox/references/poses.md) aparecem ao longo do vídeo;
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo;
      - Shorts em 9:16 com o mesmo ritmo, diagramados para vertical.
    - **Som:**
      - SFX em cada troca;
-     - legenda palavra a palavra;
+     - legenda palavra a palavra: o tempo todo nos Shorts; no vídeo longo, só em trechos (gancho e apartes do Nox);
      - trilha licenciada abaixando sob a voz.
    - **Proibido:**
      - texto sobre fundo liso como cena;

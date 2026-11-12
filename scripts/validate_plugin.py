@@ -142,6 +142,20 @@ def validate(refresh_map:bool=False)->dict:
                 for side in ('esquerdo','direito'):
                     pt=eyes.get(side);require(isinstance(pt,list) and len(pt)==2 and 0<=pt[0]<=w and 0<=pt[1]<=h*0.5,'Pose eye outside the head: '+key+' '+side)
             require(entry.get('cobre','nenhum') in ('nenhum','esquerdo','direito','ambos'),'Invalid cobre: '+key)
+        # Catálogo: toda pose PNG pertence a exatamente uma pose do catálogo, com tons conhecidos.
+        if pngs:
+            cat_path=poses_dir/'catalogo.json'
+            require(cat_path.is_file(),'Pose PNGs without assets/brand/nox/poses/catalogo.json')
+            cat=json.loads(cat_path.read_text());tones=set(cat.get('tons',{}))
+            owned=[]
+            for key,entry in cat.get('poses',{}).items():
+                files=entry.get('arquivos') or []
+                require(re.fullmatch(r'[a-z0-9-]+',key) and files and all((poses_dir/f).is_file() for f in files),'Catalog pose without PNG: '+key)
+                require(entry.get('gesto') and entry.get('olhos') and entry.get('tons') and set(entry['tons'])<=tones,'Catalog pose incomplete or unknown tone: '+key)
+                owned+=files
+            spec_files={e.get('arquivo') for e in spec['poses'].values()}
+            for name in pngs:
+                require(owned.count(name)==1 or name in spec_files,'Pose PNG missing from catalogo.json (or listed twice): '+name)
     require(map_path.is_file() and json.loads(map_path.read_text())==actual,'Skill map is stale; regenerate with --refresh-map')
     return {'status':'VALID','version':manifest['version'],'skills':skill_count,'resources':len(resource_files()),
             'python_syntax':python_count,'javascript_syntax':js_count,'references':'VALID','skill_map':'CURRENT'}

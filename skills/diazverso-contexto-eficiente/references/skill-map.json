@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.8.5",
+  "plugin_version": "1.9.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -34,7 +34,7 @@
       "name": "diazverso",
       "path": "skills/diazverso/SKILL.md",
       "description": "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir.",
-      "sha256": "6330c8c90fe89c0999fefe4969ccb2faa2ff01abbff955ff021f3bb245655d36",
+      "sha256": "fbc2cb27a6734e63a9f7aa31e879c6b742d03d73ad3a0b421ea774bd234c9af8",
       "dependencies": [
         "diazverso-contentlab",
         "diazverso-contexto-eficiente",
@@ -224,7 +224,7 @@
       "name": "diazverso-motion",
       "path": "skills/diazverso-motion/SKILL.md",
       "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
-      "sha256": "8211907a12966d5d55626da9f42b0b605b082f184b92e266d55509819419c6aa",
+      "sha256": "70a27660138f0fa9fe8502b92613729fa3e1bc780c2e8bfbd4d7f489b896d1cd",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
