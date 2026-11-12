@@ -25,7 +25,7 @@ assets/brand/nox/poses/
 - **Tamanho:** de 1200 a 1600 px de altura (o validador aceita de 600 a 2400).
 - **Traço:** o mesmo do `Nox.png`, com as mesmas proporções e cores:
   - capuz preto com ponta;
-  - rosto escuro, só com os olhos amarelos luminosos na expressão da pose;
+  - rosto escuro, só com os olhos amarelos neon brilhantes na expressão da pose, com halo dourado dentro do capuz;
   - sobretudo, punhos dourados e emblema;
   - luvas e botas;
   - contorno de tinta e o deslocamento vermelho/azul nas bordas.
@@ -46,17 +46,33 @@ assets/brand/nox/poses/
 | `arminha` | Mão em "arminha" apontada para a câmera, a outra na cintura | Piscando | Opinião com piada, "te peguei" |
 | `maos-na-cintura` | As duas mãos na cintura, peito para frente | Determinados | Opinião confiante, "é óbvio" |
 | `facepalm` | Mão cobrindo a frente do rosto, cabeça baixa, um olho entre os dedos | Tédio ou triste | Erro, vergonha alheia |
-| `rindo` | Mãos na barriga, corpo inclinado para trás | Arcos bem fechados | Erro engraçado, humor |
+| `rindo` | Mãos na barriga, corpo inclinado para trás | Apertados em `> <` | Erro engraçado, humor |
 | `assustado` | Mãos para cima perto do rosto, corpo recuando | Grandes e redondos | Surpresa |
 | `explicando` | Uma ou as duas mãos abertas à frente, como quem mostra algo | Neutros (forma do original) | Explicação |
-| `joinha` | Polegar para cima na frente do corpo | Felizes (arcos) | Aprovação |
+| `joinha` | Polegar para cima na frente do corpo | Piscada feliz | Aprovação |
 | `cochichando` | Mão do lado do rosto, como quem conta segredo, corpo inclinado | Piscando | Bastidor, curiosidade |
-| `bracos-cruzados` | Braços cruzados no peito | Bravos | Discordância |
+| `bracos-cruzados` | Braços cruzados no peito | Estreitos e assimétricos, céticos | Discordância |
 | `acenando` | Uma mão erguida acenando | Felizes | Abertura, "oi" |
 | `comemorando` | Os dois punhos para cima | Felizes | Vitória, acerto |
-| `parado` | Em pé, braços relaxados | Forma do original | Base |
+| `parado` | Em pé, braços relaxados | Neutros e arredondados | Base |
 
 Uma pose fora da tabela pode ficar na pasta para uso manual no `motion_plan_set` (`pose: "<nome>"`), mas o plano automático só pede as da tabela.
+
+## Variantes e poses adicionais disponíveis
+
+Todos estes PNGs incluem a expressão dos olhos amarelos neon. Variantes com `-b` pertencem à pose base e podem ser sorteadas pelo kit. As outras opções servem à escolha manual pelo nome no `motion_plan_set`.
+
+| Arquivo | Gesto | Olhos | Uso |
+| --- | --- | --- | --- |
+| `pensando-b` | Mão fechada junto ao rosto, cabeça inclinada | Semicerrados, contemplativos | Variante de dúvida mais desconfiada |
+| `apontando-b` | Indicador em direção ao público | Arco e meia-lua cúmplices | Variante para falar diretamente com quem assiste |
+| `explicando-b` | Duas mãos delimitando uma caixa invisível | Ovais atentos | Variante para tamanho e comparação |
+| `explicando-centro` | Mãos abertas ao centro, em alturas diferentes | Ovais amigáveis | Explicação paciente, gesto contido |
+| `mao-na-cabeca` | Uma mão apoiada no capuz | Fendas baixas, constrangidas | Esquecimento, situação sem graça |
+| `high-five` | Palma aberta para o público, outra mão na cintura | Arcos felizes | Convite à comemoração |
+| `calma` | Palma à frente do peito, cotovelo baixo | Curvas serenas, fechadas | Pedir calma ou introduzir ressalva |
+| `triste` | Mãos unidas baixas, ombros caídos | Meias-luas descendentes | Decepção, consequência emocional |
+| `ideia` | Indicador erguido junto à cabeça | Abertos e assimétricos | Descoberta, conclusão |
 
 ## Gerar com uma ferramenta de imagem
 
