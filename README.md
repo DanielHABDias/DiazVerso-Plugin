@@ -17,7 +17,7 @@ O índice descartável fica fora do plugin e reutiliza arquivos inalterados. Mud
 ## Requisitos
 
 - Google Drive, Docs e Sheets conectados para operações nesses serviços.
-- Executor com Python para os utilitários locais; Node, React e Remotion no projeto de edição para TSX/render; FFmpeg para inspeção audiovisual.
+- Executor com Python para os utilitários locais; Node, React, Remotion e, para as cenas 3D, `@remotion/three`, `three` e `@react-three/fiber` no projeto de edição (o Content Lab já traz todos); FFmpeg para inspeção audiovisual.
 - Ferramenta de imagem para gerar artes e acesso às mídias com direitos conferidos.
 
 As skills não fornecem essas conexões nem instalam dependências automaticamente. A edição é o kit de motion em `skills/diazverso-motion/kit/`, executado pelo Content Lab ou por um projeto Remotion.

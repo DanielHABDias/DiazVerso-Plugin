@@ -23,3 +23,17 @@ description: "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, c
 Sem upload, postagem ou automação de publicação. O criador publica os vídeos manualmente.
 
 Para elaborar uma variação, consultar [orientação de pose](references/pose.md) somente quando necessário.
+
+## Expressões e 3D
+
+- **No motion:** o Nox entra pelo kit (`../diazverso-motion/SKILL.md`). Os 8 humores redesenham só os olhos sobre o Nox canônico sem olhos (`assets/brand/nox/nox-sem-olhos.png`).
+- **Nox 3D** (`../diazverso-motion/kit/three.tsx`, cena `nox3d`): é uma releitura procedural para cenas de destaque. Ela preserva:
+  - silhueta compacta;
+  - capuz preto com ponta;
+  - rosto vazio;
+  - olhos amarelos luminosos;
+  - punhos dourados e emblema;
+  - luz de recorte vermelha e azul no lugar do deslocamento cromático.
+
+  Mudanças no modelo 3D passam pela mesma comparação lado a lado com `Nox.png`, sem boca, nariz, armas ou acessórios novos. Um modelo esculpido (GLB) só entra com origem e licença registradas.
+

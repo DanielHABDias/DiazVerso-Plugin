@@ -46,6 +46,26 @@ Cada beat segue o contrato `diazverso-motion-v1`:
 - A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz.
 - `kit/Composition.tsx` documenta as props de entrada. `kit/index.ts` é o ponto de entrada do Remotion.
 
+## 3D
+
+`kit/three.tsx` traz duas cenas em Three.js (`@remotion/three`):
+
+- **`nox3d`:** o Nox em 3D, uma releitura procedural do canônico com:
+  - capuz;
+  - rosto vazio;
+  - olhos amarelos com os 8 humores;
+  - sobretudo, punhos dourados, emblema e botas;
+  - contorno de tinta e luz de recorte vermelha e azul.
+
+  Ele cai em cena, a câmera gira em volta e ele faz um gesto: `acenar`, `apontar`, `pular`, `pensar` ou `parado`.
+- **`paineis3d`:** a câmera voa por painéis HQ no espaço, cada um com uma imagem da obra e um rótulo.
+
+O render precisa de WebGL; o editor usa `gl: "swangle"`, que funciona sem placa de vídeo. Leva cerca de 4 s de render por segundo de cena 3D. As cenas 3D são destaque: no máximo uma a cada ~30 s. Para criar outras cenas 3D, seguir o mesmo padrão:
+
+- tempos derivados de `useCurrentFrame()`;
+- câmera posicionada a cada frame (`Rig`);
+- texturas carregadas com `delayRender`.
+
 ## Thumbnail
 
 A thumbnail sai do mesmo kit: a composição `DiazversoThumb` (`kit/Thumbnail.tsx`) renderiza um still de 1280×720. O contrato está no catálogo (`thumbnail`):

@@ -21,6 +21,7 @@ Medições feitas nos vídeos de referência com FFmpeg (trocas de imagem detect
 | Arte da obra sustentada com aproximação lenta (Um Nerd) | `evidencia` com `movimento` |
 | Personagens frente a frente na comparação (Um Nerd) | `comparacao` |
 | Título condensado sobre a cena escurecida e congelamento na piada (FALL) | `evidencia` com `legenda`, `titulo` |
+| Personagem 3D e câmera voando pelo espaço (vídeos feitos com IA e Three.js) | `nox3d` (Nox 3D com gesto) e `paineis3d` (painéis da obra no espaço) |
 | Textura constante: grão, linhas de scan, vinheta | Sempre ativa na composição |
 | Som em cada troca, pausa da música antes da virada | SFX por beat; ducking sob a voz |
 
