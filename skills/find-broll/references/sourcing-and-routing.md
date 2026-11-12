@@ -38,6 +38,17 @@ Flag open-web results outside those lanes. Availability is not permission to rep
 - Cache approved raw assets inside the project, outside the skill repository.
 - Stop after one method fails and try a materially different route. After a second failure, drop or flag the beat rather than looping.
 
+## Tool routing and fallbacks
+
+Adapted from the MIT-licensed [Agent Reach](https://github.com/Panniantong/Agent-Reach) routing model:
+
+- **Check the tools first.** Before searching, confirm which tools answer in this session (web search, page reader, browser, `yt-dlp`, Content Lab MCP). Report a missing tool once, by name, with the next step; do not discover it beat by beat.
+- **Route by source, not by habit.** Pick the tool from the link or the source type: official site or press page → page reader; YouTube trailer or clip → `yt-dlp` metadata and subtitles; forum or social reaction → search, then the page itself.
+- **Ordered fallbacks.** Each route has a preferred tool and one or two alternatives, for example page reader → browser → web search snippet. Move to the next tool only when one fails, and record which one produced the asset.
+- **Find the moment by subtitles.** For a trailer or official clip, read the subtitles or transcript with timestamps first and cut only the interval where the line or action happens. Download only that clip, never the whole video when an interval is enough.
+- **Read-only, no borrowed logins.** Research reads and downloads; it never posts, comments, likes, or messages. Use only public pages or sessions the user already opened in their own browser. Never ask for a password, never copy cookies from the main account, and treat login-gated platforms as optional.
+- **Report failures as source, cause, next step.** Example: "YouTube: video unavailable in the region — try the studio's official site."
+
 Useful authorized tools include browser automation for public pages, `yt-dlp` for permitted metadata/downloads, FFprobe for the real media payload, and the adjacent video workbench for contact sheets and stills.
 
 ## Candidate score
