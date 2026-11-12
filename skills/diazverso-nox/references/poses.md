@@ -1,138 +1,112 @@
 # Pacote de poses do Nox (stop motion)
 
-Na edição, o Nox gesticula em stop motion. Cada fala troca o desenho inteiro, de uma pose direto para a outra, sem quadros intermediários.
+Na edição, o Nox gesticula em stop motion. Cada fala troca o desenho inteiro, de uma pose direto para a outra, sem quadros intermediários. Cada pose é um PNG pronto do Nox, com o gesto dos braços e a expressão dos olhos já desenhados.
 
-As poses são **combináveis**:
-
-- **Corpo:** cada pose é um PNG do Nox inteiro com o gesto dos braços e o **rosto vazio, sem olhos**.
-- **Rosto:** o kit desenha por cima os olhos de um dos 8 humores, na posição gravada em `poses.json`.
-
-Assim cada pose serve para qualquer humor, e uma mesma pose pode ter variantes desenhadas que o kit sorteia, para o Nox nunca repetir o mesmo desenho.
-
-## Onde ficam
+## Onde ficam e como o kit escolhe
 
 ```text
 assets/brand/nox/poses/
-  poses.json          # pose → arquivo, olhos, variantes
   pensando.png
-  pensando-b.png      # variante da mesma pose
+  pensando-2.png      # variante da mesma pose
+  pensando-3.png
+  arminha.png
   ...
 ```
 
-Pose que ainda não existe cai no Nox canônico com o humor pedido, e o vídeo não quebra. No Content Lab, `npm run scenes:diazverso` copia a pasta para o kit.
-
-## Rostos (humores desenhados pelo kit)
-
-Não desenhar olhos nos PNGs. O kit tem estes humores, combinados com qualquer pose:
-
-- `bravo` (forma do original)
-- `feliz` (arcos ^ ^)
-- `surpreso` (grandes e redondos)
-- `tedio` (meio fechados)
-- `confuso` (um aberto, um apertado)
-- `piscada`
-- `determinado`
-- `triste`
+- O nome do arquivo é o nome da pose. O plano do Content Lab pede a pose pelo tom da frase, e o kit usa o PNG com esse nome.
+- **Variantes:** `-2`, `-3`… (ou `-b`, `-c`…) no fim do nome são variantes da mesma pose. O kit sorteia uma a cada fala, para o Nox não repetir o mesmo desenho. Quanto mais variantes, mais vivo fica.
+- **Pose que não existe:** cai no Nox canônico com o humor pedido, e o vídeo não quebra.
+- No Content Lab, `npm run scenes:diazverso` copia a pasta para o kit.
 
 ## Formato de cada PNG
 
 - **Fundo:** transparente.
-- **Figura:** o Nox **inteiro**, do capuz às botas, recortado rente, com os pés tocando a base da imagem.
-- **Tamanho:** de 1200 a 1600 px de altura (o validador aceita de 1000 a 2000).
+- **Figura:** o Nox **inteiro**, do capuz às botas, recortado rente, com os pés tocando a base da imagem. Ele entra subindo pela borda de baixo com o corpo inteiro.
+- **Tamanho:** de 1200 a 1600 px de altura (o validador aceita de 600 a 2400).
 - **Traço:** o mesmo do `Nox.png`, com as mesmas proporções e cores:
   - capuz preto com ponta;
-  - **rosto escuro e vazio, sem olhos**;
+  - rosto escuro, só com os olhos amarelos luminosos na expressão da pose;
   - sobretudo, punhos dourados e emblema;
   - luvas e botas;
   - contorno de tinta e o deslocamento vermelho/azul nas bordas.
 - **Proibido:**
-  - boca, nariz e olhos;
+  - boca e nariz;
   - dedos a mais;
   - armas reais;
   - cenário, texto e sombra no chão.
-- **Nome:** minúsculas e hífen (`bracos-cruzados.png`). A variante leva o sufixo `-b`, `-c`… (`pensando-b.png`).
+- **Nome:** minúsculas e hífen, exatamente como na tabela (`bracos-cruzados.png`).
 
-## Poses (braços e corpo)
+## Poses que o plano usa
 
-| Pose | Gesto | Humor que combina | Uso |
+| Arquivo | Gesto | Olhos | Quando o plano usa |
 | --- | --- | --- | --- |
-| `parado` | Em pé, braços relaxados, de frente (versão de frente do canônico) | qualquer | Base, transição |
-| `pensando` | Uma mão no queixo, na frente da parte de baixo do rosto; a outra segura o cotovelo | confuso, tedio | Pergunta, dúvida |
-| `pensando-b` | Mão fechada encostada no rosto, de lado, cabeça inclinada | confuso | Variante |
-| `arminha` | Mão em "arminha" (indicador e polegar) apontada para a câmera, a outra na cintura | piscada, feliz | Piada, "te peguei" |
-| `apontando` | Braço esticado apontando para o lado | determinado, bravo | Opinião, "olha isso" |
-| `apontando-b` | Apontando para a câmera, braço em direção ao público | determinado | Variante: "você" |
-| `ombros` | Os dois braços abertos, palmas para cima, ombros erguidos | tedio | "Fazer o quê?" |
-| `joinha` | Polegar para cima na frente do corpo | feliz | Aprovação |
-| `facepalm` | Mão cobrindo a frente do rosto, cabeça um pouco baixa | tedio, triste | Vergonha alheia, erro |
-| `bracos-cruzados` | Braços cruzados no peito | bravo, tedio | Discordância |
-| `acenando` | Uma mão erguida acenando | feliz | Abertura, "oi" |
-| `rindo` | Mãos na barriga, corpo inclinado para trás | feliz | Humor |
-| `assustado` | Mãos para cima perto do rosto, corpo recuando | surpreso | Surpresa |
-| `comemorando` | Os dois punhos para cima | feliz | Vitória, acerto |
-| `explicando` | Uma mão aberta à frente, como quem mostra algo | determinado, bravo | Explicação |
-| `explicando-b` | As duas mãos à frente, como quem segura uma caixa invisível | determinado | Variante |
-| `maos-na-cintura` | As duas mãos na cintura, peito para frente | determinado | Confiança, "é óbvio" |
-| `cochichando` | Mão do lado do rosto, como quem conta um segredo, corpo inclinado | piscada | Bastidor, fofoca |
+| `pensando` | Mão no queixo, na frente da parte de baixo do rosto; a outra segura o cotovelo | Um mais fechado, desconfiado | Pergunta, dúvida |
+| `ombros` | Os dois braços abertos, palmas para cima, ombros erguidos | Tédio, meio fechados | Pergunta, "fazer o quê?" |
+| `apontando` | Braço esticado apontando para o lado ou para a câmera | Determinados | Opinião, "olha isso" |
+| `arminha` | Mão em "arminha" apontada para a câmera, a outra na cintura | Piscando | Opinião com piada, "te peguei" |
+| `maos-na-cintura` | As duas mãos na cintura, peito para frente | Determinados | Opinião confiante, "é óbvio" |
+| `facepalm` | Mão cobrindo a frente do rosto, cabeça baixa, um olho entre os dedos | Tédio ou triste | Erro, vergonha alheia |
+| `rindo` | Mãos na barriga, corpo inclinado para trás | Arcos bem fechados | Erro engraçado, humor |
+| `assustado` | Mãos para cima perto do rosto, corpo recuando | Grandes e redondos | Surpresa |
+| `explicando` | Uma ou as duas mãos abertas à frente, como quem mostra algo | Neutros (forma do original) | Explicação |
+| `joinha` | Polegar para cima na frente do corpo | Felizes (arcos) | Aprovação |
+| `cochichando` | Mão do lado do rosto, como quem conta segredo, corpo inclinado | Piscando | Bastidor, curiosidade |
+| `bracos-cruzados` | Braços cruzados no peito | Bravos | Discordância |
+| `acenando` | Uma mão erguida acenando | Felizes | Abertura, "oi" |
+| `comemorando` | Os dois punhos para cima | Felizes | Vitória, acerto |
+| `parado` | Em pé, braços relaxados | Forma do original | Base |
 
-Novas poses e variantes podem ser acrescentadas. O kit usa o que estiver em `poses.json`.
-
-## poses.json
-
-```json
-{
-  "versao": 1,
-  "poses": {
-    "pensando": {
-      "arquivo": "pensando.png",
-      "olhos": { "esquerdo": [512, 402], "direito": [700, 384], "largura": 150, "angulo": -4 },
-      "cobre": "nenhum"
-    },
-    "pensando-b": { "arquivo": "pensando-b.png", "pose": "pensando", "olhos": { "esquerdo": [500, 410], "direito": [690, 396], "largura": 146 } },
-    "facepalm": { "arquivo": "facepalm.png", "olhos": { "esquerdo": [520, 430], "direito": [705, 418], "largura": 140 }, "cobre": "direito" }
-  }
-}
-```
-
-- **`olhos.esquerdo` / `olhos.direito`:**
-  - centro de cada olho, em pixels do PNG;
-  - esquerdo e direito são **da imagem**, não do personagem;
-  - medir onde os olhos ficariam no rosto vazio.
-- **`largura`:**
-  - largura do olho esquerdo em pixels, proporcional ao `Nox.png`;
-  - no canônico, os olhos têm cerca de 80 px numa figura de 669 px, isto é, 12% da altura da figura.
-- **`largura_direito`:** opcional. O padrão é 75% da largura, porque o canônico está um pouco de lado. Numa pose bem de frente, usar o mesmo valor da `largura`.
-- **`angulo`:** opcional, a inclinação da cabeça em graus.
-- **`cobre`:**
-  - olho escondido pela mão: `nenhum`, `esquerdo`, `direito` ou `ambos`;
-  - o kit não desenha esse olho, para ele não aparecer por cima da mão;
-  - no facepalm, deixar um olho aparecendo entre os dedos.
-- **`pose`:** só nas variantes; diz de qual pose ela é variante.
-- **`olhos: null`:** para uma pose com o rosto todo escondido.
+Uma pose fora da tabela pode ficar na pasta para uso manual no `motion_plan_set` (`pose: "<nome>"`), mas o plano automático só pede as da tabela.
 
 ## Gerar com uma ferramenta de imagem
 
-Passe o `Nox.png` como imagem de referência e gere **uma pose por vez**. Use este pedido, trocando o `[GESTO]`:
+Passe o `Nox.png` como imagem de referência e gere **uma pose por vez**. Use este pedido, trocando o `[GESTO]` e os `[OLHOS]`:
 
 ```text
 Usando a imagem anexada como referência exata do personagem, desenhe o mesmo personagem (mesmo estilo de
-desenho, traço, proporções, cores, capuz preto com ponta, sobretudo, punhos dourados, emblema, luvas, botas,
-contorno preto e deslocamento vermelho/azul nas bordas) de corpo inteiro, de frente, fazendo: [GESTO].
-O rosto dentro do capuz fica totalmente escuro e vazio: SEM olhos, sem boca, sem nariz. Fundo transparente,
-sem cenário, sem texto, sem sombra no chão. Não acrescente armas nem acessórios.
+desenho, traço, proporções, cores, capuz preto com ponta, rosto escuro vazio, olhos amarelos luminosos,
+sobretudo, punhos dourados, emblema, luvas, botas, contorno preto e deslocamento vermelho/azul nas bordas)
+de corpo inteiro, de frente, fazendo: [GESTO]. Olhos: [OLHOS]. Fundo transparente, sem cenário, sem
+texto, sem sombra no chão. Não acrescente boca, nariz, armas nem acessórios.
 ```
 
 Depois de gerar:
 
 1. Recortar rente, com os pés na base, e conferir a transparência.
-2. Comparar com o `Nox.png` lado a lado (Character Lock, `../SKILL.md`). Reprovar se a silhueta, as proporções, as cores ou o estilo mudarem, ou se aparecerem olhos ou boca.
-3. Medir o centro dos olhos e a largura, e gravar no `poses.json`.
-4. Conferir a montagem: desenhar elipses amarelas nos pontos medidos sobre o PNG e ver se caem dentro do rosto, na altura certa.
-5. Registrar cada PNG no `assets/manifest.json` com:
+2. Comparar com o `Nox.png` lado a lado (Character Lock, `../SKILL.md`). Reprovar se a silhueta, as proporções, as cores ou o estilo mudarem, ou se aparecer boca.
+3. Salvar em `assets/brand/nox/poses/<pose>.png` (ou `<pose>-2.png` para variante).
+4. Registrar cada PNG no `assets/manifest.json` com:
    - `size_bytes`;
    - `git_blob_sha1` (`git hash-object <arquivo>`);
    - `source`: a ferramenta;
    - `rights`.
-6. Rodar `python3 scripts/validate_plugin.py --refresh-map`.
+5. Rodar `python3 scripts/validate_plugin.py --refresh-map`.
 
 Uma ferramenta de imagem só pode ser usada se os termos dela permitirem uso comercial do resultado, porque o canal é monetizado.
+
+## Avançado: pose sem olhos combinada com o humor
+
+Um PNG desenhado **sem olhos** pode ser combinado com os 8 humores do kit:
+
+- bravo
+- feliz
+- surpreso
+- tedio
+- confuso
+- piscada
+- determinado
+- triste
+
+Para isso, a pose precisa de uma entrada no `poses.json` da pasta:
+
+```json
+{ "versao": 1, "poses": { "pensando-x": { "arquivo": "pensando-x.png", "pose": "pensando", "olhos": { "esquerdo": [512, 402], "direito": [700, 384], "largura": 150, "angulo": -4 }, "cobre": "nenhum" } } }
+```
+
+- **`olhos.esquerdo` / `olhos.direito`:** centro de cada olho em pixels do PNG, esquerdo e direito da imagem.
+- **`largura`:** largura do olho esquerdo, cerca de 12% da altura da figura.
+- **`largura_direito`:** opcional. O padrão é 75% da `largura`.
+- **`angulo`:** opcional, a inclinação da cabeça em graus.
+- **`cobre`:** o olho escondido pela mão (`nenhum`, `esquerdo`, `direito`, `ambos`).
+
+PNGs soltos, com os olhos já desenhados, não precisam de `poses.json`.

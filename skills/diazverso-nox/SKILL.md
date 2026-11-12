@@ -36,4 +36,4 @@ Ele **gesticula em stop motion**: cada fala troca o desenho inteiro para outra p
 - dando de ombros;
 - facepalm.
 
-As poses se combinam: cada pose é um PNG do corpo com o gesto e o rosto vazio, e o kit desenha por cima os olhos de qualquer um dos 8 humores, nas posições gravadas no `poses.json` da pasta de poses. Uma pose pode ter variantes desenhadas, sorteadas a cada fala. A lista, o formato, o `poses.json` e o pedido para a ferramenta de imagem estão em [poses](references/poses.md). Sem a pose, o kit usa o Nox canônico com o humor (`assets/brand/nox/nox-sem-olhos.png`).
+Cada pose é um PNG pronto do Nox, com o gesto e os olhos desenhados, e o nome do arquivo é o nome da pose (`pensando.png`). Variantes (`pensando-2.png`, `pensando-3.png`) são sorteadas a cada fala, para ele não repetir o desenho. A lista, o formato e o pedido para a ferramenta de imagem estão em [poses](references/poses.md). Sem a pose, o kit usa o Nox canônico com o humor (`assets/brand/nox/nox-sem-olhos.png`).

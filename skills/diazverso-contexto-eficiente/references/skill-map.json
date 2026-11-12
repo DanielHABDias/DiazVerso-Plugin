@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.8.1",
+  "plugin_version": "1.8.2",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -220,7 +220,7 @@
       "name": "diazverso-motion",
       "path": "skills/diazverso-motion/SKILL.md",
       "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
-      "sha256": "3bc70c43a7e43ecf8f72b2058afd68120539ac6a60f4d3b5782023812e916fb6",
+      "sha256": "8211907a12966d5d55626da9f42b0b605b082f184b92e266d55509819419c6aa",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
@@ -249,7 +249,7 @@
       "name": "diazverso-nox",
       "path": "skills/diazverso-nox/SKILL.md",
       "description": "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original.",
-      "sha256": "735eb20ecca9f4c8dcbba17600bf8d5465437a256863232eee1c52049ef3954a",
+      "sha256": "c728f7baa96fed0e526810dfe8d6e916e26a71ee60ff7000dfc93560ed9ff986",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-motion"
