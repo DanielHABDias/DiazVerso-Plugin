@@ -27,7 +27,7 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
    - **Gancho:** `titulo`. **Evidência:** `evidencia`, `pagina` e `comparacao`.
    - **Opinião, piada ou dúvida:** `aparte` sobre a cena, com poses; `nox` com `poses` só às vezes. **Princípio:** `formula`. **Aplicação:** `lista`. **Dado:** `numero`.
    - **Respiro e payoff:** `frase`. **Encerramento:** `cta`.
-5. Pôr som em cada troca (catálogo de SFX do kit) e uma trilha **licenciada** abaixando sob a voz ([música](../diazverso-decupagem/references/musica.md)).
+5. Pôr som em cada evento da tela, no quadro certo, e uma trilha **licenciada** abaixando sob a voz. Onde entra cada som, como criar um som novo e como buscar sons prontos no Openverse: [som](references/som.md). Música: [música](../diazverso-decupagem/references/musica.md).
 6. Revisar frames de prévia antes do render: o assunto aparece? O texto é legível? Há sobreposição? A cena muda a cada poucos segundos? Corrigir um achado por vez.
 7. Render final, escuta completa e o kit de publicação (`../diazverso-criacao-video/SKILL.md`).
 

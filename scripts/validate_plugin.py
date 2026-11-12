@@ -123,6 +123,10 @@ def validate(refresh_map:bool=False)->dict:
         p=ROOT/item['path'];require(p.is_file() and p.resolve().is_relative_to(ROOT),'Missing asset')
         data=p.read_bytes();digest=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
         require(len(data)==item['size_bytes'] and digest==item['git_blob_sha1'],'Asset integrity: '+item['path'])
+    # SFX do kit: a lista do catálogo e os WAVs de assets/sfx/motion são os mesmos.
+    kit_sfx=set(json.loads((ROOT/'skills/diazverso-motion/kit/catalog.json').read_text()).get('sfx',[]))
+    wavs={f.stem for f in (ROOT/'assets/sfx/motion').glob('*.wav')}
+    require(kit_sfx==wavs and all(re.fullmatch(r'[a-z0-9-]+',n) for n in wavs),'Kit SFX list and assets/sfx/motion differ: '+', '.join(sorted(kit_sfx^wavs)))
     poses_dir=ROOT/'assets/brand/nox/poses'
     if poses_dir.is_dir():
         listed={item['path'] for item in catalog['assets']}

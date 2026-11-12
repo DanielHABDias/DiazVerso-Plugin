@@ -44,7 +44,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo;
      - Shorts em 9:16 com o mesmo ritmo, diagramados para vertical.
    - **Som:**
-     - SFX em cada troca;
+     - SFX no quadro de cada evento da tela, variando, sem cobrir a fala; sons novos sintetizados ou do Openverse com licença comercial ([som](../diazverso-motion/references/som.md));
      - legenda palavra a palavra: o tempo todo nos Shorts; no vídeo longo, só em trechos (gancho e apartes do Nox);
      - trilha licenciada abaixando sob a voz.
    - **Proibido:**
