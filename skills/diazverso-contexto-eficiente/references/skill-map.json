@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.1.0",
+  "plugin_version": "1.2.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -66,7 +66,7 @@
       "name": "diazverso-core",
       "path": "skills/diazverso-core/SKILL.md",
       "description": "Use para escolher formatos editoriais, ensinar ideias práticas ou filosóficas através de personagens e aplicar identidade, voz PT-BR, tese, estética HQ e Nox no conteúdo Diazverso.",
-      "sha256": "02f54dd07d634cf77eeba9f9eb51a24818b18daed00d6bc827c956b547217a33",
+      "sha256": "18de3b5874f5c9933f6f11c0d262c236ea41b99f831a02f9a761a1fe02555477",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-drive-setup"
@@ -75,6 +75,9 @@
         "assets/brand/nox/Nox.png",
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-core/references/imagens-e-direitos.md",
+        "skills/diazverso-core/references/narracao.md",
+        "skills/diazverso-core/references/padrao-visual.md",
         "skills/diazverso-core/references/referencias-audiovisuais.md",
         "skills/diazverso-drive-setup/references/estrutura.md"
       ]
@@ -109,24 +112,30 @@
       "name": "diazverso-decupagem",
       "path": "skills/diazverso-decupagem/SKILL.md",
       "description": "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso.",
-      "sha256": "a102fc387eb82e1fcfdcb9fa8249b41a2e1d06f2f57013fd400983a629227d2d",
+      "sha256": "001c8b59e8566e0ace0884d741d601ae1996a47cd66121d34564990f126a4114",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
-        "diazverso-shorts"
+        "diazverso-shorts",
+        "find-broll"
       ],
       "references": [
         "assets/sfx/catalog.json",
         "schemas/remotion-composition-v1.schema.json",
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/imagens-e-direitos.md",
+        "skills/diazverso-core/references/padrao-visual.md",
         "skills/diazverso-core/references/referencias-audiovisuais.md",
         "skills/diazverso-decupagem/references/motion.md",
+        "skills/diazverso-decupagem/references/musica.md",
         "skills/diazverso-decupagem/references/qa.md",
+        "skills/diazverso-decupagem/references/receitas.md",
         "skills/diazverso-decupagem/references/scenes.md",
         "skills/diazverso-decupagem/scripts/build_original_sfx.py",
         "skills/diazverso-decupagem/scripts/render_previews.py",
         "skills/diazverso-decupagem/scripts/validate_composition.py",
-        "skills/diazverso-shorts/SKILL.md"
+        "skills/diazverso-shorts/SKILL.md",
+        "skills/find-broll/SKILL.md"
       ]
     },
     {
@@ -279,12 +288,16 @@
       "name": "diazverso-shorts",
       "path": "skills/diazverso-shorts/SKILL.md",
       "description": "Use para criar ou adaptar roteiro e plano audiovisual de Shorts Diazverso em 9:16, com gancho, ritmo, legendas e CTA contextual; não faz upload nem publicação.",
-      "sha256": "6f2a73afbe0e1af1b9bd740e6f6c9b009bf2abd9689d53bec544d6395cf6698a",
+      "sha256": "57606f81e06d28d90ee97918a6576d7764896e607599083ce99bccb2be6483b9",
       "dependencies": [
-        "diazverso-contexto-eficiente"
+        "diazverso-contexto-eficiente",
+        "diazverso-core",
+        "diazverso-decupagem"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-core/references/padrao-visual.md",
+        "skills/diazverso-decupagem/references/receitas.md",
         "skills/diazverso-shorts/references/preset-vertical-v1.json",
         "skills/diazverso-shorts/scripts/captions.py",
         "skills/diazverso-shorts/scripts/review_short.py"
@@ -294,7 +307,7 @@
       "name": "diazverso-thumbnail",
       "path": "skills/diazverso-thumbnail/SKILL.md",
       "description": "Use para transformar tese, promessa editorial e título de um vídeo Diazverso em conceitos de thumbnails horizontais A/B simples, legíveis e coerentes, antes de gerar ou revisar a imagem.",
-      "sha256": "b4b16a69c5604cdf9c9e1e50cca578bba76bbf8e2ef82317ed5c9017cd3af612",
+      "sha256": "5d14afd02eb1af5f3d0507255785c1e82f3d2ba167d850a3f2fb8c23271f6d49",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"

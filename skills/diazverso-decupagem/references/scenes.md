@@ -25,7 +25,7 @@ Os JSONs contêm component, duration_seconds, fps, props e required_files. São 
 
 Copiar os assets usados para public/ mantendo os caminhos relativos do plugin, ou resolver URLs explicitamente. Resolver também required_files: fontes e mídia do projeto não são presumidas como embutidas. Não executar um exemplo como produção aprovada.
 
-Anton é o padrão dos componentes textuais. Fornecer sua URL local/licenciada em assets.anton; Bangers é opção explícita. [load-font](scenes/load-font.ts) usa FontFace no navegador e reutiliza o carregamento. Não há pacote de fontes ou download automático de fornecedor.
+Anton é o padrão dos componentes textuais: copiar `assets/brand/fonts/anton/Anton-Regular.ttf` para `public/` e passar a URL em assets.anton (licença OFL ao lado). Bangers é opção explícita e exige arquivo licenciado fornecido pelo criador. [load-font](scenes/load-font.ts) usa FontFace no navegador e reutiliza o carregamento. Não há download automático de fornecedor.
 
 [HQMotion](scenes/HQMotion.tsx) oferece medição de alpha, ajuste de texto e movimento por frame. [SceneBackground](scenes/SceneBackground.tsx) configura o [fundo compartilhado](motion/hq-background.tsx), sem duplicar a implementação. Background opacity só afeta o fundo, não texto, cards ou imagens.
 

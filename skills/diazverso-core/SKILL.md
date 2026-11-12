@@ -12,10 +12,14 @@ description: "Use para escolher formatos editoriais, ensinar ideias práticas ou
 - Voz conversada, opinativa, irônica e bem-humorada. Humor nasce do contexto; não impor bordões, gritos, locução épica ou formalidade artificial.
 - Referências por função: FALL para espontaneidade/humor, Um Nerd para tese/argumento e RunnyIA para explicação visual/fluidez/motion. Para dirigir um beat, consultar [vídeos e princípios](references/referencias-audiovisuais.md); não copiar suas identidades.
 - HQ contemporânea e madura: painéis, halftone, textura, câmera, profundidade e tipografia de impacto a serviço da informação. Evitar aparência infantil e efeitos sem propósito.
-- Anton é referência tipográfica quando disponível com licença adequada; fontes não são presumidas nem redistribuídas automaticamente.
+- Anton é a fonte do canal e acompanha o plugin em `assets/brand/fonts/anton/` (SIL OFL). Títulos, ênfases e legendas usam Anton.
 - Nox é recorrente quando ajuda a narrativa. Preservar `assets/brand/nox/Nox.png`; novas poses exigem comparação visual. Não precisa aparecer em todo quadro.
 - Thumbnails precisam de assunto reconhecível, foco, legibilidade e complementaridade com o título. Não prometer CTR ou retenção sem dados.
 - Shorts: 9:16, gancho imediato, progressão, payoff, legendas sincronizadas e CTA contextual. Preferência editorial por pelo menos 60 s quando o conteúdo sustentar, sem alongar artificialmente ou apresentar isso como limite da plataforma.
+
+## Padrão de produção
+
+Em edição, cumprir o [padrão visual mínimo](references/padrao-visual.md): imagem com assunto em toda cena, evidência visual do que é dito, ritmo de troca visual, Anton legível e legenda por palavra. Imagens de personagens seguem [imagens e direitos](references/imagens-e-direitos.md); voz e mix seguem [narração](references/narracao.md). Um vídeo só com texto sobre fundo não é Diazverso.
 
 ## Formatos e aprendizado
 

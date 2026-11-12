@@ -13,12 +13,12 @@ Consultar apenas o componente exigido pela cena. Os TSX usam React/Remotion do p
 | Overlay HQ | motion/hq-overlay.tsx | Texto e composição sem mídia externa |
 | Matemática HQ | motion/hq-motion-math.mjs | Progresso por frame e geometria de entrada/saída |
 
-Os módulos `motion/*-math.mjs` validam geometria, cores e tempos. Fontes só entram quando disponíveis e licenciadas; não presumir Anton instalado.
+Os módulos `motion/*-math.mjs` validam geometria, cores e tempos. Anton acompanha o plugin em `assets/brand/fonts/anton/`; outras fontes só entram quando licenciadas.
 
 ## Planejamento de som
 
 `audio/audio-plan.mjs` expõe `planAudio(catalog, scene, options)`. O catálogo exige ID, caminho relativo seguro, tipo music/sfx, duração em frames, tags, rights=APPROVED e evidência de autorização real.
 
-A cena informa duração, clima, tags de SFX, intervalos de voz e offsets. O planejador seleciona cues e ducking, sem ouvir, baixar ou licenciar mídia. Não inserir item pendente no catálogo aprovado. Verificar mix, silêncio, transições e inteligibilidade no render.
+A cena informa duração, clima, tags de SFX, intervalos de voz e offsets. O planejador seleciona cues e ducking, sem ouvir, baixar ou licenciar mídia. Não inserir item pendente no catálogo aprovado. Fontes de trilha aceitas e uso: [música](musica.md). Verificar mix, silêncio, transições e inteligibilidade no render.
 
 Nox segue `../../diazverso-nox/SKILL.md`. O fundo procedural é independente de imagens adicionais; qualquer imagem de outra origem exige direitos conferidos.

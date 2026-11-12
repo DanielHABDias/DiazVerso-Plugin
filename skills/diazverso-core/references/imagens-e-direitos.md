@@ -1,0 +1,26 @@
+# Imagens dos personagens e direitos
+
+Um vídeo de análise sobre heróis precisa mostrar os heróis. Evitar imagens por precaução produz um vídeo vazio; usar qualquer imagem sem critério cria risco de reivindicação. Seguir esta ordem e registrar cada mídia no manifesto da produção (`find-broll`: `../../find-broll/SKILL.md`).
+
+## Fontes, em ordem de preferência
+
+1. **Arte própria ou encomendada** e poses do Nox: direitos do criador.
+2. **Material de divulgação oficial:** trailers, pôsteres, capas, imagens de imprensa e páginas de preview publicadas pela editora, estúdio ou desenvolvedora.
+3. **Painéis e frames da obra** em trechos curtos e pertinentes ao argumento: recorte de 1 a 3 painéis, frame isolado ou trecho de vídeo de poucos segundos **sem o áudio original**.
+4. **Bancos com licença comercial** (Pexels, Unsplash, Pixabay ou banco assinado pelo criador) para elementos genéricos sem personagem.
+
+Não usar: fan art sem autorização do artista, imagens com marca d'água de terceiros, gerações de IA que imitem a arte de um artista ou o visual oficial de um personagem, trilha ou áudio de filmes e séries.
+
+## Critério de uso em comentário
+
+O canal faz análise e crítica. A lei brasileira (Lei 9.610/98, art. 46, III) permite citação de trechos para crítica e estudo com indicação da fonte, e plataformas aplicam regras próprias de reivindicação. Isso orienta a escolha; **não é parecer jurídico** e não garante ausência de reivindicação. Para cada mídia:
+
+- a imagem ilustra o ponto dito naquele momento (função de evidência);
+- o trecho é o mínimo necessário e é transformado: recortado em painel, combinado com texto, câmera e narração;
+- origem registrada (URL, obra, edição/episódio, data de acesso) e crédito na descrição;
+- clipes de vídeo sem áudio original e com até 5 s por uso, salvo decisão registrada do criador;
+- o criador aprova a lista de mídias de terceiros antes do render final.
+
+## Estados no manifesto
+
+`PLANNED` → `SOURCED` (arquivo local, origem registrada) → `CREATOR_APPROVED` (decisão do criador) → `PLACED`. Somente `CREATOR_APPROVED` entra no render final; o render de prévia pode usar `SOURCED` marcado como prévia. Sem imagem aprovada para uma cena, trocar a abordagem visual (Nox demonstrando, arte própria), não preencher com texto.

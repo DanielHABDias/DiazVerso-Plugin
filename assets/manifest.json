@@ -198,6 +198,20 @@
       "source": "creator-provided Diazverso design resource",
       "rights": "creator-provided-for-Diazverso-plugin",
       "status": "AVAILABLE_FOR_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "brand.font.anton",
+      "name": "Anton-Regular.ttf",
+      "kind": "font",
+      "path": "assets/brand/fonts/anton/Anton-Regular.ttf",
+      "mime_type": "font/ttf",
+      "size_bytes": 170812,
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "git_blob_sha1": "4d65707db9d8663ccfa99cd28cd3a4e0025be178",
+      "source": "https://github.com/google/fonts/tree/main/ofl/anton",
+      "rights": "SIL-OFL-1.1",
+      "license_path": "assets/brand/fonts/anton/OFL.txt",
+      "status": "APPROVED"
     }
   ]
 }

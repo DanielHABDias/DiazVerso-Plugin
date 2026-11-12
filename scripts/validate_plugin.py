@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 MAP_PATH='skills/diazverso-contexto-eficiente/references/skill-map.json'
 EXTERNAL=('context-optimization','video-editing','analyze-video-editing','find-broll')
 SKIP={'.git','node_modules','__pycache__','.cache','out','dist','build'}
-SUFFIXES={'.md','.py','.json','.yaml','.yml','.ts','.tsx','.js','.mjs','.mts','.png','.jpg','.jpeg','.webp','.wav','.mp3','.svg','.txt'}
+SUFFIXES={'.md','.py','.json','.yaml','.yml','.ts','.tsx','.js','.mjs','.mts','.png','.jpg','.jpeg','.webp','.wav','.mp3','.svg','.txt','.ttf'}
 HISTORY=re.compile(r'(?-i:\b[A-M]\d{2}\b)|refer[eê]ncia hist[oó]rica|^#{1,6}\s+.*(?:changelog|histórico de altera)|(?:20\d\d-\d{2}-\d{2}).*(?:altera|atualiza)',re.I|re.M)
 
 
