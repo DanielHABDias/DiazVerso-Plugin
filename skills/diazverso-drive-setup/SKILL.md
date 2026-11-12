@@ -9,6 +9,10 @@ description: "Use para localizar, configurar e operar a estrutura Google Drive/D
 
 O contrato da instalação está em [estrutura](references/estrutura.md). Cabeçalhos, IDs de pastas e dados operacionais devem vir da conta conectada, sem IDs pessoais embutidos no plugin.
 
+## Sem acesso ao Drive ou à planilha
+
+Se as ferramentas Google não responderem, perguntar uma vez se o criador quer conectar ou seguir sem elas. Seguindo sem, a produção continua em modo manual e, no fim, o criador recebe o pacote de registro manual: arquivos para subir e as linhas prontas da planilha. Detalhes em [modo manual](references/modo-manual.md). Nunca simular gravação.
+
 ## Descobrir e configurar
 
 1. Conferir conexão e permissões da sessão.

@@ -18,6 +18,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
    - **Parar em pontos:** a IA para, avisa o que revisar no Content Lab e espera. Sugestão: roteiro, narração e revisão final.
    - **Aprovar cada etapa.**
    - **Voz:** voz de IA ou o criador grava a própria voz no Content Lab.
+   - **Drive e planilha:** se as ferramentas Google não responderem, perguntar se o criador quer conectar ou seguir sem elas. Sem elas, nada é gravado no Drive; no fim, o kit traz o que subir e as linhas prontas para ele preencher à mão ([modo manual](../diazverso-drive-setup/references/modo-manual.md)).
 4. **Ordem da produção** (nenhuma etapa é pulada):
    1. tema polêmico, que ensina algo ou que desperta curiosidade, e a tese pesquisada;
    2. título e thumbnail, antes do roteiro (o roteiro cumpre o que eles prometem);
@@ -30,7 +31,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
    9. prévias;
    10. render;
    11. thumbnail final, limpa: fundo preto ou branco e o personagem;
-   12. kit de publicação manual.
+   12. kit de publicação manual (com o registro manual do Drive e da planilha, quando não houver acesso).
 5. **Edição = motion design do kit** (`../diazverso-motion/SKILL.md`):
    - **Ritmo:** troca de informação a cada 1,5–3 s, no ritmo do RunnyIA, com a câmera nunca parada.
    - **Visual:**

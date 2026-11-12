@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.8.2",
+  "plugin_version": "1.8.3",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -34,11 +34,12 @@
       "name": "diazverso",
       "path": "skills/diazverso/SKILL.md",
       "description": "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir.",
-      "sha256": "11e3acea8294e517a2b932403e88a7841d0d6b689b0f9b6f0ca8298b9b068224",
+      "sha256": "6330c8c90fe89c0999fefe4969ccb2faa2ff01abbff955ff021f3bb245655d36",
       "dependencies": [
         "diazverso-contentlab",
         "diazverso-contexto-eficiente",
         "diazverso-core",
+        "diazverso-drive-setup",
         "diazverso-motion",
         "diazverso-nox",
         "diazverso-roteiro"
@@ -50,6 +51,7 @@
         "skills/diazverso-contexto-eficiente/references/roteamento.md",
         "skills/diazverso-contexto-eficiente/references/skill-map.json",
         "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-drive-setup/references/modo-manual.md",
         "skills/diazverso-motion/SKILL.md",
         "skills/diazverso-nox/references/poses.md",
         "skills/diazverso-roteiro/references/escrita.md"
@@ -133,7 +135,7 @@
       "name": "diazverso-criacao-video",
       "path": "skills/diazverso-criacao-video/SKILL.md",
       "description": "Use para iniciar, coordenar ou retomar uma produção Diazverso entre ideia, roteiro, artes, edição, QA e kit de publicação manual.",
-      "sha256": "4abd6e59be3f138d8af55e587f0689ebb72895c2ee762163fbb56012362a465f",
+      "sha256": "f168533dca4237ba9c008c16de893694701500b12ef11bf9deddbb01ef4c3f8f",
       "dependencies": [
         "diazverso-contentlab",
         "diazverso-contexto-eficiente",
@@ -154,6 +156,7 @@
         "skills/diazverso-criacao-video/scripts/resume.py",
         "skills/diazverso-decupagem/scripts/correction_loop.py",
         "skills/diazverso-drive-setup/references/estrutura.md",
+        "skills/diazverso-drive-setup/references/modo-manual.md",
         "skills/diazverso-drive-setup/scripts/affiliate_selection.py"
       ]
     },
@@ -188,7 +191,7 @@
       "name": "diazverso-drive-setup",
       "path": "skills/diazverso-drive-setup/SKILL.md",
       "description": "Use para localizar, configurar e operar a estrutura Google Drive/Docs/Sheets do Diazverso com identidade, idempotência e leitura de retorno.",
-      "sha256": "a9ff30558e724a5ae252cb614f40dd880a369e33f8bb7b75669092b10d05ceb3",
+      "sha256": "b4243896b5557e0047f710575b937797bbaf7314e0394e58ccb372bc3dfa945a",
       "dependencies": [
         "diazverso-contexto-eficiente"
       ],
@@ -196,6 +199,7 @@
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-drive-setup/references/deteccao-idempotente.md",
         "skills/diazverso-drive-setup/references/estrutura.md",
+        "skills/diazverso-drive-setup/references/modo-manual.md",
         "skills/diazverso-drive-setup/scripts/affiliate_selection.py",
         "skills/diazverso-drive-setup/scripts/discover_structure.py",
         "skills/diazverso-drive-setup/scripts/promotion.py",
@@ -335,15 +339,17 @@
       "name": "diazverso-roteiro",
       "path": "skills/diazverso-roteiro/SKILL.md",
       "description": "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado.",
-      "sha256": "001315fd3c9d7fc97d40506ceb61f182ccd9ff142255c3328736009cb346d5a4",
+      "sha256": "b0a494224d92576eed9245e836fff896a86ac081e292a73c9be2ca7d255fb45a",
       "dependencies": [
         "diazverso-contexto-eficiente",
-        "diazverso-core"
+        "diazverso-core",
+        "diazverso-drive-setup"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-core/references/formatos-editoriais.md",
         "skills/diazverso-core/references/referencias-audiovisuais.md",
+        "skills/diazverso-drive-setup/references/modo-manual.md",
         "skills/diazverso-roteiro/references/escrita.md",
         "skills/diazverso-roteiro/scripts/build_requests.py",
         "templates/roteiro-longo-v1.json",

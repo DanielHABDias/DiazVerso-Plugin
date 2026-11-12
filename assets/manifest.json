@@ -384,42 +384,6 @@
       "status": "TECHNICAL_CANDIDATE_LISTENING_PENDING"
     },
     {
-      "id": "brand.nox.pose.pensando",
-      "name": "pensando.png",
-      "kind": "mascot-pose",
-      "path": "assets/brand/nox/poses/pensando.png",
-      "mime_type": "image/png",
-      "size_bytes": 915778,
-      "dimensions": {
-        "width": 769,
-        "height": 1400
-      },
-      "alpha_supported": true,
-      "git_blob_sha1": "3262e8c5a652865b6772b640553d83cb718a8a89",
-      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Uma mão no queixo, outra segurando o cotovelo. Recorte rente e escala uniforme para 1400 px.",
-      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
-      "status": "GENERATED_POSE_REVIEW_PENDING",
-      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
-    },
-    {
-      "id": "brand.nox.pose.mao-na-cabeca",
-      "name": "mao-na-cabeca.png",
-      "kind": "mascot-pose",
-      "path": "assets/brand/nox/poses/mao-na-cabeca.png",
-      "mime_type": "image/png",
-      "size_bytes": 1148304,
-      "dimensions": {
-        "width": 841,
-        "height": 1400
-      },
-      "alpha_supported": true,
-      "git_blob_sha1": "31cc626e536eeea51b09a4972e083da1fae72f9e",
-      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Uma mão apoiada no alto do capuz, outra relaxada ao lado. Recorte rente e escala uniforme para 1400 px.",
-      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
-      "status": "GENERATED_POSE_REVIEW_PENDING",
-      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
-    },
-    {
       "id": "brand.nox.pose.explicando",
       "name": "explicando.png",
       "kind": "mascot-pose",
@@ -433,6 +397,258 @@
       "alpha_supported": true,
       "git_blob_sha1": "0dcb24e5ac61a9e0b045c061c30cfea65640645a",
       "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Uma mão aberta para o lado com a palma para cima. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.pensando",
+      "name": "pensando.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/pensando.png",
+      "mime_type": "image/png",
+      "size_bytes": 982123,
+      "dimensions": {
+        "width": 816,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "830e482a486173b3f161436ca7bbea7c513f728d",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mão no queixo; olhos assimétricos de dúvida, um aberto e outro apertado. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.mao-na-cabeca",
+      "name": "mao-na-cabeca.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/mao-na-cabeca.png",
+      "mime_type": "image/png",
+      "size_bytes": 1022717,
+      "dimensions": {
+        "width": 856,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "0df51df67c45ddfabd7453640232bb8963520e1a",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mão no alto do capuz, olhar constrangido com fendas neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.high-five",
+      "name": "high-five.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/high-five.png",
+      "mime_type": "image/png",
+      "size_bytes": 1150940,
+      "dimensions": {
+        "width": 1044,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "07193927de0b9983c95bd6adeac6ef9f25405dff",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Palma aberta para o público; olhos felizes em arcos neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.explicando-centro",
+      "name": "explicando-centro.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/explicando-centro.png",
+      "mime_type": "image/png",
+      "size_bytes": 1008074,
+      "dimensions": {
+        "width": 800,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "252d076b4d78d54c36f3439eb1523f2ffd2b5c02",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Duas mãos abertas ao centro em alturas diferentes; olhos ovais atentos neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.ombros",
+      "name": "ombros.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/ombros.png",
+      "mime_type": "image/png",
+      "size_bytes": 1083381,
+      "dimensions": {
+        "width": 1006,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "e6fd41ad18fbb8b426074b4a7fb393dcfc142be4",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Palmas abertas para cima e ombros erguidos; olhos de tédio neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.joinha",
+      "name": "joinha.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/joinha.png",
+      "mime_type": "image/png",
+      "size_bytes": 1014710,
+      "dimensions": {
+        "width": 778,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "fe87070b44e8b7b0a85ee14fa3db084e9f28a4d2",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Polegar para cima, mão na cintura; piscada feliz neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.assustado",
+      "name": "assustado.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/assustado.png",
+      "mime_type": "image/png",
+      "size_bytes": 1111181,
+      "dimensions": {
+        "width": 883,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "85e5537207b3d441ab03923329ab193700d92512",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mãos abertas perto do rosto, corpo recuando; olhos grandes de espanto neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.comemorando",
+      "name": "comemorando.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/comemorando.png",
+      "mime_type": "image/png",
+      "size_bytes": 1142602,
+      "dimensions": {
+        "width": 941,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "8cbb1e644d47b72e721b9cc510e3331ad4cd3352",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Dois punhos erguidos; olhos fechados de alegria em arcos neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.rindo",
+      "name": "rindo.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/rindo.png",
+      "mime_type": "image/png",
+      "size_bytes": 1009603,
+      "dimensions": {
+        "width": 829,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "38c7d0dacd4dfda83caefd15018bcf90e34a0c64",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mãos na barriga, tronco para trás; olhos apertados de gargalhada neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.facepalm",
+      "name": "facepalm.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/facepalm.png",
+      "mime_type": "image/png",
+      "size_bytes": 915008,
+      "dimensions": {
+        "width": 791,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "36997019165ece511bfd3d32aecf828151956a08",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mão cobrindo testa e um olho; olho visível caído e decepcionado, neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.bracos-cruzados",
+      "name": "bracos-cruzados.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/bracos-cruzados.png",
+      "mime_type": "image/png",
+      "size_bytes": 913296,
+      "dimensions": {
+        "width": 788,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "550750ce2f08314b663f409e501d0c1996661703",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Braços cruzados no peito; olhos estreitos assimétricos e céticos neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.acenando",
+      "name": "acenando.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/acenando.png",
+      "mime_type": "image/png",
+      "size_bytes": 1116065,
+      "dimensions": {
+        "width": 943,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "be4269b40e19ecff74d100c9bb98b1a80177a3b4",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Mão erguida acenando; olhos em pequenos arcos simpáticos neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.apontando",
+      "name": "apontando.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/apontando.png",
+      "mime_type": "image/png",
+      "size_bytes": 1156197,
+      "dimensions": {
+        "width": 1102,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "4a378b51298b6359b04a4c359041f33c06f6da19",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Indicador apontando para o lado; olhar estreito determinado neon. Recorte rente e escala uniforme para 1400 px.",
+      "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
+      "status": "GENERATED_POSE_REVIEW_PENDING",
+      "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."
+    },
+    {
+      "id": "brand.nox.pose.apontando-b",
+      "name": "apontando-b.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/apontando-b.png",
+      "mime_type": "image/png",
+      "size_bytes": 995510,
+      "dimensions": {
+        "width": 777,
+        "height": 1400
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "8835efce7a3ef4f6bf170aed855e1a739dd84a87",
+      "source": "OpenAI image_gen.imagegen, referência única assets/brand/nox/Nox.png. Pose completa com olhos. Gesto: Indicador para o público; olhos cúmplices em arco e meia-lua neon. Recorte rente e escala uniforme para 1400 px.",
       "rights": "Uso comercial permitido pelos Terms of Use da OpenAI, seção Content / Ownership of content (https://openai.com/policies/terms-of-use/): o usuário mantém os direitos da referência e é titular do output perante a OpenAI, sujeito aos termos e direitos aplicáveis. Referência Nox fornecida e autorizada pelo criador para o Diazverso; derivado gerado por IA.",
       "status": "GENERATED_POSE_REVIEW_PENDING",
       "notes": "Pose completa: corpo, gesto e olhos na mesma imagem. Inspeção visual pelo assistente; revisão final do criador pendente."

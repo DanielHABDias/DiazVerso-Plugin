@@ -52,6 +52,8 @@ Para afiliados, `../diazverso-drive-setup/scripts/affiliate_selection.py` seleci
 
 Antes de entregar como final, executar `scripts/approval_gate.py <revisao.json>`: nove gates — roteiro, fatos_fontes, titulo_thumbnail, direitos_midias, video_render, qa_visual, qa_audio, legendas, kit_textual — precisam de status e evidência, além de `creator_decision`. Um campo preenchido não prova aprovação. Pendências produzem kit parcial e próxima ação concreta.
 
+Sem acesso ao Drive e à planilha, o kit ganha a seção **Registro manual**: arquivos para subir com a pasta de destino e as linhas prontas de Produções e Ideias ([modo manual](../diazverso-drive-setup/references/modo-manual.md)).
+
 O criador publica pessoalmente. Não executar nem ensinar envio, upload, agendamento ou postagem. PUBLICADO é registro posterior de URL e data reais, via skill Drive.
 
 ## Corrigir e acompanhar
