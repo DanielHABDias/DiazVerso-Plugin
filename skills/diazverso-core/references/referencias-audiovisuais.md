@@ -20,7 +20,7 @@ Usar como repertório de função narrativa e edição, preservando a identidade
 - **Observar:** 0:00–0:14 combina texto, recortes, demonstração e personagem; o painel de erros em 0:28–0:35 reaparece para orientar a progressão. Em 1:25–1:32, a tela de navegação demonstra a instrução. Há alternância entre avatar, exemplos, imagens e palavras de ênfase.
 - **Aplicar:** organizar uma composição legível, revelar informações junto da fala, mover o foco da câmera entre elementos relacionados e retornar a um mapa visual quando ajudar a orientação. Destacar palavras decisivas, sem exigir texto para toda frase.
 - **Escolher quando:** comparar alternativas, explicar etapas, mostrar uma relação ou tornar uma ideia abstrata concreta. Usar Nox com papel claro na explicação, respeitando sua identidade.
-- **Evitar:** movimento contínuo sem tempo de leitura, excesso de elementos ou copiar a aparência do avatar. Entregar a promessa no próprio vídeo; uma recomendação final complementa o payoff.
+- **Evitar:** texto que some antes de ser lido, excesso de elementos na mesma cena ou copiar a aparência do avatar. Entregar a promessa no próprio vídeo; uma recomendação final complementa o payoff.
 
 ## Um Nerd: ensinar um princípio através dos casos
 
@@ -31,6 +31,12 @@ Usar como repertório de função narrativa e edição, preservando a identidade
 
 ## Escolher a linguagem por beat
 
-Humor/reação pode pedir uma interrupção pontual; ensino pode pedir demonstração, personagem e progresso; argumento pode pedir imagem sustentada e espaço para pensar. Combinar conforme a função, sem receita universal de velocidade, duração de plano, fonte ou transição. Utilizar os componentes existentes de diálogo, comparação, câmera, painel e texto apenas quando cumprirem essa função.
+O ritmo base do canal é o do RunnyIA: algo relevante muda a cada 1,5–3 s ([padrão visual](padrao-visual.md)). Dentro dele, a função escolhe a técnica:
+
+- **Humor ou reação:** Nox reagindo, corte seco, som de impacto.
+- **Ensino:** fórmula, lista ou comparação que se monta junto da fala.
+- **Argumento:** imagem da obra sustentada por até 3–5 s, com câmera lenta, enquanto a ideia se completa.
+
+O mapa de técnica para cena do kit está em `../../diazverso-motion/references/linguagem.md`.
 
 Os princípios vêm de transcrição automática e inspeção visual amostrada dos arquivos correspondentes, incluindo trechos mais densos das aberturas. Timestamps são pontos de consulta aproximados. Não constituem análise de cada frame, validação por escuta de trilha/SFX, prova de retenção ou autorização para reutilizar as mídias. Preservar fontes e conferir fatos/direitos ao produzir.

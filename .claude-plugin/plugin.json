@@ -1,0 +1,9 @@
+{
+  "name": "diazverso",
+  "version": "1.4.0",
+  "description": "Regras, fluxo e skills do canal Diazverso: roteiro, títulos, thumbnails, motion design no ritmo do canal, Nox e produção pelo Content Lab.",
+  "author": {
+    "name": "Daniel Dias"
+  },
+  "repository": "https://github.com/DanielHABDias/DiazVerso-Plugin"
+}

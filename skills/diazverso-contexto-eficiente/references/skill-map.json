@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.3.0",
+  "plugin_version": "1.4.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -31,6 +31,27 @@
       ]
     },
     {
+      "name": "diazverso",
+      "path": "skills/diazverso/SKILL.md",
+      "description": "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir.",
+      "sha256": "3ebad4fa3ca6cad3f141834d2e098450d5d4000879acee6865be4de53b43c29e",
+      "dependencies": [
+        "diazverso-contentlab",
+        "diazverso-contexto-eficiente",
+        "diazverso-core",
+        "diazverso-motion"
+      ],
+      "references": [
+        "assets/brand/nox/Nox.png",
+        "skills/diazverso-contentlab/SKILL.md",
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-contexto-eficiente/references/roteamento.md",
+        "skills/diazverso-contexto-eficiente/references/skill-map.json",
+        "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-motion/SKILL.md"
+      ]
+    },
+    {
       "name": "diazverso-aprovacao-roteiro",
       "path": "skills/diazverso-aprovacao-roteiro/SKILL.md",
       "description": "Use para validar o gate final de roteiro e packaging do Diazverso antes de autorizar decupagem, motion, edição ou render, exigindo revisão factual, estrutural, de voz e decisão explícita do criador.",
@@ -40,6 +61,28 @@
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md"
+      ]
+    },
+    {
+      "name": "diazverso-contentlab",
+      "path": "skills/diazverso-contentlab/SKILL.md",
+      "description": "Use para produzir ou retomar vídeos Diazverso pelo Content Lab via MCP: conferir e conectar o servidor MCP, combinar o fluxo com o criador (automático, pausas, aprovação, voz própria) e conduzir as ferramentas da ideia ao vídeo final.",
+      "sha256": "c626d44462cc5302543e1014614d280b6db16796284ff3b89e3e0e069811e92a",
+      "dependencies": [
+        "diazverso-contexto-eficiente",
+        "diazverso-criacao-video",
+        "diazverso-motion",
+        "diazverso-roteiro",
+        "diazverso-thumbnail",
+        "diazverso-titulos"
+      ],
+      "references": [
+        "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-criacao-video/SKILL.md",
+        "skills/diazverso-motion/SKILL.md",
+        "skills/diazverso-roteiro/SKILL.md",
+        "skills/diazverso-thumbnail/SKILL.md",
+        "skills/diazverso-titulos/SKILL.md"
       ]
     },
     {
@@ -86,8 +129,9 @@
       "name": "diazverso-criacao-video",
       "path": "skills/diazverso-criacao-video/SKILL.md",
       "description": "Use para iniciar, coordenar ou retomar uma produção Diazverso entre ideia, roteiro, artes, edição, QA e kit de publicação manual.",
-      "sha256": "6829c1fdd3c79402e6b976df92ad2a68581ea7456a417ecda7bc1be83d7efb07",
+      "sha256": "4abd6e59be3f138d8af55e587f0689ebb72895c2ee762163fbb56012362a465f",
       "dependencies": [
+        "diazverso-contentlab",
         "diazverso-contexto-eficiente",
         "diazverso-core",
         "diazverso-decupagem",
@@ -95,6 +139,7 @@
       ],
       "references": [
         "schemas/estado-producao-v1.schema.json",
+        "skills/diazverso-contentlab/SKILL.md",
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-contexto-eficiente/references/roteamento.md",
         "skills/diazverso-core/SKILL.md",
@@ -111,8 +156,8 @@
     {
       "name": "diazverso-decupagem",
       "path": "skills/diazverso-decupagem/SKILL.md",
-      "description": "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso.",
-      "sha256": "1e0bc05df3fc912de38619c75c74ee4e87d751c109ca8a933f635e87f07165e1",
+      "description": "Use para decupar um roteiro aprovado em beats de motion (fala, evidência da obra, cena do kit, som), escolher as mídias e revisar o vídeo renderizado: frames, áudio, ritmo, direitos e correções.",
+      "sha256": "7b162e543283259a545191ef360f6779719df0b5ec9fa63041b9c409e57e5b78",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
@@ -122,20 +167,15 @@
       ],
       "references": [
         "assets/sfx/catalog.json",
-        "schemas/remotion-composition-v1.schema.json",
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-core/references/imagens-e-direitos.md",
         "skills/diazverso-core/references/padrao-visual.md",
-        "skills/diazverso-core/references/referencias-audiovisuais.md",
-        "skills/diazverso-decupagem/references/motion.md",
         "skills/diazverso-decupagem/references/musica.md",
         "skills/diazverso-decupagem/references/qa.md",
         "skills/diazverso-decupagem/references/receitas.md",
-        "skills/diazverso-decupagem/references/scenes.md",
         "skills/diazverso-decupagem/scripts/build_original_sfx.py",
-        "skills/diazverso-decupagem/scripts/render_previews.py",
-        "skills/diazverso-decupagem/scripts/validate_composition.py",
         "skills/diazverso-motion/SKILL.md",
+        "skills/diazverso-motion/scripts/build_motion_sfx.mjs",
         "skills/diazverso-shorts/SKILL.md",
         "skills/find-broll/SKILL.md"
       ]
@@ -244,7 +284,7 @@
       "name": "diazverso-revisao-estrutura",
       "path": "skills/diazverso-revisao-estrutura/SKILL.md",
       "description": "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção.",
-      "sha256": "611498395def77771d5e4b1f515c5611fa402de1589861768729dffd6b13028e",
+      "sha256": "3e5e5624a22482149dc2230d65dc9ee080fb56e934c81852099a805aa45a1587",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -300,14 +340,16 @@
       "name": "diazverso-setup",
       "path": "skills/diazverso-setup/SKILL.md",
       "description": "Use para instalar manualmente, configurar ou diagnosticar capacidades do plugin Diazverso, conexões Google e ambiente de edição.",
-      "sha256": "0e7d4f3a6395805b152d1984b7baefc75cf50995350768c180775b65cf5a5206",
+      "sha256": "307f291162f4f892a7157e11335e68642efe48bccdf39b919479a1d5324edcc7",
       "dependencies": [
+        "diazverso-contentlab",
         "diazverso-contexto-eficiente",
         "diazverso-drive-setup"
       ],
       "references": [
         "assets/brand/nox/Nox.png",
         "assets/manifest.json",
+        "skills/diazverso-contentlab/SKILL.md",
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-drive-setup/SKILL.md"
       ]

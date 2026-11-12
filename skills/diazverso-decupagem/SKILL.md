@@ -1,40 +1,38 @@
 ---
 name: diazverso-decupagem
-description: "Use para transformar roteiro aprovado em cenas, componentes TSX/Remotion, planejamento de áudio, previews e revisão audiovisual de vídeo longo ou Short Diazverso."
+description: "Use para decupar um roteiro aprovado em beats de motion (fala, evidência da obra, cena do kit, som), escolher as mídias e revisar o vídeo renderizado: frames, áudio, ritmo, direitos e correções."
 ---
 
 **Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
-# Edição por cenas
+# Decupagem e revisão
 
-Para o vídeo do canal, a montagem padrão é a composição única de motion: `../diazverso-motion/SKILL.md`. Esta skill continua valendo para dividir o roteiro, escolher evidências, revisar QA e para componentes avulsos.
+A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); pelo Content Lab, é `motion_plan_auto` seguido de ajustes com `motion_plan_set`. Esta skill cuida do que vem antes e depois: decidir o que cada beat mostra e revisar o resultado.
 
-1. Receber ID, formato e revisão aprovada do roteiro. Confirmar narração, intenção visual, mídia e direitos.
-2. Dividir por mudanças de informação: objetivo, fala, visual, duração, camadas, música/SFX, legenda e fonte. Definir a função do visual: evidência, explicação, orientação/progresso ou humor/reação. Em encenação didática, identificar papel e ação do personagem, dúvida, demonstração e informação aprendida. Escolher imagem sustentada, reação pontual ou composição em movimento conforme o beat; consultar [referências audiovisuais](../diazverso-core/references/referencias-audiovisuais.md) somente para a técnica necessária. Evitar cortes ou efeitos sem função.
-3. Partir da [receita do formato](references/receitas.md) e do [padrão visual](../diazverso-core/references/padrao-visual.md). Cada cena tem mídia com assunto aprovada ([imagens e direitos](../diazverso-core/references/imagens-e-direitos.md)); sem ela, buscar com `../find-broll/SKILL.md` ou mudar a abordagem antes de seguir.
-4. Selecionar apenas os recursos necessários da [biblioteca motion](references/motion.md). Para trilha, usar [música](references/musica.md) com licença registrada; para SFX, o catálogo revisado.
-5. Exportar o contrato `../../schemas/remotion-composition-v1.schema.json` e validar com `scripts/validate_composition.py <props.json>`. A validação estrutural não comprova mídia nem render.
-6. Gerar a composição no projeto Remotion disponível. Cenas usam `Sequence`, áudio e componentes com tempos relativos coerentes e dimensões do formato.
-7. Executar `scripts/render_previews.py` com props, entrypoint, composição e saída. Sem `--execute`, retorna plano; com execução autorizada, usa Remotion já instalado e recusa sobrescrever arquivos.
-8. Inspecionar os arquivos reais, com folha de frames conferida item a item contra o padrão visual. Usar [QA e correções](references/qa.md) para escolher o revisor do problema. Renderizar novamente o trecho alterado antes de aprovar.
-9. Para vertical, aplicar `../diazverso-shorts/SKILL.md`: preset, margens, captions e CTA. Gerar legendas de timestamps reais, sem inferir sincronia por presença de SRT.
+## Decupar
 
-## Contrato audiovisual
+1. Receber ID, formato e revisão aprovada do roteiro. Confirmar narração, mídias e direitos.
+2. Quebrar o roteiro em beats de 1,5–3 s: uma frase ou meia frase por beat. Para cada um, definir:
+   - a função: evidência, explicação, reação/humor ou orientação;
+   - a cena do kit;
+   - a mídia da obra;
+   - o som.
+3. Seguir a [receita do formato](references/receitas.md) e o [padrão visual](../diazverso-core/references/padrao-visual.md). Toda afirmação sobre a obra mostra a obra ([imagens e direitos](../diazverso-core/references/imagens-e-direitos.md)). Sem mídia, buscar com `../find-broll/SKILL.md` ou mudar a abordagem do beat.
+4. Trilha e SFX seguem [música](references/musica.md).
+5. Em diálogo didático com o Nox, definir dúvida → tentativa → consequência → explicação, sem inventar falas canônicas.
 
-- ID de produção e revisão de roteiro identificáveis.
-- `fps`, `width`, `height`, `duration_frames`, assets com caminhos e direitos, cenas ordenadas e saída declarada.
-- Cada cena informa início/duração, objetivo, visual, layers, captions e áudio. Respeitar intervalos e duração conhecida dos arquivos.
-- Localizar assets no projeto de edição. Gerar props ou preencher o contrato não executa a composição nem verifica direitos.
-- Arquivos existentes e fontes originais não são sobrescritos automaticamente.
+## Revisar
+
+1. Antes do render: prévias de frames (`motion_preview` no Content Lab), conferidas beat a beat.
+2. Depois do render: frames e áudio reais, com os utilitários de [QA e correções](references/qa.md). Um achado por vez; renderizar de novo e revisar o mesmo achado.
+3. Vertical: `../diazverso-shorts/SKILL.md`.
 
 ## SFX originais
 
-`assets/sfx/catalog.json` descreve cinco WAVs procedurais sem samples externos: whoosh curto/longo, ding, boom e riser. `scripts/build_original_sfx.py <pasta-nova>` os reproduz sem sobrescrita.
-
-Integridade e sinal são medidos; escuta/aprovação editorial continuam obrigatórias. Candidatos não entram como APPROVED no planejador de áudio por terem sido gerados.
+Os SFX do kit ficam em `assets/sfx/motion/` (`../diazverso-motion/scripts/build_motion_sfx.mjs`). `assets/sfx/catalog.json` descreve outros cinco WAVs procedurais: whoosh curto e longo, ding, boom e riser. `scripts/build_original_sfx.py <pasta-nova>` os reproduz sem sobrescrever. A integridade e o sinal desses arquivos são medidos, mas a escuta e a aprovação continuam com o criador.
 
 ## Limites
 
-Confirmar executor, mídia, fontes e permissões. Não simular análise visual, escuta, transcrição, render ou aprovação. Não publicar conteúdo. O kit final depende de revisão real dos arquivos e decisão do criador.
-
-Biblioteca de cenas e props: [cenas TSX](references/scenes.md). Abrir somente a cena selecionada.
+- Não simular análise visual, escuta, transcrição, render ou aprovação.
+- Não publicar.
+- O kit final depende da revisão real dos arquivos e da decisão do criador.

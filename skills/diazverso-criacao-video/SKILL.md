@@ -7,6 +7,8 @@ description: "Use para iniciar, coordenar ou retomar uma produção Diazverso en
 
 # Coordenação de produção
 
+Com o Content Lab conectado, a produção corre por `../diazverso-contentlab/SKILL.md`, que combina o fluxo com o criador e opera o app. Esta skill vale sem ele e para retomada, kit e métricas.
+
 ## Iniciar ou retomar
 
 1. Aplicar o protocolo de contexto e selecionar a próxima entrega observável. Não carregar todo o pipeline.
@@ -26,7 +28,7 @@ description: "Use para iniciar, coordenar ou retomar uma produção Diazverso en
 | Aprovação do roteiro | diazverso-aprovacao-roteiro |
 | Arte e mascote | diazverso-thumbnail e diazverso-nox |
 | Montagem do vídeo em motion (beats, kit, Nox, som) | diazverso-motion |
-| Cenas, TSX, áudio, previews e QA | diazverso-decupagem |
+| Decupagem em beats e QA do render | diazverso-decupagem |
 | Vertical e legendas | diazverso-shorts |
 | Arquivos e registros Google | diazverso-drive-setup |
 

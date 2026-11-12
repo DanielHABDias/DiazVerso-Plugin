@@ -21,6 +21,10 @@ MAX_TOTAL = 150 * 1024 * 1024
 MAX_MEMBER = 30 * 1024 * 1024
 REQUIRED = (
     "plugin.json",
+    ".claude-plugin/plugin.json",
+    "hooks/hooks.json",
+    "skills/diazverso/SKILL.md",
+    "skills/diazverso-contentlab/SKILL.md",
     "assets/manifest.json",
     "assets/brand/nox/Nox.png",
     "skills/diazverso-setup/SKILL.md",

@@ -4,6 +4,8 @@ Escolher a responsável pelo resultado, não pelo maior número de palavras coin
 
 | Resultado | Skill principal |
 | --- | --- |
+| Regras do canal e ponto de partida | diazverso |
+| Produzir pelo Content Lab (MCP) | diazverso-contentlab |
 | Configuração e capacidades | diazverso-setup |
 | Identidade editorial | diazverso-core |
 | Fluxo de vídeo ou retomada | diazverso-criacao-video |
@@ -15,7 +17,8 @@ Escolher a responsável pelo resultado, não pelo maior número de palavras coin
 | Aprovação editorial | diazverso-aprovacao-roteiro |
 | Organização Drive/Sheets | diazverso-drive-setup |
 | Nox ou thumbnails | diazverso-nox ou diazverso-thumbnail |
-| Cenas, motion, áudio e QA | diazverso-decupagem |
+| Edição em motion, som e legenda | diazverso-motion |
+| Decupagem em beats e QA do render | diazverso-decupagem |
 | Conteúdo vertical e legendas | diazverso-shorts |
 | Plugin e criação de skills | diazverso-manutencao |
 

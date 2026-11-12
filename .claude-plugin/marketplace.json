@@ -1,0 +1,13 @@
+{
+  "name": "diazverso",
+  "owner": {
+    "name": "Daniel Dias"
+  },
+  "plugins": [
+    {
+      "name": "diazverso",
+      "source": "./",
+      "description": "Regras, fluxo e skills do canal Diazverso, com produção pelo Content Lab."
+    }
+  ]
+}

@@ -12,13 +12,23 @@ O plugin não distribui trilhas. A música vem de uma fonte com licença para ca
 
 Não usar trilha de filmes, séries, jogos ou covers dessas trilhas; não usar faixa encontrada em vídeo de terceiros; não sintetizar "música" procedural como trilha final (os SFX procedurais continuam permitidos).
 
-## Catálogo
+## Registro
 
-Cada faixa entra em `audio/audio-plan.mjs` como `{id, path, kind:"music", durationFrames, tags, rights:"APPROVED", evidence}`. `evidence` descreve a licença verificável (por exemplo, "YouTube Audio Library, sem atribuição, baixada em AAAA-MM-DD"). Tags descrevem clima: `tensao`, `misterio`, `epico-contido`, `reflexivo`, `humor`, `acao`.
+Cada faixa entra na produção com a licença verificável: no Content Lab, `media_import_files` com `role: "music"` e os direitos confirmados; fora dele, a evidência fica na pasta da produção (por exemplo, "YouTube Audio Library, sem atribuição"). Descrever o clima da faixa: tensão, mistério, épico contido, reflexivo, humor ou ação.
 
 ## Uso
 
-- Uma faixa por bloco narrativo (abertura, desenvolvimento, payoff); troca de faixa coincide com mudança de bloco, nunca no meio de uma frase.
-- Ducking de 18–24 dB sob a voz; sem música nos 0,3 s antes de uma revelação quando o silêncio ajuda.
-- SFX com função: whoosh em troca de painel, ding em revelação de dado, boom em contradição, riser antes do payoff. No máximo 1 SFX a cada 4 s.
-- Se não houver faixa aprovada, renderizar sem trilha e marcar `qa_audio` como pendente; não preencher com música improvisada.
+- Uma faixa por bloco narrativo (abertura, desenvolvimento, payoff). A troca de faixa coincide com a mudança de bloco, nunca no meio de uma frase.
+- A trilha abaixa sob a voz (o kit faz isso pelos tempos das palavras) e volta nos respiros. Silêncio de até 0,3 s antes de uma revelação, quando ajudar.
+- **SFX em cada troca de beat**, com função:
+  - `whoosh` ou `swish` em troca de cena;
+  - `pop` em texto que entra;
+  - `tick` em números;
+  - `impact` ou `sub` em contradição;
+  - `ding` em revelação;
+  - `glitch` em erro ou virada;
+  - `riser` antes do payoff;
+  - `camera` em evidência.
+
+  Volume abaixo da voz; o som não pode competir com a fala.
+- Sem faixa aprovada, renderizar sem trilha e deixar o áudio pendente. Não preencher com música improvisada: a base rítmica sintetizada do kit é só rascunho.

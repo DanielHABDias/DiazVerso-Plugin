@@ -1,0 +1,77 @@
+---
+name: diazverso
+description: "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir."
+---
+
+**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
+
+# Diazverso: regras do canal
+
+O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados. Estas regras são o gosto do criador e valem desde a primeira mensagem, mesmo sem conhecer quem pede. Só mudam por pedido explícito do criador. Pergunte apenas o que falta para avançar.
+
+## Regras inegociáveis
+
+1. **Contexto eficiente.** Uma skill principal por vez. Usar o [grafo de skills](../diazverso-contexto-eficiente/references/skill-map.json) para achar o caminho. Não reler o que já foi lido nesta sessão. Manter um checkpoint curto ao trocar de etapa.
+2. **Content Lab é o caminho padrão para produzir.** Na primeira produção da sessão, conferir se o MCP do Content Lab responde (`contentlab_status`). Se não estiver conectado, perguntar "Vamos usar o Content Lab?" e conectar seguindo `../diazverso-contentlab/SKILL.md`. Produzir fora dele só quando o criador recusar.
+3. **Combinar o fluxo uma vez, numa pergunta só**, antes de criar o projeto:
+   - **Tudo automático:** a IA faz tudo e avisa no fim.
+   - **Parar em pontos:** a IA para, avisa o que revisar no Content Lab e espera. Sugestão: roteiro, narração e revisão final.
+   - **Aprovar cada etapa.**
+   - **Voz:** voz de IA ou o criador grava a própria voz no Content Lab.
+4. **Ordem da produção:**
+   1. pesquisa e tese;
+   2. título e thumbnail, antes do roteiro (o roteiro cumpre o que eles prometem);
+   3. roteiro escrito em beats;
+   4. revisão de fatos, estrutura e voz;
+   5. aprovação;
+   6. cenas das obras com direitos;
+   7. narração;
+   8. plano de motion;
+   9. prévias;
+   10. render;
+   11. thumbnail final;
+   12. kit de publicação manual.
+5. **Edição = motion design do kit** (`../diazverso-motion/SKILL.md`):
+   - **Ritmo:** troca de informação a cada 1,5–3 s, no ritmo do RunnyIA, com a câmera nunca parada.
+   - **Visual:**
+     - estética HQ madura;
+     - Anton em títulos e legendas;
+     - Nox com expressões;
+     - cena da obra sempre que a fala citar algo.
+   - **Som:**
+     - SFX em cada troca;
+     - legenda palavra a palavra;
+     - trilha licenciada abaixando sob a voz.
+   - **Proibido:**
+     - texto sobre fundo liso como cena;
+     - clips estáticos colados;
+     - componentes TSX escritos do zero quando o kit tem a cena.
+6. **Escrita:**
+   - **Voz:** conversada, opinativa, irônica e bem-humorada.
+   - **Formato:** ensinar ou revelar algo através de histórias e personagens ([formatos](../diazverso-core/references/formatos-editoriais.md)).
+   - **Abertura:** gancho no primeiro segundo, sem "hoje vamos falar".
+7. **Nunca:**
+   - publicar, agendar ou enviar vídeos (o criador publica);
+   - inventar fatos ou falas canônicas;
+   - usar mídia sem direitos ou música sem licença (o canal é monetizado);
+   - redesenhar o Nox (`assets/brand/nox/Nox.png` é a fonte);
+   - prometer CTR ou retenção.
+8. **Verificar de verdade.** Abrir frames, medir o áudio e ler de volta o que foi gravado. Não declarar pronto o que não foi conferido.
+
+## Qual skill abrir
+
+| Pedido | Skill |
+| --- | --- |
+| Produzir um vídeo do começo ao fim, ou retomar | diazverso-contentlab (com o Content Lab) ou diazverso-criacao-video (sem ele) |
+| Pauta, tese, pesquisa | diazverso-pesquisa |
+| Títulos | diazverso-titulos |
+| Thumbnail | diazverso-thumbnail |
+| Roteiro | diazverso-roteiro, depois as revisões de fatos, estrutura e voz |
+| Edição, motion, som, legenda | diazverso-motion |
+| Nox, poses, expressões, Nox 3D | diazverso-nox |
+| Shorts | diazverso-shorts |
+| Identidade e linguagem | diazverso-core |
+| Drive e Sheets | diazverso-drive-setup |
+| Mudar o plugin | diazverso-manutencao |
+
+O resto do roteamento está em [roteamento](../diazverso-contexto-eficiente/references/roteamento.md).

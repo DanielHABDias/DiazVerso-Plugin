@@ -24,8 +24,8 @@ def require(ok:bool,message:str)->None:
 
 
 def resource_files(root:Path=ROOT)->list[Path]:
-    files=[root/'plugin.json',root/'THIRD_PARTY_NOTICES.md']
-    for name in ('skills','assets','schemas','templates'):
+    files=[root/'plugin.json',root/'THIRD_PARTY_NOTICES.md',root/'.claude-plugin/plugin.json',root/'.claude-plugin/marketplace.json']
+    for name in ('skills','assets','schemas','templates','hooks'):
         files.extend(p for p in (root/name).rglob('*') if p.is_file()
                      and not any(part in SKIP for part in p.relative_to(root).parts))
     return sorted(set(files))
@@ -70,6 +70,12 @@ def validate(refresh_map:bool=False)->dict:
     require(entry['name']==manifest['name'] and entry['source']=={'source':'local','path':'./'},'Marketplace source mismatch')
     require(entry['category']==settings['interface']['category']=='Productivity','Marketplace category mismatch')
     require(entry['policy']=={'installation':'AVAILABLE','authentication':'ON_INSTALL'},'Invalid marketplace policy')
+    claude=json.loads((ROOT/'.claude-plugin/plugin.json').read_text())
+    require(claude['name']==manifest['name'] and claude['version']==manifest['version'],'Claude manifest out of sync with plugin.json')
+    cmarket=json.loads((ROOT/'.claude-plugin/marketplace.json').read_text())
+    require(cmarket['name']=='diazverso' and [e['name'] for e in cmarket['plugins']]==['diazverso'] and cmarket['plugins'][0]['source']=='./','Invalid Claude marketplace')
+    hook=json.loads((ROOT/'hooks/hooks.json').read_text())['hooks']['SessionStart'][0]['hooks'][0]['command']
+    require('skills/diazverso/SKILL.md' in hook and (ROOT/'skills/diazverso/SKILL.md').is_file(),'SessionStart hook must inject the entry skill')
     actual=skill_catalog();map_path=ROOT/MAP_PATH
     if refresh_map:map_path.write_text(json.dumps(actual,ensure_ascii=False,indent=2)+'\n')
     files=resource_files()+[ROOT/'README.md',ROOT/'AGENTS.md'];skill_count=0;python_count=0;js_count=0

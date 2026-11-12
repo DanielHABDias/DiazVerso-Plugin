@@ -4,8 +4,7 @@ Escolher o utilitário conforme a evidência disponível. Cada módulo recebe os
 
 | Necessidade | Utilitário |
 | --- | --- |
-| Contrato de composição | ../scripts/validate_composition.py |
-| Previews reais por cena | ../scripts/render_previews.py |
+| Contrato de composição de clips (modo antigo) | ../scripts/validate_composition.py |
 | Extração de quadros do MP4 | ../scripts/extract_review_frames.py |
 | Estrutura técnica e revisões de código | ../scripts/review_technical.py |
 | Quadros, margens e legibilidade | ../scripts/review_visual.py |
