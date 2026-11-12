@@ -123,6 +123,23 @@ def validate(refresh_map:bool=False)->dict:
         p=ROOT/item['path'];require(p.is_file() and p.resolve().is_relative_to(ROOT),'Missing asset')
         data=p.read_bytes();digest=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
         require(len(data)==item['size_bytes'] and digest==item['git_blob_sha1'],'Asset integrity: '+item['path'])
+    poses_dir=ROOT/'assets/brand/nox/poses'
+    if poses_dir.is_dir():
+        listed={item['path'] for item in catalog['assets']}
+        pngs=sorted(f.name for f in poses_dir.glob('*.png'))
+        for name in pngs:require(re.fullmatch(r'[a-z0-9-]+\.png',name) and f'assets/brand/nox/poses/{name}' in listed,'Pose PNG not named or not in assets/manifest.json: '+name)
+        spec=json.loads((poses_dir/'poses.json').read_text()) if (poses_dir/'poses.json').is_file() else {'poses':{}}
+        require(not pngs or (poses_dir/'poses.json').is_file(),'Pose PNGs without poses.json')
+        for key,entry in spec['poses'].items():
+            file=poses_dir/str(entry.get('arquivo',''))
+            require(re.fullmatch(r'[a-z0-9-]+',key) and file.is_file(),'Pose entry without PNG: '+key)
+            head=file.read_bytes()[:24];w,h=int.from_bytes(head[16:20],'big'),int.from_bytes(head[20:24],'big')
+            require(head[12:16]==b'IHDR' and 1000<=h<=2000,'Pose PNG must be 1000-2000 px tall: '+key)
+            eyes=entry.get('olhos')
+            if eyes is not None:
+                for side in ('esquerdo','direito'):
+                    pt=eyes.get(side);require(isinstance(pt,list) and len(pt)==2 and 0<=pt[0]<=w and 0<=pt[1]<=h*0.5,'Pose eye outside the head: '+key+' '+side)
+            require(entry.get('cobre','nenhum') in ('nenhum','esquerdo','direito','ambos'),'Invalid cobre: '+key)
     require(map_path.is_file() and json.loads(map_path.read_text())==actual,'Skill map is stale; regenerate with --refresh-map')
     return {'status':'VALID','version':manifest['version'],'skills':skill_count,'resources':len(resource_files()),
             'python_syntax':python_count,'javascript_syntax':js_count,'references':'VALID','skill_map':'CURRENT'}

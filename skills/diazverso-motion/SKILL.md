@@ -54,7 +54,7 @@ Cada beat segue o contrato `diazverso-motion-v1`:
   - **Aparte (`aparte`):** a cena da obra desfoca e o Nox aparece **inteiro**, subindo pela borda de baixo, com as pernas fora do quadro. Cada fala é uma **pose nova em stop motion**: troca seca de desenho e de lugar, sem quadros intermediários, com uma tremidinha de stop motion. Ele gesticula com as mãos (pensando com a mão na frente do rosto, arminha, apontando, dando de ombros, facepalm…), com um balão de ícone ou texto acima. No fim ele sai de uma vez e o fundo volta nítido.
   - **Cena `nox` com `poses`:** a mesma troca de poses em cena própria, de vez em quando.
   - **Reação no canto** (`humor` em `evidencia`): rara.
-  - **Poses:** cada pose é um PNG desenhado a partir do canônico (`../diazverso-nox/references/poses.md`). Sem o PNG, o kit usa o Nox canônico com a expressão.
+  - **Poses:** pose (gesto, PNG sem olhos) × humor (olhos desenhados pelo kit) em cada fala, escolhidos pelo tom: pergunta pensa, opinião aponta, erro é facepalm, piada é arminha ou rindo ([poses](../diazverso-nox/references/poses.md)). Não repetir a mesma pose em falas seguidas. Sem o PNG, o kit usa o Nox canônico com o humor.
 - **Extras por cima de qualquer cena** (campo `extras` do beat):
   - **caixinhas HQ de lembrete,** que não precisam ser faladas: inscreva-se, like, sininho, "minha opinião, tá?", alerta de spoiler, fonte, comenta aí;
   - **recortes PNG** do que está sendo falado (um objeto, um personagem recortado), que estalam na tela em stop motion.
