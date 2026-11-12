@@ -1,6 +1,6 @@
 ---
 name: diazverso-thumbnail
-description: "Use para transformar tese, promessa editorial e título de um vídeo Diazverso em conceitos de thumbnails horizontais A/B simples, legíveis e coerentes, antes de gerar ou revisar a imagem."
+description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um vídeo Diazverso: conceitos com ângulos diferentes, arte renderizada pelo kit de motion (obra, texto curto em Anton, Nox) e conferência no tamanho do celular."
 ---
 
 **Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
@@ -25,6 +25,20 @@ description: "Use para transformar tese, promessa editorial e título de um víd
 6. Arte HQ madura com contraste e profundidade a serviço da ideia, não painéis/balões infantis automáticos. Diretrizes de cor são hipóteses para o designer, **não validação de contraste de pixels**.
 7. Cada asset indicado deve registrar direitos, evidência e fonte. Ausência de material aprovado gera `PENDENTE DE DIREITOS`, não troca silenciosa por imagem de terceiros.
 8. Cada variante deve documentar `angle`, `visual_metaphor`, `layout`, `on_image_text`, `focus`, `contrast_plan`, `nox`, `assets_used`, `rationale`. Entregar dois conceitos A/B e uma recomendação editorial **sem prever CTR**.
+
+## Gerar a imagem com o kit
+
+A arte final não depende de ferramenta de imagem externa. O kit de motion renderiza a thumbnail (`../diazverso-motion/kit/Thumbnail.tsx`, composição `DiazversoThumb`). Cada conceito vira:
+
+| Conceito | Prop do kit |
+| --- | --- |
+| Assunto dominante (obra com direitos) | `midia` |
+| Contraste ou comparação | `midiaB` (layout VS) |
+| Texto na imagem, até 4 palavras | `texto`, com a palavra-chave entre `*asteriscos*` |
+| Emoção (Nox) | `humor`, ou omitir |
+| Composição | `lado` do texto, `tom` de destaque e `selo` curto |
+
+Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B: `text`, `mediaId`, `mediaIdB`, `humor`, `side`, `tone` e `badge`. Ele grava as duas na embalagem e devolve as versões de 320 px em `output/previas/`. **Abrir as versões de celular** e responder: o assunto se reconhece em 1 segundo? O texto se lê? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
 
 ## Contrato e validador offline
 

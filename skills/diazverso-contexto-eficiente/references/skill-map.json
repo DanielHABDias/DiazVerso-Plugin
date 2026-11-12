@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.4.0",
+  "plugin_version": "1.5.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -216,13 +216,14 @@
       "name": "diazverso-motion",
       "path": "skills/diazverso-motion/SKILL.md",
       "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
-      "sha256": "2843e6ef4a804e4d2f7c3ae68e87d84b6070365d0a43734e74ec68fc366cc369",
+      "sha256": "babb91de71e7c2b4827edf57333e23a249b86236479ed36040cdb4d1f63b4124",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
         "diazverso-criacao-video",
         "diazverso-decupagem",
-        "diazverso-nox"
+        "diazverso-nox",
+        "diazverso-thumbnail"
       ],
       "references": [
         "assets/brand/nox/nox-sem-olhos.png",
@@ -235,7 +236,8 @@
         "skills/diazverso-motion/kit/index.ts",
         "skills/diazverso-motion/references/linguagem.md",
         "skills/diazverso-motion/scripts/build_motion_sfx.mjs",
-        "skills/diazverso-nox/SKILL.md"
+        "skills/diazverso-nox/SKILL.md",
+        "skills/diazverso-thumbnail/SKILL.md"
       ]
     },
     {
@@ -284,14 +286,16 @@
       "name": "diazverso-revisao-estrutura",
       "path": "skills/diazverso-revisao-estrutura/SKILL.md",
       "description": "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção.",
-      "sha256": "3e5e5624a22482149dc2230d65dc9ee080fb56e934c81852099a805aa45a1587",
+      "sha256": "8f5c453ed02478f632d1f3138c8dbad969a26c7183b4a30a09ef42bb2de97152",
       "dependencies": [
         "diazverso-contexto-eficiente",
-        "diazverso-core"
+        "diazverso-core",
+        "diazverso-roteiro"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
-        "skills/diazverso-core/references/formatos-editoriais.md"
+        "skills/diazverso-core/references/formatos-editoriais.md",
+        "skills/diazverso-roteiro/references/escrita.md"
       ]
     },
     {
@@ -322,7 +326,7 @@
       "name": "diazverso-roteiro",
       "path": "skills/diazverso-roteiro/SKILL.md",
       "description": "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado.",
-      "sha256": "9178611f1f278c901fe19ab8032381b7a957d789837948e0a24433dad09ea206",
+      "sha256": "001315fd3c9d7fc97d40506ceb61f182ccd9ff142255c3328736009cb346d5a4",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -331,6 +335,7 @@
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-core/references/formatos-editoriais.md",
         "skills/diazverso-core/references/referencias-audiovisuais.md",
+        "skills/diazverso-roteiro/references/escrita.md",
         "skills/diazverso-roteiro/scripts/build_requests.py",
         "templates/roteiro-longo-v1.json",
         "templates/roteiro-short-v1.json"
@@ -376,8 +381,8 @@
     {
       "name": "diazverso-thumbnail",
       "path": "skills/diazverso-thumbnail/SKILL.md",
-      "description": "Use para transformar tese, promessa editorial e título de um vídeo Diazverso em conceitos de thumbnails horizontais A/B simples, legíveis e coerentes, antes de gerar ou revisar a imagem.",
-      "sha256": "5d14afd02eb1af5f3d0507255785c1e82f3d2ba167d850a3f2fb8c23271f6d49",
+      "description": "Use para criar, gerar com o kit e revisar as thumbnails A/B de um vídeo Diazverso: conceitos com ângulos diferentes, arte renderizada pelo kit de motion (obra, texto curto em Anton, Nox) e conferência no tamanho do celular.",
+      "sha256": "61aa67e0b41bb3826d8d046a2b6e695f32f629d14f698520222f2c4dd3df1475",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core"
@@ -395,12 +400,14 @@
       "name": "diazverso-titulos",
       "path": "skills/diazverso-titulos/SKILL.md",
       "description": "Use quando o criador pedir títulos A/B, embalagem de vídeo, promessa do gancho ou conceitos de thumbnail para vídeos longos e Shorts do Diazverso.",
-      "sha256": "957df15c2d14b8edb5670ee66c661f0c1b669e56393f5bda62cb0c0dfc449dd0",
+      "sha256": "7be1c8175554348700733734ed73a10c3ed0af9d4d00728043161a20abea7b9f",
       "dependencies": [
-        "diazverso-contexto-eficiente"
+        "diazverso-contexto-eficiente",
+        "diazverso-thumbnail"
       ],
       "references": [
         "skills/diazverso-contexto-eficiente/SKILL.md",
+        "skills/diazverso-thumbnail/SKILL.md",
         "skills/diazverso-titulos/references/modelos.md"
       ]
     },

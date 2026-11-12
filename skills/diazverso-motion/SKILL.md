@@ -46,6 +46,18 @@ Cada beat segue o contrato `diazverso-motion-v1`:
 - A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz.
 - `kit/Composition.tsx` documenta as props de entrada. `kit/index.ts` é o ponto de entrada do Remotion.
 
+## Thumbnail
+
+A thumbnail sai do mesmo kit: a composição `DiazversoThumb` (`kit/Thumbnail.tsx`) renderiza um still de 1280×720. O contrato está no catálogo (`thumbnail`):
+
+- a mídia da obra como assunto dominante;
+- até 4 palavras em Anton, com contorno e aberração cromática; a palavra entre *asteriscos* fica amarela;
+- o Nox com a expressão do vídeo;
+- um selo curto opcional;
+- com duas mídias, o layout VS.
+
+Pelo Content Lab: `thumbnails_generate`. A direção e a revisão ficam em `../diazverso-thumbnail/SKILL.md`.
+
 ## Assets
 
 - **Nox:** a composição usa `assets/brand/nox/nox-sem-olhos.png`, uma variante do Nox canônico em que só os olhos foram cobertos com a cor do rosto; os olhos são redesenhados por expressão, na mesma posição, cor e brilho ([Nox](../diazverso-nox/SKILL.md)).
