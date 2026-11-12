@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.10.0",
+  "plugin_version": "1.11.1",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -74,11 +74,12 @@
       "name": "diazverso-contentlab",
       "path": "skills/diazverso-contentlab/SKILL.md",
       "description": "Use para produzir ou retomar vídeos Diazverso pelo Content Lab via MCP: conferir e conectar o servidor MCP, combinar o fluxo com o criador (automático, pausas, aprovação, voz própria) e conduzir as ferramentas da ideia ao vídeo final.",
-      "sha256": "c626d44462cc5302543e1014614d280b6db16796284ff3b89e3e0e069811e92a",
+      "sha256": "586f9939b295a85ee8472acdff01df3a427c2f0678382692cb013104bf228600",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-criacao-video",
         "diazverso-motion",
+        "diazverso-nox",
         "diazverso-roteiro",
         "diazverso-thumbnail",
         "diazverso-titulos"
@@ -87,6 +88,8 @@
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-criacao-video/SKILL.md",
         "skills/diazverso-motion/SKILL.md",
+        "skills/diazverso-motion/references/som.md",
+        "skills/diazverso-nox/references/poses.md",
         "skills/diazverso-roteiro/SKILL.md",
         "skills/diazverso-thumbnail/SKILL.md",
         "skills/diazverso-titulos/SKILL.md"

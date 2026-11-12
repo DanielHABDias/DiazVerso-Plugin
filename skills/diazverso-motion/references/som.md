@@ -8,7 +8,12 @@ O som cai no quadro do evento, não no começo do beat por hábito.
 
 | Evento na tela | Som do kit | Quando |
 | --- | --- | --- |
-| Corte seco para cena nova | `whoosh` ou `swish`, alternando | começa 2–3 quadros antes do corte (`at: -0.08`) |
+| Corte seco para cena nova | `whoosh` ou `swish`, alternando; `whoosh-rapido` nos cortes de ritmo acelerado | começa 2–3 quadros antes do corte (`at: -0.08`) |
+| Transição longa, câmera voando, entrada de capítulo | `whoosh-lento` | começa ~1 s antes da cena nova (`at: -1`) |
+| Botão, caixinha de inscrição ou like sendo "clicada" | `clique` | no quadro do clique da caixinha |
+| Sininho, notificação, "acertou" | `sino` | no quadro em que o ícone aparece |
+| Explosão, revelação enorme, fundo `explosao` entrando | `explosao` | no quadro do estouro; abaixar a trilha junto |
+| Piada física, "toma!", correção seca, meme | `tapa` (seco) ou `tapa-eco` (o tapa de meme, com eco) | na palavra da piada; `tapa-eco` no máximo uma vez a cada 1–2 minutos |
 | Palavra gigante, título, virada | `impact` (+ `sub` só nas viradas fortes) | no quadro em que a palavra bate |
 | Nox entra no aparte, balão estala, caixinha ou recorte aparece | `pop` | no quadro do estalo |
 | Número subindo | `tick` em cada degrau e `ding` no valor final | acompanha o contador |
@@ -16,6 +21,8 @@ O som cai no quadro do evento, não no começo do beat por hábito.
 | Painel da HQ, frame da obra | `camera` | quando o painel entra |
 | Erro, "não é bem assim" | `error` ou `glitch` | na palavra do erro |
 | Tensão antes da revelação | `riser` | termina exatamente no corte da revelação (`at` negativo) |
+
+Sons de meme (`tapa-eco`, `explosao`, `sino`) perdem a graça quando repetem: no máximo um a cada 1–2 minutos de vídeo longo, um por Short.
 
 Regras:
 
@@ -28,7 +35,7 @@ Regras:
 
 ## 2. Criar sons novos
 
-Os SFX do kit são sintetizados pelo `../scripts/build_motion_sfx.mjs`: são originais e não usam amostras de terceiros. Para um som que falta (por exemplo, `soco`, `porta` ou `vidro`):
+Os 12 primeiros SFX do kit (de `pop` a `camera`) são sintetizados pelo `../scripts/build_motion_sfx.mjs`: são originais e não usam amostras de terceiros. Os de `clique` a `whoosh-lento` vieram do Openverse em CC0 pelo processo da seção 3, com créditos em `THIRD_PARTY_NOTICES.md`. Para um som que falta (por exemplo, `soco`, `porta` ou `vidro`):
 
 1. Acrescentar a receita no gerador, com nome curto em minúsculas.
 2. Gerar o WAV em 48 kHz mono em `assets/sfx/motion/<nome>.wav` e escutar.

@@ -76,9 +76,12 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
    - **Voz de IA:** `narration_generate` e `job_wait`, depois `narration_assemble` e `job_wait`.
    - **Voz do criador:** pedir para gravar no app (Narração → Gravar; depois Montar narração) e esperar com `stage_wait_decision`. `narration_generate` recusa nesse caso.
 5. `narration_transcribe` com `job_wait`: tempos de cada palavra.
-6. `motion_plan_auto`, depois `motion_preview`. Abrir os PNG em `output/previas/` e conferir assunto, legibilidade e ritmo. Ajustar com `motion_plan_set`; o contrato está em `motion_kit` e em `../diazverso-motion/SKILL.md`.
+6. `motion_plan_auto`, depois `motion_preview`. Abrir os PNG em `output/previas/` e conferir assunto, legibilidade e ritmo. Ajustar com `motion_plan_set`; o contrato está em `motion_kit` e em `../diazverso-motion/SKILL.md`. Conferir no plano:
+   - **Nox:** troca de pose enquanto fala, e todas as poses do catálogo aparecem no vídeo longo. Se `motion_plan_auto` listar `poses.posesFaltando`, encaixá-las em apartes de tom compatível ([poses](../diazverso-nox/references/poses.md)).
+   - **Legenda:** o tempo todo nos Shorts; no vídeo longo, só no gancho e nos apartes.
+   - **Som:** cada SFX no quadro do evento, variando, sem cobrir a fala; `clique`, `sino`, `explosao`, `tapa`, `tapa-eco`, `whoosh-rapido` e `whoosh-lento` estão no catálogo ([som](../diazverso-motion/references/som.md)).
 7. `thumbnails_generate` e a revisão da thumbnail (`../diazverso-thumbnail/SKILL.md`).
-8. `render_start` com `job_wait`. Depois, `deliverable_build`, cujo `verificacao.md` aponta as pendências, e `project_export`.
+8. `render_start` com `job_wait`. O Content Lab tira os metadados do vídeo final (etiquetas, capítulos embutidos e assinatura do encoder) sem recodificar. Depois, `deliverable_build`, cujo `verificacao.md` aponta as pendências, e `project_export`.
 
 Use `project_get` para ver o que falta em cada etapa (`missing`). Trabalhos longos devolvem `jobId`: chame `job_wait` de novo enquanto vier `waiting: true` e conte ao criador o progresso.
 
