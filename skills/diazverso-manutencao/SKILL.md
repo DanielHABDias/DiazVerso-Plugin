@@ -1,13 +1,11 @@
 ---
 name: diazverso-manutencao
-description: "Use ao criar ou alterar skills, scripts, assets, estrutura e documentação do plugin Diazverso, mantendo conteúdo atual, contexto eficiente e referências íntegras."
+description: "Use ao criar ou alterar skills, scripts, assets, estrutura e documentação do plugin Diazverso, mantendo conteúdo atual, enxuto e com referências íntegras."
 ---
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
 # Manutenção do plugin e das skills
 
-Aplicar `../diazverso-contexto-eficiente/SKILL.md` antes de agir. Trabalhar na fonte autorizada, verificar a versão corrente e preservar alterações do usuário.
+Trabalhar na fonte autorizada, verificar a versão corrente e preservar alterações do usuário.
 
 ## Escrever o estado atual
 
@@ -20,10 +18,10 @@ Aplicar `../diazverso-contexto-eficiente/SKILL.md` antes de agir. Trabalhar na f
 
 1. Reutilizar uma skill existente quando atender ao mesmo resultado. Criar outra somente se houver responsabilidade distinta.
 2. Usar pasta e frontmatter `name` coincidentes, em kebab-case, e `description` com resultado e gatilhos concretos.
-3. Incluir, logo após o frontmatter, o protocolo obrigatório de contexto usado pelas demais skills. Não duplicar toda a política.
+3. A `description` é carregada em toda sessão: no máximo 60 palavras (o validador confere). As regras gerais ficam só na skill `diazverso`; não repeti-las em cada skill.
 4. Manter o corpo curto: entrada, ação, saída e limites. Separar detalhe condicional em referências indicadas por quando consultá-las.
 5. Scripts devem executar uma função necessária, sem instalação, publicação, acesso ou sucesso presumidos. Preservar direitos e consentimento para serviços externos.
-6. Manter uma fonte por decisão e registrar dependências por caminhos reais. Regenerar o mapa de skills e verificar que a nova skill pode ser encontrada.
+6. Manter uma fonte por decisão e registrar dependências por caminhos reais. Pôr a nova skill na tabela "Qual skill abrir" da skill `diazverso`.
 7. Executar validação proporcional em ambiente isolado; entregar somente recursos operacionais e ferramentas de manutenção necessárias, sem fixtures, renders de demonstração ou relatórios de execução.
 8. Atualizar a versão e salvar pela fonte GitHub do plugin. Não instalar automaticamente.
 

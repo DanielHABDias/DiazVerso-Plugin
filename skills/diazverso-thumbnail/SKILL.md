@@ -3,8 +3,6 @@ name: diazverso-thumbnail
 description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um vídeo Diazverso: conceitos com ângulos diferentes, arte renderizada pelo kit de motion (obra, texto curto em Anton, Nox) e conferência no tamanho do celular."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Direção de thumbnails (thumbnail-brief)
 
 **Objetivo:** criar **dois conceitos visuais realmente diferentes** para uma mesma tese e promessa do vídeo, sem fabricar a imagem, o link do Drive ou alegar taxa de cliques. Fazer **thumbnail para vídeo longo ou Short apenas quando houver uso editorial da peça**; não assumir que Shorts exigem a mesma embalagem.

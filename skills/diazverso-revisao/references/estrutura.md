@@ -1,10 +1,3 @@
----
-name: diazverso-revisao-estrutura
-description: "Use para revisar o gancho, a progressão da narrativa, o ritmo, a redundância e os payoffs de roteiros longos ou Shorts do Diazverso sem inventar previsões de retenção."
----
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Revisão de estrutura, gancho e ritmo (structure)
 
 **Escopo:** revisar um roteiro identificável (ID `VD_####` ou `SH_####`, versão e tipo) antes da aprovação editorial e da decupagem. Não substitui revisão factual facts, revisão de voz voice, aprovação humana script-approval ou análise de retenção real pós-publicação.
@@ -13,13 +6,13 @@ description: "Use para revisar o gancho, a progressão da narrativa, o ritmo, a 
 
 - Tese/promessa e público pretendido; roteiro com gancho, desenvolvimento e fechamento; títulos A/B e conceito de thumbnail, se disponíveis.
 - Tipo LONGO ou SHORT, objetivo e duração estimada quando houver **texto narrado e velocidade de fala conhecida**. Não inventar duração nem métricas de audiência.
-- Carregar apenas os trechos relevantes e, se necessário, `diazverso-revisao-embalagem` para comparar promessa de título/thumb.
+- Carregar apenas os trechos relevantes e, se necessário, [embalagem](embalagem.md) para comparar promessa de título/thumb.
 
 ## Revisão em oito passagens
 
-1. **Promessa e entrega:** dizer em uma frase qual tensão, história ou pergunta o público espera ver. Identificar trecho concreto que a responde e o ganho de compreensão através da história/personagem. Pedidos centrados apenas em comparação, crítica ou definição precisam ser reenquadrados em um dos dois eixos editoriais. Em ensino através da ficção, verificar se há situação concreta da obra, ligação explícita com o princípio, limite da analogia e aprendizado/aplicação entregue; conferir [formatos editoriais](../diazverso-core/references/formatos-editoriais.md) quando necessário. Não exigir esse formato de uma história que promete outra entrega. Se não existir resposta à promessa, registrar `PAYOFF AUSENTE`; não considerar título convincente como prova de entrega.
+1. **Promessa e entrega:** dizer em uma frase qual tensão, história ou pergunta o público espera ver. Identificar trecho concreto que a responde e o ganho de compreensão através da história/personagem. Pedidos centrados apenas em comparação, crítica ou definição precisam ser reenquadrados em um dos dois eixos editoriais. Em ensino através da ficção, verificar se há situação concreta da obra, ligação explícita com o princípio, limite da analogia e aprendizado/aplicação entregue; conferir [formatos editoriais](../../diazverso-core/references/formatos-editoriais.md) quando necessário. Não exigir esse formato de uma história que promete outra entrega. Se não existir resposta à promessa, registrar `PAYOFF AUSENTE`; não considerar título convincente como prova de entrega.
 2. **Gancho:** verificar se começa no assunto, mostra tensão ou evidência e evita preâmbulos do tipo “hoje vamos falar”. Para Shorts, avaliar primeiros segundos; para vídeos longos, conferir se os primeiros ~30 segundos agregam valor, sem impor duração fixa de abertura. Anotar a frase que cria a expectativa e onde ela começa a ser cumprida.
-3. **Novos ganchos:** em vídeo longo, marcar onde a tensão se reabre (pergunta, "só que", dado, reação). Trecho de mais de 90 s sem nenhum vira `REVISAR`. Conferir também se os blocos se ligam por causa ou contraste ([escrever o roteiro](../diazverso-roteiro/references/escrita.md)).
+3. **Novos ganchos:** em vídeo longo, marcar onde a tensão se reabre (pergunta, "só que", dado, reação). Trecho de mais de 90 s sem nenhum vira `REVISAR`. Conferir também se os blocos se ligam por causa ou contraste ([escrever o roteiro](../../diazverso-roteiro/references/escrita.md)).
 4. **Progressão:** mapear 3 a 7 batidas narrativas do texto real: acontecimento → reação → explicação → consequência → interpretação → próxima mudança, quando aplicável. Exigir relações de causa, contraste ou pergunta, não capítulos artificiais.
 5. **Ritmo da fala:** ler como narração PT-BR. O pensamento é encadeado ("mas", "então", "só que"), e cada frase cabe em um beat de 1,5–3 s de fala, porque a edição troca a imagem a cada frase. Frases longas viram duas; evitar sucessão de frases de efeito, transições grandiloquentes e “e é aí que tudo muda” repetidos.
 6. **Redundância e densidade:** identificar repetições sem avanço; conservar repetição apenas com evidência nova, escalada, humor contextual ou callback. Remover desvios que não contribuem para tese, história ou payoff, sem reduzir profundidade quando necessária.
@@ -42,4 +35,4 @@ Registrar (a) promessa e ponto de payoff, (b) mapa breve das batidas, (c) redund
 - Nunca afirmar ter escutado áudio, assistido vídeo, testado fala em tempo real ou analisado o público se isso não aconteceu.
 - Respeitar a voz autoral: explicar o tema, sem “YouTuber genérico”, ganchos falsos ou cliffhangers em cada parágrafo.
 - Não alterar Docs/Sheets sem conexão/permissões e leitura de retorno. **Aprovação estrutural não aprova o roteiro inteiro** nem altera status em Produções automaticamente.
-- Usar `diazverso-core` para preferências editoriais sob demanda; voice para humanização e script-approval para gate de aprovação.
+- Usar `diazverso-core` para preferências editoriais sob demanda; [voz](voz.md) para humanização e [aprovação](aprovacao.md) para o gate.

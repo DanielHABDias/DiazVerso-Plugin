@@ -40,7 +40,7 @@ Os 12 primeiros SFX do kit (de `pop` a `camera`) são sintetizados pelo `../scri
 1. Acrescentar a receita no gerador, com nome curto em minúsculas.
 2. Gerar o WAV em 48 kHz mono em `assets/sfx/motion/<nome>.wav` e escutar.
 3. Pôr o nome na lista `sfx` do `../kit/catalog.json` e o arquivo no `assets/manifest.json`, com `rights` original.
-4. Rodar `python3 scripts/validate_plugin.py --refresh-map` e, no Content Lab, `npm run scenes:diazverso`. O nome passa a valer no plano.
+4. Rodar `python3 scripts/validate_plugin.py` e, no Content Lab, `npm run scenes:diazverso`. O nome passa a valer no plano.
 
 ## 3. Buscar sons prontos (Openverse)
 

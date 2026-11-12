@@ -1,20 +1,19 @@
 # Pacote de poses do Nox (stop motion)
 
-Na edição, o Nox gesticula em stop motion. Cada fala troca o desenho inteiro, de uma pose direto para a outra, sem quadros intermediários. Cada pose é um PNG pronto do Nox, com o gesto dos braços e a expressão dos olhos já desenhados.
+Na edição, o Nox gesticula em stop motion. Enquanto ele fala, o desenho inteiro troca a cada 0,7–1 s, de uma pose direto para a outra, sem quadros intermediários. Cada pose é um PNG pronto do Nox, com o gesto dos braços e a expressão dos olhos já desenhados.
 
 ## Onde ficam e como o kit escolhe
 
 ```text
 assets/brand/nox/poses/
   pensando.png
-  pensando-2.png      # variante da mesma pose
-  pensando-3.png
+  pensando-b.png      # variante da mesma pose
   arminha.png
   ...
 ```
 
 - O nome do arquivo é o nome da pose. O plano do Content Lab pede a pose pelo tom da frase, e o kit usa o PNG com esse nome.
-- **Variantes:** `-2`, `-3`… (ou `-b`, `-c`…) no fim do nome são variantes da mesma pose. O kit sorteia uma a cada fala, para o Nox não repetir o mesmo desenho. Quanto mais variantes, mais vivo fica.
+- **Variantes:** `-b`, `-c`… (ou `-2`, `-3`…) no fim do nome são variantes da mesma pose. O kit sorteia uma a cada fala, para o Nox não repetir o mesmo desenho. Quanto mais variantes, mais vivo fica.
 - **Pose que não existe:** cai no Nox canônico com o humor pedido, e o vídeo não quebra.
 - No Content Lab, `npm run scenes:diazverso` copia a pasta para o kit.
 
@@ -107,39 +106,12 @@ Depois de gerar:
 
 1. Recortar rente, com os pés na base, e conferir a transparência.
 2. Comparar com o `Nox.png` lado a lado (Character Lock, `../SKILL.md`). Reprovar se a silhueta, as proporções, as cores ou o estilo mudarem, ou se aparecer boca.
-3. Salvar em `assets/brand/nox/poses/<pose>.png` (ou `<pose>-2.png` para variante).
+3. Salvar em `assets/brand/nox/poses/<pose>.png` (ou `<pose>-b.png` para variante) e no `catalogo.json`.
 4. Registrar cada PNG no `assets/manifest.json` com:
    - `size_bytes`;
    - `git_blob_sha1` (`git hash-object <arquivo>`);
    - `source`: a ferramenta;
    - `rights`.
-5. Rodar `python3 scripts/validate_plugin.py --refresh-map`.
+5. Rodar `python3 scripts/validate_plugin.py`.
 
 Uma ferramenta de imagem só pode ser usada se os termos dela permitirem uso comercial do resultado, porque o canal é monetizado.
-
-## Avançado: pose sem olhos combinada com o humor
-
-Um PNG desenhado **sem olhos** pode ser combinado com os 8 humores do kit:
-
-- bravo
-- feliz
-- surpreso
-- tedio
-- confuso
-- piscada
-- determinado
-- triste
-
-Para isso, a pose precisa de uma entrada no `poses.json` da pasta:
-
-```json
-{ "versao": 1, "poses": { "pensando-x": { "arquivo": "pensando-x.png", "pose": "pensando", "olhos": { "esquerdo": [512, 402], "direito": [700, 384], "largura": 150, "angulo": -4 }, "cobre": "nenhum" } } }
-```
-
-- **`olhos.esquerdo` / `olhos.direito`:** centro de cada olho em pixels do PNG, esquerdo e direito da imagem.
-- **`largura`:** largura do olho esquerdo, cerca de 12% da altura da figura.
-- **`largura_direito`:** opcional. O padrão é 75% da `largura`.
-- **`angulo`:** opcional, a inclinação da cabeça em graus.
-- **`cobre`:** o olho escondido pela mão (`nenhum`, `esquerdo`, `direito`, `ambos`).
-
-PNGs soltos, com os olhos já desenhados, não precisam de `poses.json`.

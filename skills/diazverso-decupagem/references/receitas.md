@@ -28,7 +28,7 @@ Novo gancho a cada 60–90 s: uma pergunta do Nox, um dado (`numero`) ou um "mas
 | Payoff | 50–60 s | Compreensão entregue | `frase` com 3–6 palavras sobre a imagem do personagem | 1 imagem |
 | CTA | últimos 3–5 s | Convite contextual | `cta` | — |
 
-Legenda palavra a palavra em todo o Short, fora das cenas tipográficas. O kit é diagramado para 16:9; no vertical, conferir as prévias com atenção ao enquadramento.
+Legenda palavra a palavra em todo o Short, fora das cenas tipográficas. As cenas do kit têm diagramação vertical própria; conferir as prévias no 9:16.
 
 ## Antes de renderizar
 

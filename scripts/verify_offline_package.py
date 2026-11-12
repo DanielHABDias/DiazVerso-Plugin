@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import re
 import struct
 import sys
 import zipfile
@@ -27,17 +26,17 @@ REQUIRED = (
     "skills/diazverso-contentlab/SKILL.md",
     "assets/manifest.json",
     "assets/brand/nox/Nox.png",
-    "skills/diazverso-setup/SKILL.md",
     "skills/diazverso-core/SKILL.md",
     "skills/diazverso-nox/SKILL.md",
     "skills/diazverso-decupagem/SKILL.md",
     "skills/diazverso-thumbnail/SKILL.md",
-    "skills/diazverso-contexto-eficiente/SKILL.md",
-    "skills/diazverso-contexto-eficiente/references/skill-map.json",
+    "skills/diazverso-revisao/SKILL.md",
+    "skills/diazverso-motion/kit/catalog.json",
+    "assets/brand/nox/poses/catalogo.json",
     "skills/diazverso-manutencao/SKILL.md",
     "THIRD_PARTY_NOTICES.md",
 )
-EXTERNAL = ("context-optimization", "video-editing", "analyze-video-editing", "find-broll")
+EXTERNAL = ("find-broll",)
 PNG_SIG = b"\x89PNG\r\n\x1a\n"
 
 
@@ -89,7 +88,7 @@ def verify(path: Path) -> dict:
         plugin=json.loads(z.read("plugin.json"))
         if (plugin.get("name")!="diazverso" or
             plugin.get("extensions",{}).get("com.openai",{}).get("onboardingSkill")
-             != "./skills/diazverso-setup/SKILL.md"):
+             != "./skills/diazverso-contentlab/SKILL.md"):
             raise ValueError("Plugin/onboarding manifest mismatch")
         catalog=json.loads(z.read("assets/manifest.json"))
         items=[x for x in catalog.get("assets",[]) if x.get("id")=="brand.nox.canonical"]
@@ -107,21 +106,6 @@ def verify(path: Path) -> dict:
         w,h=_png_geometry(png)
         if {"width":w,"height":h}!=item.get("dimensions"):
             raise ValueError("Nox geometry mismatch")
-        graph=json.loads(z.read("skills/diazverso-contexto-eficiente/references/skill-map.json"))
-        listed={s["path"] for s in graph["skills"]}
-        present={n for n in names if re.fullmatch(r"skills/[^/]+/SKILL\.md",n)}
-        if listed!=present:
-            raise ValueError("Skill map and packaged skills disagree")
-        if graph.get("plugin_version")!=plugin.get("version"):
-            raise ValueError("Skill map version mismatch")
-        for skill in graph["skills"]:
-            raw=z.read(skill["path"])
-            if hashlib.sha256(raw).hexdigest()!=skill["sha256"]:
-                raise ValueError("Skill map source digest mismatch")
-            if skill["name"]!="diazverso-contexto-eficiente" and b"../diazverso-contexto-eficiente/SKILL.md" not in raw:
-                raise ValueError("Missing mandatory context policy")
-            if any(ref not in names for ref in skill["references"]):
-                raise ValueError("Skill map contains a missing resource")
         for asset in catalog["assets"]:
             raw=z.read(asset["path"])
             digest=hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()

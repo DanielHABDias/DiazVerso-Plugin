@@ -1,10 +1,3 @@
----
-name: diazverso-aprovacao-roteiro
-description: "Use para validar o gate final de roteiro e packaging do Diazverso antes de autorizar decupagem, motion, edição ou render, exigindo revisão factual, estrutural, de voz e decisão explícita do criador."
----
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Gate editorial de roteiro e packaging (script-approval)
 
 **Objetivo:** impedir que uma produção entre em edição como se roteiro, fatos e promessa estivessem aprovados quando ainda há pendências. Esta skill organiza decisões e evidências; **não concede permissão para publicar, renderizar ou alterar Google Sheets**.

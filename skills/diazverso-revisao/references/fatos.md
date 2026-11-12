@@ -1,10 +1,3 @@
----
-name: diazverso-revisao-fatos
-description: "Use para verificar afirmações factuais, fontes, hipóteses e promessas em roteiros, títulos, thumbnails e descrições do Diazverso antes da aprovação editorial."
----
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Revisão de fatos, fontes e promessas (facts)
 
 **Finalidade:** auditar afirmações verificáveis de uma produção `VD_####` ou `SH_####` e a coerência das promessas de título, thumbnail e gancho. Esta skill **não** pesquisa por conta própria, não garante acesso à web e não aprova automaticamente um roteiro.

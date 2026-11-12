@@ -3,8 +3,6 @@ name: diazverso-decupagem
 description: "Use para decupar um roteiro aprovado em beats de motion (fala, evidência da obra, cena do kit, som), escolher as mídias e revisar o vídeo renderizado: frames, áudio, ritmo, direitos e correções."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Decupagem e revisão
 
 A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); pelo Content Lab, é `motion_plan_auto` seguido de ajustes com `motion_plan_set`. Esta skill cuida do que vem antes e depois: decidir o que cada beat mostra e revisar o resultado.
@@ -27,9 +25,9 @@ A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); 
 2. Depois do render: frames e áudio reais, com os utilitários de [QA e correções](references/qa.md). Um achado por vez; renderizar de novo e revisar o mesmo achado.
 3. Vertical: `../diazverso-shorts/SKILL.md`.
 
-## SFX originais
+## Som
 
-Os SFX do kit ficam em `assets/sfx/motion/` (`../diazverso-motion/scripts/build_motion_sfx.mjs`). `assets/sfx/catalog.json` descreve outros cinco WAVs procedurais: whoosh curto e longo, ding, boom e riser. `scripts/build_original_sfx.py <pasta-nova>` os reproduz sem sobrescrever. A integridade e o sinal desses arquivos são medidos, mas a escuta e a aprovação continuam com o criador.
+Os SFX ficam em `assets/sfx/motion/` e seguem o [guia de som](../diazverso-motion/references/som.md).
 
 ## Limites
 

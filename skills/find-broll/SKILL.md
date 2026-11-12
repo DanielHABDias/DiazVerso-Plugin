@@ -1,15 +1,13 @@
 ---
 name: find-broll
-description: Plan, source, vet, and precisely place B-roll for spoken video. Use when the user asks to find B-roll, source cutaways, add receipts or visual evidence over a talking head, illustrate a transcript, create an annotated B-roll plan, or time cutaways to exact spoken words. Handles official footage, product interfaces, public-page receipts, archival material, concept graphics, and user-curated cultural clips while preserving source provenance and final editorial approval.
+description: "Find, vet and place scenes, receipts and B-roll from the works being discussed, timed to the spoken words, with source and rights recorded. Use when a beat needs media of a film, comic, series or claim."
 ---
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
 # Find B-roll
 
 Source cutaways that illustrate what the speaker means, not merely the nearest noun. Prefer a small number of accurate, authoritative assets over broad stock search or decorative coverage.
 
-Set `SKILL_DIR` to the absolute directory containing this file. Use the adjacent `analyze-video-editing` skill when the source needs transcription or editorial analysis. Use the adjacent `video-editing` skill for compositing, audio preservation, rendering, review artifacts, and final validation.
+In Diazverso, media comes into the Content Lab with confirmed rights (`media_import_files`) and the render is checked with `motion_preview`, `render_start` and real frames ([Content Lab](../diazverso-contentlab/SKILL.md)).
 
 ## Establish the contract
 
@@ -68,7 +66,7 @@ Write every approved choice to a project-local manifest before rendering. Read [
 
 ## Verify the render
 
-Use the adjacent `video-editing` workbench to render a low-resolution candidate first. Generate:
+Render a low-resolution candidate first (`motion_preview` in the Content Lab). Generate:
 
 - a midpoint frame for every placed beat;
 - a strip around every B-roll entrance and exit;
@@ -81,4 +79,4 @@ Deliver the master with the B-roll manifest, source list, approval state, review
 
 ## Attribution
 
-This workflow adapts the MIT-licensed [B-Roll Finder](https://github.com/louisedesadeleer/b-roll-finder) methodology by Louise De Sadeleer. The implementation is integrated with this repository's existing analysis, rendering, and validation contracts; third-party media retains its own rights and terms.
+This workflow adapts the MIT-licensed [B-Roll Finder](https://github.com/louisedesadeleer/b-roll-finder) methodology by Louise De Sadeleer. Third-party media retains its own rights and terms.

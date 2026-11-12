@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Validate the current plugin, resource references, mandatory policy and skill graph."""
+"""Validate the current plugin: manifests, skills, links, assets, SFX and Nox poses."""
 from __future__ import annotations
 import argparse
 import ast
 import hashlib
-import importlib.util
 import json
 import re
 import shutil
@@ -12,8 +11,7 @@ import subprocess
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-MAP_PATH='skills/diazverso-contexto-eficiente/references/skill-map.json'
-EXTERNAL=('context-optimization','video-editing','analyze-video-editing','find-broll')
+EXTERNAL=('find-broll',)
 SKIP={'.git','node_modules','__pycache__','.cache','out','dist','build'}
 SUFFIXES={'.md','.py','.json','.yaml','.yml','.ts','.tsx','.js','.mjs','.mts','.png','.jpg','.jpeg','.webp','.wav','.mp3','.svg','.txt','.ttf'}
 HISTORY=re.compile(r'(?-i:\b[A-M]\d{2}\b)|refer[eê]ncia hist[oó]rica|^#{1,6}\s+.*(?:changelog|histórico de altera)|(?:20\d\d-\d{2}-\d{2}).*(?:altera|atualiza)',re.I|re.M)
@@ -31,38 +29,14 @@ def resource_files(root:Path=ROOT)->list[Path]:
     return sorted(set(files))
 
 
-def graph_module():
-    path=ROOT/'skills/diazverso-contexto-eficiente/scripts/context_map.py'
-    spec=importlib.util.spec_from_file_location('diazverso_graph',path)
-    mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
-    return mod
-
-
-def skill_catalog()->dict:
-    graph=graph_module().build(ROOT)
-    available={p.relative_to(ROOT).as_posix() for p in resource_files()}
-    skills=[]
-    for path,node in graph['nodes'].items():
-        if not path.endswith('/SKILL.md'):continue
-        names=set()
-        for ref in node['references']:
-            target=ref['target']
-            if target.startswith('skills/') and target.split('/')[1]!=path.split('/')[1]:names.add(target.split('/')[1])
-        skills.append({'name':path.split('/')[1],'path':path,'description':node['description'],
-                       'sha256':node['sha256'],'dependencies':sorted(names),
-                       'references':sorted({r['target'] for r in node['references'] if r['target'] in available})})
-    return {'schema':'diazverso-skill-map','plugin_version':json.loads((ROOT/'plugin.json').read_text())['version'],
-            'skills':skills}
-
-
-def validate(refresh_map:bool=False)->dict:
+def validate()->dict:
     manifest=json.loads((ROOT/'plugin.json').read_text())
     require(manifest.get('$schema')=='https://agent-plugins.org/schemas/1.0.0/plugin.schema.json','Invalid portable schema')
     require(manifest.get('name')=='diazverso','Plugin identity mismatch')
     require(bool(re.fullmatch(r'\d+\.\d+\.\d+',manifest.get('version',''))),'Invalid version')
     require(not any(k in manifest for k in ('skills','mcpServers','apps','interface')),'Non-portable manifest key')
     settings=manifest['extensions']['com.openai']
-    require(settings['onboardingSkill']=='./skills/diazverso-setup/SKILL.md','Invalid onboarding')
+    require(settings['onboardingSkill']=='./skills/diazverso-contentlab/SKILL.md','Invalid onboarding')
     require(len(settings['interface']['shortDescription'])<=30,'Listing subtitle too long')
     market=json.loads((ROOT/'.agents/plugins/marketplace.json').read_text())
     require(market['name']=='diazverso' and len(market['plugins'])==1,'Invalid marketplace')
@@ -76,8 +50,6 @@ def validate(refresh_map:bool=False)->dict:
     require(cmarket['name']=='diazverso' and [e['name'] for e in cmarket['plugins']]==['diazverso'] and cmarket['plugins'][0]['source']=='./','Invalid Claude marketplace')
     hook=json.loads((ROOT/'hooks/hooks.json').read_text())['hooks']['SessionStart'][0]['hooks'][0]['command']
     require('skills/diazverso/SKILL.md' in hook and (ROOT/'skills/diazverso/SKILL.md').is_file(),'SessionStart hook must inject the entry skill')
-    actual=skill_catalog();map_path=ROOT/MAP_PATH
-    if refresh_map:map_path.write_text(json.dumps(actual,ensure_ascii=False,indent=2)+'\n')
     files=resource_files()+[ROOT/'README.md',ROOT/'AGENTS.md'];skill_count=0;python_count=0;js_count=0
     for file in files:
         rel=file.relative_to(ROOT).as_posix()
@@ -96,7 +68,8 @@ def validate(refresh_map:bool=False)->dict:
                 require(fm is not None,'Missing frontmatter: '+rel)
                 require(re.search(r'^name:\s*'+re.escape(file.parent.name)+r'\s*$',fm[1],re.M) is not None,'Skill name mismatch: '+rel)
                 require(re.search(r'^description:\s*\S.+$',fm[1],re.M) is not None,'Missing skill description: '+rel)
-                require('Protocolo obrigatório Diazverso' in source or file.parent.name=='diazverso-contexto-eficiente','Missing context policy: '+rel)
+                desc=re.search(r'^description:\s*"?(.*?)"?\s*$',fm[1],re.M)[1]
+                require(len(desc.split())<=60,'Skill description over 60 words (loaded every session): '+rel)
                 skill_count+=1
             if file.suffix=='.md':
                 require(not HISTORY.search(source),'Construction history in '+rel)
@@ -135,17 +108,7 @@ def validate(refresh_map:bool=False)->dict:
             require(re.fullmatch(r'[a-z0-9-]+\.png',name) and f'assets/brand/nox/poses/{name}' in listed,'Pose PNG not named or not in assets/manifest.json: '+name)
             head=(poses_dir/name).read_bytes()[:24]
             require(head[:8]==b'\x89PNG\r\n\x1a\n' and 600<=int.from_bytes(head[20:24],'big')<=2400,'Pose PNG must be a PNG 600-2400 px tall: '+name)
-        spec=json.loads((poses_dir/'poses.json').read_text()) if (poses_dir/'poses.json').is_file() else {'poses':{}}
-        for key,entry in spec['poses'].items():
-            file=poses_dir/str(entry.get('arquivo',''))
-            require(re.fullmatch(r'[a-z0-9-]+',key) and file.is_file(),'Pose entry without PNG: '+key)
-            head=file.read_bytes()[:24];w,h=int.from_bytes(head[16:20],'big'),int.from_bytes(head[20:24],'big')
-            require(head[12:16]==b'IHDR','Pose PNG invalid: '+key)
-            eyes=entry.get('olhos')
-            if eyes is not None:
-                for side in ('esquerdo','direito'):
-                    pt=eyes.get(side);require(isinstance(pt,list) and len(pt)==2 and 0<=pt[0]<=w and 0<=pt[1]<=h*0.5,'Pose eye outside the head: '+key+' '+side)
-            require(entry.get('cobre','nenhum') in ('nenhum','esquerdo','direito','ambos'),'Invalid cobre: '+key)
+        require(not (poses_dir/'poses.json').exists(),'poses.json is no longer supported; poses are ready-made PNGs in catalogo.json')
         # Catálogo: toda pose PNG pertence a exatamente uma pose do catálogo, com tons conhecidos.
         if pngs:
             cat_path=poses_dir/'catalogo.json'
@@ -157,14 +120,12 @@ def validate(refresh_map:bool=False)->dict:
                 require(re.fullmatch(r'[a-z0-9-]+',key) and files and all((poses_dir/f).is_file() for f in files),'Catalog pose without PNG: '+key)
                 require(entry.get('gesto') and entry.get('olhos') and entry.get('tons') and set(entry['tons'])<=tones,'Catalog pose incomplete or unknown tone: '+key)
                 owned+=files
-            spec_files={e.get('arquivo') for e in spec['poses'].values()}
             for name in pngs:
-                require(owned.count(name)==1 or name in spec_files,'Pose PNG missing from catalogo.json (or listed twice): '+name)
-    require(map_path.is_file() and json.loads(map_path.read_text())==actual,'Skill map is stale; regenerate with --refresh-map')
+                require(owned.count(name)==1,'Pose PNG missing from catalogo.json (or listed twice): '+name)
     return {'status':'VALID','version':manifest['version'],'skills':skill_count,'resources':len(resource_files()),
-            'python_syntax':python_count,'javascript_syntax':js_count,'references':'VALID','skill_map':'CURRENT'}
+            'python_syntax':python_count,'javascript_syntax':js_count,'references':'VALID'}
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--refresh-map',action='store_true');args=parser.parse_args()
-    print(json.dumps(validate(args.refresh_map),ensure_ascii=False,indent=2))
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--refresh-map',action='store_true',help='sem efeito; mantido por compatibilidade');parser.parse_args()
+    print(json.dumps(validate(),ensure_ascii=False,indent=2))

@@ -1,9 +1,7 @@
 ---
 name: diazverso-contentlab
-description: "Use para produzir ou retomar vídeos Diazverso pelo Content Lab via MCP: conferir e conectar o servidor MCP, combinar o fluxo com o criador (automático, pausas, aprovação, voz própria) e conduzir as ferramentas da ideia ao vídeo final."
+description: "Use para configurar e diagnosticar o ambiente do Diazverso e para produzir ou retomar vídeos pelo Content Lab via MCP: conferir e conectar o servidor MCP, combinar o fluxo com o criador (automático, pausas, aprovação, voz própria) e conduzir as ferramentas da ideia ao vídeo final."
 ---
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
 
 # Produzir pelo Content Lab
 
@@ -46,6 +44,8 @@ Depois de conectar, o cliente precisa ser reiniciado ou recarregado. Então `con
 - se a voz clonada existe;
 - se a transcrição funciona;
 - o que falta instalar.
+
+**Diagnóstico** (pedido de configuração, sem produção): conferir só o necessário (Content Lab, Google Drive/Docs/Sheets pela `../diazverso-drive-setup/SKILL.md`, Python e FFmpeg) e responder curto: o que funciona, o que falta e a próxima ação. Instalar o plugin ou dependências só a pedido do criador.
 
 ## 2. Combinar o fluxo
 

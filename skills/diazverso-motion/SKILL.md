@@ -3,8 +3,6 @@ name: diazverso-motion
 description: "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Motion: o vídeo como composição única
 
 O vídeo do canal é **uma composição Remotion** escrita como **roteiro em beats**, não clips colados. O kit (`kit/`) faz o trabalho visual:

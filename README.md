@@ -4,15 +4,7 @@ Plugin para pesquisar pautas, criar e revisar roteiros, organizar Google Docs/Sh
 
 ## Uso
 
-A skill de entrada é [diazverso](skills/diazverso/SKILL.md): regras do canal, fluxo e qual skill abrir. A produção acontece pelo Content Lab via MCP ([diazverso-contentlab](skills/diazverso-contentlab/SKILL.md)). Peça “vamos criar um vídeo para o Diazverso”. Todas as skills exigem o [protocolo de contexto eficiente](skills/diazverso-contexto-eficiente/SKILL.md): uma responsável principal, referências sob demanda, reutilização do que já foi conferido e retomada por checkpoint.
-
-O [mapa de skills](skills/diazverso-contexto-eficiente/references/skill-map.json) permite navegar sem abrir todos os arquivos. Com Python disponível, a busca incremental retorna até três resultados por padrão:
-
-```bash
-python skills/diazverso-contexto-eficiente/scripts/context_map.py --root . --query "roteiro"
-```
-
-O índice descartável fica fora do plugin e reutiliza arquivos inalterados. Mudanças invalidam seus metadados. O grafo orienta a busca; Docs, Sheets e arquivos atuais continuam sendo as fontes de verdade.
+A skill de entrada é [diazverso](skills/diazverso/SKILL.md): regras do canal, fluxo e qual skill abrir. A produção acontece pelo Content Lab via MCP ([diazverso-contentlab](skills/diazverso-contentlab/SKILL.md)). Peça “vamos criar um vídeo para o Diazverso”. A skill de entrada traz as regras de contexto e a tabela de qual skill abrir.
 
 ## Requisitos
 
@@ -22,7 +14,7 @@ O índice descartável fica fora do plugin e reutiliza arquivos inalterados. Mud
 
 As skills não fornecem essas conexões nem instalam dependências automaticamente. A edição é o kit de motion em `skills/diazverso-motion/kit/`, executado pelo Content Lab ou por um projeto Remotion.
 
-Nox canônico está em `assets/brand/nox/Nox.png`. Os WAVs originais em `assets/sfx/` têm integridade e sinal medidos, mas precisam de escuta/aprovação antes do uso editorial. Fundos procedurais HQ dispensam imagens adicionais.
+Nox canônico está em `assets/brand/nox/Nox.png`. Os SFX do kit ficam em `assets/sfx/motion/` (guia em `skills/diazverso-motion/references/som.md`). Fundos procedurais HQ dispensam imagens adicionais.
 
 ## Instalação e manutenção
 

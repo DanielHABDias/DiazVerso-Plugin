@@ -3,8 +3,6 @@ name: diazverso-roteiro
 description: "Use para criar ou atualizar o Google Doc nativo formatado de roteiro longo ou Short do Diazverso, usando os templates locais e vinculando o documento à produção correta na planilha, quando o Drive estiver conectado."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Roteiro nativo, formatado e vinculado
 
 **Objetivo:** produzir **um Google Doc nativo por vídeo**, no local certo, e atualizar **somente** a linha correspondente da aba `Produções`, com verificação após cada escrita. Esta skill não concede conexão ao Drive ou Sheets.
@@ -20,7 +18,7 @@ description: "Use para criar ou atualizar o Google Doc nativo formatado de rotei
 
 O texto segue [escrever o roteiro](references/escrita.md): embalagem antes, gancho nos primeiros segundos, blocos ligados por "mas" ou "então", novo gancho a cada 60–90 s, uma frase por beat e direção visual entre colchetes. Pelo Content Lab, o roteiro vai em `creative_write`; o Google Doc é opcional quando o Drive estiver conectado. Sem acesso ao Drive, o roteiro fica no Content Lab (ou num arquivo local) e entra no pacote de registro manual para o criador subir ([modo manual](../diazverso-drive-setup/references/modo-manual.md)).
 
-Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editoriais](../diazverso-core/references/formatos-editoriais.md). Desenvolver a história/trajetória revelando complexidade e aprendizado, ou ensinar uma ideia prática/filosófica através dela. Usar tese, exemplos, comparação, crítica e conceitos para sustentar essa entrega, sem transformá-los em formatos principais isolados. Em ensino através de personagens, conectar situação da obra → escolha/consequência → princípio → aplicação ou reflexão específica, distinguindo fato, interpretação e analogia. Não obrigar uma moral em histórias nem prometer mudança garantida ao espectador. Para o uso das referências de linguagem, consultar [vídeos e princípios](../diazverso-core/references/referencias-audiovisuais.md) apenas quando necessário.
+Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editoriais](../diazverso-core/references/formatos-editoriais.md). Desenvolver a história/trajetória revelando complexidade e aprendizado, ou ensinar uma ideia prática/filosófica através dela. Usar tese, exemplos, comparação, crítica e conceitos para sustentar essa entrega, sem transformá-los em formatos principais isolados. Em ensino através de personagens, conectar situação da obra → escolha/consequência → princípio → aplicação ou reflexão específica, distinguindo fato, interpretação e analogia. Não obrigar uma moral em histórias nem prometer mudança garantida ao espectador. Para o uso das referências de linguagem, consultar [vídeos e princípios](../diazverso-motion/references/linguagem.md) apenas quando necessário.
 
 ## Criação e preenchimento
 
@@ -42,4 +40,4 @@ Antes de preencher o roteiro, escolher o formato e a entrega em [formatos editor
 
 **Roteiro criado na pasta certa + estilos/estrutura verificados + URL de roteiro sincronizada e relida na linha correta da planilha.** Quando algum destes passos não puder ser executado, marcar **PARCIAL/BLOQUEADO**, com evidência do Doc e pendência de sincronização. Não prosseguir como se tivesse concluído.
 
-Para decisões editoriais carregar `diazverso-core` apenas quando necessário; para escolha de ferramentas consultar `diazverso-setup`, evitando carregar toda a documentação do projeto.
+Para decisões editoriais carregar `diazverso-core` apenas quando necessário; para escolha de ferramentas consultar `diazverso-contentlab`, evitando carregar toda a documentação do projeto.

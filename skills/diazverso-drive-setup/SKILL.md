@@ -3,8 +3,6 @@ name: diazverso-drive-setup
 description: "Use para localizar, configurar e operar a estrutura Google Drive/Docs/Sheets do Diazverso com identidade, idempotência e leitura de retorno."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Organização e registros Google
 
 O contrato da instalação está em [estrutura](references/estrutura.md). Cabeçalhos, IDs de pastas e dados operacionais devem vir da conta conectada, sem IDs pessoais embutidos no plugin.

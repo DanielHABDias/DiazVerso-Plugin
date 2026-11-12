@@ -3,8 +3,6 @@ name: diazverso-criacao-video
 description: "Use para iniciar, coordenar ou retomar uma produção Diazverso entre ideia, roteiro, artes, edição, QA e kit de publicação manual."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Coordenação de produção
 
 Com o Content Lab conectado, a produção corre por `../diazverso-contentlab/SKILL.md`, que combina o fluxo com o criador e opera o app. Esta skill vale sem ele e para retomada, kit e métricas.
@@ -22,10 +20,9 @@ Com o Content Lab conectado, a produção corre por `../diazverso-contentlab/SKI
 | Resultado | Skill responsável |
 | --- | --- |
 | Pesquisa e tese | diazverso-pesquisa |
-| Títulos e promessa visual | diazverso-titulos e diazverso-revisao-embalagem |
+| Títulos e promessa visual | diazverso-titulos |
 | Doc nativo formatado | diazverso-roteiro |
-| Fatos, estrutura e naturalidade | diazverso-revisao-fatos, diazverso-revisao-estrutura, diazverso-revisao-voz |
-| Aprovação do roteiro | diazverso-aprovacao-roteiro |
+| Revisões (embalagem, fatos, estrutura, voz) e aprovação do roteiro | diazverso-revisao |
 | Arte e mascote | diazverso-thumbnail e diazverso-nox |
 | Montagem do vídeo em motion (beats, kit, Nox, som) | diazverso-motion |
 | Decupagem em beats e QA do render | diazverso-decupagem |
@@ -62,4 +59,4 @@ Usar `../diazverso-decupagem/scripts/correction_loop.py` para tratar um achado p
 
 Depois da publicação manual, `scripts/analyze_metrics.py` resume métricas reais com fonte, período e ID. Comparações exigem contextos equivalentes. Converter achados em hipóteses a pesquisar, sem afirmar causalidade ou desempenho futuro.
 
-Detalhes de organização: `../diazverso-drive-setup/references/estrutura.md`. Para navegação ambígua, consultar `../diazverso-contexto-eficiente/references/roteamento.md`.
+Detalhes de organização: `../diazverso-drive-setup/references/estrutura.md`.

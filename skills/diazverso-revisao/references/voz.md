@@ -1,10 +1,3 @@
----
-name: diazverso-revisao-voz
-description: "Use para humanizar e revisar a narração PT-BR de roteiros Diazverso mantendo o raciocínio encadeado, humor contextual, opinião e fatos sem criar voz genérica de YouTuber."
----
-
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Revisão de voz e naturalidade (voice)
 
 **Objetivo:** editar um roteiro para soar como uma fala natural do criador, preservando tese, evidências, referências da obra e personalidade. **Não imitar literalmente** outros criadores; FALL, Um Nerd e RunnyIA são referências de função, não vozes para copiar.

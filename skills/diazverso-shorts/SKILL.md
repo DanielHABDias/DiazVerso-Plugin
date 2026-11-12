@@ -3,8 +3,6 @@ name: diazverso-shorts
 description: "Use para criar ou adaptar roteiro e plano audiovisual de Shorts Diazverso em 9:16, com gancho, ritmo, legendas e CTA contextual; não faz upload nem publicação."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso — Shorts verticais
 
 **Resultado:** preparar uma proposta de Short criativa e executável para a produção, sem prometer vídeo renderizado quando não houver runtime Remotion/editor. Seguir a tese, fatos, voz natural e humor contextual de `diazverso-core`. **O criador publica manualmente**; não há comandos nem instruções de postagem.

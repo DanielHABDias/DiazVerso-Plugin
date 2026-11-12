@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 CAPABILITIES = ("drive_read", "drive_write", "docs_write", "sheets_read",
-                "sheets_write", "render_runtime", "ffmpeg", "earshot")
+                "sheets_write", "render_runtime", "ffmpeg")
 ACTIONS = {
     "ideation": (),
     "research_outline": (),
@@ -29,7 +29,6 @@ ACTIONS = {
     "write_production_row": ("sheets_read", "sheets_write"),
     "render_preview": ("render_runtime",),
     "extract_frames": ("ffmpeg",),
-    "analyze_with_earshot": ("earshot",),
 }
 # Steps cannot be claimed complete just because the required connector exists.
 EVIDENCE_GATES = {
@@ -37,7 +36,6 @@ EVIDENCE_GATES = {
     "write_production_row": "SHEET_WRITE_AND_READBACK",
     "render_preview": "REAL_RENDER_AND_FRAME_INSPECTION",
     "extract_frames": "REAL_MEDIA_AND_EXTRACTED_PNG",
-    "analyze_with_earshot": "EARSHOT_ACTUAL_RUN_AND_USER_AUTHORIZATION",
 }
 PRODUCTION_RE = re.compile(r"(VD|SH)_\d{4,}\Z")
 

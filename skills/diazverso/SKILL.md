@@ -3,15 +3,13 @@ name: diazverso
 description: "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Diazverso: regras do canal
 
 O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados. Estas regras são o gosto do criador e valem desde a primeira mensagem, mesmo sem conhecer quem pede. Só mudam por pedido explícito do criador. Pergunte apenas o que falta para avançar.
 
 ## Regras inegociáveis
 
-1. **Contexto eficiente.** Uma skill principal por vez. Usar o [grafo de skills](../diazverso-contexto-eficiente/references/skill-map.json) para achar o caminho. Não reler o que já foi lido nesta sessão. Manter um checkpoint curto ao trocar de etapa.
+1. **Contexto enxuto.** Uma skill principal por vez, escolhida pela tabela abaixo, e só as referências da próxima ação. Não reler o que já foi lido nesta sessão. Resumir saídas longas. Ao trocar de etapa, manter um checkpoint curto: produção, decisões, feito, bloqueios e próxima ação.
 2. **Content Lab é o caminho padrão para produzir.** Na primeira produção da sessão, conferir se o MCP do Content Lab responde (`contentlab_status`). Se não estiver conectado, perguntar "Vamos usar o Content Lab?" e conectar seguindo `../diazverso-contentlab/SKILL.md`. Produzir fora dele só quando o criador recusar.
 3. **Combinar o fluxo uma vez, numa pergunta só**, antes de criar o projeto:
    - **Tudo automático:** a IA faz tudo e avisa no fim.
@@ -67,16 +65,19 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
 
 | Pedido | Skill |
 | --- | --- |
-| Produzir um vídeo do começo ao fim, ou retomar | diazverso-contentlab (com o Content Lab) ou diazverso-criacao-video (sem ele) |
+| Produzir um vídeo do começo ao fim, conectar o Content Lab, ou retomar | diazverso-contentlab (com o Content Lab) ou diazverso-criacao-video (sem ele, retomada, kit de publicação) |
 | Pauta, tese, pesquisa | diazverso-pesquisa |
 | Títulos | diazverso-titulos |
 | Thumbnail | diazverso-thumbnail |
-| Roteiro | diazverso-roteiro, depois as revisões de fatos, estrutura e voz |
+| Roteiro | diazverso-roteiro |
+| Revisão de embalagem, fatos, estrutura, voz e aprovação | diazverso-revisao |
 | Edição, motion, som, legenda | diazverso-motion |
+| Decupar em beats, revisar o render | diazverso-decupagem |
+| Buscar cenas e mídia das obras | find-broll |
 | Nox, poses, expressões, Nox 3D | diazverso-nox |
 | Shorts | diazverso-shorts |
 | Identidade e linguagem | diazverso-core |
 | Drive e Sheets | diazverso-drive-setup |
 | Mudar o plugin | diazverso-manutencao |
 
-O resto do roteamento está em [roteamento](../diazverso-contexto-eficiente/references/roteamento.md).
+Pedidos com várias etapas seguem a ordem da produção e abrem só a skill da próxima etapa.

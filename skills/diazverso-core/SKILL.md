@@ -3,14 +3,12 @@ name: diazverso-core
 description: "Use para escolher formatos editoriais, ensinar ideias práticas ou filosóficas através de personagens e aplicar identidade, voz PT-BR, tese, estética HQ e Nox no conteúdo Diazverso."
 ---
 
-**Protocolo obrigatório Diazverso:** antes de agir, aplicar `../diazverso-contexto-eficiente/SKILL.md`. Ler uma vez por sessão/versão e reutilizar o contexto válido; abrir somente a skill principal e as dependências necessárias.
-
 # Identidade editorial e visual
 
 - Canal brasileiro sobre super-heróis e universos relacionados: Marvel, DC, Ben 10, quadrinhos, animações, jogos, filmes e séries.
 - Construir uma tese, pergunta, contradição ou história que justifique acompanhar o vídeo. Argumentar com profundidade e exemplos, distinguindo fato, interpretação e opinião.
 - Voz conversada, opinativa, irônica e bem-humorada. Humor nasce do contexto; não impor bordões, gritos, locução épica ou formalidade artificial.
-- Referências por função: FALL para espontaneidade/humor, Um Nerd para tese/argumento e RunnyIA para explicação visual/fluidez/motion. Para dirigir um beat, consultar [vídeos e princípios](references/referencias-audiovisuais.md); não copiar suas identidades.
+- Referências por função: FALL para espontaneidade/humor, Um Nerd para tese/argumento e RunnyIA para explicação visual/fluidez/motion. Para dirigir um beat, consultar a [linguagem das referências](../diazverso-motion/references/linguagem.md); não copiar suas identidades.
 - HQ contemporânea e madura: painéis, halftone, textura, câmera, profundidade e tipografia de impacto a serviço da informação. Evitar aparência infantil e efeitos sem propósito.
 - Anton é a fonte do canal e acompanha o plugin em `assets/brand/fonts/anton/` (SIL OFL). Títulos, ênfases e legendas usam Anton.
 - Nox é recorrente quando ajuda a narrativa. Preservar `assets/brand/nox/Nox.png`; novas poses exigem comparação visual. Não precisa aparecer em todo quadro.

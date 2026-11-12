@@ -8,6 +8,14 @@ Medições feitas nos vídeos de referência com FFmpeg (trocas de imagem detect
 | FALL | 1,7 s | Tempo de reação: preparação → acontecimento → reação |
 | Um Nerd | 3,4 s | Imagem da obra sustentada enquanto o argumento se completa |
 
+Vídeos: [FALL](https://www.youtube.com/watch?v=Km8uHqIjNzA), [RunnyIA](https://www.youtube.com/watch?v=qfuCXMMeddc), [Um Nerd](https://www.youtube.com/watch?v=lVvEMBWguVs). Usar a função de cada um, sem copiar a identidade.
+
+## O que aplicar de cada um
+
+- **FALL (humor e reação):** preparação → acontecimento → reação → piada. Cortar quando a informação ou o timing pedem, sem interromper uma explicação. Bordões e gritos não viram fórmula.
+- **RunnyIA (explicação visual):** composição legível que se revela junto da fala, câmera indo de um elemento a outro, volta a um mapa visual quando orienta. Destacar só as palavras decisivas; texto nunca some antes de ser lido.
+- **Um Nerd (argumento por casos):** pergunta concreta → definição → exemplos → padrão → contraponto → síntese. Cada personagem é um caso que revela o princípio, não uma lista. Opinião do vídeo não vira fato sem checagem.
+
 ## Técnicas que o kit implementa
 
 | Técnica (referência) | Cena ou efeito do kit |
