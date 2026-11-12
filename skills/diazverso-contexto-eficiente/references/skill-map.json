@@ -1,6 +1,6 @@
 {
   "schema": "diazverso-skill-map",
-  "plugin_version": "1.7.0",
+  "plugin_version": "1.8.0",
   "skills": [
     {
       "name": "analyze-video-editing",
@@ -34,12 +34,13 @@
       "name": "diazverso",
       "path": "skills/diazverso/SKILL.md",
       "description": "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido sobre o canal Diazverso ou seus vídeos: ideia, pauta, roteiro, título, thumbnail, narração, edição, motion, Nox, Shorts, Content Lab, revisão ou retomada de produção. Define as regras do canal, o fluxo e qual skill abrir.",
-      "sha256": "d70d7e0b0322e49c67d154bce48b0c9f759b83babf4d8d9521718d58e23eb7a0",
+      "sha256": "11e3acea8294e517a2b932403e88a7841d0d6b689b0f9b6f0ca8298b9b068224",
       "dependencies": [
         "diazverso-contentlab",
         "diazverso-contexto-eficiente",
         "diazverso-core",
         "diazverso-motion",
+        "diazverso-nox",
         "diazverso-roteiro"
       ],
       "references": [
@@ -50,6 +51,7 @@
         "skills/diazverso-contexto-eficiente/references/skill-map.json",
         "skills/diazverso-core/references/formatos-editoriais.md",
         "skills/diazverso-motion/SKILL.md",
+        "skills/diazverso-nox/references/poses.md",
         "skills/diazverso-roteiro/references/escrita.md"
       ]
     },
@@ -218,7 +220,7 @@
       "name": "diazverso-motion",
       "path": "skills/diazverso-motion/SKILL.md",
       "description": "Use para montar o vídeo Diazverso como uma composição única de motion design (roteiro em beats, cenas HQ do kit, Nox com expressões, cenas das obras, som em cada troca), no ritmo das referências do canal, a partir de roteiro aprovado e narração ou sem narração.",
-      "sha256": "1f2843c7215271edcd6dd1eb4fdc2a5ba3a5b979a409286583f3491ec6c35a84",
+      "sha256": "6e4dfb345d7cb683473bc044d6c8d1b5bb02e80451ee4db0874dbaca7710be6f",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-core",
@@ -239,6 +241,7 @@
         "skills/diazverso-motion/references/linguagem.md",
         "skills/diazverso-motion/scripts/build_motion_sfx.mjs",
         "skills/diazverso-nox/SKILL.md",
+        "skills/diazverso-nox/references/poses.md",
         "skills/diazverso-thumbnail/SKILL.md"
       ]
     },
@@ -246,7 +249,7 @@
       "name": "diazverso-nox",
       "path": "skills/diazverso-nox/SKILL.md",
       "description": "Use quando precisar inserir o mascote Nox no roteiro, thumbnail, composição ou criar/revisar nova pose sem alterar a identidade do personagem original.",
-      "sha256": "b66a8d8ab1810db60208d07b3e1c2eb5916b9a613612c4c3472d4022a7ff23f2",
+      "sha256": "2a6a39232a213e3139dded9ee3e3fd87023d8494ff03e122d11b7e81df9e2ced",
       "dependencies": [
         "diazverso-contexto-eficiente",
         "diazverso-motion"
@@ -258,6 +261,7 @@
         "skills/diazverso-contexto-eficiente/SKILL.md",
         "skills/diazverso-motion/SKILL.md",
         "skills/diazverso-nox/references/pose.md",
+        "skills/diazverso-nox/references/poses.md",
         "skills/diazverso-nox/scripts/character_lock.py"
       ]
     },

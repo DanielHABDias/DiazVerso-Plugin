@@ -26,12 +26,14 @@ Para elaborar uma variação, consultar [orientação de pose](references/pose.m
 
 ## Na edição
 
-O Nox entra pelo kit (`../diazverso-motion/SKILL.md`). Os 8 humores redesenham só os olhos sobre o Nox canônico sem olhos (`assets/brand/nox/nox-sem-olhos.png`).
+O Nox entra pelo kit (`../diazverso-motion/SKILL.md`) em opinião e humor, quase sempre em aparte: a cena desfoca e ele aparece inteiro subindo pela borda de baixo, com as pernas fora do quadro.
 
-O Nox comenta a obra, não a substitui. A forma principal é o aparte:
+Ele **gesticula em stop motion**: cada fala troca o desenho inteiro para outra pose, de uma vez, sem animação entre as poses. Exemplos:
 
-- a cena desfoca;
-- o Nox sobe da cintura para cima e muda de posição e de expressão a cada fala;
-- um balão de ícone ou de texto mostra o que ele diz.
+- mão na frente do rosto, pensando;
+- arminha;
+- apontando;
+- dando de ombros;
+- facepalm.
 
-De corpo inteiro, aparece só em poucos momentos. Novas poses em PNG, com Character Lock, podem entrar no aparte quando existirem.
+As poses são PNGs desenhados a partir do canônico; a lista, o formato e o pedido para a ferramenta de imagem estão em [poses](references/poses.md). Sem a pose, o kit usa o Nox canônico com a expressão dos olhos (8 humores sobre `assets/brand/nox/nox-sem-olhos.png`).

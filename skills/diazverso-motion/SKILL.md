@@ -25,7 +25,7 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
 3. Com narração: gerar ou gravar a narração, depois **transcrever com tempos por palavra**. Os beats começam onde a frase é dita. Sem narração: o texto na tela conduz, e os tempos seguem a música (tempos de 0,5 s a 120 BPM).
 4. Escrever os beats com as cenas do [catálogo](kit/catalog.json): uma troca de informação a cada 1,5–3 s e nenhum beat parado acima de 6 s.
    - **Gancho:** `titulo`. **Evidência:** `evidencia`, `pagina` e `comparacao`.
-   - **Reação, piada ou dúvida:** `aparte` sobre a cena; `nox` de corpo inteiro só às vezes. **Princípio:** `formula`. **Aplicação:** `lista`. **Dado:** `numero`.
+   - **Opinião, piada ou dúvida:** `aparte` sobre a cena, com poses; `nox` com `poses` só às vezes. **Princípio:** `formula`. **Aplicação:** `lista`. **Dado:** `numero`.
    - **Respiro e payoff:** `frase`. **Encerramento:** `cta`.
 5. Pôr som em cada troca (catálogo de SFX do kit) e uma trilha **licenciada** abaixando sob a voz ([música](../diazverso-decupagem/references/musica.md)).
 6. Revisar frames de prévia antes do render: o assunto aparece? O texto é legível? Há sobreposição? A cena muda a cada poucos segundos? Corrigir um achado por vez.
@@ -46,13 +46,18 @@ Cada beat segue o contrato `diazverso-motion-v1`:
 - A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz.
 - `kit/Composition.tsx` documenta as props de entrada. `kit/index.ts` é o ponto de entrada do Remotion.
 
-## O Nox na edição
+## Como o vídeo se monta
 
-A cena da obra é a base do vídeo, e o Nox não aparece o tempo todo:
-
-- **Aparte (`aparte`):** a forma principal. A cena da obra desfoca, o Nox sobe pelo meio da cintura para cima e comenta em 1 a 4 tempos. A cada tempo ele muda de posição e de expressão, com um balão de ícone (`lampada`, `interrogacao`, `caveira`, `dinheiro`…) ou de texto acima dele. Depois ele desce, o balão some e o fundo volta nítido. Serve para piada, pergunta, ironia ou explicação rápida sobre o que está na tela.
-- **Reação no canto:** `humor` em `evidencia` mostra só o rosto e o tronco, de vez em quando.
-- **Corpo inteiro:** a cena `nox` fica para poucos momentos, como a abertura de um bloco ou uma reação forte.
+- **A cena da obra é a base.** Em muitos beats ela fica sozinha, em tela cheia (`evidencia` com `cheia: true`), sem motion design por cima. Nos outros, ela ganha painel, rótulo, legenda e fundo.
+- **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. O catálogo tem 6 fundos e 3 cores de destaque para alternar.
+- **O Nox entra em opinião e humor**, não o tempo todo:
+  - **Aparte (`aparte`):** a cena da obra desfoca e o Nox aparece **inteiro**, subindo pela borda de baixo, com as pernas fora do quadro. Cada fala é uma **pose nova em stop motion**: troca seca de desenho e de lugar, sem quadros intermediários, com uma tremidinha de stop motion. Ele gesticula com as mãos (pensando com a mão na frente do rosto, arminha, apontando, dando de ombros, facepalm…), com um balão de ícone ou texto acima. No fim ele sai de uma vez e o fundo volta nítido.
+  - **Cena `nox` com `poses`:** a mesma troca de poses em cena própria, de vez em quando.
+  - **Reação no canto** (`humor` em `evidencia`): rara.
+  - **Poses:** cada pose é um PNG desenhado a partir do canônico (`../diazverso-nox/references/poses.md`). Sem o PNG, o kit usa o Nox canônico com a expressão.
+- **Extras por cima de qualquer cena** (campo `extras` do beat):
+  - **caixinhas HQ de lembrete,** que não precisam ser faladas: inscreva-se, like, sininho, "minha opinião, tá?", alerta de spoiler, fonte, comenta aí;
+  - **recortes PNG** do que está sendo falado (um objeto, um personagem recortado), que estalam na tela em stop motion.
 
 ## Shorts (9:16)
 
