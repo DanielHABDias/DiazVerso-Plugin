@@ -70,7 +70,9 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
 2. `creative_write`, uma etapa por vez, na ordem do app:
    - **brief:** tese, público, promessa;
    - **packaging:** títulos A/B, conforme `../diazverso-titulos/SKILL.md`, e o conceito da thumbnail; a descrição vem depois do roteiro, na [estrutura do canal](../diazverso-criacao-video/references/descricao.md), com os capítulos só depois do render;
-   - **script:** gancho, desenvolvimento e payoff, conforme `../diazverso-roteiro/SKILL.md`; uma frase por linha, cada frase vira um beat.
+   - **script:** usar `creative_write` com `script.chapters`, seguindo `../diazverso-roteiro/SKILL.md`. Reproduzir a organização audiovisual do VD_0008: capítulos temáticos livres alternando narração → cena com som original sem narrador → volta da narração que interpreta/avança, com direção visual em bloco próprio quando necessário. Cada capítulo: `id`, `title`, `blocks`; cada bloco: `id`, `type` (`narration`, `scene`, `direction`), `title`, `text`. Não colar cabeçalhos nem descrições dentro da fala. Só `narration.text` chega à voz; títulos e fontes não são lidos.
+   - Para revisar só uma parte, ler `script_get` e usar `script_edit` com a revisão em `baseRevision` e operações `chapter.add/update/remove/move` ou `block.add/update/remove/move`; `beforeId` define a posição (omitido = fim). IDs estáveis preservam takes ao mover/renomear. Usar `dryRun: true` para conferir o lote; reler em conflito. A primeira versão pode vir inteira por `creative_write`; ajustes locais não precisam reenviar todo o roteiro.
+   - `scene` registra a intenção, duração estimada e obra/trecho, mas não insere mídia nem áudio original e não pausa automaticamente a narração no modo composição. Conferir esses trechos na montagem; não declarar que o som da cena está pronto só por existir no roteiro.
 3. `media_import_files`:
    - **cenas das obras** citadas, com direitos confirmados e nomes descritivos (`batman-1940.jpg`);
    - **trilha licenciada**, com `role: "music"`.

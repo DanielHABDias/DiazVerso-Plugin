@@ -20,7 +20,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
 4. **Ordem da produção** (nenhuma etapa é pulada):
    1. tema polêmico, que ensina algo ou que desperta curiosidade, e a tese pesquisada;
    2. título e thumbnail, antes do roteiro (o roteiro cumpre o que eles prometem);
-   3. roteiro na estrutura do canal (`../diazverso-roteiro/references/escrita.md`): gancho, prova e promessa contável, casos, contraponto, payoff e pergunta, uma frase por beat;
+   3. roteiro na estrutura do canal (`../diazverso-roteiro/references/escrita.md`): gancho, prova e promessa contável, casos, contraponto, payoff e pergunta, capítulos e blocos de narração, cena/som original e direção visual; só a fala vai à voz;
    4. revisão de fatos, estrutura e voz;
    5. aprovação;
    6. cenas das obras com direitos;

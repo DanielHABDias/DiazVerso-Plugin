@@ -1,6 +1,6 @@
 # Escrever o roteiro
 
-O roteiro é escrito para ser **ouvido** e **montado em beats**. Cada frase vira um beat de 1,5–3 s de fala com uma imagem própria, então a escrita já decide o que aparece na tela.
+O roteiro é escrito para ser **ouvido** e **montado em beats**. A fala mantém períodos naturais e conversacionais; as trocas visuais em beats são decididas na montagem, sem obrigar a quebrar toda frase em 1,5–3 s.
 
 ## Antes de escrever
 
@@ -50,7 +50,7 @@ Ao longo do texto:
 
 ## Frases
 
-- Uma ideia por frase, que caiba em 1,5–3 s de fala (cerca de 4–12 palavras). Frase longa vira duas.
+- Uma ideia clara por frase, com períodos e pausas naturais. Dividir quando a compreensão pedir, sem limite obrigatório de palavras para acompanhar cortes visuais.
 - Concreto antes de abstrato: o nome, a edição, a cena, o número, e só então o conceito.
 - Palavra de impacto no fim da frase: é ela que vira o destaque na tela.
 - Voz do canal: conversada, opinativa, irônica. Humor que nasce do assunto. Sem locução épica, bordões ou "e é aí que tudo muda" repetido.
@@ -58,16 +58,19 @@ Ao longo do texto:
 
 ## Formato de entrega (pronto para a montagem)
 
-No Content Lab, `creative_write` recebe `hook`, `development` e `payoff`. Escrever uma frase por linha. Parágrafos separados por linha em branco viram as cenas da narração. Quando a frase pedir uma imagem específica, anotar a direção visual entre colchetes no fim da linha; ela não é narrada:
+No Content Lab, usar `creative_write` com `script.chapters`. Seguir a organização audiovisual do **VD_0008 — Carnificina** como referência de estrutura: packaging antes, capítulos temáticos, fala que prepara um trecho, trecho com áudio próprio sem narrador e retorno da fala que interpreta ou avança. Preservar essa lógica sem copiar o texto nem impor um número fixo de capítulos. Trechos de cena costumam ter 3–7 s, conforme a função e o material; estimativas não são timecodes verificados.
 
-```text
-Imagina um herói que nunca perde. [titulo]
-Parece incrível, né? [aparte: surpreso, icone interrogacao]
-Em 1938, o Superman levantava um carro na capa. [evidencia: action-comics-1.jpg]
-Só que um herói que não perde não tem história. [frase: destaque "NÃO TEM HISTÓRIA"]
-```
+Cada capítulo tem `id`, `title` e `blocks`. Cada bloco tem `id`, `type`, `title` e `text`:
 
-As notas entre colchetes guiam o `motion_plan_set`: a cena do kit, a mídia pelo nome do arquivo, o humor do Nox, o ícone do aparte e o destaque. A cena da obra é a base; o Nox entra em aparte (fundo desfocado, da cintura para cima) nas piadas, perguntas e explicações rápidas, e de corpo inteiro só em poucos momentos. No Google Doc, ficam no bloco `DIREÇÃO VISUAL — NÃO NARRAR`.
+- `narration`: somente texto falado. Pode conter vários períodos e parágrafos conversacionais. Nunca incluir rótulo NARRAÇÃO, título de capítulo, nota de produção ou descrição da cena dentro de `text`.
+- `scene`: descrição da cena com áudio original ou desenho sonoro, sem narrador. Informar a função narrativa, obra/trecho pretendido, duração estimada e som; não inventar diálogo, timestamp ou direitos.
+- `direction`: imagem, enquadramento, movimento, Nox, texto na tela, efeitos e alternativas de edição; não é falado.
+
+Títulos de capítulo/bloco e `script.sources` ficam fora da voz. A IA gera um take por bloco `narration`, na ordem dos capítulos e blocos. Os blocos de cena e direção são preservados para a edição e no roteiro do kit; não viram fala. No Google Doc, manter os rótulos e estilos do template, com a mesma ordem de capítulos e blocos.
+
+Para ajustar uma parte, usar `script_get` e `script_edit` com `baseRevision` atual e operações por IDs. Acrescentar, remover, renomear e mover capítulos/blocos, inclusive blocos entre capítulos, sem recriar os IDs do conteúdo preservado. `beforeId` indica posição; sem ele, inserir no fim. Validar com `dryRun` quando necessário e reler após conflito. Ferramentas e conexão: `../../diazverso-contentlab/SKILL.md`.
+
+Um bloco `scene` descreve a intenção editorial: não seleciona clipe, não insere áudio original nem abre pausa automaticamente na composição. A IA precisa conferir os materiais e a execução na edição antes de certificar o audiovisual. Notas visuais orientam `motion_plan_set`; escolher as cenas do kit pela função, com mídia da obra como base e Nox nos apartes.
 
 ## Conferência rápida
 
