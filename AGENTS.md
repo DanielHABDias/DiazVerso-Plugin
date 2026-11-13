@@ -6,7 +6,7 @@ Produza no Content Lab com `skills/diazverso-contentlab/SKILL.md`. O plugin defi
 
 O roteiro segue a organização audiovisual do VD_0008: capítulos temáticos e blocos alternados de narração, cena/som original e direção visual. Só `narration.text` é lido pela pessoa ou pela voz clonada. Na gravação, mostrar apenas a fala, por capítulo; títulos não são narrados.
 
-Depois de montar a narração, aguarde a transcrição automática com Whisper `large-v3` completo. Leia `narration_transcript` antes de editar: a imagem da obra, o corte e a legenda devem acompanhar o tempo real da fala. Falha ou dependência ausente exige retomar com `narration_transcribe`, sem certificar a etapa como pronta.
+Depois de montar a narração, aguarde a transcrição automática com Whisper `large-v3` completo. Leia `narration_transcript` antes de editar: a imagem da obra, o corte e a legenda devem acompanhar o tempo real da fala. Falha ou dependência ausente exige retomar com `narration_transcribe`, sem certificar os tempos como prontos. O áudio final montado já permite ao criador aprovar Narração e seguir enquanto o Whisper trabalha; a transcrição continua obrigatória antes de sincronizar ou concluir a edição.
 
 As mídias das obras são a base visual e precisam corresponder ao que é dito. O motion compõe com elas; não substitua evidências por telas genéricas de texto. Importe o pacote do Nox e preserve o desenho canônico, licenças e autorizações.
 
