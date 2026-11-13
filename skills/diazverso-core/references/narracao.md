@@ -6,6 +6,12 @@
 2. **Alternativa aprovada pelo criador:** voz sintética de licença comercial, escolhida uma vez e mantida no canal. Usar a mesma voz em todos os vídeos de uma série.
 3. Voz sintética nunca imita uma pessoa real sem consentimento dela.
 
+## Texto de gravação e tempos
+
+No Content Lab, a pessoa lê somente o texto dos blocos `narration`, agrupado por capítulos; títulos de capítulo/bloco, cenas, direção e fontes não são narrados. A voz de IA do app é sempre a voz clonada do criador com consentimento.
+
+Montar a narração também transcreve o áudio final com Whisper `large-v3` completo em português, com início/fim por palavra. Aguardar a conclusão antes da edição e consultar `narration_transcript` para sincronizar os elementos com a fala real. Falha preserva a montagem e permite retomar com `narration_transcribe`; não substituir por estimativas do texto.
+
 ## Direção
 
 - Tom de conversa com um amigo que entende do assunto: opinativo, irônico quando o contexto pede, sem locução épica, sem gritar e sem leitura de trailer.

@@ -24,7 +24,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
    4. revisão de fatos, estrutura e voz;
    5. aprovação;
    6. cenas das obras com direitos;
-   7. narração;
+   7. narração (somente falas, por capítulo) e transcrição automática Whisper `large-v3` completo, palavra por palavra; consultar os tempos reais em `narration_transcript` antes da edição;
    8. plano de motion;
    9. prévias;
    10. render;

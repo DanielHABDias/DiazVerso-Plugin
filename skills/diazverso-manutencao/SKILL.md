@@ -5,7 +5,7 @@ description: "Use ao criar ou alterar skills, scripts, assets, estrutura e docum
 
 # Manutenção do plugin e das skills
 
-Trabalhar na fonte autorizada, verificar a versão corrente e preservar alterações do usuário.
+Trabalhar sempre na `main` da fonte autorizada, verificar a versão corrente e preservar alterações do usuário.
 
 ## Escrever o estado atual
 

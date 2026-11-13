@@ -66,7 +66,7 @@ Cada capítulo tem `id`, `title` e `blocks`. Cada bloco tem `id`, `type`, `title
 - `scene`: descrição da cena com áudio original ou desenho sonoro, sem narrador. Informar a função narrativa, obra/trecho pretendido, duração estimada e som; não inventar diálogo, timestamp ou direitos.
 - `direction`: imagem, enquadramento, movimento, Nox, texto na tela, efeitos e alternativas de edição; não é falado.
 
-Títulos de capítulo/bloco e `script.sources` ficam fora da voz. A IA gera um take por bloco `narration`, na ordem dos capítulos e blocos. Os blocos de cena e direção são preservados para a edição e no roteiro do kit; não viram fala. No Google Doc, manter os rótulos e estilos do template, com a mesma ordem de capítulos e blocos.
+Títulos de capítulo/bloco e `script.sources` ficam fora da voz. A IA gera um take por bloco `narration`, na ordem dos capítulos e blocos. Ao gravar, o criador vê somente essas falas agrupadas por capítulo; o título orienta, mas não é lido. A montagem gera automaticamente a transcrição palavra por palavra com Whisper `large-v3` completo; a edição usa os tempos reais consultados em `narration_transcript`. Os blocos de cena e direção são preservados para a edição e no roteiro do kit; não viram fala. No Google Doc, manter os rótulos e estilos do template, com a mesma ordem de capítulos e blocos.
 
 Para ajustar uma parte, usar `script_get` e `script_edit` com `baseRevision` atual e operações por IDs. Acrescentar, remover, renomear e mover capítulos/blocos, inclusive blocos entre capítulos, sem recriar os IDs do conteúdo preservado. `beforeId` indica posição; sem ele, inserir no fim. Validar com `dryRun` quando necessário e reler após conflito. Ferramentas e conexão: `../../diazverso-contentlab/SKILL.md`.
 

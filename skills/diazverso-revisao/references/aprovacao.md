@@ -44,4 +44,4 @@ Entregar um registro conciso:
 - Jamais escrever `REVISÃO=APROVADO`, alterar status de etapa, criar/vincular documentos ou iniciar serviços sem ferramenta real, permissões adequadas e leitura de retorno. Não declarar que o criador aprovou se não aprovou.
 - Se a planilha estiver desconectada, manter o registro em resposta ou artefato local aprovado e sinalizar `SINCRONIZAÇÃO PENDENTE`; não simular gravação.
 - A aprovação do roteiro **não autoriza publicação** nem o uso de mídia sem direitos; render e QA audiovisual têm gates próprios. O criador pode revogar ou pedir mudanças, reiniciando as revisões afetadas.
-- script-approval é um **contrato de decisão**, não um teste integrado real do fluxo Drive/Sheets/Remotion; estes permanecem nos itens de integração/QA do roadmap.
+- script-approval é um **contrato de decisão**, não um teste integrado real do fluxo Drive/Sheets/Remotion; a execução desses serviços exige conexão e verificação dos resultados reais.

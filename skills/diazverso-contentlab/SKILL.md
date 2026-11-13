@@ -78,9 +78,9 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
    - **trilha licenciada**, com `role: "music"`.
    - **O Nox:** o Content Lab não traz personagem. Em todo projeto do canal, importar o pacote do Nox antes do plano de motion: `character_import` com `folder` = `assets/brand/nox` deste plugin (caminho absoluto; o catálogo fica em `assets/brand/nox/poses/catalogo.json`) e `rightsConfirmedByUser: true` (o Nox é do criador). `dryRun: true` confere o pacote sem importar. Sem o Nox no projeto, o plano sai sem apartes nem a cena `personagem`.
 4. Narração:
-   - **Voz de IA:** `narration_generate` e `job_wait`, depois `narration_assemble` e `job_wait`.
-   - **Voz do criador:** pedir para gravar no app (Narração → Gravar; depois Montar narração) e esperar com `stage_wait_decision`. `narration_generate` recusa nesse caso.
-5. `narration_transcribe` com `job_wait`: tempos de cada palavra.
+   - **Voz de IA:** `narration_generate` e `job_wait`, depois `narration_assemble` e `job_wait` até concluir também a transcrição automática.
+   - **Voz do criador:** pedir para gravar no app (Narração → Gravar; depois Montar narração). A tela mostra só as falas dos blocos de narração agrupadas por capítulo, com títulos apenas de orientação; a montagem transcreve automaticamente. Aguardar a conclusão e a aprovação com `stage_wait_decision`. `narration_generate` recusa nesse caso.
+5. Esperar a transcrição automática com **Whisper `large-v3` completo**, em português, terminar antes de aprovar Narração. Não usar modelo menor/turbo nem tempos estimados como substituto. Se falhar ou faltar dependência, o áudio fica preservado: corrigir e retomar com `narration_transcribe` + `job_wait`. Ler `narration_transcript` (`offset`, `limit`; continuar com `nextOffset` até `null`) para obter `text`, `start` e `end` de cada palavra e posicionar imagens, cortes, beats e legendas na fala real.
 6. `motion_plan_auto`, depois `motion_preview`. Abrir os PNG em `output/previas/` e conferir assunto, legibilidade e ritmo. Ajustar com `motion_plan_set`; o contrato está em `motion_kit` e as regras do canal em `../diazverso-motion/SKILL.md`. Conferir no plano:
    - **Nox:** entra como o personagem do projeto (apartes e cena `personagem`); troca de pose enquanto fala, e todas as poses do catálogo aparecem no vídeo longo. Se `motion_plan_auto` listar `poses.posesFaltando`, encaixá-las em apartes de tom compatível ([poses](../diazverso-nox/references/poses.md)).
    - **Legenda:** o tempo todo nos Shorts; no vídeo longo, só no gancho e nos apartes.
