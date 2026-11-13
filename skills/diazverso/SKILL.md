@@ -10,10 +10,10 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
 ## Regras inegociáveis
 
 1. **Contexto enxuto.** Uma skill principal por vez, escolhida pela tabela abaixo, e só as referências da próxima ação. Não reler o que já foi lido nesta sessão. Resumir saídas longas. Ao trocar de etapa, manter um checkpoint curto: produção, decisões, feito, bloqueios e próxima ação.
-2. **Content Lab é o caminho padrão para produzir.** Na primeira produção da sessão, conferir se o MCP do Content Lab responde (`contentlab_status`). Se não estiver conectado, perguntar "Vamos usar o Content Lab?" e conectar seguindo `../diazverso-contentlab/SKILL.md`. Produzir fora dele só quando o criador recusar.
+2. **Content Lab é o caminho padrão para produzir.** Na primeira produção da sessão, conferir se o MCP do Content Lab responde (`contentlab_status`). Se não estiver conectado, perguntar "Vamos usar o Content Lab?" e conectar seguindo `../diazverso-contentlab/SKILL.md`. Ao criar ou retomar o projeto, abrir no navegador do criador (`contentlab_open`) para ele acompanhar. Produzir fora dele só quando o criador recusar.
 3. **Combinar o fluxo uma vez, numa pergunta só**, antes de criar o projeto:
    - **Tudo automático:** a IA faz tudo e avisa no fim.
-   - **Parar em pontos:** a IA para, avisa o que revisar no Content Lab e espera. Sugestão: roteiro, narração e revisão final.
+   - **Parar em pontos:** a IA para, avisa o que revisar no Content Lab e espera o botão **Aprovar e seguir** do app (ou o ok no chat). Sugestão: roteiro, narração e revisão final.
    - **Aprovar cada etapa.**
    - **Voz:** voz de IA ou o criador grava a própria voz no Content Lab.
    - **Drive e planilha:** se as ferramentas Google não responderem, perguntar se o criador quer conectar ou seguir sem elas. Sem elas, nada é gravado no Drive; no fim, o kit traz o que subir e as linhas prontas para ele preencher à mão ([modo manual](../diazverso-drive-setup/references/modo-manual.md)).

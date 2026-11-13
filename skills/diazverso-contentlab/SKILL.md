@@ -58,16 +58,18 @@ Uma pergunta só, antes de `project_create`. A resposta vira parâmetros do proj
 | Aprovar cada etapa | `mode: "review"` |
 | Gravar a própria voz | `narrationBy: "creator"` (combina com qualquer modo) |
 
-Etapas: `brief`, `script`, `packaging`, `media`, `narration`, `edit`, `review`. Se o criador mudar de ideia, usar `project_flow_set`.
+Etapas, nesta ordem: `brief` (ideia), `packaging` (título e thumbnail), `script` (roteiro), `media`, `narration`, `edit`, `review`. Se o criador mudar de ideia, usar `project_flow_set`.
 
-Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro, no Content Lab; aprove ou peça mudança lá"). Depois, esperar com `stage_wait_decision`. Se ele pedir mudança, a resposta traz o motivo: corrigir e voltar a esperar. `stage_approve` recusa uma etapa de pausa sem a aprovação dele.
+**O criador acompanha ao vivo.** Logo depois de `project_create`, e ao retomar um projeto, chamar `contentlab_open` com o `path`: o projeto abre no navegador padrão dele e a tela se atualiza sozinha enquanto a IA trabalha. Se não abrir, passar o `url` devolvido.
+
+Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro, no Content Lab; aprove ou peça mudança lá"). Depois, esperar com `stage_wait_decision`. Enquanto a IA espera, o app mostra o aviso na etapa, e o botão **Aprovar e seguir** (ou **Pedir mudanças**) devolve o sinal. O botão não trava a conversa: se o criador aprovar ou mandar seguir pelo chat, usar `stage_approve` com `userApproved: true` e continuar. Se ele pedir mudança, a resposta traz o motivo: corrigir e voltar a esperar. `stage_approve` recusa uma etapa de pausa sem a aprovação dele.
 
 ## 3. Conduzir a produção
 
-1. `project_create` com o fluxo combinado.
-2. `creative_write`:
+1. `project_create` com o fluxo combinado, depois `contentlab_open`.
+2. `creative_write`, uma etapa por vez, na ordem do app:
    - **brief:** tese, público, promessa;
-   - **packaging:** títulos A/B, conforme `../diazverso-titulos/SKILL.md`;
+   - **packaging:** títulos A/B, conforme `../diazverso-titulos/SKILL.md`, e o conceito da thumbnail; a descrição pode vir depois do roteiro;
    - **script:** gancho, desenvolvimento e payoff, conforme `../diazverso-roteiro/SKILL.md`; uma frase por linha, cada frase vira um beat.
 3. `media_import_files`:
    - **cenas das obras** citadas, com direitos confirmados e nomes descritivos (`batman-1940.jpg`);
