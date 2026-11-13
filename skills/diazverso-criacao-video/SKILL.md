@@ -43,9 +43,9 @@ O esquema `../../schemas/estado-producao-v1.schema.json` descreve o intercâmbio
 
 Entradas: roteiro aprovado, título escolhido, thumbnail e vídeo finais conferidos, fontes, QA, decisão real do criador e afiliados pertinentes.
 
-Usar `scripts/build_publication_kit.py <entrada.json>` para compor título, descrição, fontes/atribuições, tags, comentário e capítulos cujos timestamps já foram conferidos no render. O gerador valida os dados recebidos; não autentica arquivos ou aprovações.
+A descrição segue sempre a [estrutura do canal](references/descricao.md). Usar `scripts/build_publication_kit.py <entrada.json>` para montá-la a partir dos campos (abertura, resumo, capítulos, vídeos relacionados, afiliados, obras, fontes oficiais, trilha e hashtags) e compor título, tags e comentário. Capítulos só com os tempos conferidos no render. O gerador valida os dados recebidos; não autentica arquivos ou aprovações.
 
-Para afiliados, `../diazverso-drive-setup/scripts/affiliate_selection.py` seleciona apenas registros ATIVO pertinentes, com destino e condições verificados nesta produção. Incluir divulgação de afiliação; se nenhum servir, omitir.
+Para afiliados, `../diazverso-drive-setup/scripts/affiliate_selection.py` seleciona apenas registros ATIVO pertinentes, com destino e condições verificados nesta produção. O gerador acrescenta o aviso de afiliado do canal; se nenhum servir, a seção sai.
 
 Antes de entregar como final, executar `scripts/approval_gate.py <revisao.json>`: nove gates — roteiro, fatos_fontes, titulo_thumbnail, direitos_midias, video_render, qa_visual, qa_audio, legendas, kit_textual — precisam de status e evidência, além de `creator_decision`. Um campo preenchido não prova aprovação. Pendências produzem kit parcial e próxima ação concreta.
 

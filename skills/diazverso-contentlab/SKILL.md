@@ -69,7 +69,7 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
 1. `project_create` com o fluxo combinado, depois `contentlab_open`.
 2. `creative_write`, uma etapa por vez, na ordem do app:
    - **brief:** tese, público, promessa;
-   - **packaging:** títulos A/B, conforme `../diazverso-titulos/SKILL.md`, e o conceito da thumbnail; a descrição pode vir depois do roteiro;
+   - **packaging:** títulos A/B, conforme `../diazverso-titulos/SKILL.md`, e o conceito da thumbnail; a descrição vem depois do roteiro, na [estrutura do canal](../diazverso-criacao-video/references/descricao.md), com os capítulos só depois do render;
    - **script:** gancho, desenvolvimento e payoff, conforme `../diazverso-roteiro/SKILL.md`; uma frase por linha, cada frase vira um beat.
 3. `media_import_files`:
    - **cenas das obras** citadas, com direitos confirmados e nomes descritivos (`batman-1940.jpg`);
