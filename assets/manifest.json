@@ -124,20 +124,6 @@
       "status": "APPROVED"
     },
     {
-      "id": "brand.nox.eyeless",
-      "name": "nox-sem-olhos.png",
-      "kind": "mascot-variant",
-      "path": "assets/brand/nox/nox-sem-olhos.png",
-      "size_bytes": 297748,
-      "sha256": "45ce5642140139499062d4e2a1a2b93ea1202feb8990f1d6f6597b69f8326cdb",
-      "git_blob_sha1": "600522946298da9d5e154918f13a67ee47d429c6",
-      "mime_type": "image/png",
-      "derived_from": "brand.nox.canonical",
-      "source": "Nox.png canônico com só os olhos cobertos pela cor do rosto; olhos redesenhados por expressão no kit de motion",
-      "rights": "creator-provided-for-Diazverso-plugin",
-      "status": "APPROVED_VARIANT"
-    },
-    {
       "id": "sfx.motion.camera",
       "name": "camera.wav",
       "kind": "sfx",

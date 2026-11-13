@@ -22,7 +22,7 @@ Vídeos: [FALL](https://www.youtube.com/watch?v=Km8uHqIjNzA), [RunnyIA](https://
 | --- | --- |
 | Palavras gigantes em cortes secos, com bordas vermelha e azul, e zoom contínuo (RunnyIA) | `titulo`, `Punch` |
 | Frases "pensadas" em fonte arredondada sobre fundo de estrelas, como respiro (RunnyIA) | `frase` |
-| Avatar âncora cuja expressão está nos olhos (RunnyIA) | Nox com 8 humores em `nox`, `evidencia`, `lista`, `numero` e `cta` |
+| Avatar âncora cuja expressão está nos olhos (RunnyIA) | Nox em poses (personagem do projeto no Content Lab) em `aparte`, `personagem`, `evidencia`, `lista`, `numero` e `cta` |
 | Interface recriada como prova: painel, número, seta (RunnyIA) | `numero`, `ficha` |
 | Lista como objeto: fichas em perspectiva às quais o vídeo volta (RunnyIA) | `lista` |
 | Mangá e HQ com linhas de velocidade atrás (RunnyIA) | Fundo `explosao`, `pagina` com onomatopeia |

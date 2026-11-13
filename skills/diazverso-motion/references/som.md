@@ -35,12 +35,13 @@ Regras:
 
 ## 2. Criar sons novos
 
-Os 12 primeiros SFX do kit (de `pop` a `camera`) são sintetizados pelo `../scripts/build_motion_sfx.mjs`: são originais e não usam amostras de terceiros. Os de `clique` a `whoosh-lento` vieram do Openverse em CC0 pelo processo da seção 3, com créditos em `THIRD_PARTY_NOTICES.md`. Para um som que falta (por exemplo, `soco`, `porta` ou `vidro`):
+Os 12 primeiros SFX (de `pop` a `camera`) são sintetizados pelo `../scripts/build_motion_sfx.mjs`: são originais e não usam amostras de terceiros. Os de `clique` a `whoosh-lento` vieram do Openverse em CC0 pelo processo da seção 3, com créditos em `THIRD_PARTY_NOTICES.md`. Para um som que falta (por exemplo, `soco`, `porta` ou `vidro`):
 
 1. Acrescentar a receita no gerador, com nome curto em minúsculas.
 2. Gerar o WAV em 48 kHz mono em `assets/sfx/motion/<nome>.wav` e escutar.
-3. Pôr o nome na lista `sfx` do `../kit/catalog.json` e o arquivo no `assets/manifest.json`, com `rights` original.
-4. Rodar `python3 scripts/validate_plugin.py` e, no Content Lab, `npm run scenes:diazverso`. O nome passa a valer no plano.
+3. Registrar o arquivo no `assets/manifest.json`, com `rights` original, e o nome na tabela da seção 1.
+4. Rodar `python3 scripts/validate_plugin.py`.
+5. Para valer no plano, o som precisa entrar no kit do Content Lab (o WAV na pasta de SFX do kit e o nome na lista `sfx` do catálogo dele, com a licença registrada). É uma mudança no repositório do Content Lab; `motion_kit` mostra os nomes que já valem.
 
 ## 3. Buscar sons prontos (Openverse)
 

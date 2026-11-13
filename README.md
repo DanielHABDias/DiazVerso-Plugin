@@ -12,7 +12,7 @@ A skill de entrada é [diazverso](skills/diazverso/SKILL.md): regras do canal, f
 - Executor com Python para os utilitários locais; Node, React, Remotion e, para as cenas 3D, `@remotion/three`, `three` e `@react-three/fiber` no projeto de edição (o Content Lab já traz todos); FFmpeg para inspeção audiovisual.
 - Ferramenta de imagem para gerar artes e acesso às mídias com direitos conferidos.
 
-As skills não fornecem essas conexões nem instalam dependências automaticamente. A edição é o kit de motion em `skills/diazverso-motion/kit/`, executado pelo Content Lab ou por um projeto Remotion.
+As skills não fornecem essas conexões nem instalam dependências automaticamente. A edição é feita no Content Lab (app separado e neutro), pelo MCP: o kit de motion é dele, e este plugin traz as regras do canal e o pacote do Nox, importado em cada projeto com `character_import`.
 
 Nox canônico está em `assets/brand/nox/Nox.png`. Os SFX do kit ficam em `assets/sfx/motion/` (guia em `skills/diazverso-motion/references/som.md`). Fundos procedurais HQ dispensam imagens adicionais.
 

@@ -12,10 +12,10 @@ assets/brand/nox/poses/
   ...
 ```
 
-- O nome do arquivo é o nome da pose. O plano do Content Lab pede a pose pelo tom da frase, e o kit usa o PNG com esse nome.
+- O nome do arquivo é o nome da pose. O plano do Content Lab pede a pose pelo tom da frase, e o kit usa o PNG listado no catálogo.
 - **Variantes:** `-b`, `-c`… (ou `-2`, `-3`…) no fim do nome são variantes da mesma pose. O kit sorteia uma a cada fala, para o Nox não repetir o mesmo desenho. Quanto mais variantes, mais vivo fica.
-- **Pose que não existe:** cai no Nox canônico com o humor pedido, e o vídeo não quebra.
-- No Content Lab, `npm run scenes:diazverso` copia a pasta para o kit.
+- **No Content Lab:** o pacote (`assets/brand/nox/`, com o catálogo em `assets/brand/nox/poses/catalogo.json`) entra em cada projeto por `character_import`. O Content Lab não guarda o Nox; depois de mudar uma pose aqui, importar o pacote de novo no projeto.
+- **A expressão é do desenho:** o kit não redesenha olhos; o humor só escolhe a pose pelo tom. Pose sem PNG não aparece.
 
 ## Formato de cada PNG
 
@@ -84,7 +84,7 @@ Tons:
 
 ## Como usar no vídeo (obrigatório)
 
-1. **O Nox troca de pose enquanto fala.** Num aparte ou na cena `nox`, a pose muda de uma vez a cada 0,7–1 s de fala: um aparte de 3 s tem 3 ou 4 poses. Cada troca é seca, sem quadros intermediários.
+1. **O Nox troca de pose enquanto fala.** Num aparte ou na cena `personagem`, a pose muda de uma vez a cada 0,7–1 s de fala: um aparte de 3 s tem 3 ou 4 poses. Cada troca é seca, sem quadros intermediários.
 2. **A pose segue o tom da frase.** A primeira pose do aparte é a do tom (pergunta → `pensando` ou `ombros`; piada → `rindo` ou `arminha`). As seguintes continuam no mesmo tom ou passam por `explicando`, `explicando-centro` e `parado`.
 3. **Todas as poses aparecem no vídeo.** O plano prefere, dentro do tom, a pose que ainda não apareceu. No fim, toda pose do catálogo precisa ter aparecido pelo menos uma vez num vídeo longo; o Content Lab avisa quais faltaram, e o agente as encaixa em apartes de tom compatível pelo `motion_plan_set`.
 4. **Sem repetir em seguida.** A mesma pose não aparece duas vezes seguidas, e as variantes `-b` são sorteadas.

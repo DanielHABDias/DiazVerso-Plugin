@@ -9,9 +9,9 @@ description: "Use para pôr o Nox no vídeo ou na thumbnail, escolher poses do c
 
 ## Na edição
 
-O Nox entra pelo kit (`../diazverso-motion/SKILL.md`) em opinião e humor, quase sempre em aparte: a cena desfoca e ele sobe inteiro pela borda de baixo. Ele gesticula em **stop motion**: enquanto fala, troca o desenho inteiro de uma vez a cada 0,7–1 s, e todas as poses do catálogo aparecem ao longo do vídeo.
+O Content Lab não traz o Nox: em cada projeto, o pacote `assets/brand/nox/` (poses e `assets/brand/nox/poses/catalogo.json`) entra como personagem por `character_import`, com os direitos confirmados (`../diazverso-contentlab/SKILL.md`). Depois, o Nox entra pelo kit (`../diazverso-motion/SKILL.md`) em opinião e humor, quase sempre em aparte: a cena desfoca e ele sobe inteiro pela borda de baixo. Ele gesticula em **stop motion**: enquanto fala, troca o desenho inteiro de uma vez a cada 0,7–1 s, e todas as poses do catálogo aparecem ao longo do vídeo.
 
-Cada pose é um PNG pronto (gesto e olhos desenhados) em `assets/brand/nox/poses/`. Variantes `-b` são sorteadas. O [catálogo e as regras de uso](references/poses.md) listam as 21 poses com gesto, olhos e tons. Sem a pose, o kit usa o Nox canônico com o humor pedido.
+Cada pose é um PNG pronto (gesto e olhos desenhados) em `assets/brand/nox/poses/`. Variantes `-b` são sorteadas. O [catálogo e as regras de uso](references/poses.md) listam as 21 poses com gesto, olhos e tons. A expressão vem do desenho da pose: o kit não desenha olhos, só escolhe a pose pelo tom.
 
 ## Pose nova
 

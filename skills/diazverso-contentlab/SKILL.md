@@ -5,13 +5,13 @@ description: "Use para configurar e diagnosticar o ambiente do Diazverso e para 
 
 # Produzir pelo Content Lab
 
-O Content Lab é o app local do criador que produz o vídeo inteiro. Ele cuida de:
+O Content Lab é o app local do criador que produz o vídeo inteiro. É uma ferramenta neutra, sem nada do canal: as regras, o Nox e o padrão do Diazverso vêm deste plugin, e o agente os aplica pelo MCP. Ele cuida de:
 
 - roteiro e embalagem;
 - mídias com direitos;
 - narração por IA ou gravada;
 - transcrição;
-- motion design com o kit deste plugin;
+- motion design com o kit de motion do próprio Content Lab (`motion_kit`, `kit_docs`);
 - render;
 - thumbnail;
 - kit de entrega.
@@ -37,8 +37,6 @@ Chamar `contentlab_status`. Se a ferramenta não existir, o MCP não está conec
   ```
 
 - **App instalado:** comando `~/.local/share/contentlab/app/current/runtime/node ~/.local/share/contentlab/app/current/app/src/adapters/mcp-server.js` com `CONTENTLAB_INSTALLED=1`.
-
-O Nox não vem com o Content Lab: o app lê o `Nox.png`, a versão sem olhos e as poses direto deste plugin no computador. Se o plugin não estiver ao lado do Content Lab nem em `~/Documentos/Projects/DiazVerso-Plugin`, definir `DIAZVERSO_PLUGIN_DIR` com a pasta do plugin no comando do MCP.
 
 Depois de conectar, o cliente precisa ser reiniciado ou recarregado. Então `contentlab_start` abre o app em segundo plano. `contentlab_status` mostra:
 
@@ -74,14 +72,16 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
 3. `media_import_files`:
    - **cenas das obras** citadas, com direitos confirmados e nomes descritivos (`batman-1940.jpg`);
    - **trilha licenciada**, com `role: "music"`.
+   - **O Nox:** o Content Lab não traz personagem. Em todo projeto do canal, importar o pacote do Nox antes do plano de motion: `character_import` com `folder` = `assets/brand/nox` deste plugin (caminho absoluto; o catálogo fica em `assets/brand/nox/poses/catalogo.json`) e `rightsConfirmedByUser: true` (o Nox é do criador). `dryRun: true` confere o pacote sem importar. Sem o Nox no projeto, o plano sai sem apartes nem a cena `personagem`.
 4. Narração:
    - **Voz de IA:** `narration_generate` e `job_wait`, depois `narration_assemble` e `job_wait`.
    - **Voz do criador:** pedir para gravar no app (Narração → Gravar; depois Montar narração) e esperar com `stage_wait_decision`. `narration_generate` recusa nesse caso.
 5. `narration_transcribe` com `job_wait`: tempos de cada palavra.
-6. `motion_plan_auto`, depois `motion_preview`. Abrir os PNG em `output/previas/` e conferir assunto, legibilidade e ritmo. Ajustar com `motion_plan_set`; o contrato está em `motion_kit` e em `../diazverso-motion/SKILL.md`. Conferir no plano:
-   - **Nox:** troca de pose enquanto fala, e todas as poses do catálogo aparecem no vídeo longo. Se `motion_plan_auto` listar `poses.posesFaltando`, encaixá-las em apartes de tom compatível ([poses](../diazverso-nox/references/poses.md)).
+6. `motion_plan_auto`, depois `motion_preview`. Abrir os PNG em `output/previas/` e conferir assunto, legibilidade e ritmo. Ajustar com `motion_plan_set`; o contrato está em `motion_kit` e as regras do canal em `../diazverso-motion/SKILL.md`. Conferir no plano:
+   - **Nox:** entra como o personagem do projeto (apartes e cena `personagem`); troca de pose enquanto fala, e todas as poses do catálogo aparecem no vídeo longo. Se `motion_plan_auto` listar `poses.posesFaltando`, encaixá-las em apartes de tom compatível ([poses](../diazverso-nox/references/poses.md)).
    - **Legenda:** o tempo todo nos Shorts; no vídeo longo, só no gancho e nos apartes.
-   - **Som:** cada SFX no quadro do evento, variando, sem cobrir a fala; `clique`, `sino`, `explosao`, `tapa`, `tapa-eco`, `whoosh-rapido` e `whoosh-lento` estão no catálogo ([som](../diazverso-motion/references/som.md)).
+   - **Som:** cada SFX no quadro do evento, variando, sem cobrir a fala; os nomes válidos estão em `motion_kit` ([som](../diazverso-motion/references/som.md)).
+   - **Encerramento:** o `cta` do Content Lab não tem nome de canal fixo; pôr `titulo: "DIAZVERSO"` nas props do beat `cta`.
 7. `thumbnails_generate` e a revisão da thumbnail (`../diazverso-thumbnail/SKILL.md`).
 8. `render_start` com `job_wait`. O Content Lab tira os metadados do vídeo final (etiquetas, capítulos embutidos e assinatura do encoder) sem recodificar. Depois, `deliverable_build`, cujo `verificacao.md` aponta as pendências, e `project_export`.
 
@@ -89,4 +89,4 @@ Use `project_get` para ver o que falta em cada etapa (`missing`). Trabalhos long
 
 ## Sem o Content Lab
 
-Se o criador recusar, a produção segue `../diazverso-criacao-video/SKILL.md`, com o kit `../diazverso-motion/kit/` num projeto Remotion. As regras do canal são as mesmas.
+Se o criador recusar, a produção segue `../diazverso-criacao-video/SKILL.md` num editor à escolha dele. O kit de motion é do Content Lab e não vem neste plugin; as regras do canal ([motion](../diazverso-motion/SKILL.md), [som](../diazverso-motion/references/som.md), [Nox](../diazverso-nox/SKILL.md)) são as mesmas.

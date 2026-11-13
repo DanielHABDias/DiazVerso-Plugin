@@ -26,7 +26,7 @@ description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um 
 
 ## Gerar a imagem com o kit
 
-A arte final não depende de ferramenta de imagem externa. O kit de motion renderiza a thumbnail (`../diazverso-motion/kit/Thumbnail.tsx`, composição `DiazversoThumb`). Cada conceito vira:
+A arte final não depende de ferramenta de imagem externa. O kit de motion do Content Lab renderiza a thumbnail (`thumbnails_generate`, composição `KitThumb`); o Nox aparece se o pacote dele foi importado no projeto (`character_import`). Cada conceito vira:
 
 | Conceito | Prop do kit |
 | --- | --- |

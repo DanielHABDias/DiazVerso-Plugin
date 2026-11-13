@@ -31,7 +31,7 @@ REQUIRED = (
     "skills/diazverso-decupagem/SKILL.md",
     "skills/diazverso-thumbnail/SKILL.md",
     "skills/diazverso-revisao/SKILL.md",
-    "skills/diazverso-motion/kit/catalog.json",
+    "skills/diazverso-motion/SKILL.md",
     "assets/brand/nox/poses/catalogo.json",
     "skills/diazverso-manutencao/SKILL.md",
     "THIRD_PARTY_NOTICES.md",
