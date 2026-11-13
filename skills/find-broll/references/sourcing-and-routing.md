@@ -17,7 +17,7 @@ Ask “what is this line actually claiming?” before searching. “X from Compa
 
 ## Authority order
 
-Downloads (video URLs from YouTube, TikTok, Instagram or X through `media_import_url`, images through the app or creator browser, never disguising the client) follow [internet access](../../diazverso-pesquisa/references/acesso-web.md).
+Downloads (videos through `media_import_url` or the app tab **Importar por URL**, images through the app or creator browser, never disguising the client) follow [download media](../../diazverso-contentlab/references/baixar-midia.md).
 
 Prefer:
 

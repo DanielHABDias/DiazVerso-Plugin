@@ -1,6 +1,6 @@
 # Acesso à internet: ler e baixar
 
-Consultar ao pesquisar fora da busca comum (YouTube, X, Reddit, Instagram, TikTok, GitHub) e ao buscar mídia das obras. Ler e baixar são caminhos diferentes.
+Consultar ao pesquisar fora da busca comum (YouTube, X, Reddit, Instagram, TikTok, GitHub). Ler e baixar são caminhos diferentes.
 
 ## Ler (pesquisa)
 
@@ -14,11 +14,6 @@ Consultar ao pesquisar fora da busca comum (YouTube, X, Reddit, Instagram, TikTo
 3. **Dizer o que se tem.** Trecho de busca, casca de página, contagem de comentários e lista de faixas de legenda não são corpo, comentários nem legenda. Sem a fonte lida, a alegação fica "a verificar".
 4. TikTok não tem canal de leitura. Nesse caso, ler pela web ou pedir o link ao criador.
 
-## Baixar (mídia do vídeo)
+## Baixar
 
-- **Vídeo** do YouTube, TikTok, Instagram, X e outros sites suportados pelo yt-dlp: `media_import_url` do Content Lab, com o link exato e os direitos confirmados pelo criador. Preferir o canal oficial (estúdio, editora). Não usar vídeo de outro criador de conteúdo.
-- **Imagens** (capas, painéis, pôsteres): fontes com proveniência, como as wikis da obra, a Wikipedia e os sites oficiais.
-  - Quando o servidor recusa download automático, baixar pelo navegador do app ou pelo navegador do criador, que carregam a página como um usuário comum.
-  - Nunca disfarçar o cliente (user-agent ou referer falsos), resolver captcha ou contornar bloqueio de robô.
-- Nomear cada arquivo pelo que mostra (`hq-king-in-black-01-capa.jpg`, `filme-venom3-trailer-final.mp4`) antes de `media_import_files`.
-- Abrir as imagens antes de importar: a capa certa, sem variante errada nem marca d'água.
+Vídeo, imagem e trilha para o projeto: [baixar mídia](../../diazverso-contentlab/references/baixar-midia.md).
