@@ -36,11 +36,11 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
 5. **Edição = motion design do kit do Content Lab** (`../diazverso-motion/SKILL.md`). O Content Lab é neutro: o Nox entra em cada projeto importando o pacote `assets/brand/nox/` deste plugin com `character_import`, antes do plano de motion:
    - **Ritmo:** troca de informação a cada 1,5–3 s, no ritmo do RunnyIA, com a câmera nunca parada.
    - **Visual:**
-     - estética HQ madura;
+     - estética HQ madura: estrelas, halftone, fundos escuros e explosões gráficas; fundo de papel e página decorativa não fazem parte da edição. Imagens reais de páginas de quadrinhos continuam permitidas como conteúdo;
      - Anton em títulos e legendas;
      - a cena da obra é a base, muitas vezes sozinha em tela cheia;
      - abertura com a arte mais bonita do personagem em alta resolução e 5–6 cortes nos primeiros 5 s;
-     - o Nox em opinião e humor, a cada 10–20 s (no Short, a cada 6–10 s): aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion: a pose troca enquanto ele fala, a cada 0,7–1 s, e todas as poses do [catálogo](../diazverso-nox/references/poses.md) aparecem ao longo do vídeo;
+     - o Nox em opinião e humor, a cada 10–20 s (no Short, a cada 6–10 s): aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion: a pose troca enquanto ele fala, a cada 0,7–1 s, com poses do [catálogo](../diazverso-nox/references/poses.md) escolhidas conforme a narrativa, sem obrigação de usar todas;
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo; cada imagem conferida aberta (mostra o que a fala diz, em resolução suficiente);

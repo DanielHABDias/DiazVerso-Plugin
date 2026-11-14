@@ -29,6 +29,8 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
 6. Revisar frames de prévia antes do render: o assunto aparece? O texto é legível? Há sobreposição? A cena muda a cada poucos segundos? Corrigir um achado por vez.
 7. Render final, escuta completa e o kit de publicação (`../diazverso-criacao-video/SKILL.md`).
 
+Para investigação, ramificações e revelações, consultar [uso narrativo das cenas do kit](references/cenas-narrativas.md). A implementação e os exemplos executáveis ficam exclusivamente no Content Lab.
+
 ## Contrato
 
 Cada beat segue o contrato `contentlab-motion-v1` do Content Lab:
@@ -47,7 +49,7 @@ Cada beat segue o contrato `contentlab-motion-v1` do Content Lab:
 ## Como o vídeo se monta
 
 - **A cena da obra é a base.** Em muitos beats ela fica sozinha, em tela cheia (`evidencia` com `cheia: true`), sem motion design por cima. Nos outros, ela ganha painel, rótulo, legenda e fundo.
-- **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. O catálogo tem 6 fundos e 3 cores de destaque para alternar.
+- **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. Usar estrelas, halftone, escuro e explosões gráficas com as três cores de destaque. Não usar `papel` nem página decorativa como estética; páginas reais de HQ são conteúdo. Em `evidencia`, definir `fundo` explicitamente; na `telafinal`, usar `pagina: false`.
 - **O Nox entra em opinião e humor, com frequência:** a cada 10–20 s no vídeo longo e a cada 6–10 s no Short, em aparte ou cena `personagem`. Ele só aparece se o pacote dele foi importado no projeto (`../diazverso-contentlab/SKILL.md`, passo 3); sem ele, o Content Lab não gera `aparte` nem a cena `personagem`:
   - **Aparte (`aparte`):** a cena da obra desfoca e o Nox aparece **inteiro**, subindo pela borda de baixo, com as pernas fora do quadro. Cada fala é uma **pose nova em stop motion**: troca seca de desenho e de lugar, sem quadros intermediários, com uma tremidinha de stop motion. Ele gesticula com as mãos (pensando com a mão na frente do rosto, arminha, apontando, dando de ombros, facepalm…), com um balão de ícone ou texto acima. No fim ele sai de uma vez e o fundo volta nítido.
   - **Cena `personagem` com `poses`:** a mesma troca de poses em cena própria, com texto curto de impacto ao lado.

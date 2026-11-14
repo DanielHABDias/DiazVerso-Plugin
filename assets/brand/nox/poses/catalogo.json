@@ -238,6 +238,150 @@
       "tons": [
         "tristeza"
       ]
+    },
+    "investigativo": {
+      "arquivos": [
+        "investigativo.png"
+      ],
+      "gesto": "Uma mão segura lupa pequena fora do rosto; outra atrás do corpo; distintivo pequeno",
+      "olhos": "Amarelos atentos e estreitos",
+      "tons": [
+        "bastidor",
+        "descoberta"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "investiga",
+        "pista",
+        "mistério",
+        "detetive"
+      ]
+    },
+    "cabeca-quente": {
+      "arquivos": [
+        "cabeca-quente.png"
+      ],
+      "gesto": "Punhos fechados baixos; brilho âmbar localizado dentro do alto do capuz",
+      "olhos": "Angulares e irritados",
+      "tons": [
+        "discordancia",
+        "erro"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "raiva",
+        "irrit",
+        "revolt",
+        "furioso",
+        "cabeça quente"
+      ]
+    },
+    "desconfiado": {
+      "arquivos": [
+        "desconfiado.png"
+      ],
+      "gesto": "Mãos atrás do corpo; olhar lateral avaliando",
+      "olhos": "Assimétricos e céticos",
+      "tons": [
+        "pergunta",
+        "ressalva"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "suspeit",
+        "desconfi",
+        "estranho",
+        "não fecha"
+      ]
+    },
+    "analisando-provas": {
+      "arquivos": [
+        "analisando-provas.png"
+      ],
+      "gesto": "Segura dois recortes de prova separados na altura da cintura",
+      "olhos": "Atentos dirigidos às provas",
+      "tons": [
+        "explicacao",
+        "descoberta"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "prova",
+        "evidência",
+        "registro",
+        "comparar"
+      ]
+    },
+    "chocado-silencio": {
+      "arquivos": [
+        "chocado-silencio.png"
+      ],
+      "gesto": "Corpo imóvel e braços baixos com luvas abertas",
+      "olhos": "Pequenos e redondos, congelados",
+      "tons": [
+        "surpresa"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "chocado",
+        "sem palavras",
+        "silêncio",
+        "não acredito"
+      ]
+    },
+    "julgando": {
+      "arquivos": [
+        "julgando.png"
+      ],
+      "gesto": "Uma palma horizontal de veredito; outro braço baixo",
+      "olhos": "Estreitos e nivelados",
+      "tons": [
+        "opiniao",
+        "discordancia"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "julga",
+        "veredito",
+        "conden",
+        "decisão"
+      ]
+    },
+    "emocionado": {
+      "arquivos": [
+        "emocionado.png"
+      ],
+      "gesto": "Mãos sobre o peito sem cobrir emblema",
+      "olhos": "Arcos suaves com pequenos brilhos lacrimais amarelos",
+      "tons": [
+        "tristeza",
+        "aprovacao"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "emocion",
+        "comov",
+        "sacrifício",
+        "despedida"
+      ]
+    },
+    "esgotado": {
+      "arquivos": [
+        "esgotado.png"
+      ],
+      "gesto": "Braços soltos e pendentes; luvas relaxadas",
+      "olhos": "Fendas finas de cansaço",
+      "tons": [
+        "erro",
+        "tristeza"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "exaust",
+        "esgot",
+        "cansa",
+        "sem forças"
+      ]
     }
   }
 }

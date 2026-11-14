@@ -8,6 +8,8 @@ import json
 import re
 import shutil
 import subprocess
+import struct
+import zlib
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -27,6 +29,37 @@ def resource_files(root:Path=ROOT)->list[Path]:
         files.extend(p for p in (root/name).rglob('*') if p.is_file()
                      and not any(part in SKIP for part in p.relative_to(root).parts))
     return sorted(set(files))
+
+
+def transparent_rgba(path:Path)->bool:
+    """Check real alpha samples, not just the RGBA flag or a painted checkerboard."""
+    data=path.read_bytes();w,h,depth,mode=struct.unpack('>IIBB',data[16:26])
+    if depth!=8 or mode!=6 or not (600<=h<=2400) or w*h>10_000_000:return False
+    payload=[];offset=8
+    while offset+12<=len(data):
+        size=struct.unpack('>I',data[offset:offset+4])[0];kind=data[offset+4:offset+8]
+        if kind==b'IDAT':payload.append(data[offset+8:offset+8+size])
+        offset+=size+12
+    expected=h*(w*4+1);decoder=zlib.decompressobj()
+    raw=decoder.decompress(b''.join(payload),expected+1)
+    if len(raw)!=expected:return False
+    previous=[0]*w;transparent=False;opaque=False
+    for row in range(h):
+        start=row*(w*4+1);mode=raw[start];current=[]
+        if mode>4:return False
+        for x in range(w):
+            left=current[x-1] if x else 0;up=previous[x];corner=previous[x-1] if x else 0
+            if mode==0:predict=0
+            elif mode==1:predict=left
+            elif mode==2:predict=up
+            elif mode==3:predict=(left+up)//2
+            else:
+                estimate=left+up-corner;a=abs(estimate-left);b=abs(estimate-up);c=abs(estimate-corner)
+                predict=left if a<=b and a<=c else up if b<=c else corner
+            alpha=(raw[start+1+x*4+3]+predict)&255;current.append(alpha)
+            transparent|=alpha==0;opaque|=alpha==255
+        previous=current
+    return transparent and opaque
 
 
 def validate()->dict:
@@ -122,6 +155,14 @@ def validate()->dict:
                 files=entry.get('arquivos') or []
                 require(re.fullmatch(r'[a-z0-9-]+',key) and files and all((poses_dir/f).is_file() for f in files),'Catalog pose without PNG: '+key)
                 require(entry.get('gesto') and entry.get('olhos') and entry.get('tons') and set(entry['tons'])<=tones,'Catalog pose incomplete or unknown tone: '+key)
+                if entry.get('especial'):
+                    require(entry.get('especial') is True and entry.get('gatilhos') and all(isinstance(t,str) and t.strip() for t in entry['gatilhos']),'Special pose requires narrative triggers: '+key)
+                    for name in files:
+                        asset=next((a for a in catalog['assets'] if a['path']=='assets/brand/nox/poses/'+name),{})
+                        lock=asset.get('character_lock',{})
+                        canonical=next(a for a in catalog['assets'] if a['id']=='brand.nox.canonical')
+                        require(asset.get('status')=='APPROVED_CHARACTER_LOCK' and lock.get('canonical_git_blob_sha1')==canonical['git_blob_sha1'] and lock.get('reviewer') and all(lock.get('checks',{}).get(check) is True for check in ('proportions','silhouette','costume','palette','eyes_only','drawing_style')),'Special pose missing visual identity review: '+key)
+                        require(transparent_rgba(poses_dir/name),'Special pose lacks real transparency or valid dimensions: '+name)
                 owned+=files
             for name in pngs:
                 require(owned.count(name)==1,'Pose PNG missing from catalogo.json (or listed twice): '+name)

@@ -20,8 +20,8 @@ assets/brand/nox/poses/
 ## Formato de cada PNG
 
 - **Fundo:** transparente.
-- **Figura:** o Nox **inteiro**, do capuz às botas, recortado rente, com os pés tocando a base da imagem. Ele entra subindo pela borda de baixo com o corpo inteiro.
-- **Tamanho:** de 1200 a 1600 px de altura (o validador aceita de 600 a 2400).
+- **Figura:** o Nox **inteiro**, do capuz às botas, recortado rente, com os pés junto à base da imagem, admitindo apenas margem transparente mínima. Ele entra subindo pela borda de baixo com o corpo inteiro.
+- **Tamanho:** preferencialmente entre 1200 e 1800 px de altura (o validador aceita de 600 a 2400).
 - **Traço:** o mesmo do `Nox.png`, com as mesmas proporções e cores:
   - capuz preto com ponta;
   - rosto escuro, só com os olhos amarelos neon brilhantes na expressão da pose, com halo dourado dentro do capuz;
@@ -63,6 +63,17 @@ A fonte é o [`catalogo.json`](../../../assets/brand/nox/poses/catalogo.json): c
 | `rindo` | `rindo` | Mãos na barriga, corpo inclinado para trás | Apertados em > < | piada |
 | `triste` | `triste` | Mãos unidas baixas, ombros caídos | Meias-luas descendentes | tristeza |
 
+| `investigativo` | `investigativo` | Uma mão segura lupa pequena fora do rosto; outra atrás do corpo; distintivo pequeno | Amarelos atentos e estreitos | bastidor, descoberta |
+| `cabeca-quente` | `cabeca-quente` | Punhos fechados baixos; brilho âmbar localizado dentro do alto do capuz | Angulares e irritados | discordancia, erro |
+| `desconfiado` | `desconfiado` | Mãos atrás do corpo; olhar lateral avaliando | Assimétricos e céticos | pergunta, ressalva |
+| `analisando-provas` | `analisando-provas` | Segura dois recortes de prova separados na altura da cintura | Atentos dirigidos às provas | explicacao, descoberta |
+| `chocado-silencio` | `chocado-silencio` | Corpo imóvel e braços baixos com luvas abertas | Pequenos e redondos, congelados | surpresa |
+| `julgando` | `julgando` | Uma palma horizontal de veredito; outro braço baixo | Estreitos e nivelados | opiniao, discordancia |
+| `emocionado` | `emocionado` | Mãos sobre o peito sem cobrir emblema | Arcos suaves com pequenos brilhos lacrimais amarelos | tristeza, aprovacao |
+| `esgotado` | `esgotado` | Braços soltos e pendentes; luvas relaxadas | Fendas finas de cansaço | erro, tristeza |
+
+As oito poses especiais complementam as poses gerais. `desconfiado` não substitui `pensando`: o olhar lateral e as mãos atrás do corpo indicam suspeita. `chocado-silencio` fica imóvel, sem o gesto de susto; `emocionado` leva mãos ao peito; `esgotado` tem braços soltos, sem repetir as mãos unidas de `triste`. `cabeca-quente` usa apenas brilho alaranjado localizado dentro do capuz. `investigativo` e `analisando-provas` acrescentam acessórios pequenos que não cobrem a identidade.
+
 Tons:
 
 - `abertura`: primeira aparição, "oi"
@@ -86,7 +97,7 @@ Tons:
 
 1. **O Nox troca de pose enquanto fala.** Num aparte ou na cena `personagem`, a pose muda de uma vez a cada 0,7–1 s de fala: um aparte de 3 s tem 3 ou 4 poses. Cada troca é seca, sem quadros intermediários.
 2. **A pose segue o tom da frase.** A primeira pose do aparte é a do tom (pergunta → `pensando` ou `ombros`; piada → `rindo` ou `arminha`). As seguintes continuam no mesmo tom ou passam por `explicando`, `explicando-centro` e `parado`.
-3. **Todas as poses aparecem no vídeo.** O plano prefere, dentro do tom, a pose que ainda não apareceu. No fim, toda pose do catálogo precisa ter aparecido pelo menos uma vez num vídeo longo; o Content Lab avisa quais faltaram, e o agente as encaixa em apartes de tom compatível pelo `motion_plan_set`.
+3. **A narrativa escolhe a pose.** Usar variedade dentro do tom, sem obrigação de completar o catálogo. As especiais entram quando gesto e expressão acrescentam sentido. `posesFaltando` é informativo. No catálogo, `especial: true` e `gatilhos` restringem a seleção automática ao contexto da fala; o agente pode indicar a pose explicitamente depois de conferir o contexto.
 4. **Sem repetir em seguida.** A mesma pose não aparece duas vezes seguidas, e as variantes `-b` são sorteadas.
 5. **Nova pose:** o PNG entra na pasta, no `assets/manifest.json` e no `catalogo.json` com gesto, olhos e tons. O validador recusa PNG fora do catálogo.
 
@@ -99,7 +110,7 @@ Usando a imagem anexada como referência exata do personagem, desenhe o mesmo pe
 desenho, traço, proporções, cores, capuz preto com ponta, rosto escuro vazio, olhos amarelos luminosos,
 sobretudo, punhos dourados, emblema, luvas, botas, contorno preto e deslocamento vermelho/azul nas bordas)
 de corpo inteiro, de frente, fazendo: [GESTO]. Olhos: [OLHOS]. Fundo transparente, sem cenário, sem
-texto, sem sombra no chão. Não acrescente boca, nariz, armas nem acessórios.
+texto, sem sombra no chão. Não acrescente boca, nariz nem armas. Acessório expressamente solicitado pode complementar o gesto sem esconder ou deformar o personagem.
 ```
 
 Depois de gerar:
