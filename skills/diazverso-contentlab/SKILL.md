@@ -96,6 +96,14 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
 
 Use `project_get` para ver o que falta em cada etapa (`missing`). Narração, montagem, transcrição e importação devolvem `jobId`: use `job_wait` enquanto vier `waiting: true`. Render segue a regra de envio à fila e encerramento imediato; não entra nesse acompanhamento.
 
+## Fila de processamento
+
+A fila é global entre todos os projetos: render, transcrição, voz de IA e montagem WAV executam um por vez, na ordem de envio. Enviar vários vídeos apenas adiciona os demais à espera; não iniciar processos pesados por fora para contornar essa fila. Na Edição/Revisão fica só o render atual ou o último e o botão **Ver fila de processamento**.
+
+Na aba **Fila de processamento**, o criador vê execução, posições e histórico, pode cancelar um trabalho ou todos e limpar o histórico. Pelo MCP: `queue_list`, `queue_cancel` (`jobId`), `queue_cancel_all` e `queue_clear_history`. Limpar remove só concluídos, falhos e cancelados; mantém os ativos, aguardando e arquivos produzidos. Renders interrompidos retomam ao reabrir o app; voz, transcrição e montagem interrompidas ficam marcadas para novo envio.
+
+Enviar render continua encerrando o turno; retomar somente quando o criador voltar ao chat.
+
 ## Sem o Content Lab
 
 Se o criador recusar, a produção segue `../diazverso-criacao-video/SKILL.md` num editor à escolha dele. O kit de motion é do Content Lab e não vem neste plugin; as regras do canal ([motion](../diazverso-motion/SKILL.md), [som](../diazverso-motion/references/som.md), [Nox](../diazverso-nox/SKILL.md)) são as mesmas.
