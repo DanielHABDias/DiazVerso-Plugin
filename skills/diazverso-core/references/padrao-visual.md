@@ -4,7 +4,7 @@ Critérios objetivos para a montagem em motion (`../../diazverso-motion/SKILL.md
 
 ## Bloqueantes
 
-1. **Imagem com assunto em toda cena.** Cada cena mostra o personagem, a obra, o acontecimento ou o Nox de que a fala trata: painel de HQ, frame oficial, pôster, capa, recorte ou pose do Nox. Texto sobre fundo liso ou procedural só é aceito em ênfase curta (até 3 s) e no máximo em 1 de cada 5 cenas.
+1. **Imagem com assunto em toda cena, conferida.** A imagem mostra o que a fala e o rótulo dizem (abrir o arquivo, não confiar no nome) e tem resolução para o tamanho em tela. Cada cena mostra o personagem, a obra, o acontecimento ou o Nox de que a fala trata: painel de HQ, frame oficial, pôster, capa, recorte ou pose do Nox. Texto sobre fundo liso ou procedural só é aceito em ênfase curta (até 3 s) e no máximo em 1 de cada 5 cenas.
 2. **Evidência visual do que é afirmado.** Quando a narração cita um personagem, uma edição, uma cena ou um número, a imagem correspondente aparece enquanto a frase é dita. Consultar [imagens e direitos](imagens-e-direitos.md).
 3. **Ritmo de informação visual.** Algo relevante muda na tela a cada **1,5–3 s**, no ritmo do RunnyIA: nova imagem, palavra-chave, troca de painel, reação do Nox, número mudando. Imagem da obra sustentada por até 3–5 s só quando o argumento pede, sempre com câmera lenta. Nenhum beat parado acima de 6 s. A câmera nunca fica parada (ver `../../diazverso-motion/SKILL.md`).
 4. **Tipografia Anton** (`assets/brand/fonts/anton/Anton-Regular.ttf`, OFL) para títulos, palavras de impacto e legendas. Fonte de fallback do sistema reprova o frame.
@@ -23,8 +23,9 @@ Critérios objetivos para a montagem em motion (`../../diazverso-motion/SKILL.md
 
 ## Shorts
 
-- Assunto e texto dentro do preset `../../diazverso-shorts/references/preset-vertical-v1.json`; legenda no terço inferior reservado, imagem principal entre 15% e 60% da altura.
-- **Gancho visual no primeiro segundo:** a imagem mais forte do vídeo abre o Short, já com o texto do gancho.
+- O Short tem o mesmo [padrão de edição](../../diazverso-motion/references/padrao-de-edicao.md) do vídeo longo: troca a cada 1,5–3 s, o Nox a cada 6–10 s trocando de expressão, trilha audível.
+- Conteúdo entre 12% e 72% da altura (a diagramação vertical do kit) e legenda acima da interface do Shorts; conferir no preset `../../diazverso-shorts/references/preset-vertical-v1.json`.
+- **Gancho visual no primeiro segundo:** a imagem mais forte do vídeo, em alta resolução, abre o Short com 3–4 cortes nos primeiros 3 s.
 - Duração preferida de pelo menos 60 s quando o conteúdo sustentar; menos que isso é decisão do criador, registrada.
 
 ## Revisão de frames

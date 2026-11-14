@@ -11,12 +11,12 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
 
 1. Ler tese, público, formato (longo ou Short) e o que o vídeo realmente entrega. Se faltar uma decisão essencial, pedir só essa.
 2. Conferir o **tema**: polêmico (opinião defensável), que ensina algo ou que desperta curiosidade (`../diazverso-pesquisa/SKILL.md`). O título carrega esse ângulo. Depois, escrever a **promessa em uma frase**: o que o público vai saber ou sentir depois de assistir. Título e thumbnail apontam para essa frase, sem respondê-la.
-3. Gerar **pelo menos 10 títulos** variando o ângulo de entrada ([ângulos](references/modelos.md)): contradição, potencial perdido, resposta inesperada, micro-história, reavaliação e veredito.
+3. Procurar vídeos sobre o mesmo tema que deram certo (pelo menos 50 mil visualizações, no Brasil e fora) e anotar título, canal e visualizações conferidos na página de cada vídeo. Depois, gerar **pelo menos 10 títulos** variando o ângulo de entrada ([ângulos](references/modelos.md)): contradição, potencial perdido, resposta inesperada, micro-história, reavaliação e veredito. O título do canal é polêmico: toma posição e provoca.
 4. Filtrar pela forma:
    - **Tamanho:** até ~60 caracteres; o essencial nos primeiros 40, que aparecem no celular.
    - **Começo:** a entidade reconhecível (personagem, obra, equipe) no começo, quando couber.
    - **Lacuna honesta:** dar contexto suficiente para o público se interessar e guardar a resposta que só o vídeo entrega.
-   - **Linguagem:** falada, sem caixa alta inteira, sem pontuação em excesso, sem pergunta retórica vazia.
+   - **Linguagem:** falada, sem pontuação em excesso, sem pergunta retórica vazia. Duas ou três palavras-chave em MAIÚSCULAS e o resto normal, como o canal faz ("VENOM ficou FAMOSO demais para ser VILÃO", "O KNULL é o vilão MAIS SUPERESTIMADO da Marvel"); nunca o título inteiro em maiúsculas.
    - **Honestidade:** nada que a pesquisa não sustente; sem números inventados ou promessas que o vídeo não cumpre.
 5. Escolher **dois finalistas com ângulos diferentes** (A e B mudam o argumento, não sinônimos).
 6. Para cada finalista, um conceito de thumbnail que **complementa** o título:

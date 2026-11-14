@@ -18,7 +18,7 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
 
 ## Fluxo
 
-1. Partir do roteiro aprovado e do [padrão visual](../diazverso-core/references/padrao-visual.md). Para técnicas de ritmo, consultar a [linguagem das referências](references/linguagem.md).
+1. Partir do roteiro aprovado, do [padrão de edição](references/padrao-de-edicao.md) (o nível que todo vídeo e todo Short precisa ter: abertura, ritmo, Nox, imagens, áudio da obra, som, tela final) e do [padrão visual](../diazverso-core/references/padrao-visual.md). Para técnicas de ritmo, consultar a [linguagem das referências](references/linguagem.md).
 2. Reunir as **cenas das obras** citadas: imagens e trechos curtos, com direitos conferidos ([imagens e direitos](../diazverso-core/references/imagens-e-direitos.md)). Nomes de arquivo descritivos (`batman-1940.jpg`) ajudam a casar mídia e fala.
 3. Com narração: gerar ou gravar a narração, depois **transcrever com tempos por palavra**. Os beats começam onde a frase é dita. Sem narração: o texto na tela conduz, e os tempos seguem a música (tempos de 0,5 s a 120 BPM).
 4. Escrever os beats com as cenas de `motion_kit`: uma troca de informação a cada 1,5–3 s e nenhum beat parado acima de 6 s.
@@ -48,9 +48,9 @@ Cada beat segue o contrato `contentlab-motion-v1` do Content Lab:
 
 - **A cena da obra é a base.** Em muitos beats ela fica sozinha, em tela cheia (`evidencia` com `cheia: true`), sem motion design por cima. Nos outros, ela ganha painel, rótulo, legenda e fundo.
 - **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. O catálogo tem 6 fundos e 3 cores de destaque para alternar.
-- **O Nox entra em opinião e humor**, não o tempo todo. Ele só aparece se o pacote dele foi importado no projeto (`../diazverso-contentlab/SKILL.md`, passo 3); sem ele, o Content Lab não gera `aparte` nem a cena `personagem`:
+- **O Nox entra em opinião e humor, com frequência:** a cada 10–20 s no vídeo longo e a cada 6–10 s no Short, em aparte ou cena `personagem`. Ele só aparece se o pacote dele foi importado no projeto (`../diazverso-contentlab/SKILL.md`, passo 3); sem ele, o Content Lab não gera `aparte` nem a cena `personagem`:
   - **Aparte (`aparte`):** a cena da obra desfoca e o Nox aparece **inteiro**, subindo pela borda de baixo, com as pernas fora do quadro. Cada fala é uma **pose nova em stop motion**: troca seca de desenho e de lugar, sem quadros intermediários, com uma tremidinha de stop motion. Ele gesticula com as mãos (pensando com a mão na frente do rosto, arminha, apontando, dando de ombros, facepalm…), com um balão de ícone ou texto acima. No fim ele sai de uma vez e o fundo volta nítido.
-  - **Cena `personagem` com `poses`:** a mesma troca de poses em cena própria, de vez em quando.
+  - **Cena `personagem` com `poses`:** a mesma troca de poses em cena própria, com texto curto de impacto ao lado.
   - **Reação no canto** (`humor` em `evidencia`): rara.
   - **Poses:** um PNG pronto por pose (gesto e olhos desenhados), com variantes sorteadas, em cada fala, escolhidos pelo tom: pergunta pensa, opinião aponta, erro é facepalm, piada é arminha ou rindo ([poses](../diazverso-nox/references/poses.md)). Não repetir a mesma pose em falas seguidas. A expressão vem do desenho da pose; `humor` só escolhe a pose pelo tom.
 - **Extras por cima de qualquer cena** (campo `extras` do beat):
@@ -65,7 +65,7 @@ Todas as cenas do kit são diagramadas para 1080×1920:
 - a legenda fica acima da interface do Shorts;
 - os painéis empilham, a comparação vira em cima e embaixo e a fórmula vira coluna.
 
-O ritmo é o mesmo, com uma troca a cada 1,5–3 s.
+O Short segue o mesmo [padrão de edição](references/padrao-de-edicao.md) do vídeo longo, no mesmo nível: troca a cada 1,5–3 s, abertura com 3–4 cortes, o Nox constante trocando de expressão, legenda o tempo todo, trilha audível e um trecho com o áudio da obra quando houver fala marcante.
 
 ## 3D
 
@@ -75,12 +75,10 @@ A cena `paineis3d` do kit é aquela em que a câmera voa por painéis HQ no espa
 
 A thumbnail sai do mesmo kit do Content Lab: a composição `KitThumb` renderiza um still de 1280×720. O contrato está em `motion_kit` (`thumbnail`):
 
-- a mídia da obra como assunto dominante;
-- **limpa por padrão:** fundo preto ou branco e o personagem grande (um PNG transparente vira recorte);
-- até 4 palavras em Anton, com a palavra entre *asteriscos* em cor; `fundo: "cena"` usa a mídia na imagem toda;
-- o Nox na pose do humor do vídeo (`humor`), com o pacote dele importado no projeto;
-- um selo curto opcional;
-- com duas mídias, o layout VS.
+- **modelo do canal (`layout: "centro"`):** fundo preto liso, o rosto do personagem central grande no meio (arte em alta resolução, `foco` e `zoom` no rosto), uma ou duas palavras enormes na frente dele embaixo e o Nox no canto (`lado`) com a `pose` da emoção da thumb;
+- até 4 palavras em Anton, com a palavra entre *asteriscos* em cor;
+- `layout: "lado"` (texto de um lado, assunto do outro), `fundo: "cena"` e o VS com duas mídias ficam para casos específicos;
+- um selo curto opcional.
 
 Pelo Content Lab: `thumbnails_generate`. A direção e a revisão ficam em `../diazverso-thumbnail/SKILL.md`.
 

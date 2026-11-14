@@ -28,9 +28,10 @@ Regras:
 
 - **Um som principal por evento**, no máximo dois em camada (por exemplo `impact` + `sub`).
 - **Variar:** o mesmo som não repete em trocas seguidas; alternar `whoosh` e `swish`.
-- **Não cobrir a fala:** perto de palavras, o SFX fica entre 0,3 e 0,5 de volume; mais alto só nas pausas e nas viradas.
+- **Não cobrir a fala:** corte (`whoosh`, `swish`) em 0,3; `impact`, `pop` e `camera` entre 0,35 e 0,45; `explosao` no máximo 0,35. Nunca empilhar `sub` e `impact` fortes junto da voz (satura o pico).
 - **Silêncio é ferramenta:** antes de uma virada, a trilha some por meio segundo e o `impact` volta com ela.
-- **Som da obra:** se a cena mostra um soco, uma explosão ou uma porta, o som combina com essa ação (soco → `impact`, porta → `camera` curto). O áudio original da cena não entra.
+- **Som da obra:** no plano comum, se a cena mostra um soco, uma explosão ou uma porta, o SFX combina com essa ação (soco → `impact`, porta → `camera` curto) e o vídeo da obra fica mudo. O áudio original entra só nos trechos escolhidos de 5–7 s (2–3 por vídeo longo, 1 por Short) com `pausas` no plano e `som: true` na cena, conforme o [padrão de edição](padrao-de-edicao.md).
+- **A trilha se ouve:** cerca de 15–20 dB abaixo da voz enquanto ela fala (no Content Lab, `music.volume` ≈ 0,8 e `music.duck` ≈ 0,55), subindo nos respiros e quase muda sob o áudio da obra (`music.pausa` ≈ 0,08).
 - **Conferir no render:** escutar o vídeo inteiro, medir o loudness (alvo −14 LUFS, pico abaixo de −1 dBTP) e procurar som atrasado, adiantado ou empilhado.
 
 ## 2. Criar sons novos

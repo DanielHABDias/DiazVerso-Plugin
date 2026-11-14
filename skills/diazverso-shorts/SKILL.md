@@ -1,34 +1,36 @@
 ---
 name: diazverso-shorts
-description: "Use para criar ou adaptar roteiro e plano audiovisual de Shorts Diazverso em 9:16, com gancho, ritmo, legendas e CTA contextual; não faz upload nem publicação."
+description: "Use para criar ou adaptar Shorts Diazverso em 9:16 no mesmo padrão e nível de edição do vídeo longo: gancho, ritmo, Nox constante, legenda o tempo todo, som e CTA contextual; não faz upload nem publicação."
 ---
 
 # Diazverso — Shorts verticais
 
-**Resultado:** preparar uma proposta de Short criativa e executável para a produção, sem prometer vídeo renderizado quando não houver runtime Remotion/editor. Seguir a tese, fatos, voz natural e humor contextual de `diazverso-core`. **O criador publica manualmente**; não há comandos nem instruções de postagem.
+**Resultado:** um Short em 9:16 com a mesma edição do vídeo longo do canal, só que vertical. O padrão é o mesmo e o nível de acabamento também: [padrão de edição](../diazverso-motion/references/padrao-de-edicao.md). Seguir a tese, os fatos, a voz e o humor de `diazverso-core`. **O criador publica manualmente.**
 
-## Fluxo compacto
+## Fluxo
 
-1. Receber uma pauta/tese ou roteiro aprovado, fonte factual, promessa de título e objetivo do Short. Se faltar somente um detalhe essencial, pedir esse detalhe; não reler o projeto inteiro.
-2. Escrever **gancho imediato** com pergunta, contradição, revelação ou situação visual. O desenvolvimento precisa cumprir a promessa; não alongar por obrigação.
-3. Preferir duração editorial de **pelo menos 60 s** quando o conteúdo sustentar. É preferência do criador, **não limite de plataforma**. Uma duração menor pode ser sinalizada para decisão editorial, nunca preenchida com enrolação.
-4. Construir progressão curta: gancho → contexto mínimo → evidência/confronto → payoff → **CTA ao canal contextual e breve**. Não abrir com logo/longo preâmbulo nem interromper resolução da tese para CTA.
-5. Planejar quadros com mudanças motivadas por informação: Nox (se relevante e fiel ao asset canônico), HQ moderna, recorte, parallax, câmera e tipografia de impacto, **sem colocar efeito em todo segundo**. Nunca inventar direito de uso de clipe/áudio.
-6. Seguir a receita de Short em `../diazverso-decupagem/references/receitas.md` e o padrão visual de `../diazverso-core/references/padrao-visual.md`: imagem do assunto no primeiro segundo e troca visual a cada 2–5 s. Aplicar o preset `references/preset-vertical-v1.json`: **1080×1920, 30 fps, 9:16**. Manter textos e elementos essenciais dentro dos limites conservadores. Reservar a região de legendas e evitar sobreposição com título/CTA. Essas margens não são garantia sobre UI do YouTube; conferir em preview real.
-7. **Legenda sincronizada com a fala por padrão:** quando existirem timestamps de palavras verificados, executar `scripts/captions.py <entrada.json> --srt-output <saida.srt>` para gerar SRT e cues por frame (short-audio). Cada entrada em `words` informa `start_ms`, `end_ms`, `text`; `visual_text_only` só pode indicar intervalos **sem fala**. O programa rejeita palavras sobrepostas e tentativas de ocultar fala em cenas tipográficas. **Gerar SRT não equivale a aferir sync real**: no render, comparar imagem, áudio e legendas; até lá, `audio_sync_verified=false`.
+1. Receber a pauta ou o roteiro aprovado, a fonte factual, a promessa do título e o objetivo do Short. Se faltar só um detalhe essencial, pedir esse detalhe.
+2. **Gancho imediato** (pergunta, contradição, revelação ou situação visual) e desenvolvimento que cumpre a promessa, sem enrolação.
+3. Duração preferida de **pelo menos 60 s** quando o conteúdo sustentar (preferência do criador, não limite da plataforma). Menos que isso é decisão editorial registrada.
+4. Progressão: gancho → contexto mínimo → evidência → virada → payoff → **CTA ao canal, contextual e breve**. Sem logo nem preâmbulo na abertura.
+5. Produzir pelo Content Lab (`../diazverso-contentlab/SKILL.md`) em projeto 9:16, com a receita de Short de `../diazverso-decupagem/references/receitas.md` e o padrão de edição:
+   - **abertura:** a imagem mais forte em alta resolução no primeiro segundo e 3–4 cortes nos primeiros 3 s;
+   - **ritmo:** troca de informação a cada 1,5–3 s, câmera sempre em movimento, cenas e fundos variando;
+   - **Nox constante:** aparte ou cena `personagem` a cada 6–10 s, trocando de pose e de expressão enquanto fala;
+   - **obra como base:** cena da obra sempre que a fala citar algo, cada imagem conferida aberta; um trecho com o áudio da obra quando houver fala marcante;
+   - **legenda palavra a palavra o tempo todo**, pelos tempos reais do Whisper;
+   - **som:** SFX em cada evento, abaixo da voz; trilha licenciada audível do começo ao fim ([som](../diazverso-motion/references/som.md));
+   - **diagramação:** 1080×1920, 30 fps; conteúdo entre 12% e 72% da altura e legenda acima da interface do Shorts (preset `references/preset-vertical-v1.json`; as margens não garantem a UI do YouTube, conferir em prévia real).
+6. Fora do Content Lab, a legenda sai de `scripts/captions.py <entrada.json> --srt-output <saida.srt>` com os tempos das palavras (`start_ms`, `end_ms`, `text`; `visual_text_only` só marca intervalos sem fala). Gerar SRT não é aferir sincronia: conferir no render.
+7. Conferir prévias de todos os beats e o render inteiro (padrão de edição, "Conferência do render"). **Não declarar render, sincronia, retenção prevista ou publicação sem teste ou ação real.**
 
-8. Preparar decupagem de cenas (skill `diazverso-decupagem`), narrador × efeito × mídia × duração, e pontos de preview. Confirmar a mesma versão do roteiro aprovada pelo criador antes de produzir.
-9. Encerrar com kit textual/roteiro/arte de referência conforme recursos disponíveis. **Não declarar render/legendagem sincronizada, retenção prevista ou publicação se não houve teste/ação real.**
+## Revisão
 
-## Revisão de Short — shorts
+Com render e evidências, executar `scripts/review_short.py <entrada.json>` (gancho, duração, payoff, CTA, legenda, áudio, links, margens, direitos e inspeção do render). Ele devolve `REVIEW_REQUIRED`, `EDITORIAL_REVIEW` ou `READY_FOR_CREATOR_APPROVAL`, **nunca aprovação automática**. Sem render real, `render_checked=false`; sem escuta real, `captions=NOT_VERIFIED` e `audio_checked=false`.
 
-Quando existir render e evidências, executar `scripts/review_short.py <entrada.json>` com gancho, duração, payoff, CTA, legenda, áudio, links, margens, direitos e inspeção do render. O revisor devolve `REVIEW_REQUIRED`, `EDITORIAL_REVIEW` ou `READY_FOR_CREATOR_APPROVAL` — **nunca aprovação automática**. Gancho tardio e duração abaixo de 60 s são observações editoriais, não previsão de retenção nem impedimentos da plataforma. Sem render real, marcar `render_checked=false`; sem sincronização ou escuta real, `captions=NOT_VERIFIED`/`audio_checked=false`. O criador decide a aprovação e posta manualmente.
+## Aceitação
 
-
-## Critérios de aceitação do roteiro/plano de Short
-
-- Gancho antes de explicação longa e tese cumprida; conclusão e CTA proporcionais.
-- Formato 9:16 e zonas de segurança do preset respeitados no desenho planejado; na edição, verificar frames reais.
-- Orientações visuais e áudio têm função narrativa e indicam fontes/direitos pendentes quando necessário.
-- Legendas previstas ou exceção de cena só tipográfica claramente indicada; sincronização real fica pendente até revisão do render.
-- **Postagem exclusivamente manual pelo criador.** O plugin apenas entrega materiais e registra publicação posteriormente se ela for confirmada.
+- Gancho antes de qualquer explicação; tese cumprida; payoff e CTA proporcionais.
+- O mesmo nível do vídeo longo: abertura forte, ritmo, Nox constante, imagens conferidas, trilha audível e SFX nos níveis do canal.
+- 9:16 e zonas de segurança conferidos em frames reais; legenda sincronizada conferida no render.
+- **Postagem exclusivamente manual pelo criador.**

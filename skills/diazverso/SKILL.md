@@ -24,7 +24,7 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
    4. revisão de fatos, estrutura e voz;
    5. aprovação;
    6. cenas das obras com direitos;
-   7. narração (somente falas, por capítulo) e transcrição automática Whisper `large-v3` completo, palavra por palavra; consultar os tempos reais em `narration_transcript` antes da edição;
+   7. narração (somente falas, por capítulo) e, com o áudio final definido, a transcrição Whisper `large-v3` completo, palavra por palavra, conferida (sem frase repetida nem buraco); consultar os tempos reais em `narration_transcript` antes da edição;
    8. plano de motion;
    9. prévias;
    10. render;
@@ -36,15 +36,18 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
      - estética HQ madura;
      - Anton em títulos e legendas;
      - a cena da obra é a base, muitas vezes sozinha em tela cheia;
-     - o Nox em opinião e humor: aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion: a pose troca enquanto ele fala, a cada 0,7–1 s, e todas as poses do [catálogo](../diazverso-nox/references/poses.md) aparecem ao longo do vídeo;
+     - abertura com a arte mais bonita do personagem em alta resolução e 5–6 cortes nos primeiros 5 s;
+     - o Nox em opinião e humor, a cada 10–20 s (no Short, a cada 6–10 s): aparte (cena desfocada, Nox inteiro subindo pela borda de baixo) gesticulando em stop motion: a pose troca enquanto ele fala, a cada 0,7–1 s, e todas as poses do [catálogo](../diazverso-nox/references/poses.md) aparecem ao longo do vídeo;
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
-     - cena da obra sempre que a fala citar algo; ela é a base do vídeo;
-     - Shorts em 9:16 com o mesmo ritmo, diagramados para vertical.
+     - cena da obra sempre que a fala citar algo; ela é a base do vídeo; cada imagem conferida aberta (mostra o que a fala diz, em resolução suficiente);
+     - 2–3 trechos curtos com o áudio da obra em falas marcantes, com a narração pausada;
+     - no vídeo longo, tela final de 15–20 s depois da última fala, só com a trilha;
+     - Shorts em 9:16 no mesmo padrão e no mesmo nível do vídeo longo, com o Nox constante ([padrão de edição](../diazverso-motion/references/padrao-de-edicao.md)).
    - **Som:**
      - SFX no quadro de cada evento da tela, variando, sem cobrir a fala; sons novos sintetizados ou do Openverse com licença comercial ([som](../diazverso-motion/references/som.md));
      - legenda palavra a palavra: o tempo todo nos Shorts; no vídeo longo, só em trechos (gancho e apartes do Nox);
-     - trilha licenciada abaixando sob a voz.
+     - trilha licenciada abaixando sob a voz, mas audível do começo ao fim; SFX abaixo da voz, explosão mais baixa ainda.
    - **Proibido:**
      - texto sobre fundo liso como cena;
      - clips estáticos colados;

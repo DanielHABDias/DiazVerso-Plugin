@@ -17,9 +17,9 @@ description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um 
 
 1. Reduzir a tese a **uma pergunta/tensão visual** diretamente respondida no roteiro. Não acrescentar conflito, fato, resultado ou personagem inexistente apenas para gerar curiosidade.
 2. **A** usa um ângulo dominante, por exemplo contradição/comparação; **B** usa outro enquadramento narrativo, por exemplo consequência/revelação. Não chamar de teste A/B apenas duas cores ou dois recortes da mesma imagem. O revisor `scripts/validate_thumbnail_brief.py` exige `angle`, `visual_metaphor` e `layout` distintos em A e B.
-3. Composição preferencial: **limpa**. Fundo preto ou branco, **o personagem grande** como assunto dominante (de preferência em PNG com fundo transparente), um ponto focal imediato, poucas camadas, espaço negativo para texto, hierarquia visual clara. O conceito deve funcionar reduzido no celular. Não transformar referências FALL, Um Nerd, RunnyIA ou Baoyu em visual copiado.
-4. Texto opcional e **curto** (preferência editorial: até 4 palavras). Texto não deve apenas repetir o título; pode criar contraste ou completar a promessa. Usar Anton de `assets/brand/fonts/anton/` (SIL OFL) ou outra fonte licenciada.
-5. **Nox é opcional**, só quando ajudar a leitura da tese; se aparecer, usar o arquivo canônico `assets/brand/nox/Nox.png` e sua identidade original. Novas poses dependem do Character Lock da character-lock e revisão da imagem gerada. Não afirmar que Nox está visualmente correto apenas porque o nome foi citado.
+3. **Modelo do canal, sempre limpo:** fundo preto liso; **o rosto do personagem central grande no meio**, em arte de alta resolução; **uma ou duas palavras enormes na frente dele**, embaixo, que provocam: raiva no fã, curiosidade ou polêmica ("SÓ APANHA", "HUMILHADO"); **o Nox no canto** com a expressão da thumb (rindo, facepalm, assustado). Um ponto focal, nada além disso. Funciona reduzido no celular. Antes de criar, procurar thumbnails de vídeos sobre o mesmo tema com pelo menos 50 mil visualizações, no Brasil e fora, e anotar o padrão (enquadramento, cor, palavras); não copiar o visual de nenhuma delas.
+4. Texto **curto**: uma ou duas palavras, no máximo quatro. Não repete o título; cria contraste ou completa a promessa. Usar Anton de `assets/brand/fonts/anton/` (SIL OFL) ou outra fonte licenciada.
+5. **O Nox fica no canto** em toda thumb do modelo, com a expressão que conta a emoção, a partir das poses do pacote dele (o arquivo canônico é `assets/brand/nox/Nox.png`, com a identidade original). Novas poses dependem do Character Lock da character-lock e revisão da imagem gerada. Não afirmar que Nox está visualmente correto apenas porque o nome foi citado.
 6. Arte HQ madura com contraste e profundidade a serviço da ideia, não painéis/balões infantis automáticos. Diretrizes de cor são hipóteses para o designer, **não validação de contraste de pixels**.
 7. Cada asset indicado deve registrar direitos, evidência e fonte. Ausência de material aprovado gera `PENDENTE DE DIREITOS`, não troca silenciosa por imagem de terceiros.
 8. Cada variante deve documentar `angle`, `visual_metaphor`, `layout`, `on_image_text`, `focus`, `contrast_plan`, `nox`, `assets_used`, `rationale`. Entregar dois conceitos A/B e uma recomendação editorial **sem prever CTR**.
@@ -33,10 +33,10 @@ A arte final não depende de ferramenta de imagem externa. O kit de motion do Co
 | Assunto dominante (obra com direitos) | `midia` |
 | Contraste ou comparação | `midiaB` (layout VS) |
 | Texto na imagem, até 4 palavras | `texto`, com a palavra-chave entre `*asteriscos*` |
-| Emoção (Nox) | `humor`, ou omitir |
-| Composição | `fundo` (`preto` padrão, `branco` ou `cena`), `lado` do texto, `tom` de destaque e `selo` curto |
+| Emoção (Nox) | `pose` (nome do catálogo, ex.: `rindo`, `facepalm`) ou `humor` |
+| Composição | `layout: "centro"` (o modelo do canal), `fundo: "preto"`, `lado` = canto do Nox, `tom` da palavra em cor, `focus` e `zoom` para enquadrar o rosto |
 
-Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B: `text`, `mediaId`, `mediaIdB`, `humor`, `side`, `tone` e `badge`. Ele grava as duas na embalagem e devolve as versões de 320 px em `output/previas/`. **Abrir as versões de celular** e responder: o assunto se reconhece em 1 segundo? O texto se lê? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
+Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B: `text`, `mediaId`, `layout`, `focus`, `zoom`, `pose`, `humor`, `side`, `tone`, `background` e, fora do modelo, `mediaIdB` e `badge`. As duas também ficam em `output/thumbnails/` do projeto. Ele grava as duas na embalagem e devolve as versões de 320 px em `output/previas/`. **Abrir as versões de celular** e responder: o assunto se reconhece em 1 segundo? O texto se lê? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
 
 ## Contrato e validador offline
 
