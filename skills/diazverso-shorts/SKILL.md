@@ -16,7 +16,7 @@ description: "Use para criar Shorts Diazverso em 9:16: por padrão, cortes do v�
 
 1. Ler a transcrição do longo (`narration_transcript`) e escolher **2 a 4 trechos** que se sustentam sem o resto do vídeo: um gancho próprio (revelação, contradição ou pergunta), uma história ou prova completa e um payoff que responde o gancho. Trecho que depende de algo dito antes fica de fora ou ganha a frase de contexto de outro ponto do longo.
 2. Montar cada Short com intervalos reais da narração do longo (início e fim pelos tempos do Whisper, cortando em pausas, nunca no meio de palavra). Pode reordenar: a frase mais forte abre o Short a frio, mesmo que no longo ela venha depois. Registrar no brief do projeto os intervalos usados (`2:45–2:53`, `1:27–2:43`…).
-3. Mesmos títulos e thumbnail próprios do Short (título A/B, thumbnail vertical no modelo do canal); a tese é a do trecho, sem prometer o que ele não entrega.
+3. Um único título A e uma única thumbnail A vertical no modelo do canal, sem teste A/B. No Content Lab, manter `titleB` vazio e `thumbnailB: null`; na planilha, deixar TÍTULO B e THUMBNAIL B vazios; a tese é a do trecho, sem prometer o que ele não entrega.
 4. Projeto 9:16 no Content Lab com a narração cortada, as mesmas mídias do longo e a transcrição refeita sobre o áudio do Short. O plano de motion é refeito para vertical, no mesmo nível do longo (abaixo), não um recorte da tela 16:9.
 5. **Fecho com o vídeo completo:** o Short termina na chamada para o canal, com a thumbnail do vídeo longo na tela. A fala é a gravação-padrão do criador ("vai lá no canal…"), importada como mídia do projeto; enquanto ela não existir, usar a frase de CTA da própria narração do longo e avisar o criador que falta gravar a chamada-padrão.
 

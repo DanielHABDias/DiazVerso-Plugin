@@ -7,6 +7,8 @@ description: "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido
 
 O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados. Estas regras são o gosto do criador e valem desde a primeira mensagem, mesmo sem conhecer quem pede. Só mudam por pedido explícito do criador. Pergunte apenas o que falta para avançar.
 
+Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e thumbnail B ficam vazios no Content Lab, no Drive e na planilha. Duas variantes A/B são exclusivas dos vídeos longos.
+
 ## Regras inegociáveis
 
 1. **Contexto enxuto.** Uma skill principal por vez, escolhida pela tabela abaixo, e só as referências da próxima ação. Não reler o que já foi lido nesta sessão. Resumir saídas longas. Ao trocar de etapa, manter um checkpoint curto: produção, decisões, feito, bloqueios e próxima ação.

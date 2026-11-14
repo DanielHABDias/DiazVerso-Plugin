@@ -11,6 +11,7 @@ Abas Produções, Ideias, Afiliados e Config (oculta). Cabeçalhos exatos são d
 - Ideias usa TF_####; produção longa VD_####; Short SH_####. Não reutilizar IDs emitidos.
 - A ideia só sai de Ideias depois de conferir a produção, a origem, o vínculo e o Doc. Remoção exige autorização pertinente.
 - Produções guarda tipo, tema, status, prioridade, títulos A/B, thumbnails A/B, roteiro, vínculos, planejamento, data/URL reais de publicação, revisão, observações e kit.
+- Shorts usam somente TÍTULO A e THUMBNAIL A; deixar as duas colunas B vazias. Docs e kits de Shorts também têm uma única embalagem A, sem teste A/B.
 - A planilha não guarda o roteiro inteiro: usar Doc nativo formatado e link na coluna ROTEIRO.
 - Dados operacionais, inclusive data de publicação e revisão da fonte, permanecem necessários; não equivalem a cronologia do plugin.
 

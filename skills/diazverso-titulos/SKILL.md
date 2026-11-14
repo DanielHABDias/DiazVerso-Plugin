@@ -18,7 +18,7 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
    - **Lacuna honesta:** dar contexto suficiente para o público se interessar e guardar a resposta que só o vídeo entrega.
    - **Linguagem:** falada, sem pontuação em excesso, sem pergunta retórica vazia. Duas ou três palavras-chave em MAIÚSCULAS e o resto normal, como o canal faz ("VENOM ficou FAMOSO demais para ser VILÃO", "O KNULL é o vilão MAIS SUPERESTIMADO da Marvel"); nunca o título inteiro em maiúsculas. Para rir do personagem, o título pode terminar em risada em maiúsculas ("KNULL, o deus que PERDEU pros PRÓPRIOS FILHOS KKKKKKKKK").
    - **Honestidade:** nada que a pesquisa não sustente; sem números inventados ou promessas que o vídeo não cumpre.
-5. Escolher **dois finalistas com ângulos diferentes** (A e B mudam o argumento, não sinônimos).
+5. Em vídeo longo, escolher **dois finalistas com ângulos diferentes** (A e B mudam o argumento, não sinônimos). Em Short, escolher **um único título A** e uma única thumbnail A; não preparar variante B nem teste A/B.
 6. Para cada finalista, um conceito de thumbnail que **complementa** o título:
    - mostra o que o título não diz;
    - um assunto dominante;
@@ -27,7 +27,7 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
 
    A composição técnica fica com `../diazverso-thumbnail/SKILL.md`.
 7. Escrever a **primeira frase do gancho** para cada par: ela confirma o clique e abre a pergunta nos primeiros segundos.
-8. Recomendar qual testar primeiro e por quê, sem prever CTR. Pelo Content Lab, gravar com `creative_write` (packaging: `titleA`, `titleB`). No Drive, gravar nas colunas TÍTULO A / TÍTULO B e ler de volta.
+8. No longo, recomendar qual testar primeiro e gravar `titleA` e `titleB`. No Short, gravar somente `titleA`, com `titleB` vazio. Na planilha, preencher apenas TÍTULO A e THUMBNAIL A para Shorts. Sem prever CTR.
 
 ## Conferência
 

@@ -13,7 +13,11 @@ description: "Use para criar, gerar com o kit e revisar as thumbnails A/B de um 
 - Quando o roteiro ainda não estiver aprovado, produzir conceitos **PRELIMINARES**, sem alegar thumbnail final.
 - Consultar `../diazverso-core/SKILL.md` para a direção HQ contemporânea/madura. Não duplicar o núcleo editorial.
 
-## Duas propostas A/B com hipóteses editoriais distintas
+## Variantes por formato
+
+Short (SH_): criar e revisar somente a variante A, vertical 9:16. Não criar B nem teste A/B. Nos passos abaixo, referências ao par A/B e sua diferenciação se aplicam somente a vídeos longos (VD_); no Short, executar os mesmos cuidados de composição, direitos e legibilidade para A. Enviar apenas A ao Content Lab e deixar THUMBNAIL B vazia na planilha.
+
+## Duas propostas A/B para vídeos longos
 
 1. Reduzir a tese a **uma pergunta/tensão visual** diretamente respondida no roteiro. Não acrescentar conflito, fato, resultado ou personagem inexistente apenas para gerar curiosidade.
 2. **A** usa um ângulo dominante, por exemplo contradição/comparação; **B** usa outro enquadramento narrativo, por exemplo consequência/revelação. Não chamar de teste A/B apenas duas cores ou dois recortes da mesma imagem. O revisor `scripts/validate_thumbnail_brief.py` exige `angle`, `visual_metaphor` e `layout` distintos em A e B.

@@ -24,7 +24,7 @@ Junto com o kit de publicação, entregar uma seção **Registro manual (Drive e
 
 1. **Arquivos para subir**, cada um com o caminho local e a pasta de destino:
    - roteiro → `Roteiros/Longos` ou `Roteiros/Shorts`, como Google Doc, nome `VD_#### — [tema] — Roteiro`;
-   - thumbnails A/B → `Thumbnails/Longos` ou `Thumbnails/Shorts`, nome `VD_#### — [tema] — Thumb A`.
+   - thumbnail A no Short; thumbnails A/B no longo → `Thumbnails/Longos` ou `Thumbnails/Shorts`, nome `VD_#### — [tema] — Thumb A`.
 2. **Linha da aba Produções** pronta para colar, na ordem exata das colunas:
    `ID | TIPO | TEMA / CONTEXTO | STATUS | PRIORIDADE | TÍTULO A | TÍTULO B | THUMBNAIL A | THUMBNAIL B | ROTEIRO | VÍDEO RELACIONADO | PLANEJADO PARA | PUBLICADO EM | LINK YOUTUBE | REVISÃO | OBSERVAÇÕES | KIT PUBLICAÇÃO`
    - Os links (thumbnails, roteiro) ficam como `[colar o link depois de subir]`.

@@ -60,10 +60,11 @@ def validate(data: dict) -> dict:
         assets[aid] = item
 
     variants = data["variants"]
-    if not isinstance(variants, dict) or set(variants) != {"A", "B"}:
-        raise ValueError("Exactly A and B are required")
+    labels = ("A",) if data["format"] == "SHORT" else ("A", "B")
+    if not isinstance(variants, dict) or set(variants) != set(labels):
+        raise ValueError("Short requires only A; long requires A and B")
     signatures = {}
-    for name in ("A", "B"):
+    for name in labels:
         variant = variants[name]
         required = {"angle", "visual_metaphor", "layout", "on_image_text",
                     "focus", "contrast_plan", "nox", "assets_used", "rationale"}
@@ -106,9 +107,9 @@ def validate(data: dict) -> dict:
                                "detail": "Use assets/brand/nox/Nox.png"})
         signatures[name] = (variant["angle"], variant["layout"],
                             " ".join(variant["visual_metaphor"].casefold().split()))
-    if signatures["A"] == signatures["B"] or (
+    if len(labels) == 2 and (signatures["A"] == signatures["B"] or (
             variants["A"]["angle"] == variants["B"]["angle"]
-            and variants["A"]["layout"] == variants["B"]["layout"]):
+            and variants["A"]["layout"] == variants["B"]["layout"])):
         issues.append({"code": "AB_VARIANTS_TOO_SIMILAR", "variant": None,
                        "detail": "Change editorial angle and layout, not only colors"})
     if not data["script_approved"]:
@@ -120,7 +121,7 @@ def validate(data: dict) -> dict:
             else ("PRELIMINARY_BRIEF" if not data["script_approved"]
                   else "BRIEF_READY_FOR_HUMAN_CREATIVE_REVIEW"),
             "production_id": prod, "issues": issues,
-            "variants": ["A", "B"], "image_generated": False,
+            "variants": list(labels), "image_generated": False,
             "pixel_contrast_verified": False, "license_verified_by_code": False,
             "ctr_prediction": None, "drive_write_performed": False,
             "publishing_performed": False}

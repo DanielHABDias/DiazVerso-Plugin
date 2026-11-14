@@ -94,13 +94,14 @@ def review(record: dict, root: Path) -> dict:
         raise ValueError("Invalid production ID")
     if not isinstance(record["brief_id"],str) or not record["brief_id"].strip():
         raise ValueError("Brief version/reference required")
-    if not isinstance(record["variants"],dict) or set(record["variants"])!={"A","B"}:
-        raise ValueError("Two variants A/B required")
+    labels = ("A",) if record["production_id"].startswith("SH_") else ("A", "B")
+    if not isinstance(record["variants"],dict) or set(record["variants"])!=set(labels):
+        raise ValueError("Short requires only A; long requires A and B")
     root=root.resolve(strict=True)
     if not root.is_dir():
         raise ValueError("Image root must be a directory")
     result=[]; findings=[]
-    for name in ("A","B"):
+    for name in labels:
         v=record["variants"][name]
         if not isinstance(v,dict) or set(v)!={"path","drive_link","sha256","nox_used","visual_checks","reviewer"}:
             raise ValueError("Variant must provide file, link, digest and human rubric")
@@ -120,8 +121,10 @@ def review(record: dict, root: Path) -> dict:
             findings.append({"variant":name,"code":"INVALID_IMAGE_HEADER","severity":"BLOCKER",
                              "detail":str(exc)})
             continue
-        if width<1280 or height<720 or width*9!=height*16:
-            findings.append({"variant":name,"code":"DIMENSIONS_NOT_16_9_1280","severity":"BLOCKER",
+        short = record["production_id"].startswith("SH_")
+        valid_size = (width >= 1080 and height >= 1920 and width*16 == height*9) if short else (width >= 1280 and height >= 720 and width*9 == height*16)
+        if not valid_size:
+            findings.append({"variant":name,"code":"DIMENSIONS_NOT_9_16_1080" if short else "DIMENSIONS_NOT_16_9_1280","severity":"BLOCKER",
                              "width":width,"height":height})
         actual=hashlib.sha256(candidate.read_bytes()).hexdigest()
         if not isinstance(v["sha256"],str) or not re.fullmatch("[a-f0-9]{64}",v["sha256"]) or v["sha256"]!=actual:
