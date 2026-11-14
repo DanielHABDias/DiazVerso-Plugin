@@ -13,10 +13,14 @@ O Content Lab não traz o Nox: em cada projeto, o pacote `assets/brand/nox/` (po
 
 Cada pose é um PNG pronto (gesto e olhos desenhados) em `assets/brand/nox/poses/`. Variantes `-b` são sorteadas. O [catálogo e as regras de uso](references/poses.md) listam as 29 poses (32 PNGs, incluindo variantes) com gesto, olhos e tons. A expressão vem do desenho da pose: o kit não desenha olhos, só escolhe a pose pelo tom.
 
+## Na thumbnail
+
+O Nox entra em toda thumbnail do modelo, muito grande no canto inferior, acima de todas as outras camadas, com foco na cabeça, olhos e gesto e o corpo cortado pela borda. Aplicar o [modelo de thumbnail](../diazverso-thumbnail/references/modelo-palavra.md). Preservar posição, escala e pose aprovadas em revisões posteriores.
+
 ## Pose nova
 
 1. Gerar pela ferramenta de imagem com o `Nox.png` como referência, com o pedido de [poses](references/poses.md). A ferramenta precisa permitir uso comercial.
 2. **Character Lock:** comparar lado a lado com o `Nox.png` e reprovar se silhueta, proporções, paleta, roupa ou estilo mudarem, ou se aparecer boca ou nariz.
 3. Salvar com nome novo, registrar no `assets/manifest.json` e no `catalogo.json`, e rodar o validador. `scripts/character_lock.py <avaliacao.json> --root <plugin>` confere a identidade do arquivo e a avaliação registrada; ele não reconhece o personagem por visão.
 
-O Nox entra quando ajuda a narrativa ou a thumbnail; não precisa estar em toda cena. O criador publica manualmente.
+No vídeo, o Nox entra quando ajuda a narrativa; não precisa estar em toda cena. Na thumbnail, seguir a regra acima. O criador publica manualmente.

@@ -1,48 +1,46 @@
-# Modelo "palavra": o personagem dentro da palavra brilhando
+# Modelo "palavra": personagem atravessando o texto
 
-Consultar ao montar a thumbnail do canal. Os exemplos aprovados pelo criador estão em `../examples/`:
-
-- `palavra-a-knull-fraude.jpg`: "FRAUDE" em vermelho, Nox rindo à direita. Título A: "O KNULL é o vilão MAIS SUPERESTIMADO da Marvel".
-- `palavra-b-knull-virou-pilha.jpg`: "VIROU PILHA" em amarelo, mais alta, Nox com a mão na cara à esquerda. Título B: "KNULL, o deus que PERDEU pros PRÓPRIOS FILHOS KKKKKKKKK".
+Consultar antes de compor ou revisar qualquer thumbnail. As referências visuais do canal em `../examples/` mostram a palavra brilhante atravessada pelo personagem e a reação grande do Nox.
 
 ## Camadas, de trás para a frente
 
-1. **Fundo escuro.** A arte original do personagem escurecida e borrada, ou quase preto com um leve tom da cor da palavra. Por cima, o efeito de TV (linhas de varredura e faixas RGB sutis) e uma vinheta. Sem halftone e sem fundo colorido claro.
-2. **A palavra cheia, brilhando.** Anton, alongada na vertical, ocupando quase toda a largura, na cor do tom com brilho forte.
-3. **O personagem da obra.** Recorte PNG, da cabeça até a cintura, centralizado, com sombra escura em volta. Ele cobre parte das letras.
-4. **A palavra só com o contorno.** A mesma palavra, no mesmo lugar, transparente e com um contorno branco fino. As letras reaparecem por cima do personagem.
-5. **O Nox.** Grande, num canto inferior, cortado na cintura, virado para o centro, com a expressão da thumb.
+1. **Fundo simples e escuro.** Quase preto, com leve tom da cor da palavra, chiado de TV discreto e vinheta. O fundo não disputa atenção. Arte de fundo só quando tiver função editorial; não importar automaticamente bandeiras, cenários ou detalhes da imagem de origem.
+2. **Palavra principal sólida e brilhante.** Anton gigante, com brilho forte na cor escolhida. Ela ocupa boa parte da largura e atravessa a região do personagem. A/B podem ter cores diferentes.
+3. **Personagem da obra em PNG transparente.** Grande, reconhecível e imponente, com sombra ou halo preto suave acompanhando sua silhueta. Esse contorno escuro separa corpo e letras nos cruzamentos. A arte cobre o preenchimento brilhante, sem levar junto o fundo original.
+4. **Contorno frontal da palavra principal.** Duplicar exatamente a posição, escala e quebra do texto de trás, deixando só um contorno branco fino e o interior transparente. Ele passa por cima do personagem. Manter preenchimento e contorno como camadas independentes.
+5. **Palavra complementar opcional.** Pode ficar em outro ponto livre, grande, sólida e brilhante, inteiramente na frente do personagem, sem duplicata vazada nem contorno frontal. Exemplo de composição: PASSADO gigante no alto atravessado pelo personagem; SUJO separado à direita, um pouco acima da base, sólido e brilhante. Não é obrigatório quebrar toda frase desse jeito.
+6. **Nox por cima de tudo.** Num canto inferior, muito grande, com foco na cabeça, olhos e gesto. Cortar o corpo pela borda; não mostrar o corpo completo nem exigir corte na cintura. A emoção precisa se ler no celular. Não cobrir o sentido da palavra; ajustar o texto quando necessário. Depois que o criador aprovar posição, escala e pose, preservá-las nos ajustes seguintes, salvo pedido explícito.
 
-## A arte do personagem
+## Personagem e recorte
 
-- **Imponente e sombria.** Para vilão, uma arte oficial em que ele domina o quadro (pose de ataque, expressão ameaçadora), nada de painel pequeno ou cena confusa.
-- **Alta resolução e inteira.** A arte original com pelo menos 1800 px de altura. Capas sem texto ("virgin variant", "textless") são as melhores: só o personagem e fundo simples. A galeria da wiki da obra lista o tamanho de cada imagem pela API (`generator=images` + `prop=imageinfo&iiprop=url|size`); escolher pelas maiores e abrir antes. Para baixar quando o site recusa download por script, seguir [baixar mídia](../../diazverso-contentlab/references/baixar-midia.md).
-- **Recorte com o BiRefNet.** No venv isolado do rembg: `rembg i -m birefnet-general arte.png recorte-<personagem>-alta.png` (o modelo tem cerca de 1 GB e baixa no primeiro uso). Ele preserva cabelo, garras e armas melhor que o `isnet-general-use`.
-- **Conferir o recorte sobre verde** antes de importar: nada faltando (cabelo, mãos, armas), nada de fundo sobrando. Recorte com buracos ou partes cortadas não entra, mesmo que já esteja no projeto.
-- **Importar os dois arquivos** com `media_import_files` (`role: "content"`): o recorte (`mediaId`) e a arte original (`backgroundMediaId`).
+- Escolher arte em alta resolução, com rosto, mãos e elementos importantes íntegros. Preferir original com pelo menos 1800 px de altura; conferir a resolução real e não chamar ampliação de detalhe nativo.
+- Enquadrar com mais corpo quando a pose ajudar, sem limitar obrigatoriamente à cintura. Aumentar até ficar imponente e manter o rosto reconhecível no celular; evitar tanto o boneco pequeno quanto o zoom que elimina a pose solicitada.
+- Separar o personagem do fundo antes de compor. Um arquivo PNG opaco ainda carrega o cenário: conferir alpha real e abrir sobre um fundo contrastante para detectar sobras, buracos ou partes faltantes.
+- Ao derivar o recorte de uma imagem, preservar a posição e escala necessárias para sobreposição. Não usar a imagem inteira sobre a palavra: isso faz a bandeira ou o cenário esconderem o preenchimento.
+- Usar uma ferramenta de edição disponível e autorizada. BiRefNet/rembg pode fazer o recorte quando o host e o criador autorizarem esse método. Não baixar modelos ou instalar dependências por suposição; respeitar as ferramentas e restrições da sessão.
+- Importar o recorte como `mediaId`. `backgroundMediaId` é opcional e fica ausente no fundo simples; só importar a arte original como fundo quando ela for escolhida editorialmente.
+- Mudança de aparência, como metade do rosto monstruoso, só com pedido do criador e ferramenta de imagem adequada. Preservar a identidade e não apresentar uma arte editorial como painel canônico. Falha do gerador não significa edição concluída.
 
-## Palavra e cor
+## Texto, cor e tamanho
 
-- Uma palavra ou frase de até quatro palavras que zomba, provoca ou instiga, com outro ângulo em A e em B. Ela complementa o título e o vídeo cumpre o que ela diz ("VIROU PILHA" paga no trecho da Hela).
-- O tom da palavra contrasta com o fundo escuro e com o personagem: vermelho ou amarelo para vilões escuros; branco quando o personagem já é muito colorido.
+Até quatro palavras somadas, em Anton; complementar a promessa do título sem inventar fatos. A palavra principal sempre atravessa o personagem com preenchimento atrás e contorno na frente. A palavra complementar pode ser só frontal, sólida e brilhante. Cores podem variar entre palavras e variantes, desde que se leiam no fundo escuro. Halo preto ao redor do personagem, brilho do texto e contorno branco frontal têm funções distintas.
 
-## Exemplo de chamada
+## Execução com o kit do Content Lab
 
-```json
-{
-  "label": "B", "layout": "palavra", "text": "VIROU PILHA",
-  "mediaId": "<recorte PNG>", "backgroundMediaId": "<arte original>",
-  "tone": "amarelo", "texture": "tv",
-  "pose": "facepalm", "humor": "triste", "side": "esquerda",
-  "focus": "50% 0%", "zoom": 1.6, "textY": 0.26
-}
-```
+Usar `layout: "palavra"`, `mediaId` do recorte transparente, `texture: "tv"`, `tone`, `pose`, `humor`, `side`, `focus`, `zoom` e `textY`. `backgroundMediaId` é opcional. Definir enquadramento e altura pela imagem real; não fixar um zoom ou corte universal.
 
-## Conferência
+`thumbnails_generate` monta a palavra principal, mas o contrato disponível pode não expor sombra ajustável, palavra complementar independente ou todos os controles de camadas. Conferir o contrato real antes de chamar; não inventar parâmetros. Para esses ajustes, reutilizar o componente Thumbnail do kit numa composição específica do projeto, mantendo as camadas independentes e os assets canônicos, em vez de desenhar um kit novo ou editar o aplicativo. Salvar a composição editável, renderizar, importar os PNGs e vinculá-los à embalagem pela API/CLI autorizada, com revisão atual e leitura de retorno. Atualizar as cópias visíveis, as prévias de 320 px e o kit de entrega. Não editar `project.json` diretamente.
 
-Abrir a imagem inteira e a versão de celular (`output/previas/`):
+Ao revisar somente B, preservar o arquivo, o hash e o vínculo de A. Alterar somente os campos pedidos e manter títulos, descrição, tags e elementos já aprovados.
 
-- o personagem está inteiro e imponente, e o rosto aparece;
-- a palavra se lê no celular, e o Nox não tampa nenhuma letra (se tampar, subir `textY`);
-- o contorno da frente está fino e alinhado com a palavra de trás;
-- o fundo está escuro e o Nox salta como o ponto de cor e humor.
+## Conferência real
+
+Abrir a imagem inteira e a versão de 320 px e verificar:
+
+- fundo discreto, sem cenário indesejado;
+- personagem grande, recorte íntegro e transparente, sombra escura visível onde atravessa as letras;
+- preenchimento brilhante atrás, contorno fino alinhado na frente do personagem;
+- palavra complementar, quando usada, sólida, grande e brilhante na camada frontal;
+- Nox grande no canto, cabeça e expressão legíveis, acima das outras camadas;
+- posição, escala e pose já aprovadas preservadas e textos compreensíveis;
+- arquivos e vínculos finais relidos, sem declarar aprovação humana que não ocorreu.
