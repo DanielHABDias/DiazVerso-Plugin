@@ -89,6 +89,19 @@ Trechos e materiais de terceiros podem ser utilizados em contextos de comentári
 
 As seções Sobre o Diazverso e Aviso são fixas: copiar como estão. Nada de links ou fatos que não foram conferidos nesta produção.
 
+## Tags
+
+As tags do YouTube pesam pouco na busca, mas ajudam a ligar o vídeo ao assunto e a pegar grafias erradas. Escrever de 15 a 30, em minúsculas, separadas por vírgula, até 500 caracteres no total (o kit confere; tag com espaço conta 2 a mais), nesta ordem:
+
+1. **Assunto principal:** o personagem ou a obra, sozinho e com a editora ("knull", "knull marvel").
+2. **Buscas do público em PT-BR:** "quem é o …", "origem do …", "… explicado", "… vs …", o título do filme ou série no Brasil.
+3. **Obras e arcos citados:** nome original e nome brasileiro ("king in black", "rei de preto").
+4. **Personagens secundários fortes** do vídeo e o tema amplo ("vilões da marvel", "quadrinhos marvel").
+5. **Grafias erradas comuns** do assunto, quando houver ("knul").
+6. **Canal:** sempre `diazverso` e `diaz verso`, por último.
+
+Sem tags de outros canais, de assuntos que o vídeo não trata ou repetidas. No Short, de 8 a 15, na mesma ordem.
+
 ## Short
 
 A descrição do Short é curta. O mesmo `build_publication_kit.py` a monta quando o ID é `SH_`:

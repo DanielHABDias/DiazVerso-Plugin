@@ -80,6 +80,15 @@ def build_description(data: dict, chapters: list) -> str:
     return "\n\n".join(parts)
 
 
+def _tags(values: list) -> list:
+    tags = list({t.strip().lower(): t.strip() for t in reversed(values)}.values())[::-1]
+    tags = [t for t in tags if t.lower() != "diazverso"] + ["diazverso"]
+    size = sum(len(t) + (2 if " " in t else 0) for t in tags) + len(tags) - 1
+    if size > 500:
+        raise ValueError(f"Tags somam {size} caracteres; o YouTube aceita até 500")
+    return tags
+
+
 def _hashtags(values: list) -> str:
     tags = [t if t.startswith("#") else "#" + t for t in (h.strip().replace(" ", "") for h in values)]
     return " ".join([t for t in dict.fromkeys(tags) if t != "#Diazverso"] + ["#Diazverso"])
@@ -151,7 +160,7 @@ def build_kit(data: dict) -> dict:
         "production_id": data["production_id"],
         "title": data["title"].strip(),
         "description": build_short_description(data) if short else build_description(data, chapters),
-        "tags": list(dict.fromkeys(t.strip() for t in data["tags"])),
+        "tags": _tags(data["tags"]),
         "pinned_comment": data.get("pinned_comment", ""),
         "video_file": data["video_file"], "thumbnail_file": data["thumbnail_file"],
         "pending": pending, "posting_mode": "MANUAL_BY_CREATOR",
