@@ -27,7 +27,7 @@ Novo gancho a cada 60–90 s: uma pergunta do Nox, um dado (`numero`) ou um "mas
 | Evidência | 12–40 s | Cenas e fatos que sustentam a tese | `evidencia` a cada 1,5–3 s, `numero` nos dados, placar quando houver, Nox reagindo a cada 6–10 s, um trecho com o áudio da obra | 6–8 imagens |
 | Virada | 40–50 s | Contradição ou revelação | `comparacao` ou `titulo` + `personagem` | 2 imagens e Nox |
 | Payoff | 50–60 s | Compreensão entregue | `frase` com 3–6 palavras sobre a imagem mais forte | 1 imagem |
-| CTA | últimos 3–5 s | Convite contextual | `aparte` → `cta` | — |
+| CTA | últimos 3–5 s | Convite contextual; no corte do longo, chamada para o vídeo completo | `aparte` → `cta` | thumbnail do vídeo longo, no corte |
 
 Mesmo padrão do vídeo longo, no mesmo nível: legenda palavra a palavra em todo o Short (fora das cenas tipográficas), trilha audível, SFX nos mesmos níveis. As cenas do kit têm diagramação vertical própria; conferir as prévias no 9:16.
 

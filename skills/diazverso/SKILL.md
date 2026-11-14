@@ -29,7 +29,8 @@ O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados.
    9. prévias;
    10. render;
    11. thumbnail final no modelo do canal: palavra gigante brilhando com o personagem dentro, fundo escuro e o Nox grande no canto;
-   12. kit de publicação manual (com o registro manual do Drive e da planilha, quando não houver acesso).
+   12. kit de publicação manual (com o registro manual do Drive e da planilha, quando não houver acesso);
+   13. Shorts cortados do vídeo longo: trechos que funcionam sozinhos, em 9:16, com a mesma edição e fechando na chamada para o vídeo completo ([Shorts](../diazverso-shorts/SKILL.md)). Short do zero só quando o criador pedir.
 5. **Edição = motion design do kit do Content Lab** (`../diazverso-motion/SKILL.md`). O Content Lab é neutro: o Nox entra em cada projeto importando o pacote `assets/brand/nox/` deste plugin com `character_import`, antes do plano de motion:
    - **Ritmo:** troca de informação a cada 1,5–3 s, no ritmo do RunnyIA, com a câmera nunca parada.
    - **Visual:**

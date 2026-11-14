@@ -58,4 +58,4 @@ O Short tem exatamente este padrão, só que vertical:
 - um trecho com o áudio da obra quando houver fala marcante;
 - os mesmos níveis de som e trilha audível do começo ao fim;
 - conteúdo entre 12% e 72% da altura (o kit diagrama todas as cenas para vertical);
-- sem tela final; o `cta` fecha o Short.
+- sem tela final; o `cta` fecha o Short. No corte do vídeo longo, o `cta` mostra a thumbnail do vídeo completo sob a chamada-padrão gravada pelo criador.

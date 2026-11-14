@@ -41,6 +41,8 @@ Ao longo do texto:
 
 ## Estrutura do Short (45–75 s)
 
+Para o Short do zero. O corte do vídeo longo reaproveita a narração do longo ([Shorts](../../diazverso-shorts/SKILL.md)).
+
 1. **0–2 s:** a imagem mais forte e a frase do gancho juntas (contradição ou pergunta).
 2. **2–10 s:** quem, onde, quando, em uma frase, com a cena na tela.
 3. **10–40 s:** 2 ou 3 provas rápidas, uma por frase, cada uma com sua imagem.

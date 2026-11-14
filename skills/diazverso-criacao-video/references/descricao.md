@@ -119,7 +119,7 @@ LINK NA BIO!
 ```
 
 - **Título A:** a réplica exata do título A do Short.
-- **LINK NA BIO!:** fixo, em maiúsculas; aponta para o vídeo relacionado ligado ao Short.
+- **LINK NA BIO!:** fixo, em maiúsculas; aponta para o vídeo relacionado ligado ao Short (no corte, o vídeo longo de origem).
 - **Explicação:** uma ou duas frases sobre o que o Short conta, sem entregar o payoff.
 - **Chamada para o canal:** curta, na voz do canal ("Tem muito mais disso lá no canal, vai lá!").
 - **Hashtags:** de 3 a 5, sem acento, com `#Diazverso` por último.

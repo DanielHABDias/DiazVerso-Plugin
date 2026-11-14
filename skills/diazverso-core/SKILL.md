@@ -13,7 +13,7 @@ description: "Use para escolher formatos editoriais, ensinar ideias práticas ou
 - Anton é a fonte do canal e acompanha o plugin em `assets/brand/fonts/anton/` (SIL OFL). Títulos, ênfases e legendas usam Anton.
 - Nox é recorrente quando ajuda a narrativa. Preservar `assets/brand/nox/Nox.png`; novas poses exigem comparação visual. Não precisa aparecer em todo quadro.
 - Thumbnails no modelo do canal: palavra ou frase curta gigante brilhando, o personagem da obra dentro dela, fundo escuro e o Nox grande no canto. Precisam de assunto reconhecível, foco, legibilidade e complementaridade com o título. Não prometer CTR ou retenção sem dados.
-- Shorts: 9:16, gancho imediato, progressão, payoff, legendas sincronizadas e CTA contextual. Preferência editorial por pelo menos 60 s quando o conteúdo sustentar, sem alongar artificialmente ou apresentar isso como limite da plataforma.
+- Shorts: por padrão, cortes do vídeo longo que funcionam sozinhos, fechando na chamada para o vídeo completo; Short do zero quando o criador pedir. 9:16, gancho imediato, progressão, payoff, legendas sincronizadas e CTA contextual. Preferência editorial por pelo menos 60 s quando o conteúdo sustentar, sem alongar artificialmente ou apresentar isso como limite da plataforma.
 
 ## Padrão de produção
 
