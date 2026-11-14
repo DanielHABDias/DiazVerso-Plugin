@@ -29,7 +29,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
    7. narração (somente falas, por capítulo) e, com o áudio final definido, a transcrição Whisper `large-v3` completo, palavra por palavra, conferida (sem frase repetida nem buraco); consultar os tempos reais em `narration_transcript` antes da edição;
    8. plano de motion;
    9. prévias;
-   10. render;
+   10. enviar o render à fila e encerrar a resposta; revisão do arquivo e entrega são retomadas quando o criador voltar ao chat;
    11. thumbnail final no modelo do canal: palavra gigante brilhando com o personagem dentro, fundo escuro e o Nox grande no canto;
    12. kit de publicação manual (com o registro manual do Drive e da planilha, quando não houver acesso);
    13. Shorts cortados do vídeo longo: trechos que funcionam sozinhos, em 9:16, com a mesma edição e fechando na chamada para o vídeo completo ([Shorts](../diazverso-shorts/SKILL.md)). Short do zero só quando o criador pedir.
@@ -44,12 +44,12 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo; cada imagem conferida aberta (mostra o que a fala diz, em resolução suficiente);
-     - **Cena / som original = vídeo real da obra com seu áudio original**, com ação ou diálogo e a narração pausada: 2–3 trechos curtos em falas marcantes no longo. Painel de HQ, foto, frame congelado, slideshow ou imagem com zoom/parallax, trilha ou SFX não contam como cena original e nunca ocupam esse intervalo. Imagens e painéis entram durante a narração; vídeos de apoio também podem entrar durante a narração, mas com o áudio da obra mudo. Selecionar trechos pertinentes, identificar a adaptação quando ela difere da HQ e nunca usá-la como prova de um acontecimento exclusivo de outra continuidade. Sem vídeo pertinente com áudio e direitos conferidos, manter a pendência ou a narração, sem substituir por imagem com música;
+     - **Cena / som original = vídeo real da obra com seu áudio original**, com ação ou diálogo e a narração pausada: 2–3 trechos curtos em falas marcantes no longo. Painel de HQ, foto, frame congelado, slideshow ou imagem com zoom/parallax, trilha ou SFX não contam como cena original e nunca ocupam esse intervalo. Imagens e painéis entram durante a narração; vídeos de apoio também podem entrar durante a narração, mas com o áudio da obra mudo. Selecionar trechos pertinentes à fala, sem apresentador, react, rosto ou narração do criador do upload: somente a cena da obra. Buscar primeiro a mesma cena **dublada em português brasileiro**, com a dublagem da obra. Se só houver o trecho necessário em inglês, manter o áudio da cena e traduzir todas as falas em **caixinhas/balões HQ curtos que aparecem e trocam conforme o personagem fala**, com Anton, posição legível e sem cobrir a ação; nunca uma frase longa inteira parada. Conferir transcrição, tradução e tempos reais; seguir a [montagem das traduções](../diazverso-motion/SKILL.md#tradução-das-cenas-com-som-original). Identificar a adaptação quando ela difere da HQ e nunca usá-la como prova de um acontecimento exclusivo de outra continuidade. Sem vídeo pertinente com áudio e direitos conferidos, manter a pendência ou a narração, sem substituir por imagem com música;
      - no vídeo longo, tela final de 15–20 s depois da última fala, só com a trilha;
      - Shorts em 9:16 no mesmo padrão e no mesmo nível do vídeo longo, com o Nox constante ([padrão de edição](../diazverso-motion/references/padrao-de-edicao.md)).
    - **Som:**
      - SFX no quadro de cada evento da tela, variando, sem cobrir a fala; sons novos sintetizados ou do Openverse com licença comercial ([som](../diazverso-motion/references/som.md));
-     - legenda palavra a palavra: o tempo todo nos Shorts; no vídeo longo, só em trechos (gancho e apartes do Nox);
+     - legenda palavra a palavra: o tempo todo nos Shorts; no vídeo longo, só em trechos (gancho e apartes do Nox). A tradução de cenas em inglês é obrigatória também no longo e segue as falas da cena;
      - trilha licenciada abaixando sob a voz, mas audível do começo ao fim; SFX abaixo da voz, explosão mais baixa ainda.
    - **Proibido:**
      - texto sobre fundo liso como cena;
@@ -67,6 +67,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
    - redesenhar o Nox (`assets/brand/nox/Nox.png` é a fonte);
    - prometer CTR ou retenção.
 8. **Verificar de verdade.** Abrir frames, medir o áudio e ler de volta o que foi gravado. Não declarar pronto o que não foi conferido.
+9. **Render é envio à fila e fim da resposta.** Depois de `render_start` confirmar o envio, avisar brevemente "Já coloquei o vídeo na fila de renderização do Content Lab" e encerrar o turno, inclusive no modo automático. Não esperar, usar `job_wait` para render, consultar porcentagem repetidamente, dormir para acompanhar, criar monitor ou prometer retorno automático. O app renderiza em segundo plano; o criador volta ao chat quando quiser retomar. Só nessa nova interação consultar o estado e, se concluído, revisar o arquivo e seguir para a entrega. Se ainda estiver renderizando, informar e encerrar novamente; se o envio falhar, informar a falha sem declarar que entrou na fila.
 
 ## Qual skill abrir
 

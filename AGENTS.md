@@ -10,4 +10,6 @@ Depois de montar a narração, aguarde a transcrição automática com Whisper `
 
 As mídias das obras são a base visual e precisam corresponder ao que é dito. O motion compõe com elas; não substitua evidências por telas genéricas de texto. Importe o pacote do Nox e preserve o desenho canônico, licenças e autorizações.
 
-Confira prévias, áudio, render e leituras de retorno de Drive/Sheets. Não declare resultados sem artefatos reais. Entregue o kit revisado; o criador publica manualmente. Não instalar o plugin automaticamente.
+Ao enviar um render, confirme a fila, avise e encerre a resposta; não espere nem consulte porcentagens. O criador retoma pelo chat. Para cena/som original, siga a regra principal: vídeo da obra pertinente, sem apresentador, preferencialmente dublado em PT-BR; inglês exige tradução em caixinhas sincronizadas.
+
+Confira prévias, áudio, render (na retomada pelo criador) e leituras de retorno de Drive/Sheets. Não declare resultados sem artefatos reais. Entregue o kit revisado; o criador publica manualmente. Não instalar o plugin automaticamente.

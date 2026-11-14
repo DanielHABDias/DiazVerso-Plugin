@@ -23,7 +23,7 @@ A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); 
 ## Revisar
 
 1. Antes do render: prévias de frames (`motion_preview` no Content Lab), conferidas beat a beat.
-2. Depois do render: frames e áudio reais, com os utilitários de [QA e correções](references/qa.md). Um achado por vez; renderizar de novo e revisar o mesmo achado.
+2. Na retomada solicitada pelo criador após o render: frames e áudio reais, com os utilitários de [QA e correções](references/qa.md). Um achado por vez; enviar o novo render à fila e encerrar o turno. Revisar o mesmo achado quando o criador voltar, conforme a [regra de render](../diazverso/SKILL.md#regras-inegociáveis).
 3. Vertical: `../diazverso-shorts/SKILL.md`.
 4. Assistir e escutar cada intervalo de áudio original do começo ao fim: vídeo real em movimento, som da obra audível, narrador ausente e retorno sincronizado. Reprovar imagem/painel com trilha no lugar de cena original, mesmo que o arquivo seja MP4; registrar a correção antes de concluir o QA.
 

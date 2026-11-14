@@ -9,7 +9,7 @@ Source cutaways that illustrate what the speaker means, not merely the nearest n
 
 In Diazverso, media comes into the Content Lab with confirmed rights (`media_import_files`) and the render is checked with `motion_preview`, `render_start` and real frames ([Content Lab](../diazverso-contentlab/SKILL.md)).
 
-For a Diazverso `scene` / original-audio break, apply the [channel rule](../diazverso/SKILL.md#regras-inegociáveis): source actual moving footage with its own original audio and no narrator. A still, comic panel, slideshow or animated photo with music/SFX never qualifies. Images stay under narration; supporting footage under narration has its source audio muted. Log adaptation/continuity differences and never imply that animation proves a comic-only event.
+For a Diazverso `scene` / original-audio break, apply the [channel rule](../diazverso/SKILL.md#regras-inegociáveis): source actual moving footage with its own original audio and no narrator. A still, comic panel, slideshow or animated photo with music/SFX never qualifies. Images stay under narration; supporting footage under narration has its source audio muted. Log adaptation/continuity differences and never imply that animation proves a comic-only event. Follow that same channel rule for language: search the exact scene dubbed in Brazilian Portuguese first; otherwise translate the English dialogue with timed, short HQ boxes using the [existing motion kit](../diazverso-motion/SKILL.md#tradução-das-cenas-com-som-original). Reject presenter/react footage and third-party creator faces or narration; retain only the relevant work scene.
 
 ## Establish the contract
 
@@ -67,6 +67,8 @@ Keep source time and output time distinct. Strip external clip audio unless the 
 Write every approved choice to a project-local manifest before rendering. Read [references/manifest-and-timing.md](references/manifest-and-timing.md) for the fields and timing checks.
 
 ## Verify the render
+
+In Content Lab, enqueue the render, tell the creator, and end the turn. Perform the checks below only after the creator returns to resume; follow the [channel render rule](../diazverso/SKILL.md#regras-inegociáveis), without polling or automatic follow-up.
 
 Render a low-resolution candidate first (`motion_preview` in the Content Lab). Generate:
 

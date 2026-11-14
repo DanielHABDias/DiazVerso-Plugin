@@ -27,7 +27,7 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
    - **Respiro e payoff:** `frase`. **Encerramento:** `cta`.
 5. Pôr som em cada evento da tela, no quadro certo, e uma trilha **licenciada** abaixando sob a voz. Onde entra cada som, como criar um som novo e como buscar sons prontos no Openverse: [som](references/som.md). Música: [música](../diazverso-decupagem/references/musica.md).
 6. Revisar frames de prévia antes do render: o assunto aparece? O texto é legível? Há sobreposição? A cena muda a cada poucos segundos? Corrigir um achado por vez.
-7. Render final, escuta completa e o kit de publicação (`../diazverso-criacao-video/SKILL.md`).
+7. Enviar o render final à fila e encerrar o turno, conforme a [regra principal](../diazverso/SKILL.md#regras-inegociáveis). Quando o criador voltar e o render estiver concluído, conferir o vídeo, escuta completa e o kit de publicação (`../diazverso-criacao-video/SKILL.md`).
 
 Para investigação, ramificações e revelações, consultar [uso narrativo das cenas do kit](references/cenas-narrativas.md). A implementação e os exemplos executáveis ficam exclusivamente no Content Lab.
 
@@ -45,6 +45,16 @@ Cada beat segue o contrato `contentlab-motion-v1` do Content Lab:
 - As mídias aparecem como `media:<id>`. O editor resolve esse id e copia para a pasta pública só os arquivos citados.
 - A composição também recebe os tempos das palavras, para a legenda palavra a palavra e para abaixar a trilha sob a voz. A legenda fica o tempo todo nos Shorts; no vídeo longo, só no gancho e nos apartes do Nox (`legenda: false` nos outros beats).
 - O `cta` não tem nome de canal fixo: pôr `titulo: "DIAZVERSO"` nas props.
+
+## Tradução das cenas com som original
+
+Aplicar a [regra de seleção e idioma](../diazverso/SKILL.md#regras-inegociáveis). Com a cena em inglês:
+
+1. Transcrever o trecho real e traduzir todas as falas, inclusive interjeições; usar início/fim reais de cada frase, sem estimar pelos tempos da narração.
+2. Manter um único beat `evidencia` com o vídeo em movimento e `som: true`, dentro de uma `pausa` da narração. A tradução não reinicia nem fatia o vídeo.
+3. Usar `extras` do kit: `tipo: "caixinha"`, `preset: "livre"`, `texto`, `canto`, `at` e `duracao`. `at` é relativo ao início do beat. Dividir o diálogo em frases curtas e trocar a caixinha conforme a fala; Anton, contraste alto, margens seguras e posição que preserve rostos e ação. Respeitar os limites de texto/duração do kit.
+4. Não usar `props.legenda` para despejar o diálogo inteiro de uma vez. Não exibir a legenda da narração nesses beats (`legenda: false`); as caixinhas traduzem o áudio da obra. A tradução é obrigatória mesmo no vídeo longo.
+5. Conferir prévias no início, meio e fim de cada troca; na retomada após o render, conferir a tradução, o sincronismo, a ausência do narrador e a volta da frase inteira depois da cena.
 
 ## Como o vídeo se monta
 
