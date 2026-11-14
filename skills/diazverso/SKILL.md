@@ -59,6 +59,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
    - **Voz:** conversada, opinativa, irônica e bem-humorada.
    - **Formato:** ensinar ou revelar algo através de histórias e personagens ([formatos](../diazverso-core/references/formatos-editoriais.md)).
    - **Abertura:** gancho no primeiro segundo, sem "hoje vamos falar".
+   - **CTAs obrigatórias:** no vídeo longo, incluir pelo menos duas chamadas curtas e naturais durante o desenvolvimento, depois de entregar valor, distribuindo convites para se inscrever, dar like e comentar sem interromper uma prova ou cena importante. No encerramento, convidar explicitamente a se inscrever e dar like, indicar outros vídeos reais e relacionados do canal com uma razão concreta para assistir e terminar a última fala exatamente com **"falou"**. Depois dessa palavra, somente a tela final e a trilha, sem nova fala. No Short, usar uma CTA curta compatível com a duração, manter a chamada para o vídeo completo e terminar a fala com **"falou"**; não concentrar vários pedidos a ponto de prejudicar o corte.
 7. **Nunca:**
    - publicar, agendar ou enviar vídeos (o criador publica);
    - inventar fatos ou falas canônicas;

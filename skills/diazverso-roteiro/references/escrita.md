@@ -31,7 +31,7 @@ A estrutura combina como as três referências do canal constroem o roteiro, med
 5. **Reação e humor.** Preparação → acontecimento → reação, com o Nox comentando em aparte sobre a cena. A piada nasce do caso e não interrompe a explicação antes de ela ser entendida.
 6. **Contraponto.** O limite da tese ou o outro lado (o que a Marvel faz diferente, quando a regra falha). É ele que dá credibilidade.
 7. **Síntese e payoff.** Responder a promessa do gancho com a imagem mais forte guardada para o fim. Em ensino, terminar na aplicação: o que o público pode fazer ou pensar diferente ([formatos](../../diazverso-core/references/formatos-editoriais.md)).
-8. **CTA.** Uma pergunta que nasce do vídeo, para os comentários. Um CTA curto no meio, depois do primeiro caso forte, é opcional.
+8. **CTAs.** Aplicar a regra obrigatória de CTAs e despedida da [skill principal](../../diazverso/SKILL.md#regras-inegociáveis). Distribuir as chamadas dentro do desenvolvimento depois de uma entrega concreta; no fechamento, conectar a pergunta dos comentários aos vídeos relacionados do canal. As chamadas faladas pertencem a blocos `narration`; lembretes visuais não substituem a fala. Conferir que a última palavra narrada é exatamente "falou".
 
 Ao longo do texto:
 
@@ -84,4 +84,5 @@ Um bloco `scene` descreve a intenção editorial: não seleciona clipe, não ins
 - Há um novo gancho a cada 60–90 s?
 - Toda afirmação sobre a obra tem uma mídia correspondente?
 - O payoff responde exatamente o que o título e o gancho prometeram?
+- As CTAs e a despedida atendem à regra da skill principal, com outros vídeos reais indicados no longo e "falou" como última palavra narrada?
 - Lido em voz alta, soa como conversa?

@@ -13,7 +13,7 @@
 
 1. **Identidade e versão:** confirmar que roteiro, ID da produção, tipo LONGO/SHORT e revisões se referem à mesma versão. Se o texto mudou depois de uma revisão material, reabrir a revisão correspondente.
 2. **Fatos e fontes:** nenhuma alegação material pendente ou contestada sem correção/qualificação. facts registrada com referências rastreáveis ou bloqueios explicitamente resolvidos.
-3. **Estrutura:** gancho conecta-se à tese, progressão permite compreender a história, redundância controlada e payoff responde à promessa. structure registrada; não confundir estimativa editorial com retenção real.
+3. **Estrutura:** gancho conecta-se à tese, progressão permite compreender a história, redundância controlada e payoff responde à promessa. Conferir CTAs e despedida obrigatórias pela [regra da skill principal](../../diazverso/SKILL.md#regras-inegociáveis), inclusive "falou" como última palavra narrada. structure registrada; não confundir estimativa editorial com retenção real.
 4. **Voz:** voice registra texto conversado PT-BR, opiniões preservadas e humor natural sem copiar a fala de outro criador. Ausência de áudio não implica revisão vocal executada.
 5. **Packaging:** título escolhido e thumbnail proposta combinam com o roteiro e a abertura. Divergências de promessa ou fatos abrem nova revisão. Aprovação de **conceito** não significa que a arte final já foi produzida.
 6. **Documentos e links:** confirmar Doc nativo formatado, pasta correta e vínculo idempotente na linha da produção. Sem conexão ou leitura de retorno, registrar o limite e não declarar integração verificada.

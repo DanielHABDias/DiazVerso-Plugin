@@ -17,7 +17,7 @@
 5. **Ritmo da fala:** ler como narração PT-BR. O pensamento é encadeado ("mas", "então", "só que"), e cada frase cabe em um beat de 1,5–3 s de fala, porque a edição troca a imagem a cada frase. Frases longas viram duas; evitar sucessão de frases de efeito, transições grandiloquentes e “e é aí que tudo muda” repetidos.
 6. **Redundância e densidade:** identificar repetições sem avanço; conservar repetição apenas com evidência nova, escalada, humor contextual ou callback. Remover desvios que não contribuem para tese, história ou payoff, sem reduzir profundidade quando necessária.
 7. **Duração proporcional:** estimar somente com dados reais de palavras narradas e ritmo de leitura; separar texto não narrado e tempo ocupado por cenas/áudio/pausas. Uma tese simples não precisa virar documentário; uma história complexa não deve ser cortada apenas para atingir número arbitrário de minutos. Em Shorts, avaliar se a duração sustenta a ideia sem confundir preferência editorial com limite da plataforma.
-8. **Fechamento:** verificar resposta perceptível à promessa, conclusão sem recapitulação vazia e CTA curta e contextual após valor entregue, quando houver. Nunca criar reflexão filosófica genérica como substituto de conclusão.
+8. **Fechamento e CTAs:** verificar resposta perceptível à promessa e conclusão sem recapitulação vazia. Conferir as CTAs obrigatórias do desenvolvimento e encerramento pela [regra da skill principal](../../diazverso/SKILL.md#regras-inegociáveis), incluindo vídeos relacionados reais e "falou" como última palavra narrada. Marcar `REVISAR` se faltar um item exigido para o formato. Nunca criar reflexão filosófica genérica como substituto de conclusão.
 
 ## Entrega e revisão
 
