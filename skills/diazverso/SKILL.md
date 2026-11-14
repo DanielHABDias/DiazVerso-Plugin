@@ -44,7 +44,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo; cada imagem conferida aberta (mostra o que a fala diz, em resolução suficiente);
-     - 2–3 trechos curtos com o áudio da obra em falas marcantes, com a narração pausada;
+     - **Cena / som original = vídeo real da obra com seu áudio original**, com ação ou diálogo e a narração pausada: 2–3 trechos curtos em falas marcantes no longo. Painel de HQ, foto, frame congelado, slideshow ou imagem com zoom/parallax, trilha ou SFX não contam como cena original e nunca ocupam esse intervalo. Imagens e painéis entram durante a narração; vídeos de apoio também podem entrar durante a narração, mas com o áudio da obra mudo. Selecionar trechos pertinentes, identificar a adaptação quando ela difere da HQ e nunca usá-la como prova de um acontecimento exclusivo de outra continuidade. Sem vídeo pertinente com áudio e direitos conferidos, manter a pendência ou a narração, sem substituir por imagem com música;
      - no vídeo longo, tela final de 15–20 s depois da última fala, só com a trilha;
      - Shorts em 9:16 no mesmo padrão e no mesmo nível do vídeo longo, com o Nox constante ([padrão de edição](../diazverso-motion/references/padrao-de-edicao.md)).
    - **Som:**

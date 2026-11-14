@@ -9,6 +9,8 @@ Source cutaways that illustrate what the speaker means, not merely the nearest n
 
 In Diazverso, media comes into the Content Lab with confirmed rights (`media_import_files`) and the render is checked with `motion_preview`, `render_start` and real frames ([Content Lab](../diazverso-contentlab/SKILL.md)).
 
+For a Diazverso `scene` / original-audio break, apply the [channel rule](../diazverso/SKILL.md#regras-inegociáveis): source actual moving footage with its own original audio and no narrator. A still, comic panel, slideshow or animated photo with music/SFX never qualifies. Images stay under narration; supporting footage under narration has its source audio muted. Log adaptation/continuity differences and never imply that animation proves a comic-only event.
+
 ## Establish the contract
 
 Inspect the real source before planning. Accept a transcript, a word-timestamp transcript, or local video/audio. If only media is supplied, transcribe once with word timestamps and preserve the raw output.

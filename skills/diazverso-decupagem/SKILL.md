@@ -18,12 +18,14 @@ A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); 
 3. Seguir a [receita do formato](references/receitas.md) e o [padrão visual](../diazverso-core/references/padrao-visual.md). Toda afirmação sobre a obra mostra a obra ([imagens e direitos](../diazverso-core/references/imagens-e-direitos.md)). Sem mídia, buscar com `../find-broll/SKILL.md` ou mudar a abordagem do beat.
 4. Trilha e SFX seguem [música](references/musica.md).
 5. Em diálogo didático com o Nox, definir dúvida → tentativa → consequência → explicação, sem inventar falas canônicas.
+6. Para cada bloco `scene`, aplicar a [regra de cena / som original](../diazverso/SKILL.md#regras-inegociáveis): reservar um vídeo real com áudio da própria cena, sem narração. Conferir fonte, trecho, movimento, faixa de áudio, direitos e adaptação/continuidade. Imagem/painel permanece sob narração; não preencher a pausa com música sobre imagem nem com vídeo fabricado de stills.
 
 ## Revisar
 
 1. Antes do render: prévias de frames (`motion_preview` no Content Lab), conferidas beat a beat.
 2. Depois do render: frames e áudio reais, com os utilitários de [QA e correções](references/qa.md). Um achado por vez; renderizar de novo e revisar o mesmo achado.
 3. Vertical: `../diazverso-shorts/SKILL.md`.
+4. Assistir e escutar cada intervalo de áudio original do começo ao fim: vídeo real em movimento, som da obra audível, narrador ausente e retorno sincronizado. Reprovar imagem/painel com trilha no lugar de cena original, mesmo que o arquivo seja MP4; registrar a correção antes de concluir o QA.
 
 ## Som
 

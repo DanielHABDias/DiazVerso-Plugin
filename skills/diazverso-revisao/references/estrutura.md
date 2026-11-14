@@ -18,6 +18,7 @@
 6. **Redundância e densidade:** identificar repetições sem avanço; conservar repetição apenas com evidência nova, escalada, humor contextual ou callback. Remover desvios que não contribuem para tese, história ou payoff, sem reduzir profundidade quando necessária.
 7. **Duração proporcional:** estimar somente com dados reais de palavras narradas e ritmo de leitura; separar texto não narrado e tempo ocupado por cenas/áudio/pausas. Uma tese simples não precisa virar documentário; uma história complexa não deve ser cortada apenas para atingir número arbitrário de minutos. Em Shorts, avaliar se a duração sustenta a ideia sem confundir preferência editorial com limite da plataforma.
 8. **Fechamento e CTAs:** verificar resposta perceptível à promessa e conclusão sem recapitulação vazia. Conferir as CTAs obrigatórias do desenvolvimento e encerramento pela [regra da skill principal](../../diazverso/SKILL.md#regras-inegociáveis), incluindo vídeos relacionados reais e "falou" como última palavra narrada. Marcar `REVISAR` se faltar um item exigido para o formato. Nunca criar reflexão filosófica genérica como substituto de conclusão.
+9. **Cena / som original:** cada `scene` precisa prever vídeo real da obra com áudio original, sem narrador, preparado pela fala anterior e interpretado pela seguinte. Painel/foto com música ou SFX é `REVISAR`: mover a imagem para a narração e localizar um vídeo pertinente. Conferir a versão/adaptação e marcar fontes, timecodes ou direitos ainda não verificados como pendentes.
 
 ## Entrega e revisão
 

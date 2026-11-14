@@ -28,6 +28,7 @@ O nível que o canal exige em todo vídeo, longo (16:9) ou Short (9:16). Os núm
 
 - `inicio` no segundo exato do plano: trailer começa com logos e corta rápido. Antes de escolher, montar uma folha de contato do trailer (um quadro a cada 2 s) e conferir o quadro no `inicio` escolhido; plano mais curto que o beat não serve.
 - **Trechos com o áudio da obra:** 2 ou 3 por vídeo longo, 1 por Short, de 5–7 s, em fala marcante ou piada da obra que reforça o argumento. Entram pelo campo `pausas` do plano (a narração para) e `evidencia` com `som: true`, com a obra numa caixinha no canto. A trilha fica quase muda por baixo (`music.pausa` ≈ 0,08). Conferir a fala exata do trecho com Whisper antes e no render. Não usar trecho com canção licenciada (risco de Content ID).
+- Esses intervalos obedecem à [regra de cena / som original](../../diazverso/SKILL.md#regras-inegociáveis): conferir que o asset é vídeo real da obra, a ação se move e o áudio pertence à cena. Fotos, painéis, slideshow e zoom/parallax com música/SFX não atendem, mesmo exportados como MP4. HQs/imagens ficam sob a narração; vídeos de apoio sob a voz ficam mudos. Na revisão, assistir e escutar cada intervalo, conferindo também a volta da narração e a identificação de adaptação/continuidade.
 
 ## Som
 

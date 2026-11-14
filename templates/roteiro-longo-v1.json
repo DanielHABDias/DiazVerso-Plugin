@@ -101,7 +101,7 @@
     },
     {
       "style": "NORMAL_TEXT",
-      "text": "[Quando houver trecho autorizado de filme/série/jogo: reproduzir áudio original relevante, com início/fim e fonte. Caso contrário, apagar este bloco.]"
+      "text": "[Trecho de vídeo real de filme/série/jogo com áudio original, sem narrador. Registrar obra/adaptação, fonte, fala/ação de entrada e saída e duração estimada; início/fim exatos só após conferir o arquivo, som e direitos. Painel, foto ou frame com música/SFX não atende: usar a imagem sob narração, nunca neste bloco.]"
     },
     {
       "style": "HEADING_2",
