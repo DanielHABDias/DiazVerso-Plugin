@@ -90,7 +90,7 @@ Em cada pausa, avisar no chat o que revisar e onde ("o roteiro está em Roteiro,
    - **Áudio da obra:** 2–3 trechos de 5–7 s com `pausas` no plano (`em` = segundo da narração entre duas palavras) e `evidencia` com `som: true` e `inicio`; os beats seguintes andam para frente. Os blocos `scene` do roteiro viram esses trechos.
    - **Trilha:** `music` com `mediaId`, `volume`, `duck`, `pausa`, `fade` e `trechos` (o final natural da faixa sobre a tela final).
    - **Encerramento:** o `cta` do Content Lab não tem nome de canal fixo; pôr `titulo: "DIAZVERSO"` nas props do beat `cta`. Depois dele, `telafinal` de 15–20 s com os dois vídeos do canal.
-7. `thumbnails_generate` no modelo do canal (`layout: "centro"`) e a revisão da thumbnail (`../diazverso-thumbnail/SKILL.md`).
+7. `thumbnails_generate` no modelo do canal (`layout: "palavra"`) e a revisão da thumbnail (`../diazverso-thumbnail/SKILL.md`).
 8. `render_start` com `job_wait`. O Content Lab tira os metadados do vídeo final (etiquetas, capítulos embutidos e assinatura do encoder) sem recodificar. Conferir o render (padrão de edição, seção "Conferência do render"). Com o render e as thumbnails prontos, concluir a etapa Edição (`stage_approve` em `autonomous`, `stage_wait_decision` em `review`): o criador vê o vídeo final, as thumbnails e as pastas na Revisão. Depois, a descrição com os capítulos de `chapters_get` (tempos das palavras), `deliverable_build`, cujo `verificacao.md` aponta as pendências, e `project_export`.
 
 Use `project_get` para ver o que falta em cada etapa (`missing`). Trabalhos longos devolvem `jobId`: chame `job_wait` de novo enquanto vier `waiting: true` e conte ao criador o progresso.

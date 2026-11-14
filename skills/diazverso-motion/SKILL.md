@@ -75,9 +75,8 @@ A cena `paineis3d` do kit é aquela em que a câmera voa por painéis HQ no espa
 
 A thumbnail sai do mesmo kit do Content Lab: a composição `KitThumb` renderiza um still de 1280×720. O contrato está em `motion_kit` (`thumbnail`):
 
-- **modelo do canal (`layout: "centro"`):** fundo preto liso, o rosto do personagem central grande no meio (arte em alta resolução, `foco` e `zoom` no rosto), uma ou duas palavras enormes na frente dele embaixo e o Nox no canto (`lado`) com a `pose` da emoção da thumb;
-- até 4 palavras em Anton, com a palavra entre *asteriscos* em cor;
-- `layout: "lado"` (texto de um lado, assunto do outro), `fundo: "cena"` e o VS com duas mídias ficam para casos específicos;
+- **modelo do canal (`layout: "palavra"`):** palavra ou frase curta gigante brilhando atrás, o personagem da obra em recorte PNG dentro dela (contorno fino da palavra na frente), fundo escuro (a arte escurecida e borrada) com efeito de TV e o Nox grande num canto inferior, cortado na cintura ([modelo](../diazverso-thumbnail/references/modelo-palavra.md));
+- `layout: "centro"` (rosto grande no meio, palavra embaixo), `layout: "lado"`, `fundo: "cena"` e o VS com duas mídias ficam para casos específicos;
 - um selo curto opcional.
 
 Pelo Content Lab: `thumbnails_generate`. A direção e a revisão ficam em `../diazverso-thumbnail/SKILL.md`.

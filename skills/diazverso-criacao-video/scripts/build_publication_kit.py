@@ -76,30 +76,44 @@ def build_description(data: dict, chapters: list) -> str:
         credits.append("\n".join(lines))
     parts.append(_section("FONTES E CRÉDITOS", "\n\n".join(credits)))
     parts.append(_section("AVISO", NOTICE))
-    tags = [t if t.startswith("#") else "#" + t for t in (h.strip().replace(" ", "") for h in data["hashtags"])]
-    if "#Diazverso" not in tags:
-        tags.append("#Diazverso")
-    tags = [t for t in tags if t != "#Diazverso"] + ["#Diazverso"]
-    parts.append(f"{RULE}\n\n" + " ".join(tags))
+    parts.append(f"{RULE}\n\n" + _hashtags(data["hashtags"]))
     return "\n\n".join(parts)
+
+
+def _hashtags(values: list) -> str:
+    tags = [t if t.startswith("#") else "#" + t for t in (h.strip().replace(" ", "") for h in values)]
+    return " ".join([t for t in dict.fromkeys(tags) if t != "#Diazverso"] + ["#Diazverso"])
+
+
+def build_short_description(data: dict) -> str:
+    """Descrição curta do Short (references/descricao.md, seção Short)."""
+    return "\n\n".join([
+        _text(data.get("title"), "title"),
+        "LINK NA BIO!",
+        _text(data.get("explanation"), "explanation"),
+        _text(data.get("channel_call"), "channel_call"),
+        _hashtags(data["hashtags"]),
+    ])
 
 
 def build_kit(data: dict) -> dict:
     if not isinstance(data, dict):
         raise ValueError("Esperado objeto")
-    required = ("production_id", "title", "opening", "summary", "works", "hashtags", "tags",
-                "video_file", "thumbnail_file", "creator_approved", "render_verified", "qa_approved")
+    import re
+    if not isinstance(data.get("production_id"), str) or not re.fullmatch(r"(VD|SH)_\d{4,}", data["production_id"]):
+        raise ValueError("ID inválido")
+    short = data["production_id"].startswith("SH_")
+    common = ("production_id", "title", "hashtags", "tags", "video_file", "thumbnail_file",
+              "creator_approved", "render_verified", "qa_approved")
+    required = common + (("explanation", "channel_call") if short else ("opening", "summary", "works"))
     if any(k not in data for k in required):
         raise ValueError("Campos obrigatórios ausentes")
-    import re
-    if not isinstance(data["production_id"], str) or not re.fullmatch(r"(VD|SH)_\d{4,}", data["production_id"]):
-        raise ValueError("ID inválido")
     for key in ("title", "video_file", "thumbnail_file"):
         _text(data[key], key)
-    for key in ("works", "hashtags", "tags"):
+    for key in ("hashtags", "tags") if short else ("works", "hashtags", "tags"):
         if not isinstance(data[key], list) or any(not isinstance(v, str) or not v.strip() for v in data[key]):
             raise ValueError(f"{key} deve ser uma lista de textos")
-    if not data["works"]:
+    if not short and not data["works"]:
         raise ValueError("Listar as obras e arcos abordados")
     if any(type(data[k]) is not bool for k in ("creator_approved", "render_verified", "qa_approved")):
         raise ValueError("Flags de verificação devem ser booleanas")
@@ -128,15 +142,15 @@ def build_kit(data: dict) -> dict:
         ("render_verified", "render final conferido"),
         ("qa_approved", "QA final aprovado")
     ) if not data[key]]
-    if not chapters:
+    if not short and not chapters:
         pending.append("capítulos com os tempos do render final")
-    if not data.get("music"):
+    if not short and not data.get("music"):
         pending.append("créditos da trilha licenciada")
     return {
         "status": "KIT PRONTO PARA POSTAGEM MANUAL" if not pending else "KIT PARCIAL — PENDÊNCIAS",
         "production_id": data["production_id"],
         "title": data["title"].strip(),
-        "description": build_description(data, chapters),
+        "description": build_short_description(data) if short else build_description(data, chapters),
         "tags": list(dict.fromkeys(t.strip() for t in data["tags"])),
         "pinned_comment": data.get("pinned_comment", ""),
         "video_file": data["video_file"], "thumbnail_file": data["thumbnail_file"],

@@ -54,7 +54,7 @@ O plano de motion põe por cima da cena todo arquivo cujo nome tem `recorte` ou 
    ```bash
    rembg i -m isnet-general-use entrada.jpg recorte-nome.png
    ```
-   Se o resultado ficar ruim, testar `-m u2net` ou outra fonte.
+   Se o resultado ficar ruim (cabelo, mãos ou armas faltando), usar `-m birefnet-general` (cerca de 1 GB, mais preciso; é o padrão para o personagem da thumbnail) ou outra fonte.
 3. **Limpar:** zerar o alfa abaixo de cerca de 60 (some o fantasma do fundo) e cortar no contorno do personagem (PIL: `getbbox` do canal alfa).
 4. **Conferir** todos sobre um fundo de cor sólida numa faixa de miniaturas. Descartar recorte com fundo sobrando, pedaços faltando ou personagem pequeno demais. Uma capa que junta dois elementos da tese pode virar recorte de bônus (`recorte-hela-knull-gaiola`).
 

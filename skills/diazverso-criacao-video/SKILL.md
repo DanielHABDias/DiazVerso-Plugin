@@ -43,7 +43,7 @@ O esquema `../../schemas/estado-producao-v1.schema.json` descreve o intercâmbio
 
 Entradas: roteiro aprovado, título escolhido, thumbnail e vídeo finais conferidos, fontes, QA, decisão real do criador e afiliados pertinentes.
 
-A descrição segue sempre a [estrutura do canal](references/descricao.md). Usar `scripts/build_publication_kit.py <entrada.json>` para montá-la a partir dos campos (abertura, resumo, capítulos, vídeos relacionados, afiliados, obras, fontes oficiais, trilha e hashtags) e compor título, tags e comentário. Capítulos só com os tempos conferidos no render. O gerador valida os dados recebidos; não autentica arquivos ou aprovações.
+A descrição segue sempre a [estrutura do canal](references/descricao.md): completa no vídeo longo e curta no Short. Usar `scripts/build_publication_kit.py <entrada.json>` para montá-la a partir dos campos (vídeo longo: abertura, resumo, capítulos, vídeos relacionados, afiliados, obras, fontes oficiais, trilha e hashtags; Short, com ID `SH_`: título A, explicação, chamada para o canal e hashtags) e compor título, tags e comentário. Capítulos só com os tempos conferidos no render. O gerador valida os dados recebidos; não autentica arquivos ou aprovações.
 
 Para afiliados, `../diazverso-drive-setup/scripts/affiliate_selection.py` seleciona apenas registros ATIVO pertinentes, com destino e condições verificados nesta produção. O gerador acrescenta o aviso de afiliado do canal; se nenhum servir, a seção sai.
 

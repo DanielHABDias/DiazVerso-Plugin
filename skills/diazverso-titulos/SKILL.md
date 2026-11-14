@@ -16,14 +16,14 @@ description: "Use quando o criador pedir títulos A/B, embalagem de vídeo, prom
    - **Tamanho:** até ~60 caracteres; o essencial nos primeiros 40, que aparecem no celular.
    - **Começo:** a entidade reconhecível (personagem, obra, equipe) no começo, quando couber.
    - **Lacuna honesta:** dar contexto suficiente para o público se interessar e guardar a resposta que só o vídeo entrega.
-   - **Linguagem:** falada, sem pontuação em excesso, sem pergunta retórica vazia. Duas ou três palavras-chave em MAIÚSCULAS e o resto normal, como o canal faz ("VENOM ficou FAMOSO demais para ser VILÃO", "O KNULL é o vilão MAIS SUPERESTIMADO da Marvel"); nunca o título inteiro em maiúsculas.
+   - **Linguagem:** falada, sem pontuação em excesso, sem pergunta retórica vazia. Duas ou três palavras-chave em MAIÚSCULAS e o resto normal, como o canal faz ("VENOM ficou FAMOSO demais para ser VILÃO", "O KNULL é o vilão MAIS SUPERESTIMADO da Marvel"); nunca o título inteiro em maiúsculas. Para rir do personagem, o título pode terminar em risada em maiúsculas ("KNULL, o deus que PERDEU pros PRÓPRIOS FILHOS KKKKKKKKK").
    - **Honestidade:** nada que a pesquisa não sustente; sem números inventados ou promessas que o vídeo não cumpre.
 5. Escolher **dois finalistas com ângulos diferentes** (A e B mudam o argumento, não sinônimos).
 6. Para cada finalista, um conceito de thumbnail que **complementa** o título:
    - mostra o que o título não diz;
    - um assunto dominante;
-   - até 4 palavras na imagem, sem repetir o título;
-   - Nox só quando a expressão dele conta a emoção do vídeo.
+   - uma palavra ou frase de até 4 palavras na imagem, sem repetir o título;
+   - o Nox no canto com a expressão que conta a emoção do vídeo.
 
    A composição técnica fica com `../diazverso-thumbnail/SKILL.md`.
 7. Escrever a **primeira frase do gancho** para cada par: ela confirma o clique e abre a pergunta nos primeiros segundos.

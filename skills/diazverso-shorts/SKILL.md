@@ -22,7 +22,8 @@ description: "Use para criar ou adaptar Shorts Diazverso em 9:16 no mesmo padrã
    - **som:** SFX em cada evento, abaixo da voz; trilha licenciada audível do começo ao fim ([som](../diazverso-motion/references/som.md));
    - **diagramação:** 1080×1920, 30 fps; conteúdo entre 12% e 72% da altura e legenda acima da interface do Shorts (preset `references/preset-vertical-v1.json`; as margens não garantem a UI do YouTube, conferir em prévia real).
 6. Fora do Content Lab, a legenda sai de `scripts/captions.py <entrada.json> --srt-output <saida.srt>` com os tempos das palavras (`start_ms`, `end_ms`, `text`; `visual_text_only` só marca intervalos sem fala). Gerar SRT não é aferir sincronia: conferir no render.
-7. Conferir prévias de todos os beats e o render inteiro (padrão de edição, "Conferência do render"). **Não declarar render, sincronia, retenção prevista ou publicação sem teste ou ação real.**
+7. Conferir prévias de todos os beats e o render inteiro (padrão de edição, "Conferência do render").
+8. **Descrição curta:** o título A, "LINK NA BIO!", uma explicação, uma chamada para o canal e as hashtags ([descrição do Short](../diazverso-criacao-video/references/descricao.md#short)), montada por `../diazverso-criacao-video/scripts/build_publication_kit.py` com ID `SH_`. **Não declarar render, sincronia, retenção prevista ou publicação sem teste ou ação real.**
 
 ## Revisão
 

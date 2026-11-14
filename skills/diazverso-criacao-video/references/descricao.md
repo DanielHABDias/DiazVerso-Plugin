@@ -1,8 +1,8 @@
 # Descrição do YouTube
 
-A descrição do Diazverso segue sempre esta estrutura, nesta ordem. `../scripts/build_publication_kit.py` monta o texto final a partir dos campos; escrever só o conteúdo de cada campo, nunca a moldura à mão.
+O vídeo longo usa a estrutura completa abaixo; o Short usa a [descrição curta](#short). Nas duas, nesta ordem. `../scripts/build_publication_kit.py` monta o texto final a partir dos campos; escrever só o conteúdo de cada campo, nunca a moldura à mão.
 
-## Estrutura
+## Vídeo longo
 
 ```text
 {abertura}
@@ -77,7 +77,7 @@ Trechos e materiais de terceiros podem ser utilizados em contextos de comentári
 #{Hashtag} #{Hashtag} … #Diazverso
 ```
 
-## O que escrever em cada campo
+## Campos do vídeo longo
 
 - **Abertura:** um parágrafo que confirma a promessa do título com a tensão do vídeo (contradição, virada ou pergunta), sem entregar o payoff. Com travessão quando a frase vira: "O Carnificina dos filmes já é monstruoso — mas os quadrinhos mostram…".
 - **Resumo:** um parágrafo em primeira pessoa, começando por "Neste vídeo, eu…". Cita as obras, arcos e adaptações que o vídeo percorre e termina no que o público vai entender.
@@ -88,3 +88,27 @@ Trechos e materiais de terceiros podem ser utilizados em contextos de comentári
 - **Hashtags:** de 4 a 7, sem acento, a partir do personagem, da obra e do tema, com `#Diazverso` por último.
 
 As seções Sobre o Diazverso e Aviso são fixas: copiar como estão. Nada de links ou fatos que não foram conferidos nesta produção.
+
+## Short
+
+A descrição do Short é curta. O mesmo `build_publication_kit.py` a monta quando o ID é `SH_`:
+
+```text
+{título A}
+
+LINK NA BIO!
+
+{explicação}
+
+{chamada para o canal}
+
+#{Hashtag} #{Hashtag} … #Diazverso
+```
+
+- **Título A:** a réplica exata do título A do Short.
+- **LINK NA BIO!:** fixo, em maiúsculas; aponta para o vídeo relacionado ligado ao Short.
+- **Explicação:** uma ou duas frases sobre o que o Short conta, sem entregar o payoff.
+- **Chamada para o canal:** curta, na voz do canal ("Tem muito mais disso lá no canal, vai lá!").
+- **Hashtags:** de 3 a 5, sem acento, com `#Diazverso` por último.
+
+Sem capítulos, seções, fontes ou aviso.
