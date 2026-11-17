@@ -20,7 +20,7 @@ O Nox entra em toda thumbnail do modelo, muito grande no canto inferior, acima d
 ## Pose nova
 
 1. Gerar pela ferramenta de imagem com o `Nox.png` como referência, com o pedido de [poses](references/poses.md). A ferramenta precisa permitir uso comercial.
-2. **Character Lock:** comparar lado a lado com o `Nox.png` e reprovar se silhueta, proporções, paleta, roupa ou estilo mudarem, ou se aparecer boca ou nariz.
+2. **Character Lock:** comparar lado a lado com o `Nox.png` e reprovar se silhueta, proporções, paleta, roupa ou estilo mudarem, ou se aparecer boca, nariz, pupila ou íris. Os olhos são formas amarelas luminosas sólidas; reflexos das lentes dos óculos não são pupilas.
 3. Salvar com nome novo, registrar no `assets/manifest.json` e no `catalogo.json`, e rodar o validador. `scripts/character_lock.py <avaliacao.json> --root <plugin>` confere a identidade do arquivo e a avaliação registrada; ele não reconhece o personagem por visão.
 
 No vídeo, o Nox entra quando ajuda a narrativa; não precisa estar em toda cena. Na thumbnail, seguir a regra acima. O criador publica manualmente.

@@ -18,7 +18,6 @@ Ler `motion_kit` para nomes, props, exemplos e eventos de som vigentes. O Conten
 | `ecoVisual` | Comparar o retorno de um motivo entre histórias | Nomear obras, datas e continuidades; recorrência não prova intenção do autor |
 | `pecaAusente` | Mostrar por que uma explicação ainda não fecha | `revelar: false` se não há prova da peça que falta |
 | `convergencia` | Levar investigação, ameaça e decisão ao mesmo encontro | As frentes avançam em paralelo; não confundir com causa em cascata |
-
 | `vinculo` | Acompanhar confiança, conflito e ruptura entre duas pessoas | A virada deve corresponder a um acontecimento sustentado pela obra |
 | `memoria` | Voltar a uma promessa ou relação anterior e retornar ao presente | Identificar as duas cenas; a lembrança não altera a cronologia canônica |
 | `duplaVida` | Alternar vida pessoal e responsabilidade heroica | Usar as cenas correspondentes; foco visual não define um vencedor |
