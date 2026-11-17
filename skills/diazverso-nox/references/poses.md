@@ -72,7 +72,12 @@ A fonte é o [`catalogo.json`](../../../assets/brand/nox/poses/catalogo.json): c
 | `emocionado` | `emocionado` | Mãos sobre o peito sem cobrir emblema | Arcos suaves com pequenos brilhos lacrimais amarelos | tristeza, aprovacao |
 | `esgotado` | `esgotado` | Braços soltos e pendentes; luvas relaxadas | Fendas finas de cansaço | erro, tristeza |
 
-As oito poses especiais complementam as poses gerais. `desconfiado` não substitui `pensando`: o olhar lateral e as mãos atrás do corpo indicam suspeita. `chocado-silencio` fica imóvel, sem o gesto de susto; `emocionado` leva mãos ao peito; `esgotado` tem braços soltos, sem repetir as mãos unidas de `triste`. `cabeca-quente` usa apenas brilho alaranjado localizado dentro do capuz. `investigativo` e `analisando-provas` acrescentam acessórios pequenos que não cobrem a identidade.
+| `detetive-chapeu` | `detetive-chapeu` | Lupa ao lado do corpo; outra mão ajusta chapéu sobre o capuz; óculos redondos transparentes | Amarelos sólidos, sem pupilas | bastidor, descoberta |
+| `detetive-pista` | `detetive-pista` | Com chapéu e óculos, segura cartão de evidência e aponta para ele | Amarelos sólidos, sem pupilas | descoberta, explicacao |
+| `contando-historia` | `contando-historia` | Palma apresenta um acontecimento ao lado e indicador da outra mão introduz o próximo | Amarelos sólidos, sem pupilas | explicacao, bastidor |
+| `segurando-emocao` | `segurando-emocao` | Uma mão no peito sem cobrir emblema; outra estendida com empatia | Amarelos sólidos, sem pupilas | tristeza, ressalva |
+
+As poses especiais complementam as poses gerais. `desconfiado` não substitui `pensando`: o olhar lateral e as mãos atrás do corpo indicam suspeita. `chocado-silencio` fica imóvel, sem o gesto de susto; `emocionado` leva mãos ao peito; `esgotado` tem braços soltos, sem repetir as mãos unidas de `triste`. `cabeca-quente` usa apenas brilho alaranjado localizado dentro do capuz. `investigativo` e `analisando-provas` acrescentam acessórios pequenos que não cobrem a identidade.
 
 Tons:
 

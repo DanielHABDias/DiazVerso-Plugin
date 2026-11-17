@@ -1048,6 +1048,126 @@
           "drawing_style": true
         }
       }
+    },
+    {
+      "id": "brand.nox.pose.detetive-chapeu",
+      "name": "detetive-chapeu.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/detetive-chapeu.png",
+      "mime_type": "image/png",
+      "size_bytes": 1240766,
+      "dimensions": {
+        "width": 1036,
+        "height": 1518
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "c1c23a99fe360c3232be4e7d60b7960d9010e91c",
+      "source": "OpenAI image_gen; identity-preserve with canonical Nox.png and parado.png references",
+      "rights": "creator-authorized derivative of creator-provided Nox; generated using OpenAI image_gen",
+      "status": "APPROVED_CHARACTER_LOCK",
+      "notes": "Comparação visual lado a lado à mesma altura: capuz/corpo, roupa, olhos amarelos, paleta e traço preservados; sem boca/nariz. PNG com transparência real. Aprovação visual pelo agente, não reconhecimento automático de identidade.",
+      "character_lock": {
+        "canonical_git_blob_sha1": "776d1b26983e6f9095178881c83b44f114a40336",
+        "reviewer": "Codex: comparação visual direta lado a lado à mesma altura; não é autenticação humana automática",
+        "checks": {
+          "proportions": true,
+          "silhouette": true,
+          "costume": true,
+          "palette": true,
+          "eyes_only": true,
+          "drawing_style": true
+        }
+      }
+    },
+    {
+      "id": "brand.nox.pose.detetive-pista",
+      "name": "detetive-pista.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/detetive-pista.png",
+      "mime_type": "image/png",
+      "size_bytes": 1337330,
+      "dimensions": {
+        "width": 970,
+        "height": 1622
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "1a795dccb9efa050a18cccf5de785f1de1b5ca89",
+      "source": "OpenAI image_gen; identity-preserve with canonical Nox.png and parado.png references",
+      "rights": "creator-authorized derivative of creator-provided Nox; generated using OpenAI image_gen",
+      "status": "APPROVED_CHARACTER_LOCK",
+      "notes": "Comparação visual lado a lado à mesma altura: capuz/corpo, roupa, olhos amarelos, paleta e traço preservados; sem boca/nariz. PNG com transparência real. Aprovação visual pelo agente, não reconhecimento automático de identidade.",
+      "character_lock": {
+        "canonical_git_blob_sha1": "776d1b26983e6f9095178881c83b44f114a40336",
+        "reviewer": "Codex: comparação visual direta lado a lado à mesma altura; não é autenticação humana automática",
+        "checks": {
+          "proportions": true,
+          "silhouette": true,
+          "costume": true,
+          "palette": true,
+          "eyes_only": true,
+          "drawing_style": true
+        }
+      }
+    },
+    {
+      "id": "brand.nox.pose.contando-historia",
+      "name": "contando-historia.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/contando-historia.png",
+      "mime_type": "image/png",
+      "size_bytes": 1235355,
+      "dimensions": {
+        "width": 1036,
+        "height": 1518
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "6c46243e1834cb131910d506e9057c405bccffdc",
+      "source": "OpenAI image_gen; identity-preserve with canonical Nox.png and parado.png references",
+      "rights": "creator-authorized derivative of creator-provided Nox; generated using OpenAI image_gen",
+      "status": "APPROVED_CHARACTER_LOCK",
+      "notes": "Comparação visual lado a lado à mesma altura: capuz/corpo, roupa, olhos amarelos, paleta e traço preservados; sem boca/nariz. PNG com transparência real. Aprovação visual pelo agente, não reconhecimento automático de identidade.",
+      "character_lock": {
+        "canonical_git_blob_sha1": "776d1b26983e6f9095178881c83b44f114a40336",
+        "reviewer": "Codex: comparação visual direta lado a lado à mesma altura; não é autenticação humana automática",
+        "checks": {
+          "proportions": true,
+          "silhouette": true,
+          "costume": true,
+          "palette": true,
+          "eyes_only": true,
+          "drawing_style": true
+        }
+      }
+    },
+    {
+      "id": "brand.nox.pose.segurando-emocao",
+      "name": "segurando-emocao.png",
+      "kind": "mascot-pose",
+      "path": "assets/brand/nox/poses/segurando-emocao.png",
+      "mime_type": "image/png",
+      "size_bytes": 1356393,
+      "dimensions": {
+        "width": 970,
+        "height": 1622
+      },
+      "alpha_supported": true,
+      "git_blob_sha1": "e703f22c9797b608bd76a03ad586b6d140a865fc",
+      "source": "OpenAI image_gen; identity-preserve with canonical Nox.png and parado.png references",
+      "rights": "creator-authorized derivative of creator-provided Nox; generated using OpenAI image_gen",
+      "status": "APPROVED_CHARACTER_LOCK",
+      "notes": "Comparação visual lado a lado à mesma altura: capuz/corpo, roupa, olhos amarelos, paleta e traço preservados; sem boca/nariz. PNG com transparência real. Aprovação visual pelo agente, não reconhecimento automático de identidade.",
+      "character_lock": {
+        "canonical_git_blob_sha1": "776d1b26983e6f9095178881c83b44f114a40336",
+        "reviewer": "Codex: comparação visual direta lado a lado à mesma altura; não é autenticação humana automática",
+        "checks": {
+          "proportions": true,
+          "silhouette": true,
+          "costume": true,
+          "palette": true,
+          "eyes_only": true,
+          "drawing_style": true
+        }
+      }
     }
   ]
 }

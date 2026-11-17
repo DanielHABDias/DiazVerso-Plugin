@@ -5,13 +5,13 @@ description: "Use para pôr o Nox no vídeo ou na thumbnail, escolher poses do c
 
 # Nox
 
-**Fonte única:** `assets/brand/nox/Nox.png` (PNG 1408×768, integridade no `assets/manifest.json`). Nunca editar, substituir nem redesenhar. Pose nova não é automática.
+**Fonte única:** `assets/brand/nox/Nox.png` (PNG 1408×768, integridade no `assets/manifest.json`). Nunca editar, substituir nem redesenhar. Pose nova não é automática. Acessórios pedidos pelo criador, como chapéu sobre o capuz e óculos transparentes, são permitidos sem trocar o traje, esconder os olhos ou descaracterizar o Nox.
 
 ## Na edição
 
 O Content Lab não traz o Nox: em cada projeto, o pacote `assets/brand/nox/` (poses e `assets/brand/nox/poses/catalogo.json`) entra como personagem por `character_import`, com os direitos confirmados (`../diazverso-contentlab/SKILL.md`). Depois, o Nox entra pelo kit (`../diazverso-motion/SKILL.md`) em opinião e humor, quase sempre em aparte: a cena desfoca e ele sobe inteiro pela borda de baixo. Ele gesticula em **stop motion**: enquanto fala, troca o desenho inteiro de uma vez a cada 0,7–1 s, escolhendo poses conforme o sentido da fala, sem obrigação de usar todas.
 
-Cada pose é um PNG pronto (gesto e olhos desenhados) em `assets/brand/nox/poses/`. Variantes `-b` são sorteadas. O [catálogo e as regras de uso](references/poses.md) listam as 29 poses (32 PNGs, incluindo variantes) com gesto, olhos e tons. A expressão vem do desenho da pose: o kit não desenha olhos, só escolhe a pose pelo tom.
+Cada pose é um PNG pronto (gesto e olhos desenhados) em `assets/brand/nox/poses/`. Variantes `-b` são sorteadas. O [catálogo e as regras de uso](references/poses.md) listam as 33 poses (36 PNGs, incluindo variantes) com gesto, olhos e tons. A expressão vem do desenho da pose: o kit não desenha olhos, só escolhe a pose pelo tom.
 
 ## Na thumbnail
 

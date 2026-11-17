@@ -382,6 +382,76 @@
         "cansa",
         "sem forças"
       ]
+    },
+    "detetive-chapeu": {
+      "arquivos": [
+        "detetive-chapeu.png"
+      ],
+      "gesto": "Lupa ao lado do corpo; outra mão ajusta chapéu sobre o capuz; óculos redondos transparentes",
+      "olhos": "Amarelos sólidos luminosos, sem pupilas, boca ou nariz",
+      "tons": [
+        "bastidor",
+        "descoberta"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "investiga",
+        "detetive",
+        "pista"
+      ]
+    },
+    "detetive-pista": {
+      "arquivos": [
+        "detetive-pista.png"
+      ],
+      "gesto": "Com chapéu e óculos, segura cartão de evidência e aponta para ele",
+      "olhos": "Amarelos sólidos luminosos, sem pupilas, boca ou nariz",
+      "tons": [
+        "descoberta",
+        "explicacao"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "prova",
+        "pista",
+        "evidência"
+      ]
+    },
+    "contando-historia": {
+      "arquivos": [
+        "contando-historia.png"
+      ],
+      "gesto": "Palma apresenta um acontecimento ao lado e indicador da outra mão introduz o próximo",
+      "olhos": "Amarelos sólidos luminosos, sem pupilas, boca ou nariz",
+      "tons": [
+        "explicacao",
+        "bastidor"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "história",
+        "aconteceu",
+        "depois",
+        "antes"
+      ]
+    },
+    "segurando-emocao": {
+      "arquivos": [
+        "segurando-emocao.png"
+      ],
+      "gesto": "Uma mão no peito sem cobrir emblema; outra estendida com empatia",
+      "olhos": "Amarelos sólidos luminosos, sem pupilas, boca ou nariz",
+      "tons": [
+        "tristeza",
+        "ressalva"
+      ],
+      "especial": true,
+      "gatilhos": [
+        "sacrifício",
+        "perda",
+        "despedida",
+        "escolha"
+      ]
     }
   }
 }
