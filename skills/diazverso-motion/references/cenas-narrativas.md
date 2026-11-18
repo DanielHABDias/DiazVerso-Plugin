@@ -26,6 +26,8 @@ Ler `motion_kit` para nomes, props, exemplos e eventos de som vigentes. O Conten
 | `pensamentoVivo` | Expor dois ou três pensamentos simultâneos ao redor do Nox grande | Balões surgem e permanecem; não substituir cenas da obra por conceitos genéricos |
 | `rasgoCena` | Revelar outra cena da obra por um rasgo gráfico discreto | Usar em viradas pertinentes; as mídias tocam mudas sob a voz, sem imitar uma cena com som original |
 
+As montagens por recorte, enquadramentos, faixas, anotações, retornos, cenas do Nox e transições de texto/cor estão no [guia de montagens e transições 2D](montagens-2d.md), com os nomes exatos das cenas e seus tempos.
+
 ## Como montar as cenas expressivas
 
 **Trilha sinuosa (`trilhaViva`).** `fragmentos` recebe 1–4 objetos `{ titulo, midia: "media:<id>", inicio, fonte }`. `inicio` é o segundo da fonte. O traço cinza ganha cor ao avançar pelo percurso; somente o fragmento ativo reproduz seu trecho em cores. Os demais mostram o frame inicial (futuros) ou o último frame exibido (passados), em cinza. `mergulhar: true` amplia o último até preencher o quadro entre 84% e 99% do beat. O formato vertical muda o percurso para cima/baixo.
