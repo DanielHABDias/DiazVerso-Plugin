@@ -5,10 +5,12 @@ O roteiro é escrito para ser **ouvido** e **montado em beats**. A fala mantém 
 ## Antes de escrever
 
 - **Embalagem pronta:** título e conceito de thumbnail escolhidos (`../../diazverso-titulos/SKILL.md`). O roteiro existe para cumprir essa promessa, e a abertura confirma o clique nos primeiros segundos.
-- **Uma frase-tese:** "[personagem] mostra que [ideia], porque [escolha/consequência]". Se não cabe em uma frase, a pauta ainda não está pronta.
+- **Uma tese ou pergunta central clara:** formular a proposta em uma frase, seja sobre personagem, obra, acontecimento ou tema real. Personagem não precisa ser o sujeito da tese de ensino.
 - **Payoff definido:** o que o público entende no fim. Escrever o fim antes do meio.
 
 ## Estrutura do vídeo longo
+
+Em qualquer abordagem, criar curiosidade com questões pertinentes e resolvê-las com exemplos, evidências e interpretação, avançando a tese até o payoff. O percurso abaixo é uma referência adaptável: uma história, investigação ou análise pode pedir outra organização. Não impor lista, promessa numérica ou quantidade fixa de casos.
 
 A estrutura combina como as três referências do canal constroem o roteiro, medidas nos próprios vídeos:
 
@@ -16,13 +18,13 @@ A estrutura combina como as três referências do canal constroem o roteiro, med
 - **Um Nerd:** pergunta → definição → casos → padrão → contraponto → síntese;
 - **FALL:** preparação → acontecimento → reação.
 
-1. **Gancho (0–15 s).** Escolher uma das três aberturas, sem "hoje vamos falar" nem apresentação do canal:
+1. **Gancho (0–15 s).** Usar uma abertura pertinente; estas três são referências, sem "hoje vamos falar" nem apresentação do canal:
    - **"Imagina…"** (RunnyIA): uma situação na segunda pessoa que o público reconhece ("imagina passar a vida inteira protegendo todo mundo… e ninguém lembrar de você").
    - **Teste direto** (Um Nerd): uma pergunta que o público tenta responder e erra ("quem foi o segundo Lanterna Verde?"). A diferença entre as respostas vira a tese.
    - **Premissa absurda ou contradição** (FALL): o fato estranho dito de cara ("o herói mais forte da DC é o mais chato de ler").
-2. **Prova e promessa (15–40 s).** Uma prova curta de que o problema é real: uma cena, um dado, uma capa. Depois, a promessa **contável**: "três decisões", "cinco erros", "a cena que mudou tudo". A promessa vira um mapa na tela (`lista`), e o vídeo volta a ele a cada item.
+2. **Prova e promessa (15–40 s).** Uma prova curta de que o problema é real: uma cena, um dado, uma capa. Depois, uma promessa específica e verificável, que pode ser **contável**: "três decisões", "cinco erros", "a cena que mudou tudo". Quando houver itens, a promessa pode virar um mapa na tela (`lista`), retomado ao avançar.
 3. **Definição (quando houver conceito).** Dizer em uma ou duas frases o que é a ideia antes dos casos ("legado não é qualquer substituto: é…").
-4. **Casos, do mais fraco ao mais forte.** Cada caso segue a mesma batida:
+4. **Desenvolvimento.** Organizar casos, acontecimentos ou argumentos pela progressão que melhor esclarece a tese. Em análises de escolhas de personagens, esta batida pode ajudar:
    - **situação da obra:** a cena ou edição, mostrada na tela;
    - **escolha:** o que o personagem decide;
    - **consequência:** o que isso custa;
@@ -37,7 +39,7 @@ Ao longo do texto:
 
 - **Ligações:** cada bloco liga ao seguinte por "mas" ou "então", nunca por "e aí".
 - **Novos ganchos:** a cada 60–90 s.
-- **Tamanho:** um vídeo longo tem de 3 a 5 casos. Mais que isso vira lista.
+- **Tamanho:** usar os casos necessários para sustentar a proposta, sem repetir pontos ou alongar artificialmente.
 
 ## Estrutura do Short (45–75 s)
 
@@ -78,9 +80,9 @@ Antes de entregar o roteiro, conferir todos os blocos `scene`: existe um candida
 
 ## Conferência rápida
 
-- A abertura é uma das três ("Imagina…", teste direto ou premissa absurda) e mostra o assunto nos primeiros 3 segundos?
-- A promessa é contável e aparece como mapa na tela?
-- Os casos vão do mais fraco ao mais forte, cada um com situação, escolha, consequência e o que revela?
+- A abertura desperta curiosidade pertinente e mostra o assunto nos primeiros segundos?
+- A promessa é clara, específica e sustentada pelo vídeo? Se houver uma lista, ela ajuda a orientação?
+- As questões são resolvidas com exemplos e evidências, em uma progressão que desenvolve a tese?
 - Há contraponto?
 - Cada bloco tem "mas" ou "então" ligando ao próximo?
 - Há um novo gancho a cada 60–90 s?

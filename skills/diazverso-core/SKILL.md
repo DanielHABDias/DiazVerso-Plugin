@@ -5,7 +5,7 @@ description: "Use para escolher formatos editoriais, ensinar ideias práticas ou
 
 # Identidade editorial e visual
 
-- Canal brasileiro sobre super-heróis e universos relacionados: Marvel, DC, Ben 10, quadrinhos, animações, jogos, filmes e séries.
+- Canal brasileiro centrado no universo dos super-heróis, principalmente Marvel e DC, aberto a Invencível, Ben 10 e outras obras afins, em quadrinhos, animações, jogos, filmes e séries. Dragon Ball também pertence ao escopo por afinidade de público e histórias; não classificá-lo artificialmente como super-herói. Grandes acontecimentos, games muito populares e ensino aplicado à vida real seguem os critérios de conexão dos [formatos editoriais](references/formatos-editoriais.md).
 - Construir uma tese, pergunta, contradição ou história que justifique acompanhar o vídeo. Argumentar com profundidade e exemplos, distinguindo fato, interpretação e opinião.
 - Voz conversada, opinativa, irônica e bem-humorada. Humor nasce do contexto; não impor bordões, gritos, locução épica ou formalidade artificial.
 - Referências por função: FALL para espontaneidade/humor, Um Nerd para tese/argumento e RunnyIA para explicação visual/fluidez/motion. Para dirigir um beat, consultar a [linguagem das referências](../diazverso-motion/references/linguagem.md); não copiar suas identidades.
@@ -21,7 +21,7 @@ Em edição, cumprir o [padrão visual mínimo](references/padrao-visual.md): im
 
 ## Formatos e aprendizado
 
-Priorizar histórias e trajetórias que ensinem algo ou revelem a complexidade de personagens, acontecimentos e ideias; também criar ensino prático ou filosófico diretamente através dessas histórias. Esses dois eixos se conectam. Comparação, crítica, tese e explicação de conceitos são recursos internos de desenvolvimento, não formatos principais isolados do canal. Personagens podem demonstrar ideias, escolhas e consequências; Nox pode participar da explicação. O aprendizado pode ser uma compreensão mais profunda, sem moral de vida forçada. Para definir promessa, exemplos, aplicação e limites, consultar [formatos editoriais](references/formatos-editoriais.md).
+Histórias, análises de obras e personagens, grandes acontecimentos e ensino através da cultura pop compartilham a mesma construção: tese ou pergunta central, questões que despertam curiosidade, exemplos e evidências que as resolvem e fazem o argumento avançar até o payoff. A abordagem muda conforme a proposta; reflexão real não é obrigação. Para escopo, conexões, aplicação e limites, consultar [formatos editoriais](references/formatos-editoriais.md). O público tem interesses que se cruzam; ampliar o alcance preservando afinidade com outros conteúdos do canal, sem diversificação aleatória.
 
 ## Aplicação
 

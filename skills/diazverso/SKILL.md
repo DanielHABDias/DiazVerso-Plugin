@@ -5,7 +5,7 @@ description: "Ponto de entrada obrigatório do Diazverso. Use em qualquer pedido
 
 # Diazverso: regras do canal
 
-O Diazverso é um canal brasileiro sobre super-heróis e universos relacionados. Estas regras são o gosto do criador e valem desde a primeira mensagem, mesmo sem conhecer quem pede. Só mudam por pedido explícito do criador. Pergunte apenas o que falta para avançar.
+O Diazverso é um canal brasileiro centrado em super-heróis, com obras afins como Dragon Ball e possibilidades de grandes acontecimentos e ensino aplicado à vida real conforme a [identidade editorial](../diazverso-core/SKILL.md) e seus formatos. Estas regras são o gosto do criador e valem desde a primeira mensagem, mesmo sem conhecer quem pede. Só mudam por pedido explícito do criador. Pergunte apenas o que falta para avançar.
 
 Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e thumbnail B ficam vazios no Content Lab, no Drive e na planilha. Duas variantes A/B são exclusivas dos vídeos longos.
 
@@ -57,7 +57,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
      - componentes TSX escritos do zero quando o kit tem a cena.
 6. **Escrita:**
    - **Voz:** conversada, opinativa, irônica e bem-humorada.
-   - **Formato:** ensinar ou revelar algo através de histórias e personagens ([formatos](../diazverso-core/references/formatos-editoriais.md)).
+   - **Formato:** desenvolver a tese/pergunta em ciclos de curiosidade e resolução, com exemplos e evidências que fazem o argumento avançar; ensinar ou revelar algo através de histórias, personagens, obras e acontecimentos ([formatos](../diazverso-core/references/formatos-editoriais.md)).
    - **Abertura:** gancho no primeiro segundo, sem "hoje vamos falar".
    - **CTAs obrigatórias:** no vídeo longo, incluir pelo menos duas chamadas curtas e naturais durante o desenvolvimento, depois de entregar valor, distribuindo convites para se inscrever, dar like e comentar sem interromper uma prova ou cena importante. No encerramento, convidar explicitamente a se inscrever e dar like, indicar outros vídeos reais e relacionados do canal com uma razão concreta para assistir e terminar a última fala exatamente com **"falou"**. Depois dessa palavra, somente a tela final e a trilha, sem nova fala. No Short, usar uma CTA curta compatível com a duração, manter a chamada para o vídeo completo e terminar a fala com **"falou"**; não concentrar vários pedidos a ponto de prejudicar o corte.
 7. **Nunca:**

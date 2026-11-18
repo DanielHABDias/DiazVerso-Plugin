@@ -1,27 +1,31 @@
 # Formatos editoriais
 
-Priorizar o que o público aprenderá ou compreenderá através de uma história, trajetória ou personagem. O aprendizado pode ser prático, filosófico ou uma compreensão mais profunda da complexidade da obra; não exige lição de vida em todo vídeo.
+O centro do Diazverso é o universo dos super-heróis, com as afinidades definidas na identidade principal. História de personagem, saga, animação, filme, jogo, explicação de conceito, comparação, crítica e tema polêmico são propostas válidas quando têm uma pergunta ou tese sustentada e uma entrega interessante. Não exigir que uma análise seja convertida em trajetória de personagem para caber no canal.
 
-| Eixo principal | Entrega | Progressão possível |
-| --- | --- | --- |
-| História ou trajetória com aprendizado e profundidade | Contar a história revelando motivações, conflitos, escolhas, consequências e ideias por trás do personagem ou acontecimento | Situação → conflito → escolhas → consequência → compreensão |
-| Ensino prático ou filosófico através da história | Ensinar uma ideia usando um personagem ou situação que o público conhece e gosta | Problema humano → situação da obra → escolha e consequência → princípio → aplicação ou reflexão |
+## Abordagens complementares
 
-Os eixos podem coexistir no mesmo vídeo. Comparação, crítica, análise de tese e explicação de conceitos são ferramentas dentro deles; não propor vídeos cujo objetivo principal seja apenas comparar, criticar, listar curiosidades ou explicar um conceito isolado. Uma tese organiza a história e o ensino, sem virar um terceiro eixo independente. Selecionar os exemplos que ajudam a compreender o que está em jogo.
+- **Histórias e análises:** contar, explicar ou investigar personagens, sagas, obras, conceitos e decisões criativas; desenvolver interpretações, críticas e opiniões fundamentadas. É o núcleo do canal, com forte valor evergreen. Uma boa história pode ser a própria entrega, sem lição de vida, lançamento ou expansão de público obrigatórios.
+- **Grandes acontecimentos:** analisar lançamentos, anúncios relevantes, decisões da indústria, disputas de atenção e impactos culturais. O acontecimento real ou a própria obra lançada podem ser o assunto principal. Uma análise de filme pode começar sem spoilers e entrar em detalhes depois de um aviso claro; a divisão acompanha o argumento, sem metade obrigatória. Para games muito populares fora do núcleo, investigar conexões reais sobretudo com Marvel/DC e o universo do canal: disputa de público, decisões criativas, indústria ou outra relação demonstrável. Não inventar conexões só porque dois assuntos são populares. Se não houver ligação sustentável, explicitar a limitação em vez de recomendar a pauta apenas pelo hype. O Diazverso não faz noticiário diário ou cobertura automática de rumores.
+- **Cultura pop aplicada à vida real:** o foco é ensinar ou discutir um tema real, prático ou filosófico, usando personagens e situações como exemplos centrais. Podem vir de super-heróis ou de outras obras da cultura pop, inclusive Dragon Ball. O tema conduz a tese e os personagens ajudam a examiná-la; não anexar uma moral a uma história pronta. Preservar a identidade autoral do canal, sem autoajuda genérica ou promessa de transformação garantida.
 
-## Escolher e revisar a pauta
+As abordagens podem se misturar e usam a mesma estrutura narrativa. Evergreen descreve valor duradouro, não uma categoria exclusiva: um lançamento pode originar uma análise que continue interessante anos depois. Não exigir atualidade em uma boa história nem rejeitar uma oportunidade por ser temporal.
 
-Antes de propor um tema, responder: qual história/personagem conduz o vídeo, o que o público compreenderá melhor e por que essa compreensão importa? No eixo de ensino, definir também o princípio e a aplicação/reflexão. Se a pauta for só uma comparação ou definição, reconstruir em torno de uma trajetória, conflito ou aprendizado sustentado pela obra. Não acrescentar uma moral artificial para disfarçar a falta de propósito.
+## Progressão comum
 
-## Ensinar através de personagens
+Partir da tese ou pergunta central e abrir questões concretas: dúvidas, conflitos, contradições ou objeções que nascem do assunto. Apresentar exemplos e evidências, explicar o que resolvem e usar a resposta para avançar ou abrir a próxima questão. Cada ciclo de curiosidade e resolução desenvolve a tese até a conclusão; não acumular suspense vazio ou fabricar problemas. A quantidade de casos e a organização dependem do conteúdo, não da abordagem.
 
-1. Definir o que o espectador poderá entender ou fazer ao terminar. Partir de uma dúvida real, não acrescentar uma moral genérica depois de escrever a história.
-2. Selecionar uma situação específica da obra que demonstre a ideia. Identificar versão, contexto, escolha do personagem e consequência; pesquisar o acontecimento antes de usá-lo como evidência.
-3. Explicar a ligação entre caso e princípio. Separar fato da obra, interpretação e analogia com a vida real. Incluir um contraponto ou limite quando necessário; ficção ilustra uma ideia, não prova sozinha sua validade no mundo real.
-4. Entregar uma aplicação concreta ou uma pergunta filosófica específica, coerente com a tese. A conclusão pode mudar a maneira de enxergar o assunto sem virar tutorial.
-5. Revisar a promessa: uma decisão pode ocorrer em um dia, enquanto seus resultados levam tempo. Não prometer transformação garantida ao espectador nem inventar causalidade, cenas ou ensinamentos do personagem.
+## Ensino e limites da analogia
 
-Exemplo de briefing: usar uma mudança de rumo de Tony Stark para discutir responsabilidade e prioridades. Escolher primeiro a cena/versão que sustenta essa leitura; mostrar decisão, ação e consequência; propor ao público identificar uma prioridade e um próximo passo possível. Evitar reduzir a trajetória inteira a uma mudança milagrosa em um dia.
+1. Definir a questão real e o que o espectador poderá compreender, reconsiderar ou fazer ao terminar.
+2. Selecionar situações específicas da obra, identificando versão, contexto, escolhas e consequências. Separar fato canônico, interpretação, opinião e analogia.
+3. Explicar a ligação com o argumento e seus limites. Ficção pode fornecer exemplos e evidência sobre a leitura da obra; não comprova sozinha afirmações sobre a realidade. Pesquisar também as alegações reais quando necessário.
+4. Desenvolver problemas e respostas até uma aplicação ou reflexão específica, reconhecendo contrapontos sem transformar a interpretação em regra universal.
+
+Exemplos apenas ilustrativos: discutir dedicação com Vegeta, examinando também custos e limites; discutir uso de IA com Tony Stark e J.A.R.V.I.S., distinguindo ampliação de capacidades, dependência, julgamento e responsabilidade, sem apagar a autonomia que J.A.R.V.I.S. apresenta em diferentes versões. Uma hipótese sobre um game muito popular disputar atenção com uma estreia de super-heróis exige evidências dessa disputa; não presumir causalidade.
+
+## Permanência das regras
+
+Exemplos ensinam possibilidades, não aprovam pautas nem definem próximos projetos. Verificar acontecimentos e sinais de demanda no momento de uso. Calendários, prioridades, proporções de conteúdo, metas temporárias e diagnósticos atuais de plataforma ficam fora das regras permanentes. A seleção de oportunidades pertence à [pesquisa](../../diazverso-pesquisa/SKILL.md).
 
 ## Personagem como participante da explicação
 
@@ -31,4 +35,4 @@ Usar diálogo ou encenação curta quando tornar uma relação mais clara: dúvi
 
 ## Briefing mínimo
 
-Registrar formato principal, tema, tese/pergunta, promessa, exemplos com fontes, contraponto/limite e payoff. Sempre registrar o ganho de compreensão; acrescentar aplicação prática ou reflexão filosófica quando pertinente ao eixo escolhido. Nos beats visuais, escolher a função: evidência, explicação, orientação/progresso ou humor/reação. Valor para o público orienta o formato; não afirmar que o YouTube exige ensino ou garante distribuição por esse motivo.
+Registrar abordagem, tema, tese/pergunta, promessa, exemplos com fontes, contraponto/limite e payoff. Sempre registrar o ganho de compreensão; acrescentar aplicação prática ou reflexão filosófica quando pertinente à abordagem escolhida. Nos beats visuais, escolher a função: evidência, explicação, orientação/progresso ou humor/reação. Valor para o público orienta o formato; não afirmar que o YouTube exige ensino ou garante distribuição por esse motivo.
