@@ -6,7 +6,7 @@ Consultar na etapa Mídia, antes de importar vídeo ou imagem. A pesquisa e a le
 
 O Content Lab baixa com o yt-dlp: um vídeo por link, sem playlist, até 4 GB, mesclado em MP4. Funciona com YouTube, TikTok, Instagram, X, Vimeo e os outros sites que o yt-dlp suporta.
 
-- **Agente:** `media_import_url` com o link exato, `rights` e `rightsConfirmedByUser: true`, depois `job_wait`.
+- **Agente:** importar diretamente com `media_import_url`, link exato, `rights: "authorized"` e `rightsConfirmedByUser: true`, depois `job_wait`. Esses campos registram a autorização permanente do criador para este fluxo editorial, já dada nas instruções do canal; não exigem nova pergunta por vídeo ou produção. Não declarar `owned` ou `licensed` para uma obra de terceiros sem essa condição.
 - **Criador:** a aba **Importar por URL**, na etapa Mídia do app. É o caminho quando o link exige a conta dele.
 - **Cobertura:** buscar vídeo para cada personagem, objeto ou evento que a fala cita, não só para o tema central.
   - Quando a cena exata não existe em vídeo (só na HQ), usar uma cena que **represente** o personagem: o filme, a série animada (o Venom do desenho de 1994), o trailer de um jogo (*Spider-Man 2* do PS5).
@@ -14,13 +14,14 @@ O Content Lab baixa com o yt-dlp: um vídeo por link, sem playlist, até 4 GB, m
   - Uma busca por personagem (`<obra> official trailer <personagem>`), com `allowed_domains: ["youtube.com"]`.
 - **Escolher antes de baixar:**
   - o link direto do vídeo (`watch?v=`, `/video/`, `/status/`), nunca o de playlist ou perfil;
-  - **conferir o canal antes de importar**, sem baixar nada: `curl -s "https://www.youtube.com/oembed?format=json&url=<link>"` devolve `author_name`. Preferir Marvel Entertainment, Sony Pictures Entertainment, PlayStation e Marvel Studios. Canais de notícia ou de reupload (Nerdist, IGN, "Movie Trailers") ficam como segunda opção, e só sem logo grande;
-  - nada de vídeo com outro criador aparecendo ou narrando, react, "breakdown", "concept trailer" ou fan-made;
-  - séries antigas sem upload oficial: um clipe do episódio pode entrar. Uma marca pequena do canal de TV que exibia a série é aceitável; logo de outro criador do YouTube, não.
-- **Direitos:** o criador confirma uma vez por produção (o canal usa fair use de comentário). Sem essa confirmação, não importar.
+  - **conferir o canal antes de importar**, sem baixar nada: `curl -s "https://www.youtube.com/oembed?format=json&url=<link>"` devolve `author_name`. Preferir Marvel Entertainment, Sony Pictures Entertainment, PlayStation e Marvel Studios. Capturas de gameplay e clipes de outros criadores também podem ser usados; escolher pela pertinência, qualidade e possibilidade de aproveitar a cena;
+  - preferir captura sem apresentador, webcam, react ou narração do uploader. Se houver interferência, procurar primeiro outra fonte; sem alternativa adequada, recortar ou reenquadrar quando isso preservar a cena. A presença do autor, da webcam ou de uma marca não é veto automático: pode permanecer se o trecho continuar útil. Manter a origem registrada mesmo quando o autor sair do enquadramento. Para cena/som original, preservar a fala da obra, sem tratá-la como fala do uploader;
+  - não apresentar concept trailer, fandub ou montagem de fã como material canônico da obra;
+  - séries antigas sem upload oficial: um clipe do episódio pode entrar. Marcas do canal de TV ou do uploader seguem a mesma preferência flexível de legibilidade e enquadramento, sem veto automático.
+- **Uso editorial:** o criador autoriza permanentemente pesquisar, importar e recortar trechos de obras, gameplays e vídeos de terceiros para análise, crítica e comentário transformativo do Diazverso, sob a justificativa de fair use adotada pelo canal. Importar sem pedir confirmação adicional de direitos ou de finalidade por produção. Registrar fonte, intervalo e função no argumento; essa justificativa não declara posse, licença ou autorização do titular da obra. Trilha, SFX e serviços externos mantêm suas regras próprias.
 - **Não precisa cortar.** O plano de motion usa o trecho exato do clipe (entrada e saída), e o áudio do clipe fica mudo, salvo trecho de cena previsto no roteiro.
-- **Conferir depois de importar:** o caminho do arquivo está em `project.json` (`uri` do `mediaId`). Tirar um frame no meio de cada vídeo com o ffmpeg e olhar: o assunto certo, sem marca d'água e sem ninguém por cima. Anotar a resolução.
-- **Zoom em vez de descartar:** vídeo em 4:3 ou com marca pequena num canto entra com zoom de 110–120% (preenche o 16:9 e corta a marca). Anotar o zoom na direção do roteiro e no manifesto. Se ainda assim não servir, trocar pelo recorte PNG do personagem ou pela imagem inteira.
+- **Conferir depois de importar:** o caminho do arquivo está em `project.json` (`uri` do `mediaId`). Tirar um frame no meio de cada vídeo com o ffmpeg e olhar: o assunto certo, ação legível e eventuais interferências do uploader. Preferir alternativa limpa; documentar o reenquadramento ou a manutenção da webcam/marca quando necessário. Anotar a resolução.
+- **Zoom em vez de descartar:** vídeo em 4:3 ou com marca pequena num canto entra com zoom de 110–120% (preenche o 16:9 e corta a marca). Anotar o zoom na direção do roteiro e no manifesto. O zoom é uma opção, não obrigação de esconder o autor. Se prejudicar rostos, ação ou leitura, manter o enquadramento ou buscar outra fonte. Nos blocos de cena/som original, a alternativa continua sendo vídeo real, nunca PNG ou imagem parada.
 - **Nomes:** o arquivo importado leva o nome do link. Registrar o vídeo no manifesto de mídia, que fica em `manifesto-midia.md`, na pasta do projeto:
   - o `mediaId`;
   - o nome descritivo (`filme-venom3-trailer-final`, `desenho-1994-venom-contra-aranha`, `jogo-spiderman2-ps5-revelacao`);
@@ -43,7 +44,7 @@ O Content Lab baixa com o yt-dlp: um vídeo por link, sem playlist, até 4 GB, m
    - Para gravar em disco, abrir uma página local de recebimento no navegador do app (`preview_start` com a URL local). Dela, buscar a imagem e enviá-la por POST para essa mesma origem.
    - Nunca disfarçar o cliente (user-agent ou referer falsos), resolver captcha ou contornar bloqueio de robô.
 4. **Nomes descritivos:** `hq-<obra>-<número>-<o que mostra>.jpg`, `filme-<obra>-<o que mostra>.jpg`. Converter WebP para JPG quando preciso.
-5. **Abrir as imagens** (uma faixa de miniaturas basta) antes de `media_import_files`. Descartar variante errada, marca d'água ou imagem que não mostra o que a fala cita.
+5. **Abrir as imagens** (uma faixa de miniaturas basta) antes de `media_import_files`. Descartar variante errada ou imagem que não mostra o que a fala cita. Preferir imagem limpa; avaliar marcas e sobreposições pelo critério de pertinência e legibilidade, mantendo a fonte no manifesto.
 
 ## Recortes PNG dos personagens
 

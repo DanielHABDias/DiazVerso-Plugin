@@ -25,7 +25,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
    3. roteiro na estrutura do canal (`../diazverso-roteiro/references/escrita.md`): gancho, prova e promessa contável, casos, contraponto, payoff e pergunta, capítulos e blocos de narração, cena/som original e direção visual; só a fala vai à voz;
    4. revisão de fatos, estrutura e voz;
    5. aprovação;
-   6. cenas das obras com direitos;
+   6. cenas das obras com fonte e uso editorial registrados conforme o [guia de mídia](../diazverso-contentlab/references/baixar-midia.md), sem confirmação adicional por produção;
    7. narração (somente falas, por capítulo) e, com o áudio final definido, a transcrição Whisper `large-v3` completo, palavra por palavra, conferida (sem frase repetida nem buraco); consultar os tempos reais em `narration_transcript` antes da edição;
    8. plano de motion;
    9. prévias;
@@ -44,7 +44,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
      - fundos, cores e cenas sempre variando, nunca iguais em seguida;
      - caixinhas HQ de lembrete (inscreva-se, like, opinião, spoiler) e recortes PNG do que está sendo falado;
      - cena da obra sempre que a fala citar algo; ela é a base do vídeo; cada imagem conferida aberta (mostra o que a fala diz, em resolução suficiente);
-     - **Cena / som original = vídeo real da obra com seu áudio original**, com ação ou diálogo e a narração pausada: 2–3 trechos curtos em falas marcantes no longo. Painel de HQ, foto, frame congelado, slideshow ou imagem com zoom/parallax, trilha ou SFX não contam como cena original e nunca ocupam esse intervalo. Imagens e painéis entram durante a narração; vídeos de apoio também podem entrar durante a narração, mas com o áudio da obra mudo. Selecionar trechos pertinentes à fala, sem apresentador, react, rosto ou narração do criador do upload: somente a cena da obra. Buscar primeiro a mesma cena **dublada em português brasileiro**, com a dublagem da obra. Se só houver o trecho necessário em inglês, manter o áudio da cena e traduzir todas as falas em **caixinhas/balões HQ curtos que aparecem e trocam conforme o personagem fala**, com Anton, posição legível e sem cobrir a ação; nunca uma frase longa inteira parada. Conferir transcrição, tradução e tempos reais; seguir a [montagem das traduções](../diazverso-motion/SKILL.md#tradução-das-cenas-com-som-original). Identificar a adaptação quando ela difere da HQ e nunca usá-la como prova de um acontecimento exclusivo de outra continuidade. Sem vídeo pertinente com áudio e direitos conferidos, manter a pendência ou a narração, sem substituir por imagem com música;
+     - **Cena / som original = vídeo real da obra com seu áudio original**, com ação ou diálogo e a narração pausada: 2–3 trechos curtos em falas marcantes no longo. Painel de HQ, foto, frame congelado, slideshow ou imagem com zoom/parallax, trilha ou SFX não contam como cena original e nunca ocupam esse intervalo. Imagens e painéis entram durante a narração; vídeos de apoio também podem entrar durante a narração, mas com o áudio da obra mudo. Selecionar trechos pertinentes à fala, preferencialmente sem apresentador, react, webcam ou narração do uploader. Se houver interferência, buscar outra fonte; sem alternativa adequada, reenquadrar preservando a cena ou manter a presença do autor quando ela não prejudicar o argumento. A origem continua registrada. Buscar primeiro a mesma cena **dublada em português brasileiro**, com a dublagem da obra. Se só houver o trecho necessário em inglês, manter o áudio da cena e traduzir todas as falas em **caixinhas/balões HQ curtos que aparecem e trocam conforme o personagem fala**, com Anton, posição legível e sem cobrir a ação; nunca uma frase longa inteira parada. Conferir transcrição, tradução e tempos reais; seguir a [montagem das traduções](../diazverso-motion/SKILL.md#tradução-das-cenas-com-som-original). Identificar a adaptação quando ela difere da HQ e nunca usá-la como prova de um acontecimento exclusivo de outra continuidade. Sem vídeo pertinente com áudio conferido e origem registrada, manter a pendência ou a narração, sem substituir por imagem com música;
      - no vídeo longo, tela final de 15–20 s depois da última fala, só com a trilha;
      - Shorts em 9:16 no mesmo padrão e no mesmo nível do vídeo longo, com o Nox constante ([padrão de edição](../diazverso-motion/references/padrao-de-edicao.md)).
    - **Som:**
@@ -63,7 +63,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
 7. **Nunca:**
    - publicar, agendar ou enviar vídeos (o criador publica);
    - inventar fatos ou falas canônicas;
-   - usar mídia sem direitos ou música sem licença (o canal é monetizado);
+   - atribuir posse, licença ou autorização do titular sem fundamento; importar trechos para análise/comentário segue a autorização permanente e o registro editorial do [guia de mídia](../diazverso-contentlab/references/baixar-midia.md); música e SFX exigem licença adequada;
    - redesenhar o Nox (`assets/brand/nox/Nox.png` é a fonte);
    - prometer CTR ou retenção.
 8. **Verificar de verdade.** Abrir frames, medir o áudio e ler de volta o que foi gravado. Não declarar pronto o que não foi conferido.

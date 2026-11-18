@@ -54,7 +54,7 @@ Cluster the approved beats by source so each page, channel, or film is fetched o
 - **Archival material:** prefer canonical archives with explicit provenance and usage terms.
 - **Cultural or reaction clips:** use the user's curated library; do not blind-pick memes.
 
-Inspect real search and metadata payloads before writing parsers or choosing formats. Record the canonical URL, creator, title, publication date, capture/download time, rights or usage note, and exact source interval. Reject watermarks, synthetic stock presented as real, burned-in captions that conflict with the edit, stale product interfaces, and sources whose provenance cannot be explained.
+Inspect real search and metadata payloads before writing parsers or choosing formats. Record the canonical URL, creator, title, publication date, capture/download time, rights or usage note, and exact source interval. Prefer footage without uploader overlays, webcams or watermarks. First seek a clean alternative; otherwise reframe when useful or retain the uploader presence if it does not impair the scene. Keep source attribution in the manifest even when reframing. Reject synthetic stock presented as real, captions that make the scene unusable, stale product interfaces, and unexplained provenance. For Diazverso imports, follow the standing editorial authorization in `../diazverso-contentlab/references/baixar-midia.md`; do not ask for per-production rights confirmation.
 
 The agent may select one best candidate for an objective route when the evidence is unambiguous. Present choices for subjective or taste-sensitive routes, and preserve the user's final selection in the manifest.
 

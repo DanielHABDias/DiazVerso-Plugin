@@ -9,7 +9,7 @@ A montagem é a composição de motion do kit (`../diazverso-motion/SKILL.md`); 
 
 ## Decupar
 
-1. Receber ID, formato e revisão aprovada do roteiro. Confirmar narração, mídias e direitos.
+1. Receber ID, formato e revisão aprovada do roteiro. Conferir narração, mídias, origem e justificativa editorial; para trechos das obras, seguir a autorização permanente do guia de mídia, sem nova confirmação.
 2. Quebrar o roteiro em beats de 1,5–3 s: uma frase ou meia frase por beat. Para cada um, definir:
    - a função: evidência, explicação, reação/humor ou orientação;
    - a cena do kit;

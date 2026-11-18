@@ -12,6 +12,6 @@ As mídias das obras são a base visual e precisam corresponder ao que é dito. 
 
 O Content Lab tem a aba **Fila de processamento**, global entre projetos e com um trabalho por vez (render, transcrição, voz e montagem WAV). O histórico e os cancelamentos ficam nela; Edição/Revisão mostra só o render atual ou o último. Limpar histórico preserva ativos, aguardando e arquivos.
 
-Ao enviar um render, confirme a fila, avise e encerre a resposta; não espere nem consulte porcentagens. O criador retoma pelo chat. Para cena/som original, siga a regra principal: vídeo da obra pertinente, sem apresentador, preferencialmente dublado em PT-BR; inglês exige tradução em caixinhas sincronizadas.
+Ao enviar um render, confirme a fila, avise e encerre a resposta; não espere nem consulte porcentagens. O criador retoma pelo chat. Para cena/som original, siga a regra principal: vídeo da obra pertinente, preferencialmente sem apresentador e dublado em PT-BR; webcam/presença do uploader segue a preferência flexível do guia de mídia. A importação de trechos para análise/comentário tem autorização permanente do criador, sem nova confirmação por produção. Cenas em inglês exigem tradução em caixinhas sincronizadas.
 
 Confira prévias, áudio, render (na retomada pelo criador) e leituras de retorno de Drive/Sheets. Não declare resultados sem artefatos reais. Entregue o kit revisado; o criador publica manualmente. Não instalar o plugin automaticamente.

@@ -7,9 +7,10 @@ Um vídeo de análise sobre heróis precisa mostrar os heróis. Evitar imagens p
 1. **Arte própria ou encomendada** e poses do Nox: direitos do criador.
 2. **Material de divulgação oficial:** trailers, pôsteres, capas, imagens de imprensa e páginas de preview publicadas pela editora, estúdio ou desenvolvedora.
 3. **Painéis e frames da obra** em trechos curtos e pertinentes ao argumento: recorte de 1 a 3 painéis, frame isolado ou trecho de vídeo de poucos segundos, mudo; com o áudio original só nos trechos escolhidos do [padrão de edição](../../diazverso-motion/references/padrao-de-edicao.md).
-4. **Bancos com licença comercial** (Pexels, Unsplash, Pixabay ou banco assinado pelo criador) para elementos genéricos sem personagem.
+4. **Capturas e vídeos de outros criadores**, quando pertinentes à análise: preferir sem webcam/apresentador, buscar alternativa limpa antes de reenquadrar; a presença do uploader ou de uma marca pode permanecer quando não prejudicar a cena. Registrar sempre a fonte.
+5. **Bancos com licença comercial** (Pexels, Unsplash, Pixabay ou banco assinado pelo criador) para elementos genéricos sem personagem.
 
-Não usar: fan art sem autorização do artista, imagens com marca d'água de terceiros, gerações de IA que imitem a arte de um artista ou o visual oficial de um personagem, trilha musical ou canção de filmes e séries (inclusive a que toca por baixo de um trailer).
+Não usar: fan art sem autorização do artista, gerações de IA que imitem a arte de um artista ou o visual oficial de um personagem, trilha musical ou canção de filmes e séries (inclusive a que toca por baixo de um trailer).
 
 ## Como buscar
 
@@ -23,14 +24,14 @@ Seguir `../../find-broll/references/sourcing-and-routing.md` (rota por fonte, co
 
 ## Critério de uso em comentário
 
-O canal faz análise e crítica. A lei brasileira (Lei 9.610/98, art. 46, III) permite citação de trechos para crítica e estudo com indicação da fonte, e plataformas aplicam regras próprias de reivindicação. Isso orienta a escolha; **não é parecer jurídico** e não garante ausência de reivindicação. Para cada mídia:
+O canal adota o uso transformativo de trechos para análise, crítica e comentário como justificativa editorial de fair use. A autorização permanente do criador para coletar e importar esses trechos está no [guia de mídia](../../diazverso-contentlab/references/baixar-midia.md): seguir sem pedir confirmação adicional por produção. Registrar a justificativa de uso não significa declarar posse, licença ou autorização do titular. Para cada mídia:
 
 - a imagem ilustra o ponto dito naquele momento (função de evidência);
 - o trecho é o mínimo necessário e é transformado: recortado em painel, combinado com texto, câmera e narração;
 - origem registrada (URL, obra, edição/episódio, data de acesso) e crédito na descrição;
-- clipes de vídeo mudos e com até 5 s por uso; com áudio original, 5–7 s, 2–3 por vídeo longo e 1 por Short, em fala marcante que reforça o argumento;
-- o criador aprova a lista de mídias de terceiros antes do render final.
+- selecionar duração e quantidade pelo argumento; no áudio original, preservar a unidade dramática, as frases e as reações completas, sem um teto fixo que mutile a cena;
+- seguir as revisões de produção já combinadas, sem criar aprovação obrigatória extra da lista de mídias ou da importação.
 
 ## Estados no manifesto
 
-`PLANNED` → `SOURCED` (arquivo local, origem registrada) → `CREATOR_APPROVED` (decisão do criador) → `PLACED`. Somente `CREATOR_APPROVED` entra no render final; o render de prévia pode usar `SOURCED` marcado como prévia. Sem imagem aprovada para uma cena, trocar a abordagem visual (Nox demonstrando, arte própria), não preencher com texto.
+`PLANNED` → `SOURCED` (arquivo local, origem e função registradas) → `VERIFIED` (conteúdo, versão, qualidade e limites do trecho conferidos) → `PLACED`. A passagem de mídia por esses estados não exige nova confirmação do criador. A revisão do vídeo segue o fluxo combinado; não marcar como conferido o áudio que não foi ouvido. Sem evidência adequada, buscar outra fonte ou registrar a lacuna, não preencher com texto genérico.
