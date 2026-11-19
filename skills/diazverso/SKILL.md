@@ -36,7 +36,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
 5. **Edição = motion design do kit do Content Lab** (`../diazverso-motion/SKILL.md`). O Content Lab é neutro: o Nox entra em cada projeto importando o pacote `assets/brand/nox/` deste plugin com `character_import`, antes do plano de motion:
    - **Ritmo:** troca de informação a cada 1,5–3 s, no ritmo do RunnyIA, com a câmera nunca parada.
    - **Visual:**
-     - estética HQ madura: estrelas, halftone, fundos escuros e explosões gráficas; fundo de papel e página decorativa não fazem parte da edição. Imagens reais de páginas de quadrinhos continuam permitidas como conteúdo;
+     - estética HQ madura: Half-Tone (`halftone`) e meio-tom (`meio-tom`) como fundos preferidos, alternando com estrelas, fundos escuros e explosões gráficas; fundo de papel e página decorativa não fazem parte da edição. Imagens reais de páginas de quadrinhos continuam permitidas como conteúdo;
      - Anton em títulos e legendas;
      - a cena da obra é a base, muitas vezes sozinha em tela cheia;
      - abertura com a arte mais bonita do personagem em alta resolução e 5–6 cortes nos primeiros 5 s;

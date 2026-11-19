@@ -25,11 +25,11 @@ O roteiro em beats diz **o que** aparece, **quando** e **com qual som**.
    - **Gancho:** `titulo`. **Evidência:** `evidencia`, `pagina` e `comparacao`.
    - **Opinião, piada ou dúvida:** `aparte` sobre a cena, com poses; `personagem` com `poses` só às vezes. **Princípio:** `formula`. **Aplicação:** `lista`. **Dado:** `numero`.
    - **Respiro e payoff:** `frase`. **Encerramento:** `cta`.
-5. Pôr som em cada evento da tela, no quadro certo, e uma trilha **licenciada** abaixando sob a voz. Onde entra cada som, como criar um som novo e como buscar sons prontos no Openverse: [som](references/som.md). Música: [música](../diazverso-decupagem/references/musica.md).
+5. Selecionar eventos relevantes para o som, no quadro certo, e uma trilha **licenciada** abaixando sob a voz. Onde entra cada som, como criar um som novo e como buscar sons prontos no Openverse: [som](references/som.md). Música: [música](../diazverso-decupagem/references/musica.md).
 6. Revisar frames de prévia antes do render: o assunto aparece? O texto é legível? Há sobreposição? A cena muda a cada poucos segundos? Corrigir um achado por vez.
 7. Enviar o render final à fila e encerrar o turno, conforme a [regra principal](../diazverso/SKILL.md#regras-inegociáveis). Quando o criador voltar e o render estiver concluído, conferir o vídeo, escuta completa e o kit de publicação (`../diazverso-criacao-video/SKILL.md`).
 
-Para investigação, ramificações, revelações, mudança de vínculo (`vinculo`), lembrança e retorno (`memoria`), alternância entre responsabilidades (`duplaVida`), trilha sinuosa com clipes (`trilhaViva`), Nox em close (`personagemClose`), pensamentos em balões (`pensamentoVivo`) e rasgo entre cenas (`rasgoCena`), consultar [uso narrativo das cenas do kit](references/cenas-narrativas.md). A implementação e os exemplos executáveis ficam exclusivamente no Content Lab. Para encaixes, comparação alinhada, detalhe/contexto, faixas, anotações, retorno de imagem, texto com recorte, reações do Nox e transições 2D, ler [montagens e transições 2D](references/montagens-2d.md).
+Para investigação, ramificações, revelações, mudança de vínculo (`vinculo`), lembrança e retorno (`memoria`), alternância entre responsabilidades (`duplaVida`), linha do tempo navegável por capítulos (`trilhaViva`), Nox em close (`personagemClose`), pensamentos em balões (`pensamentoVivo`) e rasgo entre cenas (`rasgoCena`), consultar [uso narrativo das cenas do kit](references/cenas-narrativas.md). A implementação e os exemplos executáveis ficam exclusivamente no Content Lab. Para encaixes, comparação alinhada, detalhe/contexto, faixas, anotações, retorno de imagem, texto com recorte, reações do Nox e transições 2D, ler [montagens e transições 2D](references/montagens-2d.md).
 
 ## Contrato
 
@@ -59,7 +59,7 @@ Aplicar a [regra de seleção e idioma](../diazverso/SKILL.md#regras-inegociáve
 ## Como o vídeo se monta
 
 - **A cena da obra é a base.** Em muitos beats ela fica sozinha, em tela cheia (`evidencia` com `cheia: true`), sem motion design por cima. Nos outros, ela ganha painel, rótulo, legenda e fundo.
-- **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. Usar estrelas, halftone, escuro e explosões gráficas com as três cores de destaque. Não usar `papel` nem página decorativa como estética; páginas reais de HQ são conteúdo. Em `evidencia`, definir `fundo` explicitamente; na `telafinal`, usar `pagina: false`.
+- **Variar sempre.** Fundo, cor, tipo de cena e movimento nunca se repetem de um beat para o outro. Preferir Half-Tone (`halftone`) e meio-tom (`meio-tom`), alternando com estrelas, escuro e explosões gráficas nas três cores de destaque. O Half-Tone é o antigo fundo pontilhado chamado papel; os IDs `papel`, `papel-dobras`, `papel-hq` e `papel-sutil` são fundos distintos de papel amassado, disponíveis no kit, mas não são a base estética do canal. Não usar página decorativa como estética; páginas reais de HQ são conteúdo. Em `evidencia`, definir `fundo` explicitamente; na `telafinal`, usar `pagina: false`.
 - **O Nox entra em opinião e humor, com frequência:** a cada 10–20 s no vídeo longo e a cada 6–10 s no Short, em aparte ou cena `personagem`. Ele só aparece se o pacote dele foi importado no projeto (`../diazverso-contentlab/SKILL.md`, passo 3); sem ele, o Content Lab não gera `aparte` nem a cena `personagem`:
   - **Aparte (`aparte`):** a cena da obra desfoca e o Nox aparece **inteiro**, subindo pela borda de baixo, com as pernas fora do quadro. Cada fala é uma **pose nova em stop motion**: troca seca de desenho e de lugar, sem quadros intermediários, com uma tremidinha de stop motion. Ele gesticula com as mãos (pensando com a mão na frente do rosto, arminha, apontando, dando de ombros, facepalm…), com um balão de ícone ou texto acima. No fim ele sai de uma vez e o fundo volta nítido.
   - **Variações de aparte:** `personagemClose` amplia o Nox e alterna ideias em balões; `pensamentoVivo` mantém até três pensamentos ao redor dele. Importar o personagem, escolher poses pelo sentido e conferir os olhos e as áreas seguras. Consultar o guia narrativo acima para props, tempos, som e continuidade.
@@ -69,6 +69,12 @@ Aplicar a [regra de seleção e idioma](../diazverso/SKILL.md#regras-inegociáve
 - **Extras por cima de qualquer cena** (campo `extras` do beat):
   - **caixinhas HQ de lembrete,** que não precisam ser faladas: inscreva-se, like, sininho, "minha opinião, tá?", alerta de spoiler, fonte, comenta aí;
   - **recortes PNG** do que está sendo falado (um objeto, um personagem recortado), que estalam na tela em stop motion.
+
+## Fundos e acabamento
+
+Escolher `fundo` entre as opções aceitas pela cena no `motion_kit`, não apenas pelo catálogo geral. Half-Tone (`halftone`) é o fundo pontilhado quente, anteriormente chamado papel; `meio-tom` é outra opção do kit e também é preferida no canal. O kit ainda oferece `estrelas`, `explosao`, `escuro` e `branco`. Os papéis procedurais são distintos: `papel` tem facetas amassadas; `papel-dobras`, vincos mais realistas; `papel-hq`, tons chapados, sombras em meio-tom e vincos de tinta; `papel-sutil`, dobras discretas. Eles mudam em passos de stop motion. Disponibilidade no aplicativo não os torna o fundo padrão do canal.
+
+O fundo `explosao` cobre as duas proporções durante a rotação; não acrescentar máscaras ou ampliação para compensar uma falha antiga. Conferir os indicadores de foco nos cantos da revelação, carimbos de conclusão legíveis e contraste dos títulos sobre a obra. Título é opcional: omitir quando não acrescentar informação, em vez de preencher a barra por hábito.
 
 ## Shorts (9:16)
 
@@ -82,7 +88,7 @@ O Short segue o mesmo [padrão de edição](references/padrao-de-edicao.md) do v
 
 ## 3D
 
-A cena `paineis3d` do kit é aquela em que a câmera voa por painéis HQ no espaço, cada um com uma imagem da obra e um rótulo. O render precisa de WebGL; o editor usa `gl: "swangle"`, que funciona sem placa de vídeo e leva cerca de 4 s de render por segundo de cena. É cena de destaque: no máximo uma a cada ~30 s.
+A cena `paineis3d` do kit é aquela em que a câmera voa por painéis HQ no espaço, cada um com imagem ou vídeo da obra como textura e um rótulo. Vídeo no painel não liga áudio original; para uma fala da obra, usar a cena e a pausa apropriadas. As props de cada painel são `midia` e `rotulo`; não inventar `inicio` nessa cena: preparar o recorte da mídia antes. O render precisa de WebGL; o editor usa `gl: "swangle"`, que funciona sem placa de vídeo e leva cerca de 4 s de render por segundo de cena. É cena de destaque: no máximo uma a cada ~30 s.
 
 ## Thumbnail
 
@@ -97,7 +103,7 @@ Pelo Content Lab: `thumbnails_generate`. A direção e a revisão ficam em `../d
 ## Assets
 
 - **Nox:** o pacote fica em `assets/brand/nox/` (o `Nox.png` canônico e `poses/` com os PNGs e o `catalogo.json`). Ele entra em cada projeto do Content Lab por `character_import` ([Nox](../diazverso-nox/SKILL.md)).
-- **SFX:** os do Content Lab valem no plano (`motion_kit`). Este plugin guarda as receitas e os arquivos de referência em `assets/sfx/motion/`, gerados por `scripts/build_motion_sfx.mjs <pasta-nova>` (a opção `--base` gera também uma base rítmica, que é só rascunho). Onde cada som entra: [som](references/som.md).
+- **SFX:** os do Content Lab valem no plano (`motion_kit`). As gravações e licenças vigentes são as do aplicativo; arquivos e receitas locais do plugin são referências, não substitutos automáticos dos sons do kit. Onde cada som entra: [som](references/som.md).
 - **Fonte:** Anton, em `assets/brand/fonts/anton/`.
 
 ## Limites

@@ -15,7 +15,7 @@ Critérios objetivos para a montagem em motion (`../../diazverso-motion/SKILL.md
 
 ## Linguagem HQ madura
 
-- **Base:** estrelas, halftone, fundos escuros com textura e explosões gráficas. Não usar papel nem página decorativa como fundo da edição. Páginas reais de quadrinhos são conteúdo e podem aparecer como evidência.
+- **Base:** Half-Tone (`halftone`) e meio-tom (`meio-tom`) como fundos preferidos, alternando com estrelas, fundos escuros com textura e explosões gráficas. Não usar papel nem página decorativa como fundo da edição. Páginas reais de quadrinhos são conteúdo e podem aparecer como evidência.
 - **Paleta:** tinta `#0B0B10`, branco `#FFFFFF`, destaque amarelo `#F5C518`, vermelho `#E63946` e azul `#2676E8`. Uma cor de destaque dominante por cena.
 - **Composição:** painéis com borda de tinta 6–10 px, leve rotação (±2°), sombra deslocada sólida; imagens recortadas em painéis, não soltas no centro.
 - **Movimento:** a câmera está sempre em movimento suave (empurrão lento, leve deriva), com entrada por zoom em cada troca e tremor só em impacto. Evitar pulsar sem motivo e efeitos que competem com a leitura.

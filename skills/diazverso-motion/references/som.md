@@ -8,8 +8,8 @@ O som cai no quadro do evento, não no começo do beat por hábito.
 
 | Evento na tela | Som do kit | Quando |
 | --- | --- | --- |
-| Corte seco para cena nova | `whoosh` ou `swish`, alternando; `whoosh-rapido` nos cortes de ritmo acelerado | começa 2–3 quadros antes do corte (`at: -0.08`) |
-| Transição longa, câmera voando, entrada de capítulo | `whoosh-lento` | começa ~1 s antes da cena nova (`at: -1`) |
+| Corte seco para cena nova | `whoosh` ou `swish`, alternando; `whoosh-rapido` nos cortes de ritmo acelerado | alinhar o ataque ao corte; antecipar só após escutar o arquivo atual |
+| Transição longa, câmera voando, entrada de capítulo | `whoosh-lento` | ajustar o movimento à gravação atual (arquivo de ~2,16 s), conferindo o ponto de chegada |
 | Botão, caixinha de inscrição ou like sendo "clicada" | `clique` | no quadro do clique da caixinha |
 | Sininho, notificação, "acertou" | `sino` | no quadro em que o ícone aparece |
 | Explosão, revelação enorme, fundo `explosao` entrando | `explosao` | no quadro do estouro; abaixar a trilha junto |
@@ -20,7 +20,7 @@ O som cai no quadro do evento, não no começo do beat por hábito.
 | Texto sendo digitado | `type` | enquanto as letras aparecem |
 | Painel da HQ, frame da obra | `camera` | quando o painel entra |
 | Erro, "não é bem assim" | `error` ou `glitch` | na palavra do erro |
-| Tensão antes da revelação | `riser` | termina exatamente no corte da revelação (`at` negativo) |
+| Tensão antes da revelação | `riser` ou `riser-reverso` | `riser` dura ~1,82 s; o prato invertido `riser-reverso` cresce por ~2,90 s até o corte. Posicionar o início para a chegada coincidir com a revelação |
 
 Sons de meme (`tapa-eco`, `explosao`, `sino`) perdem a graça quando repetem: no máximo um a cada 1–2 minutos de vídeo longo, um por Short.
 
@@ -37,13 +37,28 @@ Regras:
 
 ## 2. Criar sons novos
 
-Os 12 primeiros SFX (de `pop` a `camera`) são sintetizados pelo `../scripts/build_motion_sfx.mjs`: são originais e não usam amostras de terceiros. Os de `clique` a `whoosh-lento` vieram do Openverse em CC0 pelo processo da seção 3, com créditos em `THIRD_PARTY_NOTICES.md`. Para um som que falta (por exemplo, `soco`, `porta` ou `vidro`):
+As gravações vigentes pertencem ao kit do Content Lab, consultado por `motion_kit` e `kit_docs`. `pop`, `whoosh`, `swish`, `camera`, `sub` e `impact` usam gravações CC0; `ding`, `error`, `riser`, `type` e `riser-reverso` vêm da coleção do criador/Pixabay. Conferir os créditos e as condições por arquivo no [registro de licenças do Content Lab](https://github.com/DanielHABDias/ContentLab/blob/main/licenses/THIRD_PARTY.md). Não atribuir automaticamente aos sons atuais a origem sintética ou a licença das referências locais do plugin.
 
-1. Acrescentar a receita no gerador, com nome curto em minúsculas.
-2. Gerar o WAV em 48 kHz mono em `assets/sfx/motion/<nome>.wav` e escutar.
-3. Registrar o arquivo no `assets/manifest.json`, com `rights` original, e o nome na tabela da seção 1.
-4. Rodar `python3 scripts/validate_plugin.py`.
-5. Para valer no plano, o som precisa entrar no kit do Content Lab (o WAV na pasta de SFX do kit e o nome na lista `sfx` do catálogo dele, com a licença registrada). É uma mudança no repositório do Content Lab; `motion_kit` mostra os nomes que já valem.
+Durações aproximadas dos arquivos do kit, incluindo suas caudas:
+
+| SFX | Segundos | SFX | Segundos |
+| --- | ---: | --- | ---: |
+| `pop` | 0,093 | `camera` | 0,295 |
+| `whoosh` | 0,667 | `swish` | 0,330 |
+| `whoosh-rapido` | 0,330 | `whoosh-lento` | 2,161 |
+| `impact` | 2,000 | `sub` | 1,332 |
+| `ding` | 0,589 | `error` | 0,310 |
+| `riser` | 1,820 | `riser-reverso` | 2,902 |
+| `type` | 0,150 | `tick` | 0,050 |
+| `clique` | 0,090 | `sino` | 1,328 |
+| `explosao` | 2,591 | `glitch` | 0,350 |
+| `tapa` | 0,131 | `tapa-eco` | 1,500 |
+
+Duração de arquivo não é instante de ataque nem de pico. Escutar antes de alinhar; se os arquivos mudarem, medir de novo. Para uma revelação em T, começar o `riser-reverso` aproximadamente em T − 2,902 s e conferir a chegada no render. Se não houver espaço no beat, antecipar no beat anterior com tempo relativo válido; não cortar a subida para caber por hábito.
+
+Nas cenas narrativas, recalcular `narrativeEvents` com props, duração e fps reais e usar sua saída em `beat.sfx`. O helper mantém cerca de um som por segundo, prioriza viradas (`impact`, `error`, `sub`) e espaça sinais em geral por 0,3 s; `sub` pode reforçar `impact`. Não acrescentar som a cada cartão para compensar a redução automática. Conferir caudas entre beats e deixar diálogos emocionais respirarem.
+
+Para um som que falta, buscar uma gravação licenciada ou criar uma receita original. O gerador local `../scripts/build_motion_sfx.mjs` serve para novos rascunhos sintéticos, sem substituir as gravações do kit. Para usar um novo nome no plano, acrescentar o WAV e a licença ao repositório do Content Lab e registrar no catálogo; só então `motion_kit` passa a aceitá-lo. Se distribuir o arquivo no plugin, atualizar também `assets/manifest.json` e validar.
 
 ## 3. Buscar sons prontos (Openverse)
 
