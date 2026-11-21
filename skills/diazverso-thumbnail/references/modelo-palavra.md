@@ -4,10 +4,10 @@ Consultar antes de compor ou revisar qualquer thumbnail. As referências visuais
 
 ## Camadas, de trás para a frente
 
-1. **Fundo simples e escuro.** Quase preto, com leve tom da cor da palavra, chiado de TV discreto e vinheta. O fundo não disputa atenção. Arte de fundo só quando tiver função editorial; não importar automaticamente bandeiras, cenários ou detalhes da imagem de origem.
+1. **Fundo simples.** Por padrão escuro: quase preto, com leve tom da cor da palavra, chiado de TV discreto e vinheta. A variante clara (`background: "branco"`) usa branco com leve tom da cor e meio-tom suave, boa para personagem escuro ou cena triste. O fundo não disputa atenção. Arte de fundo só quando tiver função editorial; não importar automaticamente bandeiras, cenários ou detalhes da imagem de origem.
 2. **Palavra principal sólida e brilhante.** Anton gigante, com brilho forte na cor escolhida. Ela ocupa boa parte da largura e atravessa a região do personagem. A/B podem ter cores diferentes.
 3. **Personagem da obra em PNG transparente.** Grande, reconhecível e imponente, com sombra ou halo preto suave acompanhando sua silhueta. Esse contorno escuro separa corpo e letras nos cruzamentos. A arte cobre o preenchimento brilhante, sem levar junto o fundo original.
-4. **Contorno frontal da palavra principal.** Duplicar exatamente a posição, escala e quebra do texto de trás, deixando só um contorno branco fino e o interior transparente. Ele passa por cima do personagem. Manter preenchimento e contorno como camadas independentes.
+4. **Contorno frontal da palavra principal.** Duplicar exatamente a posição, escala e quebra do texto de trás, deixando só um contorno fino **na mesma cor da palavra, com brilho neon**, e o interior transparente. Ele passa por cima do personagem. Manter preenchimento e contorno como camadas independentes.
 5. **Palavra complementar opcional.** Pode ficar em outro ponto livre, grande, sólida e brilhante, inteiramente na frente do personagem, sem duplicata vazada nem contorno frontal. Exemplo de composição: PASSADO gigante no alto atravessado pelo personagem; SUJO separado à direita, um pouco acima da base, sólido e brilhante. Não é obrigatório quebrar toda frase desse jeito.
 6. **Nox por cima de tudo.** Num canto inferior, muito grande, com foco na cabeça, olhos e gesto. Cortar o corpo pela borda; não mostrar o corpo completo nem exigir corte na cintura. A emoção precisa se ler no celular. Não cobrir o sentido da palavra; ajustar o texto quando necessário. Depois que o criador aprovar posição, escala e pose, preservá-las nos ajustes seguintes, salvo pedido explícito.
 
@@ -23,11 +23,11 @@ Consultar antes de compor ou revisar qualquer thumbnail. As referências visuais
 
 ## Texto, cor e tamanho
 
-Até quatro palavras somadas, em Anton; complementar a promessa do título sem inventar fatos. A palavra principal sempre atravessa o personagem com preenchimento atrás e contorno na frente. A palavra complementar pode ser só frontal, sólida e brilhante. Cores podem variar entre palavras e variantes, desde que se leiam no fundo escuro. Halo preto ao redor do personagem, brilho do texto e contorno branco frontal têm funções distintas.
+Até quatro palavras somadas, em Anton; complementar a promessa do título sem inventar fatos. A palavra principal sempre atravessa o personagem com preenchimento atrás e contorno na frente. A palavra complementar pode ser só frontal, sólida e brilhante. Cores podem variar entre palavras e variantes, desde que se leiam no fundo. Halo preto ao redor do personagem, brilho do texto e contorno frontal na cor da palavra têm funções distintas. Contorno branco só a pedido do criador (`outline: "branco"`); quando o personagem tiver a mesma cor da palavra, conferir se o contorno ainda se lê sobre ele.
 
 ## Execução com o kit do Content Lab
 
-Usar `layout: "palavra"`, `mediaId` do recorte transparente, `texture: "tv"`, `tone`, `pose`, `humor`, `side`, `focus`, `zoom` e `textY`. `backgroundMediaId` é opcional. Definir enquadramento e altura pela imagem real; não fixar um zoom ou corte universal.
+Usar `layout: "palavra"`, `mediaId` do recorte transparente, `texture: "tv"` (ou o fundo claro com `background: "branco"`), `tone`, `pose`, `humor`, `side`, `focus`, `zoom` e `textY`. `backgroundMediaId` é opcional. Definir enquadramento e altura pela imagem real; não fixar um zoom ou corte universal.
 
 `thumbnails_generate` monta a palavra principal, mas o contrato disponível pode não expor sombra ajustável, palavra complementar independente ou todos os controles de camadas. Conferir o contrato real antes de chamar; não inventar parâmetros. Para esses ajustes, reutilizar o componente Thumbnail do kit numa composição específica do projeto, mantendo as camadas independentes e os assets canônicos, em vez de desenhar um kit novo ou editar o aplicativo. Salvar a composição editável, renderizar, importar os PNGs e vinculá-los à embalagem pela API/CLI autorizada, com revisão atual e leitura de retorno. Atualizar as cópias visíveis, as prévias de 320 px e o kit de entrega. Não editar `project.json` diretamente.
 
@@ -39,7 +39,7 @@ Abrir a imagem inteira e a versão de 320 px e verificar:
 
 - fundo discreto, sem cenário indesejado;
 - personagem grande, recorte íntegro e transparente, sombra escura visível onde atravessa as letras;
-- preenchimento brilhante atrás, contorno fino alinhado na frente do personagem;
+- preenchimento brilhante atrás, contorno fino na cor da palavra alinhado na frente do personagem;
 - palavra complementar, quando usada, sólida, grande e brilhante na camada frontal;
 - Nox grande no canto, cabeça e expressão legíveis, acima das outras camadas;
 - posição, escala e pose já aprovadas preservadas e textos compreensíveis;

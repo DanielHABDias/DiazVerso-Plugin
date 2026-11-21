@@ -21,7 +21,7 @@ Short (SH_): criar e revisar somente a variante A, vertical 9:16. Não criar B n
 
 1. Reduzir a tese a **uma pergunta/tensão visual** diretamente respondida no roteiro. Não acrescentar conflito, fato, resultado ou personagem inexistente apenas para gerar curiosidade.
 2. **A** usa um ângulo dominante, por exemplo contradição/comparação; **B** usa outro enquadramento narrativo, por exemplo consequência/revelação. Não chamar de teste A/B apenas duas cores ou dois recortes da mesma imagem. O revisor `scripts/validate_thumbnail_brief.py` exige `angle`, `visual_metaphor` e `layout` distintos em A e B.
-3. Aplicar o [modelo do canal](references/modelo-palavra.md): fundo de TV simples e escuro; palavra principal sólida brilhante atrás; personagem em PNG transparente com halo preto; contorno fino da mesma palavra na frente; palavra complementar opcional sólida e brilhante em camada frontal; Nox muito grande no canto por cima de tudo. A referência define recorte, enquadramento, camadas e ajustes aprovados. Antes de criar, procurar thumbnails de vídeos sobre o mesmo tema com pelo menos 50 mil visualizações, no Brasil e fora; conferir e anotar título, canal, visualizações e padrão visual sem copiar a composição.
+3. Aplicar o [modelo do canal](references/modelo-palavra.md): fundo de TV simples e escuro (ou a variante clara); palavra principal sólida brilhante atrás; personagem em PNG transparente com halo preto; contorno fino da mesma palavra, na cor dela e com brilho neon, na frente; palavra complementar opcional sólida e brilhante em camada frontal; Nox muito grande no canto por cima de tudo. A referência define recorte, enquadramento, camadas e ajustes aprovados. Antes de criar, procurar thumbnails de vídeos sobre o mesmo tema com pelo menos 50 mil visualizações, no Brasil e fora; conferir e anotar título, canal, visualizações e padrão visual sem copiar a composição.
 4. Texto **curto e forte**: uma palavra ou uma frase de até quatro palavras que zomba, provoca ou instiga ("FRAUDE", "VIROU PILHA"), grande na imagem. Não repete o título; cria contraste ou completa a promessa, e o vídeo cumpre o que ela diz. Usar Anton de `assets/brand/fonts/anton/` (SIL OFL) ou outra fonte licenciada.
 5. Usar o Nox canônico de `assets/brand/nox/Nox.png` e suas poses, com foco na cabeça e expressão; não redesenhar. Preservar posição, escala e pose aprovadas ao revisar. Pose nova exige Character Lock e revisão real.
 6. Arte HQ madura com contraste e profundidade a serviço da ideia, não painéis/balões infantis automáticos. Diretrizes de cor são hipóteses para o designer, **não validação de contraste de pixels**.
@@ -37,6 +37,8 @@ A composição final usa o kit; recorte ou transformação da arte pode exigir u
 | Modelo do canal | `layout: "palavra"` |
 | Personagem da obra dentro da palavra (recorte PNG inteiro, alta resolução) | `mediaId` |
 | Fundo simples escuro; arte de fundo somente quando escolhida | omitir `backgroundMediaId` no fundo simples |
+| Fundo claro (branco com leve tom da cor e meio-tom suave) | `background: "branco"` |
+| Contorno da frente | na cor da palavra (padrão); `outline: "branco"` só a pedido |
 | Palavra ou frase (até 2 linhas com `/`) | `text` |
 | Cor da palavra (o fundo escuro contrasta sozinho) | `tone`: `vermelho`, `amarelo`, `branco`, `azul`, `verde` |
 | Textura do fundo | `texture: "tv"` (padrão) |
@@ -44,7 +46,7 @@ A composição final usa o kit; recorte ou transformação da arte pode exigir u
 | Enquadramento do personagem | `focus` e `zoom` conforme a pose e a leitura no celular; pode mostrar mais corpo |
 | Altura da palavra | `textY` (0,5 = meio); subir para 0,26–0,36 quando o Nox ficar no lado do começo da palavra |
 
-Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B com esses campos; fora do modelo continuam `layout: "centro"`, `background`, `mediaIdB` (VS) e `badge`. As duas também ficam em `output/thumbnails/` do projeto. Ele grava as variantes na embalagem e devolve versões de 320 px em `output/previas/`. Para sombra, palavra complementar frontal e revisão de somente uma variante, seguir a execução e a preservação definidas no [modelo](references/modelo-palavra.md). **Abrir a imagem inteira e as versões de celular** e responder: o recorte está íntegro, com halo preto, tamanho imponente e rosto reconhecível? O texto se lê, sem o Nox por cima? O contorno da frente está fino? O fundo está escuro? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
+Pelo Content Lab, `thumbnails_generate` recebe as variantes A e B com esses campos; fora do modelo continuam `layout: "centro"`, `background`, `mediaIdB` (VS) e `badge`. As duas também ficam em `output/thumbnails/` do projeto. Ele grava as variantes na embalagem e devolve versões de 320 px em `output/previas/`. Para sombra, palavra complementar frontal e revisão de somente uma variante, seguir a execução e a preservação definidas no [modelo](references/modelo-palavra.md). **Abrir a imagem inteira e as versões de celular** e responder: o recorte está íntegro, com halo preto, tamanho imponente e rosto reconhecível? O texto se lê, sem o Nox por cima? O contorno da frente está fino, na cor da palavra e legível sobre o personagem? O fundo está escuro? O que a imagem diz complementa o título? Ajustar e gerar de novo até passar.
 
 ## Contrato e validador offline
 
