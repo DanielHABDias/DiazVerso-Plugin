@@ -24,7 +24,6 @@ Ler `motion_kit` para nomes, props, exemplos e eventos de som vigentes. O Conten
 | `trilhaViva` | Navegar por capítulos, entrar na obra e retornar à linha do tempo | Reutilizar a mesma lista; `de` e `ate` começam em 1. Usar eventos reais, sem inventar causalidade |
 | `personagemClose` | Nox ampliado, com balão de texto/ícone, para opinião, explicação e humor | Importar Nox; preservar o PNG e olhos sem pupilas. Escolher poses para a fala e dar 0,7–1 s por ideia |
 | `pensamentoVivo` | Expor dois ou três pensamentos simultâneos ao redor do Nox grande | Balões surgem e permanecem; não substituir cenas da obra por conceitos genéricos |
-| `rasgoCena` | Revelar outra cena da obra por um rasgo gráfico discreto | Usar em viradas pertinentes; as mídias tocam mudas sob a voz, sem imitar uma cena com som original |
 
 As montagens por recorte, enquadramentos, faixas, anotações, retornos, cenas do Nox e transições de texto/cor estão no [guia de montagens e transições 2D](montagens-2d.md), com os nomes exatos das cenas e seus tempos.
 
@@ -40,9 +39,7 @@ Para continuar em `evidencia` sem reiniciar o vídeo, usar a mesma mídia e `che
 
 **Pensamentos (`pensamentoVivo`).** `ideias` aceita até três `{ texto?, icone? }` e `poses` lista gestos do catálogo; a pose muda a cada 0,8 s. `conclusao` é uma frase curta opcional, revelada em 76% do beat. Os balões entram em 8%, 27% e 46%. Usar ícones válidos do kit, por exemplo `raio`, `relogio`, `coracao`, `escudo` ou `interrogacao`.
 
-**Rasgo (`rasgoCena`).** `antes` e `depois` são referências de mídia. `inicioAntes` e `inicioDepois` apontam os trechos nas fontes; a segunda começa a tocar na `virada` (fração do beat, padrão 0,35, limitada entre 0 e 0,58). O rasgo leva 42% do beat e termina com a segunda mídia em tela cheia. A continuidade seguinte usa `inicioDepois` + tempo entre a virada e o fim do beat, conferido no frame.
-
-**Som e legenda.** Ler os exemplos e `som.eventos` em `motion_kit`; as frações são exemplos para 4 s. O utilitário `narrativeEvents` do Content Lab recalcula eventos conforme props, duração e fps; colocar a saída no `sfx` do beat. Na linha do tempo, passagens, retorno e entrada seguem o mesmo cronograma da câmera. O helper reduz a densidade para cerca de um SFX por segundo, priorizando `impact`, `error` e `sub`, com espaço entre sinais; não repor manualmente um som em toda entrada. Balões podem usar `pop`, conclusão `ding`, rasgo `whoosh`, conforme os eventos mantidos. No longo, os dois formatos de Nox contam como apartes para legenda (`legenda: true`); nos Shorts a legenda continua durante todo o vídeo. Conferir áreas seguras e evitar balão sobre os olhos.
+**Som e legenda.** Ler os exemplos e `som.eventos` em `motion_kit`; as frações são exemplos para 4 s. O utilitário `narrativeEvents` do Content Lab recalcula eventos conforme props, duração e fps; colocar a saída no `sfx` do beat. Na linha do tempo, passagens, retorno e entrada seguem o mesmo cronograma da câmera. O helper reduz a densidade para cerca de um SFX por segundo, priorizando `impact`, `error` e `sub`, com espaço entre sinais; não repor manualmente um som em toda entrada. Balões podem usar `pop` e conclusão `ding`, conforme os eventos mantidos. No longo, os dois formatos de Nox contam como apartes para legenda (`legenda: true`); nos Shorts a legenda continua durante todo o vídeo. Conferir áreas seguras e evitar balão sobre os olhos.
 
 ## Compor no estilo do canal
 

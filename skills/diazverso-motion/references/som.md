@@ -32,7 +32,7 @@ Regras:
 - **Silêncio é ferramenta:** antes de uma virada, a trilha some por meio segundo e o `impact` volta com ela.
 - **Som da obra:** no plano comum, se a cena mostra um soco, uma explosão ou uma porta, o SFX combina com essa ação (soco → `impact`, porta → `camera` curto) e o vídeo da obra fica mudo. O áudio original entra só nos trechos escolhidos de 5–7 s (2–3 por vídeo longo, 1 por Short) com `pausas` no plano e `som: true` na cena, conforme o [padrão de edição](padrao-de-edicao.md).
 - **Conferência da origem:** nos intervalos sem narrador, o áudio original acompanha o vídeo real da obra. Trilha/SFX criados para um painel, foto ou frame não são áudio original da obra; não criar uma pausa de narração para esse material. Escutar cada candidato, registrar fala/ação e fonte, abaixar a trilha do canal e verificar a reprodução efetiva no render.
-- **A trilha se ouve:** cerca de 15–20 dB abaixo da voz enquanto ela fala (no Content Lab, `music.volume` ≈ 0,8 e `music.duck` ≈ 0,55), subindo nos respiros e quase muda sob o áudio da obra (`music.pausa` ≈ 0,08).
+- **A trilha se ouve:** cerca de 15–20 dB abaixo da voz enquanto ela fala (no Content Lab, `music.volume` ≈ 0,8 e `music.duck` ≈ 0,55), em volume constante durante toda a narração (sem subir nos respiros entre frases), quase muda sob o áudio da obra (`music.pausa` ≈ 0,08) e de volta ao volume cheio só depois da última fala, na tela final.
 - **Conferir no render:** escutar o vídeo inteiro, medir o loudness (alvo −14 LUFS, pico abaixo de −1 dBTP) e procurar som atrasado, adiantado ou empilhado.
 
 ## 2. Criar sons novos

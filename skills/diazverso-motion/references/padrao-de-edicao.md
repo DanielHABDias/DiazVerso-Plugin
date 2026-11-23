@@ -33,7 +33,7 @@ O nível que o canal exige em todo vídeo, longo (16:9) ou Short (9:16). Os núm
 ## Som
 
 - SFX em cada evento, abaixo da voz: corte 0,3; `impact`/`pop` 0,35–0,45; `explosao` no máximo 0,35. Nunca empilhar `sub` + `impact` fortes no primeiro segundo junto da voz (satura).
-- **A trilha se ouve:** `music.volume` ≈ 0,8 e `music.duck` ≈ 0,55, ficando cerca de 15–20 dB abaixo da voz enquanto ela fala e subindo nos respiros. Trilha inaudível é erro.
+- **A trilha se ouve:** `music.volume` ≈ 0,8 e `music.duck` ≈ 0,55, ficando cerca de 15–20 dB abaixo da voz num volume **constante** durante toda a narração: não sobe nas pausas entre frases (sobe-e-desce a cada respiro é erro). Ela só volta ao volume cheio depois da última fala, na tela final. Trilha inaudível é erro.
 - Uma faixa pode cobrir o vídeo todo com `music.trechos`: um trecho forte da própria faixa no gancho, a troca de trecho dentro de uma pausa com áudio da obra, e o final natural da faixa caindo sobre a tela final. Medir onde a faixa termina de verdade (o fim pode ser silêncio) antes de calcular.
 - A trilha toca até o último quadro e sai em fade de ~4 s.
 - Mix final: −14 LUFS integrado, pico abaixo de −1 dBTP.

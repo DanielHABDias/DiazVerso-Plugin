@@ -9,7 +9,6 @@ Consultar `motion_kit` para o contrato vigente, exemplos e SFX. O Content Lab us
 | `montagemEncaixe` | Reunir situações concretas antes de aprofundar a última; não sugerir simultaneidade se a obra não a estabelece. |
 | `enquadramentoAlternado` | Comparar adaptações, momentos ou representações; alinhar os rostos com foco/zoom e identificar as obras. |
 | `detalheContexto` | Sair de uma expressão ou elemento pequeno para seu contexto; não ampliar além da resolução disponível. |
-| `janelaMovel` | Contrastar situações relacionadas; evitar passar a faixa sobre uma informação que ainda precisa ser lida. |
 | `faixasSequenciais` | Acompanhar até três ações; escolher trechos em que o recorte preserve a ação e o rosto. |
 | `fotogramasMudanca` | Mostrar transformação visual por imagens verificadas; ordenar as fontes pela cronologia real. |
 | `anotacaoCena` | Apontar algo de fato visível na obra; conferir a marca no frame congelado, sem inventar detalhes. |
@@ -20,8 +19,6 @@ Consultar `motion_kit` para o contrato vigente, exemplos e SFX. O Content Lab us
 | `personagemAlternado` | Nox apresenta uma observação, a obra demonstra, Nox conclui em outra pose; reservar cada corte à fala correspondente. |
 | `legendaVirada` | Reformular uma impressão ou opinião; o texto é comentário editorial e não deve parecer fala canônica. |
 | `divisaoResolvida` | Comparar duas situações e aprofundar uma; expandir não significa declarar um vencedor. |
-| `corteCor` | Trocar de assunto com transição breve; usar as cores do canal e evitar efeito chamativo em cena emocional. |
-| `revelacaoRecortes` | Introduzir uma imagem por fragmentos grandes e depois deixar a obra tocar; não ocultar prova essencial por suspense. |
 
 ## Entradas e montagem
 
@@ -33,7 +30,6 @@ Cada fonte é um objeto `{ midia: "media:<id>", inicio, titulo?, fonte?, foco?, 
 
 **`detalheContexto` — Detalhe e contexto.** Começa ampliado em um ponto da imagem e abre até mostrar a imagem inteira; círculo preserva a referência. `cena`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; `detalhe`: { x, y, w?, h? }: frações 0–1 da imagem fonte, sem corte; padrão centro. Usar imagem com dimensões conhecidas.; `zoom`: ampliação inicial, padrão 2,3; foco escolhido deve ter resolução suficiente.
 
-**`janelaMovel` — Janela móvel.** Uma faixa revela outra mídia ao atravessar o quadro; abre até completar a troca. `antes`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; `depois`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }.
 
 **`faixasSequenciais` — Sequência em faixas.** Até três fontes dividem a tela; a faixa ativa expande e toca, enquanto as outras congelam e escurecem. `cenas`: 2–3 itens { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; a duração é dividida igualmente entre as fontes.
 
@@ -55,16 +51,13 @@ Cada fonte é um objeto `{ midia: "media:<id>", inicio, titulo?, fonte?, foco?, 
 
 **`divisaoResolvida` — Quadro dividido que se resolve.** Duas fontes em tela dividida; a divisória se desloca até a escolhida preencher o quadro. `cenas`: dois itens { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; `escolhida`: índice 0 ou 1; padrão 1; `virada`: fração em que a divisória começa a mover, padrão 0,33; reservar 45% da duração.
 
-**`corteCor` — Corte por cor.** Faixa diagonal com cor do kit atravessa rapidamente o quadro e revela a próxima mídia. `antes`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; `depois`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }; `tom`: cor da faixa; padrão vermelho.
 
-**`revelacaoRecortes` — Revelação por recortes.** Quatro partes grandes revelam o frame inicial; depois a mídia completa começa a tocar. `cena`: { midia: media:<id>, titulo?, fonte?, inicio?: segundos, foco?: object-position, zoom?: número }.
 
 ## Tempos e continuidade
 
 - `montagemEncaixe`: entradas em 0%, 16%, 32% e 48%, conforme a quantidade; último amplia entre 78% e 99%. Para continuar o último, usar seu `inicio` + tempo desde a entrada dele, sem reiniciar a fonte.
 - `enquadramentoAlternado`: a ordem divide o beat em intervalos iguais. Cada corte começa no `inicio` da fonte correspondente. Comparação alinhada depende da escolha e do ajuste das imagens, não de reconhecimento automático de rosto.
 - `detalheContexto`: a abertura do contexto acontece entre 15% e 78%. `detalhe` usa coordenadas da imagem inteira, exibida com contain; a marca acompanha o mesmo ponto. Usar fontes com dimensões conhecidas. Não misturar essas coordenadas com as de `anotacaoCena`.
-- `janelaMovel`: percurso entre 3% e 62%; expansão entre 58% e 97%. As duas fontes avançam desde o início do beat.
 - `faixasSequenciais`: cada faixa tem um intervalo igual. Antes de ativar, exibe o frame inicial; depois do seu intervalo, fica congelada no último frame exibido. As faixas mudam de largura no horizontal e de altura no vertical.
 - `fotogramasMudanca`: imagens entram em 0%, 20% e 40%; o último cresce entre 79% e 99%. Cada fonte fica no primeiro frame do seu `inicio`.
 - `anotacaoCena`: `em` e `pausa` são frações do beat. A fonte congela no instante `em`, a marca aparece e, ao terminar a pausa, a reprodução retoma desse mesmo frame. `ponto` usa o quadro já recortado: conferir posição antes de editar o resto.
@@ -75,8 +68,6 @@ Cada fonte é um objeto `{ midia: "media:<id>", inicio, titulo?, fonte?, foco?, 
 - `personagemAlternado`: Nox entre 0% e 25%, evidência entre 25% e 62%, Nox novamente entre 62% e 100%. Durante a evidência a fonte começa em seu `inicio`; nos intervalos do Nox os PNGs trocam a cada 0,8 s. Ajustar duração do beat para as falas coincidirem com os cortes.
 - `legendaVirada`: `virada` padrão em 42%; durante os próximos 18% o texto anterior aparece riscado junto à substituição. Depois fica só a frase corrigida. Preferir uma palavra ou expressão curta em cada campo.
 - `divisaoResolvida`: padrão começa a expansão em 33% e termina em 78%. As duas fontes avançam desde o início do beat. Para continuar a escolhida, somar a duração inteira do beat ao `inicio` dela.
-- `corteCor`: a faixa atravessa entre 25% e 71%. A segunda fonte começa em 25%; para continuar, somar 75% da duração do beat ao `inicio` dela. Usar em beat curto, com troca pertinente ao argumento.
-- `revelacaoRecortes`: quatro fragmentos entram em 0%, 17%, 34% e 51%. O clipe completo começa em 72% e termina de aparecer em 90%. Para continuar, somar 28% da duração do beat ao `inicio` da fonte.
 
 ## Revisão do canal
 

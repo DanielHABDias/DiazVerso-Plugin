@@ -21,7 +21,7 @@ Cada faixa entra na produção com a licença verificável: no Content Lab, `med
 
 - Uma faixa pode cobrir o vídeo inteiro em trechos (`music.trechos` no Content Lab): um trecho forte da própria faixa no gancho, a troca de trecho só onde a trilha está quase muda (um trecho com o áudio da obra) e o final natural da faixa sobre a tela final. Trocar de faixa, quando houver, também só nesses pontos ou entre blocos, nunca no meio de uma frase.
 - Medir a faixa antes de planejar: muitas terminam em silêncio antes do fim do arquivo. A trilha toca até o último quadro do vídeo e sai em fade de ~4 s.
-- A trilha abaixa sob a voz (o kit faz isso pelos tempos das palavras), mas continua audível: cerca de 15–20 dB abaixo da voz (`music.volume` ≈ 0,8, `music.duck` ≈ 0,55). Volta nos respiros. Silêncio de até 0,3 s antes de uma revelação, quando ajudar.
+- A trilha abaixa sob a voz (o kit faz isso pelos tempos das palavras), mas continua audível: cerca de 15–20 dB abaixo da voz (`music.volume` ≈ 0,8, `music.duck` ≈ 0,55). Fica constante durante toda a narração, sem subir nos respiros entre frases; só volta ao volume cheio depois da última fala (tela final). Silêncio de até 0,3 s antes de uma revelação, quando ajudar.
 - **SFX em cada troca de beat**, com função:
   - `whoosh` ou `swish` em troca de cena;
   - `pop` em texto que entra;
