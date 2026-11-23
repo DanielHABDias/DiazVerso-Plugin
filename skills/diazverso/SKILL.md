@@ -30,7 +30,7 @@ Shorts têm somente título A e thumbnail A (9:16), sem teste A/B. Título B e t
    8. plano de motion;
    9. prévias;
    10. enviar o render à fila e encerrar a resposta; revisão do arquivo e entrega são retomadas quando o criador voltar ao chat;
-   11. thumbnail final no [modelo do canal](../diazverso-thumbnail/references/modelo-palavra.md): palavra atravessando o personagem com halo escuro (preenchimento brilhante atrás, contorno na frente), fundo simples de TV e Nox muito grande no canto, focado na cabeça, acima de tudo;
+   11. thumbnail final no [modelo do canal](../diazverso-thumbnail/references/modelo-palavra.md): palavra atravessando o personagem com halo escuro (preenchimento brilhante atrás, contorno na frente), fundo de quadrinhos com meio-tom e vinheta, moldura nas cores do canal com quinas internas arredondadas e Nox muito grande no canto, focado na cabeça, acima da moldura;
    12. kit de publicação manual (com o registro manual do Drive e da planilha, quando não houver acesso);
    13. Shorts cortados do vídeo longo: trechos que funcionam sozinhos, em 9:16, com a mesma edição e fechando na chamada para o vídeo completo ([Shorts](../diazverso-shorts/SKILL.md)). Short do zero só quando o criador pedir.
 5. **Edição = motion design do kit do Content Lab** (`../diazverso-motion/SKILL.md`). O Content Lab é neutro: o Nox entra em cada projeto importando o pacote `assets/brand/nox/` deste plugin com `character_import`, antes do plano de motion:
